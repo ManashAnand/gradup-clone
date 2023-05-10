@@ -23,7 +23,7 @@ const Nav = () => {
     <nav className='w-screen flex-between mb-16 pt-3 shadow-xl p-4'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
-          src='/assets/images/logo.svg'
+          src='/assets/images/TalentConnects.png'
           alt='logo'
           width={30}
           height={30}
@@ -46,7 +46,7 @@ const Nav = () => {
             <Link href='/courses' className='outline_btn'>
               Courses
             </Link>
-            <Link href='/hrlogin' className='outline_btn'>
+            <Link href='/hr/login' className='outline_btn'>
               HR Login
             </Link>
             <button type='button' onClick={signOut} className='black_btn'>

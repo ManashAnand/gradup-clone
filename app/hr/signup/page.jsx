@@ -7,12 +7,23 @@
 // }
 
 // export default HRSignup
-
+import Image from "next/image"
 export default function HRSignup() {
     return (
-      <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+      <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden w-full">
         <div className="w-full p-6 bg-white rounded-md shadow-md lg:max-w-xl">
-          <h1 className="text-3xl font-bold text-center text-gray-700">Logo</h1>
+        <div style={{
+          display: "flex",
+          justifyContent: "center",
+        }}>
+        <Image
+          src='/assets/images/TalentConnects.png'
+          alt='logo'
+          width={80}
+          height={80}
+          className='text-3xl font-bold text-center snap-center'
+        />
+        </div>
           <form className="mt-6">
             <div className="mb-4">
               <label

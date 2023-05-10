@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import React from 'react'
-
+import Image from "next/image";
 const Footer = () => {
   return (
     <div>
+        <div className='pt-16'></div>
     <footer className="text-gray-600 body-font w-screen bg-sky-200">
-  <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+  <div className="container px-5 py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
     <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mr-60">
         <Link href={'/'} className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
@@ -13,7 +14,14 @@ const Footer = () => {
             </svg>
             <span className="ml-3 text-xl">TalentConnects</span> */}
             {/* above svg and span will be removed by our img logo */}
-            <img src="/TalentConnectsLogo.png" alt="TalentConnects"/>
+            {/* <img src="/assets/images/TalentConnects.png" alt="TalentConnects"/> */}
+            <Image
+            src='/assets/images/TalentConnects.png'
+            alt='logo'
+            width={80}
+            height={80}
+            className='object-contain'
+            />
         </Link>
       
       <p className="mt-2 text-sm text-gray-500">TalentConnects is a platform aimed at nurturing students to be industry ready</p>
