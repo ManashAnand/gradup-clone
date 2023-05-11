@@ -15,6 +15,9 @@ export default function HRLogin() {
     <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden w-full">
       <div className="w-full p-6 bg-white rounded-md shadow-md lg:max-w-xl">
         {/* <h1 className="text-3xl font-bold text-center text-gray-700">Logo</h1> */}
+       
+        
+        <form className="mt-6">
         <div style={{
           display: "flex",
           justifyContent: "center",
@@ -27,8 +30,6 @@ export default function HRLogin() {
           className='text-3xl font-bold text-center snap-center'
         />
         </div>
-        
-        <form className="mt-6">
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -60,9 +61,12 @@ export default function HRLogin() {
             Forget Password?
           </Link>
           <div className="mt-2">
+            <Link href="/hr/profile">
             <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
               Login
             </button>
+            </Link>
+            
           </div>
         </form>
 
