@@ -3,6 +3,8 @@ import HomeFirstComponent from '@components/HomeFirstComponent';
 import CoursesOnHome from '@components/CoursesOnHome';
 import Mentors from '@components/Mentors';
 import Achievement from '@components/Achievement';
+import Testimonial from '@components/Testimonial';
+import BeMentorWithUs from '@components/BeMentorWithUs';
 
 const Home = () => {
   return (
@@ -12,6 +14,8 @@ const Home = () => {
         <h1 className='secondary_text text-center my-5'>Meet Our Mentors</h1>
         <Mentors />
         <Achievement />
+        <BeMentorWithUs />
+        <Testimonial />
     </section>
     
   )
