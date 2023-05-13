@@ -3,23 +3,81 @@ import {Schema, model, models} from 'mongoose';
 const EducationSchema = new Schema({
     collegeName:{
         type:String,
+    },
+    degreeName:{
+        type:String,
+    },
+    branch:{
+        type:String,
+    },
+    grade:{
+        type:String,
+    },
+    startYear:{
+        type:Date,
+    },
+    endYear:{
+        type:Date,
+    },
+    currentlyStudying:{
+        type:Boolean,
     }
 })
 
 const ProjectSchema = new Schema({
     projectName:{
         type:String,
+    },
+    projectDes:{
+        type:String,
+    },
+    projectLinks:{
+        type:String,
+    },
+    skillsUsed:{
+        type:[String],
     }
 })
 
 const ExperienceSchema = new Schema({
     companyName:{
         type:String,
+    },
+    companyWebsite:{
+        type:String,
+    },
+    location:{
+        type:String,
+    },
+    startDate:{
+        type:Date,
+    },
+    endDate:{
+        type:Date,
+    },
+    title:{
+        type:String,
+    },
+    description:{
+        type:String,
+    },
+    skills:{
+        type:[String],
+    },
+    certificateLink:{
+        type:String,
+    },
+    currentlyWorking:{
+        type:Boolean
     }
+
 })
 
 const SocialSchema = new Schema({
     websiteName:{
+        type:String,
+    },
+    websiteLink:{
         type:String,
     }
 })
@@ -27,6 +85,9 @@ const SocialSchema = new Schema({
 const AchievementSchema = new Schema({
     achievementName:{
         type:String,
+    },
+    achievementYear:{
+        type:Date,
     }
 }) 
 

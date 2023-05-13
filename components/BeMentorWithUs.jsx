@@ -74,9 +74,6 @@ export default function BeMentorWithUs() {
       <Card.Body css={{ py: "$2" }}>
         
       </Card.Body>
-      <Card.Footer>
-        
-      </Card.Footer>
     </Card>
     </div>
   );

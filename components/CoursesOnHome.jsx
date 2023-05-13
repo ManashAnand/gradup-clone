@@ -9,38 +9,38 @@ export default function CoursesOnHome() {
       price: "Rs 8999",
     },
     {
-      title: "Machine Learning",
-      img: "/images/fruit-2.jpeg",
+      title: "Data Science",
+      img: "/assets/icons/dataScience.jpeg",
       price: "Rs 6799",
     },
     {
-      title: "Artificial Intelligence",
-      img: "/images/fruit-3.jpeg",
+      title: "Blockchain",
+      img: "/assets/icons/blockchain.jpeg",
       price: "Rs 5999",
     },
     {
-      title: "DSA",
-      img: "/images/fruit-4.jpeg",
+      title: "Python",
+      img: "/assets/icons/python.jpeg",
       price: "Rs 6299",
     },
     {
-      title: "Communication Skills",
-      img: "/images/fruit-5.jpeg",
-      price: "Rs 3999",
-    },
-    {
-      title: "Group Discussion",
-      img: "/images/fruit-6.jpeg",
-      price: "Rs 3999",
-    },
-    {
-      title: "Aptitude & Reasoning",
-      img: "/images/fruit-7.jpeg",
+      title: "Cyber Security",
+      img: "/assets/icons/cyberSecurity.jpeg",
       price: "Rs 4999",
     },
     {
-      title: "Handbooks",
-      img: "/images/fruit-8.jpeg",
+      title: "Digital Marketing",
+      img: "/assets/icons/digitalMarketing.jpeg",
+      price: "Rs 3999",
+    },
+    {
+      title: "Graphic Design",
+      img:"/assets/icons/graphicDesign.jpeg",
+      price: "Rs 3999",
+    },
+    {
+      title: "Video Editing",
+      img: "/assets/icons/photoEditing.jpeg",
       price: "Rs 2999",
     },
   ];
