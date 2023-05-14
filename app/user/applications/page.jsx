@@ -76,7 +76,7 @@ export default function App() {
       case "name":
         return (
           <User squared src={user.avatar} name={cellValue} css={{ p: 0 }}>
-            {user.email}
+            {/* {user.email} */}
           </User>
         );
       case "role":
@@ -166,6 +166,9 @@ export default function App() {
         )}
       </Table.Body>
       <Table.Pagination 
+        // shadow
+        // noMargin
+        // align="center"
         rowsPerPage={3}
       />
     </Table>

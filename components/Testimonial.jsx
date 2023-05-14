@@ -7,50 +7,50 @@ const Testimonial = () => {
         {
           name: "Ajay Jeena",
           title:"Student at NIT Raipur",
-          img: "/assets/mentors/p1.jpeg",
+          img: "/assets/images/NewLogo.jpeg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
 
         },
         {
             name: "Raunit Verma",
             title:"Student at NIT Raipur",
-          img: "/assets/mentors/p1.jpeg",
+          img: "/assets/images/NewLogo.jpeg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Raunit Verma",
             title:"Student at NIT Raipur",
-          img: "/assets/mentors/p1.jpeg",
+          img: "/assets/images/NewLogo.jpeg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Ajay Jeena",
             title:"Student at NIT Raipur",
-          img: "/assets/mentors/p1.jpeg",
+          img: "/assets/images/NewLogo.jpeg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Ajay Jeena",
             title:"Student at NIT Raipur",
-          img: "/assets/mentors/p1.jpeg",
+          img: "/assets/images/NewLogo.jpeg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Ajay Jeena",
             title:"Student at NIT Raipur",
-          img: "/assets/mentors/p1.jpeg",
+          img: "/assets/images/NewLogo.jpeg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Ajay Jeena",
             title:"Student at NIT Raipur",
-          img: "/assets/mentors/p1.jpeg",
+          img: "/assets/images/NewLogo.jpeg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Ajay Jeena",
             title:"Student at NIT Raipur",
-          img: "/assets/mentors/p1.jpeg",
+          img: "/assets/images/NewLogo.jpeg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
       ];

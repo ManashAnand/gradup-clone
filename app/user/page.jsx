@@ -12,10 +12,10 @@ export default function Profile() {
   return (
     <div>
         <section className='w-full'>
-      <h1 className='head_text text-left'>
-        <span className='blue_gradient'>{data.name}</span>
-      </h1>
-      <p className='desc text-left'>{data.email}</p>
+          <h1 className='head_text text-left'>
+            <span className='blue_gradient'>{data.name}</span>
+          </h1>
+          <p className='desc text-left'>{data.email}</p>
 
       {/* <div className='mt-10 prompt_layout'>
         {data.map((post) => (
@@ -29,8 +29,8 @@ export default function Profile() {
       </div> */}
     </section>
       <h1>{data.name}</h1>
-      <p>{data.email}</p>
-      <h1>{session?.user.name}</h1>
+      {/* <p>{data.email}</p>
+      <h1>{session?.user.name}</h1> */}
       {/* <p>{data.email}</p> */}
     </div>
   );

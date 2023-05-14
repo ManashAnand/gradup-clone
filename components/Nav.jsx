@@ -23,7 +23,7 @@ const Nav = () => {
     <nav className='w-screen flex-between mb-16 pt-3 shadow-xl p-4'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
-          src='/assets/images/TalentConnects.png'
+          src='/assets/images/NewLogo.jpeg'
           alt='logo'
           width={30}
           height={30}
