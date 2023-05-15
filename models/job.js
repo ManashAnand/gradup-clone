@@ -1,6 +1,6 @@
 import {Schema, model, models} from 'mongoose';
 
-const JobsSchema = new Schema({
+const JobSchema = new Schema({
    id:{
        type:String,
    },
@@ -57,6 +57,6 @@ const JobsSchema = new Schema({
    }
 });
 
-const Jobs = models.Jobs || model("Jobs", JobsSchema);
+const Job = models.Job || model("Job", JobSchema);
 
-export default JobsSchema;
+export default Job;

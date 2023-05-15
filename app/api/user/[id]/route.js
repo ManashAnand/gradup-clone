@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 export const GET = async(req,{params}) => {
     try{
         await connectToDB();
+        console.log(params, "params in user")
         if(params.id!="undefined"){
         const userDetails = await User.findOne({_id:new mongoose.Types.ObjectId(params.id)})
         return new Response(JSON.stringify(userDetails),{status:201})
