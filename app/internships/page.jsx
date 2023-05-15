@@ -40,7 +40,8 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 
 function Page ({ index }) {
-  const { data,error } = useSWR(`https://api.jsonbin.io/v3/b/6460d47e8e4aa6225e9cc67d?page=${index}`, fetcher);
+  // const { data,error } = useSWR(`https://api.jsonbin.io/v3/b/6460d47e8e4aa6225e9cc67d/?page=${index}`, fetcher);
+  const { data, error } = useSWR( `/api/internships/?page=${index}`, fetcher)
   console.log(data);
   // ... handle loading and error states
   if (error) return <div>Failed to loadinggggggg</div>;
