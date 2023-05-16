@@ -72,7 +72,8 @@ export default function App () {
  
   return <div>
     <Page index={pageIndex}/>
-    <button onClick={() => setPageIndex(pageIndex - 1)}>Previous</button>
+    <div style={{ display: 'none' }}><Page index={pageIndex + 1}/></div>
+    <button onClick={() => setPageIndex(pageIndex - 1)}>Prev</button>
     <button onClick={() => setPageIndex(pageIndex + 1)}>Next</button>
   </div>
 }
