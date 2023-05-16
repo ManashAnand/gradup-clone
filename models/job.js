@@ -1,5 +1,5 @@
 import {Schema, model, models} from 'mongoose';
-
+  /// To add job descriptions 
 const JobSchema = new Schema({
    id:{
        type:String,

@@ -20,7 +20,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className='w-screen flex-between mb-16 pt-3 shadow-xl p-4'>
+    <nav className='w-screen flex-between mb-4 pt-3 shadow-xl p-4'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
           src='/assets/images/NewLogo.jpeg'
@@ -53,7 +53,7 @@ const Nav = () => {
               Sign Out
             </button>
 
-            <Link href='/profile'>
+            <Link href='/user'>
               <Image
                 src={session?.user.image}
                 width={37}

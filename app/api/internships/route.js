@@ -1,5 +1,5 @@
 var category = null; //the optional filter for category
-var pageSize = 5;
+var pageSize = 6;
 var pageNumber = 0;
 
 import {connectToDB} from '@utils/database';

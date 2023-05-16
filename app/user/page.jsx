@@ -1,6 +1,7 @@
 "use client"
 import useSWR from 'swr';
 import {useSession} from "next-auth/react";
+import Link from 'next/link';
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function Profile() {
@@ -9,6 +10,24 @@ export default function Profile() {
   if (error) return <div>Failed to loadinggggggg</div>;
   if (!data) return <div>Loading...</div>;
  
+//  try {
+//       // const response = await fetch(`/api/user/${session?.user.id}`, {
+//       //   method: "PATCH",
+//       //   body: JSON.stringify({
+//       //     name:'Check Name',
+//       //     address:'check address',
+//       //   }),
+//       // });
+
+//       // if (response.ok) {
+//       //   alert('updated')
+//       // }
+//     } catch (error) {
+//       console.log(error);
+//     } finally {
+//       console.log('in finally')
+//     }
+
   return (
     <div>
         <section className='w-full'>
@@ -32,6 +51,9 @@ export default function Profile() {
       {/* <p>{data.email}</p>
       <h1>{session?.user.name}</h1> */}
       {/* <p>{data.email}</p> */}
+      <Link href={'/user/applications'}>
+      <button className='outline_btn'>Your applications</button>
+      </Link>
     </div>
   );
 }

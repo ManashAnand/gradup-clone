@@ -20,3 +20,21 @@ export const GET = async(req,{params}) => {
     }
 
 }
+
+export const PATCH = async (request, { params }) => {
+    const data = await request.json();
+    console.log(data);
+    try {
+        await connectToDB();
+        console.log(params)
+        const existingUser = await User.findById(params.id);
+
+        if (!existingUser) {
+            return new Response("User not found", { status: 404 });
+        }
+        await existingUser.save();
+        return new Response("Successfully updated the User Data", { status: 200 });
+    } catch (error) {
+        return new Response("Error Updating User Data", { status: 500 });
+    }
+};

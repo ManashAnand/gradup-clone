@@ -1,5 +1,5 @@
 var category = null; //the optional filter for category
-var pageSize = 5;
+var pageSize = 6;
 var pageNumber = 0;
 
 import {connectToDB} from '@utils/database';
@@ -35,7 +35,7 @@ export const GET = async(req,{params}) => {
                 $limit:pageSize
             }
         ])
-        console.log(new Response(JSON.stringify(userDetails)));
+        // console.log(new Response(JSON.stringify(userDetails)));
         return new Response(JSON.stringify(userDetails),{status:201})
     }
     catch(error){

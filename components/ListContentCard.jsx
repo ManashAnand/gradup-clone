@@ -33,7 +33,7 @@ const ListContentCard = ({post}) => {
           icon
           color="primary"
           target="_blank"
-          href="/"
+          href={`/jobs/${post._id}`}
         >
           Apply for this Job
         </Link>

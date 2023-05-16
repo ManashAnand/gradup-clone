@@ -1,6 +1,9 @@
 import {connectToDB} from '@utils/database';
 import User from '@models/user';
 
+
+
+/// doing nothing for now     /////////////////////
 export const GET = async(req,res) => {
     try{
         await connectToDB();
