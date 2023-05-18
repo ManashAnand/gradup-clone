@@ -44,7 +44,7 @@ function Page ({ id }) {
                 </div>
               </section>
               <Link href={`/jobs/${id}/apply`}> 
-                <button className="outline_btn">Apply</button>
+                <button className="black_btn">Apply</button>
               </Link>
           </div>
         </section>
