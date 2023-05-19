@@ -3,7 +3,7 @@ import React from 'react'
 const page = () => {
   return (
     <div>
-        <h1 className='font-bold'>
+        <h1 className='font-bold '>
             <span>ABOUT COMPANY</span> <br />
         Attitude matterZ is a platform aimed at nurturing students to be industry ready and future-ready. Our advanced course includes Power BI, Artificial Intelligence, Robotics, Digital Marketing, and many more. Our dedicated modules and one-to-one connections with students in their placement preparation journey ensure that these aspirants get landed up to their dream jobs and dream profiles. In this information age, students do have a plethora of disorganized preparatory materials available online but systematic and step-by-step preparation and upskilling is what we plan to provide to our students. We do believe that there is practically no end to learning- but given the time constraints and the competition in this generation- you must learn and prioritize only what is the need of the hour. Come and enjoy being a part of our successful community. The CIN of the company is U80903JH2022PTC019112 and GST No. is 20AACCZ0257F1ZS.
         </h1>
