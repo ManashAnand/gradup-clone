@@ -1,5 +1,5 @@
 import { Schema, model, models } from 'mongoose';
-
+// Later we can make a fetch request to user profile to import the data from their profile to reduce the storage requirement once the website will scale enough
 const EducationSchema = new Schema({
     collegeName: {
         type: String,
@@ -94,35 +94,30 @@ const AchievementSchema = new Schema({
     }
 })
 
-const UserSchema = new Schema({
-    id: {
+const ApplicationSchema = new Schema({
+    userID: {
         type: String,
-        unique: [true, 'UserId already exists'],
-        required: [true, 'UserId is required'],
+        required: [true, "UserId is required."],
     },
     name: {
         type: String,
         required: [true, 'Name is required'],
     },
-    profilePhoto: {
+    jobID: {
         type: String,
-    },
-    email: {
-        type: String,
-        unique: [true, "Email already exists"],
-        required: [true, "Email is required"],
+        required: [true, 'JobId is required'],
     },
     contactNo: {
         type: String,
         length: 10,
     },
-    appliedJobs: {
-        type: [String]
+    coverLetter: {
+        type: String,
     },
     education: {
         type: [EducationSchema],
     },
-    resume: {
+    resumeURL: {
         type: String
     },
     project: {
@@ -138,10 +133,7 @@ const UserSchema = new Schema({
         type: [SocialSchema],
     },
     skills: {
-        type: String
-    },
-    interest: {
-        type: String,
+        type: [String]
     },
     location: {
         type: String,
@@ -151,10 +143,16 @@ const UserSchema = new Schema({
     },
     achievement: {
         type: [AchievementSchema],
+    },
+    expectedJoiningDate: {
+        type: String,
+    },
+    expectedCTC: {
+        type: String,
     }
 });
 
 
-const User = models.User || model("User", UserSchema);
+const Application = models.Application || model("Application", ApplicationSchema);
 
-export default User;
+export default Application;

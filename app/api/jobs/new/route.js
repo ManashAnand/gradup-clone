@@ -1,7 +1,7 @@
 import Job from "@models/job";
 import { connectToDB } from "@utils/database";
 
-export const POST = async (request) => {
+export const POST = async(request) => {
     const { userId, prompt, tag } = await request.json();
 
     try {
