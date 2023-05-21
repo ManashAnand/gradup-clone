@@ -9,8 +9,6 @@ export const POST = async(request) => {
     const currentUser = await User.findById(userId);
     console.log(currentUser);
     try {
-
-
         const allProjects = currentUser.project
         const selectedProject = []
         for (let i = 0; i < allProjects.length; i++) {

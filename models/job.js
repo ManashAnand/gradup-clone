@@ -1,5 +1,6 @@
 import { Schema, model, models } from 'mongoose';
 /// To add job descriptions 
+/// Can change date to type date from string
 const JobSchema = new Schema({
     id: {
         type: String,
@@ -28,7 +29,8 @@ const JobSchema = new Schema({
         required: [true, "Stipend is required"],
     },
     lastDate: {
-        type: Date,
+        // type: Date,
+        type:String,
         required: [true, "Last date is required"],
     },
     expectedStartDate: {
@@ -50,7 +52,11 @@ const JobSchema = new Schema({
         type: String
     },
     postedDate: {
-        type: Date,
+        // type: Date,
+        type:String,
+    },
+    responsilities:{
+        type:[String],
     },
     appliedCandidates: {
         type: [String],

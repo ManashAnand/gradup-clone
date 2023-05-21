@@ -1,8 +1,15 @@
 import React from 'react'
-
+import Link from 'next/link';
 const HR = () => {
   return (
-    <div>HR</div>
+    <div>
+      <Link href='/hr/posted-jobs' className='outline_btn mb-5'>
+          Jobs Posted
+      </Link>
+      <Link href='/hr/addjob' className='outline_btn mb-5'>
+          Add Job
+      </Link>
+    </div>
   )
 }
 
