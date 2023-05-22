@@ -161,7 +161,10 @@ img:hover{
   @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
 }
 .secondary_text {
-    @apply mt-5 text-3xl font-bold leading-[1.15] text-black sm:text-6xl;
+    @apply mt-5 text-3xl font-bold leading-[0.75] text-black sm:text-4xl;
+}
+.heading_text {
+  @apply mt-3 text-xl font-bold leading-[0.55] text-black sm:text-2xl;
 }
 .orange_gradient {
   @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
