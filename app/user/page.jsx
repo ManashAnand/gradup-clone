@@ -18,6 +18,7 @@ const fetcher = async (...args) =>await fetch(...args).then((res) => res.json())
 export default function Profile() {
   const { data: session } = useSession();
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher)
+  // if want to revalidate after lower time then => ,{ refreshInterval: 1000 } after fetch
   // const { data, error } = await  `/api/user/${session?.user.id}` : null, fetcher)
   const addEducationField = () =>{
     const newEdu = {
@@ -60,15 +61,103 @@ export default function Profile() {
       //       }
       //       fetchData();
       //  },[]);
-      const addNew=(e)=>{
+      const addNewEducation=async (e)=>{
         e.preventDefault();
         console.log(e.target[0].value);
-        var formData = new FormData(e.target);
-        const data = new FormData()
-    const form_values = Object.entries(formData).forEach(([key, value]) => {
-      data.append(key, value);
-    })
-    console.log("form_values",form_values)
+        try {
+          const response = await fetch(`/api/user/${session?.user.id}/?type=education`, {
+            method: "POST",
+            body: JSON.stringify({
+              collegeName:e.target[0].value,
+              degreeName:e.target[1].value,
+              branch:e.target[2].value,
+              grade:e.target[3].value,
+              startYear:e.target[4].value,
+              endYear:e.target[5].value,
+            }),
+          });
+          console.log(response.status)
+        } catch (error) {
+          console.log(error);
+        } finally {
+          
+        }
+        // var formData = new FormData(e.target);
+        // const data = new FormData()
+        // const form_values = Object.entries(formData).forEach(([key, value]) => {
+        // data.append(key, value);
+      // })
+      // console.log("form_values",form_values)
+      }
+      // Function for Add New Project
+      const addNewProject=async (e)=>{
+        e.preventDefault();
+        console.log(e.target[0].value);
+        try {
+          const response = await fetch("/api/user/apply", {
+            method: "POST",
+            body: JSON.stringify({
+              collegeName:e.target[0].value,
+              degreeName:e.target[0].value,
+              branch:e.target[0].value,
+              grade:e.target[0].value,
+              startYear:e.target[0].value,
+              endYear:e.target[0].value,
+            }),
+          });
+          console.log(response.status)
+        } catch (error) {
+          console.log(error);
+        } finally {
+          
+        }
+      }
+      //
+      const addNewExperience=async (e)=>{
+        e.preventDefault();
+        console.log(e.target[0].value);
+        try {
+          const response = await fetch("/api/user/apply", {
+            method: "POST",
+            body: JSON.stringify({
+              collegeName:e.target[0].value,
+              degreeName:e.target[0].value,
+              branch:e.target[0].value,
+              grade:e.target[0].value,
+              startYear:e.target[0].value,
+              endYear:e.target[0].value,
+            }),
+          });
+          console.log(response.status)
+        } catch (error) {
+          console.log(error);
+        } finally {
+          
+        }
+      }
+
+      //
+      const addNewAchievement=async (e)=>{
+        e.preventDefault();
+        console.log(e.target[0].value);
+        try {
+          const response = await fetch(`/api/user/${session?.user.id}`, {
+            method: "POST",
+            body: JSON.stringify({
+              collegeName:e.target[0].value,
+              degreeName:e.target[0].value,
+              branch:e.target[0].value,
+              grade:e.target[0].value,
+              startYear:e.target[0].value,
+              endYear:e.target[0].value,
+            }),
+          });
+          console.log(response.status)
+        } catch (error) {
+          console.log(error);
+        } finally {
+          
+        }
       }
   return (
     <div className='w-full'>
@@ -100,7 +189,7 @@ export default function Profile() {
               </Popover.Trigger>
               
               <Popover.Content>
-              <form onSubmit={addNew}>
+              <form onSubmit={addNewEducation}>
                 <input name = "lol" placeholder='Enter college name'/>
                 <Input placeholder='Enter Degree Name'/>
                 <Input placeholder='Enter branch Name'/>
@@ -132,26 +221,58 @@ export default function Profile() {
         <div className='mx-5'>
           <div className='flex flex-row'>
             <span className='heading_text'>Projects</span>
-            <Button>Add New</Button>
+            <Popover isBordered disableShadow>
+              <Popover.Trigger>
+                <Button auto flat>Add New</Button>
+              </Popover.Trigger>
+              <Popover.Content>
+              <form onSubmit={addNewProject}>
+                <input name = "lol" placeholder='Enter college name'/>
+                <Input placeholder='Enter Degree Name'/>
+                <Input placeholder='Enter branch Name'/>
+                <Input placeholder='Enter Your grade'/>
+                <Input placeholder='Enter  starting date'/>
+                <Input placeholder='Enter ending date'/>
+                <Button type='submit'> ADD</Button>
+                </form>
+              </Popover.Content>
+            </Popover>
           </div>
           
-          {/* {data.project.map((item)=>(
+          {data.project.map((item)=>(
             <Project 
             projectName={item.projectName}
             skillsUsed={item.skillsUsed}
             projectDes={item.projectDes}
             projectLinks={item.projectLinks}
             />
-          ))} */}
+          ))}
         </div>
         <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className='mx-5'>
           <div className='flex flex-row'>
             <span className='heading_text'>Experience</span>
-            <Button>Add New</Button>
+            <Popover isBordered disableShadow>
+              <Popover.Trigger>
+                <Button auto flat>Add New</Button>
+              </Popover.Trigger>
+              
+              <Popover.Content>
+              <form onSubmit={addNewExperience}>
+                <input name = "lol" placeholder='Enter college name'/>
+                <Input placeholder='Enter Degree Name'/>
+                <Input placeholder='Enter branch Name'/>
+                <Input placeholder='Enter Your grade'/>
+                <Input placeholder='Enter  starting date'/>
+                <Input placeholder='Enter ending date'/>
+                <Button type='submit'> ADD</Button>
+                </form>
+              </Popover.Content>
+
+            </Popover>
           </div>
           
-          {/* {data.experience.map((item)=>(
+          {data.experience.map((item)=>(
             <Experience 
             companyName={item.companyName}
             location={item.location}
@@ -161,20 +282,37 @@ export default function Profile() {
             skills={item.skills}
             description={item.description}
             />
-          ))} */}
+          ))}
         </div>
         <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className=' mx-5'>
           <div className='flex flex-row'>
             <span className='heading_text'>Achievements</span>
-            <Button>Add New</Button>
+            <Popover isBordered disableShadow>
+              <Popover.Trigger>
+                <Button auto flat>Add New</Button>
+              </Popover.Trigger>
+              
+              <Popover.Content>
+              <form onSubmit={addNewAchievement}>
+                <input name = "lol" placeholder='Enter college name'/>
+                <Input placeholder='Enter Degree Name'/>
+                <Input placeholder='Enter branch Name'/>
+                <Input placeholder='Enter Your grade'/>
+                <Input placeholder='Enter  starting date'/>
+                <Input placeholder='Enter ending date'/>
+                <Button type='submit'> ADD</Button>
+                </form>
+              </Popover.Content>
+
+            </Popover>
           </div>
           
-          {/* {data.achievement.map((item)=>(
+          {data.achievement.map((item)=>(
             <achievement 
             achievementName={item.achievementName}
             />
-          ))} */}
+          ))}
         </div>
         </div>
       </section>

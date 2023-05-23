@@ -12,6 +12,7 @@ import { DeleteIcon } from "@styles/DeleteIcon";
 import {useEffect,useState} from "react";
 
 const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) => {
+    const { data: session } = useSession();
     const [updating,setIsUpdating] = useState(0);
     const [education,setEducation] = useState({collegeName:collegeName,degreeName:degreeName,branch:branch,grade:grade,startYear:startYear,endYear:endYear,_id:id});
     
@@ -19,19 +20,44 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
     const updateEducation = async(e) =>{
         // e.preventDefault();
         setIsUpdating(2);
-        if(!id){
-
-        }else{
-            try{
-                setIsUpdating(0);
-                
-            }
-            catch(error){
-                console.log(error);
-            }
+        try {
+            const response = await fetch(`/api/user/${session?.user.id}/?type=education&action=update`, {
+              method: "POST",
+              body: JSON.stringify({
+                id:id,
+                collegeName:education.collegeName,
+                degreeName:education.degreeName,
+                branch:education.branch,
+                grade:education.grade,
+                startYear:startYear,
+                endYear:endYear,
+              }),
+            });
+            console.log(response.status)
+            setIsUpdating(0);
+        }catch (error) {
+            console.log(error);
+        }finally {
+            
         }
     }
-
+    const deleteEducation=async ()=>{
+        // e.preventDefault();
+        // console.log(e.target[0].value);
+        try {
+          const response = await fetch(`/api/user/${session?.user.id}/?type=education&action=delete`, {
+            method: "POST",
+            body: JSON.stringify({
+              id:id,
+            }),
+          });
+          console.log(response.status)
+        } catch (error) {
+          console.log(error);
+        } finally {
+          
+        }
+      }
 
     return (
     <div className='w-full'>
@@ -57,7 +83,7 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
             <Tooltip
                 content="Delete user"
                 color="error"
-                onClick={() => console.log("Delete user", user.id)}
+                onClick={deleteEducation }
             >
             <IconButton className='mx-15'>
               <DeleteIcon size={20} fill="#FF0080" />
@@ -69,8 +95,8 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
       <Input initialValue={education.degreeName} onChange={(e)=>setEducation({...education,degreeName:e.target.value})}/> <br/>
       <Input initialValue={education.branch} onChange={(e)=>setEducation({...education,branch:e.target.value})}/> <br/>
       <Input initialValue={education.grade} onChange={(e)=>setEducation({...education,grade:e.target.value})}/> <br/>
-      <Input initialValue={education.startYear}  onChange={(e)=>setEducation({...education,startYear:e.target.value})}/> <br/>
-      <Input initialValue={education.endYear}  onChange={(e)=>setEducation({...education,endYear:e.target.value})}/> <br/>
+      <Input type='date' initialValue={education.startYear}  onChange={(e)=>setEducation({...education,startYear:e.target.value})}/> <br/>
+      <Input type='date' initialValue={education.endYear}  onChange={(e)=>setEducation({...education,endYear:e.target.value})}/> <br/>
     </div>
     )
 }
