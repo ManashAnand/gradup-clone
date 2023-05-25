@@ -17,6 +17,7 @@ const fetcher = async (...args) =>await fetch(...args).then((res) => res.json())
 
 export default function Profile() {
   const { data: session } = useSession();
+  // console.log("ye id haiiiiiiiiiii",  session?.user.id);
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher)
   // if want to revalidate after lower time then => ,{ refreshInterval: 1000 } after fetch
   // const { data, error } = await  `/api/user/${session?.user.id}` : null, fetcher)
@@ -61,11 +62,30 @@ export default function Profile() {
       //       }
       //       fetchData();
       //  },[]);
+      const addHR = async (e) => {
+    e.preventDefault();
+    // setIsSubmitting(true);
+    console.log("Form Submittedddddd", session?.user.id);
+    try {
+      const response = await fetch(`/api/verify/${session?.user.id}`, {
+        method: "POST",
+        body: JSON.stringify({
+          a:"a"
+        }),
+      });
+      console.log(response.status)
+    } catch (error) {
+      console.log(error);
+    } finally {
+      // setIsSubmitting(false);
+      // alert("Submitted");
+    }
+  };
       const addNewEducation=async (e)=>{
         e.preventDefault();
-        console.log(e.target[0].value);
+        // console.log("ye id aii ", session?.user.id);
         try {
-          const response = await fetch(`/api/user/${session?.user.id}/?type=education`, {
+          const response = await fetch(`/api/user/${session?.user.id}/?type=education&action=create`, {
             method: "POST",
             body: JSON.stringify({
               collegeName:e.target[0].value,
@@ -94,15 +114,13 @@ export default function Profile() {
         e.preventDefault();
         console.log(e.target[0].value);
         try {
-          const response = await fetch("/api/user/apply", {
+          const response = await fetch(`/api/user/${session?.user.id}/?type=project&action=create`, {
             method: "POST",
             body: JSON.stringify({
-              collegeName:e.target[0].value,
-              degreeName:e.target[0].value,
-              branch:e.target[0].value,
-              grade:e.target[0].value,
-              startYear:e.target[0].value,
-              endYear:e.target[0].value,
+              projectName:e.target[0].value,
+              projectDes:e.target[1].value,
+              skillsUsed:e.target[2].value,
+              projectLinks:e.target[3].value,
             }),
           });
           console.log(response.status)
@@ -120,12 +138,13 @@ export default function Profile() {
           const response = await fetch("/api/user/apply", {
             method: "POST",
             body: JSON.stringify({
-              collegeName:e.target[0].value,
-              degreeName:e.target[0].value,
-              branch:e.target[0].value,
-              grade:e.target[0].value,
-              startYear:e.target[0].value,
-              endYear:e.target[0].value,
+              companyName:e.target[0].value,
+              location:e.target[1].value,
+              title:e.target[4].value,
+              description:e.target[5].value,
+              currentlyWorking:e.target[6].value,
+              startDate:e.target[7].value,
+              endDate:e.target[8].value,
             }),
           });
           console.log(response.status)
@@ -144,12 +163,7 @@ export default function Profile() {
           const response = await fetch(`/api/user/${session?.user.id}`, {
             method: "POST",
             body: JSON.stringify({
-              collegeName:e.target[0].value,
-              degreeName:e.target[0].value,
-              branch:e.target[0].value,
-              grade:e.target[0].value,
-              startYear:e.target[0].value,
-              endYear:e.target[0].value,
+              achievementName:e.target[0].value,
             }),
           });
           console.log(response.status)
@@ -189,8 +203,8 @@ export default function Profile() {
               </Popover.Trigger>
               
               <Popover.Content>
-              <form onSubmit={addNewEducation}>
-                <input name = "lol" placeholder='Enter college name'/>
+              <form onSubmit={addHR}>
+                <Input  placeholder='Enter college name'/>
                 <Input placeholder='Enter Degree Name'/>
                 <Input placeholder='Enter branch Name'/>
                 <Input placeholder='Enter Your grade'/>
@@ -227,12 +241,10 @@ export default function Profile() {
               </Popover.Trigger>
               <Popover.Content>
               <form onSubmit={addNewProject}>
-                <input name = "lol" placeholder='Enter college name'/>
-                <Input placeholder='Enter Degree Name'/>
-                <Input placeholder='Enter branch Name'/>
-                <Input placeholder='Enter Your grade'/>
-                <Input placeholder='Enter  starting date'/>
-                <Input placeholder='Enter ending date'/>
+                <Input placeholder='Enter Project name'/>
+                <Input placeholder='Enter Project Des'/>
+                <Input placeholder='Enter Skills Used'/>
+                <Input placeholder='Working Links of Project'/>
                 <Button type='submit'> ADD</Button>
                 </form>
               </Popover.Content>
@@ -259,12 +271,13 @@ export default function Profile() {
               
               <Popover.Content>
               <form onSubmit={addNewExperience}>
-                <input name = "lol" placeholder='Enter college name'/>
-                <Input placeholder='Enter Degree Name'/>
-                <Input placeholder='Enter branch Name'/>
-                <Input placeholder='Enter Your grade'/>
-                <Input placeholder='Enter  starting date'/>
-                <Input placeholder='Enter ending date'/>
+                <Input placeholder='Enter company name'/>
+                <Input placeholder='Enter location'/>
+                <Input placeholder='Enter title'/>
+                <Input placeholder='Enter Description'/>
+                <Input placeholder='Currently working there'/>
+                <Input type="date" placeholder='Enter  starting date'/>
+                <Input type="date" placeholder='Enter ending date'/>
                 <Button type='submit'> ADD</Button>
                 </form>
               </Popover.Content>
@@ -295,12 +308,7 @@ export default function Profile() {
               
               <Popover.Content>
               <form onSubmit={addNewAchievement}>
-                <input name = "lol" placeholder='Enter college name'/>
-                <Input placeholder='Enter Degree Name'/>
-                <Input placeholder='Enter branch Name'/>
-                <Input placeholder='Enter Your grade'/>
-                <Input placeholder='Enter  starting date'/>
-                <Input placeholder='Enter ending date'/>
+                <Input placeholder='Enter Achievement'/>
                 <Button type='submit'> ADD</Button>
                 </form>
               </Popover.Content>

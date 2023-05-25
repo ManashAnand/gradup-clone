@@ -8,7 +8,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const page = ({params}) => {
     const router = useRouter();
-    // const { data: session } = useSession();
+    const { data: session } = useSession();
     // const { data, error } = useSWR( `/api/jobs/${params.id}`, fetcher)
     // if (error) return <div>Failed to loadinggggggg job data</div>;
     // if (!data) return <div>Loading...</div>;
@@ -22,6 +22,7 @@ const page = ({params}) => {
         const response = await fetch("/api/jobs/new", {
           method: "POST",
           body: JSON.stringify({
+            HRId:session?.user.id,
             title:"SDE",
             isIntern: false,
             companyName: "Talent Connect",

@@ -62,18 +62,18 @@ export const POST = async(request, { params }) => {
                     "_id": params.id,
                     "education._id": data.id
                 };
-                console.log("data aaghe se", data)
                 const updateUser = await User.findOneAndUpdate(id, {
-                        collegeName: data.collegeName,
-                        degreeName: data.degreeName,
-                        branch: data.branch,
-                        grade: data.grade,
-                        startYear: new Date(),
-                        endYear: new Date(),
+                    "$set":{
+                        "education.$.collegeName": data.collegeName,
+                        "education.$.degreeName": data.degreeName,
+                        "education.$.branch": data.branch,
+                        "education.$.grade": data.grade,
+                        "education.$.startYear": new Date(),
+                        "education.$.endYear": new Date(),
+                            }
                     })
-                    // console.log("chljaaaa", updateUser)
                 return new Response(("Education Updated"), { status: 201 })
-            } else {
+            } else if(action=="create") {
                 const newEducationCreated = currentUser.education.push({
                     collegeName: data.collegeName,
                     degreeName: data.degreeName,
@@ -85,7 +85,6 @@ export const POST = async(request, { params }) => {
                 await currentUser.save()
                 return new Response(("New Education Added"), { status: 201 })
             }
-
         }
 
         return new Response("Error", { status: 500 })

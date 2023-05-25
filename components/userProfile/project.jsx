@@ -13,7 +13,52 @@ import { DeleteIcon } from "@styles/DeleteIcon";
 
 
 const Project = ({projectName,skillsUsed, projectDes, projectLinks}) => {
-
+    const { data: session } = useSession();
+    const [updating,setIsUpdating] = useState(0);
+    const [project,setProject] = useState({collegeName:collegeName,degreeName:degreeName,branch:branch,grade:grade,startYear:startYear,endYear:endYear,_id:id});
+    
+    
+    const updateProject = async(e) =>{
+        // e.preventDefault();
+        setIsUpdating(2);
+        try {
+            const response = await fetch(`/api/user/${session?.user.id}/?type=education&action=update`, {
+              method: "POST",
+              body: JSON.stringify({
+                id:id,
+                collegeName:education.collegeName,
+                degreeName:education.degreeName,
+                branch:education.branch,
+                grade:education.grade,
+                startYear:startYear,
+                endYear:endYear,
+              }),
+            });
+            console.log(response.status)
+            setIsUpdating(0);
+        }catch (error) {
+            console.log(error);
+        }finally {
+            
+        }
+    }
+    const deleteProject=async ()=>{
+        // e.preventDefault();
+        // console.log(e.target[0].value);
+        try {
+          const response = await fetch(`/api/user/${session?.user.id}/?type=education&action=delete`, {
+            method: "POST",
+            body: JSON.stringify({
+              id:id,
+            }),
+          });
+          console.log(response.status)
+        } catch (error) {
+          console.log(error);
+        } finally {
+          
+        }
+    }
     
 
 
@@ -22,16 +67,26 @@ const Project = ({projectName,skillsUsed, projectDes, projectLinks}) => {
       <div className='flex'>
         <div className='w-4/5'></div>
         <Col css={{ d: "flex" }}>
-            <Tooltip content="Edit user" className='mx-15'>
-                <IconButton onClick={() => console.log("Edit user", user.id)}>
-                    <EditIcon size={20} fill="#979797" />
-                </IconButton>
-            </Tooltip>
-            <div className='mx-2'></div>
+            {
+                (updating==0)?(<>
+                <Tooltip content="Edit user" className='mx-15'>
+                 <IconButton onClick={() => setIsUpdating(1)}>
+                     <EditIcon size={20} fill="#979797" />
+                    </IconButton>
+                </Tooltip>
+                </>):((updating==1)?(<><Button onPress={updateProject}>Save</Button></>)
+                :(<>
+                    <div className='mx-2'>
+                 <Button disabled auto bordered color="secondary" css={{ px: "$13" }}>
+                     <Loading type="spinner" color="currentColor" size="sm" />
+                 </Button>
+                 </div>
+                </>))
+            }
             <Tooltip
                 content="Delete user"
                 color="error"
-                onClick={() => console.log("Delete user", user.id)}
+                onClick={deleteProject }
             >
             <IconButton className='mx-15'>
               <DeleteIcon size={20} fill="#FF0080" />

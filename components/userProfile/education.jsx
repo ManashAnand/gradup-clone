@@ -91,12 +91,22 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
             </Tooltip>
         </Col>
         </div>
-      <Input initialValue={education.collegeName} onChange={(e)=>setEducation({...education,collegeName:e.target.value})}/> <br/>
-      <Input initialValue={education.degreeName} onChange={(e)=>setEducation({...education,degreeName:e.target.value})}/> <br/>
-      <Input initialValue={education.branch} onChange={(e)=>setEducation({...education,branch:e.target.value})}/> <br/>
-      <Input initialValue={education.grade} onChange={(e)=>setEducation({...education,grade:e.target.value})}/> <br/>
-      <Input type='date' initialValue={education.startYear}  onChange={(e)=>setEducation({...education,startYear:e.target.value})}/> <br/>
-      <Input type='date' initialValue={education.endYear}  onChange={(e)=>setEducation({...education,endYear:e.target.value})}/> <br/>
+      <div className='flex flex-row'>
+        <Input label="College Name" underlined initialValue={education.collegeName} onChange={(e)=>setEducation({...education,collegeName:e.target.value})}/>
+        <div className='px-10'></div>
+        <Input label="Degree Name" underlined initialValue={education.degreeName} onChange={(e)=>setEducation({...education,degreeName:e.target.value})}/> <br/>
+      </div>
+      <div className='flex flex-row'>
+        <Input label="Stream or Branch Name" underlined initialValue={education.branch} onChange={(e)=>setEducation({...education,branch:e.target.value})}/>
+        <div className='px-10'></div>
+        <Input label="Grade" underlined initialValue={education.grade} onChange={(e)=>setEducation({...education,grade:e.target.value})}/> <br/>
+      </div>
+      <div className='flex flex-row'>
+        <Input label="start Date" underlined type='date' initialValue={education.startYear}  onChange={(e)=>setEducation({...education,startYear:e.target.value})}/> 
+        <div className='px-16'></div>
+        <Input label="End date" underlined type='date' initialValue={education.endYear}  onChange={(e)=>setEducation({...education,endYear:e.target.value})}/> <br/>
+      </div>
+      <div className='mb-15 pb-10'></div>
     </div>
     )
 }

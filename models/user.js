@@ -95,7 +95,7 @@ const UserSchema = new Schema({
     id: {
         type: String,
         unique: [true, 'UserId already exists'],
-        required: [true, 'UserId is required'],
+        required: [true, 'UserId is required from User Model'],
     },
     name: {
         type: String,
@@ -148,6 +148,10 @@ const UserSchema = new Schema({
     },
     achievement: {
         type: [AchievementSchema],
+    },
+    role:{
+        type:String,
+        default:"User",
     }
 });
 

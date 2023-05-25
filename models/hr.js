@@ -1,10 +1,25 @@
 import {Schema, model, models} from 'mongoose';
+import mongoose from 'mongoose';
+const jobSchema = new Schema({
+    title:{
+        type:String
+    },
+    status:{
+        type:Boolean,
+        default:true
+    },
+    impression:{
+        type:Number,
+        default:0
+    },
+    _id:{
+        type:mongoose.Types.ObjectId
+    }
+})
 
 const HRSchema = new Schema({
-    id:{
-        type:String,
-        unique:[true,'UserId already exists'],
-        required:[true,'UserId is required'],
+    _id:{
+        type:mongoose.Types.ObjectId
     },
     name:{
         type:String,
@@ -20,7 +35,7 @@ const HRSchema = new Schema({
         length:10,
     },
     posts: {
-        type: [String],
+        type: [jobSchema],
     },
     companyName:{
         type:String,
