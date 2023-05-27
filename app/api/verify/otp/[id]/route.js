@@ -1,6 +1,22 @@
-import OTP from '@models/otp';
+import OTP from '@models/otp';as
 import { User } from '@models/user';
 import { connectToDB } from '@utils/database';
+
+function getOTP(length) {
+  let result = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const characters1 = '0123456789';
+  const charactersLength = characters.length;
+  const charactersLength1 = characters1.length;
+  let counter = 0;
+  while (counter < length) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    result += characters1.charAt(Math.floor(Math.random() * charactersLength1));
+    counter += 2;
+  }
+  return result;
+}
+
 function sendSMS(apikey, numbers, sender, message) {
     var data = new URLSearchParams();
     data.append('apikey', apikey);
@@ -33,21 +49,21 @@ function sendSMS(apikey, numbers, sender, message) {
         await connectToDB();
         if (params.id != "undefined") {
             const currentUser = await User.findById(params.id);
+            if(!currentUser)return new Response("User is Not Registered on Portal.", { status: 500 })
             const prevOTP = await OTP.findById(params.id);
-            const d = new Date();
+            const currOTP = getOTP(6);
             if(!prevOTP){
-              await OTP.createIndexes({"createdAt" : 1},{expireAfterSeconds:45},{ background: true })
+                const d = new Date();
                 const otpcreated = await OTP.create({
-                    id:params.id,
+                    _id:params.id,
                     createdAt: d.toISOString(),
-                    otp:currentUser.name,
+                    otp:currOTP,
                 })
-                return new Response("OTP Verified" + otpcreated.toString(), { status: 201 })
             }
-            
-            return new Response("OTP Verified", { status: 201 })
+            else currOTP = prevOTP.otp
+            return new Response("This is the OTP" + currOTP, { status: 201 })
         }
-        return new Response("Error", { status: 500 })
+        return new Response("Params not Defined in OTP Verification", { status: 500 })
     } catch (error) {
         console.log(error);
         return new Response("Failed to get User Details in HR Verification" + error.toString() +params.id.toString(), {
@@ -77,4 +93,3 @@ export const GET = async(req, { params }) => {
   }
 
 }
-  

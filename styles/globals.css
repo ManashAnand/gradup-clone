@@ -139,6 +139,17 @@ img:hover{
     padding: 0;
   }
 }
+/*  Salary expetetion slider */
+
+.custom-slider {
+  width: 100%;
+  height: 30px;
+  background: #eee;
+  opacity: 0.8;
+  outline: none;
+  transition: 0.3s;
+  -webkit-appearance: none;
+}
 
 /* Tailwind Styles */
 

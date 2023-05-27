@@ -86,7 +86,7 @@ export const POST = async(request, { params }) => {
         }
         if (type == "achievement") {
             if (action == "delete") {
-                currentUser.education.id(data.id).deleteOne();
+                currentUser.achievement.id(data.id).deleteOne();
                 await currentUser.save();
                 return new Response(("Achievement Deleted"), { status: 201 })
             } else if (action == "update") {
@@ -96,87 +96,77 @@ export const POST = async(request, { params }) => {
                 };
                 const updateUser = await User.findOneAndUpdate(id, {
                     "$set":{
-                        "education.$.collegeName": data.collegeName,
-                        "education.$.degreeName": data.degreeName,
-                        "education.$.branch": data.branch,
-                        "education.$.grade": data.grade,
-                        "education.$.startYear": new Date(),
-                        "education.$.endYear": new Date(),
-                            }
+                        "achievement.$.achievementName": data.achievementName,
+                        }
                     })
-                return new Response(("Education Updated"), { status: 201 })
+                return new Response(("Achievement Updated"), { status: 201 })
             } else if(action=="create") {
-                const newEducationCreated = currentUser.education.push({
-                    collegeName: data.collegeName,
-                    degreeName: data.degreeName,
-                    branch: data.branch,
-                    grade: data.grade,
-                    startYear: new Date(),
-                    endYear: new Date(),
+                const newAchievementCreated = currentUser.achievement.push({
+                    achievementName: data.achievementName,
                 });
                 await currentUser.save()
-                return new Response(("New Education Added"), { status: 201 })
+                return new Response(("New Achievement Added"), { status: 201 })
             }
         }
 
-        if (type == "education") {
+        if (type == "experience") {
             if (action == "delete") {
-                currentUser.education.id(data.id).deleteOne();
+                currentUser.experience.id(data.id).deleteOne();
                 await currentUser.save();
-                return new Response(("Education Deleted"), { status: 201 })
+                return new Response(("Experience Deleted"), { status: 201 })
             } else if (action == "update") {
                 const id = {
                     "_id": params.id,
-                    "education._id": data.id
+                    "experience._id": data.id
                 };
                 const updateUser = await User.findOneAndUpdate(id, {
                     "$set":{
-                        "education.$.collegeName": data.collegeName,
-                        "education.$.degreeName": data.degreeName,
-                        "education.$.branch": data.branch,
-                        "education.$.grade": data.grade,
-                        "education.$.startYear": new Date(),
-                        "education.$.endYear": new Date(),
+                        "experience.$.companyName": data.companyName,
+                        "experience.$.location": data.location,
+                        "experience.$.title": data.title,
+                        "experience.$.skills": data.skills,
+                        "experience.$.startDate": new Date(),
+                        "experience.$.endDate": new Date(),
+                        "experience.$.description": data.description,
                             }
                     })
-                return new Response(("Education Updated"), { status: 201 })
+                return new Response(("Experience Updated"), { status: 201 })
             } else if(action=="create") {
-                const newEducationCreated = currentUser.education.push({
-                    collegeName: data.collegeName,
-                    degreeName: data.degreeName,
-                    branch: data.branch,
-                    grade: data.grade,
+                const newExperienceCreated = currentUser.experience.push({
+                    companyName: data.companyName,
+                    location: data.location,
+                    title: data.title,
+                    skills: data.skills,
                     startYear: new Date(),
                     endYear: new Date(),
+                    description:data.description,
                 });
                 await currentUser.save()
-                return new Response(("New Education Added"), { status: 201 })
+                return new Response(("New Experience Added"), { status: 201 })
             }
         }
 
-        if (type == "education") {
+        if (type == "project") {
             if (action == "delete") {
-                currentUser.education.id(data.id).deleteOne();
+                currentUser.project.id(data.id).deleteOne();
                 await currentUser.save();
-                return new Response(("Education Deleted"), { status: 201 })
+                return new Response(("Project Deleted"), { status: 201 })
             } else if (action == "update") {
                 const id = {
                     "_id": params.id,
-                    "education._id": data.id
+                    "project._id": data.id
                 };
                 const updateUser = await User.findOneAndUpdate(id, {
                     "$set":{
-                        "education.$.collegeName": data.collegeName,
-                        "education.$.degreeName": data.degreeName,
-                        "education.$.branch": data.branch,
-                        "education.$.grade": data.grade,
-                        "education.$.startYear": new Date(),
-                        "education.$.endYear": new Date(),
+                        "project.$.projectName": data.projectName,
+                        "project.$.skillsUsed": data.skillsUsed,
+                        "project.$.branch": data.branch,
+                        "project.$.grade": data.grade,
                             }
                     })
-                return new Response(("Education Updated"), { status: 201 })
+                return new Response(("Project Updated"), { status: 201 })
             } else if(action=="create") {
-                const newEducationCreated = currentUser.education.push({
+                const newProjectCreated = currentUser.project.push({
                     collegeName: data.collegeName,
                     degreeName: data.degreeName,
                     branch: data.branch,
@@ -185,7 +175,7 @@ export const POST = async(request, { params }) => {
                     endYear: new Date(),
                 });
                 await currentUser.save()
-                return new Response(("New Education Added"), { status: 201 })
+                return new Response(("New Project Added"), { status: 201 })
             }
         }
 

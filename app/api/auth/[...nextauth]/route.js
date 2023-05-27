@@ -23,7 +23,6 @@ const handler = NextAuth({
         async signIn({profile}) {
             try{
                 await connectToDB();
-                console.log("Request",req.url);
                 // check if a user already exists
                 const userExists = await User.findOne({
                     email:profile.email
@@ -37,7 +36,6 @@ const handler = NextAuth({
                         profilePhoto:profile.picture
                     })
                 }
-    
                 return true;
             }catch(error){
                 console.log("Error while signin", error.message);

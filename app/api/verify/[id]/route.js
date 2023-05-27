@@ -2,7 +2,7 @@ import { connectToDB } from '@utils/database';
 import { User } from '@models/user';
 import HR from '@models/hr'
 import mongoose from 'mongoose';
-
+a
 export const POST = async(req, { params }) => {
     try {
         await connectToDB();

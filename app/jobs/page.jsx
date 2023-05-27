@@ -3,10 +3,14 @@
 import ListContentCard from "@components/ListContentCard";
 import useSWR from 'swr';
 import {useState} from 'react'
+import { Input } from "@nextui-org/react";
+import Select from 'react-select'
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-
 function Page ({ index }) {
+  const [selectedCity, setSelectedCity] = useState();
+  const [selectedDomain, setSelectedDomain] = useState();
+  const [salaryExp, setSalaryExp] = useState(0);
   // const { data,error } = useSWR(`https://api.jsonbin.io/v3/b/6460d47e8e4aa6225e9cc67d/?page=${index}`, fetcher);
   const { data, error } = useSWR( `/api/internships/?page=${index}`, fetcher)
   // console.log(data, "Front ",index);
@@ -16,19 +20,85 @@ function Page ({ index }) {
   // console.log(data.record);
   const jobs=data
   // console.log(jobs)
+  function handleCity(data) {
+    setSelectedCity(data);
+  }
+  function handleDomain(data) {
+    setSelectedDomain(data);
+  }
+  const changeSalaryRxp = (event) => {
+    setSalaryExp(event.target.value);
+  };
+  const cityList = [
+    { value: "delhi", label: "delhi" },
+    { value: "mumbai", label: "mumbai" },
+    { value: "dehradun", label: "dehradun" },
+    { value: "patna", label: "patna" },
+    { value: "gaya", label: "gaya" },
+  ];
+  const domainList = [
+    { value: "web developer", label: "web developer" },
+    { value: "business analyst", label: "business analyst" },
+    { value: "hr", label: "hr" },
+    { value: "ml intern", label: "ml intern" },
+    { value: "software engineer", label: "software engineer" },
+  ];
   return (
         <section className='w-full'>
           <h1 className='head_text text-left'>
             <span className='blue_gradient'>Jobs for you</span>
           </h1>
-    
-          <div className='mt-10 prompt_layout'>
-            
-            {jobs.map((job) => (
-              <ListContentCard 
-                post={job}
-              />
-            ))}
+          <div className="flex flex-row">
+            <div className="pt-16"> Search Bar Filter
+                <div>
+                <div className="">
+                  <div className="p-3">
+                  <Select
+                    options={cityList}
+                    placeholder="Select city"
+                    value={selectedCity}
+                    onChange={handleCity}
+                    isSearchable={true}
+                    isMulti
+                  />
+                  </div>
+                  <div className="p-3">
+                  <Select
+                    options={domainList}
+                    placeholder="Select job title"
+                    value={selectedDomain}
+                    onChange={handleDomain}
+                    isSearchable={true}
+                    isMulti
+                  />
+                  </div>
+                </div>
+                <div className='custom-slider'>
+                  <Input
+                    type='range'
+                    onChange={changeSalaryRxp}
+                    min={1}
+                    max={200000}
+                    step={1}
+                    value={salaryExp}
+                    className={'custom-slider'}>
+                  </Input>
+                </div>
+                <div>
+                <Input underlined value={`Min Salary -  ${salaryExp}`}/>
+                </div>
+                <div>
+                <button type='submit' className='black_btn2 mt-5'  >Apply</button>
+                </div>
+                </div>
+            </div>
+            <div className='mt-10 prompt_layout'>  
+              {jobs.map((job) => (
+                <ListContentCard 
+                  post={job}
+                />
+              ))}
+            </div>
           </div>
         </section>
       )

@@ -1,9 +1,9 @@
 import { Schema, model, models } from 'mongoose';
-
+import mongoose from 'mongoose';
 
 const OTPSchema = new Schema({
-    id: {
-        type: String,
+    _id: {
+        type: mongoose.Types.ObjectId,
     },
     otp:{
         type:String,

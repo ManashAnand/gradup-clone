@@ -16,6 +16,7 @@ export const GET = async(req,{params}) => {
         // for getting only the array of objects we can use . find method but we will use aggregate so that we can do more operation
         // const a=await Job.find();
         // console.log("aaa ",a);
+        // category=Microsoft;
         const userDetails=await Job.aggregate
         ([
             {
@@ -24,7 +25,7 @@ export const GET = async(req,{params}) => {
                     $or:
                     [
                         { null:category },
-                        { "Category":category }
+                        { "Category":category } // "companyName"
                     ]
                 }
             },
