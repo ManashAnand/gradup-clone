@@ -29,7 +29,7 @@ export const POST = async(req, { params }) => {
         return new Response("Error", { status: 500 })
     } catch (error) {
         console.log(error);
-        return new Response("Failed to get User Details in HR Verification", {
+        return new Response("Failed to get User Details in HR Verification " + error.toString(), {
             status: 500
         })
     }

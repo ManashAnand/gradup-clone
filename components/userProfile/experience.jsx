@@ -12,9 +12,55 @@ import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
 
 
-const Experience = ({companyName, location, startDate, endDate,title, skills,description}) => {
+const Experience = ({companyName, location, startDate, endDate,title, skills,description,id}) => {
 
-    
+  const { data: session } = useSession();
+  const [updating,setIsUpdating] = useState(0);
+  const [experience,setExperience] = useState({companyName:companyName, location:location, startDate:startDate, endDate:endDate,title:title, skills:skills,description:description,_id:id});
+  
+  
+  const updateExperience = async(e) =>{
+      // e.preventDefault();
+      setIsUpdating(2);
+      try {
+          const response = await fetch(`/api/user/${session?.user.id}/?type=experience&action=update`, {
+            method: "POST",
+            body: JSON.stringify({
+              id:id,
+              companyName:experience.companyName, 
+              location:experience.location, 
+              startDate:experience.startDate,
+              endDate:experience.endDate,
+              title:experience.title, 
+              skills:experience.skills,
+              description:experience.description,
+            }),
+          });
+          console.log(response.status)
+          setIsUpdating(0);
+      }catch (error) {
+          console.log(error);
+      }finally {
+          
+      }
+  }
+  const deleteExperience=async ()=>{
+      // e.preventDefault();
+      // console.log(e.target[0].value);
+      try {
+        const response = await fetch(`/api/user/${session?.user.id}/?type=experience&action=delete`, {
+          method: "POST",
+          body: JSON.stringify({
+            id:id,
+          }),
+        });
+        console.log(response.status)
+      } catch (error) {
+        console.log(error);
+      } finally {
+        
+      }
+    }    
 
 
     return (
@@ -23,7 +69,7 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
         <div className='w-4/5'></div>
         <Col css={{ d: "flex" }}>
             <Tooltip content="Edit user" className='mx-15'>
-                <IconButton onClick={() => console.log("Edit user", user.id)}>
+                <IconButton onClick={(updateExperience) => console.log("Edit user", user.id)}>
                     <EditIcon size={20} fill="#979797" />
                 </IconButton>
             </Tooltip>
@@ -31,7 +77,7 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
             <Tooltip
                 content="Delete user"
                 color="error"
-                onClick={() => console.log("Delete user", user.id)}
+                onClick={(deleteExperience) => console.log("Delete user", user.id)}
             >
             <IconButton className='mx-15'>
               <DeleteIcon size={20} fill="#FF0080" />

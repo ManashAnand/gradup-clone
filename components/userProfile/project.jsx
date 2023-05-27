@@ -15,7 +15,7 @@ import { DeleteIcon } from "@styles/DeleteIcon";
 const Project = ({projectName,skillsUsed, projectDes, projectLinks}) => {
     const { data: session } = useSession();
     const [updating,setIsUpdating] = useState(0);
-    const [project,setProject] = useState({collegeName:collegeName,degreeName:degreeName,branch:branch,grade:grade,startYear:startYear,endYear:endYear,_id:id});
+    const [project,setProject] = useState({projectName:projectName,skillsUsed:skillsUsed,projectDes:projectDes,projectLinks:projectLinks});
     
     
     const updateProject = async(e) =>{
@@ -26,12 +26,10 @@ const Project = ({projectName,skillsUsed, projectDes, projectLinks}) => {
               method: "POST",
               body: JSON.stringify({
                 id:id,
-                collegeName:education.collegeName,
-                degreeName:education.degreeName,
-                branch:education.branch,
-                grade:education.grade,
-                startYear:startYear,
-                endYear:endYear,
+                projectName:project.projectName,
+                skillsUsed:project.skillsUsed,
+                projectDes:project.projectDes,
+                projectLinks:project.projectLinks,
               }),
             });
             console.log(response.status)

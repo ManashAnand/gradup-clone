@@ -13,7 +13,47 @@ import { DeleteIcon } from "@styles/DeleteIcon";
 
 
 const Achievement = ({achievementName}) => {
-
+  const { data: session } = useSession();
+  const [updating,setIsUpdating] = useState(0);
+  const [achievement,setAchievement] = useState({achievementName:achievementName});
+  
+  
+  const updateAchievement = async(e) =>{
+      // e.preventDefault();
+      setIsUpdating(2);
+      try {
+          const response = await fetch(`/api/user/${session?.user.id}/?type=achievement&action=update`, {
+            method: "POST",
+            body: JSON.stringify({
+              id:id,
+              achievementName:achievement.achievementName,
+            }),
+          });
+          console.log(response.status)
+          setIsUpdating(0);
+      }catch (error) {
+          console.log(error);
+      }finally {
+          
+      }
+  }
+  const deleteAchievement=async ()=>{
+      // e.preventDefault();
+      // console.log(e.target[0].value);
+      try {
+        const response = await fetch(`/api/user/${session?.user.id}/?type=achievement&action=delete`, {
+          method: "POST",
+          body: JSON.stringify({
+            id:id,
+          }),
+        });
+        console.log(response.status)
+      } catch (error) {
+        console.log(error);
+      } finally {
+        
+      }
+    }
     
 
 
@@ -23,7 +63,7 @@ const Achievement = ({achievementName}) => {
         <div className='w-4/5'></div>
         <Col css={{ d: "flex" }}>
             <Tooltip content="Edit user" className='mx-15'>
-                <IconButton onClick={() => console.log("Edit user", user.id)}>
+                <IconButton onClick={(updateAchievement) => console.log("Edit user", user.id)}>
                     <EditIcon size={20} fill="#979797" />
                 </IconButton>
             </Tooltip>
@@ -31,7 +71,7 @@ const Achievement = ({achievementName}) => {
             <Tooltip
                 content="Delete user"
                 color="error"
-                onClick={() => console.log("Delete user", user.id)}
+                onClick={(deleteAchievement) => console.log("Delete user", user.id)}
             >
             <IconButton className='mx-15'>
               <DeleteIcon size={20} fill="#FF0080" />

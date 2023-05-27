@@ -17,6 +17,7 @@ const fetcher = async (...args) =>await fetch(...args).then((res) => res.json())
 
 export default function Profile() {
   const { data: session } = useSession();
+  // console.log(session, "Ajay",data);
   // console.log("ye id haiiiiiiiiiii",  session?.user.id);
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher)
   // if want to revalidate after lower time then => ,{ refreshInterval: 1000 } after fetch
@@ -36,6 +37,7 @@ export default function Profile() {
   }
   if (error) return <div>userFailed to loadinggggggg</div>;
   if (!data) return <div>Loading...</div>;
+  console.log("ajay", data);
       // useEffect(()=>{
       //   const fetchData = async () =>{
       //     const d = await fetch(`/api/user/${session?.user.id}`)
@@ -62,25 +64,6 @@ export default function Profile() {
       //       }
       //       fetchData();
       //  },[]);
-      const addHR = async (e) => {
-    e.preventDefault();
-    // setIsSubmitting(true);
-    console.log("Form Submittedddddd", session?.user.id);
-    try {
-      const response = await fetch(`/api/verify/${session?.user.id}`, {
-        method: "POST",
-        body: JSON.stringify({
-          a:"a"
-        }),
-      });
-      console.log(response.status)
-    } catch (error) {
-      console.log(error);
-    } finally {
-      // setIsSubmitting(false);
-      // alert("Submitted");
-    }
-  };
       const addNewEducation=async (e)=>{
         e.preventDefault();
         // console.log("ye id aii ", session?.user.id);
@@ -135,7 +118,7 @@ export default function Profile() {
         e.preventDefault();
         console.log(e.target[0].value);
         try {
-          const response = await fetch("/api/user/apply", {
+          const response = await fetch(`/api/user/${session?.user.id}/?type=experience&action=create`, {
             method: "POST",
             body: JSON.stringify({
               companyName:e.target[0].value,
@@ -160,7 +143,7 @@ export default function Profile() {
         e.preventDefault();
         console.log(e.target[0].value);
         try {
-          const response = await fetch(`/api/user/${session?.user.id}`, {
+          const response = await fetch(`/api/user/${session?.user.id}/?type=achievement&action=create`, {
             method: "POST",
             body: JSON.stringify({
               achievementName:e.target[0].value,
@@ -203,7 +186,7 @@ export default function Profile() {
               </Popover.Trigger>
               
               <Popover.Content>
-              <form onSubmit={addHR}>
+              <form onSubmit={addNewEducation}>
                 <Input  placeholder='Enter college name'/>
                 <Input placeholder='Enter Degree Name'/>
                 <Input placeholder='Enter branch Name'/>

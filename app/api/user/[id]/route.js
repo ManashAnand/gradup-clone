@@ -5,8 +5,6 @@ import mongoose from 'mongoose';
 export const GET = async(req, { params }) => {
     try {
         await connectToDB();
-        console.log(params, "params in user")
-        console.log("Requesting data in get");
         if (params.id != "undefined") {
             const userDetails = await User.findOne({ _id: new mongoose.Types.ObjectId(params.id) });
             return new Response(JSON.stringify(userDetails), { status: 201 })
@@ -86,6 +84,111 @@ export const POST = async(request, { params }) => {
                 return new Response(("New Education Added"), { status: 201 })
             }
         }
+        if (type == "achievement") {
+            if (action == "delete") {
+                currentUser.education.id(data.id).deleteOne();
+                await currentUser.save();
+                return new Response(("Achievement Deleted"), { status: 201 })
+            } else if (action == "update") {
+                const id = {
+                    "_id": params.id,
+                    "achievement._id": data.id
+                };
+                const updateUser = await User.findOneAndUpdate(id, {
+                    "$set":{
+                        "education.$.collegeName": data.collegeName,
+                        "education.$.degreeName": data.degreeName,
+                        "education.$.branch": data.branch,
+                        "education.$.grade": data.grade,
+                        "education.$.startYear": new Date(),
+                        "education.$.endYear": new Date(),
+                            }
+                    })
+                return new Response(("Education Updated"), { status: 201 })
+            } else if(action=="create") {
+                const newEducationCreated = currentUser.education.push({
+                    collegeName: data.collegeName,
+                    degreeName: data.degreeName,
+                    branch: data.branch,
+                    grade: data.grade,
+                    startYear: new Date(),
+                    endYear: new Date(),
+                });
+                await currentUser.save()
+                return new Response(("New Education Added"), { status: 201 })
+            }
+        }
+
+        if (type == "education") {
+            if (action == "delete") {
+                currentUser.education.id(data.id).deleteOne();
+                await currentUser.save();
+                return new Response(("Education Deleted"), { status: 201 })
+            } else if (action == "update") {
+                const id = {
+                    "_id": params.id,
+                    "education._id": data.id
+                };
+                const updateUser = await User.findOneAndUpdate(id, {
+                    "$set":{
+                        "education.$.collegeName": data.collegeName,
+                        "education.$.degreeName": data.degreeName,
+                        "education.$.branch": data.branch,
+                        "education.$.grade": data.grade,
+                        "education.$.startYear": new Date(),
+                        "education.$.endYear": new Date(),
+                            }
+                    })
+                return new Response(("Education Updated"), { status: 201 })
+            } else if(action=="create") {
+                const newEducationCreated = currentUser.education.push({
+                    collegeName: data.collegeName,
+                    degreeName: data.degreeName,
+                    branch: data.branch,
+                    grade: data.grade,
+                    startYear: new Date(),
+                    endYear: new Date(),
+                });
+                await currentUser.save()
+                return new Response(("New Education Added"), { status: 201 })
+            }
+        }
+
+        if (type == "education") {
+            if (action == "delete") {
+                currentUser.education.id(data.id).deleteOne();
+                await currentUser.save();
+                return new Response(("Education Deleted"), { status: 201 })
+            } else if (action == "update") {
+                const id = {
+                    "_id": params.id,
+                    "education._id": data.id
+                };
+                const updateUser = await User.findOneAndUpdate(id, {
+                    "$set":{
+                        "education.$.collegeName": data.collegeName,
+                        "education.$.degreeName": data.degreeName,
+                        "education.$.branch": data.branch,
+                        "education.$.grade": data.grade,
+                        "education.$.startYear": new Date(),
+                        "education.$.endYear": new Date(),
+                            }
+                    })
+                return new Response(("Education Updated"), { status: 201 })
+            } else if(action=="create") {
+                const newEducationCreated = currentUser.education.push({
+                    collegeName: data.collegeName,
+                    degreeName: data.degreeName,
+                    branch: data.branch,
+                    grade: data.grade,
+                    startYear: new Date(),
+                    endYear: new Date(),
+                });
+                await currentUser.save()
+                return new Response(("New Education Added"), { status: 201 })
+            }
+        }
+
 
         return new Response("Error", { status: 500 })
     } catch (error) {

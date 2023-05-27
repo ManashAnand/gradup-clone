@@ -1,112 +1,160 @@
 "use client"
 import useSWR from 'swr';
 import {useSession} from "next-auth/react";
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
-import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
+// const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import Link from 'next/link';
+import { Table, Row, Col, Tooltip, User, Text, Button } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
 import { IconButton } from "@styles/IconButton";
 import { EyeIcon } from "@styles/EyeIcon";
 import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
 
+
+// async function getData(url) {
+//   const res = await fetch(url);
+//   // Recommendation: handle errors
+//   if (!res.ok) {
+//     // This will activate the closest `error.js` Error Boundary
+//     throw new Error('Failed to fetch data');
+//   }
+ 
+//   return res.json();
+// }
+const fetcher = async (...args) =>await fetch(...args).then((res) => res.json());
+
 export default function App() {
+  // const { data: session } = useSession();
+  // const url=`api/hr/${session?.user.id}`;
+  const { data: session } = useSession();
+  var { data, error } = useSWR(`${session?.user.id}` ? `/api/hr/${session?.user.id}` : null, fetcher)
+  if (error) return <div>userFailed to loadinggggggg</div>;
+  if (!data) return <div>Loading...</div>;
+  // const data=getData(url);
+  console.log(data);
   const columns = [
-    { name: "NAME", uid: "name" },
-    { name: "ROLE", uid: "role" },
+    { name: "TITLE", uid: "title" },
+    { name: "IMPRESSION", uid: "impression" },
     { name: "STATUS", uid: "status" },
+    { name:"ACTION", uid:"canSee"},
     { name: "ACTIONS", uid: "actions" },
+    
   ];
-  const users = [
-    {
-      id: 1,
-      name: "Microsoft",
-      role: "CEO",
-      team: "Management",
-      status: "active",
-      age: "29",
-      avatar: "/assets/images/TalentConnects.png",
-      email: "tony.reichert@example.com",
-    },
-    {
-      id: 2,
-      name: "Apple",
-      role: "Technical Lead",
-      team: "Development",
-      status: "paused",
-      age: "25",
-      avatar: "/assets/images/TalentConnects.png",
-      email: "zoey.lang@example.com",
-    },
-    {
-      id: 3,
-      name: "Talent Connect",
-      role: "Senior Developer",
-      team: "Development",
-      status: "active",
-      age: "22",
-      avatar: "/assets/images/TalentConnects.png",
-      email: "jane.fisher@example.com",
-    },
-    {
-      id: 4,
-      name: "Microsoft",
-      role: "Community Manager",
-      team: "Marketing",
-      status: "vacation",
-      age: "28",
-      avatar: "/assets/images/TalentConnects.png",
-      email: "william.howard@example.com",
-    },
-    {
-      id: 5,
-      name: "meta",
-      role: "Sales Manager",
-      team: "Sales",
-      status: "active",
-      age: "24",
-      avatar: "/assets/images/TalentConnects.png",
-      email: "kristen.cooper@example.com",
-    },
-  ];
+
+  const users=[];
+  for(var i=0;i<data.posts.length;i++){
+    var strStatus="OPEN"
+    if(data.posts[i].status==false){
+      strStatus="CLOSED"
+    }
+    users.push({
+      id:data.posts[i]._id,
+      title:data.posts[i].title,
+      impression:data.posts[i].impression,
+      status:strStatus,
+      canSee:data.posts[i].canSee,
+    })
+  }
+  // const users = [
+  //   {
+  //     id: 1,
+  //     name: "Microsoft",
+  //     role: "CEO",
+  //     team: "Management",
+  //     status: "active",
+  //     age: "29",
+  //     avatar: "/assets/images/TalentConnects.png",
+  //     email: "tony.reichert@example.com",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Apple",
+  //     role: "Technical Lead",
+  //     team: "Development",
+  //     status: "paused",
+  //     age: "25",
+  //     avatar: "/assets/images/TalentConnects.png",
+  //     email: "zoey.lang@example.com",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Talent Connect",
+  //     role: "Senior Developer",
+  //     team: "Development",
+  //     status: "active",
+  //     age: "22",
+  //     avatar: "/assets/images/TalentConnects.png",
+  //     email: "jane.fisher@example.com",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Microsoft",
+  //     role: "Community Manager",
+  //     team: "Marketing",
+  //     status: "vacation",
+  //     age: "28",
+  //     avatar: "/assets/images/TalentConnects.png",
+  //     email: "william.howard@example.com",
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "meta",
+  //     role: "Sales Manager",
+  //     team: "Sales",
+  //     status: "active",
+  //     age: "24",
+  //     avatar: "/assets/images/TalentConnects.png",
+  //     email: "kristen.cooper@example.com",
+  //   },
+  // ];
   
   const renderCell = (user, columnKey) => {
     const cellValue = user[columnKey];
     switch (columnKey) {
-      case "name":
+      case "title":
         return (
-          <User squared src={user.avatar} name={cellValue} css={{ p: 0 }}>
-            {/* {user.email} */}
-          </User>
+          <Row>
+              <Text b size={14} css={{ tt: "capitalize" }}>
+                {cellValue}
+              </Text>
+            </Row>
         );
-      case "role":
+      case "impression":
         return (
-          <Col>
             <Row>
               <Text b size={14} css={{ tt: "capitalize" }}>
                 {cellValue}
               </Text>
             </Row>
-            <Row>
-              <Text b size={13} css={{ tt: "capitalize", color: "$accents7" }}>
-                {user.team}
-              </Text>
-            </Row>
-          </Col>
         );
       case "status":
-        return <StyledBadge type={user.status}>{cellValue}</StyledBadge>;
-
+        return (
+        <Row>
+          <Text b size={14} css={{ tt: "capitalize" }}>
+            {cellValue}
+          </Text>
+        </Row>
+      );
+      case "canSee":
+        return (
+          <Row>
+              <Text b size={14} css={{ tt: "capitalize" }}>
+                {(cellValue==false)?<Link href='/jobs' className='outline_btn'>
+                                    Buy Premium
+                                  </Link>:<Button>Open</Button>}
+              </Text>
+            </Row>
+        );
       case "actions":
         return (
           <Row justify="center" align="center">
-            <Col css={{ d: "flex" }}>
+            {/* <Col css={{ d: "flex" }}>
               <Tooltip content="Details">
                 <IconButton onClick={() => console.log("View user", user.id)}>
                   <EyeIcon size={20} fill="#979797" />
                 </IconButton>
               </Tooltip>
-            </Col>
+            </Col> */}
             <Col css={{ d: "flex" }}>
               <Tooltip content="Edit user">
                 <IconButton onClick={() => console.log("Edit user", user.id)}>

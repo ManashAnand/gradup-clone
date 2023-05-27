@@ -14,6 +14,10 @@ const jobSchema = new Schema({
     },
     _id:{
         type:mongoose.Types.ObjectId
+    },
+    canSee:{
+        type:Boolean,
+        default:false,
     }
 })
 

@@ -22,7 +22,7 @@ export default function HRSignup() {
     // setIsSubmitting(true);
     console.log("Form Submittedddddd", session?.user.id);
     try {
-      const response = await fetch(`/api/auth/${session?.user.id}`, {
+      const response = await fetch(`/api/verify/${session?.user.id}`, {
         method: "POST",
         body: JSON.stringify({
           a:"a"
