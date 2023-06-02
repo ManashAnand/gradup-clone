@@ -1,4 +1,4 @@
-import OTP from '@models/otp';as
+import OTP from '@models/otp';
 import { User } from '@models/user';
 import { connectToDB } from '@utils/database';
 
@@ -18,40 +18,42 @@ function getOTP(length) {
 }
 
 function sendSMS(apikey, numbers, sender, message) {
-    var data = new URLSearchParams();
-    data.append('apikey', apikey);
-    data.append('numbers', numbers);
-    data.append('message', message);
-    data.append('sender', sender);
-    
-    var request = new XMLHttpRequest();
-    request.open('POST', 'https://api.textlocal.in/send/?test=true', true);
-    
-    request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        console.log(request.responseText);
-      } else {
-        console.error('An error occurred');
-      }
-    };
-    
-    request.onerror = function() {
-      console.error('Request failed');
-    };
-    
-    request.send(data);
-  }
-  
-//   sendSMS(process.env.SMS_API, ', 'Jims Autos', 'This is your message');
+  var data = new URLSearchParams();
+  data.append('apikey', apikey);
+  data.append('numbers', numbers);
+  data.append('message', message);
+  data.append('sender', sender);
 
-  export const POST = async(req, { params }) => {
+  fetch('https://api.textlocal.in/send/?', {
+    method: 'POST',
+   body: data
+  })
+  .then(function(response) {
+    if (response.ok) {
+      console.log("MESSAGE SENT");
+      return response.text();
+    } else {
+      throw new Error('An error occurred');
+    }
+  })
+  .then(function(responseText) {
+    console.log("This is the Response Text",responseText);
+  })
+  .catch(function(error) {
+    console.error("This is the error.",error);
+  });
+}
+
+  export const POST = async(request, { params }) => {
+    const data = await request.json();
+    const userPhone = data.phone 
     try {
         await connectToDB();
         if (params.id != "undefined") {
             const currentUser = await User.findById(params.id);
             if(!currentUser)return new Response("User is Not Registered on Portal.", { status: 500 })
             const prevOTP = await OTP.findById(params.id);
-            const currOTP = getOTP(6);
+            var currOTP = getOTP(6);
             if(!prevOTP){
                 const d = new Date();
                 const otpcreated = await OTP.create({
@@ -60,8 +62,12 @@ function sendSMS(apikey, numbers, sender, message) {
                     otp:currOTP,
                 })
             }
-            else currOTP = prevOTP.otp
-            return new Response("This is the OTP" + currOTP, { status: 201 })
+            else {
+              currOTP = prevOTP.otp
+              // return new Response("OTP Already Sent. Try again after 15 Minutes." + currOTP, { status: 201 })
+            }
+            sendSMS(process.env.SMS_VERIFY, userPhone,'600010', "Hi there, thank you for sending your first test message from Textlocal. See how you can send effective SMS campaigns here: https://tx.gl/r/2nGVj/");
+            return new Response("This is the OTP " + currOTP, { status: 201 })
         }
         return new Response("Params not Defined in OTP Verification", { status: 500 })
     } catch (error) {

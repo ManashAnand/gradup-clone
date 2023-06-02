@@ -6,11 +6,13 @@ import { Input, Spacer, Button, Loading } from "@nextui-org/react";
 import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
 import { IconButton } from "@styles/IconButton";
+import {IconButton as RSuiteIconButton} from 'rsuite';
+import {Button as RButton} from 'rsuite';
 import { EyeIcon } from "@styles/EyeIcon";
 import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
 import {useEffect,useState} from "react";
-
+import SaveIcon from '@rsuite/icons/legacy/Save';
 const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) => {
     const { data: session } = useSession();
     const [updating,setIsUpdating] = useState(0);
@@ -71,13 +73,9 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
                      <EditIcon size={20} fill="#979797" />
                     </IconButton>
                 </Tooltip>
-                </>):((updating==1)?(<><Button onPress={updateEducation}>Save</Button></>)
+                </>):((updating==1)?(<> <RSuiteIconButton onClick={updateEducation} icon={<SaveIcon />}/></>)
                 :(<>
-                    <div className='mx-2'>
-                 <Button disabled auto bordered color="secondary" css={{ px: "$13" }}>
-                     <Loading type="spinner" color="currentColor" size="sm" />
-                 </Button>
-                 </div>
+                 <RButton appearance="primary" loading size="xs">Primary</RButton>
                 </>))
             }
             <Tooltip

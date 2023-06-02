@@ -2,16 +2,31 @@
 import { Card, Grid, Text, Link, Button } from "@nextui-org/react";
 
 export default function BeMentorWithUs() {
+
+  const handleSubmit =async (e)=>{
+    e.preventDefault();
+
+    try{
+      const response = await fetch ("/api/mentor/application",{
+        method:"POST",
+        body:JSON.stringify({
+          name:"aaaa",
+          companyName:"bbbb",
+          mobileNo:"",
+          email:"",
+        }),
+      });
+      console.log(response.status)
+    }catch(error){
+      console.log(error," on be mentor api");
+    }finally{
+
+    }
+  }
   return (
     <div className="mb-8">
     <Card css={{ p: "$6" }}>
       <Card.Header>
-        <img
-          alt="nextui logo"
-          src="https://avatars.githubusercontent.com/u/86160567?s=200&v=4"
-          width="34px"
-          height="34px"
-        />
         <Grid.Container css={{ pl: "$6" }}>
           {/* <Grid xs={12}>
             <Text h2 >
@@ -21,7 +36,7 @@ export default function BeMentorWithUs() {
           {/* <Grid xs={12}>
             <Text css={{ color: "$accents8" }}>www.talentconnects.com</Text>
           </Grid> */}
-          <form className="mt-6">
+          <form onSubmit={handleSubmit} className="mt-6">
             <div className="mb-2 font-bold text-4xl">
                 <h2>Be a Mentor</h2>
             </div>

@@ -2,14 +2,14 @@
 import useSWR from 'swr';
 import {useSession} from "next-auth/react";
 import Link from 'next/link';
-import { Input, Spacer } from "@nextui-org/react";
-
+import { Input, Spacer, Button, Loading } from "@nextui-org/react";
 import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
 import { IconButton } from "@styles/IconButton";
 import { EyeIcon } from "@styles/EyeIcon";
 import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
+import {useEffect,useState} from "react";
 
 
 const Project = ({projectName,skillsUsed, projectDes, projectLinks}) => {

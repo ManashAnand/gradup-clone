@@ -6,13 +6,15 @@ import { Input, Spacer , Button, Popover} from "@nextui-org/react";
 import Education from "@components/userProfile/education"
 import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
-import { IconButton } from "@styles/IconButton";
+// import { IconButton } from "@styles/IconButton";
 import { EyeIcon } from "@styles/EyeIcon";
 import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
 import Project from '@components/userProfile/project';
 import Experience from '@components/userProfile/experience';
 import { useState,useEffect } from 'react';
+import PlusIcon from '@rsuite/icons/Plus';
+import {IconButton} from 'rsuite';
 const fetcher = async (...args) =>await fetch(...args).then((res) => res.json());
 
 export default function Profile() {
@@ -156,6 +158,7 @@ export default function Profile() {
           
         }
       }
+      const ButtonStyle = { margin: "0px 0.5rem" };
   return (
     <div className='w-full'>
         <section className='w-full flex flex-row'>
@@ -182,7 +185,7 @@ export default function Profile() {
             <span className='heading_text'>Education</span>
             <Popover isBordered disableShadow>
               <Popover.Trigger>
-                <Button auto flat>Add New</Button>
+              <IconButton icon={<PlusIcon />} style={ButtonStyle} size="xs" color="blue" appearance="primary">Add New</IconButton>
               </Popover.Trigger>
               
               <Popover.Content>

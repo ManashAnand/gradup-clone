@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import useSWR from 'swr';
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import {useState} from 'react'
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const page = ({params}) => {
@@ -23,21 +24,21 @@ const page = ({params}) => {
           method: "POST",
           body: JSON.stringify({
             HRId:session?.user.id,
-            title:"SDE",
-            isIntern: false,
-            companyName: "Talent Connect",
-            companyLink: "www.talentconnects.com",
-            duration: "Always",
-            stipend: "50000",
-            lastDate: "26/05/2023",
-            expectedStartDate: "01/06/2023",
-            skillsRequired: ["ReactJS"],
-            eligiblilty: ["1 year experience"],
-            perks: ["Health Insurance"],
-            noOfOpenings: 3,
-            workingHours: "9 a.m. to 5 p.m.",
-            postedDate: "21/05/2023",
-            responsilities:["Work with Web team to write clean code"],
+            title:e.target[0].value,
+            stipend:e.target[1].value,
+            companyName:e.target[2].value,
+            companyLink:e.target[3].value,
+            duration:e.target[4].value,
+            isIntern: e.target[5].value,
+            lastDate:e.target[6].value,
+            expectedStartDate:e.target[7].value,
+            skillsRequired:e.target[8].value,
+            eligiblilty:e.target[9].value,
+            perks:e.target[10].value,
+            noOfOpenings:e.target[11].value,
+            workingHours:e.target[12].value,
+            postedDate:e.target[13].value,
+            responsibilities:e.target[14].value,
           }),
         });
         console.log(response.status)
