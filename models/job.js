@@ -9,6 +9,10 @@ const JobSchema = new Schema({
         type: String,
         required: [true, "Job title is required"],
     },
+    location: {
+        type: String,
+        default:"remote",
+    },
     isIntern: {
         type: Boolean,
         required: [true, 'Whether it is Job/Intern is required'],
@@ -25,7 +29,7 @@ const JobSchema = new Schema({
         required: [true, "Duration is required"],
     },
     stipend: {
-        type: String,
+        type: Number,
         required: [true, "Stipend is required"],
     },
     lastDate: {

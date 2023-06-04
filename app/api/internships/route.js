@@ -35,7 +35,7 @@ export const GET = async(req,{params}) => {
                 $limit:pageSize
             }
         ])
-        console.log(new Response(JSON.stringify(userDetails)));
+        // console.log(new Response(JSON.stringify(userDetails)));
         return new Response(JSON.stringify(userDetails),{status:201})
     }
     catch(error){

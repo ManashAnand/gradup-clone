@@ -8,27 +8,6 @@ import Select from 'react-select'
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 function Page ({ index }) {
-  const [selectedCity, setSelectedCity] = useState();
-  const [selectedDomain, setSelectedDomain] = useState();
-  const [salaryExp, setSalaryExp] = useState(0);
-  // const { data,error } = useSWR(`https://api.jsonbin.io/v3/b/6460d47e8e4aa6225e9cc67d/?page=${index}`, fetcher);
-  const { data, error } = useSWR( `/api/internships/?page=${index}`, fetcher)
-  // console.log(data, "Front ",index);
-  // ... handle loading and error states
-  if (error) return <div>Failed to loadinggggggg</div>;
-  if (!data) return <div>Loading...</div>;
-  // console.log(data.record);
-  const jobs=data
-  // console.log(jobs)
-  function handleCity(data) {
-    setSelectedCity(data);
-  }
-  function handleDomain(data) {
-    setSelectedDomain(data);
-  }
-  const changeSalaryRxp = (event) => {
-    setSalaryExp(event.target.value);
-  };
   const cityList = [
     { value: "delhi", label: "delhi" },
     { value: "mumbai", label: "mumbai" },
@@ -36,13 +15,51 @@ function Page ({ index }) {
     { value: "patna", label: "patna" },
     { value: "gaya", label: "gaya" },
   ];
-  const domainList = [
-    { value: "web developer", label: "web developer" },
+  const titleList = [
+    { value: "SDE", label: "SDE" },
     { value: "business analyst", label: "business analyst" },
     { value: "hr", label: "hr" },
     { value: "ml intern", label: "ml intern" },
     { value: "software engineer", label: "software engineer" },
   ];
+  const [selectedCity, setSelectedCity] = useState([]);
+  const [selectedTitle, setSelectedTitle] = useState([]);
+  const [salaryExp, setSalaryExp] = useState(0);
+  // const { data,error } = useSWR(`https://api.jsonbin.io/v3/b/6460d47e8e4aa6225e9cc67d/?page=${index}`, fetcher);
+  const { data, error } = useSWR( `/api/internships/?page=${index}`, fetcher)
+  // ... handle loading and error states
+  if (error) return <div>Failed to loadinggggggg</div>;
+  if (!data) return <div>Loading...</div>;
+  var jobs=data
+  function handleCity(data) {
+    setSelectedCity(data);
+  }
+  function handleTitle(data) {
+    setSelectedTitle(data);
+  }
+  const handleSubmit=async (e)=>{
+    e.preventDefault();
+    try {
+      const response = await fetch(`/api/jobs/filter`, {
+        method: "POST",
+        body: JSON.stringify({
+          location:[],
+          title:["SDE"],
+          stipend:0,
+        }),
+      });
+      const d = await response.json()
+      console.log(d);
+      //  jobs=response.
+    } catch (error) {
+      console.log(error);
+    } finally {
+      
+    }
+  }
+  const changeSalaryRxp = (event) => {
+    setSalaryExp(event.target.value);
+  };
   return (
         <section className='w-full'>
           <h1 className='head_text text-left'>
@@ -64,10 +81,10 @@ function Page ({ index }) {
                   </div>
                   <div className="p-3">
                   <Select
-                    options={domainList}
+                    options={titleList}
                     placeholder="Select job title"
-                    value={selectedDomain}
-                    onChange={handleDomain}
+                    value={selectedTitle}
+                    onChange={handleTitle}
                     isSearchable={true}
                     isMulti
                   />
@@ -78,7 +95,7 @@ function Page ({ index }) {
                     type='range'
                     onChange={changeSalaryRxp}
                     min={1}
-                    max={200000}
+                    max={10000}
                     step={1}
                     value={salaryExp}
                     className={'custom-slider'}>
@@ -88,7 +105,7 @@ function Page ({ index }) {
                 <Input underlined value={`Min Salary -  ${salaryExp}`}/>
                 </div>
                 <div>
-                <button type='submit' className='black_btn2 mt-5'  >Apply</button>
+                <button onClick={handleSubmit} type='submit' className='black_btn2 mt-5'  >Apply</button>
                 </div>
                 </div>
             </div>
