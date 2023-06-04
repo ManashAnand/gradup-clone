@@ -12,7 +12,7 @@ import { DeleteIcon } from "@styles/DeleteIcon";
 import {useEffect,useState} from "react";
 
 
-const Project = ({projectName,skillsUsed, projectDes, projectLinks}) => {
+const Project = ({projectName,skillsUsed, projectDes, projectLinks,id}) => {
     const { data: session } = useSession();
     const [updating,setIsUpdating] = useState(0);
     const [project,setProject] = useState({projectName:projectName,skillsUsed:skillsUsed,projectDes:projectDes,projectLinks:projectLinks});
@@ -20,9 +20,10 @@ const Project = ({projectName,skillsUsed, projectDes, projectLinks}) => {
     
     const updateProject = async(e) =>{
         // e.preventDefault();
+        console.log("Ajjajajajajajjjajajajaj");
         setIsUpdating(2);
         try {
-            const response = await fetch(`/api/user/${session?.user.id}/?type=education&action=update`, {
+            const response = await fetch(`/api/user/${session?.user.id}/?type=project&action=update`, {
               method: "POST",
               body: JSON.stringify({
                 id:id,
@@ -44,7 +45,7 @@ const Project = ({projectName,skillsUsed, projectDes, projectLinks}) => {
         // e.preventDefault();
         // console.log(e.target[0].value);
         try {
-          const response = await fetch(`/api/user/${session?.user.id}/?type=education&action=delete`, {
+          const response = await fetch(`/api/user/${session?.user.id}/?type=project&action=delete`, {
             method: "POST",
             body: JSON.stringify({
               id:id,
@@ -72,7 +73,7 @@ const Project = ({projectName,skillsUsed, projectDes, projectLinks}) => {
                      <EditIcon size={20} fill="#979797" />
                     </IconButton>
                 </Tooltip>
-                </>):((updating==1)?(<><Button onPress={updateProject}>Save</Button></>)
+                </>):((updating==1)?(<><Button onClick={updateProject}>Save</Button></>)
                 :(<>
                     <div className='mx-2'>
                  <Button disabled auto bordered color="secondary" css={{ px: "$13" }}>
@@ -92,10 +93,10 @@ const Project = ({projectName,skillsUsed, projectDes, projectLinks}) => {
             </Tooltip>
         </Col>
         </div>
-      <Input initialValue={projectName}/> <br/>
-      <Input initialValue={skillsUsed}/> <br/>
-      <Input initialValue={projectDes}/> <br/>
-      <Input initialValue={projectLinks}/> <br/>
+        <Input label="Project Name" underlined initialValue={project.projectName} onChange={(e)=>setProject({...project,projectName:e.target.value})}/> <br/>
+        <Input label="Skills Used" underlined initialValue={project.skillsUsed} onChange={(e)=>setProject({...project,skillsUsed:e.target.value})}/> <br/>
+        <Input label="Project Des" underlined initialValue={project.projectDes} onChange={(e)=>setProject({...project,projectDes:e.target.value})}/> <br/>
+        <Input label="Project Links" underlined initialValue={project.projectLinks} onChange={(e)=>setProject({...project,projectLinks:e.target.value})}/> <br/>
     </div>
     )
 }

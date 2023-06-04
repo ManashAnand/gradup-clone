@@ -11,7 +11,9 @@ import { EyeIcon } from "@styles/EyeIcon";
 import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
 import Project from '@components/userProfile/project';
+import Achievement from '@components/userProfile/achievement';
 import Experience from '@components/userProfile/experience';
+
 import { useState,useEffect } from 'react';
 import PlusIcon from '@rsuite/icons/Plus';
 import {IconButton} from 'rsuite';
@@ -125,11 +127,11 @@ export default function Profile() {
             body: JSON.stringify({
               companyName:e.target[0].value,
               location:e.target[1].value,
-              title:e.target[4].value,
-              description:e.target[5].value,
-              currentlyWorking:e.target[6].value,
-              startDate:e.target[7].value,
-              endDate:e.target[8].value,
+              title:e.target[2].value,
+              description:e.target[3].value,
+              currentlyWorking:e.target[4].value,
+              startDate:e.target[5].value,
+              endDate:e.target[6].value,
             }),
           });
           console.log(response.status)
@@ -243,6 +245,7 @@ export default function Profile() {
             skillsUsed={item.skillsUsed}
             projectDes={item.projectDes}
             projectLinks={item.projectLinks}
+            id={item._id}
             />
           ))}
         </div>
@@ -280,6 +283,7 @@ export default function Profile() {
             title={item.title}
             skills={item.skills}
             description={item.description}
+            id={item._id}
             />
           ))}
         </div>
@@ -303,8 +307,9 @@ export default function Profile() {
           </div>
           
           {data.achievement.map((item)=>(
-            <achievement 
+            <Achievement 
             achievementName={item.achievementName}
+            id={item._id}
             />
           ))}
         </div>

@@ -2,8 +2,10 @@
 import useSWR from 'swr';
 import {useSession} from "next-auth/react";
 import Link from 'next/link';
-import { Input, Spacer } from "@nextui-org/react";
 
+import {  Button, Popover, Loading} from "@nextui-org/react";
+import { Input, Spacer } from "@nextui-org/react";
+import { useState,useEffect } from 'react';
 import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
 import { IconButton } from "@styles/IconButton";
@@ -12,10 +14,10 @@ import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
 
 
-const Achievement = ({achievementName}) => {
+const Achievement = ({achievementName,id}) => {
   const { data: session } = useSession();
   const [updating,setIsUpdating] = useState(0);
-  const [achievement,setAchievement] = useState({achievementName:achievementName});
+  const [achievement,setAchievement] = useState({achievementName:achievementName, id:id});
   
   
   const updateAchievement = async(e) =>{
@@ -62,16 +64,26 @@ const Achievement = ({achievementName}) => {
       <div className='flex'>
         <div className='w-4/5'></div>
         <Col css={{ d: "flex" }}>
-            <Tooltip content="Edit user" className='mx-15'>
-                <IconButton onClick={(updateAchievement) => console.log("Edit user", user.id)}>
-                    <EditIcon size={20} fill="#979797" />
-                </IconButton>
-            </Tooltip>
-            <div className='mx-2'></div>
+            {
+                (updating==0)?(<>
+                <Tooltip content="Edit user" className='mx-15'>
+                 <IconButton onClick={() => setIsUpdating(1)}>
+                     <EditIcon size={20} fill="#979797" />
+                    </IconButton>
+                </Tooltip>
+                </>):((updating==1)?(<><Button onClick={updateAchievement}>Save</Button></>)
+                :(<>
+                    <div className='mx-2'>
+                 <Button disabled auto bordered color="secondary" css={{ px: "$13" }}>
+                     <Loading type="spinner" color="currentColor" size="sm" />
+                 </Button>
+                 </div>
+                </>))
+            }
             <Tooltip
                 content="Delete user"
                 color="error"
-                onClick={(deleteAchievement) => console.log("Delete user", user.id)}
+                onClick={deleteAchievement }
             >
             <IconButton className='mx-15'>
               <DeleteIcon size={20} fill="#FF0080" />
@@ -79,7 +91,7 @@ const Achievement = ({achievementName}) => {
             </Tooltip>
         </Col>
         </div>
-      <Input initialValue={achievementName}/> <br/>
+        <Input label="Achievement Name" underlined initialValue={achievement.achievementName} onChange={(e)=>setAchievement({...achievement,achievementName:e.target.value})}/> <br/>
     </div>
     )
 }

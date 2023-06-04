@@ -167,12 +167,10 @@ export const POST = async(request, { params }) => {
                 return new Response(("Project Updated"), { status: 201 })
             } else if(action=="create") {
                 const newProjectCreated = currentUser.project.push({
-                    collegeName: data.collegeName,
-                    degreeName: data.degreeName,
-                    branch: data.branch,
-                    grade: data.grade,
-                    startYear: new Date(),
-                    endYear: new Date(),
+                    projectName:data.projectName,
+                    skillsUsed:data.skillsUsed,
+                    projectDes:data.projectDes,
+                    projectLinks:data.projectLinks
                 });
                 await currentUser.save()
                 return new Response(("New Project Added"), { status: 201 })

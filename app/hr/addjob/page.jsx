@@ -62,6 +62,21 @@ const page = ({params}) => {
             <Grid xs={4}>
               <Input clearable bordered label="Stipend" Placeholder="Stipend" initialValue="" />
             </Grid>
+            <Grid>
+              <Input clearable bordered label="Company Name" Placeholder="Stipend" initialValue="" />
+            </Grid>
+            <Grid>
+              <Input clearable bordered label="Duration of Job" Placeholder="Duration" initialValue="" />
+            </Grid>
+            <Grid>
+              <Input clearable bordered label="Last date to apply" Placeholder="Last date to apply" initialValue="" />
+            </Grid>
+            <Grid>
+              <Input clearable bordered label="Expected Start Date" Placeholder="Expected Start Date" initialValue="" />
+            </Grid>
+            <Grid>
+              <Input clearable bordered label="Skills Required" Placeholder="Skills Required" initialValue="" />
+            </Grid>
             <Textarea
               rows='10'
               fullWidth="true"
