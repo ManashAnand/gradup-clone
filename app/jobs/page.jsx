@@ -160,7 +160,7 @@ function Page({ index }) {
                   />
                   </div>
                 </div>
-                <div className='custom-slider'>
+                <div className='text-center mt-4'>
                   <Input
                     type='range'
                     onChange={changeSalaryRxp}
@@ -170,11 +170,11 @@ function Page({ index }) {
                     value={salaryExp}>
                   </Input>
                 </div>
-                <div className="mt-8 text-center w-full">
+                <div className="mt-4 text-center w-full">
                 <div className="salary">{`MIN SALARY - Rs. ${salaryExp}`}</div>
                 </div>
                 <div>
-                <button onClick={handleSubmit} type='submit' className='btn4 mt-5'  >Apply</button>
+                <button type='submit' className='btn4 mt-5'>Apply</button>
                 </div>
                 </div>
             </div>
@@ -205,11 +205,11 @@ export default function App() {
       <div style={{ display: "none" }}>
         <Page index={pageIndex + 1} />
       </div>
-      <div className="flex object-right-bottom">
-        <button class="outline_btn" onClick={() => setPageIndex(pageIndex - 1)}>
+      <div className="flex buttonpos">
+        <button class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
           Prev
         </button>
-        <button class="outline_btn" onClick={() => setPageIndex(pageIndex + 1)}>
+        <button class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
           Next
         </button>
       </div>
