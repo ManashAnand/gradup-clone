@@ -1,4 +1,4 @@
-import styles from '@styles/Page.module.css'
+import styles from 'styles/Page.module.css'
 import Head from 'next/head'
 export default function About() {
   return (
@@ -7,7 +7,7 @@ export default function About() {
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"></link>
       </Head>
       <div className={styles.box}>
-        <img className={styles.groupimg4} src="employee.png" alt="group"></img>
+        <img className={styles.groupimg4} src="/assets/images/employee.png" alt="group"></img>
         <div>
           <h1 className={styles.heading}>--Attitude matterZ</h1>
           <h1 className={styles.subhead}>About Company</h1>
@@ -45,7 +45,7 @@ export default function About() {
         </div>
       </div>
       <div className={styles.box}>
-        <img className={styles.founderimg} src="founder.png" alt="founder"></img>
+        <img className={styles.founderimg} src="/assets/images/founder.png" alt="founder"></img>
         <div>
           <h1 className={styles.headingfounder}>Meet Our Founder</h1>
           <p className={styles.para}>Mr. Tanmay is a young and budding entrepreneur who has received the award for India’s Top 100 Emerging Entrepreneurs-2023 by Fox Story India!</p>
