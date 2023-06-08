@@ -235,7 +235,7 @@
 }
 .digitalbox{
   font-size:20px;
-  width:30vw;
+  width:27vw;
   background-color:white;
   color:#0CAFFF;
   font-weight:bold;
@@ -263,7 +263,7 @@
 .contain{
   padding:2em;
   background-color:#fcf5e5;
-  width:30vw;
+  width:27vw;
   display:flex;
   border-top-left-radius:40px;
   border-bottom-right-radius:40px;
