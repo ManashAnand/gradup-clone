@@ -150,6 +150,181 @@ img:hover{
   transition: 0.3s;
   -webkit-appearance: none;
 }
+.inputcontainer{
+  margin-top:3rem;
+}
+.inputbox{
+  padding:1em 1em 1em 2em;
+  width:40vw;
+  border-radius:10px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}
+.btn1{
+  padding:0.2em 0.8em;
+  margin-left:-7.5vw;
+  margin-right:2vw;
+  color:white;
+  border-radius:10px;
+  background: rgba(0, 178, 255, 0.68);
+}
+.btn2{
+  padding:0.2em 1em;
+  border-radius:10px;
+  background: rgba(0, 178, 255, 0.68);
+  color:white;
+  margin-right:1vw;
+}
+.btn3{
+  padding:0.2em 1em;
+  border-radius:10px;
+  background: rgba(0, 178, 255, 0.68);
+  color:white;
+}
+.btn4{
+  background-color: white;
+  color: rgba(0, 178, 255, 0.68);
+  width:98%;
+  margin-top:18vh;
+  padding:0.4em 3em;
+  border-radius:20px;
+}
+.giphy{
+  margin-top:3vh;
+  margin-left:10vh;
+  width:20vw;
+  border-radius:14px;
+}
+.main-content{
+  display:flex;
+}
+.jobpos{
+  margin-top:3rem;
+}
+.salary{
+  width:88%;
+  background-color:white;
+  color:grey;
+  padding:0.4em 1em;
+  border-radius:5px;
+  margin:auto;
+}
+.filterbox{
+  margin-top:-6vh;
+  padding:1em;
+  border-radius: 15px;
+  background-color:#AFDBF5;
+  min-height:45vh;
+  width:18vw;
+}
+.arrange{
+  margin-left:11vh;
+  margin-top:3vh;
+  display:grid;
+  gap:25px;
+  grid-template-columns: repeat(2,1fr);
+}
+.headerpos{
+  display:flex;
+  justify-content:space-between;
+}
+.heading{
+  margin-top:3rem;
+  color:deepskyblue;
+  font-weight:bold;
+  text-align:center;
+  margin-left: -12vw;
+  font-size:22px;
+}
+.btn6{
+  margin-left:2vw;
+  font-size:14px;
+  font-weight:bold;
+  color:grey;
+}
+.btn6:hover{
+  color:deepskyblue;
+}
+.sortpos{
+  display:flex;
+  justify-content:end;
+  margin-top:1rem;
+  margin-right:1rem;
+}
+.buttonpos{
+  display:flex;
+  justify-content:end;
+  margin-top:2rem;
+}
+@media screen and (max-width:1130px) {
+  .sortpos{
+   opacity:0;
+  }
+  .heading{
+    opacity:0;
+  }
+  .btn1{
+    margin-left: -15vh;
+  }
+  .arrange{
+    grid-template-columns: repeat(1,1fr);
+    margin:auto;
+  }
+  .filterbox{
+    margin-top:-9vh;
+    width:28vw;
+  }
+  .buttonpos{
+    justify-content:center;
+    margin-left:25.5vw;
+  }
+}
+@media screen and (max-width:800px) {
+  .headerpos{
+    display:block;
+  }
+  .inputbox{
+    width:85vw;
+  }
+  .inputcontainer{
+    margin:3rem auto;
+  }
+  .giphy{
+    margin:5vh auto 8vh auto;
+    width:60vw;
+  }
+  .jobpos{
+    margin:3rem auto;
+  }
+  .main-content{
+    display:block;
+  }
+  .arrange{
+    margin-left:0;
+  }
+  .filterbox{
+    margin:-15vh auto 10vh auto;
+    width:60vw;
+  }
+  .btn4{
+    margin-top:12vh;
+  }
+  .btn2,.btn3{
+    text-align:center;
+    margin-left:1vh;
+  }
+}
+@media screen and (max-width:350px) {
+  .inputbox{
+    width:98%;
+  }
+  .giphy{
+    width:90vw;
+  }
+  .filterbox{
+    width:90vw;
+  }
+}
 
 /* Tailwind Styles */
 

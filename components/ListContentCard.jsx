@@ -4,7 +4,7 @@ const ListContentCard = ({post}) => {
   return (
     <div>
         
-        <Card css={{ p: "$6", mw: "400px" }}>
+        <Card css={{ p: "$6", mw: "400px",width:"96%",margin:"auto" }}>
       <Card.Header>
         <img
           alt="nextui logo"

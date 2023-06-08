@@ -112,72 +112,81 @@ function Page({ index }) {
     setSalaryExp(event.target.value);
   };
   return (
-    <section className="w-full">
-      <h1 className="head_text text-left">
-        <span className="blue_gradient">Jobs for you</span>
-      </h1>
-      <div className="flex flex-row">
-        <div className="pt-16">
-          {" "}
-          Search Bar Filter
+    <section className='w-full'>
+          <div className="headerpos">
+            <div>
+          <div className='head_text jobpos'>
+            <h1 className='text-red text-4xl'>Find your job &</h1>
+            <h1 className='text-blue-400 text-4xl'>and grab <span className="underline decoration-yellow-300 underline-offset-8">your opportunities</span></h1>
+          </div>
+          <div className="inputcontainer">
+            <input className="inputbox" type="search" placeholder="Enter"></input>
+            <button className="btn1">Search</button>
+          </div>
+          </div>
+           <img className="giphy" src="assets/images/image.gif" alt="work-img"></img>
+          </div> 
           <div>
-            <div className="">
-              <div className="p-3">
-                <Select
-                  options={cityList}
-                  placeholder="Select city"
-                  value={selectedCity}
-                  onChange={handleCity}
-                  isSearchable={true}
-                  isMulti
+            <p className="heading">All Jobs</p>
+          </div>
+          <div className="sortpos">
+            <p className="-ml-10 text-gray-500 text-sm font-bold">Sort by:</p>
+            <button className="btn6">Recently Released</button>
+            <button className="btn6">Alphabetical</button>
+          </div>
+          <div className="main-content">
+            <div className="pt-16">
+                <div className="filterbox">
+                <div>
+                  <div className="p-3">
+                  <Select
+                    options={cityList}
+                    placeholder="Select city"
+                    value={selectedCity}
+                    onChange={handleCity}
+                    isSearchable={true}
+                    isMulti
+                  />
+                  </div>
+                  <div className="p-3">
+                  <Select
+                    className="container"
+                    options={titleList}
+                    placeholder="Select job"
+                    value={selectedTitle}
+                    onChange={handleTitle}
+                    isSearchable={true}
+                    isMulti
+                  />
+                  </div>
+                </div>
+                <div className='custom-slider'>
+                  <Input
+                    type='range'
+                    onChange={changeSalaryRxp}
+                    min={1}
+                    max={10000}
+                    step={1}
+                    value={salaryExp}>
+                  </Input>
+                </div>
+                <div className="mt-8 text-center w-full">
+                <div className="salary">{`MIN SALARY - Rs. ${salaryExp}`}</div>
+                </div>
+                <div>
+                <button onClick={handleSubmit} type='submit' className='btn4 mt-5'  >Apply</button>
+                </div>
+                </div>
+            </div>
+            <div className='mt-10 arrange'> 
+              {jobs.map((job) => (
+                <ListContentCard 
+                  post={job}
                 />
-              </div>
-              <div className="p-3">
-                <Select
-                  options={titleList}
-                  placeholder="Select job title"
-                  value={selectedTitle}
-                  onChange={handleTitle}
-                  isSearchable={true}
-                  isMulti
-                />
-              </div>
-            </div>
-            <div className="custom-slider">
-              <Input
-                type="range"
-                onChange={changeSalaryRxp}
-                min={1}
-                max={10000}
-                step={1}
-                value={salaryExp}
-                className={"custom-slider"}
-              ></Input>
-            </div>
-            <div>
-              <Input underlined value={`Min Salary -  ${salaryExp}`} />
-            </div>
-            <div>
-            <Link href={`/jobs?stipend=0&location=delhi&title=SDE`}> 
-            <button
-               // onClick={getNewPage}
-                type="submit"
-                className="black_btn2 mt-5"
-              >
-                Apply
-              </button>
-              </Link>
-              
+              ))}
             </div>
           </div>
-        </div>
-        <div className="mt-10 prompt_layout">
-          {jobs.map((job) => (
-            <ListContentCard post={job} />
-          ))}
-        </div>
-      </div>
-    </section>
+        </section>
   );
 }
 
