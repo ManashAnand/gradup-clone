@@ -1,10 +1,10 @@
-import styles from '../styles/Page.module.css'
+import styles from 'styles/Page.module.css'
 export default function Refund() {
   return (
     <div className={styles.container}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0047AB" fill-opacity="0.9" d="M0,96L60,112C120,128,240,160,360,160C480,160,600,128,720,144C840,160,960,224,1080,256C1200,288,1320,288,1380,288L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
       <div className={styles.content}>
-        <img className="float-right ml-10" src="att.png" alt="logo" height="60" width="65"></img>
+        <img className="float-right ml-10" src="/assets/images/att.png" alt="logo" height="60" width="65"></img>
         <p className="mb-4 text-white text-lg">Thanks for your interest in 8Tudem Tech Pvt. Ltd.. We ensure to provide an excellent experience and learning to all our users. As with any online purchase experience, some terms and conditions govern the Refund Policy. When you purchase a program or avail an offering on 8Tudem Tech Pvt. Ltd., you agree to our Terms & Conditions and Refund policy.</p>
       </div>
       <p className={styles.head}>Our Refund Policy is as follows-</p>
