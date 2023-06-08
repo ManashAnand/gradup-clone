@@ -1,10 +1,10 @@
 
-import styles from '../styles/Page.module.css'
+import styles from 'styles/Page.module.css'
 export default function Services() {
   return (
     <div>
       <div className={styles.box}>
-        <img className={styles.groupimg} src="group.png" alt="group"></img>
+        <img className={styles.groupimg} src="/assets/images/group.png" alt="group"></img>
         <div>
           <h1 className={styles.heading}>--Services</h1>
           <h1 className={styles.subhead}>GD Module</h1>
@@ -29,7 +29,7 @@ export default function Services() {
         </div>
       </div>
       <div className={styles.box}>
-        <img className={styles.groupimg1} src="pi.png" alt="interview"></img>
+        <img className={styles.groupimg1} src="/assets/images/pi.png" alt="interview"></img>
         <div>
           <h1 className={styles.heading}>--Services</h1>
           <h1 className={styles.subhead}>Personal Interview Module</h1>
@@ -58,7 +58,7 @@ export default function Services() {
         </div>
       </div>
       <div className={styles.box}>
-        <img className={styles.groupimg2} src="resbuild.png" alt="interview"></img>
+        <img className={styles.groupimg2} src="/assets/images/resbuild.png" alt="interview"></img>
         <div>
           <h1 className={styles.heading}>--Services</h1>
           <h1 className={styles.subhead}>Resume Building</h1>
@@ -130,7 +130,7 @@ export default function Services() {
         </div>
       </div>
       <div className={styles.box}>
-        <img className={styles.groupimg4} src="guess.png" alt="group"></img>
+        <img className={styles.groupimg4} src="/assets/images/guess.png" alt="group"></img>
         <div>
           <h1 className={styles.heading}>--Services</h1>
           <h1 className={styles.subhead}>Consulting Case Preparation and Guesstimate</h1>
@@ -162,7 +162,7 @@ export default function Services() {
         </div>
       </div>
       <div className={styles.box}>
-        <img className={styles.groupimg4} src="win.png" alt="group"></img>
+        <img className={styles.groupimg4} src="/assets/images/win.png" alt="group"></img>
         <div>
           <h1 className={styles.heading}>--Services</h1>
           <h1 className={styles.subhead}>Winning Corporate Competition</h1>
@@ -186,7 +186,7 @@ export default function Services() {
         </div>
       </div>
       <div className={styles.box}>
-        <img className={styles.groupimg4} src="digital.png" alt="group"></img>
+        <img className={styles.groupimg4} src="/assets/images/digital.png" alt="group"></img>
         <div>
           <h1 className={styles.heading}>--Services</h1>
           <h1 className={styles.subhead}>Digital Profile building</h1>
@@ -217,7 +217,7 @@ export default function Services() {
         </div>
       </div>
       <div className={styles.box}>
-        <img className={styles.groupimg1} src="communication.png" alt="interview"></img>
+        <img className={styles.groupimg1} src="/assets/images/communication.png" alt="interview"></img>
         <div>
           <h1 className={styles.heading}>--Services</h1>
           <h1 className={styles.heading}>Communication Skills</h1>
@@ -239,7 +239,7 @@ export default function Services() {
         </div>
       </div>
       <div className={styles.box}>
-        <img className={styles.groupimg4} src="back.png" alt="interview"></img>
+        <img className={styles.groupimg4} src="/assets/images/back.png" alt="interview"></img>
         <div>
           <h1 className={styles.heading}>--Services</h1>
           <h1 className={styles.subhead}>Career Guidance</h1>
