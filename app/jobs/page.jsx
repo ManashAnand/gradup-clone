@@ -57,8 +57,9 @@ function Page({ index }) {
   //   console.log(data);
   //   setJobs(data);
   // };
-  
-
+  function handleSubmit(){
+    
+  }
   function handleCity(data) {
     setSelectedCity(data);
   }
