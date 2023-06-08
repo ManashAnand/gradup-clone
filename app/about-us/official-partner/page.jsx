@@ -1,4 +1,4 @@
-import styles from '../styles/Page.module.css'
+import styles from 'styles/Page.module.css'
 
 export default function Partner() {
   return (
@@ -15,10 +15,10 @@ export default function Partner() {
           <p className={styles.partnerpara}>Attitude matterZ is a unit of 8TUDEM TECH PRIVATE LIMITED. We are a Government of India recognized Start-up. We are dedicated towards serving students to land up to their dream career by assisting them via our placement preparation modules, supporting working professionals via our upskilling courses and partnering with companies to provide digital marketing services. We extensively conduct workshops-seminars and webinars for placement preparation at premier institutes across India. All our workshops are conducted by IIM/ISB/XLRI/MDI/FMS/IIFT/IMT Alumni only. Our mentors work at top-tier firms including Google, Facebook, Amazon, BCG, Goldman Sachs, Big 4, TATAs and many more.</p>
           <button className={styles.btn1}><a className="link" href="brochure.pdf" download >Download Brochure</a></button>
         </div>
-        <img className={styles.image} src="book.png" alt="book"></img>
+        <img className={styles.image} src="/assets/images/book.png" alt="book"></img>
       </div>
       <div className={styles.box}>
-        <img className={styles.image1} src="ypay.png" alt="ypay"></img>
+        <img className={styles.image1} src="/assets/images/ypay.png" alt="ypay"></img>
         <div>
           <h1 className={styles.heading}>About YPAY</h1>
           <p className={styles.partnerpara}>YPAY is a prepaid smart card that offers Indian teens and young adults the option to make payments independently. It also provides parents and schools with a secure and monitored means of financial transactions. YPAY, through its prepaid cards available on its app, makes it convenient for teenagers to make both online and offline payments. The app enables kids to learn money management and earn points along with attractive cashback and discounts from more than 300 brands. Fintech industry in India is growing at a compound annual growth rate of 20%, valued at more than $31 billion. With an ambition to own a large portion of the entire fintech pie, YPAY aims to provide a diversified bouquet of products and services to the Indian youth and professionals.</p>
