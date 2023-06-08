@@ -1,10 +1,10 @@
-import styles from '../styles/Page.module.css'
+import styles from 'styles/Page.module.css'
 export default function Privacy() {
   return (
     <div className={styles.container}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0047ab" fill-opacity="0.9" d="M0,96L60,112C120,128,240,160,360,160C480,160,600,128,720,144C840,160,960,224,1080,256C1200,288,1320,288,1380,288L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
       <div className={styles.content}>
-        <img className="float-right ml-10" src="att.png" alt="logo" height="60" width="65"></img>
+        <img className="float-right ml-10" src="/assets/images/att.png" alt="logo" height="60" width="65"></img>
        <h1 className="text-4xl mb-4">Terms of use</h1>
         <p className="mb-8 text-white">By signing up on the 8Tudem Tech Pvt. Ltd. Website you are agreeing to be bound by the following terms and conditions (“Terms of Use”).</p>
         <h1 className="text-4xl mb-4">Introduction</h1>
