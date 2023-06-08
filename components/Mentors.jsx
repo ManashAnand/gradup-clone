@@ -7,43 +7,43 @@ const Mentors = () => {
         {
           name: "Ajay Jeena",
           title:"SDE at Microsoft",
-          img: "/assets/mentors/p1.jpeg"
+          img: "/assets/mentors/p1.jpg"
 
         },
         {
             name: "Raunit Verma",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpeg"
+            img: "/assets/mentors/p1.jpg"
         },
         {
             name: "Raunit Verma",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpeg"
+            img: "/assets/mentors/p1.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpeg"
+            img: "/assets/mentors/p1.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpeg"
+            img: "/assets/mentors/p1.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpeg"
+            img: "/assets/mentors/p1.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpeg"
+            img: "/assets/mentors/p1.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpeg"
+            img: "/assets/mentors/p1.jpg"
         },
       ];
   return (

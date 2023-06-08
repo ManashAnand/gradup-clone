@@ -20,25 +20,30 @@ const page = ({params}) => {
       // setIsSubmitting(true);
       console.log("Form Submitted");
       try {
+        for(let i=0; i<e.target.length; i++){
+          console.log("index is this ",i," label is this ",e.target[i].label," value is this ",e.target[i].value);
+        }
+
         const response = await fetch("/api/jobs/new", {
           method: "POST",
           body: JSON.stringify({
             HRId:session?.user.id,
             title:e.target[0].value,
-            stipend:e.target[1].value,
-            companyName:e.target[2].value,
+            stipend:e.target[2].value,
+            companyName:e.target[4].value,
             companyLink:e.target[3].value,
-            duration:e.target[4].value,
+            duration:e.target[6].value,
             isIntern: e.target[5].value,
-            lastDate:e.target[6].value,
+            lastDate:e.target[8].value,
             expectedStartDate:e.target[7].value,
-            skillsRequired:e.target[8].value,
+            skillsRequired:e.target[12].value,
             eligiblilty:e.target[9].value,
             perks:e.target[10].value,
             noOfOpenings:e.target[11].value,
             workingHours:e.target[12].value,
             postedDate:e.target[13].value,
             responsibilities:e.target[14].value,
+            description:e.target[14].value,
           }),
         });
         console.log(response.status)

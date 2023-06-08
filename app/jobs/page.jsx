@@ -1,19 +1,22 @@
-
-"use client"
+"use client";
 import ListContentCard from "@components/ListContentCard";
-import useSWR from 'swr';
-import {useState} from 'react'
+import useSWR from "swr";
+import { useState, useEffect } from "react";
 import { Input } from "@nextui-org/react";
-import Select from 'react-select'
+import Select from "react-select";
+import { useRouter } from "next/router";
+import Link from "next/link";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import { useSearchParams } from 'next/navigation';
 
-function Page ({ index }) {
+function Page({ index }) {
   const cityList = [
     { value: "delhi", label: "delhi" },
     { value: "mumbai", label: "mumbai" },
     { value: "dehradun", label: "dehradun" },
     { value: "patna", label: "patna" },
     { value: "gaya", label: "gaya" },
+    { value: "remote", label: "remote" },
   ];
   const titleList = [
     { value: "SDE", label: "SDE" },
@@ -22,121 +25,188 @@ function Page ({ index }) {
     { value: "ml intern", label: "ml intern" },
     { value: "software engineer", label: "software engineer" },
   ];
+
   const [selectedCity, setSelectedCity] = useState([]);
   const [selectedTitle, setSelectedTitle] = useState([]);
   const [salaryExp, setSalaryExp] = useState(0);
-  // const { data,error } = useSWR(`https://api.jsonbin.io/v3/b/6460d47e8e4aa6225e9cc67d/?page=${index}`, fetcher);
-  const { data, error } = useSWR( `/api/internships/?page=${index}`, fetcher)
-  // ... handle loading and error states
+  // const [jobs, setJobs] = useState([]);
+  // If want to useSWR later on
+  const { data, error } = useSWR(
+    `/api/jobs/?page=${index}&?intern=false`,
+    fetcher
+  );
   if (error) return <div>Failed to loadinggggggg</div>;
   if (!data) return <div>Loading...</div>;
-  var jobs=data
+  const jobs=data;
+  console.log(jobs);
+  // const [previousUrl, setPreviousUrl] = useState(router.asPath);
+  // const handleRouteChangeStart = (url) => {
+  //   console.log('Route change started:', url);
+  // };
+  // useEffect(() => {
+  //   const handleStart = (url) => handleRouteChangeStart(url);
+  //   router.events.on('routeChangeStart', handleStart);
+
+  //   return () => {
+  //     router.events.off('routeChangeStart', handleStart);
+  //   };
+  // }, []);
+  // const fetchJobs = async () => {
+  //   const response = await fetch(`/api/jobs/?page=${index}&?intern=false`);
+  //   const data = await response.json();
+  //   console.log(data);
+  //   setJobs(data);
+  // };
+  
+
   function handleCity(data) {
     setSelectedCity(data);
   }
   function handleTitle(data) {
     setSelectedTitle(data);
   }
-  const handleSubmit=async (e)=>{
-    e.preventDefault();
-    try {
-      const response = await fetch(`/api/jobs/filter`, {
-        method: "POST",
-        body: JSON.stringify({
-          location:[],
-          title:["SDE"],
-          stipend:0,
-        }),
-      });
-      const d = await response.json()
-      console.log(d);
-      //  jobs=response.
-    } catch (error) {
-      console.log(error);
-    } finally {
-      
-    }
-  }
+  // const handleSubmit = async (e) => {
+  //   // e.preventDefault();
+  //   try {
+  //     var Location = []
+  //     let Stipend = 0
+  //     let Title = []
+  //     try {
+  //       Stipend = searchParams.get('stipend')
+  //       Location = searchParams.get('location').split(',')
+  //       Title = searchParams.get('title').split(',')
+  //       console.log("Title is this",Title)
+  //       console.log("Location is this",Location)
+  //       console.log("Stipend is this",Stipend)
+  //     } catch (e) {}
+  //     const response = await fetch(`/api/jobs/filter/?intern=false`, {
+  //       method: "POST",
+  //       body: JSON.stringify({
+  //         location: [],
+  //         title: Title,
+  //         stipend: Stipend,
+  //       }),
+  //     });
+  //     const d = await response.json();
+  //     console.log(d);
+  //     setJobs(d);
+  //   } catch (error) {
+  //     console.log(error);
+  //   } finally {
+  //   }
+  // };
+
+  // const getNewPage = () =>{
+  //   let locationString =  Object.values(selectedCity).map(item => item.value).join(',');
+  //   let titleString = Object.values(selectedTitle).map(item => item.value).join(',');
+  //   const query = 'stipend='+salaryExp.toString()+'&location='+locationString.toString()+'&title='+titleString
+  //   // router.push(`/jobs?${query}`);
+  //   window.open(`http://localhost:3000/jobs?${query}`);
+  // }
+
+  // useEffect(() => {
+  //   handleSubmit();
+  // }, []);
+
   const changeSalaryRxp = (event) => {
     setSalaryExp(event.target.value);
   };
   return (
-        <section className='w-full'>
-          <h1 className='head_text text-left'>
-            <span className='blue_gradient'>Jobs for you</span>
-          </h1>
-          <div className="flex flex-row">
-            <div className="pt-16"> Search Bar Filter
-                <div>
-                <div className="">
-                  <div className="p-3">
-                  <Select
-                    options={cityList}
-                    placeholder="Select city"
-                    value={selectedCity}
-                    onChange={handleCity}
-                    isSearchable={true}
-                    isMulti
-                  />
-                  </div>
-                  <div className="p-3">
-                  <Select
-                    options={titleList}
-                    placeholder="Select job title"
-                    value={selectedTitle}
-                    onChange={handleTitle}
-                    isSearchable={true}
-                    isMulti
-                  />
-                  </div>
-                </div>
-                <div className='custom-slider'>
-                  <Input
-                    type='range'
-                    onChange={changeSalaryRxp}
-                    min={1}
-                    max={10000}
-                    step={1}
-                    value={salaryExp}
-                    className={'custom-slider'}>
-                  </Input>
-                </div>
-                <div>
-                <Input underlined value={`Min Salary -  ${salaryExp}`}/>
-                </div>
-                <div>
-                <button onClick={handleSubmit} type='submit' className='black_btn2 mt-5'  >Apply</button>
-                </div>
-                </div>
-            </div>
-            <div className='mt-10 prompt_layout'>  
-              {jobs.map((job) => (
-                <ListContentCard 
-                  post={job}
+    <section className="w-full">
+      <h1 className="head_text text-left">
+        <span className="blue_gradient">Jobs for you</span>
+      </h1>
+      <div className="flex flex-row">
+        <div className="pt-16">
+          {" "}
+          Search Bar Filter
+          <div>
+            <div className="">
+              <div className="p-3">
+                <Select
+                  options={cityList}
+                  placeholder="Select city"
+                  value={selectedCity}
+                  onChange={handleCity}
+                  isSearchable={true}
+                  isMulti
                 />
-              ))}
+              </div>
+              <div className="p-3">
+                <Select
+                  options={titleList}
+                  placeholder="Select job title"
+                  value={selectedTitle}
+                  onChange={handleTitle}
+                  isSearchable={true}
+                  isMulti
+                />
+              </div>
+            </div>
+            <div className="custom-slider">
+              <Input
+                type="range"
+                onChange={changeSalaryRxp}
+                min={1}
+                max={10000}
+                step={1}
+                value={salaryExp}
+                className={"custom-slider"}
+              ></Input>
+            </div>
+            <div>
+              <Input underlined value={`Min Salary -  ${salaryExp}`} />
+            </div>
+            <div>
+            <Link href={`/jobs?stipend=0&location=delhi&title=SDE`}> 
+            <button
+               // onClick={getNewPage}
+                type="submit"
+                className="black_btn2 mt-5"
+              >
+                Apply
+              </button>
+              </Link>
+              
             </div>
           </div>
-        </section>
-      )
-  }
- 
-export default function App () {
-  const [pageIndex, setPageIndex] = useState(0);
- 
-  return <div >
-    <div className="justify-center flex-center">
-    <Page index={pageIndex}/>
-    </div>
-    <div style={{ display: 'none' }}><Page index={pageIndex + 1}/></div>
-    <div className="flex object-right-bottom">
-      <button class="outline_btn" onClick={() => setPageIndex(pageIndex - 1)}>Prev</button>
-      <button class="outline_btn" onClick={() => setPageIndex(pageIndex + 1)}>Next</button>
-    </div>
-  </div>
+        </div>
+        <div className="mt-10 prompt_layout">
+          {jobs.map((job) => (
+            <ListContentCard post={job} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
+export default function App() {
+  // const router = useRouter();
+  // const currentPath = router.pathname;
+  // const currentQuery = router.query;
+  // console.log(currentPath)
+  const [pageIndex, setPageIndex] = useState(0);
 
+  return (
+    <div>
+      <div className="justify-center flex-center">
+        <Page index={pageIndex} />
+      </div>
+      <div style={{ display: "none" }}>
+        <Page index={pageIndex + 1} />
+      </div>
+      <div className="flex object-right-bottom">
+        <button class="outline_btn" onClick={() => setPageIndex(pageIndex - 1)}>
+          Prev
+        </button>
+        <button class="outline_btn" onClick={() => setPageIndex(pageIndex + 1)}>
+          Next
+        </button>
+      </div>
+    </div>
+  );
+}
 
 // "use client"
 // import ListContentCard from "@components/ListContentCard";
@@ -150,11 +220,10 @@ export default function App () {
 //   return response.json();
 // }
 
-
 // export default async function Jobs ()  {
 //   const data = await getData();
 //   const jobs=data.record.jobs;
-  
+
 //   return (
 //     <section className='w-full'>
 //       <h1 className='head_text text-left'>
@@ -163,7 +232,7 @@ export default function App () {
 
 //       <div className='mt-10 prompt_layout'>
 //         {jobs.map((job) => (
-//           <ListContentCard 
+//           <ListContentCard
 //             post={job}
 //           />
 //         ))}
@@ -188,7 +257,7 @@ export default function App () {
 
 // export default function Home({countries}) {
 // const [query, setQuery] = useState('');
-  
+
 // // set the value of our useState query anytime the user types on our input
 // const handleChange = (e) => {
 // setQuery(e.target.value)

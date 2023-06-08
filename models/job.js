@@ -5,9 +5,12 @@ const JobSchema = new Schema({
     id: {
         type: String,
     },
+    // logo:{
+    //     type:String,
+    // },
     title: {
         type: String,
-        required: [true, "Job title is required"],
+        // required: [true, "Job title is required"],
     },
     location: {
         type: String,
@@ -15,27 +18,27 @@ const JobSchema = new Schema({
     },
     isIntern: {
         type: Boolean,
-        required: [true, 'Whether it is Job/Intern is required'],
+        // required: [true, 'Whether it is Job/Intern is required'],
     },
     companyName: {
         type: String,
-        required: [true, "Company name is required"],
+        // required: [true, "Company name is required"],
     },
     companyLink: {
         type: String,
     },
     duration: {
         type: String,
-        required: [true, "Duration is required"],
+        // required: [true, "Duration is required"],
     },
     stipend: {
         type: Number,
-        required: [true, "Stipend is required"],
+        // required: [true, "Stipend is required"],
     },
     lastDate: {
         // type: Date,
         type:String,
-        required: [true, "Last date is required"],
+        // required: [true, "Last date is required"],
     },
     expectedStartDate: {
         type: String,

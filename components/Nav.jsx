@@ -23,13 +23,13 @@ const Nav = () => {
     <nav className='w-screen flex-between mb-4 pt-3 shadow-xl p-4'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
-          src='/assets/images/NewLogo.jpeg'
+          src='/assets/images/gradup.jpg'
           alt='logo'
           width={30}
           height={30}
           className='object-contain'
         />
-        <p className='logo_text'>TalentConnects</p>
+        <p className='logo_text'>GradUp</p>
       </Link>
       
 
@@ -46,7 +46,7 @@ const Nav = () => {
             <Link href='/courses' className='outline_btn'>
               Courses
             </Link>
-            <Link href='/hr/login' className='outline_btn'>
+            <Link href='/hr/signup' className='outline_btn'>
               HR Login
             </Link>
             <button type='button' onClick={signOut} className='black_btn'>

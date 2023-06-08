@@ -11,6 +11,7 @@ export const GET = async(req,{params}) => {
         const search=new URL(req.url).search;
         const urlParams=new URLSearchParams(search);
         pageNumber = urlParams.get('page');
+        let intern = urlParams.get('intern');
         await connectToDB();
         // for getting only the array of objects we can use . find method but we will use aggregate so that we can do more operation
         // const a=await Job.find();
@@ -25,7 +26,8 @@ export const GET = async(req,{params}) => {
                     [
                         { null:category },
                         { "Category":category } // "companyName"
-                    ]
+                    ],
+                    // "isIntern":intern
                 }
             },
             {

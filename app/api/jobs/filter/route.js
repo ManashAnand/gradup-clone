@@ -10,7 +10,7 @@ export const POST = async (request, { params }) => {
         var query = {};
         if(locationArray.length>0)query.location={$in:locationArray};
         if(titleArray.length>0)query.title={$in:titleArray};
-        query.stipend = {$gte:salary};
+        // query.stipend = {$gte:salary};
         await connectToDB();
         const JobDetails = await Job.find(query);
         return new Response(JSON.stringify(JobDetails),{status:201})

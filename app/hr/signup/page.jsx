@@ -6,6 +6,7 @@ import { IconButton } from "@styles/IconButton";
 import { EyeIcon } from "@styles/EyeIcon";
 import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
+import useSWR from 'swr';
 
 // const HRSignup = () => {
 //   return (
@@ -15,9 +16,21 @@ import { DeleteIcon } from "@styles/DeleteIcon";
 
 // export default HRSignup
 import Image from "next/image";
+import {useSession} from "next-auth/react";
+import Router from "next/navigation";
 import { Button } from "@nextui-org/react";
+
+const fetcher = async (...args) =>await fetch(...args).then((res) => res.json());
 export default function HRSignup() {
   let vari = 0;
+  
+  const { data: session } = useSession();
+  var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher);
+  if (error) return <div>userFailed to loadinggggggg</div>;
+  if (!data) return <div>Loading...</div>;
+  if(data.role=="Hr"){
+    Router.push("/hr");
+  }
   const addHR = async (e) => {
     e.preventDefault();
     // setIsSubmitting(true);

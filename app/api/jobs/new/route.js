@@ -8,7 +8,7 @@ export const POST = async(request) => {
         await connectToDB();
         const newJob = new Job({ 
             title:data.title,
-            isIntern: data.isIntern,
+            isIntern: false,
             companyName: data.companyName,
             companyLink: data.companyLink,
             duration: data.duration,
@@ -35,7 +35,7 @@ export const POST = async(request) => {
         await currentHR.save();
         return new Response("New Job Added", { status: 201 })
     } catch (error) {
-        console.log(error);
+        console.log("Error in Job Posting",error);
         return new Response("Failed to create a new prompt", { status: 500 });
     }
 }
