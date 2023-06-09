@@ -74,13 +74,31 @@ function Page ({ index }) {
   };
   return (
         <section className='w-full'>
-          <h1 className='head_text text-left'>
-            <span className='blue_gradient'>Internships for you</span>
-          </h1>
-          <div className="flex flex-row">
-            <div className="pt-16"> Search Bar Filter
+         <div className="headerpos">
+            <div>
+          <div className='head_text jobpos'>
+            <h1 className="text-sky-500 text-5xl underline decoration-yellow-300 underline-offset-8">Internships</h1>
+            <h1 className='text-red text-4xl mt-2'>for you.</h1>
+          </div>
+          <div className="inputcontainer">
+            <input className="inputbox" type="search" placeholder="Enter"></input>
+            <button className="btn1">Search</button>
+          </div>
+          </div>
+           <img className="giphy" src="assets/images/image.gif" alt="work-img"></img>
+          </div> 
+          <div>
+          <p className="heading1">All Internships</p>
+          </div>
+          <div className="sortpos">
+            <p className="-ml-10 text-gray-500 text-sm font-bold">Sort by:</p>
+            <button className="btn6">Recently Released</button>
+            <button className="btn6">Alphabetical</button>
+          </div>
+          <div className="main-content">
+            <div className="pt-16">
+                <div className="filterbox">
                 <div>
-                <div className="">
                   <div className="p-3">
                   <Select
                     options={cityList}
@@ -93,6 +111,7 @@ function Page ({ index }) {
                   </div>
                   <div className="p-3">
                   <Select
+                    className="container"
                     options={titleList}
                     placeholder="Select job title"
                     value={selectedTitle}
@@ -102,7 +121,7 @@ function Page ({ index }) {
                   />
                   </div>
                 </div>
-                <div className='custom-slider'>
+                <div className='text-center mt-4'>
                   <Input
                     type='range'
                     onChange={changeSalaryRxp}
@@ -110,19 +129,18 @@ function Page ({ index }) {
                     max={10000}
                     step={1}
                     value={salaryExp}
-                    className={'custom-slider'}>
+                  >
                   </Input>
                 </div>
-                <div>
-                <Input underlined value={`Min Salary -  ${salaryExp}`}/>
+                <div className="mt-4 text-center w-full">
+                <div className="salary">{`MIN SALARY - Rs. ${salaryExp}`}</div>
                 </div>
                 <div>
-                <button onClick={handleSubmit} type='submit' className='black_btn2 mt-5'  >Apply</button>
+                <button type='submit' className='btn4 mt-5'>Apply</button>
                 </div>
                 </div>
             </div>
-          <div className='mt-10 prompt_layout'>
-            
+          <div className='mt-10 arrange'>
             {jobs.map((job) => (
               <ListContentCard 
                 post={job}
@@ -137,10 +155,22 @@ function Page ({ index }) {
 export default function App () {
   const [pageIndex, setPageIndex] = useState(0);
  
-  return <div>
-    <Page index={pageIndex}/>
-    <div style={{ display: 'none' }}><Page index={pageIndex + 1}/></div>
-    <button onClick={() => setPageIndex(pageIndex - 1)}>Prev</button>
-    <button onClick={() => setPageIndex(pageIndex + 1)}>Next</button>
+  return (
+  <div>
+    <div className="justify-center flex-center">
+      <Page index={pageIndex} />
+    </div>
+    <div style={{ display: "none" }}>
+      <Page index={pageIndex + 1} />
+    </div>
+    <div className="flex buttonpos">
+      <button class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
+        Prev
+      </button>
+      <button class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
+        Next
+      </button>
+    </div>
   </div>
+);
 }

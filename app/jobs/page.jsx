@@ -117,7 +117,7 @@ function Page({ index }) {
           <div className="headerpos">
             <div>
           <div className='head_text jobpos'>
-            <h1 className='text-red text-4xl'>Find your job &</h1>
+            <h1 className='text-black text-4xl'>Find your job &</h1>
             <h1 className='text-blue-400 text-4xl'>and grab <span className="underline decoration-yellow-300 underline-offset-8">your opportunities</span></h1>
           </div>
           <div className="inputcontainer">

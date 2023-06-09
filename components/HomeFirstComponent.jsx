@@ -14,8 +14,8 @@ const HomeFirstComponent = () => {
             
             </h1> 
         </div>
-        <Link href='/courses' className="-ml-6 area">
-              <button className='btn6 bg-sky-700 mt-8'>Explore Courses</button>
+        <Link href='/courses' className="area">
+              <button className='btn7 bg-sky-700 mt-8'>Explore Courses</button>
         </Link>
         </div> 
         <div className="block mt-5">
