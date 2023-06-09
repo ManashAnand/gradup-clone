@@ -325,7 +325,34 @@ img:hover{
     width:85vw;
   }
 }
+.wave{
+  position: absolute;
+  bottom:60;
+  left:0;
+  width: 100.7%;
+  overflow: hidden;
+  line-height: 0;
+}
 
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+.wave .shape-fill {
+  fill: #FFFFFF;
+}
+.menu1{
+  margin:0 1vw;
+ }
+ .menu2{
+   margin:0 1vw;
+ }
+ .menu3{
+   margin:0 1vw;
+ }
 /* Tailwind Styles */
 
 .app {

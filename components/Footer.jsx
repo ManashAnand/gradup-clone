@@ -5,82 +5,87 @@ const Footer = () => {
   return (
     <div>
         <div className='pt-16'></div>
-    <footer className="text-gray-600 body-font w-screen bg-sky-200">
+        <div class="wave">
+     {/* <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+    </svg> */}
+</div>
+    <footer className="text-white body-font w-screen bg-sky-700">
   <div className="container px-5 py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-    <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mr-60">
+    <div className="w-80 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mr-60">
         <Link href={'/'} className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
+                </svg>
             <span className="ml-3 text-xl">TalentConnects</span> */}
             {/* above svg and span will be removed by our img logo */}
             {/* <img src="/assets/images/TalentConnects.png" alt="TalentConnects"/> */}
             <Image
             src='/assets/images/TalentConnects.png'
             alt='logo'
-            width={80}
-            height={80}
-            className='object-contain'
+            width={90}
+            height={90}
+            className='object-contain mx-auto mt-8'
             />
         </Link>
       
-      <p className="mt-2 text-sm text-gray-500">TalentConnects is a platform aimed at nurturing students to be industry ready</p>
+      <p className="mt-2 text-sm text-white text-center">TalentConnects is a platform aimed at nurturing students to be industry ready</p>
     </div>
-    <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
-      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">OUR SERVICES</h2>
+    <div className="flex-grow flex flex-wrap -mb-10 md:text-center mt-4 text-center">
+      <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu1">
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">OUR SERVICES</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Colleges</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">Colleges</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Coaching Institutes</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">Coaching Institutes</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Working Professional</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">Working Professional</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Schools</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">Schools</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Students</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">Students</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Business Professional</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">Business Professional</a>
           </li>
         </nav>
       </div>
-      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">QUICK LINKS</h2>
+      <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu2">
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">QUICK LINKS</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">First Link</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">Second Link</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">Third Link</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">Fourth Link</a>
           </li>
         </nav>
       </div>
-      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">ABOUT US</h2>
+      <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu3">
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">ABOUT US</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">First Link</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">Second Link</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">Third Link</a>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+            <a className="text-white hover:text-black text-xs cursor-pointer">Fourth Link</a>
           </li>
         </nav>
       </div>
