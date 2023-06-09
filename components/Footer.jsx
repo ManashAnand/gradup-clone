@@ -33,59 +33,59 @@ const Footer = () => {
     </div>
     <div className="flex-grow flex flex-wrap -mb-10 md:text-center mt-4 text-center">
       <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu1">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">OUR SERVICES</h2>
+        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">OUR SERVICES</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">Colleges</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">Colleges</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">Coaching Institutes</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">Coaching Institutes</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">Working Professional</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">Working Professional</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">Schools</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">Schools</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">Students</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">Students</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">Business Professional</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">Business Professional</a>
           </li>
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu2">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">QUICK LINKS</h2>
+        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">QUICK LINKS</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">First Link</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">First Link</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">Second Link</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">Second Link</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">Third Link</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">Third Link</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">Fourth Link</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">Fourth Link</a>
           </li>
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu3">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">ABOUT US</h2>
+        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">ABOUT US</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">First Link</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">First Link</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">Second Link</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">Second Link</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">Third Link</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">Third Link</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-xs cursor-pointer">Fourth Link</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer">Fourth Link</a>
           </li>
         </nav>
       </div>
