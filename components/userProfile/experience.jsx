@@ -66,6 +66,21 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
     return (
         <div className='w-full'>
       <div className='flex'>
+        <div className="px-10 py-3 rounded-2xl text-white bg-sky-700 w-full mt-3">
+        <Input css={{mt:"$4",width:"stretch"}} initialValue={experience.companyName} onChange={(e)=>setExperience({...experience,companyName:e.target.value})}/> <br/>
+        <div className='px-10'></div>
+        <Input css={{mt:"$4",width:"stretch"}} initialValue={experience.location} onChange={(e)=>setExperience({...experience,location:e.target.value})}/> <br/>
+        <div className='px-10'></div>
+        <Input css={{mt:"$4",width:"stretch"}} initialValue={experience.startDate} onChange={(e)=>setExperience({...experience,startDate:e.target.value})}/> <br/>
+        <div className='px-10'></div>
+        <Input css={{mt:"$4",width:"stretch"}} initialValue={experience.endDate} onChange={(e)=>setExperience({...experience,endDate:e.target.value})}/> <br/>
+        <div className='px-10'></div>
+        <Input css={{mt:"$4",width:"stretch"}} initialValue={experience.title} onChange={(e)=>setExperience({...experience,title:e.target.value})}/> <br/>
+        <div className='px-10'></div>
+        <Input css={{mt:"$4",width:"stretch"}} initialValue={experience.skills} onChange={(e)=>setExperience({...experience,skills:e.target.value})}/> <br/>
+        <div className='px-10'></div>
+        <Input css={{mt:"$4",width:"stretch"}} initialValue={experience.description} onChange={(e)=>setExperience({...experience,description:e.target.value})}/> <br/>
+        </div>
         <div className='w-4/5'></div>
         <Col css={{ d: "flex" }}>
             {
@@ -95,13 +110,6 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
             </Tooltip>
         </Col>
         </div>
-      <Input label="Conpany Name" underlined initialValue={experience.companyName} onChange={(e)=>setExperience({...experience,companyName:e.target.value})}/> <br/>
-      <Input label="location" underlined initialValue={experience.location} onChange={(e)=>setExperience({...experience,location:e.target.value})}/> <br/>
-      <Input label="Start Date" underlined initialValue={experience.startDate} onChange={(e)=>setExperience({...experience,startDate:e.target.value})}/> <br/>
-      <Input label="End Date" underlined initialValue={experience.endDate} onChange={(e)=>setExperience({...experience,endDate:e.target.value})}/> <br/>
-      <Input label="Title" underlined initialValue={experience.title} onChange={(e)=>setExperience({...experience,title:e.target.value})}/> <br/>
-      <Input label="Skills" underlined initialValue={experience.skills} onChange={(e)=>setExperience({...experience,skills:e.target.value})}/> <br/>
-      <Input label="Description" underlined initialValue={experience.description} onChange={(e)=>setExperience({...experience,description:e.target.value})}/> <br/>
     </div>
     )
 }

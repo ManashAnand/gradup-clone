@@ -64,6 +64,15 @@ const Project = ({projectName,skillsUsed, projectDes, projectLinks,id}) => {
     return (
         <div className='w-full'>
       <div className='flex'>
+      <div className="px-10 py-3 rounded-2xl text-white bg-sky-700 w-full mt-3">
+        <Input css={{mt:"$4",width:"stretch"}} label="Project Name" underlined initialValue={project.projectName} onChange={(e)=>setProject({...project,projectName:e.target.value})}/> <br/>
+        <div className='px-10'></div>
+        <Input css={{mt:"$4",width:"stretch"}} label="Skills Used" underlined initialValue={project.skillsUsed} onChange={(e)=>setProject({...project,skillsUsed:e.target.value})}/> <br/>
+        <div className='px-10'></div>
+        <Input css={{mt:"$4",width:"stretch"}} label="Project Des" underlined initialValue={project.projectDes} onChange={(e)=>setProject({...project,projectDes:e.target.value})}/> <br/>
+        <div className='px-10'></div>
+        <Input css={{mt:"$4",width:"stretch"}} label="Project Links" underlined initialValue={project.projectLinks} onChange={(e)=>setProject({...project,projectLinks:e.target.value})}/> <br/>
+        </div>
         <div className='w-4/5'></div>
         <Col css={{ d: "flex" }}>
             {
@@ -93,10 +102,6 @@ const Project = ({projectName,skillsUsed, projectDes, projectLinks,id}) => {
             </Tooltip>
         </Col>
         </div>
-        <Input label="Project Name" underlined initialValue={project.projectName} onChange={(e)=>setProject({...project,projectName:e.target.value})}/> <br/>
-        <Input label="Skills Used" underlined initialValue={project.skillsUsed} onChange={(e)=>setProject({...project,skillsUsed:e.target.value})}/> <br/>
-        <Input label="Project Des" underlined initialValue={project.projectDes} onChange={(e)=>setProject({...project,projectDes:e.target.value})}/> <br/>
-        <Input label="Project Links" underlined initialValue={project.projectLinks} onChange={(e)=>setProject({...project,projectLinks:e.target.value})}/> <br/>
     </div>
     )
 }

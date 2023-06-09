@@ -380,6 +380,11 @@ img:hover{
   border-radius:8px;
   font-family: 'Ubuntu', sans-serif;
  }
+ .btn8{
+  padding:6px 20px;
+  color:white;
+  border-radius:8px;
+ }
 /* Tailwind Styles */
 
 .app {
