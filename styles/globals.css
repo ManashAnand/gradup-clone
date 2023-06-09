@@ -314,6 +314,12 @@ img:hover{
     text-align:center;
     margin-left:1vh;
   }
+  .block{
+    display:none;
+  }
+  .area{
+    margin:0 auto;
+  }
 }
 @media screen and (max-width:350px) {
   .inputbox{
@@ -358,6 +364,12 @@ img:hover{
    font-family: 'Ubuntu', sans-serif;
  }
  .text{
+  font-family: 'Ubuntu', sans-serif;
+ }
+ .btn6{
+  padding:10px 20px;
+  color:white;
+  border-radius:8px;
   font-family: 'Ubuntu', sans-serif;
  }
 /* Tailwind Styles */

@@ -2,22 +2,25 @@ import React from 'react'
 import Link from 'next/link';
 const HomeFirstComponent = () => {
   return (
-    
-    <section className='w-full flex-center flex-col max-h-screen'>
-        <h1 className='head_text text-center'>
-            Connecting Talent To <br/>
-             Opportunities
+    <section className='w-full flex justify-evenly max-h-screen'>
+      <div className="mt-10">
+        <h1 className='text-5xl font-bold text-left'>
+            Connecting <span className="text-purple-500">Talent</span> To <br/>
+             Opportunities.
         </h1>
-        <div className='text-center'>
-            <h1 className='mt-5'>A Place where talent meets opportunities <br />
-            and you develop talent with our best courses and mentors
+        <div className='text-left text'>
+            <h1 className='mt-8 ml-1'>A Place where talent meets opportunities <br />
+            and you develop talent with our best courses and mentors.
             
             </h1> 
         </div>
-        
-        <Link href='/Courses' className='border-2 black_btn mt-10 p-5 '>
-              Explore Courses
+        <Link href='/courses' className="-ml-6 area">
+              <button className='btn6 bg-sky-700 mt-8'>Explore Courses</button>
         </Link>
+        </div> 
+        <div className="block mt-5">
+        <img width="250" src="/assets/images/homeimage.png" alt="home-image"></img>
+        </div>
     </section>
   )
 }
