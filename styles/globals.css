@@ -357,6 +357,9 @@ img:hover{
    margin:0 1vw;
    font-family: 'Ubuntu', sans-serif;
  }
+ .text{
+  font-family: 'Ubuntu', sans-serif;
+ }
 /* Tailwind Styles */
 
 .app {

@@ -29,7 +29,7 @@ const Footer = () => {
             />
         </Link>
       
-      <p className="mt-2 text-sm text-white text-center">TalentConnects is a platform aimed at nurturing students to be industry ready</p>
+      <p className="mt-2 text-sm text-white text-center text">TalentConnects is a platform aimed at nurturing students to be industry ready</p>
     </div>
     <div className="flex-grow flex flex-wrap -mb-10 md:text-center mt-4 text-center">
       <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu1">
