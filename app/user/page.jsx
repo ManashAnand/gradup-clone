@@ -2,7 +2,7 @@
 import useSWR from 'swr';
 import {useSession} from "next-auth/react";
 import Link from 'next/link';
-import { Input, Spacer , Button, Popover} from "@nextui-org/react";
+import { Input, Textarea, Spacer , Button, Popover} from "@nextui-org/react";
 import Education from "@components/userProfile/education"
 import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
@@ -69,7 +69,6 @@ export default function Profile() {
       //       fetchData();
       //  },[]);
       const addNewEducation=async (e)=>{
-        e.preventDefault();
         // console.log("ye id aii ", session?.user.id);
         try {
           const response = await fetch(`/api/user/${session?.user.id}/?type=education&action=create`, {
@@ -98,7 +97,6 @@ export default function Profile() {
       }
       // Function for Add New Project
       const addNewProject=async (e)=>{
-        e.preventDefault();
         console.log(e.target[0].value);
         try {
           const response = await fetch(`/api/user/${session?.user.id}/?type=project&action=create`, {
@@ -119,7 +117,6 @@ export default function Profile() {
       }
       //
       const addNewExperience=async (e)=>{
-        e.preventDefault();
         console.log(e.target[0].value);
         try {
           const response = await fetch(`/api/user/${session?.user.id}/?type=experience&action=create`, {
@@ -144,7 +141,6 @@ export default function Profile() {
 
       //
       const addNewAchievement=async (e)=>{
-        e.preventDefault();
         console.log(e.target[0].value);
         try {
           const response = await fetch(`/api/user/${session?.user.id}/?type=achievement&action=create`, {
@@ -184,24 +180,42 @@ export default function Profile() {
           <Input initialValue={data.contactNo}/> <br/>
           
         </div>
-        <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className='mx-5'>
           <div>
             <span className='heading_text my-auto'>Education</span>
             <p className="text-xs text-sky-700">(Add from top to bottom hierarcy)</p>
             <form onSubmit={addNewEducation} className="flex flex-col">
+                <div className="flex">
+                <div className='flex flex-col mb-5'>
                 <label className="mb-1 ml-2 mt-3 text text-sm">College*</label>
-                <Input css={{pr:"$4"}}  placeholder='Enter college'/>
-                <label className="mb-1 mt-3 ml-2 text text-sm">Degree*</label>
-                <Input css={{pr:"$4"}} placeholder='Enter Degree'/>
+                <Input css={{pr:"$4",width:"33.6vw"}} placeholder='Enter College'/>
+                </div>
+                <div className='flex flex-col ml-6 mb-5'>
+                <label className="mb-1 ml-2 mt-3 text text-sm">Degree*</label>
+                <Input css={{pr:"$4",width:"33.6vw"}} placeholder='Enter degree'/>
+                </div>
+                </div>
+                <div className="flex">
+                <div className='flex flex-col mb-5'>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Branch*</label>
-                <Input css={{pr:"$4"}} placeholder='Enter branch'/>
+                <Input css={{pr:"$4",width:"33.6vw"}} placeholder='Enter Branch'/>
+                </div>
+                <div className='flex flex-col ml-6 mb-5'>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Grade*</label>
-                <Input css={{pr:"$4"}} placeholder='Enter grade'/>
-                <label className="mb-1 mt-3 text text-sm">Joining Year*</label>
-                <Input type="date" css={{pr:"$4"}} placeholder='Enter starting date'/>
-                <label className="mb-1 mt-3 text text-sm">Ending Year*</label>
-                <Input type="date" css={{pr:"$4"}} placeholder='Enter ending date'/>
+                <Input css={{pr:"$4",width:"33.6vw"}} placeholder='Enter your grade'/>
+                </div>
+                </div>
+                <div className="flex">
+                <div className='flex flex-col mb-5'>
+                <label className="mb-1 ml-2 mt-3 text text-sm">Joining Date*</label>
+                <Input type="date" css={{pr:"$4",width:"33.6vw"}} placeholder='Enter starting date'/>
+                </div>
+                <div className='flex flex-col ml-6 mb-5'>
+                <label className="mb-1 ml-2 mt-3 text text-sm">Leaving Date*</label>
+                <Input type="date" css={{pr:"$4",width:"33.6vw"}} placeholder='Enter ending date'/>
+                </div>
+                </div>
                 <Button css={{mr:"10px",mt:"25px"}} type='submit'>ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow type PopoverPlacement ="right">
@@ -246,20 +260,20 @@ export default function Profile() {
           ))
           }
         </div>
-        <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className='mx-5'>
           <div>
             <span className='heading_text my-auto'>Projects</span>
             <p className="text-xs text-sky-700">(Enter all the project details)</p>
             <form onSubmit={addNewProject}className="flex flex-col">
                 <label className="mb-1 ml-2 mt-3 text text-sm">Project Name*</label>
-                <Input css={{pr:"$4"}}  placeholder='Enter name'/>
+                <Input css={{pr:"$4",mb:"$6"}}  placeholder='Enter name'/>
                 <label className="mb-1 mt-3 ml-2 text text-sm">Description*</label>
-                <Input css={{pr:"$4"}} placeholder='Enter Description'/>
+                <Textarea css={{pr:"$4",mb:"$6"}} rows={4} placeholder='Enter Description'/>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Skills Used*</label>
-                <Input css={{pr:"$4"}} placeholder='Enter Skills'/>
+                <Input css={{pr:"$4",mb:"$6"}} placeholder='Enter Skills'/>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Working Links*</label>
-                <Input css={{pr:"$4"}} placeholder='Enter link'/>
+                <Input css={{pr:"$4",mb:"$6"}} placeholder='Enter link'/>
                 <Button css={{mr:"10px",mt:"25px"}} type='submit'>ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow>
@@ -292,26 +306,38 @@ export default function Profile() {
             />
           ))}
         </div>
-        <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className='mx-5'>
           <div>
             <span className='heading_text my-auto'>Experience</span>
             <p className="text-xs text-sky-700">(Enter all of your previous and current work experiences)</p>
             <form onSubmit={addNewExperience} className="flex flex-col">
+                <div className="flex">
+                <div className='flex flex-col mb-5'>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Company*</label>
-                <Input css={{pr:"$4"}}  placeholder='Enter name'/>
-                <label className="mb-1 mt-3 ml-2 text text-sm">Location</label>
-                <Input css={{pr:"$4"}} placeholder='Enter Location'/>
+                <Input css={{pr:"$4",width:"34vw"}} placeholder='Enter Company'/>
+                </div>
+                <div className='flex flex-col ml-6 mb-5'>
+                <label className="mb-1 ml-2 mt-3 text text-sm">Location*</label>
+                <Input css={{pr:"$4",width:"33.5vw"}} placeholder='Enter Location'/>
+                </div>
+                </div>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Title*</label>
-                <Input css={{pr:"$4"}} placeholder='Enter Title'/>
+                <Input css={{pr:"$4",mb:"$6"}} placeholder='Enter Title'/>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Description*</label>
-                <Input css={{pr:"$4"}} placeholder='Enter Description'/>
+                <Textarea css={{pr:"$4",mb:"$6"}} rows={4} placeholder='Enter Description'/>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Skills*</label>
-                <Input css={{pr:"$4"}} placeholder='Enter Skills'/>
+                <Input css={{pr:"$4",mb:"$6"}} placeholder='Enter Skills'/>
+                <div className="flex">
+                  <div className='flex flex-col mb-6'>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Joining Date*</label>
-                <Input type="date" css={{pr:"$4"}} placeholder='Enter starting date'/>
+                <Input type="date" css={{pr:"$4",width:"33.6vw"}} placeholder='Enter starting date'/>
+                </div>
+                <div className='flex flex-col mb-6 ml-6'>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Leaving Date*</label>
-                <Input type="date" css={{pr:"$4"}} placeholder='Enter ending date'/>
+                <Input type="date" css={{pr:"$4",width:"33.6vw"}} placeholder='Enter ending date'/>
+                </div>
+                </div>
                 <Button css={{mr:"10px",mt:"25px"}} type='submit'>ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow>
@@ -353,14 +379,13 @@ export default function Profile() {
             />
           ))}
         </div>
-        <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className=' mx-5'>
           <div>
             <span className='heading_text my-auto'>Achievement</span>
             <p className="text-xs text-sky-700">(List all of your achievements)</p>
             <form onSubmit={addNewAchievement} className="flex flex-col">
-                <label className="mb-1 text-sm ml-2 mt-3 text">Achievement</label>
-                <Input css={{pr:"$4"}}  placeholder='Enter Achievement'/>
+                <Textarea css={{pr:"$4",mt:"$4"}} rows={4} placeholder="Enter your achievements"/>
                 <Button css={{mr:"10px",mt:"25px"}} type='submit'> ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow>
@@ -388,6 +413,7 @@ export default function Profile() {
         </div>
         </div>
       </section>
+      <button className='btn9 bg-sky-400 mr-6'>Submit</button>
     </div>
   );
 }

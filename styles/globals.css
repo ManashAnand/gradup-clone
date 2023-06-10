@@ -385,6 +385,15 @@ img:hover{
   color:white;
   border-radius:8px;
  }
+ .btn9{
+  padding:8px 20px;
+  color:white;
+  border-radius:8px;
+  float:right;
+  font-size:14px;
+  margin-top:2em;
+ }
+ 
 /* Tailwind Styles */
 
 .app {

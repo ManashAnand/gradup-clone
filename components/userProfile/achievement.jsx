@@ -3,8 +3,8 @@ import useSWR from 'swr';
 import {useSession} from "next-auth/react";
 import Link from 'next/link';
 
-import {  Button, Popover, Loading} from "@nextui-org/react";
-import { Input, Spacer } from "@nextui-org/react";
+import {  Button, Popover, Loading, Textarea} from "@nextui-org/react";
+import { Input,Spacer } from "@nextui-org/react";
 import { useState,useEffect } from 'react';
 import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
@@ -62,33 +62,35 @@ const Achievement = ({achievementName,id}) => {
     return (
         <div className='w-full'>
       <div className='flex'>
-        <div className="px-2 py-3 rounded-2xl text-white bg-sky-700 w-screen mt-3">
-      <Input css={{h:"15px",width:"stretch"}} initialValue={achievement.achievementName} onChange={(e)=>setAchievement({...achievement,achievementName:e.target.value})}/>
-         </div>
+      <div className="px-10 py-3 rounded-2xl text-white bg-sky-700 w-full text-center mt-3">
+      <label className="text-sm ml-2">Achievement</label>
+      <Textarea css={{height:"fit-content",width:"stretch",mt:"$4"}} initialValue={achievement.achievementName} onChange={(e)=>setAchievement({...achievement,achievementName:e.target.value})}/>
+      </div> 
         <div className='w-4/5'></div>
         <Col css={{ d: "flex" }}>
             {
                 (updating==0)?(<>
-                <Tooltip content="Edit user" className='mx-15 my-auto'>
+                <Tooltip content="Edit" className='mx-15 my-auto'>
                  <IconButton onClick={() => setIsUpdating(1)}>
                      <EditIcon size={20} fill="#979797" />
                     </IconButton>
                 </Tooltip>
-                </>):((updating==1)?(<><Button onClick={updateAchievement}>Save</Button></>)
+                </>):((updating==1)?(<><button className='text-blue-800' onClick={updateAchievement}>Save</button></>)
                 :(<>
                     <div className='mx-2'>
-                 <Button disabled auto bordered color="secondary" css={{ px: "$13" }}>
+                 <Button disabled auto bordered color="secondary" css={{ px: "$13",mt:"$15" }}>
                      <Loading type="spinner" color="currentColor" size="sm" />
                  </Button>
                  </div>
                 </>))
             }
             <Tooltip
-                content="Delete user"
+                content="Delete"
                 color="error"
-                onClick={deleteAchievement }
+                onClick={deleteAchievement}
+                className='mx-15 my-auto'
             >
-            <IconButton className='mx-15 my-auto'>
+            <IconButton css={{ml:"$10"}} className='my-auto'>
               <DeleteIcon size={20} fill="#FF0080" />
             </IconButton>
             </Tooltip>
