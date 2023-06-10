@@ -211,15 +211,15 @@ img:hover{
   margin:auto;
 }
 .filterbox{
-  margin-top:-8vh;
+  margin-top:-6vh;
   padding:1em;
   border-radius: 15px;
   background-color:#AFDBF5;
   min-height:45vh;
-  width:18vw;
+  width:20vw;
 }
 .arrange{
-  margin-left:11vh;
+  margin-left:18vh;
   margin-top:3vh;
   display:grid;
   gap:25px;
@@ -234,7 +234,7 @@ img:hover{
   color:deepskyblue;
   font-weight:bold;
   text-align:center;
-  margin-left: -12vw;
+  margin-left:0vw;
   font-size:22px;
 }
 .heading1{
@@ -242,7 +242,7 @@ img:hover{
   color:deepskyblue;
   font-weight:bold;
   text-align:center;
-  margin-left: -6vw;
+  margin-left:4vw;
   font-size:22px;
 }
 .btn6{
@@ -263,6 +263,7 @@ img:hover{
 .buttonpos{
   display:flex;
   justify-content:end;
+  margin-right:1vw;
   margin-top:2rem;
 }
 @media screen and (max-width:1130px) {
@@ -277,7 +278,8 @@ img:hover{
   }
   .arrange{
     grid-template-columns: repeat(1,1fr);
-    margin:auto;
+    margin-left:15vh;
+    margin-top: auto;
   }
   .filterbox{
     margin-top:-9vh;
@@ -285,7 +287,7 @@ img:hover{
   }
   .buttonpos{
     justify-content:center;
-    margin-left:25.5vw;
+    margin-left:40vw;
   }
 }
 @media screen and (max-width:800px) {
@@ -393,7 +395,6 @@ img:hover{
   font-size:14px;
   margin-top:2em;
  }
- 
 /* Tailwind Styles */
 
 .app {
