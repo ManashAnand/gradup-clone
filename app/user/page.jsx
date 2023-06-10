@@ -21,6 +21,7 @@ const fetcher = async (...args) =>await fetch(...args).then((res) => res.json())
 
 export default function Profile() {
   const { data: session } = useSession();
+  const [submitted,setSubmitted]=useState(false)
   // console.log(session, "Ajay",data);
   // console.log("ye id haiiiiiiiiiii",  session?.user.id);
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher)
@@ -68,6 +69,9 @@ export default function Profile() {
       //       }
       //       fetchData();
       //  },[]);
+      function handleSubmit(){
+         setSubmitted(true)
+      }
       const addNewEducation=async (e)=>{
         // console.log("ye id aii ", session?.user.id);
         try {
@@ -158,7 +162,7 @@ export default function Profile() {
       }
       const ButtonStyle = { margin: "0px 0.5rem" };
   return (
-    <div className='w-full'>
+    !submitted?<div className='w-full'>
         <section className='w-full flex justify-between'>
           <h1 className='head_text text-left'>
             {/* <span className='blue_gradient'>Welcome {data.name} !!</span> */}
@@ -413,7 +417,10 @@ export default function Profile() {
         </div>
         </div>
       </section>
-      <button className='btn9 bg-sky-400 mr-6'>Submit</button>
-    </div>
+      <button onClick={handleSubmit} className='btn9 bg-sky-400 mr-6'>Submit</button>
+    </div>:<>
+    <img className="mt-16 mb-6" width="400" src="/assets/images/submitted.gif" alt="submitted"></img>
+    <div className="text-center my-50 text-4xl text-sky-600 text mb-16">Application Sent Successfully</div>
+    </>
   );
 }
