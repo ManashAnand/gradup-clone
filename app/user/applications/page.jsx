@@ -165,7 +165,7 @@ export default function App() {
           </Table.Row>
         )}
       </Table.Body>
-      <Table.Pagination 
+      <Table.Pagination  css={{mr:"$15"}}
         // shadow
         // noMargin
         // align="center"
