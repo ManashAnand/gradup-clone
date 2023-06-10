@@ -269,7 +269,7 @@ export default function Profile() {
                 <label className="mb-1 ml-2 mt-3 text text-sm">Project Name*</label>
                 <Input css={{pr:"$4",mb:"$6"}}  placeholder='Enter name'/>
                 <label className="mb-1 mt-3 ml-2 text text-sm">Description*</label>
-                <Textarea css={{pr:"$4",mb:"$6"}} rows={4} placeholder='Enter Description'/>
+                <Textarea css={{pr:"$4",mb:"$6"}} rows={5} placeholder='Enter Description'/>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Skills Used*</label>
                 <Input css={{pr:"$4",mb:"$6"}} placeholder='Enter Skills'/>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Working Links*</label>
@@ -325,7 +325,7 @@ export default function Profile() {
                 <label className="mb-1 ml-2 mt-3 text text-sm">Title*</label>
                 <Input css={{pr:"$4",mb:"$6"}} placeholder='Enter Title'/>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Description*</label>
-                <Textarea css={{pr:"$4",mb:"$6"}} rows={4} placeholder='Enter Description'/>
+                <Textarea css={{pr:"$4",mb:"$6"}} rows={5} placeholder='Enter Description'/>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Skills*</label>
                 <Input css={{pr:"$4",mb:"$6"}} placeholder='Enter Skills'/>
                 <div className="flex">
@@ -385,7 +385,7 @@ export default function Profile() {
             <span className='heading_text my-auto'>Achievement</span>
             <p className="text-xs text-sky-700">(List all of your achievements)</p>
             <form onSubmit={addNewAchievement} className="flex flex-col">
-                <Textarea css={{pr:"$4",mt:"$4"}} rows={4} placeholder="Enter your achievements"/>
+                <Textarea css={{pr:"$4",mt:"$4"}} rows={5} placeholder="Enter your achievements"/>
                 <Button css={{mr:"10px",mt:"25px"}} type='submit'> ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow>
