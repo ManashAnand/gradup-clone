@@ -266,6 +266,13 @@ img:hover{
   margin-right:1vw;
   margin-top:2rem;
 }
+.coursebox{
+  display:flex;
+}
+.courseimg{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+ }
 @media screen and (max-width:1130px) {
   .sortpos{
    opacity:0;
@@ -288,6 +295,13 @@ img:hover{
   .buttonpos{
     justify-content:center;
     margin-left:40vw;
+  }
+  .courseimg{
+    display:none;
+  }
+  .coursebox{
+    display:flex;
+    justify-content: center;
   }
 }
 @media screen and (max-width:800px) {
@@ -329,6 +343,9 @@ img:hover{
   }
   .area{
     margin:0 auto;
+  }
+  .coursebox{
+    display:none;
   }
 }
 @media screen and (max-width:350px) {
@@ -395,10 +412,8 @@ img:hover{
   font-size:14px;
   margin-top:2em;
  }
- .courseimg{
-  display:grid;
-  grid-template-columns: repeat(2,1fr);
- }
+
+ 
 /* Tailwind Styles */
 
 .app {
