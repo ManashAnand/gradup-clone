@@ -11,8 +11,8 @@ export default function Partner() {
       </div>
       <div className={styles.box}>
         <div>
-          <h1 className={styles.heading}>About Attitude matterZ</h1>
-          <p className={styles.partnerpara}>Attitude matterZ is a unit of 8TUDEM TECH PRIVATE LIMITED. We are a Government of India recognized Start-up. We are dedicated towards serving students to land up to their dream career by assisting them via our placement preparation modules, supporting working professionals via our upskilling courses and partnering with companies to provide digital marketing services. We extensively conduct workshops-seminars and webinars for placement preparation at premier institutes across India. All our workshops are conducted by IIM/ISB/XLRI/MDI/FMS/IIFT/IMT Alumni only. Our mentors work at top-tier firms including Google, Facebook, Amazon, BCG, Goldman Sachs, Big 4, TATAs and many more.</p>
+          <h1 className={styles.heading}>About GradUp</h1>
+          <p className={styles.partnerpara}>GradUp is a unit of 8TUDEM TECH PRIVATE LIMITED. We are a Government of India recognized Start-up. We are dedicated towards serving students to land up to their dream career by assisting them via our placement preparation modules, supporting working professionals via our upskilling courses and partnering with companies to provide digital marketing services. We extensively conduct workshops-seminars and webinars for placement preparation at premier institutes across India. All our workshops are conducted by IIM/ISB/XLRI/MDI/FMS/IIFT/IMT Alumni only. Our mentors work at top-tier firms including Google, Facebook, Amazon, BCG, Goldman Sachs, Big 4, TATAs and many more.</p>
           <button className={styles.btn1}><a className="link" href="brochure.pdf" download >Download Brochure</a></button>
         </div>
         <img className={styles.image} src="/assets/images/book.png" alt="book"></img>
@@ -34,10 +34,10 @@ export default function Partner() {
           The Batch would be under the closed supervision of founders of both the companies and would also get a chance to interact with 4-5 Industry Leaders including CXOs of top companies across the globe.</div>
         <div className={styles.task3}>
           <div className={styles.circle}>3</div>
-          At the end of the programme, depending on the performance of the enrolled participants, YPay and Attitude matterZ shall offer PPIs (Pre-placement Interviews) for various positions in Engineering, Finance and Marketing. The CTC details shall be on a mutual agreement between the company founders and the Placement records of the college.</div>
+          At the end of the programme, depending on the performance of the enrolled participants, YPay and GradUp shall offer PPIs (Pre-placement Interviews) for various positions in Engineering, Finance and Marketing. The CTC details shall be on a mutual agreement between the company founders and the Placement records of the college.</div>
         <div className={styles.task4}>
           <div className={styles.circle}>4</div>
-          Attitude matterZ would also sign an MOU with the college for Interview preparation, training and placement related support to the colleges depending on the programme effectiveness, interest level of the students, placement committee and performance of the enrolled candidates.</div>
+          GradUp would also sign an MOU with the college for Interview preparation, training and placement related support to the colleges depending on the programme effectiveness, interest level of the students, placement committee and performance of the enrolled candidates.</div>
       </div>
     </div>
   )

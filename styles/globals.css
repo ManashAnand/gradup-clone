@@ -395,6 +395,10 @@ img:hover{
   font-size:14px;
   margin-top:2em;
  }
+ .courseimg{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+ }
 /* Tailwind Styles */
 
 .app {

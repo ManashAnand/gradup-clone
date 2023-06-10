@@ -25,7 +25,7 @@ export default function Services() {
           <label className={styles.name}>120-150 min :</label><label className={styles.value}>Introduction to numbers, GD introduction and conclusion. How to Ace GD even when you don’t know a word about topic!</label>
           <label className={styles.name}>150-180 min :</label><label className={styles.value}>2/3 Live GDs covering major types and all points discussed above</label>
           <label className={styles.name}>Mock GD :</label><label className={styles.value}>Participants will be grouped in a Team Size of 6-8 members randomly and will be prepared for Mock GD rounds of 15-20 mins each</label>
-          <label className={styles.name}>a-Z GD Handbook :</label><label className={styles.value}>Free handbook covering all the tips and tricks to Ace GD loaded with GD relevant contents like current affairs, general awareness and Abstract GD topics</label>
+          <label className={styles.name}>a-Z GD Handbook :</label><label className={styles.value}>Free handbook covering the tips and tricks to ace GD loaded with GD contents like current affairs, general awareness and Abstract GD topics</label>
         </div>
       </div>
       <div className={styles.box}>
@@ -36,7 +36,7 @@ export default function Services() {
           <p className={styles.partnerpara}>Personal Interview is the Ultimate step in hiring for corporate jobs where candidates are the assessed basis of their technical skills, leadership skills, thinking approach, and many others. We prepare you to step by step to ACE PI for any company you sit for.</p>
           <p className={styles.partnerpara}>Comprehensive Course Highlights:</p>
           <h1 className={styles.enroll}>GET FREE a to Z GD Handbook worth Rs. 599/- by enrolling:</h1>
-          <h1 className={styles.enroll}>Never before- 1 Free Mock Interview (One-to-One) by Industry Professional : 15 mins</h1>
+          <h1 className={styles.enroll}>Never before- 1 Free Mock Interview(One-to-One) by Professional: 15 mins</h1>
           <button className={styles.btn1}><a href="">Book a Slot</a></button>
         </div>
       </div>
@@ -134,7 +134,7 @@ export default function Services() {
         <div>
           <h1 className={styles.heading}>--Services</h1>
           <h1 className={styles.subhead}>Consulting Case Preparation and Guesstimate</h1>
-          <p className={styles.partnerpara}>Have you ever come across questions like “ Tell me the number of people in Delhi wearing white shirts on a Tuesday” OR “ A company is witnessing reduced profits for last 6 months; find out the reason and suggest a solution” and you might have wondered what this question is all about and how to even get started about it? At attitude matterZ , we will take you on a journey that would start from understanding these short cases and guesstimates to producing the best possible approach to solve them. We will train you in the basic techniques to handle questions of all types which will help you crack your case study round for the interview plus give you an edge over others in Corporate Case Competitions.</p>
+          <p className={styles.partnerpara}>Have you ever come across questions like “ Tell me the number of people in Delhi wearing white shirts on a Tuesday” OR “ A company is witnessing reduced profits for last 6 months; find out the reason and suggest a solution” and you might have wondered what this question is all about and how to even get started about it? At GradUp , we will take you on a journey that would start from understanding these short cases and guesstimates to producing the best possible approach to solve them. We will train you in the basic techniques to handle questions of all types which will help you crack your case study round for the interview plus give you an edge over others in Corporate Case Competitions.</p>
           <button className={styles.btn1}><a href="">Get Service</a></button>
         </div>
       </div>
@@ -244,7 +244,7 @@ export default function Services() {
           <h1 className={styles.heading}>--Services</h1>
           <h1 className={styles.subhead}>Career Guidance</h1>
           <p className={styles.partnerpara}>The biggest mistake one can do in life is not follow his passion and join a college without an aim. We have all seen students taking a B.Tech degree just because other’s are doing the same, students taking commerce as subjects in class 11 only because they didn’t had a good physics teacher in class 10, students taking up any branch/ specialization without knowing the career progression and also sitting for college placements only by looking at CTC and not company/job profile- and trust me this is even prevalent in good colleges including IITs and IIMs.</p>
-          <p className={styles.partnerpara}>To have a clear cut discussion on what subjects /specialization /jobs is best suitable for you- Attitude matterZ presents a close knitted career guidance program where small group of participants are heard, their career path and interests is understood by our professionally certified career counsellors and accordingly best decision in taken. Come, let’s chat around your career discussion plans!</p>
+          <p className={styles.partnerpara}>To have a clear cut discussion on what subjects /specialization /jobs is best suitable for you- GradUp presents a close knitted career guidance program where small group of participants are heard, their career path and interests is understood by our professionally certified career counsellors and accordingly best decision in taken. Come, let’s chat around your career discussion plans!</p>
           <button className={styles.btn1}><a href="">Book A Slot</a></button>
         </div>
       </div>
