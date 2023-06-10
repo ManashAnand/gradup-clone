@@ -64,7 +64,7 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
     return (
     <div className='w-full'>
       <div className='flex'>
-      <div className="px-10 py-3 rounded-2xl text-white bg-sky-700 text-center w-full mt-3">
+      <div className="px-3 py-3 rounded-2xl text-white bg-sky-700 text-center w-full mt-3 mr-10">
         <label className="text-sm ml-2">College Name</label>
         <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.collegeName} onChange={(e)=>setEducation({...education,collegeName:e.target.value})}/>
         <div className='px-10'></div>
@@ -83,8 +83,7 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
         <label className="text-sm ml-2">Ending Year</label>
         <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.endYear}  onChange={(e)=>setEducation({...education,endYear:e.target.value})}/> <br/>
       </div>
-        <div className='w-4/5'></div>
-        <Col css={{ d: "flex" }}>
+        <div className='flex'>
             {
                 (updating==0)?(<>
                 <Tooltip content="Edit" className='mx-15 my-auto'>
@@ -103,11 +102,11 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
                 onClick={deleteEducation }
                 className='mx-15 my-auto'
             >
-            <IconButton css={{ml:"$10"}} className='mx-15'>
+            <IconButton css={{ml:"$8"}} className='mx-15'>
               <DeleteIcon size={20} fill="#FF0080" />
             </IconButton>
             </Tooltip>
-        </Col>
+        </div>
         </div>
       <div className='mb-15 pb-10'></div>
     </div>

@@ -66,7 +66,7 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
     return (
         <div className='w-full'>
       <div className='flex'>
-        <div className="px-10 py-3 rounded-2xl text-white bg-sky-700 w-full text-center mt-3">
+        <div className="px-3 py-3 rounded-2xl text-white bg-sky-700 w-full text-center mt-3 mr-10">
         <label className="text-sm ml-2">Company Name</label>
         <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.companyName} onChange={(e)=>setExperience({...experience,companyName:e.target.value})}/> <br/>
         <div className='px-10'></div>
@@ -88,8 +88,7 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
         <label className="text-sm ml-2">Description</label>
         <Textarea css={{mt:"$4",width:"stretch",mb:"$4"}} initialValue={experience.description} onChange={(e)=>setExperience({...experience,description:e.target.value})}/> <br/>
         </div>
-        <div className='w-4/5'></div>
-        <Col css={{ d: "flex" }}>
+        <div className="flex">
             {
                 (updating==0)?(<>
                 <Tooltip content="Edit" className='mx-15 my-auto'>
@@ -112,11 +111,11 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
                 onClick={deleteExperience }
                 className='mx-15 my-auto'
             >
-            <IconButton css={{ml:"$10"}} className='mx-15'>
+            <IconButton css={{ml:"$8"}} className='mx-15'>
               <DeleteIcon size={20} fill="#FF0080" />
             </IconButton>
             </Tooltip>
-        </Col>
+        </div>
         </div>
     </div>
     )

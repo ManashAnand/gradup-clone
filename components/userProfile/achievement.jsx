@@ -62,15 +62,14 @@ const Achievement = ({achievementName,id}) => {
     return (
         <div className='w-full'>
       <div className='flex'>
-      <div className="px-10 py-3 rounded-2xl text-white bg-sky-700 w-full text-center mt-3">
+      <div className="px-3 py-3 rounded-2xl text-white bg-sky-700 w-full text-center mt-6 mr-10">
       <label className="text-sm ml-2">Achievement</label>
       <Textarea css={{height:"fit-content",width:"stretch",mt:"$4"}} initialValue={achievement.achievementName} onChange={(e)=>setAchievement({...achievement,achievementName:e.target.value})}/>
       </div> 
-        <div className='w-4/5'></div>
-        <Col css={{ d: "flex" }}>
+        <div className='flex'>
             {
                 (updating==0)?(<>
-                <Tooltip content="Edit" className='mx-15 my-auto'>
+                <Tooltip content="Edit" className='mx-1 my-auto'>
                  <IconButton onClick={() => setIsUpdating(1)}>
                      <EditIcon size={20} fill="#979797" />
                     </IconButton>
@@ -90,11 +89,11 @@ const Achievement = ({achievementName,id}) => {
                 onClick={deleteAchievement}
                 className='mx-15 my-auto'
             >
-            <IconButton css={{ml:"$10"}} className='my-auto'>
+            <IconButton css={{ml:"$8"}} className='my-auto'>
               <DeleteIcon size={20} fill="#FF0080" />
             </IconButton>
             </Tooltip>
-        </Col>
+        </div>
     </div>
   </div>
     )
