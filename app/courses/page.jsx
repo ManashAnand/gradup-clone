@@ -173,7 +173,7 @@ const Courses = () => {
               <Row wrap="wrap" justify="space-between" align="center">
                 <Text b>{item.title}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
-                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course</button>
+                  <button className="text-sm text-blue-600" onClick={handleCourses}>Explore &rarr;</button>
                 </Text>
               </Row>
             </Card.Footer>
@@ -205,7 +205,7 @@ const Courses = () => {
                 <Text css={{mr:"$10"}} b>{item.title}</Text>
                 <Text css={{color:"$red700"}} b>{item.price}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
-                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course</button>
+                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
               </Row>
             </Card.Footer>
@@ -236,7 +236,7 @@ const Courses = () => {
                 <Text css={{mr:"$10"}} b>{item.title}</Text>
                 <Text  css={{color:"$red700"}} b>{item.price}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
-                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course</button>
+                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
               </Row>
             </Card.Footer>
@@ -267,7 +267,7 @@ const Courses = () => {
                 <Text css={{mr:"$16"}} b>{item.title}</Text>
                 <Text  css={{color:"$red700",mr:"$8"}} b>{item.price}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
-                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course</button>
+                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
               </Row>
             </Card.Footer>
@@ -298,7 +298,7 @@ const Courses = () => {
                 <Text b>{item.title}</Text>
                 <Text css={{color:"$red700"}} b>{item.price}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
-                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course</button>
+                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
               </Row>
             </Card.Footer>
@@ -329,7 +329,7 @@ const Courses = () => {
                 <Text b>{item.title}</Text>
                 <Text css={{color:"$red700"}} b>{item.price}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
-                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course</button>
+                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
               </Row>
             </Card.Footer>
