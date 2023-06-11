@@ -130,6 +130,30 @@ const Courses = () => {
       price: "$14",
     },
   ];
+  const list6 = [
+    {
+      title: "User Experience(UX/UI) Design",
+      img: "/assets/images/UIUX.gif",
+      price: "$14",
+    },
+    {
+      title: "Graphic Designer",
+      img: "/assets/images/webdesign.gif",
+      price: "$14",
+    },
+  ];
+  const list7 = [
+    {
+      title: "Painting",
+      img: "/assets/images/painting.gif",
+      price: "$14",
+    },
+    {
+      title: "Resume Writing",
+      img: "/assets/images/resume.gif",
+      price: "$14",
+    },
+  ];
   function handleCourses(){
     setResults(true)
   }
@@ -137,13 +161,13 @@ const Courses = () => {
     !results?<>
     <div className='coursebox'>
     <svg height="400" width="600">
-    <polygon points="500,50 500,320 10,400 10,50" style={{fill:"#fde68a"}}/>
-    <text className="text-4xl text" x="90" y="100" fill="#57534e">Learn from anywhere</text>
-    <text className="text-4xl text" x="90" y="140" fill="#57534e">around the globe</text>
-    <text className="text-4xl text" x="90" y="180" fill="#57534e">with us</text>
-    <text className="text-xl text" x="90" y="250" fill="grey">Experience quality courses with us with</text>
-    <text className="text-xl text" x="90" y="270" fill="grey">best price. You can get best courses</text>
-    <text className="text-xl text" x="90" y="290" fill="grey">from us</text>
+    <polygon points="500,50 500,320 10,400 10,50" style={{fill:"#dda0dd"}}/>
+    <text className="text-4xl text" x="90" y="120" fill="#57534e">Learn from anywhere</text>
+    <text className="text-4xl text" x="90" y="160" fill="#57534e">around the globe</text>
+    <text className="text-4xl text" x="90" y="200" fill="#57534e">with us</text>
+    <text className="text-xl text" x="90" y="290" fill="white">Experience quality courses with us with</text>
+    <text className="text-xl text" x="90" y="320" fill="white">best price. You can get best courses</text>
+    <text className="text-xl text" x="90" y="350" fill="white">from us</text>
      </svg>
     <div className='courseimg'>
       <img width="200" src="/assets/images/image1.png"></img>
@@ -216,7 +240,7 @@ const Courses = () => {
     </Grid.Container>
     </div>
     <p className='text-xl text-left text font-semibold text-gray-700 mt-16 mb-8'>Information Technology</p>
-    <div className="p-2 rounded-xl bg-yellow-200">
+    <div className="p-2 rounded-xl bg-purple-200">
     <Grid.Container gap={2} justify="flex-start">
       {list2.map((item, index) => (
         <Grid xs={6} sm={3} key={index}>
@@ -278,7 +302,7 @@ const Courses = () => {
     </Grid.Container>
     </div>
     <p className='text-xl text-left text font-semibold text-gray-700 mt-16 mb-8'>Management</p>
-    <div className="p-2 rounded-xl bg-green-200">
+    <div className="p-2 rounded-xl bg-cyan-200">
     <Grid.Container gap={2} justify="flex-start">
       {list4.map((item, index) => (
         <Grid xs={6} sm={4} key={index}>
@@ -309,7 +333,7 @@ const Courses = () => {
     </Grid.Container>
     </div>
     <p className='text-xl text-left text font-semibold text-gray-700 mt-16 mb-8'>Language Learning</p>
-    <div className="p-2 rounded-xl bg-orange-200">
+    <div className="p-2 rounded-xl bg-violet-200">
     <Grid.Container gap={2} justify="flex-start">
       {list5.map((item, index) => (
         <Grid xs={6} sm={6} key={index}>
@@ -319,6 +343,68 @@ const Courses = () => {
               <Card.Image
                 src={item.img}
                 objectFit="cover"
+                width="150%"
+                height={140}
+                alt={item.title}
+              />
+            </Card.Body>
+            <Card.Footer css={{ justifyItems: "flex-start" }}>
+              <Row wrap="wrap" justify="space-between" align="center">
+                <Text b>{item.title}</Text>
+                <Text css={{color:"$red700"}} b>{item.price}</Text>
+                <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
+                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
+                </Text>
+              </Row>
+            </Card.Footer>
+          </Card>
+          {/* </Link> */}
+        </Grid>
+      ))}
+    </Grid.Container>
+    </div>
+    <p className='text-xl text-left text font-semibold text-gray-700 mt-16 mb-8'>Design and Product</p>
+    <div className="p-2 rounded-xl bg-pink-200">
+    <Grid.Container gap={2} justify="flex-start">
+      {list6.map((item, index) => (
+        <Grid xs={6} sm={6} key={index}>
+          {/* <Link href="/courses"> */}
+          <Card isPressable>
+            <Card.Body css={{ p: 0 }}>
+              <Card.Image
+                src={item.img}
+                objectFit="contain"
+                width="150%"
+                height={140}
+                alt={item.title}
+              />
+            </Card.Body>
+            <Card.Footer css={{ justifyItems: "flex-start" }}>
+              <Row wrap="wrap" justify="space-between" align="center">
+                <Text b>{item.title}</Text>
+                <Text css={{color:"$red700"}} b>{item.price}</Text>
+                <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
+                  <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
+                </Text>
+              </Row>
+            </Card.Footer>
+          </Card>
+          {/* </Link> */}
+        </Grid>
+      ))}
+    </Grid.Container>
+    </div>
+    <p className='text-xl text-left text font-semibold text-gray-700 mt-16 mb-8'>Arts and Humanities</p>
+    <div className="p-2 rounded-xl bg-green-200">
+    <Grid.Container gap={2} justify="flex-start">
+      {list7.map((item, index) => (
+        <Grid xs={6} sm={6} key={index}>
+          {/* <Link href="/courses"> */}
+          <Card isPressable>
+            <Card.Body css={{ p: 0 }}>
+              <Card.Image
+                src={item.img}
+                objectFit="contain"
                 width="150%"
                 height={140}
                 alt={item.title}

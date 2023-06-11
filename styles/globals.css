@@ -267,7 +267,11 @@ img:hover{
   margin-top:2rem;
 }
 .coursebox{
+  margin-top:3vh;
   display:flex;
+  background-color:plum;
+  padding:12px;
+  border-radius:20px;
 }
 .courseimg{
   display:grid;
