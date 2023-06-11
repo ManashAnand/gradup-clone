@@ -273,6 +273,12 @@ img:hover{
   padding:12px;
   border-radius:20px;
 }
+.headingbox{
+  margin-top:3vh;
+  background-color:plum;
+  padding:12px;
+  border-radius:20px;
+}
 .courseimg{
   display:grid;
   grid-template-columns: repeat(2,1fr);
