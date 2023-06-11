@@ -318,7 +318,7 @@ const Courses = () => {
             <Card.Body css={{ p: 0 }}>
               <Card.Image
                 src={item.img}
-                objectFit="contain"
+                objectFit="cover"
                 width="150%"
                 height={140}
                 alt={item.title}
