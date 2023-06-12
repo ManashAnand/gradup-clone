@@ -55,38 +55,38 @@ const page = ({params}) => {
       }
     };
   return (
-    <div className='justify-center w-full align-center justify-items-center'>
-          <h1 className='mt-3 font-bold text-5xl text-left mb-5'>
-            <span className='blue_gradient'>Post a Job and hire the best Talent</span>
+    <div className='justify-center w-full align-center justify-items-center hrjobs'>
+          <h1 className='font-bold text-5xl text-left mb-5'>
+            <p className='text text-4xl text-center text-white mb-8'>Post a Job and hire the best Talent</p>
           </h1>
-        <form onSubmit={createNewJob} className='w-4/5 '>
+        <form onSubmit={createNewJob} className='w-full'>
           <Grid.Container gap={2} >
-            <Grid xs={4}>
-              <Input clearable bordered label="Job Title" Placeholder="Job Title" initialValue="" />
+            <Grid xs={12} sm={4}>
+              <Input css={{backgroundColor:"$white",mx:"auto"}} clearable bordered placeholder="Job Title" initialValue="" />
             </Grid>
-            <Grid xs={4}>
-              <Input clearable bordered label="Stipend" Placeholder="Stipend" initialValue="" />
+            <Grid xs={12} sm={4}>
+              <Input css={{backgroundColor:"$white",mx:"auto"}} clearable bordered Placeholder="Stipend" initialValue="" />
             </Grid>
-            <Grid>
-              <Input clearable bordered label="Company Name" Placeholder="Stipend" initialValue="" />
+            <Grid xs={12} sm={4}>
+              <Input css={{backgroundColor:"$white",mx:"auto"}} clearable bordered placeholder="Company Name" initialValue="" />
             </Grid>
-            <Grid>
-              <Input clearable bordered label="Duration of Job" Placeholder="Duration" initialValue="" />
+            <Grid xs={12} sm={4}>
+              <Input css={{backgroundColor:"$white",mx:"auto"}} clearable bordered Placeholder="Duration" initialValue="" />
             </Grid>
-            <Grid>
-              <Input clearable bordered label="Last date to apply" Placeholder="Last date to apply" initialValue="" />
+            <Grid xs={12} sm={4}>
+              <Input css={{backgroundColor:"$white",mx:"auto"}} clearable bordered Placeholder="Last date to apply" initialValue="" />
             </Grid>
-            <Grid>
-              <Input clearable bordered label="Expected Start Date" Placeholder="Expected Start Date" initialValue="" />
+            <Grid xs={12} sm={4}>
+              <Input css={{backgroundColor:"$white",mx:"auto"}} clearable bordered Placeholder="Expected Start Date" initialValue="" />
             </Grid>
-            <Grid>
-              <Input clearable bordered label="Skills Required" Placeholder="Skills Required" initialValue="" />
+            <Grid xs={12} sm={4}>
+              <Input css={{backgroundColor:"$white",mx:"auto"}} clearable bordered Placeholder="Skills Required" initialValue="" />
             </Grid>
             <Textarea
+              css={{mt:"$10",ml:"$6",backgroundColor:"$white"}}
               rows='10'
               fullWidth="true"
               bordered
-              label="Description of the Job"
               placeholder="Description of the Job"
             />
           </Grid.Container>
@@ -102,7 +102,7 @@ const page = ({params}) => {
               label="Description of the Job"
               placeholder="Description of the Job"
             /> */}
-          <button type='submit' className='black_btn2 mt-5'  >Submit</button>
+          <button type='submit' className='py-2 px-10 rounded-xl bg-purple-500 text-white ml-6 mt-8 border-white border-2 hover:bg-white hover:text-purple-500 hover:border-purple-500'  >Submit</button>
         </form>
     </div>
   )
