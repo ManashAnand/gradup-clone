@@ -176,14 +176,12 @@ export default function Profile() {
         <section className='border-solid border-2 rounded-xl bg-sky-200'>
         <div className='m-6'>
         <div className='mx-5 flex flex-col'>
-          <form>
           <label className="mb-2 ml-2 text text-sm">Name*</label>
           <Input initialValue={data.name}/> <br/>
           <label className="mb-2 ml-2 text text-sm">Email*</label>
           <Input initialValue={data.email}/> <br/>
           <label className="mb-2 ml-2 text text-sm">Phone No*</label>
           <Input initialValue={data.contactNo} required pattern='[0-9]{10}'/> <br/>
-          </form>
           </div>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className='mx-5'>
