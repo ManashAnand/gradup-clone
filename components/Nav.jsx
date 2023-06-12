@@ -29,7 +29,7 @@ const Nav = () => {
           height={30}
           className='object-contain'
         />
-        <p className='logo_text'>GradUp</p>
+        <img src="/assets/icons/logo.png" width="70" alt="logo"></img>
       </Link>
       
 
