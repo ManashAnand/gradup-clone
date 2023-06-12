@@ -99,7 +99,7 @@ export default function HRSignup() {
               />
             </div>
             <div className="mx-4 mt-7 ">
-              <button type="submit" className="otppos w-auto text-sm font-semibold text bg-white text-violet-500 px-5 py-2 my-auto rounded-xl border-4 border-violet-300">
+              <button type="submit" className="otppos w-auto text-sm text bg-white text-violet-500 px-5 py-2 my-auto rounded-xl border-2 border-violet-300">
                 Get OTP
               </button>
             </div>

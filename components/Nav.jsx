@@ -34,7 +34,7 @@ const Nav = () => {
       
 
       {/* Desktop Navigation */}
-      <div className='sm:flex hidden'>
+      <div className='lg:flex hidden'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
             <Link href='/jobs' className='outline_btn'>
