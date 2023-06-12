@@ -214,11 +214,14 @@ img:hover{
   margin-top:-6vh;
   padding:1em;
   border-radius: 15px;
-  background-color:#AFDBF5;
+  background-image: linear-gradient(150.74deg, rgba(69, 146, 253, 0.266012) 15.21%, rgba(248, 199, 234, 0.779514) 22.96%, rgba(239, 203, 227, 0.711805) 45.74%, rgba(0, 120, 234, 0.1602) 91.53%, rgba(66, 169, 249, 0.19) 98.92%, rgba(38, 134, 200, 0.0842839) 98.93%, rgba(152, 198, 224, 0.37) 98.96%, rgba(176, 227, 255, 0.378155) 99.65%, rgba(9, 129, 197, 0) 100.35%, #FFC8E3 1.07%);
   min-height:45vh;
   width:20vw;
 }
 .arrange{
+  background-image: linear-gradient(150.74deg, rgba(69, 146, 253, 0.266012) 15.21%, rgba(248, 199, 234, 0.779514) 22.96%, rgba(239, 203, 227, 0.711805) 45.74%, rgba(0, 120, 234, 0.1602) 91.53%, rgba(66, 169, 249, 0.19) 98.92%, rgba(38, 134, 200, 0.0842839) 98.93%, rgba(152, 198, 224, 0.37) 98.96%, rgba(176, 227, 255, 0.378155) 99.65%, rgba(9, 129, 197, 0) 100.35%, #FFC8E3 1.07%);
+  padding:40px;
+  border-radius:20px;
   margin-left:18vh;
   margin-top:3vh;
   display:grid;
@@ -369,6 +372,8 @@ img:hover{
   }
   .arrange{
     margin-left:0;
+    padding-left:20px;
+    padding-right:20px;
   }
   .filterbox{
     margin:-15vh auto 10vh auto;
