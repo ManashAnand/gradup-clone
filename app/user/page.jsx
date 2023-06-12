@@ -176,14 +176,15 @@ export default function Profile() {
         <section className='border-solid border-2 rounded-xl bg-sky-200'>
         <div className='m-6'>
         <div className='mx-5 flex flex-col'>
+          <form>
           <label className="mb-2 ml-2 text text-sm">Name*</label>
           <Input initialValue={data.name}/> <br/>
           <label className="mb-2 ml-2 text text-sm">Email*</label>
           <Input initialValue={data.email}/> <br/>
           <label className="mb-2 ml-2 text text-sm">Phone No*</label>
-          <Input initialValue={data.contactNo}/> <br/>
-          
-        </div>
+          <Input initialValue={data.contactNo} required pattern='[0-9]{10}'/> <br/>
+          </form>
+          </div>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className='mx-5'>
           <div>
@@ -193,27 +194,27 @@ export default function Profile() {
                 <div className="flex">
                 <div className='flex flex-col mb-5'>
                 <label className="mb-1 ml-2 mt-3 text text-sm">College*</label>
-                <Input css={{pr:"$2",width:"34vw"}} placeholder='Enter College'/>
+                <Input css={{pr:"$2",width:"34vw"}} placeholder='Enter College' required/>
                 </div>
                 <div className='flex flex-col ml-4 mb-5'>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Degree*</label>
-                <Input css={{pr:"$4",width:"34vw"}} placeholder='Enter degree'/>
+                <Input css={{pr:"$4",width:"34vw"}} placeholder='Enter degree' required/>
                 </div>
                 </div>
                 <div className="flex">
                 <div className='flex flex-col mb-5'>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Branch*</label>
-                <Input css={{pr:"$2",width:"34vw"}} placeholder='Enter Branch'/>
+                <Input css={{pr:"$2",width:"34vw"}} placeholder='Enter Branch' required/>
                 </div>
                 <div className='flex flex-col ml-4 mb-5'>
-                <label className="mb-1 ml-2 mt-3 text text-sm">Grade*</label>
+                <label className="mb-1 ml-2 mt-3 text text-sm">Grade</label>
                 <Input css={{pr:"$4",width:"34vw"}} placeholder='Enter grade'/>
                 </div>
                 </div>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Joining Date*</label>
-                <Input type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date'/>
+                <Input type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date' required/>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Leaving Date*</label>
-                <Input type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter ending date'/>
+                <Input type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter ending date' required/>
                 <Button css={{mr:"10px",mt:"25px"}} type='submit'>ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow type PopoverPlacement ="right">
@@ -264,13 +265,13 @@ export default function Profile() {
             <span className='heading_text my-auto'>Projects</span>
             <p className="text-xs text-sky-700">(Enter all the project details)</p>
             <form onSubmit={addNewProject}className="flex flex-col">
-                <label className="mb-1 ml-2 mt-3 text text-sm">Project Name*</label>
+                <label className="mb-1 ml-2 mt-3 text text-sm">Project Name</label>
                 <Input css={{pr:"$4",mb:"$6"}}  placeholder='Enter name'/>
-                <label className="mb-1 mt-3 ml-2 text text-sm">Description*</label>
+                <label className="mb-1 mt-3 ml-2 text text-sm">Description</label>
                 <Textarea css={{pr:"$4",mb:"$6"}} rows={5} placeholder='Enter Description'/>
-                <label className="mb-1 ml-2 mt-3 text text-sm">Skills Used*</label>
+                <label className="mb-1 ml-2 mt-3 text text-sm">Skills Used</label>
                 <Input css={{pr:"$4",mb:"$6"}} placeholder='Enter Skills'/>
-                <label className="mb-1 ml-2 mt-3 text text-sm">Working Links*</label>
+                <label className="mb-1 ml-2 mt-3 text text-sm">Working Links</label>
                 <Input css={{pr:"$4",mb:"$6"}} placeholder='Enter link'/>
                 <Button css={{mr:"10px",mt:"25px"}} type='submit'>ADD</Button>
                 </form>
@@ -313,23 +314,23 @@ export default function Profile() {
                 <div className="flex">
                 <div className='flex flex-col mb-5'>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Company*</label>
-                <Input css={{pr:"$2",width:"35vw"}} placeholder='Enter Company'/>
+                <Input css={{pr:"$2",width:"35vw"}} placeholder='Enter Company' required/>
                 </div>
                 <div className='flex flex-col ml-4 mb-5'>
-                <label className="mb-1 ml-2 mt-3 text text-sm">Location*</label>
+                <label className="mb-1 ml-2 mt-3 text text-sm">Location</label>
                 <Input css={{pr:"$4",width:"34vw"}} placeholder='Enter Location'/>
                 </div>
                 </div>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Title*</label>
-                <Input css={{pr:"$4",mb:"$6"}} placeholder='Enter Title'/>
+                <Input css={{pr:"$4",mb:"$6"}} placeholder='Enter Title' required/>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Description*</label>
-                <Textarea css={{pr:"$4",mb:"$6"}} rows={5} placeholder='Enter Description'/>
-                <label className="mb-1 ml-2 mt-3 text text-sm">Skills*</label>
+                <Textarea css={{pr:"$4",mb:"$6"}} rows={5} placeholder='Enter Description' required/>
+                <label className="mb-1 ml-2 mt-3 text text-sm">Skills</label>
                 <Input css={{pr:"$4",mb:"$6"}} placeholder='Enter Skills'/>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Joining Date*</label>
-                <Input type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date'/>
+                <Input type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date' required/>
                 <label className="mb-1 ml-2 mt-3 text text-sm">Leaving Date*</label>
-                <Input type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter ending date'/>
+                <Input type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter ending date' required/>
                 <Button css={{mr:"10px",mt:"25px"}} type='submit'>ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow>

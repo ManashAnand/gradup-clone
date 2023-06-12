@@ -283,6 +283,26 @@ img:hover{
   display:grid;
   grid-template-columns: repeat(2,1fr);
  }
+ .side1{
+  width:40vw;
+  padding:30px;
+  min-height:65vh;
+  background-image: linear-gradient(150.74deg, #FFC8E3 1.07%, rgba(248, 199, 234, 0.779514) 22.96%, rgba(239, 203, 227, 0.711805) 37.74%, rgba(69, 146, 253, 0.266012) 81.21%, rgba(0, 120, 234, 0.1602) 91.53%, rgba(66, 169, 249, 0.19) 98.92%, rgba(38, 134, 200, 0.0842839) 98.93%, rgba(152, 198, 224, 0.37) 98.96%, rgba(176, 227, 255, 0.378155) 99.65%, rgba(9, 129, 197, 0) 100.35%);
+  filter: drop-shadow(0px 4px 31px rgba(169, 162, 162, 0.25));
+  border-radius: 22px;
+ }
+ .side2{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  width:25vw;
+ }
+ .otp{
+  display:flex;
+ }
+ .phonewidth{
+  width:100%;
+ }
 @media screen and (max-width:1130px) {
   .sortpos{
    opacity:0;
@@ -312,6 +332,19 @@ img:hover{
   .coursebox{
     display:flex;
     justify-content: center;
+  }
+  .otp{
+    display:block;
+  } 
+  .phonewidth{
+    width:65%;
+  }
+  .side1{
+    height:auto;
+  }
+  .otppos{
+    margin-left:-1em;
+    margin-top:-2vh;
   }
 }
 @media screen and (max-width:800px) {
@@ -356,6 +389,20 @@ img:hover{
   }
   .coursebox{
     display:none;
+  }
+  .side2{
+    display:none;
+  }
+  .side1{
+    width:70vw;
+    border-radius:22px;
+    height:auto;
+  }
+  .otp{
+    display:block;
+  }
+  .main-login{
+    width:fit-content;
   }
 }
 @media screen and (max-width:350px) {
