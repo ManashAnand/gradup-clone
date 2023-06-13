@@ -40,15 +40,16 @@ const page = ({params}) => {
     };
   return (
     <div className='justify-center w-full align-center justify-items-center'>
-          <h1 className='mt-3 font-bold text-5xl text-left mb-5'>
-            <span className='blue_gradient'>{jobs.companyName} hiring for {jobs.title}</span>
+          <h1 className='mt-3 font-bold text-lg text-left mb-5'>
+          <span className="text-blue-400 text">{jobs.companyName} hiring for <span className="text-purple-500 underline underline-offset-4 decoration-2 decoration-red-300">{jobs.title}</span></span>
           </h1>
         <form onSubmit={createApplication} className='w-4/5 justify-center'>
-            <label htmlFor="coverLetter" className='font-bold text-xl'>Cover Letter</label> <br />
-            <textarea rows="6" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Write a beautiful Cover letter to get noticed explaining them why you are the best fit...'/>
-            <label htmlFor="coverLetter" className='font-bold text-xl'>Explain Your Projects</label> <br />
+            <label htmlFor="coverLetter" className='font-semibold text-gray-600 text-md ml-2 mb-3'>Cover Letter</label> <br />
+            <textarea rows="6" className="p-2.5 w-full mb-6 text-sm text-gray-900 bg-gray-50 rounded-lg border border-blue-400 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Write a beautiful Cover letter explaining why you are the best fit for this role...'/>
+            <label htmlFor="coverLetter" className='font-semibold text-gray-600 text-md ml-2 mb-3'>Your Projects/Assignment</label> <br />
+            <textarea rows="6" className="p-2.5 w-full mb-6 text-sm text-gray-900 bg-gray-50 rounded-lg border border-blue-400 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Brief Description of the Project, Technologies used and its Link...'/>
             {/* <textarea rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Explain about all your relevant projects... \n1'/> */}
-            <button type='submit' className='black_btn2 mt-5'  >Submit</button>
+            <button type='submit' className='bg-sky-400 text-white rounded-md px-10 py-1 text-lg mt-2 hover:bg-white hover:text-sky-400 hover:border-2 hover:border-sky-400'>Submit</button>
         </form>
     </div>
   )
