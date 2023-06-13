@@ -3,7 +3,7 @@ import useSWR from 'swr';
 import {useSession} from "next-auth/react";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
+import { Table, useAsyncList, useCollator, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
 import { IconButton } from "@styles/IconButton";
 import { EyeIcon } from "@styles/EyeIcon";
@@ -17,7 +17,7 @@ export default function App() {
     { name: "STATUS", uid: "status" },
     { name: "ACTIONS", uid: "actions" },
   ];
-  const users = [
+  const users =[
     {
       id: 1,
       name: "Microsoft",
@@ -60,7 +60,7 @@ export default function App() {
     },
     {
       id: 5,
-      name: "meta",
+      name: "Meta",
       role: "Sales Manager",
       team: "Sales",
       status: "active",
@@ -69,7 +69,6 @@ export default function App() {
       email: "kristen.cooper@example.com",
     },
   ];
-  
   const renderCell = (user, columnKey) => {
     const cellValue = user[columnKey];
     switch (columnKey) {
@@ -83,7 +82,7 @@ export default function App() {
         return (
           <Col>
             <Row>
-              <Text b size={14} css={{ tt: "capitalize" }}>
+              <Text b size={14} css={{ tt: "capitalize"}}>
                 {cellValue}
               </Text>
             </Row>
@@ -131,36 +130,60 @@ export default function App() {
         return cellValue;
     }
   };
+  const collator = useCollator({ numeric: true });
+  async function load({ signal }) {
+    console.log(users)
+    return {
+      items:users,
+    };
+  }
+  async function sort({ items, sortDescriptor }) {
+    return {
+      items: items.sort((a, b) => {
+        let first = a[sortDescriptor.column];
+        let second = b[sortDescriptor.column];
+        let cmp = collator.compare(first, second);
+        if (sortDescriptor.direction === "descending") {
+          cmp *= -1;
+        }
+        return cmp;
+      }),
+    };
+  }
+  const list = useAsyncList({ load, sort });
   return (
     <div className='w-full'>
-    <div className='w-9/10'>
         <h1 className='secondary_text text-left mb-8'>
             <span className='blue_gradient'>Your Applications</span> 
         </h1>
+        
     <Table
       aria-label="Example table with custom cells"
       css={{
-        height: "auto",
+        height: "calc($space$14 * 5)",
         minWidth: "100%",
       }}
       selectionMode="none"
+      sortDescriptor={list.sortDescriptor}
+      onSortChange={list.sort}
     >
       <Table.Header columns={columns}>
         {(column) => (
-          <Table.Column
+          <Table.Column 
+            css={{textAlign:"center",backgroundColor:"$blue500",color:"WhiteSmoke",width:"30vw"}}
             key={column.uid}
             hideHeader={column.uid === "actions"}
-            align={column.uid === "actions" ? "center" : "start"}
+            allowsSorting
           >
             {column.name}
           </Table.Column>
         )}
       </Table.Header>
-      <Table.Body items={users}>
+      <Table.Body items={list.items}>
         {(item) => (
           <Table.Row>
             {(columnKey) => (
-              <Table.Cell>{renderCell(item, columnKey)}</Table.Cell>
+              <Table.Cell css={{paddingLeft:"$28"}}>{renderCell(item, columnKey)}</Table.Cell>
             )}
           </Table.Row>
         )}
@@ -172,7 +195,6 @@ export default function App() {
         rowsPerPage={3}
       />
     </Table>
-    </div>
     </div>
   );
 }
