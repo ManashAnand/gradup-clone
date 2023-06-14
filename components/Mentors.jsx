@@ -5,45 +5,44 @@ import { Card, Grid, Row, Text } from "@nextui-org/react";
 const Mentors = () => {
     const list = [
         {
-          name: "Ajay Jeena",
-          title:"SDE at Microsoft",
-          img: "/assets/images/att.jpg"
-
+            name: "Abhinaba Chakraborty",
+            title:"XLRI Jamshedpur - InsideIIM | P&G | XLRI | BIT MESRA  at Microsoft",
+            img:"/assets/mentors/mentor1.png"
         },
         {
-            name: "Raunit Verma",
-            title:"SDE at Microsoft",
-            img:"/assets/images/att.jpg"
+            name: "Ashish Ambastha",
+            title:"Software Development Engineer III , Flipkart",
+            img:"/assets/mentors/mentor2.png"
         },
         {
-            name: "Raunit Verma",
-            title:"SDE at Microsoft",
-            img:"/assets/images/att.jpg"
+            name: "Luv Saxena",
+            title:"Assistant Vice President- magicpin | IIT Roorkee | IIM Bangalore | All India CAT Topper 2016 |",
+            img:"/assets/mentors/mentor3.png"
         },
         {
-            name: "Ajay Jeena",
-            title:"SDE at Microsoft",
-            img:"/assets/images/att.jpg"
+            name: "Dharmendra Kumar",
+            title:"IES Officer, 2019 Batch",
+            img:"/assets/mentors/mentor4.png"
         },
         {
-            name: "Ajay Jeena",
-            title:"SDE at Microsoft",
-            img:"/assets/images/att.jpg"
+            name: "Mohit Agarwal",
+            title:"(Siemens EDA) | IIT BHU |",
+            img:"/assets/mentors/mentor5.png"
         },
         {
-            name: "Ajay Jeena",
-            title:"SDE at Microsoft",
-            img:"/assets/images/att.jpg"
+            name: "Narendra Lamba",
+            title:" (Ex-Intelligence Officer,GOI) IIFT DELHI & BIT MESRA Alumnus ",
+            img:"/assets/mentors/mentor6.png"
         },
         {
-            name: "Ajay Jeena",
-            title:"SDE at Microsoft",
-            img:"/assets/images/att.jpg"
+            name: "Charu Chaudhary",
+            title:" Software Engineer (Samsung)",
+            img:"/assets/mentors/mentor7.png"
         },
         {
-            name: "Ajay Jeena",
-            title:"SDE at Microsoft",
-            img:"/assets/images/att.jpg"
+           name: "Pushkal Shukla",
+           title:"Adobe",
+           img: "/assets/mentors/mentor8.png"
         },
       ];
   return (
