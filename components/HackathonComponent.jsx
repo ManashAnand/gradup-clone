@@ -54,13 +54,13 @@ const HackathonComponent = ({ post }) => {
       </Grid>
       <Grid container spacing={2}>
         <Grid item>
-          <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid cyan",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
+          <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid darkslateblue",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
             # Coding Challenge
           </ButtonBase>
-          <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid cyan",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
+          <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid darkslateblue",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
             # Hackathon
           </ButtonBase>
-          <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid cyan",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
+          <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid darkslateblue",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
             # Paper Presentation
           </ButtonBase>
         </Grid>
