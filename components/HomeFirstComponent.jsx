@@ -12,7 +12,7 @@ const HomeFirstComponent = () => {
   return (
     <section className='w-full flex justify-evenly max-h-screen headingbox'>
       <div className="mt-10">
-        <h1 className='text-5xl font-bold text-white text-left'>
+        <h1 className='text-4xl font-bold text-white text-left'>
             Connecting Talent To <br/>
             <div class="container">
              <div class="row">

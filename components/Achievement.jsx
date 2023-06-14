@@ -37,7 +37,7 @@ const Achievement = () => {
     <div>
         <section className='w-full max-w-full flex-start flex-col my-10'>
             <div>
-                <h1 className='secondary_text text text-center my-12'>Our Achievements</h1>
+                <h1 className='text-3xl font-semibold text-blue-500 text text-center my-12'>Our Achievements</h1>
                 <div className="flex flex-wrap justify-center">
                 {list.map((element)=>(
                     <div className="mx-12 h-[250px] ">
