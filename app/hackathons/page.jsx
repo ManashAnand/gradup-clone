@@ -10,7 +10,7 @@ export default function Page() {
   const [hackathon, setHackathon] = useState(null);
   return (
     <div>
-      <div style={{color:"darkslateblue"}} className='text text-4xl text-center font-semibold text-4xl mb-8' > Hackathons - Bring Your Coding Skills To Work !! </div>
+      <div style={{color:"darkslateblue"}} className='text text-4xl text-center font-semibold text-4xl mb-8' > Hackathons- Bring Your Coding Skills</div>
       <div className="flex">
         <ShowHackathon setHackathon={setHackathon}></ShowHackathon>
         <div>
