@@ -5,6 +5,7 @@ import Link from '@mui/material/Link';
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import ButtonBase from "@mui/material/ButtonBase";
+import PeopleIcon from '@mui/icons-material/People';
 
 const Img = styled("img")({
   margin: "auto",
@@ -15,37 +16,59 @@ const Img = styled("img")({
 
 const HackathonComponent = ({ post }) => {
   return (
+    <div>
     <Paper
       sx={{
         p: 2,
+        borderRadius:"25px",
         margin: "auto",
-        maxWidth: 500,
+        maxWidth:480,
+        marginY:"10px",
         flexGrow: 1,
+        boxShadow:"10px 10px 5px darkslategray",
         backgroundColor: (theme) =>
-          theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+        theme.palette.mode === "dark" ? "#1A2027" : "#fff",
       }}
     >
       <Grid container spacing={2}>
         <Grid item>
-          <ButtonBase sx={{ width: 128, height: 128 }}>
-            <Img alt="complex" src="/assets/images/gradup.jpg" />
+          <ButtonBase sx={{ width: 128, height: 128,border:"1px solid blue",marginLeft:"1vw",marginTop:"1vh" }}>
+            <Img alt="complex" src="/assets/images/hackathon.png" />
           </ButtonBase>
         </Grid>
         <Grid item xs={12} sm container>
           <Grid item xs container direction="column" spacing={2}>
             <Grid item xs>
-              <Typography gutterBottom variant="subtitle1" component="div">
-                {post.title}
+              <Typography sx={{color:"darkslateblue",fontWeight:"bold",marginTop:"15px"}} gutterBottom variant="subtitle1" component="div">
+                Hack-AI-Thon: {post.title}
               </Typography>
-              <Typography variant="body2" gutterBottom>
+              <Typography sx={{color:"darkslateblue"}} variant="body2" gutterBottom>
                 {post.organizer}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Applied by {post.applicant.length}
+              <Typography sx={{fontSize:"13px",marginTop:"10px"}} variant="body2" color="purple">
+               <PeopleIcon color="secondary"/> Applied by {post.applicant.length}
               </Typography>
             </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid container spacing={2}>
+        <Grid item>
+          <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid cyan",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
+            # Coding Challenge
+          </ButtonBase>
+          <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid cyan",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
+            # Hackathon
+          </ButtonBase>
+          <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid cyan",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
+            # Paper Presentation
+          </ButtonBase>
+        </Grid>
+        <Grid item xs={12} sm container>
+          <Grid item xs container direction="column" spacing={2}>
             <Grid item>
-              <Link
+            <Grid item>
+              <Link sx={{textDecoration:"none",marginTop:"1vh",marginRight:"1.2vw",paddingX:"30px",paddingY:"4px",backgroundColor:"darkslateblue",borderRadius:"10px",float:"right",color:"white"}}
                 component="button"
                 variant="body2"
                 onClick={() => {
@@ -54,11 +77,13 @@ const HackathonComponent = ({ post }) => {
               >
                 Open
               </Link>
+            </Grid> 
             </Grid>
           </Grid>
         </Grid>
       </Grid>
     </Paper>
+    </div>
   );
 };
 

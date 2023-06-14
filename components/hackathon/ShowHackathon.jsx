@@ -22,9 +22,9 @@ const ShowHackathon = ({ setHackathon }) => {
   console.log("INSIDE SHOW HACKATHON")
   return (
     <div>
-      <div className="mx-5">
+      <div className="mx-5 hackathons">
         {posts.map((post) => (
-          <div onClick={(e) => setHackathon(post)} className="mb-2">
+          <div onClick={(e) => setHackathon(post)} className="mb-10">
             <HackathonComponent post={post} />
           </div>
         ))}
