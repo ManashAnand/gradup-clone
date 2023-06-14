@@ -5,9 +5,12 @@ const JobSchema = new Schema({
     id: {
         type: String,
     },
-    // logo:{
-    //     type:String,
-    // },
+    logo:{
+        type:String,
+    },
+    isStartUp:{
+        type:Boolean,
+    },
     title: {
         type: String,
         // required: [true, "Job title is required"],
@@ -34,6 +37,9 @@ const JobSchema = new Schema({
     stipend: {
         type: Number,
         // required: [true, "Stipend is required"],
+    },
+    description:{
+        type:String,
     },
     lastDate: {
         // type: Date,
