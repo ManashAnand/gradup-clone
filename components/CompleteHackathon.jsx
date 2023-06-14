@@ -4,49 +4,83 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+import ButtonBase from "@mui/material/ButtonBase";
 import Typography from '@mui/material/Typography';
-
+import ViewModuleIcon from '@mui/icons-material/ViewModule';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import ApartmentSharpIcon from '@mui/icons-material/ApartmentSharp';
+import DescriptionTwoToneIcon from '@mui/icons-material/DescriptionTwoTone';
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
+import TaskAltTwoToneIcon from '@mui/icons-material/TaskAltTwoTone';
+import {useState} from "react"
 const bull = (
   <Box
     component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)'}}
   >
-    •
   </Box>
 );
 
 
-export default function CompleteHackathon({post}) {
+export default function CompleteHackathon({post,display,setDisplay,display1,setDisplay1}) {
+    function handleClick(){
+      setDisplay("none")
+      setDisplay1("block")
+    }
     console.log("From complete hackathon", post);
     if(post==null)return (<></>)
   return (
-    <Box sx={{ minWidth: 275 }}>
-      <Card variant="outlined">
+    <Box sx={{minWidth:"35vw",marginTop:"10px",display:display,marginX:"auto",marginRight:"6vw"}}>
+      <Card>
       <React.Fragment>
+      <CardMedia
+        sx={{ height: 300,backgroundPosition:"center",objectFit:"cover"}}
+        image="/assets/images/hackathonback.png"
+        title="Hackathon"
+      />
     <CardContent>
-      <Typography variant="h5" component="div">
-        {post.title}
+      <Typography sx={{color:"darkslateblue"}} variant="h6" component="div">
+        <ViewModuleIcon color="primary" fontSize='small'/> {post.title}
       </Typography>
-      <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
-        {post.organizer}
+      <Typography sx={{ fontSize: 13,marginLeft:"2.6vw",color:"purple" }} gutterBottom>
+        <ApartmentSharpIcon fontSize='small' color="action"/> {post.organizer}
       </Typography>
-      
-      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-        Register by {post.registerEndDate}
+      <Typography sx={{fontSize: 13, mb: 1.5,marginLeft:"2.7vw",color:"purple" }}>
+        <AccessTimeIcon fontSize='small' color="action"/> Register by {post.registerEndDate}
       </Typography>
-      <Typography variant="body2">
-        Description <br />
-        {post.description}
+      <Typography sx={{color:"darkslateblue"}} variant="h6">
+       <DescriptionTwoToneIcon fontSize='small' color="primary"/> Description
       </Typography>
-      <Typography variant="body2">
-        Rewards <br />
-        {post.rewards}
+      <Typography sx={{ fontSize: 13,mb: 1.5,marginLeft:"2.7vw",color:"purple" }}>
+        <TaskAltTwoToneIcon fontSize='small' color="action"/> {post.description}
+      </Typography>
+      <Typography sx={{color:"darkslateblue"}} variant="h6">
+        <CurrencyRupeeIcon fontSize='small' color="primary"/> Rewards
+      </Typography>
+      <Typography sx={{fontSize: 13, mb: 1.5,marginLeft:"2.7vw",color:"purple" }}>
+        <EmojiEventsRoundedIcon fontSize='small' color="action"/> {post.rewards}
+      </Typography>
+      <Typography>
+         <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid darkslateblue",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
+            # Coding Challenge
+          </ButtonBase>
+          <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid darkslateblue",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
+            # Hackathon
+          </ButtonBase>
+          <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid darkslateblue",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
+            # Paper Presentation
+          </ButtonBase>
+          <ButtonBase sx={{paddingX:"12px",paddingY:"3px",border:"1px solid darkslateblue",fontSize:"12px",marginTop:"17px",marginRight:"12px",borderRadius:"30px"}}>
+            # Skills
+          </ButtonBase>
       </Typography>
     </CardContent>
-
-    <CardActions>
+    <CardActions sx={{float:"right"}}>
       <Button size="small">Apply</Button>
+      <Button onClick={handleClick} size="small">Back</Button>
     </CardActions>
   </React.Fragment>
       </Card>

@@ -14,7 +14,7 @@ const Img = styled("img")({
   maxHeight: "100%",
 });
 
-const HackathonComponent = ({ post }) => {
+const HackathonComponent = ({ post,display1,setDisplay1,display,setDisplay }) => {
   return (
     <div>
     <Paper
@@ -24,6 +24,7 @@ const HackathonComponent = ({ post }) => {
         margin: "auto",
         maxWidth:480,
         marginY:"10px",
+        display:display1,
         flexGrow: 1,
         boxShadow:"10px 10px 5px darkslategray",
         backgroundColor: (theme) =>
@@ -72,7 +73,8 @@ const HackathonComponent = ({ post }) => {
                 component="button"
                 variant="body2"
                 onClick={() => {
-                  console.info("I'm a button.");
+                  setDisplay1("none");
+                  setDisplay("block")
                 }}
               >
                 Open

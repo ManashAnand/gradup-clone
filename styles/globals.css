@@ -288,6 +288,12 @@ img:hover{
   border-radius:20px;
   
 }
+.hackathon{
+  height:70vh;
+  background-image:url("/assets/images/hackathonback.png");
+  background-position:contain;
+  background-repeat: no-repeat;
+}
 .courseimg{
   display:grid;
   grid-template-columns: repeat(2,1fr);

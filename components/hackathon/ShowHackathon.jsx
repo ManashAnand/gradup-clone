@@ -11,7 +11,7 @@ async function getData() {
   const data = await response.json();
   return data;
 }
-const ShowHackathon = ({ setHackathon }) => {
+const ShowHackathon = ({ setHackathon,display,setDisplay,display1,setDisplay1 }) => {
   const { data, error } = useSWR(
     "http://localhost:3000/api/hackathon",
     fetcher
@@ -25,7 +25,7 @@ const ShowHackathon = ({ setHackathon }) => {
       <div className="mx-5 hackathons">
         {posts.map((post) => (
           <div onClick={(e) => setHackathon(post)} className="mb-10">
-            <HackathonComponent post={post} />
+            <HackathonComponent display={display} display1={display1} setDisplay={setDisplay} setDisplay1={setDisplay1} post={post} />
           </div>
         ))}
       </div>
