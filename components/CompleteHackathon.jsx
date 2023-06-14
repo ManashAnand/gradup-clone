@@ -79,8 +79,8 @@ export default function CompleteHackathon({post,display,setDisplay,display1,setD
       </Typography>
     </CardContent>
     <CardActions sx={{float:"right"}}>
-      <Button size="small">Apply</Button>
-      <Button onClick={handleClick} size="small">Back</Button>
+      <Button sx={{marginBottom:"2vh"}} variant="contained" color="secondary" size="small">Apply</Button>
+      <Button sx={{marginRight:"2vw",marginBottom:"2vh"}} variant="contained" onClick={handleClick} size="small">Back</Button>
     </CardActions>
   </React.Fragment>
       </Card>
