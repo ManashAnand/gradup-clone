@@ -7,43 +7,43 @@ const Mentors = () => {
         {
           name: "Ajay Jeena",
           title:"SDE at Microsoft",
-          img: "/assets/mentors/p1.jpg"
+          img: "/assets/images/att.jpg"
 
         },
         {
             name: "Raunit Verma",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
         {
             name: "Raunit Verma",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
       ];
   return (
@@ -53,11 +53,11 @@ const Mentors = () => {
               {/* <div > */}
             {list.map((item, index) => (
         <div className="slide">
-          <Card isPressable isHoverable >
+          <Card isHoverable >
             <Card.Body css={{ p: 0 }}>
               <Card.Image
                 src={item.img}
-                objectFit="cover"
+                objectFit="fit"
                 width="100%"
                 height={200}
                 alt={item.title}
@@ -65,7 +65,7 @@ const Mentors = () => {
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
-                <Text b>{item.name}</Text>
+                <Text css={{fontWeight: "$semibold"}}>{item.name}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   {item.title}
                 </Text>
