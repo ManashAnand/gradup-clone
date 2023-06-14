@@ -11,7 +11,7 @@ const Home = () => {
     <section className='w-full flex-center flex-col'>
         <HomeFirstComponent />
         <CoursesOnHome />
-        <h1 className='secondary_text text-center my-5'>Meet Our Mentors</h1>
+        <h1 className='text-blue-500 text text-3xl font-semibold text-center my-9'>Meet Our Mentors</h1>
         <Mentors />
         <Achievement />
         <BeMentorWithUs />

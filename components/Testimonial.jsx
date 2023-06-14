@@ -7,50 +7,50 @@ const Testimonial = () => {
         {
           name: "Ajay Jeena",
           title:"Student at NIT Raipur",
-          img: "/assets/images/NewLogo.jpeg",
+          img: "/assets/images/att.jpg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
 
         },
         {
             name: "Raunit Verma",
             title:"Student at NIT Raipur",
-          img: "/assets/images/NewLogo.jpeg",
+          img: "/assets/images/att.jpg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Raunit Verma",
             title:"Student at NIT Raipur",
-          img: "/assets/images/NewLogo.jpeg",
+          img: "/assets/images/att.jpg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Ajay Jeena",
             title:"Student at NIT Raipur",
-          img: "/assets/images/NewLogo.jpeg",
+          img: "/assets/images/att.jpg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Ajay Jeena",
             title:"Student at NIT Raipur",
-          img: "/assets/images/NewLogo.jpeg",
+          img: "/assets/images/att.jpg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Ajay Jeena",
             title:"Student at NIT Raipur",
-          img: "/assets/images/NewLogo.jpeg",
+          img: "/assets/images/att.jpg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Ajay Jeena",
             title:"Student at NIT Raipur",
-          img: "/assets/images/NewLogo.jpeg",
+          img: "/assets/images/att.jpg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Ajay Jeena",
             title:"Student at NIT Raipur",
-          img: "/assets/images/NewLogo.jpeg",
+          img: "/assets/images/att.jpg",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
       ];
@@ -65,7 +65,7 @@ const Testimonial = () => {
             <Card.Body css={{ p: 0 }}>
               <Card.Image
                 src={item.img}
-                objectFit="cover"
+                objectFit="fit"
                 width="100%"
                 height={200}
                 alt={item.title}
@@ -89,7 +89,7 @@ const Testimonial = () => {
             <Card.Body css={{ p: 0 }}>
               <Card.Image
                 src={item.img}
-                objectFit="cover"
+                objectFit="fit"
                 width="100%"
                 height={200}
                 alt={item.title}

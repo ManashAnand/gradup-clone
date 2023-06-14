@@ -25,7 +25,7 @@ function Page ({ index }) {
   ];
   const [selectedCity, setSelectedCity] = useState([]);
   const [selectedTitle, setSelectedTitle] = useState([]);
-  const [salaryExp, setSalaryExp] = useState(0);
+  const [salaryExp, setSalaryExp] = useState(1000);
   const [jobs, setJobs] = useState([]);
   // const { data,error } = useSWR(`https://api.jsonbin.io/v3/b/6460d47e8e4aa6225e9cc67d/?page=${index}`, fetcher);
   // const { data, error } = useSWR( `/api/jobs/?page=${index}&intern=true`, fetcher)
@@ -85,7 +85,7 @@ function Page ({ index }) {
             <button className="btn1">Search</button>
           </div>
           </div>
-           <img className="giphy" src="assets/images/image.gif" alt="work-img"></img>
+           <img className="giphy" src="assets/images/working2.gif" alt="work-img"></img>
           </div> 
           <div>
           <p className="heading1">All Internships</p>
@@ -125,9 +125,9 @@ function Page ({ index }) {
                   <Input
                     type='range'
                     onChange={changeSalaryRxp}
-                    min={1}
+                    min={1000}
                     max={10000}
-                    step={1}
+                    step={1000}
                     value={salaryExp}
                   >
                   </Input>

@@ -28,7 +28,7 @@ function Page({ index }) {
 
   const [selectedCity, setSelectedCity] = useState([]);
   const [selectedTitle, setSelectedTitle] = useState([]);
-  const [salaryExp, setSalaryExp] = useState(0);
+  const [salaryExp, setSalaryExp] = useState(5000);
   // const [jobs, setJobs] = useState([]);
   // If want to useSWR later on
   const { data, error } = useSWR(
@@ -165,9 +165,9 @@ function Page({ index }) {
                   <Input
                     type='range'
                     onChange={changeSalaryRxp}
-                    min={1}
-                    max={10000}
-                    step={1}
+                    min={5000}
+                    max={50000}
+                    step={5000}
                     value={salaryExp}>
                   </Input>
                 </div>

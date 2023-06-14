@@ -29,12 +29,12 @@ const Nav = () => {
           height={30}
           className='object-contain'
         />
-        <p className='logo_text'>GradUp</p>
+        <img src="/assets/icons/logo.png" width="70" alt="logo"></img>
       </Link>
       
 
       {/* Desktop Navigation */}
-      <div className='sm:flex hidden'>
+      <div className='lg:flex hidden'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
             <Link href='/jobs' className='outline_btn'>
@@ -83,7 +83,7 @@ const Nav = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className='sm:hidden flex relative'>
+      <div className='lg:hidden flex relative'>
         {session?.user ? (
           <div className='flex'>
             <Image

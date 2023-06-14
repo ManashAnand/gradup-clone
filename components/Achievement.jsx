@@ -37,25 +37,25 @@ const Achievement = () => {
     <div>
         <section className='w-full max-w-full flex-start flex-col my-10'>
             <div>
-                <h1 className='secondary_text text-center my-5'>Our Achievements</h1>
-                <div className="flex flex-wrap ">
+                <h1 className='text-3xl font-semibold text-blue-500 text text-center my-12'>Our Achievements</h1>
+                <div className="flex flex-wrap justify-center">
                 {list.map((element)=>(
-                    <div className="w-1/3 h-[230px] ">
+                    <div className="mx-12 h-[250px] ">
                      <Card >
                      <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
                        <Col >
-                         <Text size={12} weight="bold" transform="uppercase" color="black">
+                         <Text css={{ml:"$1"}} size={12} weight="bold" transform="uppercase" color="white">
                            What to watch
                          </Text>
-                         <Text h4 color="black">
+                         <Text css={{ml:"$1"}} h4 color="white">
                            Stream the Acme event
                          </Text>
                        </Col>
                      </Card.Header>
                      <Card.Image
-                       src="/assets/images/TalentConnects.png"
-                       objectFit="cover"
-                       width="95%"
+                       src="/assets/images/att.jpg"
+                       objectFit="fit"
+                       width="100%"
                        height={200}
                        alt="Card image background"
                      />

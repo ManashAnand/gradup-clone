@@ -7,100 +7,63 @@ const Mentors = () => {
         {
           name: "Ajay Jeena",
           title:"SDE at Microsoft",
-          img: "/assets/mentors/p1.jpg"
+          img: "/assets/images/att.jpg"
 
         },
         {
             name: "Raunit Verma",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
         {
             name: "Raunit Verma",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
         {
             name: "Ajay Jeena",
             title:"SDE at Microsoft",
-            img: "/assets/mentors/p1.jpg"
+            img:"/assets/images/att.jpg"
         },
       ];
   return (
-      
-        <div className='slider'>
-            <div className='slide_track'>
-              {/* <div > */}
-            {list.map((item, index) => (
-        <div className="slide">
-          <Card isPressable isHoverable >
-            <Card.Body css={{ p: 0 }}>
-              <Card.Image
-                src={item.img}
-                objectFit="cover"
-                width="100%"
-                height={200}
-                alt={item.title}
-              />
-            </Card.Body>
-            <Card.Footer css={{ justifyItems: "flex-start" }}>
-              <Row wrap="wrap" justify="space-between" align="center">
-                <Text b>{item.name}</Text>
-                <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
-                  {item.title}
-                </Text>
-              </Row>
-            </Card.Footer>
-          </Card>
-          {/* <img src={item.img}/> */}
+    <div className="background">
+    <div class="wrap">
+      {list.map((items,i)=>{
+        return(
+          <div key={i} class="box">
+          <div class="box-top">
+            <img class="box-image" src={items.img} alt="Mentor"/>
+          <div class="title-flex">
+            <h3 class="box-title text">{items.name}</h3>
+            <p class="user-follow-info text">{items.title}</p>
+          </div>
+         </div>
         </div>
-      ))}
-      {list.map((item, index) => (
-        <div className="slide">
-          <Card isPressable isHoverable >
-            <Card.Body css={{ p: 0 }}>
-              <Card.Image
-                src={item.img}
-                objectFit="cover"
-                width="100%"
-                height={200}
-                alt={item.title}
-              />
-            </Card.Body>
-            <Card.Footer css={{ justifyItems: "flex-start" }}>
-              <Row wrap="wrap" justify="space-between" align="center">
-                <Text b>{item.name}</Text>
-                <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
-                  {item.title}
-                </Text>
-              </Row>
-            </Card.Footer>
-          </Card> 
-        </div>
-      ))}
-            {/* </div> */}
-            </div>
-        </div>
+        )
+      })}
+</div>
+</div>
   )
 }
 

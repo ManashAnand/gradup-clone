@@ -5,42 +5,42 @@ export default function CoursesOnHome() {
   const list = [
     {
       title: "Web Development",
-      img: "/assets/icons/WebDevl.jpeg",
+      img: "/assets/images/web.gif",
       price: "Rs 8999",
     },
     {
       title: "Data Science",
-      img: "/assets/icons/dataScience.jpeg",
+      img: "/assets/images/datasc.gif",
       price: "Rs 6799",
     },
     {
       title: "Blockchain",
-      img: "/assets/icons/blockchain.jpeg",
+      img: "/assets/images/blockchain.gif",
       price: "Rs 5999",
     },
     {
       title: "Python",
-      img: "/assets/icons/python.jpeg",
+      img: "/assets/images/python.gif",
       price: "Rs 6299",
     },
     {
       title: "Cyber Security",
-      img: "/assets/icons/cyberSecurity.jpeg",
+      img: "/assets/images/cyber.gif",
       price: "Rs 4999",
     },
     {
       title: "Digital Marketing",
-      img: "/assets/icons/digitalMarketing.jpeg",
+      img: "/assets/images/digitalmarket.gif",
       price: "Rs 3999",
     },
     {
       title: "Graphic Design",
-      img:"/assets/icons/graphicDesign.jpeg",
+      img:"/assets/images/webdesign.gif",
       price: "Rs 3999",
     },
     {
       title: "Video Editing",
-      img: "/assets/icons/photoEditing.jpeg",
+      img: "/assets/images/videoedit.gif",
       price: "Rs 2999",
     },
   ];
@@ -48,7 +48,7 @@ export default function CoursesOnHome() {
   return (
     <section className='w-full max-w-full flex-start flex-col my-10'>
     <div>
-        <h1 className='secondary_text text-center my-5'>Our Best Courses</h1>
+        <h1 className='text-3xl text-blue-500 font-semibold text text-center my-5'>Our Best Courses</h1>
     <Grid.Container gap={2} justify="flex-start">
       {list.map((item, index) => (
         <Grid xs={6} sm={3} key={index}>
@@ -57,7 +57,7 @@ export default function CoursesOnHome() {
             <Card.Body css={{ p: 0 }}>
               <Card.Image
                 src={item.img}
-                objectFit="cover"
+                objectFit="contain"
                 width="100%"
                 height={140}
                 alt={item.title}
@@ -65,8 +65,8 @@ export default function CoursesOnHome() {
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
-                <Text b>{item.title}</Text>
-                <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
+                <Text css={{color:"$gray800", fontWeight: "$semibold"}}>{item.title}</Text>
+                <Text css={{ color:"$red700", fontWeight: "$semibold",fontSize: "$sm" }}>
                   {item.price}
                 </Text>
               </Row>
