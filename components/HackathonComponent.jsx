@@ -22,7 +22,7 @@ const HackathonComponent = ({ post,display1,setDisplay1,display,setDisplay }) =>
         p: 2,
         borderRadius:"25px",
         margin: "auto",
-        maxWidth:480,
+        maxWidth:450,
         marginY:"10px",
         display:display1,
         flexGrow: 1,
