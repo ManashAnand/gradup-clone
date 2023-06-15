@@ -18,16 +18,16 @@ export default function Contact(){
             Gradup is a platform aimed at nurturing students to be industry ready and future ready.
           </p>
           <div class="icons-container">
-            <a class="share-icon">
+            <a class="share-icon" href="">
               <img class="img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png"/>
             </a>
-            <a class="share-icon">
+            <a class="share-icon" href="">
               <img class="img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png"/>
             </a>
-            <a class="share-icon">
+            <a class="share-icon" href="">
               <img class="img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png"/>
             </a>
-            <a class="share-icon">
+            <a class="share-icon" href="">
               <img class="img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png"/>
             </a>
           </div>

@@ -911,6 +911,7 @@ img:hover{
 }
 .share-icon{
   margin-right:4vw;
+  cursor: pointer;
 }
 .landing_page .img {
   width: 31px;
