@@ -2,9 +2,9 @@ import styles from 'styles/Page.module.css'
 export default function Privacy() {
   return (
     <div className={styles.container}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0047ab" fill-opacity="0.9" d="M0,96L60,112C120,128,240,160,360,160C480,160,600,128,720,144C840,160,960,224,1080,256C1200,288,1320,288,1380,288L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0369a1" fill-opacity="0.9" d="M0,96L60,112C120,128,240,160,360,160C480,160,600,128,720,144C840,160,960,224,1080,256C1200,288,1320,288,1380,288L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
       <div className={styles.content}>
-        <img className="float-right ml-10" src="/assets/images/att.jpg" alt="logo" height="60" width="65"></img>
+        <img className="float-right ml-10" src="/assets/icons/logo.png" alt="logo" height="60" width="65"></img>
         <h1 className="text-4xl mb-4">Privacy Policy for 8Tudem Tech. Pvt. Ltd.</h1>
         <p className="mb-2 text-white">At www.attitudematterz.com, accessible from https://attitudematterz.com/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by www.attitudematterz.com and how we use it.</p>
         <p className="mb-2 text-white">If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
@@ -55,7 +55,7 @@ export default function Privacy() {
         <h1 className="text-4xl mb-4">Children's Information</h1>
         <p className="mb-2 text-white">Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
         <p className="mb-8 text-white">www.attitudematterz.com does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
-        <img className={styles.certificate} src="Certificate.png" alt="Certificate"></img>
+        <img className={styles.certificate} src="/assets/images/Certificate.png" alt="Certificate"></img>
       </div>
     </div>
   )
