@@ -263,12 +263,13 @@
 }
 .contain{
   padding:2em;
-  background-color:#fcf5e5;
-  width:27vw;
+  background-color:rgb(152, 138, 241);
+  width:20vw;
+  color:white;
   display:flex;
   border-top-left-radius:40px;
   border-bottom-right-radius:40px;
-  margin: 5vh auto;
+  margin: 5vh 2vw;
   flex-direction:column;
   justify-content:center;
   align-items:center;
