@@ -18,6 +18,9 @@
   font-weight:bold;
   color:#0CAFFF;
 }
+.mainbox{
+  display:flex;
+}
 .box{
   padding:1em 0;
   display:flex;
@@ -28,6 +31,14 @@
   background-color:#0CAFFF;
   color:white;
   margin-left:7em;
+  margin-bottom:2em;
+  padding:0.5em 1em;
+  border-radius:10px;
+}
+.btn5{
+  background-color:#0CAFFF;
+  color:white;
+  margin-left:3em;
   margin-bottom:2em;
   padding:0.5em 1em;
   border-radius:10px;
@@ -88,6 +99,13 @@
   font-size:16px;
   margin-left:7rem;
   width:75%;
+  padding-bottom:1.5rem;
+}
+.partnerpara5{
+  color:white;
+  font-size:14px;
+  margin-left:3rem;
+  width:50%;
   padding-bottom:1.5rem;
 }
 .task1,.task2,.task3,.task4{
@@ -163,6 +181,12 @@
 .subhead{
   color:#0CAFFF;
   padding:0 1em 0 2.8em;
+  font-size:2.5em;
+  margin-bottom:2vh;
+}
+.subhead1{
+  color:#0CAFFF;
+  padding:0 1em 0 1em;
   font-size:2.5em;
   margin-bottom:2vh;
 }
@@ -261,11 +285,35 @@
   color:#0CAFFF;
   font-weight:bold;
 }
-.contain{
+.contain3{
   padding:2em;
-  background-color:rgb(152, 138, 241);
+  background: rgba(215, 161, 131, 0.92);
+  border-radius: 51px;
   width:20vw;
-  color:white;
+  display:flex;
+  border-top-left-radius:40px;
+  border-bottom-right-radius:40px;
+  margin: 5vh 2vw;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.contain1{
+  padding:2em;
+  background: rgba(131, 215, 139, 0.44);
+  border-radius: 51px;
+  width:20vw;
+  display:flex;
+  margin: 5vh 2vw;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.contain2{
+  padding:2em;
+  background: rgba(131, 139, 215, 0.44);
+  border-radius: 51px;
+  width:20vw;
   display:flex;
   border-top-left-radius:40px;
   border-bottom-right-radius:40px;
@@ -276,10 +324,11 @@
 }
 .core{
   display:flex;
+  justify-content: center;
 }
 .list1{
   list-style:none;
-  font-weight:bold;
+  font-weight:500;
 }
 .para{
   padding:1em 1em 0 4.5em;
@@ -418,7 +467,7 @@
   .core{
     display:block;
   }
-  .contain{
+  .contain1,.contain2,.contain3{
     width:80vw;
   }
   .groupimg4,.groupimg1,.groupimg2,.groupimg{

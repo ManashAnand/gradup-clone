@@ -268,6 +268,9 @@ img:hover{
   margin-top:1rem;
   margin-right:1rem;
 }
+.aboutbox{
+  display:flex;
+}
 .buttonpos{
   display:flex;
   justify-content:end;
@@ -280,6 +283,17 @@ img:hover{
   background-color:plum;
   padding:12px;
   border-radius:20px;
+}
+.founderimg{
+  width:40vw;
+  height:60vh;
+  border-radius:10px;
+  margin:auto 0;
+  border-top:5px solid deepskyblue;
+  border-left:5px solid deepskyblue;
+}
+.founderbox{
+  display:flex;
 }
 .headingbox{
   margin-top:3vh;
@@ -518,6 +532,21 @@ img:hover{
   .hackathons{
     grid-template-columns:repeat(1,1fr);
   }
+  .aboutbox{
+    display:block;
+  }
+  .founderbox{
+    display:block;
+  }
+  .founderimg{
+    width:70vw;
+    height:100vh;
+    margin:auto;
+  }
+  .yes{
+    margin-top:4vh;
+    margin-left:-1.5vw;
+  }
   .filterbox{
     margin-top:-9vh;
     width:28vw;
@@ -605,6 +634,12 @@ img:hover{
   }
   .main-login{
     width:fit-content;
+  }
+}
+@media screen and (max-width:550px) {
+  .founderimg{
+    width:90vw;
+    height:70vh;
   }
 }
 @media screen and (max-width:350px) {
