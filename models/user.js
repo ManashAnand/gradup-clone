@@ -152,6 +152,10 @@ const UserSchema = new Schema({
     role:{
         type:String,
         default:"User",
+    },
+    isAlumni:{
+        type:Boolean,
+        default:false
     }
 });
 
