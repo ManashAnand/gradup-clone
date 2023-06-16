@@ -29,7 +29,7 @@ const AlumniShow = ({ selectedCollege }) => {
       .finally(() => {});
   }, []);
   return (
-    <div className="App">
+    <div className="alumnicardcontainer">
       {alumniData.map((d) => (
         <AlumniCard data={d} />
       ))}

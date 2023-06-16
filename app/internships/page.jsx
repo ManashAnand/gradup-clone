@@ -97,7 +97,7 @@ function Page ({ index }) {
           </div>
           <div className="main-content">
             <div className="pt-16">
-                <div className="filterbox">
+                <div style={{backgroundColor:"teal"}} className="filterbox">
                 <div>
                   <div className="p-3">
                   <Select
@@ -140,7 +140,7 @@ function Page ({ index }) {
                 </div>
                 </div>
             </div>
-          <div className='mt-10 arrange'>
+          <div style={{backgroundColor:"teal"}} className='mt-10 arrange'>
             {jobs.map((job) => (
               <ListContentCard 
                 post={job}

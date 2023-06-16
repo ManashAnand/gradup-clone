@@ -5,38 +5,34 @@ import Select from "react-select";
 
 const AlumniFilter = ({selectedCollege, setSelectedCollege}) => {
     const collegeList = [
-        { value: "delhi", label: "delhi" },
-        { value: "mumbai", label: "mumbai" },
-        { value: "dehradun", label: "dehradun" },
-        { value: "patna", label: "patna" },
-        { value: "gaya", label: "gaya" },
-        { value: "remote", label: "remote" },
+        { value: "Delhi", label: "Delhi" },
+        { value: "Mumbai", label: "Mumbai" },
+        { value: "Dehradun", label: "Dehradun" },
+        { value: "Patna", label: "Patna" },
+        { value: "Gaya", label: "Gaya" },
+        { value: "Remote", label: "Remote" },
       ];
       function handleCollege(data) {
         setSelectedCollege(data);
       }
   return (
-    <div>
+    <div className='filtercontainer'>
+      <div className="none">
+      <img width="300" src="/assets/images/alumni1.png"></img>
+      </div>
         <div className="pt-16">
-          <div className="filterbox">
-            <div>
-              <div className="p-3">
-                <Select
-                  options={collegeList}
-                  placeholder="Select College"
-                  value={selectedCollege}
-                  onChange={handleCollege}
-                  isSearchable={true}
-                  isMulti
-                />
-              </div>
-            </div>
-            <div>
-              <button type="submit" className="btn4 mt-5">
-                Apply
-              </button>
+          <div style={{backgroundColor:"rebeccapurple",minHeight:"55vh",minWidth:"25vw",marginTop:"-12vh"}} className='filterbox alumniback'>
+            <div className='flex flex-col items-center mx-10'>
+              <p className='text-3xl text-center text-white text py-4'>Meet the Alumni's</p>
+              <p className='text-2xl text-center text-white text'>Together again !!</p>
+              <p className='text-md text-white text-center text pt-6'>Build a network and increase your connections.</p>
+              <p className='text-md text-white text-center text pt-2'>Connect with the community and build relationships.</p>
+              <img className="py-5" width="100" src="/assets/images/alumniback.png"></img>
             </div>
           </div>
+        </div>
+        <div className="none">
+        <img className="rounded-3xl mt-9" width="260" src="/assets/images/alumni2.png"></img>
         </div>
     </div>
   )

@@ -228,6 +228,15 @@ img:hover{
   gap:25px;
   grid-template-columns: repeat(2,1fr);
 }
+.alumnitop{
+  display:flex;
+  justify-content:space-evenly;
+  background-color:rgb(134, 65, 134);
+  color:white;
+  border-radius:20px;
+  padding:40px;
+  margin-bottom:5vh;
+}
 .hrjobs{
   padding:40px;
   border-radius:20px;
@@ -270,6 +279,18 @@ img:hover{
 }
 .aboutbox{
   display:flex;
+}
+.alumnicardcontainer{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:20px;
+}
+.filtercontainer{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-items: center;
+  margin-top:12px;
+  margin-bottom:20px;
 }
 .buttonpos{
   display:flex;
@@ -538,6 +559,13 @@ img:hover{
   .founderbox{
     display:block;
   }
+  .alumnitop{
+    display:block;
+  }
+  .filtercontainer{
+    display:flex;
+    justify-content: center;
+  }
   .founderimg{
     width:70vw;
     height:100vh;
@@ -547,6 +575,10 @@ img:hover{
     margin-top:4vh;
     margin-left:-1.5vw;
   }
+  /* .none{
+    display:none;
+  } */
+
   .filterbox{
     margin-top:-9vh;
     width:28vw;
@@ -586,6 +618,9 @@ img:hover{
   .inputcontainer{
     margin:3rem auto;
   }
+  .none{
+    display:none;
+  }
   .giphy{
     margin:5vh auto 8vh auto;
     width:60vw;
@@ -595,6 +630,11 @@ img:hover{
   }
   .main-content{
     display:block;
+  }
+  .alumnicardcontainer{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
   }
   .arrange{
     margin-left:0;
@@ -768,7 +808,7 @@ img:hover{
 }
 
 .landing_page .input {
-  width: 100%;
+  width: 130%;
   height: 50px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -801,8 +841,8 @@ img:hover{
 }
 
 .landing_page .textinput {
-  width: 100%;
-  height: 233px;
+  width: 183%;
+  height: 120px;
   margin-top: 0px;
   margin-right: 0px;
   margin-bottom: 20px;
@@ -952,7 +992,9 @@ img:hover{
     margin-bottom: 30px;
     margin-left: 0px;
   }
-
+  .landing_page .textinput {
+    width:140%;
+  }
   .landing_page .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-6.wk-ipadp-6.emial {
     padding-top: 0px;
     padding-right: 0px;
@@ -969,6 +1011,12 @@ img:hover{
   .landing_page .text-blk.section-head {
     font-size: 26px;
     line-height: 40px;
+  }
+  .landing_page .textinput {
+    width:100%;
+  }
+  .landing_page .input {
+    width:100%;
   }
 
   .landing_page .responsive-container-block.big-container {
@@ -1006,6 +1054,7 @@ img:hover{
     line-height: 34px;
   }
 }
+
 /* Tailwind Styles */
 
 .app {

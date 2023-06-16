@@ -9,33 +9,33 @@ const ListContentCard = ({post}) => {
         <img
           alt="nextui logo"
           src='/assets/images/TalentConnects.png'
-          width="34px"
-          height="34px"
+          width="50px"
+          height="50px"
         />
         <Grid.Container css={{ pl: "$6" }}>
           <Grid xs={12}>
-            <Text h4 css={{ lineHeight: "$xs" }}>
+            <Text b h4 css={{ lineHeight: "$xs" }}>
               {post.companyName}
             </Text>
           </Grid>
-          <Grid xs={12}>
+          {/* <Grid xs={12}>
             <Text css={{ color: "$accents8" }}>{post.skillsRequired}</Text>
-          </Grid>
+          </Grid> */}
         </Grid.Container>
       </Card.Header>
-      <Card.Body css={{ py: "$2" }}>
-        <Text>
+      <Card.Body css={{pt:"$4"}}>
+        <Text css={{textAlign:"center",color:"$blue500",fontSize:"$md"}}>
           Hiring for {post.title}
         </Text>
       </Card.Body>
-      <Card.Footer>
-        <Link
+      <Card.Footer css={{display:"flex",justifyContent:"right"}}>
+        <Link css={{backgroundColor:"$blue500",color:"white",px:"$10",pt:"$1",pb:"$2",borderRadius:"$lg"}}
           icon
           color="primary"
           target="_blank"
           href={`/jobs/${post._id}`}
         >
-          Apply for this Job
+          Apply
         </Link>
       </Card.Footer>
     </Card>
