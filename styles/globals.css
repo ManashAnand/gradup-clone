@@ -575,9 +575,10 @@ img:hover{
     margin-top:4vh;
     margin-left:-1.5vw;
   }
-  .none{
+  /* .none{
     display:none;
-  }
+  } */
+
   .filterbox{
     margin-top:-9vh;
     width:28vw;
@@ -616,6 +617,9 @@ img:hover{
   }
   .inputcontainer{
     margin:3rem auto;
+  }
+  .none{
+    display:none;
   }
   .giphy{
     margin:5vh auto 8vh auto;

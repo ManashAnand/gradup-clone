@@ -16,7 +16,6 @@ const page = () => {
       </div>
       <div>
         <AlumniFilter setSelectedCollege={setSelectedCollege} />
-        <p className="text-center text-blue-500 text text-3xl">Our Alumnis</p>
         <AlumniShow selectedCollege={selectedCollege}/>
       </div>
     </>
