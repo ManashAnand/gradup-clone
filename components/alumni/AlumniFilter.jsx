@@ -5,23 +5,40 @@ import Select from "react-select";
 
 const AlumniFilter = ({selectedCollege, setSelectedCollege}) => {
     const collegeList = [
-        { value: "delhi", label: "delhi" },
-        { value: "mumbai", label: "mumbai" },
-        { value: "dehradun", label: "dehradun" },
-        { value: "patna", label: "patna" },
-        { value: "gaya", label: "gaya" },
-        { value: "remote", label: "remote" },
+        { value: "Delhi", label: "Delhi" },
+        { value: "Mumbai", label: "Mumbai" },
+        { value: "Dehradun", label: "Dehradun" },
+        { value: "Patna", label: "Patna" },
+        { value: "Gaya", label: "Gaya" },
+        { value: "Remote", label: "Remote" },
       ];
       function handleCollege(data) {
         setSelectedCollege(data);
       }
   return (
-    <div>
+    <div className='filtercontainer'>
+      <div className="none">
+      <img width="300" src="/assets/images/alumni1.png"></img>
+      </div>
         <div className="pt-16">
-          <div className="filterbox">
+          <div style={{backgroundColor:"rebeccapurple",minHeight:"55vh",minWidth:"25vw",marginTop:"-12vh"}} className='filterbox'>
             <div>
               <div className="p-3">
                 <Select
+                className='text-white'
+                theme={(theme) => ({
+                  ...theme,
+                  borderRadius: 0,
+                  colors: {
+                    ...theme.colors,
+                    primary25: 'rebeccapurple',
+                    primary: '',
+                    neutral0:"",
+                    neutral50:"white",
+                    neutral30:"white",
+                    neutral40:"white",
+                  },
+                })}
                   options={collegeList}
                   placeholder="Select College"
                   value={selectedCollege}
@@ -31,12 +48,15 @@ const AlumniFilter = ({selectedCollege, setSelectedCollege}) => {
                 />
               </div>
             </div>
-            <div>
-              <button type="submit" className="btn4 mt-5">
+            <div className='flex justify-center'>
+              <button type="submit" className="mt-64 px-10 py-1 border-2 text-white border-purple-400 rounded-xl hover:border-2 hover:border-white">
                 Apply
               </button>
             </div>
           </div>
+        </div>
+        <div className="none">
+        <img className="rounded-3xl mt-9" width="260" src="/assets/images/alumni2.png"></img>
         </div>
     </div>
   )

@@ -6,10 +6,20 @@ import { useState } from 'react'
 const page = () => {
     const [selectedCollege, setSelectedCollege]=useState()
   return (
-    <div>
+    <>
+      <div className="alumnitop w-full">
+        <div className="my-auto">
+         <p className="text-4xl text mb-4">Alumni Network</p>
+         <p><em>"Nobody is bothered about its institution more than<br/>its Alumni"</em></p>
+        </div>
+        <img width="400" src="/assets/images/alumni.png"></img>
+      </div>
+      <div>
         <AlumniFilter setSelectedCollege={setSelectedCollege} />
+        <p className="text-center text-blue-500 text text-3xl">Our Alumnis</p>
         <AlumniShow selectedCollege={selectedCollege}/>
-    </div>
+      </div>
+    </>
   )
 }
 

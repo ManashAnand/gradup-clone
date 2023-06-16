@@ -228,6 +228,15 @@ img:hover{
   gap:25px;
   grid-template-columns: repeat(2,1fr);
 }
+.alumnitop{
+  display:flex;
+  justify-content:space-evenly;
+  background-color:rgb(134, 65, 134);
+  color:white;
+  border-radius:20px;
+  padding:40px;
+  margin-bottom:5vh;
+}
 .hrjobs{
   padding:40px;
   border-radius:20px;
@@ -270,6 +279,18 @@ img:hover{
 }
 .aboutbox{
   display:flex;
+}
+.alumnicardcontainer{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:20px;
+}
+.filtercontainer{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-items: center;
+  margin-top:12px;
+  margin-bottom:20px;
 }
 .buttonpos{
   display:flex;
@@ -538,6 +559,13 @@ img:hover{
   .founderbox{
     display:block;
   }
+  .alumnitop{
+    display:block;
+  }
+  .filtercontainer{
+    display:flex;
+    justify-content: center;
+  }
   .founderimg{
     width:70vw;
     height:100vh;
@@ -546,6 +574,9 @@ img:hover{
   .yes{
     margin-top:4vh;
     margin-left:-1.5vw;
+  }
+  .none{
+    display:none;
   }
   .filterbox{
     margin-top:-9vh;
@@ -595,6 +626,11 @@ img:hover{
   }
   .main-content{
     display:block;
+  }
+  .alumnicardcontainer{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
   }
   .arrange{
     margin-left:0;
@@ -1006,6 +1042,7 @@ img:hover{
     line-height: 34px;
   }
 }
+
 /* Tailwind Styles */
 
 .app {
