@@ -3,6 +3,7 @@ import styles from 'styles/Page.module.css'
 import RocketIcon from '@mui/icons-material/Rocket';
 import Diversity2Icon from '@mui/icons-material/Diversity2';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import ContactUS from "@components/ContactUS"
 export default function About() {
   return (
     <div>
