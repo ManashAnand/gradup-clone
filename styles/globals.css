@@ -301,7 +301,7 @@ img:hover{
 .coursebox{
   margin-top:3vh;
   display:flex;
-  background-color:plum;
+  /* background-color:rgb(128, 175, 225); */
   padding:12px;
   border-radius:20px;
 }

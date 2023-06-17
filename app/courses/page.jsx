@@ -161,10 +161,10 @@ const Courses = () => {
     !results?<>
     <div className='coursebox'>
     <svg height="400" width="600">
-    <polygon points="500,50 500,320 10,400 10,50" style={{fill:"#dda0dd"}}/>
-    <text className="text-4xl text" x="90" y="120" fill="#57534e">Learn from anywhere</text>
-    <text className="text-4xl text" x="90" y="160" fill="#57534e">around the globe</text>
-    <text className="text-4xl text" x="90" y="200" fill="#57534e">with us</text>
+    <polygon points="500,50 500,320 10,400 10,50" style={{fill:"#090D34"}}/>
+    <text className="text-4xl text" x="90" y="120" fill="deepskyblue">Learn from anywhere</text>
+    <text className="text-4xl text" x="90" y="160" fill="deepskyblue">around the globe</text>
+    <text className="text-4xl text" x="90" y="200" fill="deepskyblue">with us.</text>
     <text className="text-xl text" x="90" y="290" fill="white">Experience quality courses with us with</text>
     <text className="text-xl text" x="90" y="320" fill="white">best price. You can get best courses</text>
     <text className="text-xl text" x="90" y="350" fill="white">from us</text>
@@ -178,7 +178,7 @@ const Courses = () => {
     </div>
     <div className='w-full max-w-full flex-start flex-col my-10'>
     <div>
-    <h1 className='text-4xl font-bold text-sky-700 text text-center my-5'>Our Best Courses</h1>
+    <h1 className='text-4xl font-bold text-sky-500 text text-center my-5'>Our Best Courses</h1>
     <Grid.Container gap={3} justify="flex-start">
       {list.map((item, index) => (
         <Grid xs={6} sm={4} key={index}>
@@ -208,7 +208,7 @@ const Courses = () => {
     </Grid.Container>
     </div>
     </div>
-    <p className='text-xl text-left text font-semibold text-gray-700 mb-8'>Computer Science</p>
+    <p className='text-xl text-left text font-semibold text-white mb-8'>Computer Science</p>
     <div className="p-2 rounded-xl bg-sky-200">
     <Grid.Container gap={2} justify="flex-start">
       {list1.map((item, index) => (
@@ -239,7 +239,7 @@ const Courses = () => {
       ))}
     </Grid.Container>
     </div>
-    <p className='text-xl text-left text font-semibold text-gray-700 mt-16 mb-8'>Information Technology</p>
+    <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Information Technology</p>
     <div className="p-2 rounded-xl bg-purple-200">
     <Grid.Container gap={2} justify="flex-start">
       {list2.map((item, index) => (
@@ -270,7 +270,7 @@ const Courses = () => {
       ))}
     </Grid.Container>
     </div>
-    <p className='text-xl text-left text font-semibold text-gray-700 mt-16 mb-8'>Automation Technology</p>
+    <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Automation Technology</p>
     <div className="p-2 rounded-xl bg-red-200">
     <Grid.Container gap={2} justify="flex-start">
       {list3.map((item, index) => (
@@ -301,7 +301,7 @@ const Courses = () => {
       ))}
     </Grid.Container>
     </div>
-    <p className='text-xl text-left text font-semibold text-gray-700 mt-16 mb-8'>Management</p>
+    <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Management</p>
     <div className="p-2 rounded-xl bg-cyan-200">
     <Grid.Container gap={2} justify="flex-start">
       {list4.map((item, index) => (
@@ -332,7 +332,7 @@ const Courses = () => {
       ))}
     </Grid.Container>
     </div>
-    <p className='text-xl text-left text font-semibold text-gray-700 mt-16 mb-8'>Language Learning</p>
+    <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Language Learning</p>
     <div className="p-2 rounded-xl bg-violet-200">
     <Grid.Container gap={2} justify="flex-start">
       {list5.map((item, index) => (
@@ -363,7 +363,7 @@ const Courses = () => {
       ))}
     </Grid.Container>
     </div>
-    <p className='text-xl text-left text font-semibold text-gray-700 mt-16 mb-8'>Design and Product</p>
+    <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Design and Product</p>
     <div className="p-2 rounded-xl bg-pink-200">
     <Grid.Container gap={2} justify="flex-start">
       {list6.map((item, index) => (
@@ -394,7 +394,7 @@ const Courses = () => {
       ))}
     </Grid.Container>
     </div>
-    <p className='text-xl text-left text font-semibold text-gray-700 mt-16 mb-8'>Arts and Humanities</p>
+    <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Arts and Humanities</p>
     <div className="p-2 rounded-xl bg-green-200">
     <Grid.Container gap={2} justify="flex-start">
       {list7.map((item, index) => (
