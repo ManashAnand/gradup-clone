@@ -21,7 +21,7 @@ const AlumniFilter = ({selectedCollege, setSelectedCollege}) => {
       <img width="300" src="/assets/images/alumni1.png"></img>
       </div>
         <div className="pt-16">
-          <div style={{backgroundColor:"rebeccapurple",minHeight:"55vh",minWidth:"25vw",marginTop:"-12vh"}} className='filterbox alumniback'>
+          <div style={{backgroundColor:"skyblue",minHeight:"55vh",minWidth:"25vw",marginTop:"-12vh"}} className='filterbox alumniback'>
             <div className='flex flex-col items-center mx-10'>
               <p className='text-3xl text-center text-white text py-4'>Meet the Alumni's</p>
               <p className='text-2xl text-center text-white text'>Together again !!</p>

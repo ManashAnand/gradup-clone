@@ -5,7 +5,7 @@ import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 export default function AlumniCard({data}) {
   return (
       <Card css={{mt:"$10",mb:"$10",borderRadius:"50px",boxShadow:"rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px"}}>
-      <Card.Header css={{display:"flex",flexDirection:"column",justifyContent:"center",background:"#231E39"}}>
+      <Card.Header css={{display:"flex",flexDirection:"column",justifyContent:"center",background:"#82B7F8"}}>
         <img 
           className="rounded-full p-2"
           alt="nextui logo"
@@ -15,7 +15,7 @@ export default function AlumniCard({data}) {
         />
         <Grid.Container css={{ pl: "$6" }}>
           <Grid xs={12} css={{display:"flex",justifyContent:"center"}}>
-            <Text h4 css={{ lineHeight: "$xs",color:"white",pb:"$4"}}>
+            <Text h4 b css={{ lineHeight: "$xs",pb:"$4"}}>
             {data.name}
             </Text>
           </Grid>
@@ -31,7 +31,7 @@ export default function AlumniCard({data}) {
         </Text>
       </Card.Body>
       <Card.Footer css={{marginTop:"",display:"flex",justifyContent:"center"}}>
-        <Link css={{color:"$purple700",backgroundColor:"WhiteSmoke",padding:"$1 $10",float:"right",borderRadius:"$2xl",border:"2px solid plum"}}
+        <Link css={{backgroundColor:"WhiteSmoke",padding:"$1 $10",float:"right",borderRadius:"$2xl",border:"2px solid deepskyblue"}}
           icon
           target="_blank"
           href="https://github.com/nextui-org/nextui"
