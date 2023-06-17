@@ -46,10 +46,11 @@ export default function CoursesOnHome() {
   ];
 
   return (
-    <section className='w-full max-w-full flex-start flex-col my-10'>
+    <section className='flex-start flex-col my-16'>
     <div>
-        <h1 className='text-3xl text-blue-500 font-semibold text text-center my-5'>Our Best Courses</h1>
-    <Grid.Container gap={2} justify="flex-start">
+        <h1 className='text-3xl text-white font-semibold text text-center my-5'>Our Best Courses</h1>
+        <p className="text text-center text-sky-400 text-xl mb-3">Master new Skills from Anywhere with our Online Courses</p>
+    <Grid.Container gap={2}>
       {list.map((item, index) => (
         <Grid xs={6} sm={3} key={index}>
           {/* <Link href="/courses"> */}

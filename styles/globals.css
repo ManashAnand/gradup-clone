@@ -158,7 +158,44 @@ img:hover{
   height: 75px;
   border-radius: 50% / 0% 100% 0% 70%;
 }
-    
+.databox{ 	
+	height: 40vh;
+	color: deepskyblue;
+	display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color:black;
+  position:relative;
+}
+
+.databox .filter{
+	background: url('/assets/images/divback.png') no-repeat;
+	background-size: fit;
+	background-position:center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+	opacity:0.2;
+} 
+.data1{
+  background:linear-gradient(to bottom right,rgb(245, 124, 124),rgb(235, 187, 98));
+  border-radius:10px;
+} 
+.data2{
+  background:linear-gradient(to bottom right,rgb(249, 249, 65),rgb(9, 106, 141));
+  border-radius:10px;
+} 
+.data3{
+  background:linear-gradient(to bottom right,rgb(85, 251, 55),rgb(245, 183, 12));
+  border-radius:10px;
+} 
+.data4{
+  background:linear-gradient(to bottom right,rgb(245, 162, 221),rgb(240, 153, 22));
+  border-radius:10px;
+} 
+
 .inputcontainer{
   margin-top:3rem;
 }
@@ -620,6 +657,9 @@ img:hover{
   }
   .inputbox{
     width:84vw;
+  }
+  .hide{
+    display:none;
   }
   .inputcontainer{
     margin:3rem auto;
