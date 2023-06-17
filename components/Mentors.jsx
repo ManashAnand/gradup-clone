@@ -16,7 +16,7 @@ const Mentors = () => {
         },
         {
             name: "Luv Saxena",
-            title:"Assistant Vice President- magicpin | IIT Roorkee | IIM Bangalore | All India CAT Topper 2016 |",
+            title:"Assistant Vice President- magicpin | IIT Roorkee | IIM Bangalore |",
             img:"/assets/mentors/mentor3.png"
         },
         {
@@ -51,17 +51,15 @@ const Mentors = () => {
       {list.map((items,i)=>{
         return(
           <div key={i} class="box">
-          <div class="box-top">
-            <img class="box-image" src={items.img} alt="Mentor"/>
-          <div class="title-flex">
-            <h3 class="box-title text">{items.name}</h3>
-            <p class="user-follow-info text">{items.title}</p>
-          </div>
-         </div>
-        </div>
+            <div class="box-top">
+              <img class="box-image" src={items.img} alt="Mentor"/>
+            </div>
+            <h3 class="text text-center text-md text-white">{items.name}</h3>
+            <p class="user-follow-info text-center text-white text text-xs">{items.title}</p>
+            </div>
         )
       })}
-</div>
+    </div>
 </div>
   )
 }
