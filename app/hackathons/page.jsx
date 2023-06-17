@@ -12,7 +12,7 @@ export default function Page() {
   const [display1,setDisplay1]=useState("grid")
   return (
     <div>
-      <div style={{color:"darkslateblue"}} className='text text-4xl text-center font-semibold my-8 mr-4' > Hackathons- Bring Your Coding Skills</div>
+      <div style={{color:"deepskyblue"}} className='text text-4xl text-center font-semibold my-8 mr-4' > Hackathons- Bring Your Coding Skills</div>
       <div className="flex">
         <ShowHackathon display={display} setDisplay={setDisplay} display1={display1} setDisplay1={setDisplay1} setHackathon={setHackathon}></ShowHackathon>
         <div>
