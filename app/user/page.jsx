@@ -176,9 +176,9 @@ export default function Profile() {
           <h1 className='head_text text-left'>
             {/* <span className='blue_gradient'>Welcome {data.name} !!</span> */}
           </h1>
-          <h2 className='secondary_text m-7 text'>Your Resume</h2>
+          <h2 className='text-4xl text-sky-500 m-7 text'>Your Resume</h2>
           <Link href={'/user/applications'} className='mt-6'>
-            <button className='btn8 bg-sky-700'>Your Applications</button>
+            <button style={{backgroundColor:"deepskyblue"}} className='btn8'>Your Applications</button>
           </Link>
           {/* <p className='desc text-left'>{data.email}</p> */}
         </section>
