@@ -78,7 +78,7 @@ function Page ({ index }) {
             <div>
           <div className='head_text jobpos'>
             <h1 className="text-sky-500 text-5xl underline decoration-yellow-300 underline-offset-8">Internships</h1>
-            <h1 className='text-red text-4xl mt-2'>for you.</h1>
+            <h1 className='text-white text-4xl mt-2'>for you.</h1>
           </div>
           <div className="inputcontainer">
             <input className="inputbox" type="search" placeholder="Enter"></input>
@@ -91,7 +91,7 @@ function Page ({ index }) {
           <p className="heading1">All Internships</p>
           </div>
           <div className="sortpos">
-            <p className="-ml-10 text-gray-500 text-sm font-bold">Sort by:</p>
+            <p className="-ml-10 text-white text-sm">Sort by:</p>
             <button className="btn6">Recently Released</button>
             <button className="btn6">Alphabetical</button>
           </div>

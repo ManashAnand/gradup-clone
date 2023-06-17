@@ -117,7 +117,7 @@ function Page({ index }) {
           <div className="headerpos">
             <div>
           <div className='head_text jobpos'>
-            <h1 className='text-black text-4xl'>Find your job &</h1>
+            <h1 className='text-white text-4xl'>Find your job &</h1>
             <h1 className='text-blue-400 text-4xl'>and grab <span className="underline decoration-yellow-300 underline-offset-8">your opportunities</span></h1>
           </div>
           <div className="inputcontainer">
@@ -131,7 +131,7 @@ function Page({ index }) {
             <p className="heading">All Jobs</p>
           </div>
           <div className="sortpos">
-            <p className="-ml-10 text-gray-500 text-sm font-bold">Sort by:</p>
+            <p className="-ml-10 text-white text-sm">Sort by:</p>
             <button className="btn6">Recently Released</button>
             <button className="btn6">Alphabetical</button>
           </div>
