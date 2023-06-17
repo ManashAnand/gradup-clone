@@ -264,18 +264,6 @@ img:hover{
   min-height:45vh;
   width:20vw;
 }
-.box9{
-  background: linear-gradient(to bottom right ,rgb(246, 171, 246),rgb(248, 79, 79));
-}
-.box8{
-  background: linear-gradient(to bottom right ,rgb(246, 157, 116),rgb(243, 72, 72));
-}
-.box7{
-  background: linear-gradient(to bottom right ,rgb(176, 181, 251),rgb(250, 144, 144));
-}
-.box6{
-  background: linear-gradient(to bottom right ,rgb(214, 250, 121),rgb(250, 81, 81));
-}
 .box6:hover,.box7:hover,.box8:hover,.box9:hover{
   transition: transform 0.3s ease-in;
 }
