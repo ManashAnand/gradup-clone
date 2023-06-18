@@ -5,7 +5,7 @@ import Provider from '@components/Provider';
 import Footer from '@components/Footer';
 
 export const metadata = {
-    title:"TalentConnect",
+    title:"GradUp",
     description:"Connecting talent to opportunities"
 }
 const Layout = ({children}) => {

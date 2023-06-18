@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import HomeFirstComponent from '@components/HomeFirstComponent';
 import CoursesOnHome from '@components/CoursesOnHome';
@@ -6,6 +7,7 @@ import Achievement from '@components/Achievement';
 import Testimonial from '@components/Testimonial';
 import BeMentorWithUs from '@components/BeMentorWithUs';
 import DownloadApp from "@components/DownloadApp"
+import ContactUs from "@components/ContactUS"
 
 const Home = () => {
   return (
@@ -77,13 +79,13 @@ const Home = () => {
         </div>
         <h1 className='text-white text text-3xl font-semibold text-center my-10'>Meet Our Mentors</h1>
         <Mentors />
-        <Achievement />
+        {/* <Achievement /> */}
         <BeMentorWithUs />
         <Testimonial />
         <DownloadApp/>
+        <ContactUs/>
     </section>
-    
-  )
-}
+    )
+ }
 
 export default Home
