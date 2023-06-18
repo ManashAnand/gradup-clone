@@ -79,7 +79,7 @@ const Home = () => {
         </div>
         <h1 className='text-white text text-3xl font-semibold text-center my-10'>Meet Our Mentors</h1>
         <Mentors />
-        {/* <Achievement /> */}
+        <Achievement />
         <BeMentorWithUs />
         <Testimonial />
         <DownloadApp/>

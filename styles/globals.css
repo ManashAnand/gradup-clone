@@ -178,8 +178,38 @@ img:hover{
   bottom: 0;
   left: 0;
   right: 0;
-	opacity:0.2;
+	opacity:0.4;
 } 
+.achievementbox{ 
+  background:linear-gradient(to bottom right,rgb(14, 11, 32));
+  position:relative;
+}
+
+.achievementbox .filter1{
+	background: url('/assets/images/divback2.png') no-repeat;
+	background-size:cover;
+	background-position:center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+	opacity:0.4;
+} 
+.media{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:2rem; 
+  padding:2rem 12rem 0 12rem;
+  justify-content: center;
+}
+.news{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:2rem; 
+  justify-content: center;
+  padding:5rem 16rem; 
+}
 .data1{
   background:linear-gradient(to bottom right,rgb(245, 124, 124),rgb(235, 187, 98));
   border-radius:10px;
@@ -475,8 +505,19 @@ img:hover{
   justify-content: center;
   width: 100%;
   gap:100px;
-  padding:50px;
+  padding:30px;
   flex-wrap: wrap;
+}
+.testimonial{
+  display:flex;
+  /* grid-template-columns: repeat(4,1fr);
+  gap:3rem; */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:80px;
+  padding:5rem 8rem;
+  margin:0 auto;
 }
 
 .box {
@@ -596,6 +637,19 @@ img:hover{
     grid-template-columns:repeat(2,1fr);
     justify-items: center;
   }
+  .testimonial{
+   gap:20px;
+   padding:4rem 2rem;
+  }
+  .wrap{
+    gap:20px;
+  }
+  .news{
+    padding:2rem 6rem;
+  }
+  .media{
+    padding:2rem 4rem;
+  }
   .hide1{
     display:none;
   }
@@ -678,6 +732,13 @@ img:hover{
   .mobilepara{
     width:80vw;
   }
+  .news{
+    padding:2rem 1rem;
+  }
+  .media{
+    padding:2rem 1rem;
+    gap:10px;
+  }
   .firstformbox{
     display:none;
   }
@@ -685,7 +746,9 @@ img:hover{
     width:auto;
   }
   .formpos{
+    margin-top:8vh;
     margin-left:0;
+    margin-bottom:8vh;
   }
   .appbox{
     margin:auto;
@@ -765,6 +828,16 @@ img:hover{
   .founderimg{
     width:90vw;
     height:70vh;
+  }
+  .news{
+    grid-template-columns: repeat(1,1fr);
+    padding:1rem 1rem;
+    gap:20px;
+  }
+  .media{
+    grid-template-columns: repeat(2,1fr);
+    padding:2rem 1rem 4rem 1rem;
+    gap:20px;
   }
   .appbox{
     display:flex;
