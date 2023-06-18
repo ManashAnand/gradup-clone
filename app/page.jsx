@@ -5,6 +5,7 @@ import Mentors from '@components/Mentors';
 import Achievement from '@components/Achievement';
 import Testimonial from '@components/Testimonial';
 import BeMentorWithUs from '@components/BeMentorWithUs';
+import DownloadApp from "@components/DownloadApp"
 
 const Home = () => {
   return (
@@ -79,6 +80,7 @@ const Home = () => {
         <Achievement />
         <BeMentorWithUs />
         <Testimonial />
+        <DownloadApp/>
     </section>
     
   )
