@@ -395,7 +395,7 @@ const Courses = () => {
     </Grid.Container>
     </div>
     <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Arts and Humanities</p>
-    <div className="p-2 rounded-xl bg-green-200">
+    <div className="p-2 rounded-xl bg-green-200 mb-20">
     <Grid.Container gap={2} justify="flex-start">
       {list7.map((item, index) => (
         <Grid xs={6} sm={6} key={index}>

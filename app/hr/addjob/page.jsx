@@ -61,7 +61,7 @@ const page = ({params}) => {
     }     
   return (
     !posted?<>
-    <div className='justify-center w-full align-center justify-items-center hrjobs'>
+    <div className='justify-center w-full align-center justify-items-center hrjobs mt-16 mb-20'>
           <h1 className='font-bold text-5xl text-left mb-5'>
             <p className='text text-4xl text-center text-white mb-8'>Post a Job and hire the best Talent</p>
           </h1>
@@ -197,7 +197,7 @@ const page = ({params}) => {
           <button onClick={handleSubmit} type='submit' className='py-2 px-10 rounded-xl bg-white ml-6 mt-4 border-sky-800 border-2 hover:bg-white hover:text-blue-500 hover:border-blue-600'  >Submit</button>
         </form>
     </div>
-    </>:<div className="flex flex-col justify-center items-center">
+    </>:<div className="flex flex-col justify-center items-center mb-20">
       <img width="250" src="/assets/images/jobpost.gif"></img>
       <p className="text-4xl text text-lime-500 mb-4">Successfully published the job.</p>
       <p>Check the dashboard for tracking the application.</p>

@@ -33,7 +33,7 @@ export default function CompleteHackathon({post,display,setDisplay,display1,setD
     console.log("From complete hackathon", post);
     if(post==null)return (<></>)
   return (
-    <Box sx={{minWidth:"35vw",marginTop:"10px",display:display,marginX:"auto",marginRight:"6vw"}}>
+    <Box sx={{minWidth:"35vw",marginTop:"10px",marginBottom:"4rem",display:display,marginX:"auto",marginRight:"6vw"}}>
       <Card>
       <React.Fragment>
       <CardMedia

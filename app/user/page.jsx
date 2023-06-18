@@ -171,7 +171,7 @@ export default function Profile() {
       }
       const ButtonStyle = { margin: "0px 0.5rem" };
   return (
-    !submitted?<div className='w-full'>
+    !submitted?<div className='w-full mb-16'>
         <section className='w-full flex justify-between'>
           <h1 className='head_text text-left'>
             {/* <span className='blue_gradient'>Welcome {data.name} !!</span> */}
@@ -182,7 +182,7 @@ export default function Profile() {
           </Link>
           {/* <p className='desc text-left'>{data.email}</p> */}
         </section>
-        <section className='border-solid border-2 rounded-xl bg-sky-200'>
+        <section className='border-solid border-2 rounded-xl bg-sky-300'>
         <div className='m-6'>
         <div className='mx-5 flex flex-col'>
           <label className="mb-2 ml-2 text text-sm">Name*</label>
@@ -415,9 +415,9 @@ export default function Profile() {
       </section>
       {message && <div className="px-10 py-3 text-center text-lg text rounded-xl my-3 bg-blue-500 text-white">Please add atleast 1 Education, 1 Experience and 1 Project</div>}
       <button onClick={handleSubmit} className='btn9 bg-sky-400 mr-6'>Submit</button>
-    </div>:<>
+    </div>:<div className='mb-20'>
     <img className="mt-16 mb-6" width="400" src="/assets/images/submitted.gif" alt="submitted"></img>
     <div className="text-center my-50 text-4xl text-sky-600 text mb-16">Application Sent Successfully</div>
-    </>
+    </div>
   );
 }

@@ -74,8 +74,8 @@ function Page ({ id }) {
                   </div>
                 </section>
               </section>
-              <Link href={`/jobs/${id}/apply`}> 
-                <button className="bg-blue-400 py-2 px-10 text-sm text-white rounded-md mt-8 float-right">Apply</button>
+              <Link  href={`/jobs/${id}/apply`}> 
+                <button className="bg-blue-400 py-2 px-10 text-sm text-white rounded-md mt-8 mb-16 float-right">Apply</button>
               </Link>
           </div>
         </section>

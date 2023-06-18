@@ -53,9 +53,9 @@ const page = ({params}) => {
             <label htmlFor="projects" className='font-semibold text-white text-md ml-2 mb-3'>Assignment/Github</label> <br />
             <textarea rows="6" className="p-2.5 w-full mb-6 text-sm text-gray-900 bg-gray-50 rounded-lg border border-blue-400" placeholder='Brief Description of the Assignment and its Link...'/>
             {/* <textarea rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Explain about all your relevant projects... \n1'/> */}
-            <button type='submit' onClick={handleSubmit} className='bg-sky-400 text-white rounded-md px-10 py-1 text-lg mt-2 hover:bg-white hover:text-sky-400 hover:border-2 hover:border-sky-400'>Submit</button>
+            <button type='submit' onClick={handleSubmit} className='bg-sky-400 mb-16 text-white rounded-md px-10 py-1 text-lg hover:bg-white hover:text-sky-400 hover:border-2 hover:border-sky-400'>Submit</button>
         </form>
-    </div>:<div className="flex flex-col justify-center items-center">
+    </div>:<div className="flex flex-col justify-center items-center mb-20">
       <img width="250" src="/assets/images/jobpost.gif"></img>
       <p className="text-4xl text text-lime-500 mb-4">Job Applied Successfully</p>
     </div>
