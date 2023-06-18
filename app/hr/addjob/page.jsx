@@ -194,7 +194,7 @@ const page = ({params}) => {
               label="Description of the Job"
               placeholder="Description of the Job"
             /> */}
-          <button onClick={handleSubmit} type='submit' className='py-2 px-10 rounded-xl bg-purple-500 text-white ml-6 mt-4 border-white border-2 hover:bg-white hover:text-purple-500 hover:border-purple-500'  >Submit</button>
+          <button onClick={handleSubmit} type='submit' className='py-2 px-10 rounded-xl bg-white ml-6 mt-4 border-sky-800 border-2 hover:bg-white hover:text-blue-500 hover:border-blue-600'  >Submit</button>
         </form>
     </div>
     </>:<div className="flex flex-col justify-center items-center">

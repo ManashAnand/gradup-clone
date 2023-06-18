@@ -276,7 +276,16 @@ img:hover{
   margin-top:2rem;
   margin-left:8rem;
 }
-
+.firstformbox{
+  width:50%;
+}
+.formpos{
+  background-color:rgb(244, 240, 240);
+  padding:20px;
+  margin:auto 0;
+  border-radius:5px;
+  margin-left: -15vw;
+}
 .arrange{
   background-image: linear-gradient(150.74deg, rgba(69, 146, 253, 0.266012) 15.21%, rgba(248, 199, 234, 0.779514) 22.96%, rgba(239, 203, 227, 0.711805) 45.74%, rgba(0, 120, 234, 0.1602) 91.53%, rgba(66, 169, 249, 0.19) 98.92%, rgba(38, 134, 200, 0.0842839) 98.93%, rgba(152, 198, 224, 0.37) 98.96%, rgba(176, 227, 255, 0.378155) 99.65%, rgba(9, 129, 197, 0) 100.35%, #FFC8E3 1.07%);
   padding:40px;
@@ -299,7 +308,7 @@ img:hover{
 .hrjobs{
   padding:40px;
   border-radius:20px;
-  background-color: darkslateblue;
+  background-color: rgb(11, 175, 229);
 }
 .headerpos{
   display:flex;
@@ -662,6 +671,15 @@ img:hover{
 @media screen and (max-width:800px) {
   .headerpos{
     display:block;
+  }
+  .firstformbox{
+    display:none;
+  }
+  .headerformbox{
+    width:auto;
+  }
+  .formpos{
+    margin-left:0;
   }
   .appbox{
     margin:auto;
