@@ -24,6 +24,7 @@ export const GET = async(req, { params }) => {
         //     ]
         // })
         const QuizDetails = await Quiz.findOne({_id:quizID});
+        // console.log("Quiz", QuizDetails);
         return new Response(JSON.stringify(QuizDetails), { status: 201 })
     } catch (error) {
         console.log(error);
