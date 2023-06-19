@@ -61,7 +61,7 @@ const Testimonial = () => {
               {/* <div > */}
             {list.map((item, index) => (
         <div className="card">
-          <Card isPressable isHoverable >
+          <Card isHoverable >
             <Card.Body css={{ p: 0 }}>
               <Card.Image
                 src={item.img}

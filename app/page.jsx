@@ -8,6 +8,7 @@ import Testimonial from '@components/Testimonial';
 import BeMentorWithUs from '@components/BeMentorWithUs';
 import DownloadApp from "@components/DownloadApp"
 import ContactUs from "@components/ContactUS"
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -19,25 +20,24 @@ const Home = () => {
           <div className="filter"></div>
            <div className="grid grid-cols-2 gap-x-14 gap-y-8 my-auto data">
             <div className="w-32 h-20 data1 pt-2">
-              <h1 className="text-3xl text-center text-white font-semibold">45K</h1>
+              <h1 className="text-4xl text-center text-white font-semibold">45K</h1>
               <p className="text-xs font-semibold text-white text-center">Happy Customers</p>
             </div>
             <div className="w-32 h-20 data2 pt-2">
-            <h1 className="text-3xl text-center text-white font-semibold">55%</h1>
+            <h1 className="text-4xl text-center text-white font-semibold">55%</h1>
               <p className="text-xs font-semibold text-white text-center">Sample Headline</p>
             </div>
             <div className="w-32 h-20 data3 pt-2">
-            <h1 className="text-3xl text-center text-white font-semibold">95</h1>
+            <h1 className="text-4xl text-center text-white font-semibold">95</h1>
               <p className="text-xs font-semibold text-white text-center">Our Courses</p>
             </div>
             <div className="w-32 h-20 data4 pt-2">
-            <h1 className="text-3xl text-center text-white font-semibold">3000</h1>
+            <h1 className="text-4xl text-center text-white font-semibold">3000</h1>
               <p className="text-xs font-semibold text-white text-center">Learners worldwide</p>
             </div>
            </div>
            <div className='my-auto text-white text-2xl w-1/3 hide'>
            <p className='text'>The best quality online courses from institutions</p>
-           <button className="py-1 px-6 text-sm rounded-xl bg-sky-500 text-white mt-4">Learn More</button>
            </div>
         </div>
         <div className='p-10 w-screen bg-white'>
