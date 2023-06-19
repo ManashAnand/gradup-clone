@@ -2,7 +2,7 @@
 import styles from 'styles/Page.module.css'
 export default function Services() {
   return (
-    <div>
+    <div className="w-screen">
       <div className={styles.box}>
         <img className={styles.groupimg} src="/assets/images/group.png" alt="group"></img>
         <div>
@@ -67,7 +67,7 @@ export default function Services() {
         </div>
       </div>
       <div>
-        <div className="text-3xl text-center font-semibold mb-12 mt-12">Audio And Video Resumes On Demand</div>
+        <div className="text-3xl text-white text-center font-semibold mb-12 mt-12">Audio And Video Resumes On Demand</div>
         <div className={styles.resumegroup}>
           <div className={styles.resume1}>
             <h1 className="text-xl mb-4 font-semibold">College Students(UG)</h1>
@@ -220,7 +220,7 @@ export default function Services() {
         <img className={styles.groupimg1} src="/assets/images/communication.png" alt="interview"></img>
         <div>
           <h1 className={styles.heading}>--Services</h1>
-          <h1 className={styles.heading}>Communication Skills</h1>
+          <h1 className={styles.subhead}>Communication Skills</h1>
           <p className={styles.partnerpara}>Effective communication is a key to success and if you don’t communicate your ideas well, the audience would never be able to connect the impact your idea could bring to the world. Have you ever wondered how these eloquent speakers just move the crowd by their words?</p>
           <p className={styles.partnerpara}>Have you ever noticed some of your college mates with an amazing presentation and communication skills grabbing all the attention even if the point they are trying to make is not impactful enough? That is the magic of communication where you make yourselves heard! Burst the myth now- A person fluent in English does not imply that he/she is a good communicator. Learn the fundamentals of effective communication, listening skills, note making in mind and touching all aspects of a topic via creating a mind tree in just an hour with our mentors.</p>
           <button className={styles.btn1}><a href="">Get Service</a></button>
