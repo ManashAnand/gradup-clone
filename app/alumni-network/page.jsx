@@ -7,7 +7,7 @@ const page = () => {
     const [selectedCollege, setSelectedCollege]=useState()
   return (
     <>
-      <div className="alumnitop w-full">
+      <div className="alumnitop w-full mt-6">
         <div className="my-auto">
          <p className="text-4xl text mb-4">Alumni Network</p>
          <p><em>"Nobody is bothered about its institution more than<br/>its Alumni"</em></p>

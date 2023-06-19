@@ -69,7 +69,7 @@
 
 
 /*  Carousel CSS */
-.slider{
+/* .slider{
   height:250px;
   margin:auto ;
   position:relative;
@@ -111,7 +111,7 @@
   width:100%;
   transition: transform 1s;
 } */
-img:hover{
+/* img:hover{
   transform:translateZ(20px);
 }
 .slider::before,
@@ -133,9 +133,7 @@ img:hover{
   right:0;
   top:0;
   transform: rotateZ(180deg);
-}
-
-/* Carousel CSS end */
+}/*
 @media screen and (max-width: 640px) {
   .main {
     padding: 0;
@@ -180,6 +178,43 @@ img:hover{
   right: 0;
 	opacity:0.2;
 } 
+.achievementbox{ 
+  margin-top:10vh;	
+	height: 72vh;
+	color: deepskyblue;
+	display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color:#000;
+  position:relative;
+}
+
+.achievementbox .filter1{
+	background: url('/assets/images/divback.png') no-repeat;
+	background-size:cover;
+	background-position:center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+	opacity:0.1;
+} 
+.milestones{
+ display:grid;
+ grid-template-columns: repeat(3,1fr);
+}
+.datamile1{
+  background:linear-gradient(to bottom right,rgb(251, 76, 76),rgb(248, 86, 199));
+  border-radius:10px;
+  width:13rem;
+} 
+.datamile2{
+  background:linear-gradient(to bottom right,rgb(56, 113, 133),rgb(248, 248, 108));
+  border-radius:10px;
+  width:13rem;
+} 
+
 .data1{
   background:linear-gradient(to bottom right,rgb(245, 124, 124),rgb(235, 187, 98));
   border-radius:10px;
@@ -264,18 +299,6 @@ img:hover{
   min-height:45vh;
   width:20vw;
 }
-.box9{
-  background: linear-gradient(to bottom right ,rgb(246, 171, 246),rgb(248, 79, 79));
-}
-.box8{
-  background: linear-gradient(to bottom right ,rgb(246, 157, 116),rgb(243, 72, 72));
-}
-.box7{
-  background: linear-gradient(to bottom right ,rgb(176, 181, 251),rgb(250, 144, 144));
-}
-.box6{
-  background: linear-gradient(to bottom right ,rgb(214, 250, 121),rgb(250, 81, 81));
-}
 .box6:hover,.box7:hover,.box8:hover,.box9:hover{
   transition: transform 0.3s ease-in;
 }
@@ -288,7 +311,16 @@ img:hover{
   margin-top:2rem;
   margin-left:8rem;
 }
-
+.firstformbox{
+  width:50%;
+}
+.formpos{
+  background-color:rgb(240, 242, 244);
+  padding:20px;
+  margin:auto 0;
+  border-radius:5px;
+  margin-left: -15vw;
+}
 .arrange{
   background-image: linear-gradient(150.74deg, rgba(69, 146, 253, 0.266012) 15.21%, rgba(248, 199, 234, 0.779514) 22.96%, rgba(239, 203, 227, 0.711805) 45.74%, rgba(0, 120, 234, 0.1602) 91.53%, rgba(66, 169, 249, 0.19) 98.92%, rgba(38, 134, 200, 0.0842839) 98.93%, rgba(152, 198, 224, 0.37) 98.96%, rgba(176, 227, 255, 0.378155) 99.65%, rgba(9, 129, 197, 0) 100.35%, #FFC8E3 1.07%);
   padding:40px;
@@ -311,7 +343,7 @@ img:hover{
 .hrjobs{
   padding:40px;
   border-radius:20px;
-  background-color: darkslateblue;
+  background-color: rgb(12, 154, 201);
 }
 .headerpos{
   display:flex;
@@ -353,7 +385,7 @@ img:hover{
 .alumnicardcontainer{
   display:grid;
   grid-template-columns: repeat(3,1fr);
-  gap:20px;
+  gap:30px;
 }
 .filtercontainer{
   display:grid;
@@ -405,10 +437,13 @@ img:hover{
   gap:60px;
 }
 .achievements:hover{
-  transition:transform 0.1s ease-in;
+  transition:transform 0.4s ease-in;
 }
 .achievements:hover{
-  transform:scale(1.2);
+  transform:rotate(2deg);
+}
+.mobilepara{
+  width:40vw;
 }
 .courseimg{
   display:grid;
@@ -475,10 +510,85 @@ img:hover{
   justify-content: center;
   width: 100%;
   gap:100px;
-  padding:50px;
+  padding:30px;
   flex-wrap: wrap;
 }
+.testimonial{
+  display:flex;
+  /* grid-template-columns: repeat(4,1fr);
+  gap:3rem; */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:80px;
+  padding:5rem 8rem;
+  margin:0 auto;
+}
+.containerslider {
+  width: 90%;
+  margin:10vh;
+}
 
+.cards-container {
+  display: flex;
+  border-radius: 6px;
+  color: #333;
+  background: #329df5;
+  padding: 1rem;
+  box-shadow: 0 0 1rem #f7a3a3 inset;
+  overflow-x: auto;
+  position: relative;
+  &::-webkit-scrollbar{
+    display:none;
+  }
+}
+  
+::-webkit-Scrollbar{
+  width:7px; 
+	background: rgb(5,5,5);
+}
+::-webkit-Scrollbar-thumb{
+	border-radius: 10px;
+	background: #f4f4f5;
+	box-shadow: inset 0 0 20px #51d1fc;
+}
+::-webkit-Scrollbar-track{
+	border-radius: 10px;
+}
+
+.card {
+  flex: 1 0 265px;
+  box-shadow: 0 1px 1rem -4px #b5e1f4;
+  background: #fff;
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+.card img {
+  width: 250px;
+  height: 250px;
+  object-fit:fit;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+@media screen and (max-width: 625px) {
+  .container {
+    width: 100%
+  }
+  
+  .cards-container {
+    padding: .5rem;
+  }
+  
+  .card {
+    margin: .5rem;
+  }
+}
 .box {
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;  display:flex;
   flex-direction: column;
@@ -596,6 +706,13 @@ img:hover{
     grid-template-columns:repeat(2,1fr);
     justify-items: center;
   }
+  .testimonial{
+   gap:20px;
+   padding:4rem 2rem;
+  }
+  .wrap{
+    gap:20px;
+  }
   .hide1{
     display:none;
   }
@@ -674,6 +791,29 @@ img:hover{
 @media screen and (max-width:800px) {
   .headerpos{
     display:block;
+  }
+  .cards-container{
+    &::-webkit-scrollbar{
+      display:block;
+    }
+  }
+  .mobilepara{
+    width:80vw;
+  }
+  .firstformbox{
+    display:none;
+  }
+  .headerformbox{
+    width:auto;
+  }
+  .milestones{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+   }
+  .formpos{
+    margin-top:8vh;
+    margin-left:0;
+    margin-bottom:8vh;
   }
   .appbox{
     margin:auto;
@@ -754,12 +894,33 @@ img:hover{
     width:90vw;
     height:70vh;
   }
+  .milestones{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:10px;
+   }
+   .datamile1,.datamile2{
+    width:10.5rem;
+   }
+  .news{
+    grid-template-columns: repeat(1,1fr);
+    padding:1rem 1rem;
+    gap:20px;
+  }
+  .media{
+    grid-template-columns: repeat(2,1fr);
+    padding:2rem 1rem 4rem 1rem;
+    gap:20px;
+  }
   .appbox{
     display:flex;
     margin:auto;
     flex-direction:column;
     align-items:center;
     justify-content: center;
+  }
+  .mobilepara{
+    width:95vw;
   }
   .box9,.box8,.box7,.box6{
     margin:auto;
@@ -1097,7 +1258,7 @@ img:hover{
     line-height: 40px;
   }
   .landing_page .textinput {
-    width:100%;
+    width:120%;
   }
   .landing_page .input {
     width:100%;

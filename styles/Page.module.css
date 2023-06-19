@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@400&display=swap');
 .content{
-  background-color: #212428;
+  background-color: #2b2e32;
   color:#0CAFFF;
   border-top-right-radius:30px;
   border-bottom-right-radius:30px;
@@ -24,7 +24,7 @@
 .box{
   padding:1em 0;
   display:flex;
-  background:black;
+  background:rgb(27, 26, 26);
   margin:3em 0 0 0;
 }
 .btn1{

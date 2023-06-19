@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import HomeFirstComponent from '@components/HomeFirstComponent';
 import CoursesOnHome from '@components/CoursesOnHome';
@@ -5,6 +6,9 @@ import Mentors from '@components/Mentors';
 import Achievement from '@components/Achievement';
 import Testimonial from '@components/Testimonial';
 import BeMentorWithUs from '@components/BeMentorWithUs';
+import DownloadApp from "@components/DownloadApp"
+import ContactUs from "@components/ContactUS"
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -16,26 +20,24 @@ const Home = () => {
           <div className="filter"></div>
            <div className="grid grid-cols-2 gap-x-14 gap-y-8 my-auto data">
             <div className="w-32 h-20 data1 pt-2">
-              <h1 className="text-3xl text-center text-white font-semibold">45K</h1>
-              <p className="text-xs text-white text-center">Happy Customers</p>
+              <h1 className="text-4xl text-center text-white font-semibold">45K</h1>
+              <p className="text-xs font-semibold text-white text-center">Happy Customers</p>
             </div>
             <div className="w-32 h-20 data2 pt-2">
-            <h1 className="text-3xl text-center text-white font-semibold">55%</h1>
-              <p className="text-xs text-white text-center">Sample Headline</p>
+            <h1 className="text-4xl text-center text-white font-semibold">55%</h1>
+              <p className="text-xs font-semibold text-white text-center">Sample Headline</p>
             </div>
             <div className="w-32 h-20 data3 pt-2">
-            <h1 className="text-3xl text-center text-white font-semibold">95</h1>
-              <p className="text-xs text-white text-center">Our Courses</p>
+            <h1 className="text-4xl text-center text-white font-semibold">95</h1>
+              <p className="text-xs font-semibold text-white text-center">Our Courses</p>
             </div>
             <div className="w-32 h-20 data4 pt-2">
-            <h1 className="text-3xl text-center text-white font-semibold">3000</h1>
-              <p className="text-xs text-white text-center">Learners worldwide</p>
+            <h1 className="text-4xl text-center text-white font-semibold">3000</h1>
+              <p className="text-xs font-semibold text-white text-center">Learners worldwide</p>
             </div>
            </div>
            <div className='my-auto text-white text-2xl w-1/3 hide'>
-           <p>The highest quality online courses from institutions</p>
-           <p className='my-auto text-white text-sm mt-3'>Sample text. Tap to select the text content.</p>
-           <button className="py-1 px-6 text-sm rounded-xl bg-sky-400 text-white mt-4">Learn More</button>
+           <p className='text'>The best quality online courses from institutions</p>
            </div>
         </div>
         <div className='p-10 w-screen bg-white'>
@@ -74,14 +76,15 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <h1 className='text-white text text-3xl font-semibold text-center my-10'>Meet Our Mentors</h1>
+        <h1 className='text-white text text-3xl font-semibold text-center mt-10'>Meet Our Mentors</h1>
         <Mentors />
         <Achievement />
         <BeMentorWithUs />
         <Testimonial />
+        <DownloadApp/>
+        <ContactUs/>
     </section>
-    
-  )
-}
+    )
+ }
 
 export default Home

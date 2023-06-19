@@ -206,7 +206,7 @@ export default function App() {
       <div style={{ display: "none" }}>
         <Page index={pageIndex + 1} />
       </div>
-      <div className="flex buttonpos">
+      <div className="flex buttonpos mb-16">
         <button class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
           Prev
         </button>
