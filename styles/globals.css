@@ -544,7 +544,8 @@
 }
   
 ::-webkit-Scrollbar{
-  width:7px; 
+  width:5px; 
+  height:5px;
 	background: rgb(5,5,5);
 }
 ::-webkit-Scrollbar-thumb{
@@ -555,7 +556,13 @@
 ::-webkit-Scrollbar-track{
 	border-radius: 10px;
 }
-
+.categorybox{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  align-items: center;
+  justify-items: center;
+  margin: 3rem 5rem;
+}
 .card {
   flex: 1 0 265px;
   box-shadow: 0 1px 1rem -4px #b5e1f4;
@@ -770,6 +777,9 @@
   .courseimg{
     display:none;
   }
+  .categorybox{
+    margin:2rem 3rem;
+  }
   .coursebox{
     display:flex;
     justify-content: center;
@@ -796,6 +806,13 @@
     &::-webkit-scrollbar{
       display:block;
     }
+  }
+  .categorybox{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    margin:2rem auto;
+    align-items: center;
+    justify-items:center;
   }
   .mobilepara{
     width:80vw;
