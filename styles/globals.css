@@ -69,7 +69,7 @@
 
 
 /*  Carousel CSS */
-.slider{
+/* .slider{
   height:250px;
   margin:auto ;
   position:relative;
@@ -111,7 +111,7 @@
   width:100%;
   transition: transform 1s;
 } */
-img:hover{
+/* img:hover{
   transform:translateZ(20px);
 }
 .slider::before,
@@ -133,9 +133,7 @@ img:hover{
   right:0;
   top:0;
   transform: rotateZ(180deg);
-}
-
-/* Carousel CSS end */
+}/*
 @media screen and (max-width: 640px) {
   .main {
     padding: 0;
@@ -178,15 +176,21 @@ img:hover{
   bottom: 0;
   left: 0;
   right: 0;
-	opacity:0.4;
+	opacity:0.2;
 } 
 .achievementbox{ 
-  background:linear-gradient(to bottom right,rgb(14, 11, 32));
+  margin-top:10vh;	
+	height: 72vh;
+	color: deepskyblue;
+	display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color:#000;
   position:relative;
 }
 
 .achievementbox .filter1{
-	background: url('/assets/images/divback2.png') no-repeat;
+	background: url('/assets/images/divback.png') no-repeat;
 	background-size:cover;
 	background-position:center;
   position: absolute;
@@ -194,22 +198,23 @@ img:hover{
   bottom: 0;
   left: 0;
   right: 0;
-	opacity:0.4;
+	opacity:0.1;
 } 
-.media{
-  display:grid;
-  grid-template-columns: repeat(3,1fr);
-  gap:2rem; 
-  padding:2rem 12rem 0 12rem;
-  justify-content: center;
+.milestones{
+ display:grid;
+ grid-template-columns: repeat(3,1fr);
 }
-.news{
-  display:grid;
-  grid-template-columns: repeat(2,1fr);
-  gap:2rem; 
-  justify-content: center;
-  padding:5rem 16rem; 
-}
+.datamile1{
+  background:linear-gradient(to bottom right,rgb(251, 76, 76),rgb(248, 86, 199));
+  border-radius:10px;
+  width:13rem;
+} 
+.datamile2{
+  background:linear-gradient(to bottom right,rgb(56, 113, 133),rgb(248, 248, 108));
+  border-radius:10px;
+  width:13rem;
+} 
+
 .data1{
   background:linear-gradient(to bottom right,rgb(245, 124, 124),rgb(235, 187, 98));
   border-radius:10px;
@@ -310,7 +315,7 @@ img:hover{
   width:50%;
 }
 .formpos{
-  background-color:rgb(244, 240, 240);
+  background-color:rgb(240, 242, 244);
   padding:20px;
   margin:auto 0;
   border-radius:5px;
@@ -519,7 +524,71 @@ img:hover{
   padding:5rem 8rem;
   margin:0 auto;
 }
+.containerslider {
+  width: 90%;
+  margin:10vh;
+}
 
+.cards-container {
+  display: flex;
+  border-radius: 6px;
+  color: #333;
+  background: #329df5;
+  padding: 1rem;
+  box-shadow: 0 0 1rem #f7a3a3 inset;
+  overflow-x: auto;
+  position: relative;
+  &::-webkit-scrollbar{
+    display:none;
+  }
+}
+  
+::-webkit-Scrollbar{
+  width:7px; 
+	background: rgb(5,5,5);
+}
+::-webkit-Scrollbar-thumb{
+	border-radius: 10px;
+	background: #f4f4f5;
+	box-shadow: inset 0 0 20px #51d1fc;
+}
+::-webkit-Scrollbar-track{
+	border-radius: 10px;
+}
+
+.card {
+  flex: 1 0 280px;
+  box-shadow: 0 1px 1rem -4px #b5e1f4;
+  background: #fff;
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+.card img {
+  width: 250px;
+  height: 250px;
+  object-fit:fit;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+@media screen and (max-width: 625px) {
+  .container {
+    width: 100%
+  }
+  
+  .cards-container {
+    padding: .5rem;
+  }
+  
+  .card {
+    margin: .5rem;
+  }
+}
 .box {
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;  display:flex;
   flex-direction: column;
@@ -644,12 +713,6 @@ img:hover{
   .wrap{
     gap:20px;
   }
-  .news{
-    padding:2rem 6rem;
-  }
-  .media{
-    padding:2rem 4rem;
-  }
   .hide1{
     display:none;
   }
@@ -729,15 +792,13 @@ img:hover{
   .headerpos{
     display:block;
   }
+  .cards-container{
+    &::-webkit-scrollbar{
+      display:block;
+    }
+  }
   .mobilepara{
     width:80vw;
-  }
-  .news{
-    padding:2rem 1rem;
-  }
-  .media{
-    padding:2rem 1rem;
-    gap:10px;
   }
   .firstformbox{
     display:none;
@@ -745,6 +806,10 @@ img:hover{
   .headerformbox{
     width:auto;
   }
+  .milestones{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+   }
   .formpos{
     margin-top:8vh;
     margin-left:0;
@@ -829,6 +894,14 @@ img:hover{
     width:90vw;
     height:70vh;
   }
+  .milestones{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:10px;
+   }
+   .datamile1,.datamile2{
+    width:10.5rem;
+   }
   .news{
     grid-template-columns: repeat(1,1fr);
     padding:1rem 1rem;

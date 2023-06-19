@@ -56,11 +56,11 @@ const Testimonial = () => {
       ];
   return (
       
-        <div className="w-screen bg-white">
-            <div className="testimonial">
+        <div className="containerslider w-screen">
+            <div className="cards-container">
               {/* <div > */}
             {list.map((item, index) => (
-        <div>
+        <div className="card">
           <Card isPressable isHoverable >
             <Card.Body css={{ p: 0 }}>
               <Card.Image

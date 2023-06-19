@@ -46,7 +46,7 @@ const Mentors = () => {
         },
       ];
   return (
-    <div className="background pb-10">
+    <div className="background pt-10">
     <div class="wrap">
       {list.map((items,i)=>{
         return(
