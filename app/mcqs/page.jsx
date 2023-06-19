@@ -2,7 +2,7 @@
 import React from 'react'
 import { Card, Row, Text } from "@nextui-org/react";
 const page = () => {
-  let categories=[{img:"/assets/images/engineer.png",name:"Engineering"},{img:"/assets/images/aptitude.png",name:"Aptitude"},{img:"/assets/images/aptitude.png",name:"Aptitude"},{img:"/assets/images/aptitude.png",name:"Aptitude"},{img:"/assets/images/engineer.png",name:"Engineering"},{img:"/assets/images/engineer.png",name:"Engineering"}]
+  let categories=[{img:"/assets/images/engineer.png",name:"Engineering"},{img:"/assets/images/aptitude.png",name:"Aptitude"}]
   return (
     <div className='my-10'>
       <div style={{backgroundColor:"whitesmoke"}} className="none flex justify-between pl-2 pr-20 py-2 mb-14">
@@ -11,6 +11,7 @@ const page = () => {
       </div>
       <p className='text-center text-4xl text font-semibold text-white mb-8'>Test your knowledge with an interactive online quiz !!</p>
       <p className='text-center text text-white mb-4'>MCQs to practice multiple choice questions and answers on school, college, university courses with placement tests. Job seekers competing for a job should attempt a series of job tests for better grades and learning to prepare themselves for tests as well as interviews.</p>
+     <a href="https://www.google.com">
      <div className="categorybox mt-20 mx-20">
       {categories.map((ele,i)=>{
         return(
@@ -35,6 +36,7 @@ const page = () => {
         )
       })}
      </div>
+     </a>
     </div>
   )
 }
