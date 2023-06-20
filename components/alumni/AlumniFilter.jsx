@@ -32,7 +32,7 @@ const AlumniFilter = ({selectedCollege, setSelectedCollege}) => {
           </div>
         </div>
         <div className="none">
-        <img className="rounded-3xl mt-9" width="260" src="/assets/images/alumni2.png"></img>
+        <img className="rounded-3xl" width="300" src="/assets/images/alumni1.png"></img>
         </div>
     </div>
   )
