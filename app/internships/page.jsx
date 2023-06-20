@@ -85,7 +85,7 @@ function Page ({ index }) {
             <button className="btn1">Search</button>
           </div>
           </div>
-           <img className="giphy" src="assets/images/working2.gif" alt="work-img"></img>
+           <img className="giphy" src="assets/images/working4.gif" alt="work-img"></img>
           </div> 
           <div>
           <p className="heading1">All Internships</p>
