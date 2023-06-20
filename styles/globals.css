@@ -533,9 +533,8 @@
   display: flex;
   border-radius: 6px;
   color: #333;
-  background: #329df5;
+  background: #ebf1f6;
   padding: 1rem;
-  box-shadow: 0 0 1rem #f7a3a3 inset;
   overflow-x: auto;
   position: relative;
   &::-webkit-scrollbar{
@@ -557,10 +556,13 @@
 	border-radius: 10px;
 }
 .categorybox{
-  display:grid;
-  grid-template-columns: repeat(2,1fr);
+  /* display:grid;
+  grid-template-columns: repeat(3,1fr);
+  align-items: center; */
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
   margin: 3rem 5rem;
 }
 .card {
@@ -808,11 +810,7 @@
     }
   }
   .categorybox{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
     margin:2rem auto;
-    align-items: center;
-    justify-items:center;
   }
   .mobilepara{
     width:80vw;

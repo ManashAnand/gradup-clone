@@ -15,13 +15,13 @@ const page = () => {
      <div className="categorybox mt-20 mx-20">
       {categories.map((ele,i)=>{
         return(
-          <div className="mb-10 ml-6">
+          <div className="mb-10 mx-4">
           <Card isHoverable >
             <Card.Body css={{ p: 0 }}>
               <Card.Image
                 src={ele.img}
                 objectFit="fit"
-                width="100%"
+                width="260px"
                 height="150px"
                 alt={ele.name}
               />

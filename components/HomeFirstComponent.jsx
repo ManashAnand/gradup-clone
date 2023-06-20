@@ -21,7 +21,7 @@ const HomeFirstComponent = () => {
 </h1> 
         </div>
         <Link href='/courses' className="area">
-              <button className='rounded-2xl py-1 px-6 border-2 text border-sky-400 bg-white text-sky-400 mt-6 mb-10'>Let's Discuss</button>
+              <button className='rounded-2xl py-1 px-6 border-2 text border-sky-400 bg-white text-sky-400 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white'>Let's Discuss</button>
         </Link>
         </div> 
         <div className="block mt-5">
