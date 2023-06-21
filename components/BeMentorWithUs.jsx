@@ -30,9 +30,9 @@ export default function BeMentorWithUs() {
        <div className="formpos">
           <form onSubmit={handleSubmit} className="mt-4 ">
             <div className="font-bold text text-3xl">
-                <h2 className="text-center text-red-500 underline decoration-red-300 underline-offset-4">Mentor</h2>
+                <h2 className="text-center text-red-500 underline decoration-red-300 underline-offset-4">Experts</h2>
                 <h1 className="text-red-600" style={{marginTop:"1vh",fontSize:"13px",fontWeight:"normal",textAlign:"center"}}>
-                Join our team as a mentor and get to work with the sharpest minds</h1>
+                Join our team as a expert and get to work with the sharpest minds</h1>
             </div>
             <div className="mt-4">
                 <label

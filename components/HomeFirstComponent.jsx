@@ -10,7 +10,7 @@ const HomeFirstComponent = () => {
             <span className="text-sky-400">Connecting</span> Talent with us to <br/>
             <div class="container">
              <div class="row">
-              <div class="col-md-12">Exolore new Opportunities.
+              <div class="col-md-12">Explore new Opportunities.
               </div>
             </div>
           </div>
@@ -21,7 +21,7 @@ const HomeFirstComponent = () => {
 </h1> 
         </div>
         <Link href='/courses' className="area">
-              <button className='rounded-2xl py-1 px-6 border-2 text border-sky-400 bg-white text-sky-400 mt-6 mb-10'>Let's Discuss</button>
+              <button className='rounded-2xl py-1 px-6 border-2 text border-sky-400 bg-white text-sky-400 mt-6 mb-10'>Explore</button>
         </Link>
         </div> 
         <div className="block mt-5">
