@@ -33,7 +33,7 @@ const FilterJobs = ({setSelectedCity, setSelectedTitle, setSalaryExp,selectedCit
     setSalaryExp(event.target.value);
   };
   return (
-    <div>
+    <div className="main-content">
         <div className="pt-16">
           <div className="filterbox">
             <div>

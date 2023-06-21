@@ -427,6 +427,9 @@
   border-radius:20px;
   
 }
+.startup{
+  display:flex;
+}
 .hackathon{
   height:70vh;
   background-image:url("/assets/images/hackathonback.png");
@@ -770,7 +773,9 @@
   /* .none{
     display:none;
   } */
-
+  .inputcontainer{
+    display:none;
+  }
   .filterbox{
     margin-top:-9vh;
     width:28vw;
@@ -814,6 +819,10 @@
   }
   .categorybox{
     margin:2rem auto;
+  }
+  .startup{
+    display: flex;
+    flex-direction: column;
   }
   .mobilepara{
     width:80vw;
