@@ -46,16 +46,16 @@ export default function Contact(){
             </p>
             <div class="responsive-container-block">
               <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i10mt-7">
-                <input class="input" id="ijowk-7" name="Name" placeholder="Name"/>
+                <input type="text" class="input" id="ijowk-7" name="Name" placeholder="Name" required/>
               </div>
               <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-6 wk-ipadp-6 email" id="ityct">
-                <input class="input" id="ipmgh-7" name="Email" placeholder="Email"/>
+                <input type="email" class="input" id="ipmgh-7" name="Email" placeholder="Email" required/>
               </div>
               <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
-                <input class="input" id="imgis-6" name="PhoneNumber" placeholder="Phone Number"/>
+                <input type="text" class="input" id="imgis-6" name="PhoneNumber" placeholder="10 Digit Mobile Number" required/>
               </div>
               <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-7">
-                <textarea rows="3" aria-placeholder="Type message here" class="textinput" id="i5vyy-7" placeholder="Type message here"></textarea>
+                <textarea rows="3" aria-placeholder="Type message here" class="textinput" id="i5vyy-7" placeholder="Type message here" required></textarea>
               </div>
             </div>
             <button class="submit-btn">

@@ -383,9 +383,11 @@
   display:flex;
 }
 .alumnicardcontainer{
-  display:grid;
-  grid-template-columns: repeat(3,1fr);
-  gap:30px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin:5vh auto 10vh auto;
 }
 .filtercontainer{
   display:grid;
@@ -533,9 +535,8 @@
   display: flex;
   border-radius: 6px;
   color: #333;
-  background: #329df5;
+  background: #ebf1f6;
   padding: 1rem;
-  box-shadow: 0 0 1rem #f7a3a3 inset;
   overflow-x: auto;
   position: relative;
   &::-webkit-scrollbar{
@@ -544,7 +545,8 @@
 }
   
 ::-webkit-Scrollbar{
-  width:7px; 
+  width:5px; 
+  height:5px;
 	background: rgb(5,5,5);
 }
 ::-webkit-Scrollbar-thumb{
@@ -555,7 +557,16 @@
 ::-webkit-Scrollbar-track{
 	border-radius: 10px;
 }
-
+.categorybox{
+  /* display:grid;
+  grid-template-columns: repeat(3,1fr);
+  align-items: center; */
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 5rem;
+}
 .card {
   flex: 1 0 265px;
   box-shadow: 0 1px 1rem -4px #b5e1f4;
@@ -745,6 +756,7 @@
   .filtercontainer{
     display:flex;
     justify-content: center;
+    align-items: center;
   }
   .founderimg{
     width:70vw;
@@ -769,6 +781,9 @@
   }
   .courseimg{
     display:none;
+  }
+  .categorybox{
+    margin:2rem 3rem;
   }
   .coursebox{
     display:flex;
@@ -796,6 +811,9 @@
     &::-webkit-scrollbar{
       display:block;
     }
+  }
+  .categorybox{
+    margin:2rem auto;
   }
   .mobilepara{
     width:80vw;
@@ -845,6 +863,7 @@
     display:flex;
     flex-direction: column;
     align-items:center;
+    justify-content: center;
   }
   .arrange{
     margin-left:0;
