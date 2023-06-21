@@ -32,59 +32,56 @@ const Footer = () => {
     </div>
     <div className="flex-grow flex flex-wrap -mb-10 md:text-center mt-4 text-center">
       <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu1">
-        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">OUR SERVICES</h2>
+        <h2 className="title-font font-medium text-white tracking-widest text-md mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">OUR SERVICES</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">Colleges</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer mb-2">Colleges</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">Coaching Institutes</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer mb-2">Schools</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">Working Professional</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer mb-2">Students</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">Schools</a>
-          </li>
-          <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">Students</a>
-          </li>
-          <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">Business Professional</a>
+            <a className="text-white hover:text-black text-sm cursor-pointer mb-2">Business Professional</a>
           </li>
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu2">
-        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">QUICK LINKS</h2>
+        <h2 className="title-font font-medium text-white tracking-widest text-md mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">QUICK LINKS</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">First Link</a>
+            <a href="/hackathons" className="text-white hover:text-black text-sm cursor-pointer mb-2">Hackathons</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">Second Link</a>
+            <a href="/mcqs" className="text-white hover:text-black text-sm cursor-pointer mb-2">MCQ's</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">Third Link</a>
-          </li>
-          <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">Fourth Link</a>
+            <a href="/alumni-network" className="text-white hover:text-black text-sm cursor-pointer mb-2">Alumni Network</a>
           </li>
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu3">
-        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">ABOUT US</h2>
+        <h2 className="title-font font-medium text-white tracking-widest text-md mb-3 underline decoration-yellow-300 decoration-2 underline-offset-4">ABOUT US</h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">First Link</a>
+            <a href="/about-us"  className="text-white hover:text-black text-sm cursor-pointer mb-1-1">About Company</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">Second Link</a>
+            <a href="/about-us/our-services-content" className="text-white hover:text-black text-sm cursor-pointer mb-2">Our Services</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">Third Link</a>
+            <a href="/about-us/privacy-policy" className="text-white hover:text-black text-sm cursor-pointer mb-2">Privacy Policies</a>
           </li>
           <li>
-            <a className="text-white hover:text-black text-sm cursor-pointer">Fourth Link</a>
+            <a href="/about-us/terms-and-condition" className="text-white hover:text-black text-sm cursor-pointer mb-2">Terms and Conditions</a>
+          </li>
+          <li>
+            <a href="/about-us/refund-policies" className="text-white hover:text-black text-sm cursor-pointer mb-2">Refund Policies</a>
+          </li>
+          <li>
+            <a href="/about-us/cancellation-policy" className="text-white hover:text-black text-sm cursor-pointer mb-2">Cancellation Policy</a>
           </li>
         </nav>
       </div>
