@@ -1,8 +1,16 @@
 "use client"
 import React from 'react'
+import useSWR from "swr";
 import { Card, Row, Text } from "@nextui-org/react";
-const page = () => {
-  let categories=[{img:"/assets/images/engineer.png",name:"Engineering"},{img:"/assets/images/aptitude.png",name:"Aptitude"}]
+const fetcher = (url) => fetch("https://api.jsonbin.io/v3/b/649318cf8e4aa6225eb211a2").then((res) => res.json());
+const page = (id) => {
+  const { data, error } = useSWR( '/api/mcq/', fetcher)
+  // ... handle loading and error states
+  
+  if (error) return <div>Failed to loadinggggggg job data</div>;
+  if (!data) return <div>Loading...</div>;
+  console.log("From quiz Page",data);
+  // let categories=[{img:"/assets/images/engineer.png",name:"Engineering"},{img:"/assets/images/aptitude.png",name:"Aptitude"}]
   return (
     <div className='my-10'>
       <div style={{backgroundColor:"whitesmoke"}} className="none flex justify-between pl-2 pr-20 py-2 mb-14">
@@ -11,15 +19,15 @@ const page = () => {
       </div>
       <p className='text-center text-4xl text font-semibold text-white mb-8'>Test your knowledge with an interactive online quiz !!</p>
       <p className='text-center text text-white mb-4'>MCQs to practice multiple choice questions and answers on school, college, university courses with placement tests. Job seekers competing for a job should attempt a series of job tests for better grades and learning to prepare themselves for tests as well as interviews.</p>
-     <a href="https://www.google.com">
      <div className="categorybox mt-20 mx-20">
-      {categories.map((ele,i)=>{
+      {data.record.map((ele,i)=>{
         return(
           <div className="mb-10 mx-4">
+          <a href={`/mcqs/${ele._id}`}>
           <Card isHoverable >
             <Card.Body css={{ p: 0 }}>
               <Card.Image
-                src={ele.img}
+                src="/assets/images/engineer.png"
                 objectFit="fit"
                 width="260px"
                 height="150px"
@@ -28,15 +36,15 @@ const page = () => {
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="center" align="center">
-                <Text b>{ele.name}</Text>
+                <Text b>{ele._id}</Text>
               </Row>
             </Card.Footer>
           </Card>
+          </a>
         </div>
         )
       })}
      </div>
-     </a>
     </div>
   )
 }
