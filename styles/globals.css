@@ -340,6 +340,18 @@
   padding:40px;
   margin-bottom:5vh;
 }
+.question{
+  padding:1rem 3rem;
+  margin:auto 2rem;
+}
+.options{
+  padding:0.5rem 0.75rem;
+  margin:0 2rem 0.5rem 2rem;
+}
+.result{
+  padding:0.5rem 2.5rem;
+  margin:0.5rem 15rem;
+}
 .hrjobs{
   padding:40px;
   border-radius:20px;
@@ -746,6 +758,18 @@
   }
   .hackathons{
     grid-template-columns:repeat(1,1fr);
+  }
+  .question{
+    padding:1rem 3rem;
+    margin:auto 0.75rem;
+  }
+  .options{
+    padding:0.5rem 0.75rem;
+    margin:0 0.75rem 0.5rem 0.75rem;
+  }
+  .result{
+    padding:0.5rem 2.5rem;
+    margin:0.5rem 2rem;
   }
   .aboutbox{
     display:block;
