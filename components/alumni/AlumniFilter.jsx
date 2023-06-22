@@ -32,7 +32,7 @@ const AlumniFilter = ({selectedCollege, setSelectedCollege}) => {
           </div>
         </div>
         <div className="none">
-        <img className="rounded-3xl" width="300" src="/assets/images/alumni1.png"></img>
+        <img style={{transform:"rotate(180deg)"}} className="rounded-3xl" width="300" src="/assets/images/alumni1.png"></img>
         </div>
     </div>
   )
