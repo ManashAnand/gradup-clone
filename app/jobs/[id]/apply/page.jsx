@@ -1,6 +1,7 @@
 "use client"
 import { useSession } from "next-auth/react";
 import useSWR from 'swr';
+import Spinner from "@components/Spinner"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -12,7 +13,7 @@ const page = ({params}) => {
     const { data: session } = useSession();
     const { data, error } = useSWR( `/api/jobs/${params.id}`, fetcher)
     if (error) return <div>Failed to loadinggggggg job data</div>;
-    if (!data) return <div>Loading...</div>;
+    if (!data) return <div className="mx-auto my-60"><Spinner/></div>;
     const jobs=data
     function handleSubmit(){
       setSubmit(true)
@@ -57,7 +58,7 @@ const page = ({params}) => {
         </form>
     </div>:<div className="flex flex-col justify-center items-center mb-20">
       <img width="250" src="/assets/images/jobpost.gif"></img>
-      <p className="text-4xl text text-lime-500 mb-4">Job Applied Successfully</p>
+      <p className="text-4xl text text-center text-lime-500 mb-4">Job Applied Successfully</p>
     </div>
   )
 }

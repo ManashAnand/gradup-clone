@@ -4,6 +4,7 @@ import HackathonComponent from "@components/HackathonComponent";
 import React from "react";
 import { useState } from "react";
 import useSWR from "swr";
+import Spinner from "@components/Spinner"
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 async function getData() {
@@ -17,7 +18,7 @@ const ShowHackathon = ({ setHackathon,display,setDisplay,display1,setDisplay1 })
     fetcher
   );
   if (error) return <div>Failed to loadinggggggg</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;
   const posts = data;
   console.log("INSIDE SHOW HACKATHON")
   return (

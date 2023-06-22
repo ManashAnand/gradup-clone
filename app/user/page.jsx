@@ -2,6 +2,7 @@
 import useSWR from 'swr';
 import {useSession} from "next-auth/react";
 import Link from 'next/link';
+import Spinner from "@components/Spinner"
 import { Input, Textarea, Spacer , Button, Popover} from "@nextui-org/react";
 import Education from "@components/userProfile/education"
 import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
@@ -43,7 +44,7 @@ export default function Profile() {
     data.education.push(newEdu)
   }
   if (error) return <div>userFailed to loadinggggggg</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <div className="my-60"><Spinner/></div>;
   console.log("ajay", data);
       // useEffect(()=>{
       //   const fetchData = async () =>{

@@ -2,6 +2,7 @@
 "use client"
 import ListContentCard from "@components/ListContentCard";
 import useSWR from 'swr';
+import Spinner from "@components/Spinner"
 import Link from "next/link";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -10,7 +11,7 @@ function Page ({ id }) {
   // ... handle loading and error states
   console.log("abbbbbbbbbbbbbbb",data);
   if (error) return <div>Failed to loadinggggggg job data</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;
   console.log(data.record);
   const jobs=data
     return (

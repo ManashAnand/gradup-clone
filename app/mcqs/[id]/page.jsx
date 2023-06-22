@@ -1,6 +1,7 @@
 "use client"
 import ListContentCard from "@components/ListContentCard";
 import useSWR from 'swr';
+import Spinner from "@components/Spinner"
 import HelpIcon from '@mui/icons-material/Help';
 import Link from "next/link";
 import { useState,useEffect } from "react";
@@ -32,7 +33,7 @@ const page = ({id}) => {
   })
   // ... handle loading and error states
   if (error) return <div>Failed to loadinggggggg job data</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <div className="mx-auto my-60"><Spinner/></div>;
   console.log(data.record)
   return (
     <div className="mb-20 w-screen">

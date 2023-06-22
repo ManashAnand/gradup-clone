@@ -7,7 +7,7 @@ import { EyeIcon } from "@styles/EyeIcon";
 import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
 import useSWR from 'swr';
-
+import Spinner from "@components/Spinner"
 // const HRSignup = () => {
 //   return (
 //     <div>HRSignup</div>
@@ -27,7 +27,7 @@ export default function HRSignup() {
   const { data: session } = useSession();
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher);
   if (error) return <div>userFailed to loadinggggggg</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;
   if(data.role=="Hr"){
     Router.push("/hr");
   }

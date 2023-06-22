@@ -4,6 +4,7 @@ import ListContentCard from "@components/ListContentCard";
 import useSWR from 'swr';
 import {useState, useEffect} from 'react'
 import Select from 'react-select'
+import Spinner from "@components/Spinner"
 import { Input } from "@nextui-org/react";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -27,6 +28,7 @@ function Page ({ index }) {
   const [selectedTitle, setSelectedTitle] = useState([]);
   const [salaryExp, setSalaryExp] = useState(1000);
   const [jobs, setJobs] = useState([]);
+  const [loading,setLoading]=useState(true)
   // const { data,error } = useSWR(`https://api.jsonbin.io/v3/b/6460d47e8e4aa6225e9cc67d/?page=${index}`, fetcher);
   // const { data, error } = useSWR( `/api/jobs/?page=${index}&intern=true`, fetcher)
   // console.log(data, "Front ",index);
@@ -39,6 +41,7 @@ function Page ({ index }) {
     const response = await fetch(`/api/jobs/?page=${index}&?intern=true`);
     const data = await response.json();
     setJobs(data);
+    setLoading(false)
   };
   useEffect(() => {
     fetchJobs();
@@ -140,6 +143,7 @@ function Page ({ index }) {
                 </div>
                 </div>
             </div>
+            {loading && <div className="m-auto"><Spinner/></div>}
           <div style={{backgroundColor:"teal"}} className='mt-10 arrange'>
             {jobs.map((job) => (
               <ListContentCard 
