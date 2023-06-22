@@ -4,6 +4,7 @@ import useSWR from "swr";
 import { useState, useEffect } from "react";
 import { Input } from "@nextui-org/react";
 import Select from "react-select";
+import Spinner from "@components/Spinner"
 import { useRouter } from "next/router";
 import Link from "next/link";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -36,7 +37,7 @@ function Page({ index }) {
     fetcher
   );
   if (error) return <div>Failed to loadinggggggg</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <div className="my-60"><Spinner/></div>;
   const jobs=data;
   console.log(jobs);
   // const [previousUrl, setPreviousUrl] = useState(router.asPath);
@@ -192,10 +193,6 @@ function Page({ index }) {
 }
 
 export default function App() {
-  // const router = useRouter();
-  // const currentPath = router.pathname;
-  // const currentQuery = router.query;
-  // console.log(currentPath)
   const [pageIndex, setPageIndex] = useState(0);
 
   return (

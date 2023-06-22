@@ -2,10 +2,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 import AlumniCard from "./AlumniCard";
+import Spinner from "@components/Spinner"
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const AlumniShow = ({ selectedCollege }) => {
   const [alumniData, setAlumniData] = useState([]);
+  const [loading,setLoading]=useState(true)
   var ourData;
   useEffect(() => {
     fetch("http://localhost:3000/api/alumni", {
@@ -22,6 +24,7 @@ const AlumniShow = ({ selectedCollege }) => {
       .then((data) => {
         console.log(data);
         setAlumniData(data);
+        setLoading(false)
       })
       .catch((error) => {
         console.log(error);
@@ -30,6 +33,7 @@ const AlumniShow = ({ selectedCollege }) => {
   }, []);
   return (
     <div className="alumnicardcontainer px-4 rounded-xl">
+      {loading && <Spinner/>}
       {alumniData.map((d) => (
         <AlumniCard data={d} />
       ))}

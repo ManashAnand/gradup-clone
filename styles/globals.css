@@ -1043,7 +1043,107 @@
   font-size:14px;
   margin-top:2em;
  }
- .landing_page * {
+.containercontact {
+	background-color:white;
+	border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+  min-width:355px;
+}
+
+.h2contact {
+  font-size:2rem;
+  margin-bottom:1rem;
+}
+.form-container {
+  display:flex;
+}
+
+.left-container {
+  flex:1;
+  height:480px;
+  background-color:deepskyblue;
+}
+.right-container {
+  display:flex;
+  flex:1;
+  height:460px;
+  background-color:white;
+  justify-content:center;
+  align-items:center;
+}
+
+.left-container {
+  display:flex;
+  flex:1;
+  height:480px;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+
+.left-container p {
+  font-size:0.9rem;
+}
+
+.right-inner-container {
+  width:80%;
+  height:80%;
+  text-align:center;
+}
+
+.left-inner-container {
+  width:85%;
+  text-align:center;
+  line-height:22px;
+}
+
+.inputcontact,.textareacontact {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+  font-size:0.8rem;
+}
+
+.inputcontact:focus,.textareacontact:focus{
+  outline:1px solid teal;
+}
+
+.buttoncontact {
+	border-radius: 20px;
+	background-color:deepskyblue;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 8px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+  cursor:pointer;
+}
+
+.buttoncontact:hover {
+  opacity:0.8;
+}
+@media only screen and (max-width: 600px) {
+  .form-container {
+    display:flex;
+    flex-direction: column;
+  }
+  .left-inner-container{
+    padding:3rem;
+  }
+  .right-container{
+   padding:1rem 0;
+  }
+}
+/* .landing_page * {
   font-family: Nunito, sans-serif;
 }
 
@@ -1350,8 +1450,7 @@
     font-size: 24px;
     line-height: 34px;
   }
-}
-
+} */
 /* Tailwind Styles */
 
 .app {

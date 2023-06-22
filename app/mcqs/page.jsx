@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import useSWR from "swr";
+import Spinner from "@components/Spinner"
 import { Card, Row, Text } from "@nextui-org/react";
 const fetcher = (url) => fetch("https://api.jsonbin.io/v3/b/649318cf8e4aa6225eb211a2").then((res) => res.json());
 const page = (id) => {
@@ -8,7 +9,7 @@ const page = (id) => {
   // ... handle loading and error states
   
   if (error) return <div>Failed to loadinggggggg job data</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <div className='mx-auto my-60'><Spinner/></div>;
   console.log("From quiz Page",data);
   // let categories=[{img:"/assets/images/engineer.png",name:"Engineering"},{img:"/assets/images/aptitude.png",name:"Aptitude"}]
   return (
