@@ -1,6 +1,7 @@
 "use client"
 import ListContentCard from "@components/ListContentCard";
 import useSWR from 'swr';
+import HelpIcon from '@mui/icons-material/Help';
 import Link from "next/link";
 import { useState,useEffect } from "react";
 const fetcher = (url) => fetch("https://api.jsonbin.io/v3/b/649318cf8e4aa6225eb211a2").then((res) => res.json());
@@ -40,7 +41,7 @@ const page = ({id}) => {
       {que&&<div>{que.map((ele,i)=>{
         return(
           <div key={i}>
-          <div className="question text-center text-lg bg-sky-300 rounded-xl text">{`${i+1}. ${ele.question}`}</div>
+          <div className="question text-center bg-sky-300 rounded-xl text"><span className="px-1 pt-2 pb-3 bg-white rounded-full"><HelpIcon fontSize="large" color="primary"/></span> {ele.question}</div>
           <div className="flex flex-col mt-4 mb-2">{ele.options.map((item,j)=>{
             return(
               <button onClick={()=>handleClick(i,j,ele.answer)} className="options rounded-2xl text text-sm text-center bg-white text-black mb-2 hover:bg-yellow-100 focus:font-semibold">
