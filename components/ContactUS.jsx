@@ -89,7 +89,7 @@ export default function Contact(){
     <div class="right-container">
       <div class="right-inner-container">
         <form action="#">
-			<h2 class="lg-view h2contact">Contact</h2>
+			<h2 class="lg-view h2contact">Contact Us</h2>
       <input className="inputcontact" type="text" placeholder="Name *" required  />
       <input className="inputcontact" type="email" placeholder="Email *" required />
 			<input className="inputcontact" type="phone" placeholder="Phone *" required/>
