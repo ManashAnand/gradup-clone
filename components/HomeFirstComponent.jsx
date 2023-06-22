@@ -2,6 +2,13 @@
 import React,{useState,useEffect} from 'react'
 import Link from 'next/link';
 const HomeFirstComponent = () => {
+  const [current,setCurrent]=useState(0)
+  useEffect(()=>{
+    setTimeout(()=>{
+      current<4?setCurrent(current+1):setCurrent(0)
+    },1000)
+  },[current])
+  let arr=["/assets/images/home1.png","/assets/images/home2.png","/assets/images/home3.png","/assets/images/home4.png","/assets/images/home5.png"]
   return (
     <section className='w-screen flex justify-evenly max-h-screen headingbox'>
       <div className="mt-16">
@@ -25,16 +32,14 @@ const HomeFirstComponent = () => {
         </Link>
         </div> 
         <div className="block mt-5">
-          <div className='flex'>
-            <div className="half-ellipse1"></div>
-            <div className='text-3xl text-gray-400 -mt-2 ml-2'>..............<br/>..............</div>
+          {arr.map((ele,i)=>{
+            return(current===i &&
+              <>
+               <img className="mt-8" width="350" src={ele} alt="home-gif"></img>
+              </>
+            )
+          })}
           </div>
-          <img width="250" src="/assets/images/image 115.png" alt="home-image"></img>
-          <div className='flex'>
-          <div className='text-3xl text-gray-400 -mt-2 ml-2'>................<br/>................</div>
-          <div className="half-ellipse1 ml-2"></div>
-          </div>
-        </div>
     </section>
   )
 }
