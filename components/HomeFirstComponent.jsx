@@ -6,7 +6,7 @@ const HomeFirstComponent = () => {
   useEffect(()=>{
     setTimeout(()=>{
       current<4?setCurrent(current+1):setCurrent(0)
-    },1000)
+    },1500)
   },[current])
   let arr=["/assets/images/home1.png","/assets/images/home2.png","/assets/images/home3.png","/assets/images/home4.png","/assets/images/home5.png"]
   return (
