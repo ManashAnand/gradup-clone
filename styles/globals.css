@@ -341,16 +341,23 @@
   margin-bottom:5vh;
 }
 .question{
-  padding:1rem 3rem;
+  padding:0.2rem 1rem;
   margin:auto 2rem;
+  text-align: left;
+  min-width:60%;
+  width:fit-content;
 }
 .options{
-  padding:0.5rem 0.75rem;
+  padding:0.5rem 2rem;
   margin:0 2rem 0.5rem 2rem;
+  text-align: left;
+  width:25%;
 }
 .result{
   padding:0.5rem 2.5rem;
-  margin:0.5rem 15rem;
+  margin:0.5rem 2rem;
+  text-align: left;
+  width:25%;
 }
 .hrjobs{
   padding:40px;
@@ -760,16 +767,23 @@
     grid-template-columns:repeat(1,1fr);
   }
   .question{
-    padding:1rem 3rem;
-    margin:auto 0.75rem;
+    padding:0.2rem 1rem;
+    margin:auto 2rem;
+    text-align: left;
+    min-width:65%;
+    width:fit-content;
   }
   .options{
-    padding:0.5rem 0.75rem;
-    margin:0 0.75rem 0.5rem 0.75rem;
+    padding:0.5rem 2rem;
+    margin:0 2rem 0.5rem 2rem;
+    text-align: left;
+    width:30%;
   }
   .result{
     padding:0.5rem 2.5rem;
     margin:0.5rem 2rem;
+    text-align: left;
+    width:30%;
   }
   .aboutbox{
     display:block;
@@ -886,6 +900,25 @@
     margin:5vh auto 8vh auto;
     width:60vw;
   }
+  .question{
+    padding:0.2rem 1rem;
+    margin:auto 2rem;
+    text-align:left;
+    min-width:75%;
+    width:fit-content;
+  }
+  .options{
+    padding:0.5rem 2rem;
+    margin:0 2rem 0.5rem 2rem;
+    text-align: left;
+    width:40%;
+  }
+  .result{
+    padding:0.5rem 2.5rem;
+    margin:0.5rem 2rem;
+    text-align: left;
+    width:40%;
+  }
   .jobpos{
     margin:3rem auto;
   }
@@ -954,15 +987,23 @@
    .datamile1,.datamile2{
     width:10.5rem;
    }
-  .news{
-    grid-template-columns: repeat(1,1fr);
-    padding:1rem 1rem;
-    gap:20px;
+   .question{
+    padding:0.2rem 1rem;
+    margin:auto;
+    text-align:center;
+    width:96%;
   }
-  .media{
-    grid-template-columns: repeat(2,1fr);
-    padding:2rem 1rem 4rem 1rem;
-    gap:20px;
+  .options{
+    padding:0.5rem 2rem;
+    margin:0.2rem auto;
+    text-align:center;
+    width:96%;
+  }
+  .result{
+    padding:0.5rem 2.5rem;
+    margin:0.5rem auto;
+    text-align:center;
+    width:90%;
   }
   .appbox{
     display:flex;
