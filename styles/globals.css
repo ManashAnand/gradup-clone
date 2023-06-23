@@ -177,6 +177,9 @@
 .slideshowDot.active {
   background-color:deepskyblue;
 }
+input::placeholder,textarea::placeholder{
+  font-size:14px;
+}
 
 
 .custom-slider {
@@ -398,8 +401,8 @@
   width:25%;
 }
 .hrjobs{
-  padding:40px;
-  border-radius:20px;
+  padding:40px 20px;
+  border-radius:10px;
   background-color: rgb(12, 154, 201);
 }
 .headerpos{
@@ -867,8 +870,9 @@
     margin:2rem 3rem;
   }
   .coursebox{
-    display:flex;
-    justify-content: center;
+    /* display:flex;
+    justify-content: center; */
+    display:none;
   }
   .otp{
     display:block;
@@ -903,6 +907,9 @@
   .mobilepara{
     width:80vw;
   }
+  .phonewidth{
+    width:100%;
+  }
   .firstformbox{
     display:none;
   }
@@ -936,7 +943,7 @@
   }
   .giphy{
     margin:5vh auto 8vh auto;
-    width:60vw;
+    width:80vw;
   }
   .question{
     padding:0.2rem 1rem;
@@ -959,6 +966,7 @@
   }
   .jobpos{
     margin:3rem auto;
+    text-align: center;
   }
   .main-content{
     display:block;
@@ -976,7 +984,7 @@
   }
   .filterbox{
     margin:-15vh auto 10vh auto;
-    width:70vw;
+    width:80vw;
   }
   .btn4{
     margin-top:12vh;
@@ -1021,6 +1029,9 @@
     display:grid;
     grid-template-columns: repeat(2,1fr);
     gap:10px;
+   }
+   .slideshow {
+    margin:5vh auto 8vh auto;
    }
    .datamile1,.datamile2{
     width:10.5rem;
