@@ -95,8 +95,8 @@ const Testimonial = () => {
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start",padding:"$8 $12",backgroundColor:"SkyBlue",color:"WhiteSmoke" }}>
               <Row wrap="wrap" justify="space-between" align="center">
-                <Text b>{item.name}</Text>
-                <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
+                <Text css={{color:"$gray800",textTransform:"uppercase", fontWeight: "$semibold",fontSize: "$md"}} >{item.name}</Text>
+                <Text css={{color:"$gray800" ,fontWeight: "$semibold", fontSize: "$sm" }}>
                   {item.title}
                 </Text>
               </Row>
