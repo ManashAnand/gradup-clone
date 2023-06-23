@@ -1008,6 +1008,11 @@ input::placeholder,textarea::placeholder{
   .wrap{
     gap:20px;
   }
+  .hrjobs{
+    padding:40px 7px;
+    border-radius:10px;
+    background-color: rgb(12, 154, 201);
+  }
   .side1{
     width:70vw;
     border-radius:22px;
