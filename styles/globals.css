@@ -255,7 +255,10 @@ input::placeholder,textarea::placeholder{
   border-radius:10px;
   width:13rem;
 } 
-
+.headingBox{
+  display: flex;
+  justify-content: space-evenly;
+}
 .data1{
   background:linear-gradient(to bottom right,rgb(245, 124, 124),rgb(235, 187, 98));
   border-radius:10px;
@@ -469,6 +472,9 @@ input::placeholder,textarea::placeholder{
   padding:12px;
   border-radius:20px;
 }
+.resumedatabox{
+  width:60%;
+}
 .founderimg{
   width:40vw;
   height:60vh;
@@ -577,6 +583,16 @@ input::placeholder,textarea::placeholder{
   gap:100px;
   padding:30px;
   flex-wrap: wrap;
+}
+.flexBox{
+  display:flex;
+}
+.item2{
+  margin-left:1rem;
+  width:50%;
+}
+.item1{
+  width:50%;
 }
 .testimonial{
   display:flex;
@@ -784,6 +800,13 @@ input::placeholder,textarea::placeholder{
    gap:20px;
    padding:4rem 2rem;
   }
+  .flexBox{
+    display:block;
+  }
+  .item1,.item2{
+    margin-left:0;
+    width:100%;
+  }
   .wrap{
     gap:20px;
   }
@@ -899,6 +922,15 @@ input::placeholder,textarea::placeholder{
   }
   .categorybox{
     margin:2rem auto;
+  }
+  .headingBox{
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4vh;
+  }
+  .resumedatabox{
+    width:100%;
   }
   .startup{
     display: flex;
