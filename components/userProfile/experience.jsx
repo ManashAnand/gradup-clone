@@ -65,33 +65,20 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
 
     return (
         <div className='w-full'>
-      <div className='flex'>
-        <div className="px-3 py-3 rounded-2xl text-white bg-sky-700 w-full text-center mt-3 mr-10">
-        <label className="text-sm ml-2">Company Name</label>
-        <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.companyName} onChange={(e)=>setExperience({...experience,companyName:e.target.value})}/> <br/>
-        <div className='px-10'></div>
-        <label className="text-sm ml-2">Location</label>
-        <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.location} onChange={(e)=>setExperience({...experience,location:e.target.value})}/> <br/>
-        <div className='px-10'></div>
-        <label className="text-sm ml-2">Start Date</label>
-        <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.startDate} onChange={(e)=>setExperience({...experience,startDate:e.target.value})}/> <br/>
-        <div className='px-10'></div>
-        <label className="text-sm ml-2">End Date</label>
-        <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.endDate} onChange={(e)=>setExperience({...experience,endDate:e.target.value})}/> <br/>
-        <div className='px-10'></div>
-        <label className="text-sm ml-2">Title</label>
-        <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.title} onChange={(e)=>setExperience({...experience,title:e.target.value})}/> <br/>
-        <div className='px-10'></div>
-        <label className="text-sm ml-2">Skills</label>
-        <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.skills} onChange={(e)=>setExperience({...experience,skills:e.target.value})}/> <br/>
-        <div className='px-10'></div>
-        <label className="text-sm ml-2">Description</label>
-        <Textarea css={{mt:"$4",width:"stretch",mb:"$4"}} initialValue={experience.description} onChange={(e)=>setExperience({...experience,description:e.target.value})}/> <br/>
+      <div className='flex flex-col'>
+        <div className="px-3 py-3 rounded-2xl text-white resumedatabox bg-sky-700 text-center mt-6 mx-auto">
+        <Input labelLeft="Company" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.companyName} onChange={(e)=>setExperience({...experience,companyName:e.target.value})}/>
+        <Input labelLeft="Location" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.location} onChange={(e)=>setExperience({...experience,location:e.target.value})}/>
+        <Input labelLeft="Start Date" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.startDate} onChange={(e)=>setExperience({...experience,startDate:e.target.value})}/>
+        <Input labelLeft="End Date"css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.endDate} onChange={(e)=>setExperience({...experience,endDate:e.target.value})}/> 
+        <Input labelLeft="Title" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.title} onChange={(e)=>setExperience({...experience,title:e.target.value})}/>
+        <Input labelLeft="Skills" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.skills} onChange={(e)=>setExperience({...experience,skills:e.target.value})}/>
+        <Textarea css={{mt:"$4",width:"stretch",height:"fit-content" ,mb:"$4"}} initialValue={experience.description} onChange={(e)=>setExperience({...experience,description:e.target.value})}/>
         </div>
-        <div className="flex">
+        <div className="flex justify-center">
             {
                 (updating==0)?(<>
-                <Tooltip content="Edit" className='mx-15 my-auto'>
+                <Tooltip className='mt-4 mr-3'>
                  <IconButton onClick={() => setIsUpdating(1)}>
                      <EditIcon size={20} fill="#979797" />
                     </IconButton>
@@ -106,10 +93,9 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
                 </>))
             }
             <Tooltip
-                content="Delete"
                 color="error"
                 onClick={deleteExperience }
-                className='mx-15 my-auto'
+                className='mt-4 ml-3'
             >
             <IconButton css={{ml:"$8"}} className='mx-15'>
               <DeleteIcon size={20} fill="#FF0080" />
@@ -117,7 +103,8 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
             </Tooltip>
         </div>
         </div>
-    </div>
+        <div className='mb-15 pb-10'></div>
+     </div>
     )
 }
 

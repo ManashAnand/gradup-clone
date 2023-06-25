@@ -140,6 +140,47 @@
   }
 }
 /*  Salary expetetion slider */
+.slideshow {
+  margin:10vh auto;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+
+.slide {
+  display: inline-block;
+  width:100%;
+  border-radius: 40px;
+}
+
+/* Buttons */
+
+.slideshowDots {
+  text-align: center;
+}
+
+.slideshowDot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  margin: 15px 7px 0px;
+  background-color: #c4c4c4;
+}
+
+.slideshowDot.active {
+  background-color:deepskyblue;
+}
+input::placeholder,textarea::placeholder{
+  font-size:14px;
+}
+
 
 .custom-slider {
   width: 100%;
@@ -214,7 +255,10 @@
   border-radius:10px;
   width:13rem;
 } 
-
+.headingBox{
+  display: flex;
+  justify-content: space-evenly;
+}
 .data1{
   background:linear-gradient(to bottom right,rgb(245, 124, 124),rgb(235, 187, 98));
   border-radius:10px;
@@ -341,20 +385,27 @@
   margin-bottom:5vh;
 }
 .question{
-  padding:1rem 3rem;
+  padding:0.2rem 1rem;
   margin:auto 2rem;
+  text-align: left;
+  min-width:60%;
+  width:fit-content;
 }
 .options{
-  padding:0.5rem 0.75rem;
+  padding:0.5rem 2rem;
   margin:0 2rem 0.5rem 2rem;
+  text-align: left;
+  width:25%;
 }
 .result{
   padding:0.5rem 2.5rem;
-  margin:0.5rem 15rem;
+  margin:0.5rem 2rem;
+  text-align: left;
+  width:25%;
 }
 .hrjobs{
-  padding:40px;
-  border-radius:20px;
+  padding:40px 20px;
+  border-radius:10px;
   background-color: rgb(12, 154, 201);
 }
 .headerpos{
@@ -420,6 +471,9 @@
   /* background-color:rgb(128, 175, 225); */
   padding:12px;
   border-radius:20px;
+}
+.resumedatabox{
+  width:60%;
 }
 .founderimg{
   width:40vw;
@@ -529,6 +583,16 @@
   gap:100px;
   padding:30px;
   flex-wrap: wrap;
+}
+.flexBox{
+  display:flex;
+}
+.item2{
+  margin-left:1rem;
+  width:50%;
+}
+.item1{
+  width:50%;
 }
 .testimonial{
   display:flex;
@@ -736,6 +800,13 @@
    gap:20px;
    padding:4rem 2rem;
   }
+  .flexBox{
+    display:block;
+  }
+  .item1,.item2{
+    margin-left:0;
+    width:100%;
+  }
   .wrap{
     gap:20px;
   }
@@ -760,16 +831,23 @@
     grid-template-columns:repeat(1,1fr);
   }
   .question{
-    padding:1rem 3rem;
-    margin:auto 0.75rem;
+    padding:0.2rem 1rem;
+    margin:auto 2rem;
+    text-align: left;
+    min-width:65%;
+    width:fit-content;
   }
   .options{
-    padding:0.5rem 0.75rem;
-    margin:0 0.75rem 0.5rem 0.75rem;
+    padding:0.5rem 2rem;
+    margin:0 2rem 0.5rem 2rem;
+    text-align: left;
+    width:30%;
   }
   .result{
     padding:0.5rem 2.5rem;
     margin:0.5rem 2rem;
+    text-align: left;
+    width:30%;
   }
   .aboutbox{
     display:block;
@@ -815,8 +893,9 @@
     margin:2rem 3rem;
   }
   .coursebox{
-    display:flex;
-    justify-content: center;
+    /* display:flex;
+    justify-content: center; */
+    display:none;
   }
   .otp{
     display:block;
@@ -844,12 +923,24 @@
   .categorybox{
     margin:2rem auto;
   }
+  .headingBox{
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4vh;
+  }
+  .resumedatabox{
+    width:100%;
+  }
   .startup{
     display: flex;
     flex-direction: column;
   }
   .mobilepara{
     width:80vw;
+  }
+  .phonewidth{
+    width:100%;
   }
   .firstformbox{
     display:none;
@@ -884,10 +975,30 @@
   }
   .giphy{
     margin:5vh auto 8vh auto;
-    width:60vw;
+    width:80vw;
+  }
+  .question{
+    padding:0.2rem 1rem;
+    margin:auto 2rem;
+    text-align:left;
+    min-width:75%;
+    width:fit-content;
+  }
+  .options{
+    padding:0.5rem 2rem;
+    margin:0 2rem 0.5rem 2rem;
+    text-align: left;
+    width:40%;
+  }
+  .result{
+    padding:0.5rem 2.5rem;
+    margin:0.5rem 2rem;
+    text-align: left;
+    width:40%;
   }
   .jobpos{
     margin:3rem auto;
+    text-align: center;
   }
   .main-content{
     display:block;
@@ -905,7 +1016,7 @@
   }
   .filterbox{
     margin:-15vh auto 10vh auto;
-    width:70vw;
+    width:80vw;
   }
   .btn4{
     margin-top:12vh;
@@ -929,6 +1040,11 @@
   .wrap{
     gap:20px;
   }
+  .hrjobs{
+    padding:40px 7px;
+    border-radius:10px;
+    background-color: rgb(12, 154, 201);
+  }
   .side1{
     width:70vw;
     border-radius:22px;
@@ -951,18 +1067,29 @@
     grid-template-columns: repeat(2,1fr);
     gap:10px;
    }
+   .slideshow {
+    margin:5vh auto 8vh auto;
+   }
    .datamile1,.datamile2{
     width:10.5rem;
    }
-  .news{
-    grid-template-columns: repeat(1,1fr);
-    padding:1rem 1rem;
-    gap:20px;
+   .question{
+    padding:0.2rem 1rem;
+    margin:auto;
+    text-align:center;
+    width:96%;
   }
-  .media{
-    grid-template-columns: repeat(2,1fr);
-    padding:2rem 1rem 4rem 1rem;
-    gap:20px;
+  .options{
+    padding:0.5rem 2rem;
+    margin:0.2rem auto;
+    text-align:center;
+    width:96%;
+  }
+  .result{
+    padding:0.5rem 2.5rem;
+    margin:0.5rem auto;
+    text-align:center;
+    width:90%;
   }
   .appbox{
     display:flex;

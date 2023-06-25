@@ -63,30 +63,20 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
 
     return (
     <div className='w-full'>
-      <div className='flex'>
-      <div className="px-3 py-3 rounded-2xl text-white bg-sky-700 text-center w-full mt-3 mr-10">
-        <label className="text-sm ml-2">College Name</label>
-        <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.collegeName} onChange={(e)=>setEducation({...education,collegeName:e.target.value})}/>
-        <div className='px-10'></div>
-        <label className="text-sm ml-2">Degree</label>
-        <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.degreeName} onChange={(e)=>setEducation({...education,degreeName:e.target.value})}/> <br/>
-        <div className='px-10'></div>
-        <label className="text-sm ml-2">Branch</label>
-        <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.branch} onChange={(e)=>setEducation({...education,branch:e.target.value})}/>
-        <div className='px-10'></div>
-        <label className="text-sm ml-2">Grade</label>
-        <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.grade} onChange={(e)=>setEducation({...education,grade:e.target.value})}/> <br/>
-        <div className='px-10'></div>
-        <label className="text-sm ml-2">Starting Year</label>
-        <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.startYear}  onChange={(e)=>setEducation({...education,startYear:e.target.value})}/> 
-        <div className='px-16'></div>
-        <label className="text-sm ml-2">Ending Year</label>
-        <Input css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.endYear}  onChange={(e)=>setEducation({...education,endYear:e.target.value})}/> <br/>
+      <div className='flex flex-col'>
+      <div className="px-3 py-3 flex flex-col rounded-2xl text-white resumedatabox bg-sky-700 text-center mt-6 mx-auto">
+        
+        <Input labelLeft="College"  css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.collegeName} onChange={(e)=>setEducation({...education,collegeName:e.target.value})}/>
+        <Input labelLeft="Degree" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px",textAlign:"center"}} initialValue={education.degreeName} onChange={(e)=>setEducation({...education,degreeName:e.target.value})}/>
+        <Input labelLeft="Branch" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.branch} onChange={(e)=>setEducation({...education,branch:e.target.value})}/>
+        <Input labelLeft="Grade" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.grade} onChange={(e)=>setEducation({...education,grade:e.target.value})}/>
+        <Input labelLeft="Date of Joining" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.startYear}  onChange={(e)=>setEducation({...education,startYear:e.target.value})}/> 
+        <Input labelLeft="Date of Leaving" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.endYear}  onChange={(e)=>setEducation({...education,endYear:e.target.value})}/>
       </div>
-        <div className='flex'>
+        <div className='flex justify-center'>
             {
                 (updating==0)?(<>
-                <Tooltip content="Edit" className='mx-15 my-auto'>
+                <Tooltip className=' mt-4 mr-4'>
                  <IconButton onClick={() => setIsUpdating(1)}>
                      <EditIcon size={20} fill="#979797" />
                     </IconButton>
@@ -97,12 +87,11 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
                 </>))
             }
             <Tooltip
-                content="Delete"
                 color="error"
                 onClick={deleteEducation }
-                className='mx-15 my-auto'
+                className=' mt-4 ml-4'
             >
-            <IconButton css={{ml:"$8"}} className='mx-15'>
+            <IconButton css={{}} className='mx-15'>
               <DeleteIcon size={20} fill="#FF0080" />
             </IconButton>
             </Tooltip>

@@ -61,15 +61,15 @@ const Achievement = ({achievementName,id}) => {
 
     return (
         <div className='w-full'>
-      <div className='flex'>
-      <div className="px-3 py-3 rounded-2xl text-white bg-sky-700 w-full text-center mt-6 mr-10">
+      <div className='flex flex-col'>
+      <div className="px-3 py-3 rounded-2xl text-white bg-sky-700 resumedatabox text-center mt-6 mx-auto">
       <label className="text-sm ml-2">Achievement</label>
       <Textarea css={{height:"fit-content",width:"stretch",mt:"$4"}} initialValue={achievement.achievementName} onChange={(e)=>setAchievement({...achievement,achievementName:e.target.value})}/>
       </div> 
-        <div className='flex'>
+        <div className='flex justify-center'>
             {
                 (updating==0)?(<>
-                <Tooltip content="Edit" className='mx-1 my-auto'>
+                <Tooltip className='mt-4 mr-3'>
                  <IconButton onClick={() => setIsUpdating(1)}>
                      <EditIcon size={20} fill="#979797" />
                     </IconButton>
@@ -84,10 +84,9 @@ const Achievement = ({achievementName,id}) => {
                 </>))
             }
             <Tooltip
-                content="Delete"
                 color="error"
                 onClick={deleteAchievement}
-                className='mx-15 my-auto'
+                className='mt-4 ml-3'
             >
             <IconButton css={{ml:"$8"}} className='my-auto'>
               <DeleteIcon size={20} fill="#FF0080" />
@@ -95,7 +94,8 @@ const Achievement = ({achievementName,id}) => {
             </Tooltip>
         </div>
     </div>
-  </div>
+    <div className='mb-15 pb-10'></div>
+    </div>
     )
 }
 
