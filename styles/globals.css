@@ -407,7 +407,7 @@ input::placeholder,textarea::placeholder{
 .hrjobs{
   padding:40px 20px;
   border-radius:10px;
-  background-color: rgb(12, 154, 201);
+  /* background-color: rgb(12, 154, 201); */
 }
 .headerpos{
   display:flex;
@@ -1043,7 +1043,7 @@ input::placeholder,textarea::placeholder{
   .hrjobs{
     padding:40px 7px;
     border-radius:10px;
-    background-color: rgb(12, 154, 201);
+    /* background-color: rgb(12, 154, 201); */
   }
   .side1{
     width:70vw;
