@@ -2,9 +2,7 @@ import { Card, Grid, Text, Link } from "@nextui-org/react";
 
 const ListContentCard = ({post}) => {
   return (
-    <div>
-        
-        <Card css={{ p: "$6", mw: "400px",width:"96%",margin:"auto" }}>
+     <Card css={{ p: "$6", mw: "400px",width:"96%",margin:"auto" }}>
       <Card.Header>
         <img
           alt="nextui logo"
@@ -39,7 +37,6 @@ const ListContentCard = ({post}) => {
         </Link>
       </Card.Footer>
     </Card>
-    </div>
   )
 }
 

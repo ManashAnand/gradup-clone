@@ -1,7 +1,7 @@
 import styles from 'styles/Page.module.css'
 export default function Refund() {
   return (
-    <div className="{styles.container} w-screen">
+    <div className="{styles.container} w-screen my-10">
       <div className={styles.content}>
         <img className="float-right ml-10" src="/assets/icons/logo.png" alt="logo" height="60" width="65"></img>
         <p className="mb-4 text-md text-white">Thanks for your interest in 8Tudem Tech Pvt. Ltd.. We ensure to provide an excellent experience and learning to all our users. As with any online purchase experience, some terms and conditions govern the Refund Policy. When you purchase a program or avail an offering on 8Tudem Tech Pvt. Ltd., you agree to our Terms & Conditions and Refund policy.</p>

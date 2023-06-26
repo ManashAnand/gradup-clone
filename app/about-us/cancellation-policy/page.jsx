@@ -1,7 +1,7 @@
 import styles from 'styles/Page.module.css'
 export default function Cancellation() {
   return (
-    <div className="{styles.container} w-screen">
+    <div className="{styles.container} w-screen my-10">
       <div className={styles.content}>
         <img className="float-right ml-10" src="/assets/icons/logo.png" alt="logo" height="60" width="65"></img>
         <p className="text-md text-white">If for any reason and at any time the Student withdraws from the GradUp Program, then the Student shall be under an obligation to provide the Company and the Company Agent with a prior written notice of 10 (ten) days’ notice of such withdrawal from the GradUp program and the effective date of such withdrawal thereto.</p>

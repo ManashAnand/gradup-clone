@@ -7,7 +7,7 @@ import ContactUS from "@components/ContactUS"
 export default function About() {
   return (
     <div className='mb-10'>
-       <div className="aboutbox">
+       <div className="aboutbox mt-10">
           <div>
             <div>
             <p className='text-3xl text my-6 text-sky-500'>About Company</p>

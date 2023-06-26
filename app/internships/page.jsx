@@ -28,7 +28,26 @@ function Page ({ index }) {
   const [selectedTitle, setSelectedTitle] = useState([]);
   const [salaryExp, setSalaryExp] = useState(1000);
   const [jobs, setJobs] = useState([]);
+  const [searchresults, setSearchresults] = useState([]);
+  const [search,setSearch]=useState("")
   const [loading,setLoading]=useState(true)
+  const [status,setStatus]=useState(false)
+  // function handleChange(e){
+  //   setSearch(e.target.value)
+  //   console.log(search)
+  //   setStatus(true)
+  // }
+  // function handleSearch(){
+  //   let results=jobs.filter((ele,i)=>{
+  //     return search===""?ele:ele.title.toLowerCase().includes(search.toLowerCase())
+  //   })
+  //   console.log(results)
+  //   results.length>0?setSearchresults(results):setStatus(false)
+  // }
+  // useEffect(()=>{
+  //   handleSearch()
+  // },[search])
+
   // const { data,error } = useSWR(`https://api.jsonbin.io/v3/b/6460d47e8e4aa6225e9cc67d/?page=${index}`, fetcher);
   // const { data, error } = useSWR( `/api/jobs/?page=${index}&intern=true`, fetcher)
   // console.log(data, "Front ",index);
@@ -40,6 +59,7 @@ function Page ({ index }) {
   const fetchJobs = async () => {
     const response = await fetch(`/api/jobs/?page=${index}&?intern=true`);
     const data = await response.json();
+    console.log(data)
     setJobs(data);
     setLoading(false)
   };
@@ -84,8 +104,8 @@ function Page ({ index }) {
             <h1 className='text-white text-4xl mt-2'>for you.</h1>
           </div>
           <div className="inputcontainer">
-            <input className="inputbox" type="search" placeholder="Enter"></input>
-            <button className="btn1">Search</button>
+            <input className="inputbox" type="search" placeholder="🔍 Search Job Title"></input>
+            {/* <button onClick={handleSearch} className="btn1">Search</button> */}
           </div>
           </div>
            <img className="giphy" src="assets/images/working4.gif" alt="work-img"></img>
@@ -144,13 +164,16 @@ function Page ({ index }) {
                 </div>
             </div>
             {loading && <div className="m-auto"><Spinner/></div>}
-          <div style={{backgroundColor:"teal"}} className='mt-10 arrange'>
-            {jobs.map((job) => (
-              <ListContentCard 
-                post={job}
-              />
-            ))}
-          </div>
+            {!status && jobs.length>0?<div style={{backgroundColor:"teal"}} className='mt-10 arrange'> 
+              {jobs.map((job) => (
+                <ListContentCard 
+                  post={job}
+                />
+              ))}
+            </div>:search.length>0?<div style={{backgroundColor:"teal"}} className='mt-10 arrange'> 
+            {searchresults.map((ele,i)=>(
+              <ListContentCard post={ele}/>
+            ))}</div>:<div className="text-white text-center m-auto text-3xl">No more Internships to display!!</div>}
           </div>
         </section>
       )

@@ -1,7 +1,7 @@
 import styles from 'styles/Page.module.css'
 export default function Privacy() {
   return (
-    <div className="{styles.container} w-screen">
+    <div className="{styles.container} w-screen my-10">
         <div className={styles.content}>
         <img className="float-right ml-10" src="/assets/icons/logo.png" alt="logo" height="60" width="65"></img>
         <h1 className="text-4xl mb-4">Privacy Policy for 8Tudem Tech. Pvt. Ltd.</h1>

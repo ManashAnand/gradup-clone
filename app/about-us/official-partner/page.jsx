@@ -2,7 +2,7 @@ import styles from 'styles/Page.module.css'
 
 export default function Partner() {
   return (
-    <div className="w-screen">
+    <div className="w-screen my-10">
       <div className={styles.videos}>
         <div className={styles.video1}>
           <iframe className={styles.frame1} src="https://www.youtube.com/embed/UrRyWUOmNJw?autoplay=1&mute=1" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe></div>

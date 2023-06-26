@@ -30,12 +30,27 @@ function Page({ index }) {
   const [selectedCity, setSelectedCity] = useState([]);
   const [selectedTitle, setSelectedTitle] = useState([]);
   const [salaryExp, setSalaryExp] = useState(5000);
+  const [searchresults, setSearchresults] = useState([]);
+  const [search,setSearch]=useState("")
+  // function handleChange(e){
+  //   setSearch(e.target.value)
+  // }
   // const [jobs, setJobs] = useState([]);
   // If want to useSWR later on
   const { data, error } = useSWR(
     `/api/jobs/?page=${index}&?intern=false`,
     fetcher
   );
+
+  // function handleSearch(){
+  //   let results=data.filter((ele,i)=>{
+  //     return search===""?ele:ele.title.toLowerCase().includes(search.toLowerCase())
+  //   })
+  //   setSearchresults(results)
+  // }
+  // useEffect(()=>{
+  //   data?handleSearch():""
+  // },[search,data])
   if (error) return <div>Failed to loadinggggggg</div>;
   if (!data) return <div className="my-60"><Spinner/></div>;
   const jobs=data;
@@ -58,9 +73,6 @@ function Page({ index }) {
   //   console.log(data);
   //   setJobs(data);
   // };
-  function handleSubmit(){
-    
-  }
   function handleCity(data) {
     setSelectedCity(data);
   }
@@ -114,7 +126,7 @@ function Page({ index }) {
     setSalaryExp(event.target.value);
   };
   return (
-    <section className='w-full'>
+    <section className='w-full mt-14'>
           <div className="headerpos">
             <div>
           <div className='head_text jobpos'>
@@ -122,14 +134,13 @@ function Page({ index }) {
             <h1 className='text-blue-400 text-4xl'>and grab <span className="underline decoration-yellow-300 underline-offset-8">your opportunities</span></h1>
           </div>
           <div className="inputcontainer">
-            <input className="inputbox" type="search" placeholder="Enter"></input>
-            <button className="btn1">Search</button>
+            <input className="inputbox"  type="search" placeholder="🔍 Search Job Title"></input>
           </div>
           </div>
            <img className="giphy" src="assets/images/image.gif" alt="work-img"></img>
           </div> 
           <div>
-            <p className="heading">All Jobs</p>
+            <p className="heading my-20"></p>
           </div>
           <div className="sortpos">
             <p className="-ml-10 text-white text-sm">Sort by:</p>
@@ -180,13 +191,16 @@ function Page({ index }) {
                 </div>
                 </div>
             </div>
-            <div style={{backgroundColor:"#0076CE"}} className='mt-10 arrange'> 
+            {search.length>0?<div style={{backgroundColor:"teal"}} className='mt-10 arrange'> 
+            {searchresults.map((ele,i)=>(
+              <ListContentCard post={ele}/>
+            ))}</div>:jobs.length>0?<div style={{backgroundColor:"teal"}} className='mt-10 arrange'> 
               {jobs.map((job) => (
                 <ListContentCard 
                   post={job}
                 />
               ))}
-            </div>
+            </div>:<div className="text-white text-center m-auto text-3xl">No more Jobs to display!!</div>}
           </div>
         </section>
   );
@@ -194,7 +208,7 @@ function Page({ index }) {
 
 export default function App() {
   const [pageIndex, setPageIndex] = useState(0);
-
+  
   return (
     <div>
       <div className="justify-center flex-center">
