@@ -48,8 +48,8 @@ export default function CoursesOnHome() {
   return (
     <section className='flex-start flex-col my-16'>
     <div>
-        <h1 className='text-3xl text-white font-semibold text text-center my-5'>Our Best Courses</h1>
-        <p className="text text-center text-sky-400 text-xl mb-3">Master new Skills from Anywhere with our Online Courses</p>
+        <h1 className='text-3xl text-white font-semibold textnew text-center my-5'>Our Best Courses</h1>
+        <p className="textnew text-center text-sky-400 text-xl mb-3">Master new Skills from Anywhere with our Online Courses</p>
     <Grid.Container gap={2}>
       {list.map((item, index) => (
         <Grid xs={6} sm={3} key={index}>

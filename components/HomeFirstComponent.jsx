@@ -22,13 +22,13 @@ const HomeFirstComponent = () => {
             </div>
           </div>
         </h1>
-        <div  style={{color:"deepskyblue"}}className='text-left  text'>
+        <div className='text-left text-white textnew'>
             <h1 className='mt-10 ml-1 w-4/5'>A Place where talent meets opportunities. <br />
             and you develop talent with our best courses and mentors and get hired in your dream company.
 </h1> 
         </div>
         <Link href='/courses' className="area">
-              <button className='rounded-2xl py-1 px-6 border-2 text border-sky-400 bg-white text-sky-400 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white'>Let's Discuss</button>
+              <button className='rounded-2xl py-1 px-6 border-2 textnew border-sky-400 bg-white text-sky-400 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white'>Let's Discuss</button>
         </Link>
         </div> 
         <div className="block mt-5">
