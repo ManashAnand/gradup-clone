@@ -74,7 +74,8 @@ export default function App() {
     switch (columnKey) {
       case "name":
         return (
-          <User squared src={user.avatar} name={cellValue} css={{ p: 0 }}>
+          <User color="success" squared src={user.avatar} css={{ p: 0}}>
+            <Text css={{color:"white"}} b>{cellValue}</Text>
             {/* {user.email} */}
           </User>
         );
@@ -82,7 +83,7 @@ export default function App() {
         return (
           <Col>
             <Row>
-              <Text b size={14} css={{ tt: "capitalize"}}>
+              <Text b size={14} css={{ tt: "capitalize",color:"white"}}>
                 {cellValue}
               </Text>
             </Row>
@@ -152,13 +153,14 @@ export default function App() {
   }
   const list = useAsyncList({ load, sort });
   return (
-    <div className='w-full'>
-        <h1 className='secondary_text text-left mb-8'>
-            <span className='blue_gradient'>Your Applications</span> 
-        </h1>
+    <div className='w-full mb-32 mt-16'>
+        <p className='text-4xl text-center mb-8'>
+            <span className='textnew text-white'>Your Applications</span> 
+        </p>
         
     <Table
       aria-label="Example table with custom cells"
+      color="success"
       css={{
         height: "calc($space$14 * 5)",
         minWidth: "100%",

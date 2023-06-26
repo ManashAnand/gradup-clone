@@ -76,13 +76,15 @@ export default function Contact(){
   <div class="form-container">
     <div class="left-container">
       <div class="left-inner-container">
-      <h2 className="h2contact">Let's Chat</h2>
+      <h2 className="h2contact textnew">Let's Chat</h2>
       <p>Whether you have a question,or simply want to connect.</p>
       <p>Feel free to send us a message.</p>
       <div className="text-white mt-10">
-      <div className="mb-6 flex flex-col text-sm"><PhoneAndroidIcon sx={{margin:"auto"}} color="white" fontSize="small"/>+91- 9771040702</div>
-      <div className="mb-6 flex flex-col text-sm"><EmailIcon sx={{margin:"auto"}} color="white" fontSize="small"/>info@attitudematterz.com <br/>attitudematterz.ops@gmail.com</div>
-      <div className="text-sm flex flex-col"><BusinessIcon sx={{margin:"auto"}} color="white" fontSize="small"/> UG Floor, Regus, TOWER-2,<br/>Assotech Business Cresterra<br/>Plot No.22, Sector 135, Noida,<br/>Uttar Pradesh 201301</div>
+      <div className="mb-4 textnew flex flex-col text-sm"><PhoneAndroidIcon sx={{margin:"auto"}} color="white" fontSize="small"/>+91- 9771040702</div>
+      <hr/>
+      <div className="mt-4 textnew mb-3 flex flex-col text-sm"><EmailIcon sx={{margin:"auto"}} color="white" fontSize="small"/>info@attitudematterz.com <br/>attitudematterz.ops@gmail.com</div>
+      <hr/>
+      <div className="text-sm textnew mt-4 flex flex-col"><BusinessIcon sx={{margin:"auto"}} color="white" fontSize="small"/> UG Floor, Regus, TOWER-2,<br/>Assotech Business Cresterra<br/>Plot No.22, Sector 135, Noida,<br/>Uttar Pradesh 201301</div>
       </div>
     </div>
       </div>
