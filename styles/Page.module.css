@@ -168,6 +168,7 @@
   align-items:center;
   background-color:#041E42;
   color:white;
+  box-shadow:inset rgb(57, 202, 254) 0px 22px 70px 4px;
   border-top:4px solid #00BFFF;
   border-left:4px solid #00BFFF;
 }

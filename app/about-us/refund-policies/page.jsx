@@ -4,7 +4,7 @@ export default function Refund() {
     <div className="{styles.container} w-screen my-10">
       <div className={styles.content}>
         <img className="float-right ml-10" src="/assets/icons/logo.png" alt="logo" height="60" width="65"></img>
-        <p className="mb-4 text-md text-white">Thanks for your interest in 8Tudem Tech Pvt. Ltd.. We ensure to provide an excellent experience and learning to all our users. As with any online purchase experience, some terms and conditions govern the Refund Policy. When you purchase a program or avail an offering on 8Tudem Tech Pvt. Ltd., you agree to our Terms & Conditions and Refund policy.</p>
+        <p className="mb-4 text-md text-white textnew">Thanks for your interest in 8Tudem Tech Pvt. Ltd.. We ensure to provide an excellent experience and learning to all our users. As with any online purchase experience, some terms and conditions govern the Refund Policy. When you purchase a program or avail an offering on 8Tudem Tech Pvt. Ltd., you agree to our Terms & Conditions and Refund policy.</p>
       </div>
       <p className="{styles.head} text-white text-center text-2xl">Our Refund Policy is as follows-</p>
       <div className={styles.grid}>
