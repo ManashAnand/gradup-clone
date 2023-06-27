@@ -18,8 +18,8 @@ const page = (id) => {
         <img src="/assets/images/energize.png"></img>
         <p className='text-center text-4xl text-sky-500 text font-semibold my-auto'>Energize your confidence with quizzes.<br/>Get Yourself Ready !</p>
       </div>
-      <p className='text-center text-4xl text font-semibold text-white mb-8'>Test your knowledge with an interactive online quiz !!</p>
-      <p className='text-center text text-white mb-4'>MCQs to practice multiple choice questions and answers on school, college, university courses with placement tests. Job seekers competing for a job should attempt a series of job tests for better grades and learning to prepare themselves for tests as well as interviews.</p>
+      <p className='text-center text-4xl textnew font-semibold text-white mb-8'>Test your knowledge with an interactive online quiz !!</p>
+      <p className='text-center textnew text-white mb-4'>MCQs to practice multiple choice questions and answers on school, college, university courses with placement tests. Job seekers competing for a job should attempt a series of job tests for better grades and learning to prepare themselves for tests as well as interviews.</p>
      <div className="categorybox mt-20 mx-20">
       {data.record.map((ele,i)=>{
         return(

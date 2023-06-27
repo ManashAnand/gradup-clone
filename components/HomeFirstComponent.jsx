@@ -10,25 +10,20 @@ const HomeFirstComponent = () => {
   },[current])
   let arr=["/assets/images/home1.png","/assets/images/home2.png","/assets/images/home3.png","/assets/images/home4.png","/assets/images/home5.png"]
   return (
-    <section className='w-screen flex justify-evenly max-h-screen headingbox'>
-      <div className="mt-16">
-        <p className="text text-2xl text-white ml-1">Welcome</p>
-        <h1 className='text-5xl text-white text-left'>
-            <span className="text-sky-400">Connecting</span> Talent with us to <br/>
-            <div class="container">
-             <div class="row">
-              <div class="col-md-12">Explore new Opportunities.
-              </div>
-            </div>
-          </div>
-        </h1>
-        <div  style={{color:"deepskyblue"}}className='text-left  text'>
+    <section className='w-screen flex justify-around headingbox'>
+      <div className="my-12 flex flex-col justify-center">
+        <p className="text text-2xl text-white">Welcome</p>
+        <div style={{overflow:"hidden"}} className='text-5xl text-white textnew text-left'>
+            <p style={{overflow:""}}>Connecting Talent with us to</p>
+            <p style={{overflow:"hidden"}} className='mt-2'>Explore new <span className='animate-charcter font-semibold'>Opportunities</span></p>
+        </div>
+        <div className='text-left text-white textnew'>
             <h1 className='mt-10 ml-1 w-4/5'>A Place where talent meets opportunities. <br />
             and you develop talent with our best courses and mentors and get hired in your dream company.
 </h1> 
         </div>
         <Link href='/courses' className="area">
-              <button className='rounded-2xl py-1 px-6 border-2 text border-sky-400 bg-white text-sky-400 mt-6 mb-10'>Explore</button>
+              <button className='rounded-2xl py-1 px-6 border-2 textnew border-sky-400 bg-white text-sky-400 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white'>Let's Discuss</button>
         </Link>
         </div> 
         <div className="block mt-5">

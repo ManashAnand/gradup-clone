@@ -298,14 +298,14 @@ input::placeholder,textarea::placeholder{
 .btn2{
   padding:0.2em 1em;
   border-radius:10px;
-  background:deepskyblue;
+  background:rgb(12, 102, 192);
   color:white;
   margin-right:1vw;
 }
 .btn3{
   padding:0.2em 1em;
   border-radius:10px;
-  background:deepskyblue;
+  background:rgb(12, 102, 192);
   color:white;
 }
 .btn4{
@@ -317,10 +317,10 @@ input::placeholder,textarea::placeholder{
   border-radius:20px;
 }
 .giphy{
-  margin-top:3vh;
+
   margin-left:10vh;
   width:20vw;
-  border-radius:14px;
+  border-radius:40px;
 }
 .main-content{
   display:flex;
@@ -369,6 +369,7 @@ input::placeholder,textarea::placeholder{
 .arrange{
   background-image: linear-gradient(150.74deg, rgba(69, 146, 253, 0.266012) 15.21%, rgba(248, 199, 234, 0.779514) 22.96%, rgba(239, 203, 227, 0.711805) 45.74%, rgba(0, 120, 234, 0.1602) 91.53%, rgba(66, 169, 249, 0.19) 98.92%, rgba(38, 134, 200, 0.0842839) 98.93%, rgba(152, 198, 224, 0.37) 98.96%, rgba(176, 227, 255, 0.378155) 99.65%, rgba(9, 129, 197, 0) 100.35%, #FFC8E3 1.07%);
   padding:40px;
+  min-width:40vw;
   border-radius:20px;
   margin-left:18vh;
   margin-top:3vh;
@@ -489,8 +490,8 @@ input::placeholder,textarea::placeholder{
 }
 .headingbox{
   /* background:rgb(51, 199, 236); */
-  background: linear-gradient(260deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 60.90%, rgba(199, 95, 189, 0.94) 99.86%);;
-  padding:12px;
+  background: linear-gradient(260deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 50.90%, rgba(199, 95, 189, 0.94) 99.86%);;
+  padding:25px;
   
 }
 .startup{
@@ -544,10 +545,10 @@ input::placeholder,textarea::placeholder{
  {
    background-image: linear-gradient(
      -225deg,
-     #49cbf2 0%,
-     #ec53b7 29%,
-     #ff1361 67%,
-     #fff800 100%
+     #2390f7 0%,
+     #58ec53 29%,
+     #2297fd 67%,
+     #21f870 100%
    );
    background-size: auto auto;
    background-clip: border-box;
@@ -557,8 +558,7 @@ input::placeholder,textarea::placeholder{
    text-emphasis-color:  transparent;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
-   animation: textclip 2s linear infinite;
-   display: inline-block;
+   animation: textclip 3s linear infinite;
  }
  
  @keyframes textclip {
@@ -849,6 +849,9 @@ input::placeholder,textarea::placeholder{
     text-align: left;
     width:30%;
   }
+  .giphy{
+    display:none;
+  }
   .aboutbox{
     display:block;
   }
@@ -974,8 +977,9 @@ input::placeholder,textarea::placeholder{
     display:none;
   }
   .giphy{
+    display:block;
     margin:5vh auto 8vh auto;
-    width:80vw;
+    width:60%;
   }
   .question{
     padding:0.2rem 1rem;
@@ -1021,9 +1025,13 @@ input::placeholder,textarea::placeholder{
   .btn4{
     margin-top:12vh;
   }
-  .btn2,.btn3{
+  /* .btn2,.btn3{
     text-align:center;
     margin-left:1vh;
+  } */
+  .buttonpos{
+    text-align: center;
+    margin: 6vh auto;
   }
   .block{
     display:none;
@@ -1072,6 +1080,9 @@ input::placeholder,textarea::placeholder{
    }
    .datamile1,.datamile2{
     width:10.5rem;
+   }
+   .giphy{
+    width:80%;
    }
    .question{
     padding:0.2rem 1rem;
@@ -1588,14 +1599,14 @@ input::placeholder,textarea::placeholder{
 }
 
 .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-white bg-gray-800 py-2 px-7 text-white transition-all hover:bg-white hover:text-gray-600 hover:border-gray-600 text-center text-sm font-inter flex items-center justify-center;
 }
 
 .black_btn2 {
   @apply rounded-none border border-black bg-black py-2.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-base font-inter flex items-center justify-center;
 }
 .outline_btn {
-  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full bg-transparent py-2 px-7 text-black transition-all hover:bg-gray-800 hover:text-white text-center text-sm font-inter flex items-center justify-center;
 }
 
 .head_text {

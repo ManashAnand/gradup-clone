@@ -28,7 +28,26 @@ function Page ({ index }) {
   const [selectedTitle, setSelectedTitle] = useState([]);
   const [salaryExp, setSalaryExp] = useState(1000);
   const [jobs, setJobs] = useState([]);
+  const [searchresults, setSearchresults] = useState([]);
+  const [search,setSearch]=useState("")
   const [loading,setLoading]=useState(true)
+  const [status,setStatus]=useState(false)
+  // function handleChange(e){
+  //   setSearch(e.target.value)
+  //   console.log(search)
+  //   setStatus(true)
+  // }
+  // function handleSearch(){
+  //   let results=jobs.filter((ele,i)=>{
+  //     return search===""?ele:ele.title.toLowerCase().includes(search.toLowerCase())
+  //   })
+  //   console.log(results)
+  //   results.length>0?setSearchresults(results):setStatus(false)
+  // }
+  // useEffect(()=>{
+  //   handleSearch()
+  // },[search])
+
   // const { data,error } = useSWR(`https://api.jsonbin.io/v3/b/6460d47e8e4aa6225e9cc67d/?page=${index}`, fetcher);
   // const { data, error } = useSWR( `/api/jobs/?page=${index}&intern=true`, fetcher)
   // console.log(data, "Front ",index);
@@ -40,6 +59,7 @@ function Page ({ index }) {
   const fetchJobs = async () => {
     const response = await fetch(`/api/jobs/?page=${index}&?intern=true`);
     const data = await response.json();
+    console.log(data)
     setJobs(data);
     setLoading(false)
   };
@@ -76,28 +96,28 @@ function Page ({ index }) {
     setSalaryExp(event.target.value);
   };
   return (
-        <section className='w-full'>
+        <section className='w-full mt-14'>
          <div className="headerpos">
             <div>
-          <div className='head_text jobpos'>
-            <h1 className="text-sky-500 text-5xl underline decoration-yellow-300 underline-offset-8">Internships</h1>
-            <h1 className='text-white text-4xl mt-2'>for you.</h1>
+          <div className='font-bold jobpos'>
+            <h1 className="text-white text-5xl underline decoration-yellow-300 underline-offset-8">Internship</h1>
+            <h1 style={{color:"teal"}} className=' text-5xl mt-2'>Opportunities for you.</h1>
           </div>
-          <div className="inputcontainer">
-            <input className="inputbox" type="search" placeholder="Enter"></input>
-            <button className="btn1">Search</button>
-          </div>
+          {/* <div className="inputcontainer">
+            <input className="inputbox" type="search" placeholder="🔍 Search Job Title"></input>
+             <button onClick={handleSearch} className="btn1">Search</button>
+          </div> */}
           </div>
            <img className="giphy" src="assets/images/working4.gif" alt="work-img"></img>
           </div> 
           <div>
-          <p className="heading1">All Internships</p>
+          <p className="heading1 my-20"></p>
           </div>
-          <div className="sortpos">
+          {/* <div className="sortpos">
             <p className="-ml-10 text-white text-sm">Sort by:</p>
             <button className="btn6">Recently Released</button>
             <button className="btn6">Alphabetical</button>
-          </div>
+          </div> */}
           <div className="main-content">
             <div className="pt-16">
                 <div style={{backgroundColor:"teal"}} className="filterbox">
@@ -144,13 +164,16 @@ function Page ({ index }) {
                 </div>
             </div>
             {loading && <div className="m-auto"><Spinner/></div>}
-          <div style={{backgroundColor:"teal"}} className='mt-10 arrange'>
-            {jobs.map((job) => (
-              <ListContentCard 
-                post={job}
-              />
-            ))}
-          </div>
+            {!status && jobs.length>0?<div style={{backgroundColor:"teal"}} className='mt-10 arrange'> 
+              {jobs.map((job) => (
+                <ListContentCard 
+                  post={job}
+                />
+              ))}
+            </div>:search.length>0?<div style={{backgroundColor:"teal"}} className='mt-10 arrange'> 
+            {searchresults.map((ele,i)=>(
+              <ListContentCard post={ele}/>
+            ))}</div>:jobs && <div className="text-white text-center m-auto text-3xl">No more Internships to display!!</div>}
           </div>
         </section>
       )
@@ -158,23 +181,26 @@ function Page ({ index }) {
  
 export default function App () {
   const [pageIndex, setPageIndex] = useState(0);
- 
+  const [opacity,setOpacity]=useState(1)
+  useEffect(()=>{
+    pageIndex===0?setOpacity(0.2):setOpacity(1)
+  })
   return (
-  <div>
-    <div className="justify-center flex-center">
-      <Page index={pageIndex} />
+    <div>
+      <div className="justify-center flex-center">
+        <Page index={pageIndex} />
+      </div>
+      {/* <div style={{ display: "none" }}>
+        <Page index={pageIndex + 1} />
+      </div> */}
+      <div className="flex buttonpos mb-16">
+        <button style={{opacity:opacity}} disabled={pageIndex===0?true:false} class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
+          Prev
+        </button>
+        <button class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
+          Next
+        </button>
+      </div>
     </div>
-    <div style={{ display: "none" }}>
-      <Page index={pageIndex + 1} />
-    </div>
-    <div className="flex buttonpos mb-16">
-      <button class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
-        Prev
-      </button>
-      <button class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
-        Next
-      </button>
-    </div>
-  </div>
-);
+  );
 }

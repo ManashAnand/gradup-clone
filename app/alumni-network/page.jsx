@@ -9,7 +9,7 @@ const page = () => {
     <>
       <div className="alumnitop w-full mt-6">
         <div className="my-auto">
-         <p className="text-4xl text mb-4">Alumni Network</p>
+         <p className="text-5xl text mb-4">Alumni Network</p>
          <p><em>"Nobody is bothered about its institution more than<br/>its Alumni"</em></p>
         </div>
         <img width="400" src="/assets/images/alumni.png"></img>
