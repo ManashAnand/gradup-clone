@@ -129,24 +129,24 @@ function Page({ index }) {
     <section className='w-full mt-14'>
           <div className="headerpos">
             <div>
-          <div className='head_text jobpos'>
-            <h1 className='text-white text-4xl'>Find your job &</h1>
-            <h1 className='text-blue-400 text-4xl'>and grab <span className="underline decoration-yellow-300 underline-offset-8">your opportunities</span></h1>
+          <div className='font-bold jobpos'>
+            <h1 className='text-white text-5xl'>Find your job &</h1>
+            <h1 className='text-blue-400 text-5xl'>and grab <span className="underline decoration-yellow-300 underline-offset-8">your opportunities</span></h1>
           </div>
-          <div className="inputcontainer">
+          {/* <div className="inputcontainer">
             <input className="inputbox"  type="search" placeholder="🔍 Search Job Title"></input>
-          </div>
+          </div> */}
           </div>
            <img className="giphy" src="assets/images/image.gif" alt="work-img"></img>
           </div> 
           <div>
             <p className="heading my-20"></p>
           </div>
-          <div className="sortpos">
+          {/* <div className="sortpos">
             <p className="-ml-10 text-white text-sm">Sort by:</p>
             <button className="btn6">Recently Released</button>
             <button className="btn6">Alphabetical</button>
-          </div>
+          </div> */}
           <div className="main-content">
             <div className="pt-16">
                 <div style={{backgroundColor:"#0076ce"}} className="filterbox">
@@ -191,16 +191,16 @@ function Page({ index }) {
                 </div>
                 </div>
             </div>
-            {search.length>0?<div style={{backgroundColor:"teal"}} className='mt-10 arrange'> 
+            {search.length>0?<div style={{backgroundColor:"#0076ce"}} className='mt-10 arrange'> 
             {searchresults.map((ele,i)=>(
               <ListContentCard post={ele}/>
-            ))}</div>:jobs.length>0?<div style={{backgroundColor:"teal"}} className='mt-10 arrange'> 
+            ))}</div>:jobs.length>0?<div style={{backgroundColor:"#0076ce"}} className='mt-10 arrange'> 
               {jobs.map((job) => (
                 <ListContentCard 
                   post={job}
                 />
               ))}
-            </div>:<div className="text-white text-center m-auto text-3xl">No more Jobs to display!!</div>}
+            </div>:<div className="text-white text-center m-auto text-2xl">No more Jobs to display!!<br/>Please go to previous Page</div>}
           </div>
         </section>
   );
@@ -208,17 +208,20 @@ function Page({ index }) {
 
 export default function App() {
   const [pageIndex, setPageIndex] = useState(0);
-  
+  const [opacity,setOpacity]=useState(1)
+  useEffect(()=>{
+    pageIndex===0?setOpacity(0.2):setOpacity(1)
+  })
   return (
     <div>
       <div className="justify-center flex-center">
         <Page index={pageIndex} />
       </div>
-      <div style={{ display: "none" }}>
+      {/* <div style={{ display: "none" }}>
         <Page index={pageIndex + 1} />
-      </div>
+      </div> */}
       <div className="flex buttonpos mb-16">
-        <button class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
+        <button style={{opacity:opacity}} disabled={pageIndex===0?true:false} class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
           Prev
         </button>
         <button class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>

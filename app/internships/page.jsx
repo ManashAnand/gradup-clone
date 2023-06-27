@@ -96,28 +96,28 @@ function Page ({ index }) {
     setSalaryExp(event.target.value);
   };
   return (
-        <section className='w-full'>
+        <section className='w-full mt-14'>
          <div className="headerpos">
             <div>
-          <div className='head_text jobpos'>
-            <h1 className="text-sky-500 text-5xl underline decoration-yellow-300 underline-offset-8">Internships</h1>
-            <h1 className='text-white text-4xl mt-2'>for you.</h1>
+          <div className='font-bold jobpos'>
+            <h1 className="text-white text-5xl underline decoration-yellow-300 underline-offset-8">Internship</h1>
+            <h1 style={{color:"teal"}} className=' text-5xl mt-2'>Opportunities for you.</h1>
           </div>
-          <div className="inputcontainer">
+          {/* <div className="inputcontainer">
             <input className="inputbox" type="search" placeholder="🔍 Search Job Title"></input>
-            {/* <button onClick={handleSearch} className="btn1">Search</button> */}
-          </div>
+             <button onClick={handleSearch} className="btn1">Search</button>
+          </div> */}
           </div>
            <img className="giphy" src="assets/images/working4.gif" alt="work-img"></img>
           </div> 
           <div>
-          <p className="heading1">All Internships</p>
+          <p className="heading1 my-20"></p>
           </div>
-          <div className="sortpos">
+          {/* <div className="sortpos">
             <p className="-ml-10 text-white text-sm">Sort by:</p>
             <button className="btn6">Recently Released</button>
             <button className="btn6">Alphabetical</button>
-          </div>
+          </div> */}
           <div className="main-content">
             <div className="pt-16">
                 <div style={{backgroundColor:"teal"}} className="filterbox">
@@ -173,7 +173,7 @@ function Page ({ index }) {
             </div>:search.length>0?<div style={{backgroundColor:"teal"}} className='mt-10 arrange'> 
             {searchresults.map((ele,i)=>(
               <ListContentCard post={ele}/>
-            ))}</div>:<div className="text-white text-center m-auto text-3xl">No more Internships to display!!</div>}
+            ))}</div>:jobs && <div className="text-white text-center m-auto text-3xl">No more Internships to display!!</div>}
           </div>
         </section>
       )
@@ -181,23 +181,26 @@ function Page ({ index }) {
  
 export default function App () {
   const [pageIndex, setPageIndex] = useState(0);
- 
+  const [opacity,setOpacity]=useState(1)
+  useEffect(()=>{
+    pageIndex===0?setOpacity(0.2):setOpacity(1)
+  })
   return (
-  <div>
-    <div className="justify-center flex-center">
-      <Page index={pageIndex} />
+    <div>
+      <div className="justify-center flex-center">
+        <Page index={pageIndex} />
+      </div>
+      {/* <div style={{ display: "none" }}>
+        <Page index={pageIndex + 1} />
+      </div> */}
+      <div className="flex buttonpos mb-16">
+        <button style={{opacity:opacity}} disabled={pageIndex===0?true:false} class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
+          Prev
+        </button>
+        <button class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
+          Next
+        </button>
+      </div>
     </div>
-    <div style={{ display: "none" }}>
-      <Page index={pageIndex + 1} />
-    </div>
-    <div className="flex buttonpos mb-16">
-      <button class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
-        Prev
-      </button>
-      <button class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
-        Next
-      </button>
-    </div>
-  </div>
-);
+  );
 }
