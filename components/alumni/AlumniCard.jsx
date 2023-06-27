@@ -5,9 +5,9 @@ import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 export default function AlumniCard({data}) {
   return (
       <Card css={{borderRadius:"20px",margin:"$10 $8",width:"320px"}}>
-      <Card.Header css={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",background:"$blue900"}}>
+      <Card.Header css={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",background:"$blue900",boxShadow:"rgb(10,80, 180) 0px 6px 70px 6px"}}>
         <img 
-          style={{boxShadow:"rgb(250, 103, 103) 0px 22px 70px 5px"}}
+          style={{boxShadow:"rgb(10,60,150) 0px 6px 70px 6px"}}
           className="rounded-full mb-4"
           alt="nextui logo"
           src={data.profilePhoto}
