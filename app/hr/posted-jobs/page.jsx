@@ -56,58 +56,6 @@ export default function App() {
       canSee:data.posts[i].canSee,
     })
   }
-  // const users = [
-  //   {
-  //     id: 1,
-  //     name: "Microsoft",
-  //     role: "CEO",
-  //     team: "Management",
-  //     status: "active",
-  //     age: "29",
-  //     avatar: "/assets/images/TalentConnects.png",
-  //     email: "tony.reichert@example.com",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Apple",
-  //     role: "Technical Lead",
-  //     team: "Development",
-  //     status: "paused",
-  //     age: "25",
-  //     avatar: "/assets/images/TalentConnects.png",
-  //     email: "zoey.lang@example.com",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Talent Connect",
-  //     role: "Senior Developer",
-  //     team: "Development",
-  //     status: "active",
-  //     age: "22",
-  //     avatar: "/assets/images/TalentConnects.png",
-  //     email: "jane.fisher@example.com",
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "Microsoft",
-  //     role: "Community Manager",
-  //     team: "Marketing",
-  //     status: "vacation",
-  //     age: "28",
-  //     avatar: "/assets/images/TalentConnects.png",
-  //     email: "william.howard@example.com",
-  //   },
-  //   {
-  //     id: 5,
-  //     name: "meta",
-  //     role: "Sales Manager",
-  //     team: "Sales",
-  //     status: "active",
-  //     age: "24",
-  //     avatar: "/assets/images/TalentConnects.png",
-  //     email: "kristen.cooper@example.com",
-  //   },
-  // ];
   
   const renderCell = (user, columnKey) => {
     const cellValue = user[columnKey];
@@ -149,13 +97,17 @@ export default function App() {
       case "actions":
         return (
           <Row justify="center" align="center">
-            {/* <Col css={{ d: "flex" }}>
+            <Col css={{ d: "flex" }}>
+              <Link
+                href={`/hr/posted-jobs/${user.id}`}
+              >
               <Tooltip content="Details">
                 <IconButton onClick={() => console.log("View user", user.id)}>
                   <EyeIcon size={20} fill="#979797" />
                 </IconButton>
               </Tooltip>
-            </Col> */}
+              </Link>
+            </Col>
             <Col css={{ d: "flex" }}>
               <Tooltip content="Edit user">
                 <IconButton onClick={() => console.log("Edit user", user.id)}>

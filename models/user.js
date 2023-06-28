@@ -156,6 +156,9 @@ const UserSchema = new Schema({
     isAlumni:{
         type:Boolean,
         default:false
+    },
+    joinDate:{
+        type:Date,
     }
 });
 

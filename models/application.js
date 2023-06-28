@@ -95,6 +95,10 @@ const AchievementSchema = new Schema({
 })
 
 const ApplicationSchema = new Schema({
+    _id:{
+        type:String,
+        required:[true,"_id is requiresd"],
+    },
     userID: {
         type: String,
         required: [true, "UserId is required."],

@@ -13,7 +13,6 @@ export const POST = async(request, { params }) => {
                 }
             }
         }).select("name profilePhoto");
-        console.log("Alumni Data is here",alumni)
         return new Response(JSON.stringify(alumni), { status: 201 })
     } catch (error) {
         console.log(error);
