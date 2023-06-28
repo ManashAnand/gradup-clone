@@ -3,7 +3,7 @@ import Navbar from '@components/Navbar';
 import Nav from '@components/Nav';
 import Provider from '@components/Provider';
 import Footer from '@components/Footer';
-
+import Watsapp from '@components/Watsapp';
 export const metadata = {
     title:"GradUp",
     description:"Connecting talent to opportunities"
@@ -20,6 +20,7 @@ const Layout = ({children}) => {
             <main className='app'>
               <Nav />
               {children}
+              <Watsapp/>
               <Footer />
             </main>
             </Provider>

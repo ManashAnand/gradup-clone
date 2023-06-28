@@ -163,6 +163,11 @@
 .slideshowDots {
   text-align: center;
 }
+.pos{
+  position:fixed;
+  bottom:20px;
+  /* margin-left:59rem; */
+}
 
 .slideshowDot {
   display: inline-block;
