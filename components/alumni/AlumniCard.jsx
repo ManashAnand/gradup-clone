@@ -7,7 +7,7 @@ export default function AlumniCard({data}) {
       <Card css={{borderRadius:"20px",margin:"$10 $8",width:"320px"}}>
       <Card.Header css={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",background:"$blue900"}}>
         <img 
-          style={{boxShadow:"rgb(10,60,150) 0px 6px 70px 6px"}}
+          style={{boxShadow:"rgb(10,60,180) 10px 6px 70px 12px"}}
           className="rounded-full mb-4"
           alt="nextui logo"
           src={data.profilePhoto}

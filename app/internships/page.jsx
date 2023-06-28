@@ -173,7 +173,7 @@ function Page ({ index }) {
             </div>:search.length>0?<div style={{backgroundColor:"teal"}} className='mt-10 arrange'> 
             {searchresults.map((ele,i)=>(
               <ListContentCard post={ele}/>
-            ))}</div>:jobs && <div className="text-white text-center m-auto text-3xl">No more Internships to display!!</div>}
+            ))}</div>:<div className="text-white text-center m-auto text-2xl">No more Internships to display!!<br/> Please go to previous page</div>}
           </div>
         </section>
       )

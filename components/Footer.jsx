@@ -9,11 +9,11 @@ const Footer = () => {
         <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
     </svg> */}
 </div>
-    <footer style={{backgroundColor:'lightskyblue'}} className="text-gray-700 body-font w-screen">
+    <footer style={{backgroundColor:'#50c878'}} className="text-gray-900 body-font w-screen">
   <div className="container px-5 py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
     <div className="w-80 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mr-60">
         <Link href={'/'} className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" className="w-10 h-10 text-gray-700 p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+            {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" className="w-10 h-10 text-gray-900 p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
             <span className="ml-3 text-xl">TalentConnects</span> */}
@@ -28,20 +28,20 @@ const Footer = () => {
             />
         </Link>
       
-      <p className="mt-2 text-sm text-gray-700 font-semibold text-center textnew">GradUp is a platform aimed at nurturing students to be industry ready</p>
+      <p className="mt-2 text-sm text-gray-900 text-center textnew">GradUp is a platform aimed at nurturing students to be industry ready</p>
     </div>
     <div className="flex-grow flex flex-wrap -mb-10 md:text-center mt-4 text-center">
       <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu1">
         <h2 className="title-font font-semibold text-black tracking-widest text-sm mb-3">SERVICES</h2>
         <nav className="list-none mb-10 textnew">
           <li>
-            <a href="/jobs" className="text-gray-700 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-700'>&#9830;</span> Jobs</a>
+            <a href="/jobs" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Jobs</a>
           </li>
           <li>
-            <a href="/internships" className="text-gray-700 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-700'>&#9830;</span> Internships</a>
+            <a href="/internships" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Internships</a>
           </li>
           <li>
-            <a href="/courses" className="text-gray-700 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-700'>&#9830;</span> Courses</a>
+            <a href="/courses" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Courses</a>
           </li>
         </nav>
       </div>
@@ -49,13 +49,13 @@ const Footer = () => {
         <h2 className="title-font font-semibold text-black tracking-widest text-sm mb-3">QUICK LINKS</h2>
         <nav className="list-none mb-10 textnew">
           <li>
-            <a href="/hackathons" className="text-gray-700 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-700'>&#9830;</span> Hackathons</a>
+            <a href="/hackathons" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Hackathons</a>
           </li>
           <li>
-            <a href="/mcqs" className="text-gray-700 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-700'>&#9830;</span> MCQ's</a>
+            <a href="/mcqs" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> MCQ's</a>
           </li>
           <li>
-            <a href="/alumni-network" className="text-gray-700 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-700'>&#9830;</span> Alumni Network</a>
+            <a href="/alumni-network" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Alumni Network</a>
           </li>
         </nav>
       </div>
@@ -63,28 +63,28 @@ const Footer = () => {
         <h2 className="title-font font-semibold text-black tracking-widest text-sm mb-3">ABOUT US</h2>
         <nav className="list-none mb-10 textnew">
           <li>
-            <a href="/about-us"  className="text-gray-700 hover:text-white text-sm cursor-pointer mb-1-1"><span className='text-gray-700'>&#9830;</span> About Company</a>
+            <a href="/about-us"  className="text-gray-900 hover:text-white text-sm cursor-pointer mb-1-1"><span className='text-gray-900'>&#9830;</span> About Company</a>
           </li>
           <li>
-            <a href="/about-us/our-services-content" className="text-gray-700 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-700'>&#9830;</span> Our Services</a>
+            <a href="/about-us/our-services-content" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Our Services</a>
           </li>
           <li>
-            <a href="/about-us/privacy-policy" className="text-gray-700 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-700'>&#9830;</span> Privacy Policies</a>
+            <a href="/about-us/privacy-policy" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Privacy Policies</a>
           </li>
           <li>
-            <a href="/about-us/terms-and-condition" className="text-gray-700 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-700'>&#9830;</span> Terms and Conditions</a>
+            <a href="/about-us/terms-and-condition" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Terms and Conditions</a>
           </li>
           <li>
-            <a href="/about-us/refund-policies" className="text-gray-700 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-700'>&#9830;</span> Refund Policies</a>
+            <a href="/about-us/refund-policies" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Refund Policies</a>
           </li>
           <li>
-            <a href="/about-us/cancellation-policy" className="text-gray-700 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-700'>&#9830;</span> Cancellation Policy</a>
+            <a href="/about-us/cancellation-policy" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Cancellation Policy</a>
           </li>
         </nav>
       </div>
     </div>
   </div>
-  <div className="bg-black">
+  <div className="bg-gray-900">
     <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
       <p className="text-gray-500 text-sm text-center sm:text-left">© 2020 Tailblocks —
         <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@knyttneve</a>
