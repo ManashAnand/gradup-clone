@@ -9,7 +9,7 @@ const Footer = () => {
         <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
     </svg> */}
 </div>
-    <footer style={{backgroundColor:'lightskyblue'}} className="text-gray-700 body-font w-screen">
+    <footer style={{backgroundColor:'#50c878'}} className="text-gray-700 body-font w-screen">
   <div className="container px-5 py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
     <div className="w-80 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mr-60">
         <Link href={'/'} className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">

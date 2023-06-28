@@ -24,7 +24,7 @@ export default function BeMentorWithUs() {
   }
   return (
     <div className="w-screen flex headerformbox">
-       <div style={{height:"100vh"}} className=" bg-sky-500 firstformbox">
+       <div style={{height:"100vh"}} className=" bg-green-300 firstformbox">
        </div>
        <div className="formpos">
           <form onSubmit={handleSubmit} className="mt-4 ">
