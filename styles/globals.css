@@ -210,7 +210,7 @@ input::placeholder,textarea::placeholder{
 	display: flex;
   justify-content: space-evenly;
   text-align: center;
-  background: linear-gradient(320deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 55.90%, rgba(142, 228, 82, 0.94)100%);;
+  background: linear-gradient(320deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 55.90%, rgba(9, 248, 85, 0.94) 100%);;
   position:relative;
 }
 
@@ -232,7 +232,7 @@ input::placeholder,textarea::placeholder{
 	display: flex;
   justify-content: space-evenly;
   text-align: center;
-  background: linear-gradient(260deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 50.90%, rgba(46, 255, 126, 0.94) 99.86%);;
+  background: linear-gradient(260deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 50.90%);;
   position:relative;
 }
 
@@ -257,7 +257,7 @@ input::placeholder,textarea::placeholder{
   width:13rem;
 } 
 .datamile2{
-  background:linear-gradient(to bottom right,rgb(200, 250, 21),rgb(25, 255, 98));
+  background:linear-gradient(to bottom right,rgb(24, 50, 252),rgb(25, 255, 98));
   border-radius:10px;
   width:13rem;
 } 
@@ -266,19 +266,19 @@ input::placeholder,textarea::placeholder{
   justify-content: space-evenly;
 }
 .data1{
-  background:linear-gradient(to bottom right,rgb(245, 124, 124),rgb(235, 187, 98));
+  background:linear-gradient(to bottom right,rgb(251, 70, 203),rgb(249, 53, 89));
   border-radius:10px;
 } 
 .data2{
-  background:linear-gradient(to bottom right,rgb(249, 249, 65),rgb(9, 106, 141));
+  background:linear-gradient(to bottom right,rgb(249, 65, 194),rgb(9, 106, 141));
   border-radius:10px;
 } 
 .data3{
-  background:linear-gradient(to bottom right,rgb(85, 251, 55),rgb(245, 183, 12));
+  background:linear-gradient(to bottom right,rgb(55, 156, 251),rgb(230, 12, 245));
   border-radius:10px;
 } 
 .data4{
-  background:linear-gradient(to bottom right,rgb(245, 162, 221),rgb(240, 153, 22));
+  background:linear-gradient(to bottom right,rgb(244, 96, 202),rgb(240, 22, 120));
   border-radius:10px;
 } 
 
@@ -514,7 +514,7 @@ input::placeholder,textarea::placeholder{
 }
 .headingbox{
   /* background:rgb(51, 199, 236); */
-  background: linear-gradient(260deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 50.90%, rgba(157, 212, 109, 0.94) 99.86%);;
+  background: linear-gradient(260deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 50.90%, rgba(26, 171, 120, 0.94) 99.86%);;
   padding:25px;
   
 }
