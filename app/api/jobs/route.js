@@ -29,7 +29,7 @@ export const GET = async(req,{params}) => {
                         { null:category },
                         { "Category":category } // "companyName"
                     ],
-                    // "isIntern":intern,
+                    "isIntern":intern,
                     $or: [
                         { "isStartUp": startup },
                         { "isStartUp": { $exists: false } }

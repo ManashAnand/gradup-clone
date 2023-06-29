@@ -153,7 +153,25 @@ export default function Profile() {
         }
       }
 
-      //
+      // For converting a user into alumni;
+      const beAlumni=async(e)=>{
+
+        try{
+          const response = await fetch(`/api/user/${session?.user.id}/?type=alumni&action=update`,{
+            method:"POST",
+            body:JSON.stringify({
+              data:"aaa"
+            })
+          });
+          console.log(response.status);
+        }catch(error){
+          console.log(error);
+        }finally{
+
+        }
+      }
+
+
       const addNewAchievement=async (e)=>{
         console.log(e.target[0].value);
         try {
@@ -178,6 +196,7 @@ export default function Profile() {
           <Link href={'/user/applications'} className='mt-7'>
             <Button flat color="primary">Your Applications</Button>
           </Link>
+          <Button onClick={beAlumni} flat color="primary">Enter Alumni</Button>
           {/* <p className='desc text-left'>{data.email}</p> */}
         </section>
         <section className='border-solid border-white border-2 rounded-xl'>

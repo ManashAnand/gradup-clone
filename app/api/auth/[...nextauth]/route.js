@@ -45,10 +45,10 @@ const handler = NextAuth({
                         skills: "",
                         interest: "",
                         location: "",
-                        gender: False,
+                        gender: false,
                         achievement: [],
                         role:"User",
-                        isAlumni:False,
+                        isAlumni:false,
                         joinDate:new Date()
                     })
                 }

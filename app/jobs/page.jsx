@@ -55,72 +55,12 @@ function Page({ index }) {
   if (!data) return <div className="my-60"><Spinner/></div>;
   const jobs=data;
   console.log(jobs);
-  // const [previousUrl, setPreviousUrl] = useState(router.asPath);
-  // const handleRouteChangeStart = (url) => {
-  //   console.log('Route change started:', url);
-  // };
-  // useEffect(() => {
-  //   const handleStart = (url) => handleRouteChangeStart(url);
-  //   router.events.on('routeChangeStart', handleStart);
-
-  //   return () => {
-  //     router.events.off('routeChangeStart', handleStart);
-  //   };
-  // }, []);
-  // const fetchJobs = async () => {
-  //   const response = await fetch(`/api/jobs/?page=${index}&?intern=false`);
-  //   const data = await response.json();
-  //   console.log(data);
-  //   setJobs(data);
-  // };
   function handleCity(data) {
     setSelectedCity(data);
   }
   function handleTitle(data) {
     setSelectedTitle(data);
   }
-  // const handleSubmit = async (e) => {
-  //   // e.preventDefault();
-  //   try {
-  //     var Location = []
-  //     let Stipend = 0
-  //     let Title = []
-  //     try {
-  //       Stipend = searchParams.get('stipend')
-  //       Location = searchParams.get('location').split(',')
-  //       Title = searchParams.get('title').split(',')
-  //       console.log("Title is this",Title)
-  //       console.log("Location is this",Location)
-  //       console.log("Stipend is this",Stipend)
-  //     } catch (e) {}
-  //     const response = await fetch(`/api/jobs/filter/?intern=false`, {
-  //       method: "POST",
-  //       body: JSON.stringify({
-  //         location: [],
-  //         title: Title,
-  //         stipend: Stipend,
-  //       }),
-  //     });
-  //     const d = await response.json();
-  //     console.log(d);
-  //     setJobs(d);
-  //   } catch (error) {
-  //     console.log(error);
-  //   } finally {
-  //   }
-  // };
-
-  // const getNewPage = () =>{
-  //   let locationString =  Object.values(selectedCity).map(item => item.value).join(',');
-  //   let titleString = Object.values(selectedTitle).map(item => item.value).join(',');
-  //   const query = 'stipend='+salaryExp.toString()+'&location='+locationString.toString()+'&title='+titleString
-  //   // router.push(`/jobs?${query}`);
-  //   window.open(`http://localhost:3000/jobs?${query}`);
-  // }
-
-  // useEffect(() => {
-  //   handleSubmit();
-  // }, []);
 
   const changeSalaryRxp = (event) => {
     setSalaryExp(event.target.value);

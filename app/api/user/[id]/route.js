@@ -177,6 +177,15 @@ export const POST = async(request, { params }) => {
             }
         }
 
+        if(type=="alumni" && action=="update"){
+            const updateUser = await User.findOneAndUpdate({_id:params.id}, {
+                    "$set":{
+                        "isAlumni": true,
+                        }
+                    })
+            return new Response(("Alumni Updated"), { status: 201 })
+        }
+
 
         return new Response("Error", { status: 500 })
     } catch (error) {

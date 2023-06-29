@@ -4,10 +4,8 @@ import { connectToDB } from "@utils/database";
 import Job from '@models/job';
 export const POST = async(request) => {
     const { coverLetter, userId, projects, jobId, resume, joiningDate, CTC } = await request.json();
-    console.log(userId);
     await connectToDB();
     const currentUser = await User.findById(userId);
-    console.log(currentUser);
     try {
         const allProjects = currentUser.project
         const selectedProject = []
@@ -38,6 +36,9 @@ export const POST = async(request) => {
         });
 
         await newApplication.save();
+        const currUser = await User.findOne({_id:userId});
+        currUser.appliedJobs.push(jobId);
+        await currUser.save();
         const currJob = await Job.findOne({_id:jobId})
         currJob.appliedCandidates.push(userId);
         await currJob.save()
