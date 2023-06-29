@@ -7,6 +7,9 @@ export const POST = async(request) => {
     try {
         await connectToDB();
         const newJob = new Job({ 
+            hrId:data.HRId,
+            logo:"",
+            isStartUp:false,
             title:data.title,
             isIntern: false,
             companyName: data.companyName,

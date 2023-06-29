@@ -14,6 +14,8 @@ export const POST = async(request) => {
         for (let i = 0; i < allProjects.length; i++) {
             if (projects.includes(allProjects[i].id)) selectedProject.push(allProjects[i])
         }
+        const applicationAlreadyExists = await Application.findOne({_id:jobId+"_"+userId});
+        if(applicationAlreadyExists)return new Response("You Have Already Applied.",{status:501})
         const newApplication = new Application({
             _id:jobId+"_"+userId,
             userID: userId,

@@ -8,7 +8,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const page = ({params}) => {
     let index=1;
   const { data: session } = useSession();
-  const { data, error } = useSWR( `/api/hr/${session?.user.id}/postedJob/${params.id}/?page=${index}`, fetcher)
+  const { data, error } = useSWR( `/api/hr/${session?.user.id}/postedJob/${params.id}`, fetcher)
   // ... handle loading and error states
   if (error) return <div>Failed to loadinggggggg job data</div>;
   if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;

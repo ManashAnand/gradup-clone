@@ -36,9 +36,12 @@ const page = ({params}) => {
           }),
         });
         console.log(response.status)
-        // if(response.status===201){
-        //   setSubmit(true)
-        // }
+        if(response.status==201){
+          setSubmit(true)
+        }
+        else if(response.status==501){
+          console.log("Already applies") /// show front end
+        }
       } catch (error) {
         console.log(error);
       } finally {
