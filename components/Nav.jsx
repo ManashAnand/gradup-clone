@@ -20,7 +20,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav style={{backgroundColor:"#50c878"}} className='w-screen flex-between pt-3 shadow-xl p-4'>
+    <nav style={{backgroundColor:"#2aaa8a"}} className='w-screen flex-between pt-3 shadow-xl p-4'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
           src='/assets/images/gradup.jpg'
