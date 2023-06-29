@@ -146,6 +146,10 @@
   overflow: hidden;
   max-width: 500px;
 }
+.lg{
+  width:20px;
+  height:20px;
+}
 
 .slideshowSlider {
   white-space: nowrap;
@@ -165,8 +169,8 @@
 }
 .pos{
   position:fixed;
-  bottom:20px;
-  /* margin-left:59rem; */
+  bottom:40px;
+  right:0;
 }
 
 .slideshowDot {
