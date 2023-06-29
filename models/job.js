@@ -5,6 +5,9 @@ const JobSchema = new Schema({
     id: {
         type: String,
     },
+    hrId:{
+        type:String,
+    },
     logo:{
         type:String,
     },
@@ -73,6 +76,10 @@ const JobSchema = new Schema({
     },
     appliedCandidates: {
         type: [String],
+    },
+    isActive:{
+        type:Boolean,
+        default:true,
     }
 });
 

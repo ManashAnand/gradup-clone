@@ -33,7 +33,23 @@ const handler = NextAuth({
                         email:profile.email,
                         id:profile.email,
                         name:profile.name,
-                        profilePhoto:profile.picture
+                        profilePhoto:profile.picture,
+                        contactNo: "",
+                        appliedJobs: [],
+                        education: [],
+                        resume: "",
+                        project: [],
+                        bio: "",
+                        experience: [],
+                        social: [],
+                        skills: "",
+                        interest: "",
+                        location: "",
+                        gender: False,
+                        achievement: [],
+                        role:"User",
+                        isAlumni:False,
+                        joinDate:new Date()
                     })
                 }
                 return true;

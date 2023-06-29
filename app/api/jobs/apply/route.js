@@ -1,7 +1,7 @@
 import Application from "@models/application";
 import {User} from "models/user";
 import { connectToDB } from "@utils/database";
-
+import Job from '@models/job';
 export const POST = async(request) => {
     const { coverLetter, userId, projects, jobId, resume, joiningDate, CTC } = await request.json();
     console.log(userId);
@@ -15,6 +15,7 @@ export const POST = async(request) => {
             if (projects.includes(allProjects[i].id)) selectedProject.push(allProjects[i])
         }
         const newApplication = new Application({
+            _id:jobId+"_"+userId,
             userID: userId,
             name: currentUser.name,
             jobID: jobId,
@@ -34,8 +35,10 @@ export const POST = async(request) => {
             expectedCTC: CTC
         });
 
-        const newApplicationID = await newApplication.save();
-        console.log(newApplicationID)
+        await newApplication.save();
+        const currJob = await Job.findOne({_id:jobId})
+        currJob.appliedCandidates.push(userId);
+        await currJob.save()
         return new Response(JSON.stringify(newApplication), { status: 201 })
     } catch (error) {
         console.log(error);
