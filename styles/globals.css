@@ -636,7 +636,7 @@ input::placeholder,textarea::placeholder{
 ::-webkit-Scrollbar-thumb{
 	border-radius: 10px;
 	background: #f4f4f5;
-	box-shadow: inset 0 0 20px #5555fa;
+	box-shadow: inset 0 0 20px #55fa65;
 }
 ::-webkit-Scrollbar-track{
 	border-radius: 10px;

@@ -172,7 +172,7 @@ export default function App() {
       <Table.Header columns={columns}>
         {(column) => (
           <Table.Column 
-            css={{textAlign:"center",backgroundColor:"$blue500",color:"WhiteSmoke",width:"30vw"}}
+            css={{textAlign:"center",backgroundColor:"$green600",color:"WhiteSmoke",width:"30vw"}}
             key={column.uid}
             hideHeader={column.uid === "actions"}
             allowsSorting
