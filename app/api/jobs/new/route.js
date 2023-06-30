@@ -11,7 +11,7 @@ export const POST = async(request) => {
             logo:"",
             isStartUp:false,
             title:data.title,
-            isIntern: false,
+            isIntern: data.isIntern,
             companyName: data.companyName,
             companyLink: data.companyLink,
             duration: data.duration,
