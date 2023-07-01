@@ -11,29 +11,21 @@ export const GET = async(req,{params}) => {
         const search=new URL(req.url).search;
         const urlParams=new URLSearchParams(search);
         pageNumber = urlParams.get('page');
-        let intern = urlParams.get('intern');
-        let startup = false;
-        try{ urlParams.get('startup'); } catch(e) { console.log("startup not found.")}
+        let intern = urlParams.get('intern') === "true" ? true : false;
+        let startup = urlParams.get('startup') === "true" ? true : false;
         await connectToDB();
         // for getting only the array of objects we can use . find method but we will use aggregate so that we can do more operation
         // const a=await Job.find();
         // console.log("aaa ",a);
         // category=Microsoft;
+        console.log(pageNumber,intern,startup,"Details of job here")
         const userDetails=await Job.aggregate
         ([
             {
                 $match:
                 {
-                    $or:
-                    [
-                        { null:category },
-                        { "Category":category } // "companyName"
-                    ],
                     "isIntern":intern,
-                    $or: [
-                        { "isStartUp": startup },
-                        { "isStartUp": { $exists: false } }
-                      ]
+                    "isStartUp":startup
                 }
             },
             {
@@ -47,7 +39,7 @@ export const GET = async(req,{params}) => {
     }
     catch(error){
         console.log(error);
-        return new Response("Failed to get User Details",{
+        return new Response(error,{
             status:500
         })
     }

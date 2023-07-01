@@ -8,69 +8,94 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 import { useSearchParams } from "next/navigation";
+const vari=1;
+function Page({ selectedCity, selectedTitle, salaryExp, search,index ,searchresults,setSearchresults}) {
+  const [jobs,setJobs] = useState(null);
+  // const { data, error } = useSWR(
+  //   `/api/jobs/?page=${index}&startup=false&intern=false`,
+  //   fetcher
+  // );
 
-function Page({ index, selectedCity, selectedTitle, salaryExp }) {
-  const cityList = [
-    { value: "delhi", label: "delhi" },
-    { value: "mumbai", label: "mumbai" },
-    { value: "dehradun", label: "dehradun" },
-    { value: "patna", label: "patna" },
-    { value: "gaya", label: "gaya" },
-    { value: "remote", label: "remote" },
-  ];
-  const titleList = [
-    { value: "SDE", label: "SDE" },
-    { value: "business analyst", label: "business analyst" },
-    { value: "hr", label: "hr" },
-    { value: "ml intern", label: "ml intern" },
-    { value: "software engineer", label: "software engineer" },
-  ];
-  const { data, error } = useSWR(
-    `/api/jobs/?page=${index}&startup=true&intern=true`,
-    fetcher
-  );
-  if (error) return <div>Failed to loadinggggggg</div>;
-  if (!data) return <div>Loading...</div>;
-  const jobs = data;
-  console.log(jobs);
+  useEffect(()=>{
+    fetchData();
+  },[salaryExp,selectedCity,selectedTitle]);
+  const fetchData = async() =>{
+
+    try {
+      console.log("Cities Selected: ",selectedCity,"Title Selected: ",selectedTitle);
+    const response = await fetch(`/api/jobs/filter`, {
+      method: "POST",
+      body: JSON.stringify({
+        location:selectedCity,
+        stipend:salaryExp,
+        title:selectedTitle,
+        intern:"false",
+        startup:"false",
+        page:1
+      }),
+    });
+    console.log(response.status)
+    const newData = await response.json();
+    setJobs(newData);
+    console.log(newData,"Data is here");
+    }   catch (error) {
+        console.log(error);
+      } 
+  }
+
   function handleSubmit() {}
+  
   return (
-    <section className="w-full">
-      <div className="sortpos">
-        <p className="-ml-10 text-gray-500 text-sm font-bold">Sort by:</p>
-        <button className="btn6">Recently Released</button>
-        <button className="btn6">Alphabetical</button>
+      <>
+    {/* {search.length >= 0 ? (
+      <div style={{ backgroundColor: "#0076ce" }} className="mt-10 arrange">
+        {searchresults.map((ele, i) => (
+          <ListContentCard post={ele} />
+        ))}
       </div>
-      <div className="main-content">
-        <div className="mt-10 arrange">
-          {jobs.map((job) => (
-            <ListContentCard post={job} />
-          ))}
-        </div>
+    ) : jobs.length > 0 ? ( */}
+      {jobs!=null ? (
+      <div style={{ backgroundColor: "#0076ce" }} className="mt-10 arrange">
+        {jobs.map((job) => (
+          <ListContentCard post={job} />
+        ))}
+      </div>) : (<></>)}
+    {/* ) : (
+      <div className="text-white text-center m-auto text-2xl">
+        No more Jobs to display!!
+        <br />
+        Please go to previous Page
       </div>
-    </section>
+    )} */}
+    </>
   );
 }
 
-export default function ShowJobs({ selectedCity, selectedTitle, salaryExp }) {
+export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, search,index,searchresults,setSearchresults }) {
   const [pageIndex, setPageIndex] = useState(0);
 
   return (
     <div>
       <div className="justify-center flex-center">
         <Page
-          index={pageIndex}
+          // index={pageIndex}
           selectedCity={selectedCity}
           selectedTitle={selectedTitle}
           salaryExp={salaryExp}
+          search={search}
+          index={index}
+          searchresults={searchresults}
+          setSearchresults={setSearchresults}
         />
       </div>
       <div style={{ display: "none" }}>
         <Page
-          index={pageIndex + 1}
+          // index={pageIndex + 1}
           selectedCity={selectedCity}
           selectedTitle={selectedTitle}
           salaryExp={salaryExp}
+          search={search}
+          index={index+1}
         />
       </div>
       <div className="flex buttonpos">

@@ -4,154 +4,86 @@ import useSWR from "swr";
 import { useState, useEffect } from "react";
 import { Input } from "@nextui-org/react";
 import Select from "react-select";
-import Spinner from "@components/Spinner"
+import Spinner from "@components/Spinner";
 import { useRouter } from "next/router";
 import Link from "next/link";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams } from "next/navigation";
+import FilterJobs from "@components/jobs/FilterJobs";
+import ShowJobs from "@components/jobs/ShowJobs";
+const cityList = [
+  { value: "delhi", label: "delhi" },
+  { value: "mumbai", label: "mumbai" },
+  { value: "dehradun", label: "dehradun" },
+  { value: "patna", label: "patna" },
+  { value: "gaya", label: "gaya" },
+  { value: "remote", label: "remote" },
+];
+const titleList = [
+  { value: "SDE", label: "SDE" },
+  { value: "business analyst", label: "business analyst" },
+  { value: "hr", label: "hr" },
+  { value: "ml intern", label: "ml intern" },
+  { value: "software engineer", label: "software engineer" },
+];
 
 function Page({ index }) {
-  const cityList = [
-    { value: "delhi", label: "delhi" },
-    { value: "mumbai", label: "mumbai" },
-    { value: "dehradun", label: "dehradun" },
-    { value: "patna", label: "patna" },
-    { value: "gaya", label: "gaya" },
-    { value: "remote", label: "remote" },
-  ];
-  const titleList = [
-    { value: "SDE", label: "SDE" },
-    { value: "business analyst", label: "business analyst" },
-    { value: "hr", label: "hr" },
-    { value: "ml intern", label: "ml intern" },
-    { value: "software engineer", label: "software engineer" },
-  ];
-
   const [selectedCity, setSelectedCity] = useState([]);
   const [selectedTitle, setSelectedTitle] = useState([]);
   const [salaryExp, setSalaryExp] = useState(5000);
   const [searchresults, setSearchresults] = useState([]);
-  const [search,setSearch]=useState("")
-  // function handleChange(e){
-  //   setSearch(e.target.value)
-  // }
-  // const [jobs, setJobs] = useState([]);
-  // If want to useSWR later on
-  const { data, error } = useSWR(
-    `/api/jobs/?page=${index}&?intern=false`,
-    fetcher
-  );
-
-  // function handleSearch(){
-  //   let results=data.filter((ele,i)=>{
-  //     return search===""?ele:ele.title.toLowerCase().includes(search.toLowerCase())
-  //   })
-  //   setSearchresults(results)
-  // }
-  // useEffect(()=>{
-  //   data?handleSearch():""
-  // },[search,data])
-  if (error) return <div>Failed to loadinggggggg</div>;
-  if (!data) return <div className="my-60"><Spinner/></div>;
-  const jobs=data;
-  console.log(jobs);
-  function handleCity(data) {
-    setSelectedCity(data);
-  }
-  function handleTitle(data) {
-    setSelectedTitle(data);
-  }
-
-  const changeSalaryRxp = (event) => {
-    setSalaryExp(event.target.value);
-  };
+  const [search, setSearch] = useState("");
+  
   return (
-    <section className='w-full mt-14'>
-          <div className="headerpos">
-            <div>
-          <div className='font-bold jobpos'>
-            <h1 className='text-white text-5xl'>Find your job &</h1>
-            <h1 className='text-blue-400 text-5xl'>and grab <span className="underline decoration-yellow-300 underline-offset-8">your opportunities</span></h1>
+    <section className="w-full mt-14">
+      <div className="headerpos">
+        <div>
+          <div className="font-bold jobpos">
+            <h1 className="text-white text-5xl">Find your job &</h1>
+            <h1 className="text-blue-400 text-5xl">
+              and grab{" "}
+              <span className="underline decoration-yellow-300 underline-offset-8">
+                your opportunities
+              </span>
+            </h1>
           </div>
           {/* <div className="inputcontainer">
             <input className="inputbox"  type="search" placeholder="🔍 Search Job Title"></input>
           </div> */}
-          </div>
-           <img className="giphy" src="assets/images/image.gif" alt="work-img"></img>
-          </div> 
-          <div>
-            <p className="heading my-20"></p>
-          </div>
-          {/* <div className="sortpos">
+        </div>
+        <img
+          className="giphy"
+          src="assets/images/image.gif"
+          alt="work-img"
+        ></img>
+      </div>
+      <div>
+        <p className="heading my-20"></p>
+      </div>
+      {/* <div className="sortpos">
             <p className="-ml-10 text-white text-sm">Sort by:</p>
             <button className="btn6">Recently Released</button>
             <button className="btn6">Alphabetical</button>
           </div> */}
-          <div className="main-content">
-            <div className="pt-16">
-                <div style={{backgroundColor:"#0076ce"}} className="filterbox">
-                <div>
-                  <div className="p-3">
-                  <Select
-                    options={cityList}
-                    placeholder="Select city"
-                    value={selectedCity}
-                    onChange={handleCity}
-                    isSearchable={true}
-                    isMulti
-                  />
-                  </div>
-                  <div className="p-3">
-                  <Select
-                    className="container"
-                    options={titleList}
-                    placeholder="Select job"
-                    value={selectedTitle}
-                    onChange={handleTitle}
-                    isSearchable={true}
-                    isMulti
-                  />
-                  </div>
-                </div>
-                <div className='text-center mt-4'>
-                  <Input
-                    type='range'
-                    onChange={changeSalaryRxp}
-                    min={5000}
-                    max={50000}
-                    step={5000}
-                    value={salaryExp}>
-                  </Input>
-                </div>
-                <div className="mt-4 text-center w-full">
-                <div className="salary">{`MIN SALARY - Rs. ${salaryExp}`}</div>
-                </div>
-                <div>
-                <button type='submit' className='btn4 mt-5'>Apply</button>
-                </div>
-                </div>
-            </div>
-            {search.length>0?<div style={{backgroundColor:"#0076ce"}} className='mt-10 arrange'> 
-            {searchresults.map((ele,i)=>(
-              <ListContentCard post={ele}/>
-            ))}</div>:jobs.length>0?<div style={{backgroundColor:"#0076ce"}} className='mt-10 arrange'> 
-              {jobs.map((job) => (
-                <ListContentCard 
-                  post={job}
-                />
-              ))}
-            </div>:<div className="text-white text-center m-auto text-2xl">No more Jobs to display!!<br/>Please go to previous Page</div>}
-          </div>
-        </section>
+      <div className="main-content">
+        <FilterJobs setSelectedCity={setSelectedCity}
+  setSelectedTitle={setSelectedTitle}
+  setSalaryExp={setSalaryExp}
+  selectedCity={selectedCity}
+  selectedTitle={selectedTitle}
+  salaryExp={salaryExp} />
+        <ShowJobs selectedCity={selectedCity} selectedTitle={selectedTitle} salaryExp={salaryExp} search={search} index={index}/>
+      </div>
+    </section>
   );
 }
 
 export default function App() {
   const [pageIndex, setPageIndex] = useState(0);
-  const [opacity,setOpacity]=useState(1)
-  useEffect(()=>{
-    pageIndex===0?setOpacity(0.2):setOpacity(1)
-  })
+  const [opacity, setOpacity] = useState(1);
+  useEffect(() => {
+    pageIndex === 0 ? setOpacity(0.2) : setOpacity(1);
+  });
   return (
     <div>
       <div className="justify-center flex-center">
@@ -161,7 +93,12 @@ export default function App() {
         <Page index={pageIndex + 1} />
       </div> */}
       <div className="flex buttonpos mb-16">
-        <button style={{opacity:opacity}} disabled={pageIndex===0?true:false} class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
+        <button
+          style={{ opacity: opacity }}
+          disabled={pageIndex === 0 ? true : false}
+          class="btn2"
+          onClick={() => setPageIndex(pageIndex - 1)}
+        >
           Prev
         </button>
         <button class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
