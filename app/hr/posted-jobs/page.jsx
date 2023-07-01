@@ -63,7 +63,7 @@ export default function App() {
       case "title":
         return (
           <Row>
-              <Text b size={14} css={{ tt: "capitalize" }}>
+              <Text b size={14} css={{ tt: "capitalize",color:"$accents2"  }}>
                 {cellValue}
               </Text>
             </Row>
@@ -71,7 +71,7 @@ export default function App() {
       case "impression":
         return (
             <Row>
-              <Text b size={14} css={{ tt: "capitalize" }}>
+              <Text b size={14} css={{ tt: "capitalize",color:"$accents2" }}>
                 {cellValue}
               </Text>
             </Row>
@@ -79,7 +79,7 @@ export default function App() {
       case "status":
         return (
         <Row>
-          <Text b size={14} css={{ tt: "capitalize" }}>
+          <Text b size={14} css={{ tt: "capitalize",color:"$accents2"  }}>
             {cellValue}
           </Text>
         </Row>
@@ -87,8 +87,8 @@ export default function App() {
       case "canSee":
         return (
           <Row>
-              <Text b size={14} css={{ tt: "capitalize" }}>
-                {(cellValue==false)?<Link href='/jobs' className='outline_btn'>
+              <Text b size={14} css={{ tt: "capitalize",color:"$accents6"  }}>
+                {(cellValue==false)?<Link href='/jobs' className=''>
                                     Buy Premium
                                   </Link>:<Button>Open</Button>}
               </Text>
@@ -133,13 +133,14 @@ export default function App() {
     }
   };
   return (
-    <div className='w-full'>
+    <div className='w-full mb-32'>
     <div className='w-9/10'>
-        <h1 className='secondary_text text-left mb-8'>
-            <span className='blue_gradient'>Jobs that you posted</span> 
+        <h1 className='my-8 text-center'>
+            <span className='text-white text-4xl font-semibold mb-10 textnew'>Jobs Posted</span> 
         </h1>
     <Table
       aria-label="Example table with custom cells"
+      color="primary"
       css={{
         height: "auto",
         minWidth: "100%",
@@ -151,6 +152,7 @@ export default function App() {
           <Table.Column
             key={column.uid}
             hideHeader={column.uid === "actions"}
+            css={{backgroundColor:"$cyan600",fontSize:"15px",color:"WhiteSmoke",width:"30vw"}}
             align={column.uid === "actions" ? "center" : "start"}
           >
             {column.name}
