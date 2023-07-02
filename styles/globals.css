@@ -194,7 +194,7 @@ input::placeholder,textarea::placeholder{
 }
 .displayprofile{
   display:flex;
-  padding:3rem;
+  padding:3rem 3rem 0 3rem;
   gap:3rem;
 }
 
@@ -334,7 +334,7 @@ input::placeholder,textarea::placeholder{
 .giphy{
 
   margin-left:10vh;
-  width:20vw;
+  width:22vw;
   border-radius:40px;
 }
 .main-content{
@@ -402,8 +402,9 @@ input::placeholder,textarea::placeholder{
 }
 .arrange{
   background-image: linear-gradient(150.74deg, rgba(69, 146, 253, 0.266012) 15.21%, rgba(248, 199, 234, 0.779514) 22.96%, rgba(239, 203, 227, 0.711805) 45.74%, rgba(0, 120, 234, 0.1602) 91.53%, rgba(66, 169, 249, 0.19) 98.92%, rgba(38, 134, 200, 0.0842839) 98.93%, rgba(152, 198, 224, 0.37) 98.96%, rgba(176, 227, 255, 0.378155) 99.65%, rgba(9, 129, 197, 0) 100.35%, #FFC8E3 1.07%);
-  padding:40px;
-  min-width:40vw;
+  padding:20px;
+  min-width:50vw;
+  /* width:auto; */
   border-radius:20px;
   margin-left:18vh;
   margin-top:3vh;
@@ -623,6 +624,10 @@ input::placeholder,textarea::placeholder{
   gap:100px;
   padding:30px;
   flex-wrap: wrap;
+}
+.message{
+  margin-left: 10rem;
+  margin-top: 6rem;
 }
 .flexBox{
   display:flex;
@@ -1085,8 +1090,7 @@ input::placeholder,textarea::placeholder{
   }
   .arrange{
     margin-left:0;
-    padding-left:20px;
-    padding-right:20px;
+    padding:10px 5px;
   }
   .filterbox{
     margin:-15vh auto 10vh auto;
@@ -1139,6 +1143,9 @@ input::placeholder,textarea::placeholder{
   .founderimg{
     width:90vw;
     height:70vh;
+  }
+  .message{
+    margin-left: 0rem;
   }
   .milestones{
     display:grid;

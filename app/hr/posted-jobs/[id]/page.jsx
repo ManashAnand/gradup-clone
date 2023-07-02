@@ -3,7 +3,7 @@ import useSWR from 'swr';
 import {useSession} from "next-auth/react";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
-import { Card, Grid, Row, Text } from "@nextui-org/react";
+import { Card, Grid, Row, Text, Avatar } from "@nextui-org/react";
 import Spinner from "@components/Spinner"
 import {useState,useEffect} from "react"
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -18,16 +18,6 @@ export default function Page({params}){
     setPos(i)
     console.log(data[i])
   }
-  const createPDF = async() => {   
-    const pdf = new jsPDF("portrait", "pt", "a4"); 
-    const data =await html2canvas(document.querySelector("#profile"));
-    const img = data.toDataURL("image/png");  
-    const imgProperties = pdf.getImageProperties(img);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-    pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight);
-    pdf.save("Resume.pdf");
-  };
   // async function fetch_data(){
   //   let data=await fetch(`/api/hr/${session?.user.id}/postedJob/${params.id}?page=1`)
   //   let parsedData=await data.json()
@@ -46,10 +36,21 @@ export default function Page({params}){
   if (error) return <div>Failed to loadinggggggg job data</div>;
   if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;
   console.log("data come isssssssssssssssssssssssssssss",data);
+  // const createPDF = async(index) => {   
+  //   const pdf = new jsPDF("portrait","mm","a4"); 
+  //   let dataprofile= await data
+  //   const data1 =await html2canvas(document.querySelector("#profile"));
+  //   const img = data1.toDataURL("image/png");  
+  //   const imgProperties = pdf.getImageProperties(img);
+  //   const pdfWidth = pdf.internal.pageSize.getWidth();
+  //   const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
+  //   pdf.addImage(img, "PNG", 0, 0, pdfWidth,pdfHeight);
+  //   pdf.save(`${dataprofile[index].name}.pdf`)
+  // };
   return (
     <>
     <div className='w-screen displayprofile'>
-          <div className={data.length>0?"grid grid-cols-1 overflow-y-scroll cardslide pr-6 gap-y-6 gap-x-10 mb-6":""}>
+          <div className={data.length>1?"grid grid-cols-1 overflow-y-scroll cardslide pr-6 gap-y-6 gap-x-10 mb-6":"grid grid-cols-1 cardslide pr-6 gap-y-6 gap-x-10 mb-6"}>
             {data.length>0?data.map((ele, i) => {
               return(
                 <a href="#profile">
@@ -67,14 +68,16 @@ export default function Page({params}){
                       <Text css={{fontSize: "$sm" ,pb:"$5",textAlign:"center"}}>
                       {ele.education.length>0?ele.education[0].collegeName:"Shree Agrasen Academy"}
                       </Text>
-                  <button onClick={createPDF} style={{backgroundColor:"#29335c"}} className="px-7 py-1 text-xs text-white mb-3 rounded-full">Download Resume</button>
+                  <button onClick={()=>handleClick(i)} style={{backgroundColor:"#29335c"}} className="px-7 py-1 text-xs text-white mb-3 rounded-full">Resume Details</button>
                 </Card>
                 </a>
              )}):""}
              </div>
-             {status?data.length>0?<div id="profile" style={{height:"fit-content"}} className='bg-white px-5 py-5 textnew text-sm mx-auto adjust' >
-                {data.length>0?<p className='text-xl'><span className=" font-semibold underline text-xl underline-offset-4 decoration-yellow-400">Name :</span> {data[pos].name}</p>:""}
-                {data.length>0?<p className='mt-3 font-semibold text-xl underline underline-offset-4 decoration-yellow-400'>Education</p>:""}
+             {status?data.length>0?<div id="profile" style={{height:"fit-content",backgroundColor:"#2aaa8a"}} className='bg-white px-12 py-5 textnew mx-auto adjust' >
+                {data.length>0?<p className='text-2xl text-center mb-2'><span className=" font-semibold underline text-xl underline-offset-8 decoration-white"><img className='mx-auto mb-2' width="60" src="/assets/images/profpic.png"/>
+         </span> {data[pos].name.toUpperCase()}</p>:""}
+        <hr className='my-3'/>
+                {data.length>0?<p className='my-3 font-semibold text-2xl text-white underline underline-offset-8 decoration-green-300'>Education</p>:""}
                 {data.length>0?data[pos].education.map((ele,i)=>{
                   return(
                     <div className='mb-2' key={i}>
@@ -85,7 +88,7 @@ export default function Page({params}){
                     </div>
                   )
                 }):""}
-                {data.length>0?<p className='mt-3 font-semibold text-xl underline underline-offset-4 decoration-yellow-400'>Experience</p>:""}
+                {data.length>0?<p className='my-3 font-semibold text-2xl text-white underline underline-offset-8 decoration-green-300'>Experience</p>:""}
                 {data.length>0?data[pos].experience.map((ele,i)=>{
                   return(
                     <div className='mb-2' key={i}>
@@ -93,15 +96,15 @@ export default function Page({params}){
                       <p>Title: {ele.title}</p>
                       <p>Location: {ele.location}</p>
                       <p>Description: {ele.description}</p>
-                      <p>Skills: {ele.skills.map((item,i)=>{
+                      <p className='mb-1'>Skills Used: {ele.skills.map((item,i)=>{
                         return(
-                          <span>{item}, </span>
+                          <p className="text-sm">{i+1}. {item}</p>
                         )
                       })}</p>
                     </div>
                   )
                 }):""}
-                {data.length>0?<p className='mt-3 font-semibold text-xl underline underline-offset-4 decoration-yellow-400'>Projects</p>:""}
+                {data.length>0?<p className='my-3 font-semibold text-2xl text-white underline underline-offset-8 decoration-green-300'>Projects</p>:""}
                 {data.length>0?data[pos].project.map((ele,i)=>{
                   return(
                     <div className='mb-2' key={i}>
@@ -111,15 +114,15 @@ export default function Page({params}){
                     </div>
                   )
                 }):""}
-              {data.length>0?<p className='mt-3 font-semibold text-xl underline underline-offset-4 decoration-yellow-400'>Achievements</p>:""}
+              {data.length>0?<p className='my-3 font-semibold text-2xl text-white underline underline-offset-8 decoration-green-300'>Achievements</p>:""}
               {data.length>0?data[pos].achievement.map((ele,i)=>{
                   return(
                     <div className='mb-2' key={i}>
-                      <li>{ele.achievementName}</li>
+                      <p>{i+1}. {ele.achievementName}</p>
                     </div>
                   )
                 }):""}
-             </div>:<div className='text-white text-3xl mx-auto my-20 text-center textnew'>No More Profile Available</div>:""}
+             </div>:<div></div>:""}
         </div>
         <div className="flex buttonpos mb-16">
         <button disabled={index===0?true:false} class="btn2" onClick={() => setIndex(index - 1)}>Prev</button>
