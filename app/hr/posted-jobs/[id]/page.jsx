@@ -18,16 +18,16 @@ export default function Page({params}){
     setPos(i)
     console.log(data[i])
   }
-  // const createPDF = async() => {   
-  //   const pdf = new jsPDF("portrait", "pt", "a4"); 
-  //   const data =await html2canvas(document.querySelector("#profile"));
-  //   const img = data.toDataURL("image/png");  
-  //   const imgProperties = pdf.getImageProperties(img);
-  //   const pdfWidth = pdf.internal.pageSize.getWidth();
-  //   const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-  //   pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight);
-  //   pdf.save("Resume.pdf");
-  // };
+  const createPDF = async() => {   
+    const pdf = new jsPDF("portrait", "pt", "a4"); 
+    const data =await html2canvas(document.querySelector("#profile"));
+    const img = data.toDataURL("image/png");  
+    const imgProperties = pdf.getImageProperties(img);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
+    pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight);
+    pdf.save("Resume.pdf");
+  };
   // async function fetch_data(){
   //   let data=await fetch(`/api/hr/${session?.user.id}/postedJob/${params.id}?page=1`)
   //   let parsedData=await data.json()
@@ -67,7 +67,7 @@ export default function Page({params}){
                       <Text css={{fontSize: "$sm" ,pb:"$5",textAlign:"center"}}>
                       {ele.education.length>0?ele.education[0].collegeName:"Shree Agrasen Academy"}
                       </Text>
-                  <button onClick={()=>handleClick(i)} style={{backgroundColor:"#29335c"}} className="px-7 py-1 text-sm text-white my-2 rounded-full">Details</button>
+                  <button onClick={createPDF} style={{backgroundColor:"#29335c"}} className="px-7 py-1 text-xs text-white mb-3 rounded-full">Download Resume</button>
                 </Card>
                 </a>
              )}):""}
