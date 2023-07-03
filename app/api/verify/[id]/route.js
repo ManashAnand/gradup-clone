@@ -10,9 +10,9 @@ export const POST = async(request, { params }) => {
     try {
         await connectToDB();
         if (params.id != "undefined") {
-            const userOTP = await OTP.findById(params.id);
-            if(!userOTP)return new Response("Unauthorized Request", { status: 500 })
-            if(userOTP.otp!=submittedOTP)return new Response("Wrong OTP, Try Again", { status: 500 })
+            // const userOTP = await OTP.findById(params.id);
+            // if(!userOTP)return new Response("Unauthorized Request", { status: 500 })
+            // if(userOTP.otp!=submittedOTP)return new Response("Wrong OTP, Try Again", { status: 500 })
             const currUser = await User.findById(params.id);
             currUser.role="HR";
             const upUser = await currUser.save();
@@ -22,11 +22,11 @@ export const POST = async(request, { params }) => {
             if(!HRExists){
                 await HR.create({
                     _id:params.id,
-                    email:currUser.email,
+                    companyEmail:data.companyEmail,
                     name:currUser.name,
-                    companyName:"Shypt Solution",
+                    companyName:data.companyName,
                     posts:[],
-                    contact:""
+                    contact:data.contact
                 })
             }
             return new Response("You are now a HR. Mobile Number Verified.", { status: 201 })

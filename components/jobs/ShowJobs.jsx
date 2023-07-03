@@ -20,11 +20,11 @@ function Page({ selectedCity, selectedTitle, salaryExp, search,index ,searchresu
 
   useEffect(()=>{
     fetchData();
-  },[salaryExp,selectedCity,selectedTitle]);
+  },[salaryExp,selectedCity,selectedTitle,index]);
   const fetchData = async() =>{
 
     try {
-      console.log("Cities Selected: ",selectedCity,"Title Selected: ",selectedTitle);
+      console.log("Cities Selected: ",selectedCity,"Title Selected: ",selectedTitle,"Page No:",index);
     const response = await fetch(`/api/jobs/filter`, {
       method: "POST",
       body: JSON.stringify({
@@ -33,7 +33,7 @@ function Page({ selectedCity, selectedTitle, salaryExp, search,index ,searchresu
         title:selectedTitle,
         intern:"false",
         startup:"false",
-        page:1
+        page:index
       }),
     });
     console.log(response.status)
@@ -75,7 +75,7 @@ function Page({ selectedCity, selectedTitle, salaryExp, search,index ,searchresu
   );
 }
 
-export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, search,index,searchresults,setSearchresults,jobs }) {
+export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, search,index,searchresults,setSearchresults,setPage }) {
   const [pageIndex, setPageIndex] = useState(0);
 
   return (
@@ -103,10 +103,10 @@ export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, searc
         />
       </div>
       <div className="flex buttonpos">
-        <button style={{backgroundColor:"#0076ce"}} class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
+        <button style={{backgroundColor:"#0076ce"}} class="btn2" onClick={() => setPage(index - 1)}>
           Prev
         </button>
-        <button style={{backgroundColor:"#0076ce"}} class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
+        <button style={{backgroundColor:"#0076ce"}} class="btn3" onClick={() => setPage(index + 1)}>
           Next
         </button>
       </div>
