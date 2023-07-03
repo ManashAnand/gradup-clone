@@ -925,9 +925,6 @@ input::placeholder,textarea::placeholder{
     justify-content: center;
     align-items: center;
   }
-  .firstformbox{
-    height:60vh;
-  }
   .founderimg{
     width:70vw;
     height:100vh;
@@ -1009,6 +1006,9 @@ input::placeholder,textarea::placeholder{
   }
   .leftmargin{
     margin-left: 4rem;
+  }
+  .achievementbox{
+    height:72vh;
   }
   .rightmargin{
     margin-right: 4rem;
