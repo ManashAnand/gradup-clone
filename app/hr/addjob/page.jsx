@@ -156,7 +156,7 @@ const page = ({ params }) => {
               <div className="flex flex-col mx-auto w-full">
                 <div className="flex">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "1.6vh", marginLeft: "0.6em" }}><path d="M5 22h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2h-2a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2zM5 5h2v2h10V5h2v15H5V5z"></path><path d="m11 13.586-1.793-1.793-1.414 1.414L11 16.414l5.207-5.207-1.414-1.414z"></path></svg>
-                  <label className="text-sm text-white my-3 ml-1">Skills Required *</label>
+                  <label className="text-sm text-white my-3 ml-1">Skills Required * <span className="text-xs text-blue-600 textnew">(Comma seperated skills)</span></label>
                 </div>
                 <input className="rounded-md p-2" type="text" css={{ backgroundColor: "$white" }} clearable Placeholder="Skills" initialValue="" required />
               </div>

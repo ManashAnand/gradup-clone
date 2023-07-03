@@ -64,7 +64,7 @@ const FilterJobs = ({
   };
   return (
     <div className="pt-16">
-      <div style={{ backgroundColor: "#0076ce" }} className="filterbox">
+      <div style={{ backgroundColor: "darkturquoise" }} className="filterbox">
         <div>
           <div className="p-3">
             <Select

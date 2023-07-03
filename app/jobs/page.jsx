@@ -30,10 +30,9 @@ const titleList = [
 function Page({ index }) {
   const [selectedCity, setSelectedCity] = useState([]);
   const [selectedTitle, setSelectedTitle] = useState([]);
-  const [salaryExp, setSalaryExp] = useState(5000);
+  const [salaryExp, setSalaryExp] = useState(0);
   const [searchresults, setSearchresults] = useState([]);
   const [search, setSearch] = useState("");
-  
   return (
     <section className="w-full mt-14">
       <div className="headerpos">
@@ -79,32 +78,15 @@ function Page({ index }) {
 }
 
 export default function App() {
-  const [pageIndex, setPageIndex] = useState(0);
-  const [opacity, setOpacity] = useState(1);
-  useEffect(() => {
-    pageIndex === 0 ? setOpacity(0.2) : setOpacity(1);
-  });
+  const [pageIndex, setPageIndex] = useState(0); 
   return (
-    <div>
+    <div className="mb-32">
       <div className="justify-center flex-center">
         <Page index={pageIndex} />
       </div>
       {/* <div style={{ display: "none" }}>
         <Page index={pageIndex + 1} />
       </div> */}
-      <div className="flex buttonpos mb-16">
-        <button
-          style={{ opacity: opacity }}
-          disabled={pageIndex === 0 ? true : false}
-          class="btn2"
-          onClick={() => setPageIndex(pageIndex - 1)}
-        >
-          Prev
-        </button>
-        <button class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
-          Next
-        </button>
-      </div>
     </div>
   );
 }

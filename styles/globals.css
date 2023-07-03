@@ -313,14 +313,12 @@ input::placeholder,textarea::placeholder{
 .btn2{
   padding:0.2em 1em;
   border-radius:10px;
-  background:rgb(12, 102, 192);
   color:white;
   margin-right:1vw;
 }
 .btn3{
   padding:0.2em 1em;
   border-radius:10px;
-  background:rgb(12, 102, 192);
   color:white;
 }
 .btn4{
@@ -352,11 +350,10 @@ input::placeholder,textarea::placeholder{
   margin:auto;
 }
 .filterbox{
-  margin-top:-6vh;
-  padding:1em;
+  margin-top:-4vh;
+  padding:2em 0.4em;
   border-radius: 15px;
   background-image: linear-gradient(150.74deg, rgba(69, 146, 253, 0.266012) 15.21%, rgba(248, 199, 234, 0.779514) 22.96%, rgba(239, 203, 227, 0.711805) 45.74%, rgba(0, 120, 234, 0.1602) 91.53%, rgba(66, 169, 249, 0.19) 98.92%, rgba(38, 134, 200, 0.0842839) 98.93%, rgba(152, 198, 224, 0.37) 98.96%, rgba(176, 227, 255, 0.378155) 99.65%, rgba(9, 129, 197, 0) 100.35%, #FFC8E3 1.07%);
-  min-height:45vh;
   width:20vw;
 }
 .box6:hover,.box7:hover,.box8:hover,.box9:hover{
@@ -879,9 +876,11 @@ input::placeholder,textarea::placeholder{
     margin-left: -15vh;
   }
   .arrange{
-    grid-template-columns: repeat(1,1fr);
-    margin-left:15vh;
+    grid-template-columns: repeat(2,1fr);
+    margin-left:5vh;
     margin-top: auto;
+    padding:8px;
+    gap:8px;
   }
   .hackathons{
     grid-template-columns:repeat(1,1fr);
@@ -938,8 +937,8 @@ input::placeholder,textarea::placeholder{
     display:none;
   }
   .filterbox{
-    margin-top:-9vh;
-    width:28vw;
+    margin-top:-5vh;
+    width:27vw;
   }
   .buttonpos{
     justify-content:center;
@@ -1053,7 +1052,7 @@ input::placeholder,textarea::placeholder{
   }
   .giphy{
     display:block;
-    margin:5vh auto 8vh auto;
+    margin:5vh auto 15vh auto;
     width:60%;
   }
   .question{
@@ -1090,6 +1089,7 @@ input::placeholder,textarea::placeholder{
   }
   .arrange{
     margin-left:0;
+    margin-top:-3vh;
     padding:10px 5px;
   }
   .filterbox{
@@ -1166,6 +1166,10 @@ input::placeholder,textarea::placeholder{
    }
    .giphy{
     width:80%;
+   }
+   .arrange{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
    }
    .question{
     padding:0.2rem 1rem;
