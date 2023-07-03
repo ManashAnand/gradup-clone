@@ -24,7 +24,7 @@ export default function BeMentorWithUs() {
   }
   return (
     <div className="w-screen flex headerformbox">
-       <div style={{height:"100vh"}} className=" bg-sky-500 firstformbox">
+       <div className=" bg-sky-500 firstformbox">
        </div>
        <div className="formpos">
           <form onSubmit={handleSubmit} className="mt-4 ">
@@ -43,12 +43,12 @@ export default function BeMentorWithUs() {
                     type="text" 
                     required
                     placeholder="Enter Your Name"
-                    className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40'
+                    className=' w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40'
                 />
             </div>
           <div className="mb-2 mt-2">
                 <label
-                    className="block text-sm text text-red-500"
+                    className=" text-sm text text-red-500"
                 >
                     Company Name *
                 </label>
@@ -56,14 +56,14 @@ export default function BeMentorWithUs() {
                     type="text"
                     required
                     placeholder="Enter Company Name" 
-                    className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40'
+                    className=' w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40'
                 />
             </div>
             <div className="mb-4">
               <label
                 type="email"
                 htmlFor="email"
-                className="block text-sm text text-red-500"
+                className=" text-sm text text-red-500"
               >
                 Email *
               </label>
@@ -71,12 +71,12 @@ export default function BeMentorWithUs() {
                 type="email"
                 required
                 placeholder="Enter Your Email"
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className=" w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
             <div className="mb-2">
                 <label
-                    className="block text text-sm text-red-500"
+                    className=" text text-sm text-red-500"
                 >
                     Phone Number *
                 </label>
@@ -84,7 +84,7 @@ export default function BeMentorWithUs() {
                     type="text" 
                     required
                     placeholder="Enter 10 digit Mobile number"
-                    className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40'
+                    className=' w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40'
                 />
             </div>
             <div style={{display:"flex",justifyContent:"center"}}>
