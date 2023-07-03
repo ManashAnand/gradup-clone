@@ -33,9 +33,7 @@ export default function AlumniCard({data}) {
       </Card.Body>
       <Card.Footer css={{marginTop:"",display:"flex",justifyContent:"center"}}>
         <Link css={{backgroundColor:"WhiteSmoke",padding:"$1 $10",float:"right",borderRadius:"$2xl",border:"2px solid deepskyblue"}}
-          icon
-          target="_blank"
-          href="https://github.com/nextui-org/nextui"
+          href="#"
         >
           Contact
         </Link>

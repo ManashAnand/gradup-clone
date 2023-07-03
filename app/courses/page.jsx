@@ -427,8 +427,8 @@ const Courses = () => {
     </div>
   </>:<div>
      <img className="my-10 mx-auto" width="400" src="/assets/images/maintenance.gif" alt="maintenance"></img>
-     <p className="text-5xl text text-center text-sky-400 mt-4">Our Courses will be launched Soon.</p>
-     <p className="text-5xl text-center my-4 text text-sky-400">Stay tuned !!</p>
+     <p className="text-5xl text-center mt-4 textnew text-sky-400">Stay tuned !!</p>
+     <p className="text-4xl textnew text-center text-sky-400 mt-4 mb-16">Our Courses will be launched Soon.</p>
   </div>
   )
 }

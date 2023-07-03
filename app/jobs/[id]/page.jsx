@@ -3,6 +3,7 @@
 import ListContentCard from "@components/ListContentCard";
 import useSWR from 'swr';
 import Spinner from "@components/Spinner"
+import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import Link from "next/link";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -16,8 +17,8 @@ function Page ({ id }) {
   const jobs=data
     return (
         <div className='w-screen'>
-          <h1 className='mt-4 font-bold text-xl text-center'>
-            <span className="text-blue-400 text">{jobs.companyName} hiring for <span className="text-purple-500 underline underline-offset-4 decoration-2 decoration-red-300">{jobs.title}</span></span>
+          <h1 className='mt-8 font-semibold text-2xl text-center'>
+            <span className="text-blue-400 textnew">{jobs.companyName} hiring for <span className="text-purple-500 underline underline-offset-4 decoration-2 decoration-red-300">{jobs.title}</span></span>
           </h1>
           <div className='w-4/5 mx-auto'>
               <div>
@@ -49,6 +50,11 @@ function Page ({ id }) {
                   </div>
                   <input className="py-1 px-5 text-sm bg-white text-gray-600 rounded-md border-blue-300 border-2 w-5/6" value={jobs.noOfOpenings}></input>
                   <div className="flex mb-1">
+                  <MilitaryTechIcon style={{marginTop:"2.2vh",color:"white",marginLeft:"0.5em"}}/>
+                  <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Perks</label>
+                  </div>
+                  <div className="py-3 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">{jobs.perks}</div>
+                  <div className="flex mb-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style={{fill: "white",marginTop:"2.2vh",marginLeft:"1em"}}><path d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2zm-4 2v11H8V8h8zm-1-4v2H9V4h6zM4 8h2v11H4V8zm14 11V8h2l.001 11H18z"></path></svg>
                   <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Job Description</label>
                   </div>
@@ -62,7 +68,7 @@ function Page ({ id }) {
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style={{fill:"white",marginTop:"2.2vh",marginLeft:"1em"}}><path d="M5 22h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2h-2a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2zM5 5h2v2h10V5h2v15H5V5z"></path><path d="m11 13.586-1.793-1.793-1.414 1.414L11 16.414l5.207-5.207-1.414-1.414z"></path></svg>
                   <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Skills Required</label>
                   </div>
-                  <div className="py-3 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">
+                  <div className="py-2 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">
                   {jobs.skillsRequired[0].split(",").map((skill)=>(
                     <input readOnly className="py-2 mb-2 mr-3 bg-sky-300 text-sm text-center text-white rounded-md w-fit focus:outline-none" value={skill}></input>
                   ))}

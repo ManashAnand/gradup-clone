@@ -63,10 +63,6 @@ import { DeleteIcon } from "@styles/DeleteIcon";
 }
 export default function App() {
   const [pageIndex, setPageIndex] = useState(1);
-  const [opacity,setOpacity]=useState(1)
-  useEffect(()=>{
-    pageIndex===1?setOpacity(0.2):setOpacity(1)
-  })
   return (
     <div className='mt-10'>
       <div className="justify-center flex-center">
@@ -76,10 +72,10 @@ export default function App() {
         <Page index={pageIndex + 1} />
       </div> */}
       <div className="flex buttonpos mb-16">
-        <button style={{opacity:opacity}} disabled={pageIndex===1?true:false} class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
+        <button disabled={pageIndex===1?true:false} class="btn2 bg-sky-500" onClick={() => setPageIndex(pageIndex - 1)}>
           Prev
         </button>
-        <button class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
+        <button class="btn3 bg-sky-500" onClick={() => setPageIndex(pageIndex + 1)}>
           Next
         </button>
       </div>

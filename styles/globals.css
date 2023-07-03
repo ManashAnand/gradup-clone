@@ -311,14 +311,14 @@ input::placeholder,textarea::placeholder{
   background: rgba(0, 178, 255, 0.68);
 }
 .btn2{
-  padding:0.2em 1em;
-  border-radius:10px;
+  padding:0.2em 1.5em;
+  border-radius:8px;
   color:white;
   margin-right:1vw;
 }
 .btn3{
-  padding:0.2em 1em;
-  border-radius:10px;
+  padding:0.2em 1.5em;
+  border-radius:8px;
   color:white;
 }
 .btn4{
@@ -872,6 +872,9 @@ input::placeholder,textarea::placeholder{
   .heading,.heading1{
     opacity:0;
   }
+  .achievementbox{
+    height:50vh;
+  }
   .btn1{
     margin-left: -15vh;
   }
@@ -1146,6 +1149,9 @@ input::placeholder,textarea::placeholder{
   }
   .message{
     margin-left: 0rem;
+  }
+  .achievementbox{
+    height:40vh;
   }
   .milestones{
     display:grid;

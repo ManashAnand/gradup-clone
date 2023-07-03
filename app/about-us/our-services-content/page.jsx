@@ -2,7 +2,7 @@
 import styles from 'styles/Page.module.css'
 export default function Services() {
   return (
-    <div className="{styles.container} w-screen">
+    <div className="{styles.container} w-screen my-10">
        <p className="text-5xl font-semibold textnew mt-6 animate-charcter text-center">PRODUCTS & SERVICES</p>
         <div className={styles.content}>
         <img className="float-right ml-10" src="/assets/icons/logo.png" alt="logo" height="60" width="65"></img>
