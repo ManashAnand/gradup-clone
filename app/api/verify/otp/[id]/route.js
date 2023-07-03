@@ -64,9 +64,9 @@ function sendSMS(apikey, numbers, sender, message) {
             }
             else {
               currOTP = prevOTP.otp
-              // return new Response("OTP Already Sent. Try again after 15 Minutes." + currOTP, { status: 201 })
+              return new Response("OTP Already Sent. Try again after 15 Minutes." + currOTP, { status: 201 })
             }
-            sendSMS(process.env.SMS_VERIFY, userPhone,'600010', "Hi there, thank you for sending your first test message from Textlocal. See how you can send effective SMS campaigns here: https://tx.gl/r/2nGVj/");
+            // sendSMS(process.env.SMS_VERIFY, userPhone,'600010', "Hi there, thank you for sending your first test message from Textlocal. See how you can send effective SMS campaigns here: https://tx.gl/r/2nGVj/");
             return new Response("This is the OTP " + currOTP, { status: 201 })
         }
         return new Response("Params not Defined in OTP Verification", { status: 500 })

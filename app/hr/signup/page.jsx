@@ -101,13 +101,13 @@ export default function HRSignup() {
                 className="phonewidth px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
-            {/* <div className="mx-4 mt-7 ">
+            <div className="mx-4 mt-7 ">
               <button type="submit" className="otppos w-auto text-sm text bg-white text-violet-500 px-5 py-2 my-auto rounded-xl border-2 border-violet-300">
                 Get OTP
               </button>
-            </div> */}
             </div>
-            {/* {vari == 1 ? (
+            </div>
+            {vari == 1 ? (
               <>
                 <div>
                   <div className=" mb-4">
@@ -120,7 +120,7 @@ export default function HRSignup() {
               </>
             ) : (
               <></>
-            )} */}
+            )}
             <div className="mt-6">
               <button type="submit" className="mt-5 py-3 w-full font-bold border-violet-300 border-4 text-center bg-white text-violet-500 rounded-xl">
                 Submit

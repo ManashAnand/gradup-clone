@@ -92,7 +92,7 @@ const FilterJobs = ({
           <Input
             type="range"
             onChange={changeSalaryRxp}
-            min={5000}
+            min={0}
             max={50000}
             step={5000}
             value={salaryExp}

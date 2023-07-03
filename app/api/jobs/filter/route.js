@@ -8,7 +8,7 @@ export const POST = async (request, { params }) => {
         const titleArray = data.title;
         const locationArray = data.location;
         const page = parseInt(data.page);
-        const limit = 25;
+        const limit = 6;
         const skip = (page - 1) * limit;
         let intern = data.intern === "true" ? true : false;
         let startup = data.startup === "true" ? true : false;

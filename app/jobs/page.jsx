@@ -30,7 +30,7 @@ const titleList = [
 function Page({ index }) {
   const [selectedCity, setSelectedCity] = useState([]);
   const [selectedTitle, setSelectedTitle] = useState([]);
-  const [salaryExp, setSalaryExp] = useState(5000);
+  const [salaryExp, setSalaryExp] = useState(0);
   const [searchresults, setSearchresults] = useState([]);
   const [search, setSearch] = useState("");
   
