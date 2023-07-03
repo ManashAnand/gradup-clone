@@ -889,6 +889,9 @@ input::placeholder,textarea::placeholder{
   .hackathons{
     grid-template-columns:repeat(1,1fr);
   }
+  .firstformbox{
+    height:70vh;
+  }
   .question{
     padding:0.2rem 1rem;
     margin:auto 2rem;
