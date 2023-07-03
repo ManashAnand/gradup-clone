@@ -10,12 +10,14 @@ export default function About() {
        <div className="aboutbox mt-10">
           <div>
             <div>
-            <p className='text-3xl text my-6 text-sky-500'>About Company</p>
-            <p className='textnew text-white w-full'>GradUp is a platform that was founded with the aim of seamlessly matching individual expertise with the right opportunities. We empower talented students by providing them with relevant experience at fast-growing startups based on competencies and aspirations. These opportunities have a significant impact on their career success and help them become their best self. On the other hand, startups get instant access to top-quality students with guaranteed productivity from the very beginning. We help them to scale up/down based on their needs, thus ensuring an efficient and high-yielding workforce. Our advanced course includes Power BI, Artificial Intelligence, Robotics, Digital Marketing, and many more. Our dedicated modules and one-to-one connections with students in their placement preparation journey ensure that these aspirants get landed up to their dream jobs and dream profiles. In this information age, students do have a plethora of disorganized preparatory materials available online but systematic and step-by-step preparation and upskilling is what we plan to provide to our students. We do believe that there is practically no end to learning- but given the time constraints and the competition in this generation- you must learn and prioritize only what is the need of the hour. Come and enjoy being a part of our successful community. The CIN of the company is U80903JH2022PTC019112 and GST No. is 20AACCZ0257F1ZS.</p>
+            <p className='text-3xl text my-6 text-sky-500'>About Us</p>
+            <p className='text-white mb-1 textnew width-full'>Looking for talented and motivated interns who can add value to your startup? Want to save time and resources in finding and training the best candidates? Want to contribute to the skill development and career growth of India’s next generation of innovators and leaders?</p>
+            <p className='text-white mb-1 textnew width-full'>Partner with GradUp, the platform that connects you with the best students from engineering as well as business schools who are eager to learn from you. Post your internship requirements and we'll help you select the students who match your interests, skills, and goals. Get instant access to top-quality students who are productive from the start. Scale up or down your workforce based on your needs, ensuring an efficient and high-yielding workforce.</p>
+            <p className='text-white mb-1 textnew width-full'>Our platform has helped multiple companies to find and nurture the best interns who can contribute to their growth and success. We also provide you with tools and support to manage your internships effectively. We believe that internships are a win-win situation for both businesses and students, but you also need to find the right match. Partner with us today and discover the benefits of working with GradUp.</p>
             </div>
           </div>
           <div className='yes ml-12 mt-32'>
-            <img width="7000" src="/assets/images/employee.png" alt="company"></img>
+            <img width="2000" src="/assets/images/employee.png" alt="company"></img>
           </div>
        </div>
        <div className={styles.values}>

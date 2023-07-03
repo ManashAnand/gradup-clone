@@ -75,10 +75,7 @@ const Footer = () => {
             <a href="/about-us/terms-and-condition" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Terms and Conditions</a>
           </li>
           <li>
-            <a href="/about-us/refund-policies" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Refund Policies</a>
-          </li>
-          <li>
-            <a href="/about-us/cancellation-policy" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Cancellation Policy</a>
+            <a href="/about-us/cancellation-policy" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Refund & Cancellation Policy</a>
           </li>
         </nav>
       </div>

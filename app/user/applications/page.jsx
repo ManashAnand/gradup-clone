@@ -1,205 +1,208 @@
 "use client"
 import useSWR from 'swr';
+import{useState,useEffect} from "react"
 import {useSession} from "next-auth/react";
+import Spinner from "@components/Spinner"
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-import { Table, useAsyncList, useCollator, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
+import { Table, useAsyncList } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
 import { IconButton } from "@styles/IconButton";
 import { EyeIcon } from "@styles/EyeIcon";
 import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
 
-export default function App() {
+ function Page({index}) {  
+  const { data: session } = useSession();
+  var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}/appliedJobs?page=${index}` : null, fetcher)
+  if (error) return <div>userFailed to loadinggggggg</div>;
+  if (!data) return <div className="my-60"><Spinner/></div>;
+  let user=data
+  console.log("mohit",user);
   const columns = [
-    { name: "NAME", uid: "name" },
-    { name: "ROLE", uid: "role" },
-    { name: "STATUS", uid: "status" },
-    { name: "ACTIONS", uid: "actions" },
+    { name: "NAME", uid: "companyName" },
+    { name: "ROLE", uid: "title" },
+    // { name: "LOCATION",uid:"location"},
+    { name: "STATUS", uid: "isActive" },
+    { name: "APPLICANTS", uid: "appliedCandidates" },
   ];
-  const users =[
-    {
-      id: 1,
-      name: "Microsoft",
-      role: "CEO",
-      team: "Management",
-      status: "active",
-      age: "29",
-      avatar: "/assets/images/TalentConnects.png",
-      email: "tony.reichert@example.com",
-    },
-    {
-      id: 2,
-      name: "Apple",
-      role: "Technical Lead",
-      team: "Development",
-      status: "paused",
-      age: "25",
-      avatar: "/assets/images/TalentConnects.png",
-      email: "zoey.lang@example.com",
-    },
-    {
-      id: 3,
-      name: "Talent Connect",
-      role: "Senior Developer",
-      team: "Development",
-      status: "active",
-      age: "22",
-      avatar: "/assets/images/TalentConnects.png",
-      email: "jane.fisher@example.com",
-    },
-    {
-      id: 4,
-      name: "Microsoft",
-      role: "Community Manager",
-      team: "Marketing",
-      status: "vacation",
-      age: "28",
-      avatar: "/assets/images/TalentConnects.png",
-      email: "william.howard@example.com",
-    },
-    {
-      id: 5,
-      name: "Meta",
-      role: "Sales Manager",
-      team: "Sales",
-      status: "active",
-      age: "24",
-      avatar: "/assets/images/TalentConnects.png",
-      email: "kristen.cooper@example.com",
-    },
-  ];
-  const renderCell = (user, columnKey) => {
-    const cellValue = user[columnKey];
-    switch (columnKey) {
-      case "name":
-        return (
-          <User color="success" squared src={user.avatar} css={{ p: 0}}>
-            <Text css={{color:"white"}} b>{cellValue}</Text>
-            {/* {user.email} */}
-          </User>
-        );
-      case "role":
-        return (
-          <Col>
-            <Row>
-              <Text b size={14} css={{ tt: "capitalize",color:"white"}}>
-                {cellValue}
-              </Text>
-            </Row>
-            <Row>
-              <Text b size={13} css={{ tt: "capitalize", color: "$accents7" }}>
-                {user.team}
-              </Text>
-            </Row>
-          </Col>
-        );
-      case "status":
-        return <StyledBadge type={user.status}>{cellValue}</StyledBadge>;
-
-      case "actions":
-        return (
-          <Row justify="center" align="center">
-            <Col css={{ d: "flex" }}>
-              <Tooltip content="Details">
-                <IconButton onClick={() => console.log("View user", user.id)}>
-                  <EyeIcon size={20} fill="#979797" />
-                </IconButton>
-              </Tooltip>
-            </Col>
-            <Col css={{ d: "flex" }}>
-              <Tooltip content="Edit user">
-                <IconButton onClick={() => console.log("Edit user", user.id)}>
-                  <EditIcon size={20} fill="#979797" />
-                </IconButton>
-              </Tooltip>
-            </Col>
-            <Col css={{ d: "flex" }}>
-              <Tooltip
-                content="Delete user"
-                color="error"
-                onClick={() => console.log("Delete user", user.id)}
-              >
-                <IconButton>
-                  <DeleteIcon size={20} fill="#FF0080" />
-                </IconButton>
-              </Tooltip>
-            </Col>
-          </Row>
-        );
-      default:
-        return cellValue;
-    }
-  };
-  const collator = useCollator({ numeric: true });
-  async function load({ signal }) {
-    console.log(users)
-    return {
-      items:users,
-    };
-  }
-  async function sort({ items, sortDescriptor }) {
-    return {
-      items: items.sort((a, b) => {
-        let first = a[sortDescriptor.column];
-        let second = b[sortDescriptor.column];
-        let cmp = collator.compare(first, second);
-        if (sortDescriptor.direction === "descending") {
-          cmp *= -1;
-        }
-        return cmp;
-      }),
-    };
-  }
-  const list = useAsyncList({ load, sort });
   return (
-    <div className='w-full mb-32 mt-16'>
-        <p className='text-4xl text-center mb-8'>
-            <span className='textnew text-white'>Your Applications</span> 
-        </p>
+    <div className='w-full mt-16'>
+       <p className='text-4xl text-center mb-8'>
+       <span className='textnew text-white'>Your Applications</span>
+       </p>
         
-    <Table
-      aria-label="Example table with custom cells"
-      color="success"
-      css={{
-        height: "calc($space$14 * 5)",
-        minWidth: "100%",
-      }}
-      selectionMode="none"
-      sortDescriptor={list.sortDescriptor}
-      onSortChange={list.sort}
+    {user.length>0?<Table
+      aria-label="Example table with dynamic content & infinity pagination"
+      css={{ width: "100%"}}
+      color="primary"
     >
-      <Table.Header columns={columns}>
+      <Table.Header columns={columns} css={{backgroundColor:"blue"}}>
         {(column) => (
-          <Table.Column 
-            css={{textAlign:"center",backgroundColor:"$green600",color:"WhiteSmoke",width:"30vw"}}
-            key={column.uid}
-            hideHeader={column.uid === "actions"}
-            allowsSorting
-          >
-            {column.name}
-          </Table.Column>
+          <Table.Column css={{backgroundColor:"$cyan600",fontSize:"15px",px:"$4",color:"WhiteSmoke",width:"30vw",textAlign:"center"}} key={column.uid}>{column.name}</Table.Column>
         )}
       </Table.Header>
-      <Table.Body items={list.items}>
+      <Table.Body
+        items={user}
+      >
         {(item) => (
-          <Table.Row>
-            {(columnKey) => (
-              <Table.Cell css={{paddingLeft:"$28"}}>{renderCell(item, columnKey)}</Table.Cell>
-            )}
+          <Table.Row key={item._id}>
+            {(key) => <Table.Cell css={{color:"$accents2",fontWeight:"$semibold",fontSize:"15px",textAlign:"center"}}>{item[key]===true?"OPENED":item[key]===false?"CLOSED":key==="appliedCandidates"?item[key].length:item[key].toUpperCase()}</Table.Cell>}
           </Table.Row>
         )}
       </Table.Body>
-      <Table.Pagination  css={{mr:"$15"}}
+      {/* <Table.Pagination  css={{mr:"$15"}}
         // shadow
         // noMargin
-        // align="center"
-        rowsPerPage={3}
-      />
-    </Table>
+        align="center"
+        rowsPerPage={25}
+      /> */}
+    </Table>:<div className="text-center text-xl my-32 textnew text-white">No More Applications Available<br/>Please Go to Previous Page</div>}
     </div>
   );
 }
+export default function App() {
+  const [pageIndex, setPageIndex] = useState(1);
+  return (
+    <div className='mt-10'>
+      <div className="justify-center flex-center">
+        <Page index={pageIndex} />
+      </div>
+      {/* <div style={{ display: "none" }}>
+        <Page index={pageIndex + 1} />
+      </div> */}
+      <div className="flex buttonpos mb-16">
+        <button disabled={pageIndex===1?true:false} class="btn2 bg-sky-500" onClick={() => setPageIndex(pageIndex - 1)}>
+          Prev
+        </button>
+        <button class="btn3 bg-sky-500" onClick={() => setPageIndex(pageIndex + 1)}>
+          Next
+        </button>
+      </div>
+    </div>
+  );
+}
+
+  // const columns = [
+  //   { name: "NAME", uid: "CompanyName" },
+  //   { name: "ROLE", uid: "title" },
+  //   { name: "STATUS", uid: "isActive" },
+  // ];
+  // const users =[
+  //   {
+  //     id: 1,
+  //     name: "Microsoft",
+  //     role: "CEO",
+  //     team: "Management",
+  //     status: "active",
+  //     age: "29",
+  //     avatar: "/assets/images/TalentConnects.png",
+  //     email: "tony.reichert@example.com",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Apple",
+  //     role: "Technical Lead",
+  //     team: "Development",
+  //     status: "paused",
+  //     age: "25",
+  //     avatar: "/assets/images/TalentConnects.png",
+  //     email: "zoey.lang@example.com",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Talent Connect",
+  //     role: "Senior Developer",
+  //     team: "Development",
+  //     status: "active",
+  //     age: "22",
+  //     avatar: "/assets/images/TalentConnects.png",
+  //     email: "jane.fisher@example.com",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Microsoft",
+  //     role: "Community Manager",
+  //     team: "Marketing",
+  //     status: "vacation",
+  //     age: "28",
+  //     avatar: "/assets/images/TalentConnects.png",
+  //     email: "william.howard@example.com",
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "Meta",
+  //     role: "Sales Manager",
+  //     team: "Sales",
+  //     status: "active",
+  //     age: "24",
+  //     avatar: "/assets/images/TalentConnects.png",
+  //     email: "kristen.cooper@example.com",
+  //   },
+  // ];
+  // const renderCell = (user, columnKey) => {
+  //   const cellValue = user[columnKey];
+  //   switch (columnKey) {
+  //     case "companyName":
+  //       return (
+  //         <Text css={{color:"white"}} b>{cellValue}</Text>
+  //       );
+  //     case "title":
+  //       return (
+  //             <Text b size={14} css={{ tt: "capitalize",color:"white"}}>
+  //               {cellValue}
+  //             </Text>
+  //       );
+  //     case "isActive":
+  //       return <Text b size={13} css={{ tt: "capitalize", color: "$accents7" }}>{cellValue===true?"Opened":"Closed"}</Text>;
+  //     default:
+  //       return cellValue;
+  //   }
+  // };
+  // return (
+  //   <div className='w-full mb-32 mt-16'>
+  //       <p className='text-4xl text-center mb-8'>
+  //           <span className='textnew text-white'>Your Applications</span> 
+  //       </p>
+        
+  //   <Table
+  //     aria-label="Example table with custom cells"
+  //     color="success"
+  //     css={{
+  //       height: "calc($space$14 * 5)",
+  //       minWidth: "100%",
+  //     }}
+  //     selectionMode="none"
+  //   >
+  //     <Table.Header columns={columns}>
+  //       {(column) => (
+  //         <Table.Column 
+  //           css={{textAlign:"center",backgroundColor:"$green600",color:"WhiteSmoke",width:"30vw"}}
+  //           key={column.uid}
+  //         >
+  //           {column.name}
+  //         </Table.Column>
+  //       )}
+  //     </Table.Header>
+  //     <Table.Body items={users}>
+  //       {(item) => (
+  //         <Table.Row>
+  //           {(columnKey) => (
+  //             <Table.Cell css={{paddingLeft:"$28"}}>{renderCell(item, columnKey)}</Table.Cell>
+  //           )}
+  //         </Table.Row>
+  //       )}
+  //     </Table.Body>
+  //     <Table.Pagination  css={{mr:"$15"}}
+  //       // shadow
+  //       // noMargin
+  //       // align="center"
+  //       rowsPerPage={3}
+  //     />
+  //   </Table>
+  //   </div>
+  // );
+
 
 
 

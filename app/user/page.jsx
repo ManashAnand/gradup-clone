@@ -196,7 +196,7 @@ export default function Profile() {
           <Link href={'/user/applications'} className='mt-7'>
             <Button flat color="primary">Your Applications</Button>
           </Link>
-          <Button onClick={beAlumni} flat color="primary">Enter Alumni</Button>
+          <Button className='mt-7' onClick={beAlumni} flat color="primary">Enter Alumni</Button>
           {/* <p className='desc text-left'>{data.email}</p> */}
         </section>
         <section className='border-solid border-white border-2 rounded-xl'>
@@ -456,7 +456,7 @@ export default function Profile() {
       <Button flat color="primary" css={{float:"right",mt:"$10"}} onClick={handleSubmit}>Submit</Button>
     </div>:<div className='mb-20'>
     <img className="mt-16 mb-6" width="400" src="/assets/images/submitted.gif" alt="submitted"></img>
-    <div className="text-center my-50 text-4xl text-sky-600 text mb-16">Application Sent Successfully</div>
+    <div className="text-center my-50 text-4xl text-sky-600 text mb-16">Resume Sent Successfully</div>
     </div>
   );
 }

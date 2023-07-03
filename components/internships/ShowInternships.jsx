@@ -31,7 +31,7 @@ function Page({ selectedCity, selectedTitle, salaryExp, search,index ,searchresu
         location:selectedCity,
         stipend:salaryExp,
         title:selectedTitle,
-        intern:"false",
+        intern:"true",
         startup:"false",
         page:1
       }),
@@ -59,7 +59,7 @@ function Page({ selectedCity, selectedTitle, salaryExp, search,index ,searchresu
     ) : jobs.length > 0 ? ( */}
       {loading && <div className="text-center message"><Spinner/></div>}
       {jobs.length>0 ? (
-      <div style={{ backgroundColor: "#0076ce" }} className="mt-10 arrange">
+      <div style={{ backgroundColor: "darkturquoise" }} className="mt-10 arrange">
         {jobs.map((job) => (
           <ListContentCard post={job} />
         ))}
@@ -103,10 +103,10 @@ export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, searc
         />
       </div>
       <div className="flex buttonpos">
-        <button style={{backgroundColor:"#0076ce"}} class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
+        <button style={{backgroundColor:"darkturquoise"}} class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
           Prev
         </button>
-        <button style={{backgroundColor:"#0076ce"}} class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
+        <button style={{backgroundColor:"darkturquoise"}} class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
           Next
         </button>
       </div>
