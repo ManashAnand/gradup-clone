@@ -40,7 +40,7 @@ const Home = () => {
            <p className='textnew'>The best quality online courses from institutions</p>
            </div>
         </div>
-        <div style={{background:"linear-gradient(220deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 60.90%,  rgba(9,248,85, 0.94) 99.86%)"}} className='p-10 w-screen'>
+        <div style={{background:"linear-gradient(220deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 60.90%,  rgba(9,158,248, 0.94) 99.86%)"}} className='p-10 w-screen'>
           <div className="hide1">
           <p className='text-xl font-semibold mt-6 mb-1 text-white ml-32 text'>Get Hired</p>
           <p className="ml-32 textnew text-sm text-white">Work with your dream companies by applying for full-time roles and internships and Hackathon too.</p>
