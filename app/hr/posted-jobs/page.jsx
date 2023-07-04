@@ -172,7 +172,7 @@ export default function App() {
         // shadow
         // noMargin
         // align="center"
-        rowsPerPage={3}
+        rowsPerPage={10}
       />
     </Table>
     </div>
