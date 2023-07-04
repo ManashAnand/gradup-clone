@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import Application from '@models/application';
 import {User} from '@models/user';
 let page = 1;
-const pageSize = 25;
+const pageSize = 10;
 
 export const GET = async(req, { params }) => {
     try {

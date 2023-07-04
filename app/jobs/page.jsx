@@ -27,7 +27,7 @@ const titleList = [
   { value: "software engineer", label: "software engineer" },
 ];
 
-function Page({ index }) {
+function Page({ index , setPage}) {
   const [selectedCity, setSelectedCity] = useState([]);
   const [selectedTitle, setSelectedTitle] = useState([]);
   const [salaryExp, setSalaryExp] = useState(0);
@@ -71,21 +71,29 @@ function Page({ index }) {
   selectedCity={selectedCity}
   selectedTitle={selectedTitle}
   salaryExp={salaryExp} />
-        <ShowJobs selectedCity={selectedCity} selectedTitle={selectedTitle} salaryExp={salaryExp} search={search} index={index}/>
+        <ShowJobs selectedCity={selectedCity} selectedTitle={selectedTitle} salaryExp={salaryExp} search={search} index={index} setPage={setPage}/>
       </div>
     </section>
   );
 }
 
 export default function App() {
-  const [pageIndex, setPageIndex] = useState(0); 
+  const [pageIndex, setPageIndex] = useState(1); 
   return (
     <div className="mb-32">
       <div className="justify-center flex-center">
-        <Page index={pageIndex} />
+        <Page index={pageIndex} setPage={setPageIndex}/>
       </div>
-      {/* <div style={{ display: "none" }}>
-        <Page index={pageIndex + 1} />
+      <div style={{ display: "none" }}>
+        <Page index={pageIndex + 1} setPage={setPageIndex}/>
+      </div>
+      {/* <div className="flex buttonpos">
+        <button style={{backgroundColor:"#0076ce"}} class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
+          Prev
+        </button>
+        <button style={{backgroundColor:"#0076ce"}} class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
+          Next
+        </button>
       </div> */}
     </div>
   );

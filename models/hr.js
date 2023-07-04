@@ -29,7 +29,10 @@ const HRSchema = new Schema({
         type:String,
         required:[true,'Name is required'],
     },
-    email:{
+    companyPhoto:{
+        type:String,
+    },
+    companyEmail:{
         type:String,
         unique:[true, "Email already exists"],
         required:[true, "Email is required"],
