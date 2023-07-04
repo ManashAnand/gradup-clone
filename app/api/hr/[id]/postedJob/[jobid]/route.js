@@ -4,7 +4,7 @@ import Job from '@models/job';
 import mongoose from 'mongoose';
 import Application from '@models/application';
 let page = 1;
-const pageSize = 25;
+const pageSize = 40;
 
 export const GET = async(req, { params }) => {
     try {

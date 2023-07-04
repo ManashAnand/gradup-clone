@@ -9,7 +9,7 @@ export const POST = async(request) => {
         const newJob = new Job({ 
             hrId:data.HRId,
             logo:"",
-            isStartUp:false,
+            isStartUp:data.isStartUp,
             title:data.title,
             isIntern: data.isIntern,
             companyName: data.companyName,
@@ -24,7 +24,8 @@ export const POST = async(request) => {
             noOfOpenings: data.noOfOpenings,
             workingHours: data.workingHours,
             postedDate: data.postedDate,
-            responsilities:data.responsilities
+            responsilities:data.responsilities,
+            description:data.description
          });
 
         const addedObj = await newJob.save();
