@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@400&display=swap');
 .content{
-  background:linear-gradient(260deg, rgba(49, 206, 167, 0.94) 0%, rgba(4, 78, 131, 0.98) 35.32%, rgba(4, 78, 131, 0.97) 20.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 60.90%, rgba(49, 206, 167, 0.94) 99.86%);
+  background:linear-gradient(260deg, rgba(200, 111, 197, 0.94) 0%, rgba(4, 78, 131, 0.98) 35.32%, rgba(4, 78, 131, 0.97) 20.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 65.90%, rgba(200, 111, 197, 0.94) 99.86%);
   color:rgb(0, 238, 255);
   /* border-top-right-radius:30px;
   border-bottom-right-radius:30px; */
