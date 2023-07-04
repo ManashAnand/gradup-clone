@@ -28,7 +28,7 @@ export default function HRSignup() {
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher);
   if (error) return <div>userFailed to loadinggggggg</div>;
   if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;
-  if(data.role=="Hr"){
+  if(data.role=="HR"){
     Router.push("/hr");
   }
   const addHR = async (e) => {
@@ -45,7 +45,7 @@ export default function HRSignup() {
           otp:"1234"
         }),
       });
-      console.log(response.status);
+      console.log(response, "here is the response from hr/signup");
       vari=response.status;
     } catch (error) {
       console.log(error);
