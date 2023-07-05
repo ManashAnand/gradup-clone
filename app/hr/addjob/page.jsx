@@ -2,6 +2,7 @@
 import { Spacer, Textarea, Grid, Checkbox,Text } from "@nextui-org/react";
 import Head from "next/head";
 import { useSession } from "next-auth/react";
+import Spinner from "@components/Spinner"
 import useSWR from 'swr';
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -10,6 +11,9 @@ import { useState } from 'react'
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const page = ({ params }) => {
   const [value,setValue]=useState(false)
+  const [posted, setPosted] = useState(false)
+  const [err,setErr]=useState(false)
+  // const [loading,setLoading]=useState(false)
   function handleChange(){
     setValue(true)
   }
@@ -19,12 +23,10 @@ const page = ({ params }) => {
   // if (error) return <div>Failed to loadinggggggg job data</div>;
   // if (!data) return <div>Loading...</div>;
   // const jobs=data;
-
   const createNewJob = async (e) => {
     e.preventDefault();
     // setIsSubmitting(true);
     console.log("Form Submitted");
-    setPosted(true)
     // e.target[0].value && e.target[2].value && e.target[4].value && e.target[8].value && e.target[15].value && e.target[17].value && e.target[18].value?setPosted(true):setPosted(false) 
     try {
       for (let i = 0; i < e.target.length; i++) {
@@ -58,6 +60,14 @@ const page = ({ params }) => {
         }),
       });
       console.log(response.status)
+      if(response.status==201){
+        setPosted(true)
+        setErr(false)
+      }
+      if(response.status==500){
+        setPosted(true)
+        setErr(true)
+      }
     } catch (error) {
       console.log(error);
     } finally {
@@ -65,11 +75,11 @@ const page = ({ params }) => {
       // alert("Submitted");
     }
   };
-  const [posted, setPosted] = useState(false)
-  function handleSubmit(e) {
-  }
+  // const [posted, setPosted] = useState(false)
+  // const [notposted, setNotposted] = useState(false)
   return (
-    !posted ? <>
+    <>
+    {!posted ?
       <div className='justify-center w-full align-center justify-items-center hrjobs mt-16 mb-20 border-2 border-white p-4'>
         <h1 className='font-bold text-5xl text-left mb-5'>
           <p className='textnew text-4xl text-center text-white mb-8'>Post a Job and hire the best Talent</p>
@@ -221,12 +231,11 @@ const page = ({ params }) => {
             /> */}
           <button type='submit' className='py-2 px-10 rounded-xl bg-white ml-3 mt-7 border-sky-800 border-2 hover:bg-white hover:text-blue-500 hover:border-blue-600'  >Submit</button>
         </form>
-      </div>
-    </> : <div className="flex flex-col justify-center items-center mb-20">
+      </div> : err?<div className="flex flex-col items-center justify-center my-20"><img width="700" src="/assets/images/500error.png" alt="500 Error"></img></div>: <div className="flex flex-col justify-center items-center my-32">
       <img width="250" src="/assets/images/jobpost.gif"></img>
       <p className="text-4xl text text-lime-500 mb-4">Successfully published the job.</p>
       <p className="text-white">Check the dashboard for tracking the application.</p>
-    </div>
+    </div>}</>
   )
 }
 

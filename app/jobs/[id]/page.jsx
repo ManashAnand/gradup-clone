@@ -43,7 +43,7 @@ function Page ({ id }) {
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style={{fill: "white",marginTop:"2.2vh",marginLeft:"1em"}}><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg>
                   <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Last Date to Apply</label>
                   </div>
-                  <input className="py-2 px-5 text-sm bg-white text-gray-600 rounded-md border-blue-300 border-2 w-5/6" value={jobs.lastDate}></input>
+                  <input className="py-2 px-5 text-sm bg-white text-gray-600 rounded-md border-blue-300 border-2 w-5/6" value={jobs.lastDate?jobs.lastDate.split("T")[0]:""}></input>
                   <div className="flex mb-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style={{fill: "white",marginTop:"2.2vh",marginLeft:"1em"}}><path d="M16.604 11.048a5.67 5.67 0 0 0 .751-3.44c-.179-1.784-1.175-3.361-2.803-4.44l-1.105 1.666c1.119.742 1.8 1.799 1.918 2.974a3.693 3.693 0 0 1-1.072 2.986l-1.192 1.192 1.618.475C18.951 13.701 19 17.957 19 18h2c0-1.789-.956-5.285-4.396-6.952z"></path><path d="M9.5 12c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zm1.5 7H8c-3.309 0-6 2.691-6 6v1h2v-1c0-2.206 1.794-4 4-4h3c2.206 0 4 1.794 4 4v1h2v-1c0-3.309-2.691-6-6-6z"></path></svg>
                   <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">No. of Openings</label>
@@ -63,7 +63,7 @@ function Page ({ id }) {
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style={{fill: "white",marginTop:"2.2vh",marginLeft:"1em"}} ><path d="m2.394 13.742 4.743 3.62 7.616-8.704-1.506-1.316-6.384 7.296-3.257-2.486zm19.359-5.084-1.506-1.316-6.369 7.279-.753-.602-1.25 1.562 2.247 1.798z"></path></svg>
                   <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Requirements</label>
                   </div>
-                  <div className="py-4 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">{jobs.eligibility}</div>
+                  <div className="py-4 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">{jobs.eligiblilty}</div>
                   <div className="flex mb-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style={{fill:"white",marginTop:"2.2vh",marginLeft:"1em"}}><path d="M5 22h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2h-2a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2zM5 5h2v2h10V5h2v15H5V5z"></path><path d="m11 13.586-1.793-1.793-1.414 1.414L11 16.414l5.207-5.207-1.414-1.414z"></path></svg>
                   <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Skills Required</label>
@@ -77,7 +77,7 @@ function Page ({ id }) {
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style={{fill: "white",marginTop:"2.2vh",marginLeft:"1em"}}><path d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM5 20V7h14V6l.002 14H5z"></path><path d="M7 9h10v2H7zm0 4h5v2H7z"></path></svg>
                   <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Roles and Responsibilities</label>
                   </div>
-                  <div className="py-4 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">{jobs.responsibilities}</div>
+                  <div className="py-4 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">{jobs.responsilities}</div>
                   </div>
                 </div>
               </div>
