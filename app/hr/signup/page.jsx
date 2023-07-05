@@ -29,7 +29,7 @@ export default function HRSignup() {
   if (error) return <div>userFailed to loadinggggggg</div>;
   if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;
   if(data.role=="HR"){
-    Router.push("/hr");
+    // Router.push("/hr");
   }
   const addHR = async (e) => {
     e.preventDefault();
