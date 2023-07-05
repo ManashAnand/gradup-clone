@@ -32,6 +32,10 @@ const HRSchema = new Schema({
     companyPhoto:{
         type:String,
     },
+    email:{
+        type:String,
+        unique:[true,"User email is required"],
+    },
     companyEmail:{
         type:String,
         unique:[true, "Email already exists"],

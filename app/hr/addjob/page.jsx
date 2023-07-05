@@ -42,7 +42,7 @@ const page = ({ params }) => {
           duration: e.target[3].value,
           
           eligiblilty: e.target[4].value,
-          lastDate: e.target[5].value,
+          lastDateToApply: e.target[5].value,
           expectedStartDate: e.target[6].value,
           noOfOpenings: e.target[7].value,
           skillsRequired: e.target[8].value,
