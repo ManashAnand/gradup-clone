@@ -80,7 +80,7 @@ export default function Contact(){
       <p>Whether you have a question,or simply want to connect.</p>
       <p>Feel free to send us a message.</p>
       <div className="text-white mt-10">
-      <div className="mb-4 textnew flex flex-col text-sm"><PhoneAndroidIcon sx={{margin:"auto"}} color="white" fontSize="small"/>+91- 9771040702</div>
+      <div className="mb-4 textnew flex flex-col text-sm"><PhoneAndroidIcon sx={{margin:"auto"}} color="white" fontSize="small"/>+91- 7428376300</div>
       <hr/>
       <div className="mt-4 textnew mb-3 flex flex-col text-sm"><EmailIcon sx={{margin:"auto"}} color="white" fontSize="small"/>info@attitudematterz.com <br/>attitudematterz.ops@gmail.com</div>
       <hr/>

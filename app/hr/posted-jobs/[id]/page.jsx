@@ -33,20 +33,20 @@ export default function Page({params}){
   //   },[])
   const { data, error } = useSWR( `/api/hr/${session?.user.id}/postedJob/${params.id}?page=${index}`, fetcher)
   // ... handle loading and error states
-  if (error) return <div>Failed to loadinggggggg job data</div>;
+  if (error) return <div className='text-white  text-center mx-auto my-20'>Some Error Occured!! Please try again</div>;
   if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;
   console.log("data come isssssssssssssssssssssssssssss",data);
-  // const createPDF = async(index) => {   
-  //   const pdf = new jsPDF("portrait","mm","a4"); 
-  //   let dataprofile= await data
-  //   const data1 =await html2canvas(document.querySelector("#profile"));
-  //   const img = data1.toDataURL("image/png");  
-  //   const imgProperties = pdf.getImageProperties(img);
-  //   const pdfWidth = pdf.internal.pageSize.getWidth();
-  //   const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-  //   pdf.addImage(img, "PNG", 0, 0, pdfWidth,pdfHeight);
-  //   pdf.save(`${dataprofile[index].name}.pdf`)
-  // };
+  const createPDF = async(index) => {   
+    const pdf = new jsPDF("portrait","mm","a4"); 
+    let dataprofile= await data
+    const data1 =await html2canvas(document.querySelector("#profile"));
+    const img = data1.toDataURL("image/png");  
+    const imgProperties = pdf.getImageProperties(img);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
+    pdf.addImage(img, "PNG", 0, 0, pdfWidth,pdfHeight);
+    pdf.save(`${dataprofile[index].name}.pdf`)
+  };
   return (
     <>
     <div className='w-screen displayprofile'>
@@ -68,34 +68,34 @@ export default function Page({params}){
                       <Text css={{fontSize: "$sm" ,pb:"$5",textAlign:"center"}}>
                       {ele.education.length>0?ele.education[0].collegeName:"Shree Agrasen Academy"}
                       </Text>
-                  <button onClick={()=>handleClick(i)} style={{backgroundColor:"#29335c"}} className="px-7 py-1 text-xs text-white mb-3 rounded-full">Resume Details</button>
+                  <button onClick={()=>createPDF(i)} style={{backgroundColor:"#29335c"}} className="px-7 py-1 text-xs text-white mb-3 rounded-full">Download Resume</button>
                 </Card>
                 </a>
              )}):""}
              </div>
-             {status?data.length>0?<div id="profile" style={{height:"fit-content",backgroundColor:"deepskyblue"}} className='bg-white px-12 py-5 textnew mx-auto adjust' >
-                {data.length>0?<p className='text-2xl text-center mb-2'><span className=" font-semibold underline text-xl underline-offset-8 decoration-white"><img className='mx-auto mb-2' width="60" src="/assets/images/profpic.png"/>
+             {status?data.length>0?<div id="profile" style={{height:"fit-content",backgroundColor:"white"}} className='bg-white px-12 py-2 textnew mx-auto adjust' >
+                {data.length>0?<p className=' text-center'><span className=" font-semibold underline text-xl underline-offset-8 decoration-white"><img className='mx-auto' width="50" src="/assets/images/profpic.png"/>
          </span> {data[pos].name.toUpperCase()}</p>:""}
-        <hr className='my-3'/>
-                {data.length>0?<p className='my-3 font-semibold text-2xl text-white underline underline-offset-8 decoration-green-300'>Education</p>:""}
+        <hr className='mt-1 mb-1'/>
+                {data.length>0?<p className='mb-1 font-semibold text-lg text-sky-500 underline underline-offset-4 decoration-sky-300'>Education</p>:""}
                 {data.length>0?data[pos].education.map((ele,i)=>{
                   return(
                     <div className='mb-2' key={i}>
-                      <p>{i===0?"College":"Institution"}: {ele.collegeName}</p>
-                      <p>Degree: {ele.degreeName}</p>
-                      <p>Grade: {ele.grade}</p>
-                      <p>Duration: {ele.startYear.split("T")[0].replaceAll("-","/")} - {ele.endYear.split("T")[0].replaceAll("-","/")}</p>
+                      <p className='text-sm'>{i===0?"College":"Institution"}: {ele.collegeName}</p>
+                      <p className='text-sm'>Degree: {ele.degreeName}</p>
+                      <p className='text-sm'>Grade: {ele.grade}</p>
+                      <p className="text-sm">{ele.startYear.split("T")[0].replaceAll("-","/")} - {ele.endYear.split("T")[0].replaceAll("-","/")}</p>
                     </div>
                   )
                 }):""}
-                {data.length>0?<p className='my-3 font-semibold text-2xl text-white underline underline-offset-8 decoration-green-300'>Experience</p>:""}
+                {data.length>0?<p className='mb-1 font-semibold text-lg text-sky-500 underline underline-offset-4 decoration-sky-300'>Experience</p>:""}
                 {data.length>0?data[pos].experience.map((ele,i)=>{
                   return(
                     <div className='mb-2' key={i}>
-                      <p>Company Name: {ele.companyName}</p>
-                      <p>Title: {ele.title}</p>
-                      <p>Location: {ele.location}</p>
-                      <p>Description: {ele.description}</p>
+                      <p className='text-sm'>Company Name: {ele.companyName}</p>
+                      <p className='text-sm'>Title: {ele.title}</p>
+                      <p className='text-sm'>Location: {ele.location}</p>
+                      <p className='text-sm'>Description: {ele.description}</p>
                       <p className='mb-1'>Skills Used: {ele.skills.map((item,i)=>{
                         return(
                           <p className="text-sm">{i+1}. {item}</p>
@@ -104,21 +104,13 @@ export default function Page({params}){
                     </div>
                   )
                 }):""}
-                {data.length>0?<p className='my-3 font-semibold text-2xl text-white underline underline-offset-8 decoration-green-300'>Projects</p>:""}
+                {data.length>0?<p className='mb-1 font-semibold text-lg text-sky-500 underline underline-offset-4 decoration-sky-300'>Projects</p>:""}
                 {data.length>0?data[pos].project.map((ele,i)=>{
                   return(
                     <div className='mb-2' key={i}>
-                      <p>Name: {ele.projectName}</p>
-                      <p>Description: {ele.projectDes}</p>
-                      <p>Link: {ele.projectLinks}</p>
-                    </div>
-                  )
-                }):""}
-              {data.length>0?<p className='my-3 font-semibold text-2xl text-white underline underline-offset-8 decoration-green-300'>Achievements</p>:""}
-              {data.length>0?data[pos].achievement.map((ele,i)=>{
-                  return(
-                    <div className='mb-2' key={i}>
-                      <p>{i+1}. {ele.achievementName}</p>
+                      <p className='text-sm'>Name: {ele.projectName}</p>
+                      <p className='text-sm'>Description: {ele.projectDes}</p>
+                      <p className='text-sm'>Link: {ele.projectLinks}</p>
                     </div>
                   )
                 }):""}
@@ -128,7 +120,7 @@ export default function Page({params}){
         <button disabled={index===0?true:false} class="btn2 bg-sky-500" onClick={() => setIndex(index - 1)}>Prev</button>
         <button class="btn3 bg-sky-500" onClick={() => setIndex(index + 1)}>Next</button>
         </div>:""}
-       {/* <button onClick={createPDF} type="button">Download</button> */}
+        {/* <button onClick={createPDF} type="button">Download</button> */}
        </>
 
     )
