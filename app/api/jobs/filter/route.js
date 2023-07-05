@@ -20,7 +20,7 @@ export const POST = async (request, { params }) => {
         if(locationArray.length>0)query.location={$in:locationArray};
         if(titleArray.length>0)query.title={$in:titleArray};
         query.stipend = {$gte:salary};
-        // query.lastDateToApply = {gte:currentDate}
+        // query.lastDate = {gte:currentDate}
         await connectToDB();
         const JobDetails = await Job.find(query).skip(skip).limit(limit);
         return new Response(JSON.stringify(JobDetails),{status:201})
