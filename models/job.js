@@ -45,12 +45,13 @@ const JobSchema = new Schema({
         type:String,
     },
     lastDate: {
-        // type: Date,
-        type:String,
+        type: Date,
+        // type:String,
         // required: [true, "Last date is required"],
     },
     expectedStartDate: {
-        type: String,
+        // type: String,
+        type:Date,
     },
     skillsRequired: {
         type: [String],
@@ -68,8 +69,8 @@ const JobSchema = new Schema({
         type: String
     },
     postedDate: {
-        // type: Date,
-        type:String,
+        type: Date,
+        // type:String,
     },
     responsilities:{
         type:[String],

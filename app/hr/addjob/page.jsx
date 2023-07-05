@@ -52,7 +52,7 @@ const page = ({ params }) => {
           responsibilities: e.target[10].value,
           perks: e.target[11].value,
           isIntern: e.target[12].value,
-          
+          isStartUp:false,
           
           // 
           // workingHours: e.target[12].value,

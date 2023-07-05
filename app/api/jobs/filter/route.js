@@ -12,12 +12,15 @@ export const POST = async (request, { params }) => {
         const skip = (page - 1) * limit;
         let intern = data.intern === "true" ? true : false;
         let startup = data.startup === "true" ? true : false;
+        var currentDate = new Date().toISOString();
+        console.log(currentDate);
         var query = {};
         query.isIntern=intern
         query.isStartUp=startup
         if(locationArray.length>0)query.location={$in:locationArray};
         if(titleArray.length>0)query.title={$in:titleArray};
         query.stipend = {$gte:salary};
+        // query.lastDate = {gte:currentDate}
         await connectToDB();
         const JobDetails = await Job.find(query).skip(skip).limit(limit);
         return new Response(JSON.stringify(JobDetails),{status:201})
