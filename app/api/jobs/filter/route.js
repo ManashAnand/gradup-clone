@@ -20,6 +20,7 @@ export const POST = async (request, { params }) => {
         query.stipend = {$gte:salary};
         await connectToDB();
         const JobDetails = await Job.find(query).skip(skip).limit(limit);
+        console.log(JobDetails, query);
         return new Response(JSON.stringify(JobDetails),{status:201})
     }
     catch(error){
