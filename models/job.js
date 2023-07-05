@@ -44,7 +44,7 @@ const JobSchema = new Schema({
     description:{
         type:String,
     },
-    lastDateToApply: {
+    lastDate: {
         type: Date,
         // type:String,
         // required: [true, "Last date is required"],
