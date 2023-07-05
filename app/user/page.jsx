@@ -452,7 +452,7 @@ export default function Profile() {
         </div>
         </div>
       </section>
-      {message && <div className="px-10 py-3 text-center text-lg text rounded-xl my-3 bg-blue-500 text-blue-500">Please add atleast 1 Education, 1 Experience and 1 Project</div>}
+      {message && <div className="px-10 py-2 text-center text rounded-xl my-3 bg-blue-500 text-white">Please add atleast 1 Education, 1 Experience and 1 Project</div>}
       <Button flat color="primary" css={{float:"right",mt:"$10"}} onClick={handleSubmit}>Submit</Button>
     </div>:<div className='mb-20'>
     <img className="mt-16 mb-6" width="400" src="/assets/images/submitted.gif" alt="submitted"></img>

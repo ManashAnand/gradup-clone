@@ -73,7 +73,7 @@ export default function Page({params}){
                 </a>
              )}):""}
              </div>
-             {status?data.length>0?<div id="profile" style={{height:"fit-content",backgroundColor:"#2aaa8a"}} className='bg-white px-12 py-5 textnew mx-auto adjust' >
+             {status?data.length>0?<div id="profile" style={{height:"fit-content",backgroundColor:"deepskyblue"}} className='bg-white px-12 py-5 textnew mx-auto adjust' >
                 {data.length>0?<p className='text-2xl text-center mb-2'><span className=" font-semibold underline text-xl underline-offset-8 decoration-white"><img className='mx-auto mb-2' width="60" src="/assets/images/profpic.png"/>
          </span> {data[pos].name.toUpperCase()}</p>:""}
         <hr className='my-3'/>
@@ -122,12 +122,12 @@ export default function Page({params}){
                     </div>
                   )
                 }):""}
-             </div>:<div></div>:""}
+             </div>:<div className='text-3xl font-semibold textnew text-center m-auto text-white'>No Applicants yet</div>:<div></div>}
         </div>
-        <div className="flex buttonpos mb-16">
-        <button disabled={index===0?true:false} class="btn2" onClick={() => setIndex(index - 1)}>Prev</button>
-        <button class="btn3" onClick={() => setIndex(index + 1)}>Next</button>
-        </div>
+        {data.length>0?<div className="flex buttonpos mb-16">
+        <button disabled={index===0?true:false} class="btn2 bg-sky-500" onClick={() => setIndex(index - 1)}>Prev</button>
+        <button class="btn3 bg-sky-500" onClick={() => setIndex(index + 1)}>Next</button>
+        </div>:""}
        {/* <button onClick={createPDF} type="button">Download</button> */}
        </>
 
