@@ -16,7 +16,7 @@ export const POST = async(request) => {
             companyLink: data.companyLink,
             duration: data.duration,
             stipend: data.stipend,
-            lastDateToApply: data.lastDateToApply,
+            lastDate: data.lastDate,
             expectedStartDate: data.expectedStartDate,
             skillsRequired: data.skillsRequired,
             eligiblilty: data.eligiblilty,
