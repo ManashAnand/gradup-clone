@@ -15,17 +15,14 @@ export const POST = async(request, { params }) => {
             // if(userOTP.otp!=submittedOTP)return new Response("Wrong OTP, Try Again", { status: 500 })
             const currUser = await User.findById(params.id);
             currUser.role="HR";
-            const currUserEmail=currUser.email;
             const upUser = await currUser.save();
             const HRExists = await HR.findOne({
-                email:currUserEmail
+                email:currUser.email
             });
-            console.log("here is response          searched HR",params.id,currUserEmail, HRExists);
             if(!HRExists){
                 await HR.create({
                     _id:params.id,
                     companyEmail:data.companyEmail,
-                    email:currUser.email,
                     name:currUser.name,
                     companyName:data.companyName,
                     posts:[],
@@ -34,7 +31,7 @@ export const POST = async(request, { params }) => {
             }
             return new Response("You are now a HR. Mobile Number Verified.", { status: 201 })
         }
-        return new Response("Error message while making HR ", { status: 500 })
+        return new Response("Error", { status: 500 })
     } catch (error) {
         console.log(error);
         return new Response("Failed to get User Details in HR Verification " + error.toString(), {
