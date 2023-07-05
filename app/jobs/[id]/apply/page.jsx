@@ -8,6 +8,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 import React,{useState} from "react";
 const page = ({params}) => {
     const [submit,setSubmit]=useState(false) 
+    const [err,setErr]=useState(false)
     const router = useRouter();
     const jobId=`${params.id}`;
     const { data: session } = useSession();
@@ -36,9 +37,15 @@ const page = ({params}) => {
           }),
         });
         console.log(response.status)
-        if(response.status==201){
-          setSubmit(true)
-        }
+        console.log(response.status)
+      if(response.status==201){
+        setSubmit(true)
+        setErr(false)
+      }
+      if(response.status==500){
+        setSubmit(true)
+        setErr(true)
+      }
         else if(response.status==501){
           console.log("Already applies") /// show front end
         }
@@ -62,7 +69,7 @@ const page = ({params}) => {
             {/* <textarea rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Explain about all your relevant projects... \n1'/> */}
             <button type='submit' className='bg-sky-400 mb-16 text-white rounded-md px-10 py-2 text-sm hover:bg-white hover:text-sky-400'>Submit</button>
         </form>
-    </div>:<div className="flex flex-col justify-center items-center mb-20">
+    </div>:err?<div className="flex flex-col items-center justify-center my-20"><img width="700" src="/assets/images/500error.png" alt="500 Error"></img></div>:<div className="flex flex-col justify-center items-center mb-20">
       <img width="250" src="/assets/images/jobpost.gif"></img>
       <p className="text-4xl text text-center text-lime-500 mb-4">Job Applied Successfully</p>
     </div>
