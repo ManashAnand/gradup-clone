@@ -7,6 +7,7 @@ import Watsapp from '@components/Watsapp';
 export const metadata = {
     title:"GradUp",
     description:"Connecting talent to opportunities"
+    
 }
 const Layout = ({children}) => {
     return (
