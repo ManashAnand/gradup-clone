@@ -174,6 +174,9 @@ html{
   bottom:40px;
   right:0;
 }
+.marginsetting{
+  margin-right:6rem;
+}
 
 .slideshowDot {
   display: inline-block;
@@ -1151,17 +1154,23 @@ input::placeholder,textarea::placeholder{
   .main-login{
     width:fit-content;
   }
+  .marginsetting{
+    margin-right:2rem;
+  }
 }
 @media screen and (max-width:570px) {
   .founderimg{
     width:90vw;
-    height:70vh;
+    height:60vh;
   }
   .message{
     margin-left: 0rem;
   }
   .achievementbox{
     height:65vh;
+  }
+  .marginsetting{
+    margin-right:0;
   }
   .milestones{
     display:grid;

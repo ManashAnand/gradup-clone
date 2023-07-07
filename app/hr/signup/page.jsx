@@ -83,25 +83,26 @@ export default function HRSignup() {
             <div className="mb-4">
               <label
                 htmlFor="email"
-                className=" text-sm font-semibold text-gray-800"
+                className=" text-sm font-semibold text-gray-600"
               >
-                Company Email
+                Company Email *
               </label>
               <input
                 type="email"
+                required
                 placeholder="Enter Company Email"
                 className=" w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
             <div className="mb-4">
               <label
-                htmlFor="email"
-                className=" text-sm font-semibold text-gray-800"
+                className=" text-sm font-semibold text-gray-600"
               >
-                Company Name
+                Company Name *
               </label>
               <input
                 type="text"
+                required
                 placeholder="Enter Company Name"
                 className=" w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
@@ -110,13 +111,14 @@ export default function HRSignup() {
               <div className="flex flex-col">
                 <label
                   htmlFor="text"
-                  className=" text-sm font-semibold text-gray-800"
+                  className=" text-sm font-semibold text-gray-600"
                 >
-                  Phone Number
+                  Phone Number *
                 </label>
                 <input
                   type="text"
                   placeholder="Enter Phone Number"
+                  required
                   className="phonewidth px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
@@ -140,8 +142,8 @@ export default function HRSignup() {
             ) : (
               <></>
             )} */}
-            <div className="mt-6">
-              <button type="submit" className="mt-5 py-3 w-full font-bold border-violet-300 border-4 text-center bg-white text-violet-500 rounded-xl">
+            <div className="mt-10">
+              <button type="submit" className="mt-10 py-2 w-full textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl">
                 Submit
               </button>
             </div>
