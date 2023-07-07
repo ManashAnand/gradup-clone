@@ -1,6 +1,7 @@
 "use client"
 import useSWR from 'swr';
 import {useSession} from "next-auth/react";
+import html2pdf from 'html2pdf.js';
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import { Card, Grid, Row, Text, Avatar } from "@nextui-org/react";
@@ -37,15 +38,10 @@ export default function Page({params}){
   if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;
   console.log("data come isssssssssssssssssssssssssssss",data);
   const createPDF = async(index) => {   
-    const pdf = new jsPDF("portrait","mm","a4"); 
-    let dataprofile= await data
-    const data1 =await html2canvas(document.querySelector("#profile"));
-    const img = data1.toDataURL("image/png");  
-    const imgProperties = pdf.getImageProperties(img);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-    pdf.addImage(img, "PNG", 0, 0, pdfWidth,pdfHeight);
-    pdf.save(`${dataprofile[index].name}.pdf`)
+    const pdf=document.getElementById("profile")
+    let dataprofile=await data
+    var opt={margin:[0,-60],filename:`${dataprofile[index].name}`,image:{type:"jpeg",quality:0.98},html2canvas:{scale:2},jsPDF:{unit:"mm",format:"a4"}}
+    html2pdf().from(profile).set(opt).save();
   };
   return (
     <>
@@ -66,7 +62,7 @@ export default function Page({params}){
                   </Card.Body>
                       <Text css={{fontWeight: "$semibold", fontSize: "$md",width:"stretch",textAlign:"center",pt:"$5" }}>{ele.name}</Text>
                       <Text css={{fontSize: "$sm" ,pb:"$5",textAlign:"center"}}>
-                      {ele.education.length>0?ele.education[0].collegeName:"Shree Agrasen Academy"}
+                      {ele.education.length>0?ele.education[0].collegeName:""}
                       </Text>
                   <button onClick={()=>createPDF(i)} style={{backgroundColor:"#29335c"}} className="px-7 py-1 text-xs text-white mb-3 rounded-full">Download Resume</button>
                 </Card>
@@ -74,43 +70,52 @@ export default function Page({params}){
              )}):""}
              </div>
              {status?data.length>0?<div id="profile" style={{height:"fit-content",backgroundColor:"white"}} className='bg-white px-12 py-2 textnew mx-auto adjust' >
-                {data.length>0?<p className=' text-center'><span className=" font-semibold underline text-xl underline-offset-8 decoration-white"><img className='mx-auto' width="50" src="/assets/images/profpic.png"/>
+                {data.length>0?<p className=' text-center text-xl text-sky-500 mt-1'><span className=""><img className='mx-auto' width="50" src="/assets/images/profpic.png"/>
          </span> {data[pos].name.toUpperCase()}</p>:""}
-        <hr className='mt-1 mb-1'/>
-                {data.length>0?<p className='mb-1 font-semibold text-lg text-sky-500 underline underline-offset-4 decoration-sky-300'>Education</p>:""}
+        <hr className='my-3'/>
+                {data.length>0?<p className='my-2 font-semibold text-xl text-sky-500 underline underline-offset-4 decoration-sky-300'>Education</p>:""}
                 {data.length>0?data[pos].education.map((ele,i)=>{
                   return(
-                    <div className='mb-2' key={i}>
-                      <p className='text-sm'>{i===0?"College":"Institution"}: {ele.collegeName}</p>
-                      <p className='text-sm'>Degree: {ele.degreeName}</p>
-                      <p className='text-sm'>Grade: {ele.grade}</p>
-                      <p className="text-sm">{ele.startYear.split("T")[0].replaceAll("-","/")} - {ele.endYear.split("T")[0].replaceAll("-","/")}</p>
+                    <div className='mb-2 leading-6' key={i}>
+                      <p className=''>{i===0?"College":"Institution"}: {ele.collegeName}</p>
+                      <p className=''>Degree: {ele.degreeName}</p>
+                      <p className=''>Grade: {ele.grade}</p>
+                      <p className="">{ele.startYear.split("T")[0].replaceAll("-","/")} - {ele.endYear.split("T")[0].replaceAll("-","/")}</p>
                     </div>
                   )
                 }):""}
-                {data.length>0?<p className='mb-1 font-semibold text-lg text-sky-500 underline underline-offset-4 decoration-sky-300'>Experience</p>:""}
+                {data.length>0?<p className='my-2 font-semibold text-xl text-sky-500 underline underline-offset-4 decoration-sky-300'>Experience</p>:""}
                 {data.length>0?data[pos].experience.map((ele,i)=>{
                   return(
                     <div className='mb-2' key={i}>
-                      <p className='text-sm'>Company Name: {ele.companyName}</p>
-                      <p className='text-sm'>Title: {ele.title}</p>
-                      <p className='text-sm'>Location: {ele.location}</p>
-                      <p className='text-sm'>Description: {ele.description}</p>
+                      <p className=''>Company Name: {ele.companyName}</p>
+                      <p className=''>Title: {ele.title}</p>
+                      <p className=''>Location: {ele.location}</p>
+                      <p className='leading-6'>Description: {ele.description}</p>
                       <p className='mb-1'>Skills Used: {ele.skills.map((item,i)=>{
                         return(
-                          <p className="text-sm">{i+1}. {item}</p>
+                          <p className="">{item}, </p>
                         )
                       })}</p>
                     </div>
                   )
                 }):""}
-                {data.length>0?<p className='mb-1 font-semibold text-lg text-sky-500 underline underline-offset-4 decoration-sky-300'>Projects</p>:""}
+                {/* <div className='html2pdf__page-break'></div> */}
+                {data.length>0?<p className='my-2 font-semibold text-xl text-sky-500 underline underline-offset-4 decoration-sky-300'>Projects</p>:""}
                 {data.length>0?data[pos].project.map((ele,i)=>{
                   return(
                     <div className='mb-2' key={i}>
-                      <p className='text-sm'>Name: {ele.projectName}</p>
-                      <p className='text-sm'>Description: {ele.projectDes}</p>
-                      <p className='text-sm'>Link: {ele.projectLinks}</p>
+                      <p className=''>Name: {ele.projectName}</p>
+                      <p className='leading-6'>Description: {ele.projectDes}</p>
+                      <p className=''>Link: {ele.projectLinks}</p>
+                    </div>
+                  )
+                }):""}
+                {data.length>0?<p className='my-2 font-semibold text-xl text-sky-500 underline underline-offset-4 decoration-sky-300'>Achievements</p>:""}
+              {data.length>0?data[pos].achievement.map((ele,i)=>{
+                  return(
+                    <div className='mb-2 leading-6' key={i}>
+                      <p className='leading-5'>{i+1}. {ele.achievementName}</p>
                     </div>
                   )
                 }):""}
