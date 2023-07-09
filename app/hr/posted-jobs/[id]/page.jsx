@@ -119,6 +119,8 @@ export default function Page({params}){
                     </div>
                   )
                 }):""}
+                {data.length>0?data[pos].coverLetter?<p className='my-2 font-semibold text-xl text-sky-500 underline underline-offset-4 decoration-sky-300'>Cover Letter</p>:"":""}
+                {data.length>0?data[pos].coverLetter?<p>{data[pos].coverLetter}</p>:"":""}
              </div>:<div className='text-3xl font-semibold textnew text-center m-auto text-white'>No Applicants yet</div>:<div></div>}
         </div>
         {data.length>0?<div className="flex buttonpos mb-16">
