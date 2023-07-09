@@ -23,13 +23,13 @@ const Nav = () => {
     <nav style={{backgroundColor:"deepskyblue"}} className='w-screen flex-between pt-3 shadow-xl p-4'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
-          src='/assets/images/gradup.jpg'
+          src='/assets/images/website-icon.png'
           alt='logo'
-          width={30}
-          height={30}
+          width={45}
+          height={45}
           className='object-contain'
         />
-        <img src="/assets/icons/logo.png" width="70" alt="logo"></img>
+       <p className="text-white text-xl font-semibold">GradUp</p>
       </Link>
       
 

@@ -70,8 +70,8 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
         <Input labelLeft="Degree" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px",textAlign:"center"}} initialValue={education.degreeName} onChange={(e)=>setEducation({...education,degreeName:e.target.value})}/>
         <Input labelLeft="Branch" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.branch} onChange={(e)=>setEducation({...education,branch:e.target.value})}/>
         <Input labelLeft="Grade" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.grade} onChange={(e)=>setEducation({...education,grade:e.target.value})}/>
-        <Input labelLeft="Date of Joining" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.startYear}  onChange={(e)=>setEducation({...education,startYear:e.target.value})}/> 
-        <Input labelLeft="Date of Leaving" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.endYear}  onChange={(e)=>setEducation({...education,endYear:e.target.value})}/>
+        <Input labelLeft="Date of Joining" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.startYear.split("T")[0]}  onChange={(e)=>setEducation({...education,startYear:e.target.value})}/> 
+        <Input labelLeft="Date of Leaving" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.endYear.split("T")[0]}  onChange={(e)=>setEducation({...education,endYear:e.target.value})}/>
       </div>
         <div className='flex justify-center'>
             {

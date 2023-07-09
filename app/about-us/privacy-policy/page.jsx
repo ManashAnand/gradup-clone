@@ -4,7 +4,7 @@ export default function Privacy() {
     <div className="{styles.container} w-screen my-10">
        <p className="text-5xl font-semibold textnew mt-6 animate-charcter text-center">PRIVACY POLICY</p>
         <div className={styles.content}>
-        <img className="float-right ml-10" src="/assets/icons/logo.png" alt="logo" height="60" width="65"></img>
+        <img className="float-right ml-10" src="/assets/images/website-icon.png" alt="logo" height="50" width="50"></img>
         <h1 className="text-2xl textnew mb-3">Privacy Policy</h1>
         <p className="mb-8 text-white textnew text-justify">This Privacy Policy applies to the online services offered by  at GradUp .in , its subdomains and Gradup’s app on Google Play Store. These are henceforth collectively known as Services.</p>
         <h1 className="text-2xl textnew mb-3">Overview</h1>
