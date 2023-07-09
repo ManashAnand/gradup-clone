@@ -2,6 +2,7 @@
 import { Spacer, Textarea, Grid, Checkbox,Text } from "@nextui-org/react";
 import Head from "next/head";
 import { useSession } from "next-auth/react";
+import Select from "react-select";
 import Spinner from "@components/Spinner"
 import useSWR from 'swr';
 import Link from "next/link";
@@ -11,8 +12,83 @@ import { useState } from 'react'
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const page = ({ params }) => {
   const [value,setValue]=useState(false)
+  const [onefield,setOneField]=useState(false)
   const [posted, setPosted] = useState(false)
   const [err,setErr]=useState(false)
+  const [title,setTitle]=useState("")
+  const [joblist,setJoblist]=useState([])
+  let titleList = [
+    { value: "Software Developer/Engineer",label: "Software Developer/Engineer" },
+    { value: "Front-End Developer",label: "Front-End Developer" },
+    { value: "Back-End Developer",label: "Back-End Developer" },
+    { value: "Full-Stack Developer",label: "Full-Stack Developer" },
+    { value: "Mobile App Developer",label: "Mobile App Developer" },
+    { value: "Data Scientist",label: "Data Scientist" },
+    { value: "Data Analyst",label: "Data Analyst" },
+    { value: "Database Administrator",label: "Database Administrator" },
+    { value: "Systems Administrator",label: "Systems Administrator" },
+    { value: "Network Engineer",label: "Network Engineer" },
+    { value: "HR Manager",label: "HR Manager" },
+    { value: "IT Project Manager",label:"IT Project Manager" },
+    { value: "IT Consultant", label: "IT Consultant" },
+    { value: "Business Analyst",label: "Business Analyst" },
+    { value: "UI/UX Designer",label: "UI/UX Designer" },
+    { value: "Quality Assurance Engineer/Tester",label: "Quality Assurance Engineer/Tester" },
+    { value: "DevOps Engineer",label: "DevOps Engineer" },
+    { value: "Cloud Architect/Engineer",label: "Cloud Architect/Engineer" },
+    { value: "IT Support Specialist",label: "IT Support Specialist" },
+    { value: "Technical Writer",label: "Technical Writer" },
+    { value:"Java Developer",label:"Java Developer"},
+    { value:"Python Developer",label:"Python Developer"},
+    { value:"Web Developer",label:"Web Developer"},
+    { value:"JavaScript Developer",label:"JavaScript Developer"},
+    { value:"Game Developer",label:"Game Developer"},
+    { value:"C#/.Net Developer",label:"C#/.Net Developer"},
+    { value:"Wordpress Developer",label:"Wordpress Developer"},
+    { value:"Salesforce Developer",label:"Salesforce Developer"},
+    { value:"Unity Developer",label:"Unity Developer"},
+    { value:"Machine Learning Engineer",label:"Machine Learning Engineer"},
+    { value:"Data Engineer",label:"Data Engineer"},
+    { value:"DevOps Engineer",label:"DevOps Engineer"},
+    { value:"Cloud Engineer",label:"Cloud Engineer"},
+    { value:"Blockchain Developer",label:"Blockchain Developer"},
+    { value:"Database Developer",label:"Database Developer"},
+    { value:"Automation Developer",label:"Automation Developer"},
+    { value:"Microservices Developer",label:"Microservices Developer"},
+    { value:"IOS Developer",label:"IOS Developer"},
+    { value:"Android Developer",label:"Android Developer"},
+    { value:"Data Architect",label:"Data Architect"},
+    { value:"Database Analyst",label:"Database Analyst"},
+    { value:"SQL Developer",label:"SQL Developer"},
+    { value:"Database Designer",label:"Database Designer"},
+    { value:"Big Data Engineer",label:"Big Data Engineer"},
+    { value:"Data Quality Analyst",label:"Data Quality Analyst"},
+    { value:"Operations Manager",label:"Operations Manager"},
+    { value:"Support Analyst",label:"Support Analyst"},
+    { value:"Network Support Engineer",label:"Network Support Engineer"},
+    { value:"Customer Support Representative",label:"Customer Support Representative"},
+    { value:"IT Help Desk Manager",label:"IT Help Desk Manager"},
+    { value:"HR Business Patner",label:"HR Business Partner"},
+    { value:"HR Specialist",label:"HR Specialist"},
+    { value:"Talent Acquisition Specialist",label:"Talent Acquisition Specialist"},
+    { value:"HR Operations Manager",label:"HR Operations Manager"},
+    { value:"HR Business Analyst",label:"HR Business Analyst"},
+    { value:"IT Operations Manager",label:"IT Operations Manager"},
+    { value:"IT Operations ANalyst",label:"IT Operations ANalyst"},
+    { value:"Risk Analyst",label:"Risk Analyst"},
+    { value:"Software Trainer",label:"Software Trainer"},
+    { value:"Product Owner",label:"Product Owner"},
+    { value:"Team Lead",label:"Team Lead"},
+    { value:"Release Manager",label:"Release Manager"},
+    { value:"Support Engineer",label:"Support Engineer"},
+    { value:"Systems Engineer",label:"Systems Engineer"},
+    { value:"Software Tester",label:"Software Tester"},
+    { value:"Security Engineer",label:"Security Engineer"},
+    { value:"Scrum Master",label:"Scrum Master"},
+    { value:"Product Manager",label:"Product Manager"},
+    { value:"Data Warehouse Developer",label:"Data Warehouse Developer"},
+    { value:"Others",label:"Others"},
+  ];
   // const [loading,setLoading]=useState(false)
   function handleChange(){
     setValue(true)
@@ -37,21 +113,21 @@ const page = ({ params }) => {
         method: "POST",
         body: JSON.stringify({
           HRId: session?.user.id,
-          title: e.target[0].value,
-          stipend: e.target[1].value,
-          companyName: e.target[2].value,
+          title:title,
+          stipend:!onefield? e.target[1].value:e.target[2].value,
+          companyName:!onefield? e.target[2].value:e.target[3].value,
           // companyLink: e.target[3].value,
-          duration: e.target[3].value,
+          duration:!onefield? e.target[3].value:e.target[4].value,
           
-          eligiblilty: e.target[4].value,
-          lastDate: e.target[5].value,
-          expectedStartDate: e.target[6].value,
-          noOfOpenings: e.target[7].value,
-          skillsRequired: e.target[8].value,
-          description: e.target[9].value,
-          responsibilities: e.target[10].value,
-          perks: e.target[11].value,
-          isIntern: e.target[12].value,
+          eligiblilty:!onefield?e.target[4].value:e.target[5].value,
+          lastDate:!onefield?e.target[5].value:e.target[6].value,
+          expectedStartDate:!onefield?e.target[6].value:e.target[7].value,
+          noOfOpenings:!onefield?e.target[7].value:e.target[8].value,
+          skillsRequired:!onefield?e.target[8].value:e.target[9].value,
+          description:!onefield?e.target[9].value:e.target[10].value,
+          responsibilities:!onefield?e.target[10].value:e.target[11].value,
+          perks:!onefield?e.target[11].value:e.target[12].value,
+          isIntern:!onefield?e.target[12].value:e.target[13].value,
           isStartUp:false,
           
           // 
@@ -75,6 +151,15 @@ const page = ({ params }) => {
       // alert("Submitted");
     }
   };
+  function handleTitle(data) {
+    setJoblist(data)
+    data.value!=="Others"?setTitle(data.value):setTitle("")
+    data.value==="Others"?setOneField(true):setOneField(false)
+    console.log(title)
+  }
+  function handlenewTitle(e){
+   setTitle(e.target.value)
+  }
   // const [posted, setPosted] = useState(false)
   // const [notposted, setNotposted] = useState(false)
   return (
@@ -92,9 +177,24 @@ const page = ({ params }) => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "1.8vh", marginLeft: "0.6em" }}><path d="M12 10c1.151 0 2-.848 2-2s-.849-2-2-2c-1.15 0-2 .848-2 2s.85 2 2 2zm0 1c-2.209 0-4 1.612-4 3.6v.386h8V14.6c0-1.988-1.791-3.6-4-3.6z"></path><path d="M19 2H5c-1.103 0-2 .897-2 2v13c0 1.103.897 2 2 2h4l3 3 3-3h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-5 15-2 2-2-2H5V4h14l.002 13H14z"></path></svg>
                   <label className="text-sm text-white my-3 ml-1">Job Title *</label>
                 </div>
-                <input className="rounded-md p-2" css={{ backgroundColor: "$white" }} clearable placeholder="Job Title" initialValue="" required />
-              </div>
+              <Select
+              className="container"
+              options={titleList}
+              placeholder="Select job"
+              onChange={handleTitle}
+              value={joblist}
+              /> 
+           </div>
             </Grid>
+            {onefield?<Grid xs={12} sm={6}>
+              <div className="flex flex-col mx-auto w-full">
+                <div className="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "1.8vh", marginLeft: "0.6em" }}><path d="M12 10c1.151 0 2-.848 2-2s-.849-2-2-2c-1.15 0-2 .848-2 2s.85 2 2 2zm0 1c-2.209 0-4 1.612-4 3.6v.386h8V14.6c0-1.988-1.791-3.6-4-3.6z"></path><path d="M19 2H5c-1.103 0-2 .897-2 2v13c0 1.103.897 2 2 2h4l3 3 3-3h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-5 15-2 2-2-2H5V4h14l.002 13H14z"></path></svg>
+                <label className="text-sm text-white my-3 ml-1">If Others, Please specify *</label>
+                </div>
+                <input className="rounded-md p-2" css={{ backgroundColor: "$white" }} onChange={handlenewTitle} clearable placeholder="Job Title" value={title} required/>
+              </div>
+            </Grid>:""}
             <Grid xs={12} sm={6}>
               <div className="flex flex-col mx-auto w-full">
                 <div className="flex">

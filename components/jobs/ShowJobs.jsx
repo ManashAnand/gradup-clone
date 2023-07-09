@@ -10,43 +10,43 @@ import Link from "next/link";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 import { useSearchParams } from "next/navigation";
 const vari=1;
-function Page({ selectedCity, selectedTitle, salaryExp, search,index ,searchresults,setSearchresults}) {
-  const [jobs,setJobs] = useState([]);
-  const [loading,setLoading]=useState(true)
-  // const { data, error } = useSWR(
-  //   `/api/jobs/?page=${index}&startup=false&intern=false`,
-  //   fetcher
-  // );
+function Page({ selectedCity, selectedTitle, salaryExp, search,index ,jobs,loading,searchresults,setSearchresults}) {
+  // const [jobs,setJobs] = useState([]);
+  // const [loading,setLoading]=useState(true)
+  // // const { data, error } = useSWR(
+  // //   `/api/jobs/?page=${index}&startup=false&intern=false`,
+  // //   fetcher
+  // // );
 
-  useEffect(()=>{
-    fetchData();
-  },[salaryExp,selectedCity,selectedTitle,index]);
-  const fetchData = async() =>{
+  // useEffect(()=>{
+  //   fetchData();
+  // },[salaryExp,selectedCity,selectedTitle,index]);
+  // const fetchData = async() =>{
 
-    try {
-      console.log("Cities Selected: ",selectedCity,"Title Selected: ",selectedTitle,"Page No:",index);
-    const response = await fetch(`/api/jobs/filter`, {
-      method: "POST",
-      body: JSON.stringify({
-        location:selectedCity,
-        stipend:salaryExp,
-        title:selectedTitle,
-        intern:"false",
-        startup:"false",
-        page:index
-      }),
-    });
-    console.log(response.status)
-    const newData = await response.json();
-    setJobs(newData);
-    setLoading(false)
-    console.log(newData,"Data is here");
-    }   catch (error) {
-        console.log(error);
-      } 
-  }
+  //   try {
+  //     console.log("Cities Selected: ",selectedCity,"Title Selected: ",selectedTitle,"Page No:",index);
+  //   const response = await fetch(`/api/jobs/filter`, {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       location:selectedCity,
+  //       stipend:salaryExp,
+  //       title:selectedTitle,
+  //       intern:"false",
+  //       startup:"false",
+  //       page:index
+  //     }),
+  //   });
+  //   console.log(response.status)
+  //   const newData = await response.json();
+  //   setJobs(newData);
+  //   setLoading(false)
+  //   console.log(newData,"Data is here");
+  //   }   catch (error) {
+  //       console.log(error);
+  //     } 
+  // }
 
-  function handleSubmit() {}
+  // function handleSubmit() {}
   
   return (
       <>
@@ -76,8 +76,41 @@ function Page({ selectedCity, selectedTitle, salaryExp, search,index ,searchresu
 }
 
 export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, search,index,searchresults,setSearchresults,setPage }) {
-  const [pageIndex, setPageIndex] = useState(0);
+  const [jobs,setJobs] = useState([]);
+  const [loading,setLoading]=useState(true)
+  const [opacity1,setOpacity1]=useState(1)
+  const [opacity2,setOpacity2]=useState(1)
+  useEffect(()=>{
+    fetchData();
+  },[salaryExp,selectedCity,selectedTitle,index]);
+  const fetchData = async() =>{
 
+    try {
+      console.log("Cities Selected: ",selectedCity,"Title Selected: ",selectedTitle,"Page No:",index);
+    const response = await fetch(`/api/jobs/filter`, {
+      method: "POST",
+      body: JSON.stringify({
+        location:selectedCity,
+        stipend:salaryExp,
+        title:selectedTitle,
+        intern:"false",
+        startup:"false",
+        page:index
+      }),
+    });
+    console.log(response.status)
+    const newData = await response.json();
+    setJobs(newData);
+    setLoading(false)
+    console.log(newData,"Data is here");
+    }   catch (error) {
+        console.log(error);
+      } 
+  }
+  useEffect(()=>{
+    index===1?setOpacity1(0.2):setOpacity1(1)
+    jobs.length<6?setOpacity2(0.2):setOpacity2(1)
+  })
   return (
     <div>
       <div className="justify-center">
@@ -90,6 +123,8 @@ export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, searc
           index={index}
           searchresults={searchresults}
           setSearchresults={setSearchresults}
+          jobs={jobs}
+          loading={loading}
         />
       </div>
       <div style={{ display: "none" }}>
@@ -100,13 +135,15 @@ export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, searc
           salaryExp={salaryExp}
           search={search}
           index={index+1}
+          jobs={jobs}
+          loading={loading}
         />
       </div>
       <div className="flex buttonpos">
-        <button style={{backgroundColor:"#0076ce"}} class="btn2" onClick={() => setPage(index - 1)}>
+        <button style={{backgroundColor:"#0076ce",opacity:opacity1}} disabled={index===1?true:false} class="btn2" onClick={() => setPage(index - 1)}>
           Prev
         </button>
-        <button style={{backgroundColor:"#0076ce"}} class="btn3" onClick={() => setPage(index + 1)}>
+        <button style={{backgroundColor:"#0076ce",opacity:opacity2}} disabled={jobs.length<6?true:false} class="btn3" onClick={() => setPage(index + 1)}>
           Next
         </button>
       </div>

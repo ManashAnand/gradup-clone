@@ -11,21 +11,21 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 import { useSearchParams } from "next/navigation";
 import FilterJobs from "@components/jobs/FilterJobs";
 import ShowJobs from "@components/jobs/ShowJobs";
-const cityList = [
-  { value: "delhi", label: "delhi" },
-  { value: "mumbai", label: "mumbai" },
-  { value: "dehradun", label: "dehradun" },
-  { value: "patna", label: "patna" },
-  { value: "gaya", label: "gaya" },
-  { value: "remote", label: "remote" },
-];
-const titleList = [
-  { value: "SDE", label: "SDE" },
-  { value: "business analyst", label: "business analyst" },
-  { value: "hr", label: "hr" },
-  { value: "ml intern", label: "ml intern" },
-  { value: "software engineer", label: "software engineer" },
-];
+// const cityList = [
+//   { value: "delhi", label: "delhi" },
+//   { value: "mumbai", label: "mumbai" },
+//   { value: "dehradun", label: "dehradun" },
+//   { value: "patna", label: "patna" },
+//   { value: "gaya", label: "gaya" },
+//   { value: "remote", label: "remote" },
+// ];
+// const titleList = [
+//   { value: "SDE", label: "SDE" },
+//   { value: "business analyst", label: "business analyst" },
+//   { value: "hr", label: "hr" },
+//   { value: "ml intern", label: "ml intern" },
+//   { value: "software engineer", label: "software engineer" },
+// ];
 
 function Page({ index , setPage}) {
   const [selectedCity, setSelectedCity] = useState([]);
@@ -70,6 +70,7 @@ function Page({ index , setPage}) {
   setSalaryExp={setSalaryExp}
   selectedCity={selectedCity}
   selectedTitle={selectedTitle}
+  setPage={setPage}
   salaryExp={salaryExp} />
         <ShowJobs selectedCity={selectedCity} selectedTitle={selectedTitle} salaryExp={salaryExp} search={search} index={index} setPage={setPage}/>
       </div>
