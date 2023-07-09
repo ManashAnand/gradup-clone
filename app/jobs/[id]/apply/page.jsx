@@ -67,12 +67,15 @@ const page = ({params}) => {
   return (
     <>
    {!submit? <div className='justify-center w-full align-center justify-items-center'>
-          <h1 className='mt-3 font-bold text-lg text-left mb-5'>
+          <h1 className='mt-6 font-bold text-lg text-left mb-8'>
           <span className="text-blue-400 text">{jobs.companyName} hiring for <span className="text-purple-500 underline underline-offset-4 decoration-2 decoration-red-300">{jobs.title}</span></span>
           </h1>
+          <p className="text-white textnew w-4/5 mb-2">* The Default Resume will be considered for the Job Application. If you haven't filled your resume yet, Please click the below button to proceed.</p>
+          <p className="mb-4 textnew text-white w-4/5">नौकरी आवेदन के लिए डिफ़ॉल्ट बायोडाटा पर विचार किया जाएगा। यदि आपने अभी तक अपना बायोडाटा नहीं भरा है, तो कृपया आगे बढ़ने के लिए नीचे दिए गए बटन पर क्लिक करें</p>
+        <a href="/user"><button className="px-16 py-2 bg-sky-500 text-white textnew rounded-md text-center mb-10">My Resume</button></a>
         <form onSubmit={createApplication} className='w-4/5 justify-center'>
             <label htmlFor="coverLetter" className='font-semibold text-white text-md ml-2 mb-3'>Cover Letter</label> <br />
-            <textarea rows="6" className="p-2.5 w-full mb-6 text-sm text-gray-900 bg-gray-50 rounded-lg border border-blue-400" placeholder='Write a beautiful Cover letter explaining why you are the best fit for this role...'/>
+            <textarea rows="6" className="p-2.5 w-full mb-6 text-sm text-gray-900 bg-gray-50 rounded-lg border border-blue-400" placeholder='Beautiful Cover letter explaining why you are the best fit for this role...'/>
             <label htmlFor="projects" className='font-semibold text-white text-md ml-2 mb-3'>Assignment/Github</label> <br />
             <textarea rows="6" className="p-2.5 w-full mb-6 text-sm text-gray-900 bg-gray-50 rounded-lg border border-blue-400" placeholder='Brief Description of the Assignment and its Link...'/>
             {/* <textarea rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder='Explain about all your relevant projects... \n1'/> */}

@@ -23,7 +23,7 @@ const HomeFirstComponent = () => {
 </h1> 
         </div>
         <Link href='/courses' className="area">
-              <button className='rounded-2xl py-1 px-6 border-2 textnew border-green-500 bg-white text-green-700 mt-6 mb-10 hover:bg-green-400 hover:text-white hover:border-white'>Let's Discuss</button>
+              <button className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white'>Let's Discuss</button>
         </Link>
         </div> 
         <div className="block mt-5">

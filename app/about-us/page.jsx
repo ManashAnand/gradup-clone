@@ -11,9 +11,9 @@ export default function About() {
           <div>
             <div>
             <p className='text-3xl text my-6 text-sky-500'>About Us</p>
-            <p className='text-white mb-1 textnew width-full'>Looking for talented and motivated interns who can add value to your startup? Want to save time and resources in finding and training the best candidates? Want to contribute to the skill development and career growth of India’s next generation of innovators and leaders?</p>
-            <p className='text-white mb-1 textnew width-full'>Partner with GradUp, the platform that connects you with the best students from engineering as well as business schools who are eager to learn from you. Post your internship requirements and we'll help you select the students who match your interests, skills, and goals. Get instant access to top-quality students who are productive from the start. Scale up or down your workforce based on your needs, ensuring an efficient and high-yielding workforce.</p>
-            <p className='text-white mb-1 textnew width-full'>Our platform has helped multiple companies to find and nurture the best interns who can contribute to their growth and success. We also provide you with tools and support to manage your internships effectively. We believe that internships are a win-win situation for both businesses and students, but you also need to find the right match. Partner with us today and discover the benefits of working with GradUp.</p>
+            <p className='text-white mb-1 textnew width-full text-justify'>Looking for talented and motivated interns who can add value to your startup? Want to save time and resources in finding and training the best candidates? Want to contribute to the skill development and career growth of India’s next generation of innovators and leaders?</p>
+            <p className='text-white mb-1 textnew width-full text-justify'>Partner with GradUp, the platform that connects you with the best students from engineering as well as business schools who are eager to learn from you. Post your internship requirements and we'll help you select the students who match your interests, skills, and goals. Get instant access to top-quality students who are productive from the start. Scale up or down your workforce based on your needs, ensuring an efficient and high-yielding workforce.</p>
+            <p className='text-white mb-1 textnew width-full text-justify'>Our platform has helped multiple companies to find and nurture the best interns who can contribute to their growth and success. We also provide you with tools and support to manage your internships effectively. We believe that internships are a win-win situation for both businesses and students, but you also need to find the right match. Partner with us today and discover the benefits of working with GradUp.</p>
             </div>
           </div>
           <div className='yes ml-12 mt-32'>
@@ -48,7 +48,7 @@ export default function About() {
       <h1 className="text-center text-3xl text mb-4 mt-8 text-blue-500">Meet Our Founder</h1>
       <div className="founderbox">
         <img className="founderimg"width="400" src="/assets/images/founder.png" alt="founder"></img>
-        <div className="ml-6 mt-7 textnew">
+        <div className="ml-6 mt-7 textnew text-justify">
           <p className="text-white text-sm mb-2" >Mr. Tanmay is a young and budding entrepreneur who has received the award for India’s Top 100 Emerging Entrepreneurs-2023 by Fox Story India!</p>
           <p className="text-white text-sm mb-2">Tanmay has been also featured in many newspapers like Hindustan Times, Hindustan, Outlook, Dainik Bhaskar, Dainik Jagran & many more…</p>
           <p className="text-white text-sm mb-2">Tanmay believes in continuous learning for everyone including himself. Currently, Tanmay has been enrolled in Executive Digital Marketing Program at The Wharton School, University of Pennsylvania.</p>
