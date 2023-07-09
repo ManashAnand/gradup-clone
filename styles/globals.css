@@ -530,7 +530,7 @@ input::placeholder,textarea::placeholder{
 }
 .headingbox{
   /* background:rgb(51, 199, 236); */
-  background: linear-gradient(320deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(29, 121, 187, 0.95) 50.90%, rgba(47, 171, 219, 0.94) 100%);;
+  background: linear-gradient(320deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(29, 121, 187, 0.95) 50.90%, rgba(212, 233, 242, 0.94) 100%);;
 
   /* background:linear-gradient(to right bottom,rgb(103, 202, 241) 20%,rgb(13, 25, 114)); */
   /* background: linear-gradient(260deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.96) 40.90%, rgba(18, 197, 252, 0.94) 99.86%);; */

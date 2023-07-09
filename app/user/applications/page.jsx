@@ -34,12 +34,12 @@ import { DeleteIcon } from "@styles/DeleteIcon";
         
     {user.length>0?<Table
       aria-label="Example table with dynamic content & infinity pagination"
-      css={{ width: "100%"}}
+      css={{ width: "100%",backgroundColor:"WhiteSmoke"}}
       color="primary"
     >
       <Table.Header columns={columns} css={{backgroundColor:"blue"}}>
         {(column) => (
-          <Table.Column css={{backgroundColor:"$cyan600",fontSize:"15px",px:"$4",color:"WhiteSmoke",width:"30vw",textAlign:"center"}} key={column.uid}>{column.name}</Table.Column>
+          <Table.Column css={{backgroundColor:"$cyan600",fontSize:"15px",px:"$4",color:"WhiteSmoke",width:"30vw",textAlign:"left"}} key={column.uid}>{column.name}</Table.Column>
         )}
       </Table.Header>
       <Table.Body
@@ -47,7 +47,7 @@ import { DeleteIcon } from "@styles/DeleteIcon";
       >
         {(item) => (
           <Table.Row key={item._id}>
-            {(key) => <Table.Cell css={{color:"$accents2",fontWeight:"$semibold",fontSize:"15px",textAlign:"center"}}>{item[key]===true?"OPENED":item[key]===false?"CLOSED":key==="appliedCandidates"?item[key].length:item[key].toUpperCase()}</Table.Cell>}
+            {(key) => <Table.Cell css={{color:"$accents8",fontWeight:"$semibold",fontSize:"15px",textAlign:"left"}}>{item[key]===true?"OPENED":item[key]===false?"CLOSED":key==="appliedCandidates"?item[key].length:item[key].toUpperCase()}</Table.Cell>}
           </Table.Row>
         )}
       </Table.Body>

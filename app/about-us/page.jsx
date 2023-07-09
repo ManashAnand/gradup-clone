@@ -47,7 +47,7 @@ export default function About() {
       </div>
       <h1 className="text-center text-3xl text mb-4 mt-8 text-blue-500">Meet Our Founder</h1>
       <div className="founderbox">
-        <img className="founderimg"width="400" src="/assets/images/founder.png" alt="founder"></img>
+        <img className="founderimg"width="400" src="/assets/images/NEW PICS.jpg" alt="founder"></img>
         <div className="ml-6 mt-7 textnew text-justify">
           <p className="text-white text-sm mb-2" >Mr. Tanmay is a young and budding entrepreneur who has received the award for India’s Top 100 Emerging Entrepreneurs-2023 by Fox Story India!</p>
           <p className="text-white text-sm mb-2">Tanmay has been also featured in many newspapers like Hindustan Times, Hindustan, Outlook, Dainik Bhaskar, Dainik Jagran & many more…</p>

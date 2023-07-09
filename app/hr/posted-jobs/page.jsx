@@ -63,7 +63,7 @@ export default function App() {
       case "title":
         return (
           <Row>
-              <Text b size={14} css={{ tt: "capitalize",color:"$accents2"  }}>
+              <Text b size={14} css={{ tt: "capitalize",color:"$accents8"  }}>
                 {cellValue}
               </Text>
             </Row>
@@ -71,7 +71,7 @@ export default function App() {
       case "impression":
         return (
             <Row>
-              <Text b size={14} css={{ tt: "capitalize",color:"$accents2" }}>
+              <Text b size={14} css={{ tt: "capitalize",color:"$accents8" }}>
                 {cellValue}
               </Text>
             </Row>
@@ -79,7 +79,7 @@ export default function App() {
       case "status":
         return (
         <Row>
-          <Text b size={14} css={{ tt: "capitalize",color:"$accents2"  }}>
+          <Text b size={14} css={{ tt: "capitalize",color:"$accents8"  }}>
             {cellValue}
           </Text>
         </Row>
@@ -144,6 +144,7 @@ export default function App() {
       css={{
         height: "auto",
         minWidth: "100%",
+        backgroundColor:"WhiteSmoke"
       }}
       selectionMode="none"
     >
