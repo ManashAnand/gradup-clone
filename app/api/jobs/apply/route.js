@@ -8,10 +8,10 @@ export const POST = async(request) => {
     const currentUser = await User.findById(userId);
     try {
         const allProjects = currentUser.project
-        const selectedProject = []
-        for (let i = 0; i < allProjects.length; i++) {
-            if (projects.includes(allProjects[i].id)) selectedProject.push(allProjects[i])
-        }
+        // const selectedProject = []
+        // for (let i = 0; i < allProjects.length; i++) {
+        //     if (projects.includes(allProjects[i].id)) selectedProject.push(allProjects[i])
+        // }
         const applicationAlreadyExists = await Application.findOne({_id:jobId+"_"+userId});
         if(applicationAlreadyExists)return new Response("You Have Already Applied.",{status:501})
         const newApplication = new Application({
@@ -23,7 +23,7 @@ export const POST = async(request) => {
             coverLetter: coverLetter,
             education: currentUser.education,
             resumeURL: resume,
-            project: selectedProject,
+            project: allProjects,
             bio: currentUser.bio,
             experience: currentUser.experience,
             social: currentUser.social,

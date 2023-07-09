@@ -12,14 +12,14 @@ const HomeFirstComponent = () => {
   return (
     <section className='w-screen flex justify-around headingbox'>
       <div className="my-12 flex flex-col justify-center">
-        <p className="text text-2xl text-white">Welcome</p>
+        <p className="text text-2xl text-white">Welcome to GradUp</p>
         <div style={{overflow:"hidden"}} className='text-5xl text-white textnew text-left'>
             <p style={{overflow:""}}>Connecting Talent with us to</p>
             <p style={{overflow:"hidden"}} className='mt-2'>Explore new <span className='animate-charcter font-semibold'>Opportunities</span></p>
         </div>
         <div className='text-left text-white textnew'>
-            <h1 className='mt-10 ml-1 w-4/5'>A Place where talent meets opportunities. <br />
-            and you develop talent with our best courses and mentors and get hired in your dream company.
+            <h1 className='mt-10 ml-1 w-4/5'>A Place where talent meets opportunities.
+            And you develop talent with our best courses and mentors and get hired in your dream company.
 </h1> 
         </div>
         <Link href='/courses' className="area">

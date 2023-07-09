@@ -11,7 +11,7 @@ const Mentors = () => {
         },
         {
             name: "Ashish Ambastha",
-            title:"Software Development Engineer III , Flipkart",
+            title:"Software Development Engineer III  Flipkart",
             img:"/assets/mentors/mentor2.png"
         },
         {

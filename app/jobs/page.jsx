@@ -40,9 +40,9 @@ function Page({ index , setPage}) {
           <div className="font-bold jobpos">
             <h1 className="text-white text-5xl">Find your job &</h1>
             <h1 className="text-blue-400 text-5xl">
-              and grab{" "}
+              grab{" "}
               <span className="underline decoration-yellow-300 underline-offset-8">
-                your opportunities
+                the opportunities
               </span>
             </h1>
           </div>

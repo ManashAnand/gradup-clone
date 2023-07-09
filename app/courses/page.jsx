@@ -162,9 +162,9 @@ const Courses = () => {
     <div className='coursebox'>
     <svg height="400" width="600">
     <polygon points="500,50 500,320 10,400 10,50" style={{fill:"#090D34"}}/>
-    <text className="text-4xl text" x="90" y="120" fill="deepskyblue">Learn from anywhere</text>
-    <text className="text-4xl text" x="90" y="160" fill="deepskyblue">around the globe</text>
-    <text className="text-4xl text" x="90" y="200" fill="deepskyblue">with us.</text>
+    <text className="text-4xl text" x="90" y="120" fill="deepskyblue">Learn from anywhere around</text>
+    <text className="text-4xl text" x="90" y="160" fill="deepskyblue">the globe with us</text>
+    {/* <text className="text-4xl text" x="90" y="200" fill="deepskyblue">with us.</text> */}
     <text className="text-xl text" x="90" y="290" fill="white">Experience quality courses with us with</text>
     <text className="text-xl text" x="90" y="320" fill="white">best price. You can get best courses</text>
     <text className="text-xl text" x="90" y="350" fill="white">from us</text>

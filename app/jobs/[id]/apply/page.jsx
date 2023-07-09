@@ -32,7 +32,7 @@ const page = ({params}) => {
         const response = await fetch("/api/jobs/apply", {
           method: "POST",
           body: JSON.stringify({
-            coverLetter: "coverLetter",
+            coverLetter:e.target[0].value,
             userId: session?.user.id,
             projects: [],
             jobId:jobId,
