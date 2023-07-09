@@ -21,7 +21,7 @@ export default function About() {
           </div>
        </div>
        <div className={styles.values}>
-        <h1 className={styles.heading1}><strong><u>Our Business</u></strong></h1>
+        <h1 className={styles.heading1}><strong><u>Our Core Values</u></strong></h1>
         <h1 className={styles.sizing}>Be Different From Others</h1>
         <div className={styles.core}>
           <div className={styles.contain1}>
