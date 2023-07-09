@@ -94,6 +94,19 @@ const FilterJobs = ({
     { value:"Scrum Master",label:"Scrum Master"},
     { value:"Product Manager",label:"Product Manager"},
     { value:"Data Warehouse Developer",label:"Data Warehouse Developer"},
+    { value:"Mathematics & Computing",label:"Mathematics & Computing"},
+    { value:"Content Development",label:"Content Development"},
+    { value:"Digital Marketing",label:"Digital Marketing"},
+    { value:"Subject Matter Expert",label:"Subject Matter Expert"},
+    { value:"Robotics",label:"Robotics"},
+    { value:"Creative Writing",label:"Creative Writing"},
+    { value:"Graphic Designing",label:"Graphic Designing"},
+    { value:"Business Development",label:"Business Development"},
+    { value:"Media & Public Relations",label:"Media & Public Relations"},
+    { value:"Social Media Marketing",label:"Social Media Marketing"},
+    { value:"Video Editing",label:"Video Editing"},
+    { value:"Cyber Security",label:"Cyber Security"},
+    { value:"Supply Chain Management",label:"Supply Chain Management"},
   ];
   // function handleCity(data) {
   //   setSelectedCity(data);

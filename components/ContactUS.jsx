@@ -77,27 +77,19 @@ export default function Contact(){
     <div class="left-container">
       <div class="left-inner-container">
       <h2 className="h2contact textnew">Let's Chat</h2>
-      <p>Whether you have a question,or simply want to connect.</p>
       <p>Feel free to send us a message.</p>
       <div className="text-white mt-10">
       <div className="mb-4 textnew flex flex-col text-sm"><PhoneAndroidIcon sx={{margin:"auto"}} color="white" fontSize="small"/>+91- 7428376300</div>
       <hr/>
       <div className="mt-4 textnew mb-3 flex flex-col text-sm"><EmailIcon sx={{margin:"auto"}} color="white" fontSize="small"/>info@attitudematterz.com <br/>attitudematterz.ops@gmail.com</div>
       <hr/>
-      <div className="text-sm textnew mt-4 flex flex-col"><BusinessIcon sx={{margin:"auto"}} color="white" fontSize="small"/> UG Floor, Regus, TOWER-2,<br/>Assotech Business Cresterra<br/>Plot No.22, Sector 135, Noida,<br/>Uttar Pradesh 201301</div>
+      <div className="text-sm textnew mt-4 flex flex-col"><BusinessIcon sx={{margin:"auto"}} color="white" fontSize="small"/><div className="decoration-white underline underline-offset-4 mb-2">Branch Office</div>4 Fairlie Place, HMP House,<br/>1st Floor, Room No 113<br/>Kolkata, 700001</div>
       </div>
     </div>
       </div>
     <div class="right-container">
       <div class="right-inner-container">
-        <form action="#">
-			<h2 class="lg-view h2contact">Contact Us</h2>
-      <input className="inputcontact" type="text" placeholder="Name *" required  />
-      <input className="inputcontact" type="email" placeholder="Email *" required />
-			<input className="inputcontact" type="phone" placeholder="Phone *" required/>
-          <textarea className="textareacontact" rows="4" placeholder="Message"></textarea>
-			<button className="buttoncontact">Submit</button>
-		</form>
+        
       </div>
     </div>
   </div>
