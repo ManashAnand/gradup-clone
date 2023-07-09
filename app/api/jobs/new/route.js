@@ -24,7 +24,7 @@ export const POST = async(request) => {
             noOfOpenings: data.noOfOpenings,
             workingHours: data.workingHours,
             postedDate: data.postedDate,
-            responsilities:data.responsilities,
+            responsilities:data.responsibilities,
             description:data.description
          });
 
