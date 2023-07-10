@@ -44,16 +44,13 @@ const Footer = () => {
                   <a href="/courses" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Courses</a>
                 </li>
                 <li>
-                  <a href="/about-us/our-services-content/School" className="text-gray-900 text-sm hover:text-white cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Services</a>
+                  <a href="/about-us/our-services-content/School" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Schools</a>
                 </li>
                 <li>
-                  <a href="/about-us/our-services-content/School" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900 mar'>&#9830;</span> Schools</a>
+                  <a href="/about-us/our-services-content/Colleges" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Colleges</a>
                 </li>
                 <li>
-                  <a href="/about-us/our-services-content/Colleges" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900 mar'>&#9830;</span> Colleges</a>
-                </li>
-                <li>
-                  <a href="/about-us/our-services-content/Student" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900 mar'>&#9830;</span> Student</a>
+                  <a href="/about-us/our-services-content/Student" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Student</a>
                 </li>
               </nav>
             </div>
@@ -67,13 +64,16 @@ const Footer = () => {
                   <a href="/mcqs" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> MCQ's</a>
                 </li>
                 <li>
-                  <a href="/alumni-network" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Alumni Network</a>
-                </li>
-                <li>
                   <a href="/blogs" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Blogs</a>
                 </li>
                 <li>
                   <a href="/case-study" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Case Study</a>
+                </li>
+                <li>
+                  <a href="/alumni-network" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Alumni Network</a>
+                </li>
+                <li>
+                  <a href="/alumni-network/manage" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Manage Alumni</a>
                 </li>
               </nav>
             </div>
