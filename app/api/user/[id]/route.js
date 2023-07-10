@@ -125,8 +125,8 @@ export const POST = async(request, { params }) => {
                         "experience.$.location": data.location,
                         "experience.$.title": data.title,
                         "experience.$.skills": data.skills,
-                        "experience.$.startDate": new Date(),
-                        "experience.$.endDate": new Date(),
+                        "experience.$.startDate": data.startDate,
+                        "experience.$.endDate": data.endDate,
                         "experience.$.description": data.description,
                             }
                     })
