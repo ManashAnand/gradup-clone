@@ -579,6 +579,9 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
 .mobilepara{
   width:40vw;
 }
+.mar{
+  margin-left:1.75rem;
+}
 .courseimg{
   display:grid;
   grid-template-columns: repeat(2,1fr);
@@ -1201,6 +1204,9 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   }
   .marginsetting{
     margin-right:0;
+  }
+  .mar{
+    margin-left:0;
   }
   .milestones{
     display:grid;

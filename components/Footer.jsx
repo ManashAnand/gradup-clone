@@ -28,7 +28,7 @@ const Footer = () => {
               />
             </Link>
 
-            <p className="mt-2 text-xl text-white text-center textnew">Transforming Dreams into Careers</p>
+            <p className="mt-2 text-white text-center textnew">GradUp is a platform aimed at Transforming dreams in to Reality for students.</p>
           </div>
           <div className="flex-grow flex flex-wrap -mb-10 md:text-left mt-4 text-center">
             <div className="lg:w-1/4 md:w-1/2 w-full menu1">
@@ -43,6 +43,18 @@ const Footer = () => {
                 <li>
                   <a href="/courses" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Courses</a>
                 </li>
+                <li>
+                  <a href="/about-us/our-services-content/School" className="text-gray-900 text-sm hover:text-white cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Services</a>
+                </li>
+                <li>
+                  <a href="/about-us/our-services-content/School" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900 mar'>&#9830;</span> Schools</a>
+                </li>
+                <li>
+                  <a href="/about-us/our-services-content/Colleges" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900 mar'>&#9830;</span> Colleges</a>
+                </li>
+                <li>
+                  <a href="/about-us/our-services-content/Student" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900 mar'>&#9830;</span> Student</a>
+                </li>
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu2">
@@ -56,6 +68,12 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="/alumni-network" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Alumni Network</a>
+                </li>
+                <li>
+                  <a href="/blogs" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Blogs</a>
+                </li>
+                <li>
+                  <a href="/case-study" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Case Study</a>
                 </li>
               </nav>
             </div>
@@ -77,6 +95,7 @@ const Footer = () => {
                 <li>
                   <a href="/about-us/cancellation-policy" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Refund & Cancellation Policy</a>
                 </li>
+                
               </nav>
             </div>
           </div>

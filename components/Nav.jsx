@@ -36,7 +36,7 @@ const Nav = () => {
       {/* Desktop Navigation */}
       <div className='lg:flex hidden'>
         {session?.user ? (
-          <div className='flex gap-3 md:gap-5'>
+          <div className='flex gap-3 md:gap-2'>
             <Link href='/jobs' className='outline_btn'>
               Jobs
             </Link>
@@ -46,8 +46,14 @@ const Nav = () => {
             <Link href='/courses' className='outline_btn'>
               Courses
             </Link>
+            <Link href='/problem-statement' className='outline_btn'>
+              Problem
+            </Link>
             <Link href='/hr/signup' className='outline_btn'>
               HR Login
+            </Link>
+            <Link href='/about-us' className='outline_btn'>
+              About Us
             </Link>
             <Link href='/hackathons' className='rounded-md bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-center mr-3'>
               Hackathons

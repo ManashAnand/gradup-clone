@@ -45,6 +45,7 @@ function Page({ index , setPage}) {
                 Opportunities for you
               </span>
             </h1>
+            <p className="mt-6 text-center text-white">Discover your perfect internship match, transform your dream and connect with top-tier companies.</p>
           </div>
           {/* <div className="inputcontainer">
             <input className="inputbox"  type="search" placeholder="🔍 Search Job Title"></input>
