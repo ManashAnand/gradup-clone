@@ -147,7 +147,7 @@ html{
 .slideshow {
   margin:10vh auto;
   overflow: hidden;
-  max-width: 500px;
+  max-width: 380px;
 }
 .lg{
   width:20px;
@@ -160,6 +160,7 @@ html{
 .slideshowSlider {
   white-space: nowrap;
   transition: ease 1000ms;
+
 }
 .justice{
  text-align: justify;

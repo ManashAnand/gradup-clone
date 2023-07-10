@@ -18,7 +18,7 @@ const Testimonial = () => {
     timeoutRef.current = setTimeout(() =>
         setIndex((prevIndex) =>
           prevIndex === list.length - 1 ?0 : prevIndex + 1
-        ),2500);
+        ),5000);
      return () => {
       resetTimeout();
     };
@@ -28,52 +28,40 @@ const Testimonial = () => {
         {
           name: "Ajay Jeena",
           title:"Student at NIT Raipur",
-          img: "/assets/images/image4.png",
+          img: "/assets/images/Group 223.png",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
 
         },
         {
             name: "Raunit Verma",
             title:"Student at NIT Raipur",
-          img: "/assets/images/image1.png",
+          img: "/assets/images/Group 224.png",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Raunit Verma",
             title:"Student at NIT Raipur",
-          img: "/assets/images/image2.png",
+          img: "/assets/images/Group 225.png",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
             name: "Ajay Jeena",
             title:"Student at NIT Raipur",
-          img: "/assets/images/image3.png",
+          img: "/assets/images/Group 228.png",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
           name: "Ajay Jeena",
           title:"Student at NIT Raipur",
-          img: "/assets/images/image4.png",
+          img: "/assets/images/Group 229.png",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
         {
           name: "Ajay Jeena",
           title:"Student at NIT Raipur",
-          img: "/assets/images/image1.png",
+          img: "/assets/images/Group 230.png",
           desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
 
-        },
-        {
-            name: "Ajay Jeena",
-            title:"Student at NIT Raipur",
-          img: "/assets/images/guess.png",
-          desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
-        },
-        {
-            name: "Ajay Jeena",
-            title:"Student at NIT Raipur",
-          img: "/assets/images/pi.png",
-          desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
         },
       ];
   return (
@@ -83,8 +71,8 @@ const Testimonial = () => {
               {/* <div > */}
             {list.map((item, i) => {
             return(<div className="slide">
-          <Card>
-            <Card.Body css={{ p: 0 }}>
+          <Card css={{backgroundColor:"rgba(28, 73, 128, 0.50)"}}>
+            <Card.Body css={{ p: 0,boxShadow:"rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px" }}>
               <Card.Image
                 src={item.img}
                 objectFit="contain"
@@ -93,14 +81,6 @@ const Testimonial = () => {
                 alt={item.title}
               />
             </Card.Body>
-            <Card.Footer css={{ justifyItems: "flex-start",padding:"$8 $12",backgroundColor:"SkyBlue",color:"WhiteSmoke" }}>
-              <Row wrap="wrap" justify="space-between" align="center">
-                <Text css={{color:"$gray800",textTransform:"uppercase", fontWeight: "$semibold",fontSize: "$md"}} >{item.name}</Text>
-                <Text css={{color:"$gray800" ,fontWeight: "$semibold", fontSize: "$sm" }}>
-                  {item.title}
-                </Text>
-              </Row>
-            </Card.Footer>
           </Card>
           {/* <img src={item.img}/> */}
         </div>)
