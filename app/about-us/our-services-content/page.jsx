@@ -2,10 +2,9 @@
 import styles from 'styles/Page.module.css'
 export default function Services() {
   return (
-    <div className="{styles.container} w-screen my-10">
-       <p className="text-5xl font-semibold textnew mt-6 animate-charcter text-center">PRODUCTS & SERVICES</p>
-        <div className={styles.content}>
-        <img className="float-right ml-10" src="/assets/images/website-icon.png" alt="logo" height="50" width="50"></img>
+    <div className=" w-screen my-10">
+       <p className="text-5xl font-semibold textnew mt-5 mb-10 animate-charcter text-center">PRODUCTS & SERVICES</p>
+        <div className='headingbox2 px-10 pb-20 pt-10'>
         <p className="text-md mb-6 textnew text-white justice">GradUp offers following products & services to its users.</p>
         <p className="text-md mb-2 textnew text-white justice">Internship and job posting: Organization & individuals looking to hire interns and/or full-time employees can post their internship and/or job requirement on gradup . Currently, one internship/job can be posted for free in a month, following which one may opt for our premium services (pay-per-post/other premium plans) to post further jobs/internships. Visit gradup Employer Section to know more.</p>
         <p className="text-md mb-2 textnew text-white justice">Internship and job search: Internship and job seekers from all over India can search and apply for internships and jobs relevant to their coursework and interest free of cost. Visit gradup  Student Section to know more.</p>

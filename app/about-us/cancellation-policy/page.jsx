@@ -1,10 +1,9 @@
 import styles from 'styles/Page.module.css'
 export default function Cancellation() {
   return (
-    <div className="{styles.container} w-screen my-10">
-      <p className="text-5xl font-semibold textnew mt-6 animate-charcter text-center">REFUND & CANCELLATION POLICY</p>
-      <div className={styles.content}>
-        <img className="float-right ml-10" src="/assets/images/website-icon.png" alt="logo" height="50" width="50"></img>
+    <div className=" w-screen my-10">
+      <p className="text-5xl font-semibold textnew mt-4 mb-8 animate-charcter text-center">REFUND & CANCELLATION POLICY</p>
+      <div className="headingbox2 px-10 pt-10 pb-20">
         <p className="text-md mb-2 textnew justice text-white">For individual training programs offered on GradUp Trainings, except for Internet of Things training, a user may request a refund anytime before their chosen batch commencement date. A transaction processing charge of 20% of the training fee paid by the user will be deducted and the remaining will be refunded within 15 working days (Monday to Friday, excluding national holidays) of the refund request being raised by the user. </p>
         <p className="text-md mb-2 textnew justice text-white">However, once the user has made the payment and accessed the training content, no refund would be permitted. No refund will be provided for the Internet of Things training offered on GradUp Trainings once the payment has been made.</p>
         <p className="text-md mb-2 textnew justice text-white">If a user is enrolled in a training that has been withdrawn by GradUp Trainings, he/she will be entitled to 100% refund within 15 working days (Monday to Friday, excluding national holidays) of the training program being withdrawn and the refund would be initiated by GradUp Trainings.</p>
