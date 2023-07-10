@@ -27,6 +27,11 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
+            <p className="text-center text-green-600 my-6 text-2xl">Our Office</p>
+            <div className="flex flex-wrap justify-center gap-12">
+              <img width="300" src="/assets/images/of1.jpg"></img>
+              <img width="300" src="/assets/images/of2.jpg"></img>
+            </div>
             <p className="text-center text-green-600 mt-6 text-2xl">Follow Us</p>
             <span className="flex justify-center my-5">
               <a className="text-white my-auto" target="_blank" href="https://www.facebook.com/GradUp.in">

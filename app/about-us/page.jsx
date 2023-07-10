@@ -14,6 +14,7 @@ export default function About() {
             <li className='text-white mb-1 textnew width-full text-justify'>Looking for talented and motivated interns who can add value to your startup? Want to save time and resources in finding and training the best candidates? Want to contribute to the skill development and career growth of India’s next generation of innovators and leaders?</li>
             <li className='text-white mb-1 textnew width-full text-justify'>Partner with GradUp, the platform that connects you with the best students from engineering as well as business schools who are eager to learn from you. Post your internship requirements and we'll help you select the students who match your interests, skills, and goals. Get instant access to top-quality students who are productive from the start. Scale up or down your workforce based on your needs, ensuring an efficient and high-yielding workforce.</li>
             <li className='text-white mb-1 textnew width-full text-justify'>Our platform has helped multiple companies to find and nurture the best interns who can contribute to their growth and success. We also provide you with tools and support to manage your internships effectively. We believe that internships are a win-win situation for both businesses and students, but you also need to find the right match. Partner with us today and discover the benefits of working with GradUp.</li>
+            <li className='text-white mb-1 textnew width-full text-justify'>The CIN of the Company is U80903JH2022PTC019112 and GST No. is 20AACCZ0257F1ZS.</li>
             </div>
           </div>
           <div className='yes ml-12 mt-32'>
@@ -60,6 +61,9 @@ export default function About() {
           <br />
         </div>
       </div>
+      <img className='mx-auto mt-16 mb-16' src="/assets/images/certify.png" alt="certificate"></img>
+      <p className="text-white text-3xl text-center mt-12 mb-9">Recognized by Startup India</p>
+      <img className='mx-auto mb-16' width="800" src="/assets/images/startup.jpg"></img>
     </div>
   )
 }
