@@ -3,7 +3,7 @@ import styles from 'styles/Page.module.css'
 const page = () => {
   return (
     <div className='w-screen px-10  pb-20 pt-10 headingbox2'>
-      <h1 className="text-white text-center text-4xl font-semibold mb-10">Maintaining Good Relationship</h1>
+      <h1 className="text-white text-center text-4xl font-semibold mb-10">Are you struggling in maintaining good relationship with your Alumni ?</h1>
       <div>
         <p className='text-2xl text-white text-center mb-12'>Dear College, facing trouble to manage your Alumni! Don't worry now our company will help you establish a good connection with you and your alumni</p>
         <div className='text-white justice textnew text-lg'>To maintain a good relationship between a college and its alumni, a company or institution can provide various services and initiatives. These efforts aim to engage and support alumni, fostering a strong connection with the institution and encouraging their continued involvement. Here are some common services and activities:

@@ -20,7 +20,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav style={{backgroundColor:"#c896d2"}} className='w-screen flex-between pt-3 shadow-xl p-4'>
+    <nav style={{backgroundColor:""}} className='w-screen bg-gray-300 flex-between pt-3 shadow-xl p-4'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
           src='/assets/images/website-icon.png'
@@ -45,9 +45,6 @@ const Nav = () => {
             </Link>
             <Link href='/courses' className='outline_btn'>
               Courses
-            </Link>
-            <Link href='/problem-statement' className='outline_btn'>
-              Problem
             </Link>
             <Link href='/hr/signup' className='outline_btn'>
               HR Login

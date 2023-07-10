@@ -548,7 +548,7 @@ input::placeholder,textarea::placeholder{
   
 }
 .headingbox2{
-background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 34.90%, rgba(199, 95, 189, 0.94) 77.86%);
+background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 34.90%, rgba(25, 23, 79, 0.94) 77.86%);
 }
 .startup{
   display:flex;
@@ -1354,7 +1354,7 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
 .left-container {
   flex:1;
   height:480px;
-  background-color:rgb(57, 198, 57);
+  background-color:rgb(14, 46, 95);
 }
 .right-container {
   display:flex;
