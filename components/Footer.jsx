@@ -9,7 +9,7 @@ const Footer = () => {
         <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
     </svg> */}
       </div>
-      <footer style={{ backgroundColor: 'deepskyblue' }} className="text-gray-900 body-font w-screen">
+      <footer style={{ backgroundColor: '#c896d2' }} className="text-gray-900 body-font w-screen">
         <div className="container px-5 py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div className="w-80 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mr-60">
             <Link href={'/'} className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
@@ -30,12 +30,12 @@ const Footer = () => {
 
             <p className="mt-2 text-xl text-white text-center textnew">Transforming Dreams into Careers</p>
           </div>
-          <div className="flex-grow flex flex-wrap -mb-10 md:text-center mt-4 text-center">
-            <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu1">
+          <div className="flex-grow flex flex-wrap -mb-10 md:text-left mt-4 text-center">
+            <div className="lg:w-1/4 md:w-1/2 w-full menu1">
               <h2 className="title-font font-semibold text-black tracking-widest text-sm mb-3">SERVICES</h2>
               <nav className="list-none mb-10 textnew">
                 <li>
-                  <a href="/jobs" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Jobs</a>
+                  <a href="/jobs" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900 text-left'>&#9830;</span> Jobs</a>
                 </li>
                 <li>
                   <a href="/internships" className="text-gray-900 hover:text-white text-sm cursor-pointer mb-2"><span className='text-gray-900'>&#9830;</span> Internships</a>
@@ -59,7 +59,7 @@ const Footer = () => {
                 </li>
               </nav>
             </div>
-            <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu3">
+            <div className="lg:w-1/3 md:w-1/2 w-full px-4 menu3">
               <h2 className="title-font font-semibold text-black tracking-widest text-sm mb-3">ABOUT US</h2>
               <nav className="list-none mb-10 textnew">
                 <li>
