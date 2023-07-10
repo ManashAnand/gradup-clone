@@ -1,7 +1,11 @@
 "use client"
 import { Card, Grid, Text, Link, Button } from "@nextui-org/react";
+import {useState} from "react"
 export default function BeMentorWithUs() {
-
+  const [status,setStatus]=useState(false)
+ function handleClick(){
+  setStatus(true)
+ }
   const handleSubmit =async (e)=>{
     e.preventDefault();
   
@@ -23,11 +27,12 @@ export default function BeMentorWithUs() {
     }
   }
   return (
-    <div className="w-screen flex headerformbox">
-       <div className=" bg-sky-500 firstformbox">
-       </div>
-       <div className="formpos">
-          <form onSubmit={handleSubmit} className="mt-4 ">
+    <div className="w-full rounded-md flex justify-center">
+      {!status?<div style={{boxShadow:"rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(200, 37, 64, 0.35) 0px 0px 6px 8px inset"}} className="bg-white rounded-xl flex flex-col p-16 my-16">
+        <p className="text-red-400 text-3xl font-semibold textnew">Join as an Industry Expert</p>
+        <button onClick={handleClick} className="bg-red-500 px-10 mt-9 text-center py-2 rounded-xl text-white">Join Now</button>
+      </div>:""}
+          {/* <form onSubmit={handleSubmit} className="mt-4 ">
             <div className="font-bold text text-3xl">
                 <h2 className="text-center text-red-500 underline decoration-red-300 underline-offset-4">Want to Join our Expert's team</h2>
                 <h1 className="text-red-600" style={{marginTop:"1vh",fontSize:"13px",fontWeight:"normal",textAlign:"center"}}>
@@ -92,8 +97,8 @@ export default function BeMentorWithUs() {
             Get in touch with us
           </Button>
         </div>
-           </form>
-    </div>
+           </form> */}
+           {status?<iframe className="my-12" src="https://docs.google.com/forms/d/e/1FAIpQLSdIg6vulODuTQlKk1KsVu6s7GzEP2mPr4umdOqlELtBaEp_mA/viewform?embedded=true" width="640" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>:""}
     </div>
   );
 }

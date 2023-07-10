@@ -180,6 +180,7 @@ const page = ({ params }) => {
     {!posted ?
       <div className='justify-center w-full align-center justify-items-center hrjobs mt-16 mb-20 border-2 border-white p-4'>
         <h1 className='font-bold text-5xl text-left mb-5'>
+          <img src="/assets/images/logo-for-website.png" width="100" alt=""></img>
           <p className='textnew text-4xl text-center text-white mb-8'>Post a Job and hire the best Talent</p>
         </h1>
         <form onSubmit={createNewJob} className='w-full'>

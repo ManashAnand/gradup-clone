@@ -43,9 +43,10 @@ const Home = () => {
         <div style={{background:"linear-gradient(220deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 60.90%,  rgba(9,158,248, 0.94) 99.86%)"}} className='p-10 w-screen'>
           <div className="hide1">
           <p className='text-xl font-semibold mt-6 mb-1 text-white ml-32 text'>Get Hired</p>
-          <p className="ml-32 textnew text-sm text-white">Work with your dream companies by applying for full-time roles and internships and Hackathon too.</p>
+          <p className="ml-32 textnew text-sm text-white">Work with your dream companies by applying for Full-time roles, Internships and Hackathon too.</p>
           </div>
           <div className="appbox">
+           <a href="/jobs">
             <div className="rounded-md h-24 w-52 bg-green-200 mr-20 flex items-center justify-evenly p-3 box9">
               <div>
               <p className='text-sky-700 text text-sm'>Full time</p>
@@ -53,6 +54,8 @@ const Home = () => {
               </div>
               <img src="/assets/icons/image 153.png" width="70"></img>
             </div>
+            </a>
+            <a href="/internships">
             <div className="rounded-md h-24 w-52 bg-purple-200 mr-20 flex items-center justify-evenly p-3 box8">
               <div>
               <p className='text-sky-700 text text-sm'>Paid</p>
@@ -60,6 +63,8 @@ const Home = () => {
               </div>
               <img src="/assets/icons/image 153.png" width="70"></img>
             </div>
+            </a>
+            <a href="/courses">
             <div className="rounded-md h-24 w-52 bg-red-200 mr-20 flex items-center justify-evenly p-3 box7">
               <div>
               <p className='text-sky-700 text text-sm'>Learn</p>
@@ -67,6 +72,8 @@ const Home = () => {
               </div>
               <img src="/assets/icons/image 153.png" width="70"></img>
             </div>
+            </a>
+            <a href="/hackathons">
             <div className="rounded-md h-24 w-52 bg-blue-200 mr-20 flex items-center justify-evenly p-3 box6">
               <div>
               <p className='text-sky-700 text text-sm'>Participate</p>
@@ -74,9 +81,10 @@ const Home = () => {
               </div>
               <img src="/assets/icons/image 153.png" width="70"></img>
             </div>
+            </a>
           </div>
         </div>
-        <h1 className='text-white textnew text-3xl font-semibold text-center mt-10'>Meet Our Mentors</h1>
+        <h1 className='text-white textnew text-3xl font-semibold text-center mt-10'>Our Industry Experts (120+)</h1>
         <Mentors />
         <Achievement />
         <BeMentorWithUs />

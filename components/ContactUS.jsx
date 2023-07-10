@@ -77,13 +77,14 @@ export default function Contact(){
     <div class="left-container">
       <div class="left-inner-container">
       <h2 className="h2contact textnew">Let's Chat</h2>
-      <p>Feel free to send us a message.</p>
-      <div className="text-white mt-10">
+      <div className="text-white mt-8">
       <div className="mb-4 textnew flex flex-col text-sm"><PhoneAndroidIcon sx={{margin:"auto"}} color="white" fontSize="small"/>+91-7428376300</div>
       <hr/>
-      <div className="mt-4 textnew mb-3 flex flex-col text-sm"><EmailIcon sx={{margin:"auto"}} color="white" fontSize="small"/>info@gradup.in </div>
+      <div className="mt-2 textnew mb-3 flex flex-col text-sm"><EmailIcon sx={{margin:"auto"}} color="white" fontSize="small"/>info@gradup.in </div>
       <hr/>
-      <div className="text-sm textnew mt-4 flex flex-col"><BusinessIcon sx={{margin:"auto"}} color="white" fontSize="small"/><div className="decoration-white underline underline-offset-4 mb-2">Branch Office</div>4 Fairlie Place, HMP House,<br/>1st Floor, Room No 113<br/>Kolkata, 700001</div>
+      <div className="text-sm textnew my-2 flex flex-col"><BusinessIcon sx={{margin:"auto"}} color="white" fontSize="small"/><div className="decoration-white underline underline-offset-4 mb-2">Head Office</div>UG Floor, Regus, TOWER-2,<br/>Assotech Business Cresterra Plot<br/>No.22, Sector 135, Noida, <br/>Uttar Pradesh, 201301</div>
+      <hr/>
+      <div className="text-sm textnew my-2 flex flex-col"><BusinessIcon sx={{margin:"auto"}} color="white" fontSize="small"/><div className="decoration-white underline underline-offset-4 mb-2">Branch Office</div>4 Fairlie Place, HMP House,<br/>1st Floor, Room No 113<br/>Kolkata, 700001</div>
       </div>
     </div>
       </div>

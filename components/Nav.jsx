@@ -29,7 +29,7 @@ const Nav = () => {
           height={45}
           className='object-contain'
         />
-       <p className="text-white text-xl font-semibold">GradUp</p>
+       <img width="80" src="/assets/images/logo-for-website.png"></img>
       </Link>
       
 
@@ -48,6 +48,9 @@ const Nav = () => {
             </Link>
             <Link href='/hr/signup' className='outline_btn'>
               HR Login
+            </Link>
+            <Link href='/hackathons' className='rounded-md bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-center mr-3'>
+              Hackathons
             </Link>
             <button type='button' onClick={signOut} className='black_btn'>
               Sign Out

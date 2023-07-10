@@ -44,6 +44,11 @@ const Mentors = () => {
            title:"Adobe",
            img: "/assets/mentors/mentor8.png"
         },
+        {
+          name:"➕ Many More",
+          title:"",
+          img:"/assets/images/mentors.png"
+        }
       ];
   return (
     <div className="background pt-10">

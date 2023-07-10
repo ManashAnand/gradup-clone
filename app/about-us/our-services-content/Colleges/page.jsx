@@ -1,18 +1,10 @@
-
+import React from "react"
 import styles from 'styles/Page.module.css'
-export default function Services() {
-  return (
-    <div className="{styles.container} w-screen my-10">
-       <p className="text-5xl font-semibold textnew mt-6 animate-charcter text-center">PRODUCTS & SERVICES</p>
-        <div className={styles.content}>
-        <img className="float-right ml-10" src="/assets/images/website-icon.png" alt="logo" height="50" width="50"></img>
-        <p className="text-md mb-6 textnew text-white justice">GradUp offers following products & services to its users.</p>
-        <p className="text-md mb-2 textnew text-white justice">Internship and job posting: Organization & individuals looking to hire interns and/or full-time employees can post their internship and/or job requirement on gradup . Currently, one internship/job can be posted for free in a month, following which one may opt for our premium services (pay-per-post/other premium plans) to post further jobs/internships. Visit gradup Employer Section to know more.</p>
-        <p className="text-md mb-2 textnew text-white justice">Internship and job search: Internship and job seekers from all over India can search and apply for internships and jobs relevant to their coursework and interest free of cost. Visit gradup  Student Section to know more.</p>
-        <p className="text-md mb-2 textnew text-white justice">Gradup Trainings: Gradup  offers a variety of online training programs across multiple disciplines (Machine Learning, Web Development, Digital Marketing, Java, French and several others) which students can do from the comfort of their homes and learn the skills needed in today’s industry. Visit Gradup  Trainings to know more.</p>
-        <p className="text-md mb-2 textnew text-white justice">Gradup reserves the right to add/remove any product and service at its sole discretion or change the price charged for such offerings.</p>
-        </div>
-      {/* <div className={styles.box}>
+
+export default function Colleges(){
+    return(
+        <div className="{styles.container} w-screen">
+        <div className={styles.box}>
         <img className={styles.groupimg} src="/assets/images/group.png" alt="group"></img>
         <div>
           <h1 className={styles.heading}>--Services</h1>
@@ -256,7 +248,7 @@ export default function Services() {
           <p className={styles.partnerpara}>To have a clear cut discussion on what subjects /specialization /jobs is best suitable for you- GradUp presents a close knitted career guidance program where small group of participants are heard, their career path and interests is understood by our professionally certified career counsellors and accordingly best decision in taken. Come, let’s chat around your career discussion plans!</p>
           <button className={styles.btn1}><a href="">Book A Slot</a></button>
         </div>
-      </div> */}
-    </div>
-  )
+      </div>
+      </div>
+    )
 }

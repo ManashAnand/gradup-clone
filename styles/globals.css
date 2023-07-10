@@ -161,6 +161,9 @@ html{
   white-space: nowrap;
   transition: ease 1000ms;
 }
+.justice{
+ text-align: justify;
+}
 
 .slide {
   display: inline-block;
@@ -470,6 +473,12 @@ input::placeholder,textarea::placeholder{
   margin-left:4vw;
   font-size:22px;
 }
+.disp{
+  display:flex;
+  justify-content: center;
+  gap:8rem;
+  width:80%;
+}
 .btn6{
   margin-left:2vw;
   font-size:14px;
@@ -537,6 +546,9 @@ input::placeholder,textarea::placeholder{
   padding:25px;
   
 }
+.headingbox2{
+background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 34.90%, rgba(199, 95, 189, 0.94) 77.86%);
+}
 .startup{
   display:flex;
 }
@@ -595,8 +607,8 @@ input::placeholder,textarea::placeholder{
    background-image: linear-gradient(
      -225deg,
      #2390f7 0%,
-     #f7f1f6 29%,
-     #f736ba 67%,
+     #f40dcd 29%,
+     #edf75c 67%,
      #63bef7 100%
    );
    background-size: auto auto;
@@ -864,6 +876,9 @@ input::placeholder,textarea::placeholder{
    gap:20px;
    padding:4rem 2rem;
   }
+  .disp{
+    width:100%;
+  }
   .flexBox{
     display:block;
   }
@@ -997,6 +1012,13 @@ input::placeholder,textarea::placeholder{
   }
   .adjust{
     width:100%;
+  }
+  .disp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
   }
   .displayprofile{
     padding:1rem;
@@ -1167,6 +1189,9 @@ input::placeholder,textarea::placeholder{
     width:90vw;
     height:60vh;
   }
+  .justice{
+    text-align:center;
+  }
   .message{
     margin-left: 0rem;
   }
@@ -1308,7 +1333,6 @@ input::placeholder,textarea::placeholder{
 	overflow: hidden;
 	width: 768px;
 	max-width: 100%;
-	min-height: 480px;
   min-width:355px;
 }
 
@@ -1323,7 +1347,7 @@ input::placeholder,textarea::placeholder{
 .left-container {
   flex:1;
   height:480px;
-  background-color:deepskyblue;
+  background-color:rgb(57, 198, 57);
 }
 .right-container {
   display:flex;

@@ -1,14 +1,58 @@
+'use client'
 import React from 'react'
 import Link from 'next/link';
+import { Grid, Card, Col, Text } from "@nextui-org/react";
 const HR = () => {
   return (
-    <div>
-      <Link href='/hr/posted-jobs' className='outline_btn mb-5'>
-          Jobs Posted
+    <div className='my-20 disp'>
+      <Card css={{ w: "90%" }}>
+        <Card.Header isBlurred css={{ position: "absolute", bgBlur: "#0f111466", zIndex: 1, bottom: 0 }}>
+          <Col>
+          <Text size={15} css={{ textAlign: "center",marginBottom:"$6" }} weight="bold" transform="uppercase" color="#ffffff">
+              Add Jobs
+            </Text>
+            <Text css={{ textAlign: "center",marginBottom:"$4" }}>
+              <Link href='/hr/addjob' className='bg-blue-400 px-10 rounded-xl py-2 text-white text-center'>
+                Add Job
+              </Link>
+            </Text>
+          </Col>
+        </Card.Header>
+        <Card.Image
+          src="/assets/images/jobpost.png"
+          width="100%"
+          height={280}
+          objectFit="cover"
+          alt="Card image background"
+        />
+      </Card>
+      <Card css={{ w: "90%" }}>
+        <Card.Header isBlurred css={{ position: "absolute", bgBlur: "#0f111466", zIndex: 1, bottom: 0 }}>
+          <Col>
+            <Text size={15} css={{ textAlign: "center",marginBottom:"$6" }} weight="bold" transform="uppercase" color="#ffffff">
+              Posted Jobs
+            </Text>
+            <Text css={{ textAlign: "center",marginBottom:"$4" }}>
+              <Link href='/hr/posted-jobs' className='bg-blue-400 px-10 rounded-xl py-2 text-white text-center'>
+                Posted Jobs
+              </Link>
+            </Text>
+          </Col>
+        </Card.Header>
+        <Card.Image
+          src="/assets/images/jbs.png"
+          width="100%"
+          height={280}
+          objectFit="cover"
+          alt="Card image background"
+        />
+      </Card>
+      {/* <Link href='/hr/addjob' className='bg-blue-400 px-20 py-2 text-white text-center mb-10'>
+        Add Job
       </Link>
-      <Link href='/hr/addjob' className='outline_btn mb-5'>
-          Add Job
-      </Link>
+      <Link href='/hr/posted-jobs' className="bg-blue-400 px-16 py-2 text-white text-center" >
+        Jobs Posted
+      </Link> */}
     </div>
   )
 }

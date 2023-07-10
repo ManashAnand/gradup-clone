@@ -227,7 +227,6 @@ const Courses = () => {
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
                 <Text css={{mr:"$10"}} b>{item.title}</Text>
-                <Text css={{color:"$red700"}} b>{item.price}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
@@ -258,7 +257,6 @@ const Courses = () => {
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
                 <Text css={{mr:"$10"}} b>{item.title}</Text>
-                <Text  css={{color:"$red700"}} b>{item.price}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
@@ -289,7 +287,6 @@ const Courses = () => {
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
                 <Text css={{mr:"$16"}} b>{item.title}</Text>
-                <Text  css={{color:"$red700",mr:"$8"}} b>{item.price}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
@@ -320,7 +317,6 @@ const Courses = () => {
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
                 <Text b>{item.title}</Text>
-                <Text css={{color:"$red700"}} b>{item.price}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
@@ -351,7 +347,6 @@ const Courses = () => {
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
                 <Text b>{item.title}</Text>
-                <Text css={{color:"$red700"}} b>{item.price}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
@@ -382,7 +377,6 @@ const Courses = () => {
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
                 <Text b>{item.title}</Text>
-                <Text css={{color:"$red700"}} b>{item.price}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
@@ -413,7 +407,6 @@ const Courses = () => {
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
                 <Text b>{item.title}</Text>
-                <Text css={{color:"$red700"}} b>{item.price}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
