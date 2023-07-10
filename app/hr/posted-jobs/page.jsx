@@ -1,6 +1,7 @@
 "use client"
 import useSWR from 'swr';
 import {useSession} from "next-auth/react";
+import LoginAlert from '@components/LoginAlert';
 // const fetcher = (...args) => fetch(...args).then((res) => res.json());
 import Link from 'next/link';
 import Spinner from "@components/Spinner"
@@ -29,7 +30,7 @@ export default function App() {
   // const url=`api/hr/${session?.user.id}`;
   const { data: session } = useSession();
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/hr/${session?.user.id}` : null, fetcher)
-  if (error) return <div>userFailed to loadinggggggg</div>;
+  if (error) return <div><LoginAlert/></div>;
   if (!data) return <div className='my-60 mx-auto'><Spinner/></div>;
   // const data=getData(url);
   console.log(data);

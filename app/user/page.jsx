@@ -3,6 +3,7 @@ import useSWR from 'swr';
 import {useSession} from "next-auth/react";
 import Link from 'next/link';
 import Spinner from "@components/Spinner"
+import LoginAlert from '@components/LoginAlert';
 import { Input, Textarea, Spacer , Button, Popover} from "@nextui-org/react";
 import Education from "@components/userProfile/education"
 import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
@@ -43,7 +44,7 @@ export default function Profile() {
     console.log("Adding new edu")
     data.education.push(newEdu)
   }
-  if (error) return <div>userFailed to loadinggggggg</div>;
+  if (error) return <div><LoginAlert/></div>;
   if (!data) return <div className="my-60"><Spinner/></div>;
   console.log("ajay", data);
       // useEffect(()=>{
