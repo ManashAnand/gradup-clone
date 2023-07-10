@@ -7,6 +7,7 @@ import Spinner from "@components/Spinner"
 import useSWR from 'swr';
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import { useState } from 'react'
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -178,10 +179,18 @@ const page = ({ params }) => {
   return (
     <>
     {!posted ?
-      <div className='justify-center w-full align-center justify-items-center hrjobs mt-16 mb-20 border-2 border-white p-4'>
+      <div className='justify-center w-full align-center justify-items-center hrjobs mt-16 mb-20 border-2 border-white px-4'>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+        <Image
+          src="/assets/images/logo-for-website.png"
+          alt="logo"
+          width={150}
+          height={80}
+          className="mb-6 font-bold text-center snap-center"
+        />
+      </div>
         <h1 className='font-bold text-5xl text-left mb-5'>
-          <img src="/assets/images/logo-for-website.png" width="100" alt=""></img>
-          <p className='textnew text-4xl text-center text-white mb-8'>Post a Job and hire the best Talent</p>
+        <p className='textnew text-4xl text-center text-white mb-8'>Post a Job and hire the best Talent</p>
         </h1>
         <form onSubmit={createNewJob} className='w-full'>
           <Grid.Container gap={2} >

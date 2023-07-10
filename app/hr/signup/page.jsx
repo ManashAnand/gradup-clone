@@ -67,12 +67,12 @@ export default function HRSignup() {
   };
 
   return (
-    !posted?<div className="bg-violet-200 p-10 mt-10 mb-20 rounded-xl main-login">
+    !posted?<div className="bg-violet-200 py-10 px-6 mt-10 mb-20 rounded-xl main-login">
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Image
-          src="/assets/icons/logo.png"
+          src="/assets/images/logo-for-website.png"
           alt="logo"
-          width={80}
+          width={180}
           height={80}
           className="mb-6 font-bold text-center snap-center"
         />
