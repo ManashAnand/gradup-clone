@@ -67,7 +67,7 @@ export default function HRSignup() {
   };
 
   return (
-    !posted?<div className="bg-violet-200 py-10 px-6 mt-10 mb-20 rounded-xl main-login">
+    !posted?<div className="bg-blue-100 py-10 px-6 mt-10 mb-20 rounded-xl main-login">
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Image
           src="/assets/images/logo-for-website.png"
@@ -150,7 +150,7 @@ export default function HRSignup() {
           </form>
         </div>
         <div className="side2">
-          <img width="300" src="/assets/images/loginhr.gif" alt="secure-login"></img>
+          <img width="300" src="/assets/images/frame.png" alt="secure-login"></img>
           <p></p>
         </div>
       </div>

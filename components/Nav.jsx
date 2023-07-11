@@ -52,9 +52,9 @@ const Nav = () => {
             <Link href='/about-us' className='outline_btn'>
               About Us
             </Link>
-            <Link href='/hackathons' className='rounded-md bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-center mr-3'>
+            {/* <Link href='/hackathons' className='rounded-md bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-center mr-3'>
               Hackathons
-            </Link>
+            </Link> */}
             <button type='button' onClick={signOut} className='black_btn'>
               Sign Out
             </button>

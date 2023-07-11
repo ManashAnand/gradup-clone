@@ -6,11 +6,11 @@ import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import ContactUS from "@components/ContactUS"
 export default function About() {
   return (
-    <div className='mb-10'>
+    <div className='mb-10 w-screen p-20'>
       <div className="aboutbox mt-10">
         <div>
-          <div>
-            <p className='text-3xl text my-6 text-sky-500'>About Us</p>
+          <div style={{boxShadow:"rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;"}} className='px-10 pb-10 pt-4'>
+            <p className='text-5xl text my-3 text-sky-500'>About Us</p>
             <p className='text-white mb-1 textnew width-full text-justify'>Welcome to GradUp, the premier platform connecting talented students with top-tier companies. Our platform
               provides students with a unique opportunity to unlock
               their potential by finding internships tailored to their
@@ -27,9 +27,12 @@ export default function About() {
             <li className='text-white mb-1 textnew width-full text-justify'>Our platform has helped multiple companies to find and nurture the best interns who can contribute to their growth and success. We also provide you with tools and support to manage your internships effectively. We believe that internships are a win-win situation for both businesses and students, but you also need to find the right match. Partner with us today and discover the benefits of working with GradUp.</li>
           </div>
         </div>
-        <div className='yes ml-12 mt-40'>
-          <img width="2000" src="/assets/images/employee.png" alt="company"></img>
-        </div>
+        <div className='yes grid grid-cols-2 ml-12 my-auto gap-2'>
+          <img width="1300" src="/assets/images/about5.png" alt="company"></img>
+          <img width="1300" src="/assets/images/about2.png" alt="company"></img>
+          <img width="1300" src="/assets/images/about4.png" alt="company"></img>
+          <img className='mart' width="1300" src="/assets/images/about3.png" alt="company"></img>
+          </div>
       </div>
       <div className={styles.values}>
         <h1 className={styles.heading1}><strong><u>Our Core Values</u></strong></h1>
@@ -52,30 +55,29 @@ export default function About() {
           </div>
         </div>
       </div>
-      <h1 className="text-center text-3xl text mb-4 mt-8 text-blue-500">Meet Our Founder</h1>
+      <h1 className=" text-center text-5xl underline underline-offset-8 decoration-white text mb-4 mt-8 text-blue-500">Meet Our Founder</h1>
       <div className="founderbox">
         <img className="founderimg" width="400" src="/assets/images/NEW PICS.jpg" alt="founder"></img>
         <div className="ml-6 mt-7 textnew text-justify">
-          <p className="text-white text-sm mb-2" >Mr. Tanmay is a trailblazer, who is a 25 yr old entrepreneur whose meteoric rise from humble beginnings to becoming a well-known entreprenaur has been an inspiration to the students of the country. Failing consistently, being unable to face their fears, Mr. Tanmay couldn’t do what they wished for and unfortunately being at the lowest was their thing. Being named in the failure list, used to be no new for them until they discovered their inner own self. Starting from scratch, he embraced the challenges that awaited him, transforming adversity into opportunity.  Now, this young and budding entrepreneur has also received the award for India’s Top 100 Emerging Entrepreneurs-2023 by Fox Story India! They had a trailblazing Journey from Ground Zero to Remarkable Heights.</p>
-          <p className="text-white text-sm mb-2">Coming from a family of educationists, our founder Mr Tanmay had the chance to interact with many students and parents. His interaction with the students helped him understand the most common problems faced by them  in their career initial phase of career after completing their degree. To provide a solution to this, GradUp (formerly, Attitude matterZ) was born.</p>
-          <p className="text-white text-sm mb-2">Mr. Tanmay believes in continuous learning for everyone including their own self. Their story is a testament to resilience, unwavering determination, and an unparalleled drive for success. Tanmay is alumnus of NIT-IIM. He holds an Engineering degree, MBA degree and an Advanced degree in Digital Marketing & Entrepreneurship. Currently, Mr. Tanmay is pursuing Executive entrepreneurship Program at The Wharton School, University of Pennsylvania.</p>
-          <p className="text-white text-sm mb-2">Mr. Tanmay has worked so hard despite facing several difficulties & being unvalued, still they manage to collaborate with some esteemed companies like PhonePe, Genpact, Toyota, LiuGong, Tata Steel Aashiyana, and PepsiCo (VBL) and has rich experience in framing digital marketing strategies for MSME clients.</p>
-          <p className="text-white text-sm mb-2">Mr. Tanmay is rightly known for his networking, down to earth nature and leadership skills. He is presently a member of the International Youth Council, United Nations, and has been elected as the General Secretary and Vice President at various clubs and societies. Before GradUp (formerly Attitude matterZ), Tanmay co-founded a startup namely Business garage which aimed at providing digital marketing strategies to MSMEs.</p>
-          <p className='text-white text-sm mb-2'><em>Tanmay is also a guest speaker, and he has been invited as a guest speaker by many premier institutions of India.</em></p>
-          <p className="text-white text-sm mb-2"><em>Tanmay has a vision to nurture the youth of “BHARAT” to be industry and future ready.</em></p>
-          <p className="text-white text-sm mb-2"><em>Tanmay’s Director Identification No is  09687950.</em></p>
+          <p className="text-white mb-2" >Mr. Tanmay is a trailblazer, who is a 25 year young and budding entrepreneur whose meteoric rise from humble beginnings to becoming a well-known entreprenaur has been an inspiration to the students of the country. Failing consistently, being unable to face their fears, Mr. Tanmay couldn’t do what they wished for and unfortunately being at the lowest was their thing. Being named in the failure list, used to be no new for them until they discovered their inner own self. Starting from scratch, he embraced the challenges that awaited him, transforming adversity into opportunity.  Now, this young and budding entrepreneur has also received the award for India’s Top 100 Emerging Entrepreneurs-2023 by Fox Story India! They had a trailblazing Journey from Ground Zero to Remarkable Heights.</p>
+          <p className="text-white mb-2">Coming from a family of educationists, our founder Mr Tanmay had the chance to interact with many students and parents. His interaction with the students helped him understand the most common problems faced by them  in their career initial phase of career after completing their degree. To provide a solution to this, GradUp (formerly, Attitude matterZ) was born.</p>
+          <p className="text-white mb-2">Mr. Tanmay believes in continuous learning for everyone including their own self. Their story is a testament to resilience, unwavering determination, and an unparalleled drive for success. Tanmay is alumnus of NIT-IIM. He holds an Engineering degree, MBA degree and an Advanced degree in Digital Marketing & Entrepreneurship. Currently, Mr. Tanmay is pursuing Executive entrepreneurship Program at The Wharton School, University of Pennsylvania.</p>
+          <p className="text-white mb-2">Mr. Tanmay has worked so hard despite facing several difficulties & being unvalued, still they manage to collaborate with some esteemed companies like PhonePe, Genpact, Toyota, LiuGong, Tata Steel Aashiyana, and PepsiCo (VBL) and has rich experience in framing digital marketing strategies for MSME clients.</p>
+          <p className="text-white mb-2">Mr. Tanmay is rightly known for his networking, down to earth nature and leadership skills. He is presently a member of the International Youth Council, United Nations, and has been elected as the General Secretary and Vice President at various clubs and societies. Before GradUp (formerly Attitude matterZ), Tanmay co-founded a startup namely Business garage which aimed at providing digital marketing strategies to MSMEs.</p>
+          <p className='text-white mb-2'>Tanmay is also a guest speaker, and he has been invited as a guest speaker by many premier institutions of India.</p>
+          <p className="text-white mb-2"><em>Tanmay has a vision to nurture the youth of “BHARAT” to be industry and future ready.</em></p>
           <br />
         </div>
       </div>
       {/* <img className='mx-auto mt-16 mb-16' src="/assets/images/certify.png" alt="certificate"></img> */}
-      <p className='text-white textnew text-2xl mt-5'>Join GradUp Today</p>
-      <p className='text-white textnew mt-1'>Thank you for considering GradUp as your go-to platform for internships. We're confident that our
+      <p className='text-white text-center textnew text-3xl mt-5 mb-5'>Founder's Message</p>
+      <p className='text-white textnew mt-1 w-2/5 m-auto bg-blue-800 rounded-2xl p-10'>" Thank you for considering GradUp as your go-to platform for internships. We're confident that our
         comprehensive features and flexible pricing model make us the best choice for students and businesses alike.
         To take advantage of our platform, simply sign up for free and start exploring the many opportunities available
         to you. If you have any questions or concerns, our dedicated support team is always available to help.
-        Join GradUp today and transform your dreams in the world of internships.</p>
-      <p className="text-white text-3xl text-center mt-12 mb-9">Recognized by Startup India</p>
-      <img className='mx-auto mb-16' width="300" src="/assets/images/startup.jpg"></img>
+        Join GradUp today and transform your dreams in the world of internships. "</p>
+      <p className="text-white text-3xl text-center mt-16 mb-9">Recognized by Startup India</p>
+      <img className='mx-auto' width="300" src="/assets/images/startup.jpg"></img>
     </div>
   )
 }

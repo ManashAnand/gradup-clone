@@ -45,7 +45,7 @@ const Mentors = () => {
            img: "/assets/mentors/mentor8.png"
         },
         {
-          name:"➕ Many More",
+          name:"130 + Mentors",
           title:"",
           img:"/assets/images/mentors.png"
         }

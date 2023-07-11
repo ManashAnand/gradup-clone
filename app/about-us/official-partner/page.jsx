@@ -3,7 +3,7 @@ import styles from 'styles/Page.module.css'
 export default function Partner() {
   return (
     <div className="w-screen my-10">
-      <div className={styles.videos}>
+      {/* <div className={styles.videos}>
         <div className={styles.video1}>
           <iframe className={styles.frame1} src="https://www.youtube.com/embed/UrRyWUOmNJw?autoplay=1&mute=1" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe></div>
         <div className={styles.video2}>
@@ -24,14 +24,16 @@ export default function Partner() {
           <p className={styles.partnerpara}>YPAY is a prepaid smart card that offers Indian teens and young adults the option to make payments independently. It also provides parents and schools with a secure and monitored means of financial transactions. YPAY, through its prepaid cards available on its app, makes it convenient for teenagers to make both online and offline payments. The app enables kids to learn money management and earn points along with attractive cashback and discounts from more than 300 brands. Fintech industry in India is growing at a compound annual growth rate of 20%, valued at more than $31 billion. With an ambition to own a large portion of the entire fintech pie, YPAY aims to provide a diversified bouquet of products and services to the Indian youth and professionals.</p>
           <button className={styles.btn1}><a className="link" target="_blank" href="https://ypaycard.com/">About YPAY</a></button>
         </div>
-      </div>
+      </div> */}
       <div className={styles.box1}>
         <div className={styles.task1}>
           <div className={styles.circle}>1</div>
-          The fellowship programme offers rich and comprehensive training on sales, financial products, consultative B2B selling and practical learning experience via a live project where the batch participants will undergo real-life exposure to B2B consultations and deal closure.</div>
+          <p className='text-center text-3xl textnew'>YPay</p>
+          <img className='mt-4 rounded-md' src="/assets/images/ypay.png"></img></div>
         <div className={styles.task2}>
           <div className={styles.circle}>2</div>
-          The Batch would be under the closed supervision of founders of both the companies and would also get a chance to interact with 4-5 Industry Leaders including CXOs of top companies across the globe.</div>
+          <p className='text-center text-3xl textnew'>Exfin Pvt Ltd</p>
+          <img className='mt-4 mx-auto rounded-md' src="/assets/images/exfinnew.png"></img></div>
         <div className={styles.task3}>
           <div className={styles.circle}>3</div>
           At the end of the programme, depending on the performance of the enrolled participants, YPay and GradUp shall offer PPIs (Pre-placement Interviews) for various positions in Engineering, Finance and Marketing. The CTC details shall be on a mutual agreement between the company founders and the Placement records of the college.</div>

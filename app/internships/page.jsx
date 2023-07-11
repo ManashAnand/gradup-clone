@@ -35,7 +35,7 @@ function Page({ index , setPage}) {
   const [searchresults, setSearchresults] = useState([]);
   const [search, setSearch] = useState("");
   return (
-    <section className="w-full mt-14">
+    <section className="w-full mt-2">
       <div className="headerpos">
         <div>
           <div className="font-bold jobpos">
@@ -45,15 +45,15 @@ function Page({ index , setPage}) {
                 Opportunities for you
               </span>
             </h1>
-            <p className="mt-6 text-2xl text-white">Discover your perfect internship match, transform your dream and connect with top-tier companies.</p>
+            <p className="mt-10 text-xl text-white">Discover your perfect internship match, transform your dream and connect with top-tier companies.</p>
           </div>
           {/* <div className="inputcontainer">
             <input className="inputbox"  type="search" placeholder="🔍 Search Job Title"></input>
           </div> */}
         </div>
         <img
-          className="giphy"
-          src="assets/images/image.gif"
+          className="giphy mt-4"
+          src="assets/images/working4.gif"
           alt="work-img"
         ></img>
       </div>

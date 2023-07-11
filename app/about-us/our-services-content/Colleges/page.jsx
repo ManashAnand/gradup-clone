@@ -2,6 +2,40 @@ import React from "react"
 import styles from 'styles/Page.module.css'
 
 export default function Colleges(){
+  const [status1,setStatus1]=useState(false)
+  const [status2,setStatus2]=useState(false)
+  const [status3,setStatus3]=useState(false)
+  const [status4,setStatus4]=useState(false)
+  const [status5,setStatus5]=useState(false)
+  const [status6,setStatus6]=useState(false)
+  function handleClick1(){
+    setStatus1(true)
+  }
+  function handleClick2(){
+    setStatus2(true)
+  }
+  function handleClick3(){
+    setStatus3(true)
+  }
+  function handleClick4(){
+    setStatus4(true)
+  }
+  function handleClick5(){
+    setStatus5(true)
+  }
+  function handleClick6(){
+    setStatus6(true)
+  }
+ useEffect(()=>{
+  setTimeout(()=>{
+    status1===true?setStatus1(false):""
+    status2===true?setStatus2(false):""
+    status3===true?setStatus3(false):""
+    status4===true?setStatus4(false):""
+    status5===true?setStatus5(false):""
+    status6===true?setStatus6(false):""
+  },60000)
+ },[status1,status2,status3,status4,status5,status6])
     return(
         <div className="{styles.container} w-screen">
         <div className={styles.box}>
@@ -14,7 +48,7 @@ export default function Colleges(){
           <button className={styles.btn1}><a href="">Book a Slot</a></button>
         </div>
       </div>
-      <div className={styles.desc}>
+      {status1?<div className={styles.desc}>
         <div className="text-3xl text-center font-semibold mb-12 mt-6">Book A Slot Now @ Just <s className="text-white">Rs 1499/-</s> Rs 999/- Per Participant.</div>
         <div className="mt-3">
           <label className={styles.name}>Session Time :</label><label className={styles.value}>150-180 mins</label>
@@ -28,7 +62,7 @@ export default function Colleges(){
           <label className={styles.name}>Mock GD :</label><label className={styles.value}>Participants will be grouped in a Team Size of 6-8 members randomly and will be prepared for Mock GD rounds of 15-20 mins each</label>
           <label className={styles.name}>a-Z GD Handbook :</label><label className={styles.value}>Free handbook covering the tips and tricks to ace GD loaded with GD contents like current affairs, general awareness and Abstract GD topics</label>
         </div>
-      </div>
+      </div>:""}
       <div className={styles.box}>
         <img className={styles.groupimg1} src="/assets/images/pi.png" alt="interview"></img>
         <div>
