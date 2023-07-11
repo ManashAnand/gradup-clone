@@ -35,8 +35,8 @@ const Footer = () => {
             <hr style={{borderTop:"1px dotted darkslateblue",marginTop:"10px"}}/>
             <p className='text-2xl textnew mt-2 text-center text-blue-900 font-semibold'>Stay Connected</p>
             <div className='text-center ml-20 mt-4'>
-            <div className=" textnew flex text-sm mb-4"><PhoneAndroidIcon sx={{color:"darkslateblue"}} color="white" fontSize="medium"/><p className='ml-4'>91-7428376300</p></div>
-            <div className="textnew flex text-sm"><EmailIcon sx={{color:"darkslateblue"}} color="white" fontSize="medium"/><p className='ml-4'>info@gradup.in</p></div>
+            <div className=" textnew flex text-sm mb-4"><PhoneAndroidIcon sx={{color:"darkslateblue"}} color="white" fontSize="medium"/><p className='ml-4'> +91-7428376300</p></div>
+            <div className="textnew flex text-sm"><EmailIcon sx={{color:"darkslateblue"}} color="white" fontSize="medium"/><p className='ml-4'> info@gradup.in</p></div>
             </div>
           </div>
           <div className="flex-grow flex flex-wrap -mb-10 md:text-left mt-4 text-center">
@@ -47,13 +47,13 @@ const Footer = () => {
                   <a href="/jobs" className="text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800 font-black text-left'>&#9830;</span> Jobs</a>
                 </li>
                 <li className="mb-3">
+                  <a href="/courses" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Courses</a>
+                </li>
+                <li className="mb-3">
                   <a href="/internships" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Internships</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/internships" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Live Projects</a>
-                </li>
-                <li className="mb-3">
-                  <a href="/courses" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Courses</a>
+                  <a href="/for-startUps" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Startup Live Projects</a>
                 </li>
                 <li className="mb-3">
                   <a href="/about-us/our-services-content/career" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Career Services</a>
@@ -63,23 +63,23 @@ const Footer = () => {
             <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu2">
               <h2 className="title-font font-black text-xl text-black tracking-widest mb-3">QUICK LINKS</h2>
               <nav className="list-none mb-10 textnew">
-                <li className="mb-3">
-                  <a href="/hackathons" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Hackathons</a>
-                </li>
-                <li className="mb-3">
-                  <a href="/mcqs" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> MCQ's</a>
-                </li>
-                <li className="mb-3">
+               <li className="mb-3">
                   <a href="/blogs" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Blogs</a>
                 </li>
                 <li className="mb-3">
                   <a href="/case-study" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Case Study</a>
                 </li>
                 <li className="mb-3">
+                  <a href="/hackathons" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Hackathons</a>
+                </li>
+                <li className="mb-3">
                   <a href="/alumni-network" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Alumni Network</a>
                 </li>
                 <li className="mb-3">
                   <a href="/alumni-network/manage" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Manage Alumni</a>
+                </li>
+                <li className="mb-3">
+                  <a href="/mcqs" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Exam Preparation</a>
                 </li>
               </nav>
             </div>
@@ -90,13 +90,13 @@ const Footer = () => {
                   <a href="/about-us" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> About Company</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/problem-statement" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Problem Statement</a>
-                </li>
-                <li className="mb-3">
                   <a href="/about-us/our-services-content" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Our Services</a>
                 </li>
                 <li className="mb-3">
                   <a href="/about-us/privacy-policy" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Privacy Policies</a>
+                </li>
+                <li className="mb-3">
+                  <a href="/problem-statement" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Problem Statement</a>
                 </li>
                 <li className="mb-3">
                   <a href="/about-us/terms-and-condition" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Terms and Conditions</a>
@@ -111,10 +111,10 @@ const Footer = () => {
         <div className="bg-gray-900">
           <div className="container py-4 px-5 flex flex-wrap flex-col sm:flex-row">
             <p className="text-gray-400 text-lg text-center sm:text-center">© 2023 All Rights Reserved —
-              <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-300 ml-1" target="_blank">@GradUp.</a>
-              <span className='text-md text-gray-400 ml-2'>Designed & Developed by GradUp team.</span>
+              <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-300 ml-1" target="_blank">@GradUp</a>
+              {/* <span className='text-md text-gray-400 ml-2'>Designed & Developed by GradUp team.</span> */}
             </p>
-            <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+            <span className="inline-flex sm:mx-auto sm:mt-0 mt-2 justify-center sm:justify-start">
               <a className="text-white my-auto" target="_blank" href="https://www.facebook.com/GradUp.in">
                 <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-7 h-7" viewBox="0 0 24 24">
                   <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
@@ -141,6 +141,9 @@ const Footer = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="white" className="bi bi-youtube w-8 h-8" viewBox="0 0 16 16">
                   <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
                 </svg>
+              </a>
+              <a href="https://www.threads.net/@tanmaysinghrajput3" className="ml-3 text-white my-auto" target="_blank">
+                <img width="40" src="/assets/images/threadsbg.png"></img>
               </a>
             </span>
           </div>

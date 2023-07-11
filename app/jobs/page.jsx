@@ -94,9 +94,9 @@ export default function App() {
   }, []);
   const [pageIndex, setPageIndex] = useState(1); 
   return (
-    <>
+    <div className="">
     {session?.user ? (<>
-      <div className="mb-32">
+      <div className="mb-10">
       <div className="justify-center flex-center">
         <Page index={pageIndex} setPage={setPageIndex}/>
       </div>
@@ -112,7 +112,7 @@ export default function App() {
         </button>
       </div> */}
     </div></>)
-    :(<>
+    :(<div className="">
     {providers &&
               Object.values(providers).map((provider) => (
                 <button 
@@ -121,12 +121,12 @@ export default function App() {
                   onClick={() => {
                     signIn(provider.id);
                   }}
-                  className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white'
+                  className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 hover:bg-sky-400 hover:text-white hover:border-white'
                 >
                   Sign In to access jobs
                 </button>
-              ))} </>)}
-    </>
+              ))} </div>)}
+    </div>
     
   );
 }

@@ -77,6 +77,7 @@ export default function HRSignup() {
           className="mb-6 font-bold text-center snap-center"
         />
       </div>
+      <p className="text-blue-800 text-center text-xl mt-5 mb-7">"Attention HR professionals: Take the next step in finding exceptional talent! Login now and post captivating job opportunities to attract top candidates and build your dream team."</p>
       <div className="flex items-center">
         <div className="side1">
           <form onSubmit={addHR}>
