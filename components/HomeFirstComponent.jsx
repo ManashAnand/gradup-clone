@@ -1,9 +1,19 @@
 "use client"
 import React,{useState,useEffect} from 'react'
 import Link from 'next/link';
-import { signIn} from "next-auth/react";
+import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 const HomeFirstComponent = () => {
+
+  const [providers, setProviders] = useState(null);
   const [current,setCurrent]=useState(0)
+  useEffect(() => {
+    const setUpProviders = async()=> {
+        const response = await getProviders();
+        setProviders(response);
+    }
+    setUpProviders();
+  }, []);
+
   useEffect(()=>{
     setTimeout(()=>{
       current<4?setCurrent(current+1):setCurrent(0)
@@ -23,10 +33,23 @@ const HomeFirstComponent = () => {
             <br/>Your go-to destination to transform your dreams into reality
 </h1> 
         </div>
-        <Link href='/courses' className="area">
+        {/* <Link href='/courses' className="area">
               <button className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white' onClick={() =>
                 signIn()}>Sign In to Explore</button>
-        </Link>
+        </Link> */}
+        {providers &&
+              Object.values(providers).map((provider) => (
+                <button 
+                  type='button'
+                  key={provider.name}
+                  onClick={() => {
+                    signIn(provider.id);
+                  }}
+                  className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white'
+                >
+                  Sign In to get the proper access of the website
+                </button>
+              ))}
         </div> 
         <div className="block mt-5">
           {arr.map((ele,i)=>{
