@@ -1,6 +1,9 @@
+"use client"
 import Link from 'next/link';
 import React from 'react'
 import Image from "next/image";
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import EmailIcon from '@mui/icons-material/Email';
 const Footer = () => {
   return (
     <div>
@@ -9,8 +12,8 @@ const Footer = () => {
         <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
     </svg> */}
       </div>
-      <footer style={{ backgroundColor: '' }} className="black bg-gray-300 font-black  body-font w-screen">
-        <div className="container px-5 py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <footer style={{ backgroundColor: '' }} className= "text-gray-800 bg-gray-300 font-black  body-font w-screen">
+        <div className="container px-5 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div className="w-80 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mr-60">
             <Link href={'/'} className="flex title-font font-medium items-center md:justify-start justify-center black">
               {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" stroke-width="2" className="w-10 h-10 black font-black  p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
@@ -28,75 +31,78 @@ const Footer = () => {
               />
             </Link>
 
-            <p className="mt-2 text-white text-center textnew">GradUp is a platform aimed at Transforming dreams in to Reality for students.</p>
+            <p className="mt-2 text-blue-900 text-center textnew">Built with ❤️ for the Students</p>
+            <hr style={{borderTop:"1px dotted darkslateblue",marginTop:"10px"}}/>
+            <p className='text-2xl textnew mt-2 text-center text-blue-900 font-semibold'>Stay Connected</p>
+            <div className='text-center ml-20 mt-4'>
+            <div className=" textnew flex text-sm mb-4"><PhoneAndroidIcon sx={{color:"darkslateblue"}} color="white" fontSize="medium"/><p className='ml-4'>91-7428376300</p></div>
+            <div className="textnew flex text-sm"><EmailIcon sx={{color:"darkslateblue"}} color="white" fontSize="medium"/><p className='ml-4'>info@gradup.in</p></div>
+            </div>
           </div>
           <div className="flex-grow flex flex-wrap -mb-10 md:text-left mt-4 text-center">
             <div className="lg:w-1/4 md:w-1/2 w-full menu1">
               <h2 className="title-font font-black   text-black tracking-widest text-xl mb-3">SERVICES</h2>
               <nav className="list-none mb-10 textnew">
-                <li>
-                  <a href="/jobs" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black font-black  text-left'>&#9830;</span> Jobs</a>
+                <li className='mb-3'>
+                  <a href="/jobs" className="text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800 font-black text-left'>&#9830;</span> Jobs</a>
                 </li>
-                <li>
-                  <a href="/internships" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Internships</a>
+                <li className="mb-3">
+                  <a href="/internships" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Internships</a>
                 </li>
-                <li>
-                  <a href="/courses" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Courses</a>
+                <li className="mb-3">
+                  <a href="/internships" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Live Projects</a>
                 </li>
-                <li>
-                  <a href="/about-us/our-services-content/School" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Schools</a>
+                <li className="mb-3">
+                  <a href="/courses" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Courses</a>
                 </li>
-                <li>
-                  <a href="/about-us/our-services-content/Colleges" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Colleges</a>
-                </li>
-                <li>
-                  <a href="/about-us/our-services-content/Student" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Student</a>
+                <li className="mb-3">
+                  <a href="/about-us/our-services-content/career" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Career Services</a>
                 </li>
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu2">
               <h2 className="title-font font-black text-xl text-black tracking-widest mb-3">QUICK LINKS</h2>
               <nav className="list-none mb-10 textnew">
-                <li>
-                  <a href="/hackathons" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Hackathons</a>
+                <li className="mb-3">
+                  <a href="/hackathons" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Hackathons</a>
                 </li>
-                <li>
-                  <a href="/mcqs" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> MCQ's</a>
+                <li className="mb-3">
+                  <a href="/mcqs" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> MCQ's</a>
                 </li>
-                <li>
-                  <a href="/blogs" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Blogs</a>
+                <li className="mb-3">
+                  <a href="/blogs" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Blogs</a>
                 </li>
-                <li>
-                  <a href="/case-study" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Case Study</a>
+                <li className="mb-3">
+                  <a href="/case-study" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Case Study</a>
                 </li>
-                <li>
-                  <a href="/alumni-network" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Alumni Network</a>
+                <li className="mb-3">
+                  <a href="/alumni-network" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Alumni Network</a>
                 </li>
-                <li>
-                  <a href="/alumni-network/manage" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Manage Alumni</a>
+                <li className="mb-3">
+                  <a href="/alumni-network/manage" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Manage Alumni</a>
                 </li>
               </nav>
             </div>
             <div className="lg:w-1/3 md:w-1/2 w-full px-4 menu3">
               <h2 className="title-font font-black text-xl text-black tracking-widest mb-3">ABOUT US</h2>
               <nav className="list-none mb-10 textnew">
-                <li>
-                  <a href="/about-us" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> About Company</a>
+                <li className="mb-3">
+                  <a href="/about-us" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> About Company</a>
                 </li>
-                <li>
-                  <a href="/problem-statement" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Problem Statement</a>
+                <li className="mb-3">
+                  <a href="/problem-statement" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Problem Statement</a>
                 </li>
-                <li>
-                  <a href="/about-us/our-services-content" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Our Services</a>
+                <li className="mb-3">
+                  <a href="/about-us/our-services-content" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Our Services</a>
                 </li>
-                <li>
-                  <a href="/about-us/privacy-policy" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Privacy Policies</a>
+                <li className="mb-3">
+                  <a href="/about-us/privacy-policy" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Privacy Policies</a>
                 </li>
-                <li>
-                  <a href="/about-us/terms-and-condition" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Terms and Conditions</a>
+                <li className="mb-3">
+                  <a href="/about-us/terms-and-condition" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Terms and Conditions</a>
                 </li>
-                <li>
-                  <a href="/about-us/cancellation-policy" className="black font-black  hover:text-white text-sm cursor-pointer mb-2"><span className='black'>&#9830;</span> Refund & Cancellation Policy</a>
+                <li className="mb-3">
+                  <a href="/about-us/cancellation-policy" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Refund & Cancellation Policy</a>
                 </li>
               </nav>
             </div>
@@ -104,11 +110,11 @@ const Footer = () => {
         </div>
         <div className="bg-gray-900">
           <div className="container py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-            <p className="text-gray-400 text-lg text-center sm:text-center m-auto">© 2023 All Rights Reserved —
+            <p className="text-gray-400 text-lg text-center sm:text-center">© 2023 All Rights Reserved —
               <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-300 ml-1" target="_blank">@GradUp.</a>
               <span className='text-md text-gray-400 ml-2'>Designed & Developed by GradUp team.</span>
             </p>
-            <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start marginsetting">
+            <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
               <a className="text-white my-auto" target="_blank" href="https://www.facebook.com/GradUp.in">
                 <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-7 h-7" viewBox="0 0 24 24">
                   <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>

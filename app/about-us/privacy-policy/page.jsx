@@ -1,7 +1,7 @@
 import styles from 'styles/Page.module.css'
 export default function Privacy() {
   return (
-    <div className=" w-screen my-10">
+    <div className=" w-full my-10">
        <p className="text-5xl font-semibold textnew mt-4 mb-8 animate-charcter text-center">PRIVACY POLICY</p>
         <div className="headingbox2 px-10 pt-10 pb-20">
         <h1 className="text-2xl justice text-green-300  textnew mb-3">Privacy Policy</h1>

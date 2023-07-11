@@ -36,24 +36,25 @@ function Page({ index , setPage}) {
   const [searchresults, setSearchresults] = useState([]);
   const [search, setSearch] = useState("");
   return (
-    <section className="w-full mt-14">
+    <section className="w-full">
       <div className="headerpos">
         <div>
           <div className="font-bold jobpos">
-            <h1 className="text-white text-5xl">Find your job &</h1>
-            <h1 className="text-blue-400 text-5xl">
+            <h1 className="text-white sizetext">Find your job &</h1>
+            <h1 className="text-blue-400 sizetext">
               grab{" "}
               <span className="underline decoration-yellow-300 underline-offset-8">
                 the opportunities
               </span>
             </h1>
+            <p className="mt-10 text-xl text-white">Just one step to change your career. Apply to thousands of Job opportunities across top Companies and Startups.</p>
           </div>
           {/* <div className="inputcontainer">
             <input className="inputbox"  type="search" placeholder="🔍 Search Job Title"></input>
           </div> */}
         </div>
         <img
-          className="giphy"
+          className="giphy mt-6"
           src="assets/images/image.gif"
           alt="work-img"
         ></img>

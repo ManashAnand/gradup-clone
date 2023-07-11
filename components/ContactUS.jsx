@@ -82,7 +82,7 @@ export default function Contact(){
       <hr/>
       <div className="mt-2 textnew mb-3 flex flex-col text-sm"><EmailIcon sx={{margin:"auto"}} color="white" fontSize="small"/>info@gradup.in </div>
       <hr/>
-      <div className="text-sm textnew my-2 flex flex-col"><BusinessIcon sx={{margin:"auto"}} color="white" fontSize="small"/><div className="decoration-white underline underline-offset-4 mb-2">Head Office</div>UG Floor, Regus, TOWER-2,<br/>Assotech Business Cresterra Plot<br/>No.22, Sector 135, Noida, <br/>Uttar Pradesh, 201301</div>
+      <div className="text-sm textnew my-2 flex flex-col"><BusinessIcon sx={{margin:"auto"}} color="white" fontSize="small"/><div className="decoration-white underline underline-offset-4 mb-2">Head Office</div>UG Floor, Regus, TOWER-2,<br/>Assotech Business Cresterra<br/>Plot No.22, Sector 135,<br/>Noida, Uttar Pradesh, 201301</div>
       <hr/>
       <div className="text-sm textnew my-2 flex flex-col"><BusinessIcon sx={{margin:"auto"}} color="white" fontSize="small"/><div className="decoration-white underline underline-offset-4 mb-2">Branch Office</div>4 Fairlie Place, HMP House,<br/>1st Floor, Room No 113<br/>Kolkata, 700001</div>
       </div>

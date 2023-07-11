@@ -8,6 +8,7 @@ import Testimonial from '@components/Testimonial';
 import BeMentorWithUs from '@components/BeMentorWithUs';
 import DownloadApp from "@components/DownloadApp"
 import ContactUs from "@components/ContactUS"
+import FAQ from '@components/FAQ';
 import Link from 'next/link';
 
 const Home = () => {
@@ -91,6 +92,7 @@ const Home = () => {
         <Testimonial />
         <DownloadApp/>
         <ContactUs/>
+        <FAQ/>
     </section>
     )
  }

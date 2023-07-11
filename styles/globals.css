@@ -179,11 +179,14 @@ html{
 }
 .pos{
   position:fixed;
-  bottom:40px;
-  right:0;
+  bottom:30px;
+  right:8px;
 }
 .marginsetting{
   margin-right:6rem;
+}
+.padded{
+  padding:0.75rem;
 }
 
 .slideshowDot {
@@ -196,12 +199,20 @@ html{
   margin: 15px 7px 0px;
   background-color: #c4c4c4;
 }
-
+.mart{
+  margin-top: -1.5rem;
+}
 .slideshowDot.active {
   background-color:deepskyblue;
 }
 input::placeholder,textarea::placeholder{
   font-size:14px;
+}
+.displaystyle{
+  display:flex;
+}
+.widthsetter2{
+  width:60%;
 }
 .displayprofile{
   display:flex;
@@ -277,6 +288,10 @@ input::placeholder,textarea::placeholder{
   border-radius:10px;
   width:13rem;
 } 
+.yes{
+  /* display:flex; */
+  /* flex-wrap:wrap; */
+}
 .datamile2{
   background:linear-gradient(to bottom right,rgb(24, 50, 252),rgb(25, 255, 98));
   border-radius:10px;
@@ -351,6 +366,9 @@ input::placeholder,textarea::placeholder{
 }
 .jobpos{
   margin-top:3rem;
+}
+.alignation{
+  text-align: left;
 }
 .salary{
   width:88%;
@@ -496,6 +514,7 @@ input::placeholder,textarea::placeholder{
 }
 .aboutbox{
   display:flex;
+  justify-content:center;
 }
 .alumnicardcontainer{
   display:flex;
@@ -590,8 +609,9 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   width:40vw;
   padding:30px;
   min-height:65vh;
+  /* background-color: #044E83; */
   background-image: linear-gradient(150.74deg, #FFC8E3 1.07%, rgba(248, 199, 234, 0.779514) 22.96%, rgba(239, 203, 227, 0.711805) 37.74%, rgba(69, 146, 253, 0.266012) 81.21%, rgba(0, 120, 234, 0.1602) 91.53%, rgba(66, 169, 249, 0.19) 98.92%, rgba(38, 134, 200, 0.0842839) 98.93%, rgba(152, 198, 224, 0.37) 98.96%, rgba(176, 227, 255, 0.378155) 99.65%, rgba(9, 129, 197, 0) 100.35%);
-  filter: drop-shadow(0px 4px 31px rgba(169, 162, 162, 0.25));
+  /* filter: drop-shadow(0px 4px 31px rgba(169, 162, 162, 0.25)); */
   border-radius: 22px;
  }
  .side2{
@@ -769,6 +789,9 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   border-bottom-left-radius:25px; */
   background:#29335c;
 }
+.sizetext{
+  font-size: 3rem;
+}
 
 .box:hover{
   transition:transform 0.4s ease-in-out;
@@ -883,6 +906,15 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   .disp{
     width:100%;
   }
+  .displaystyle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .widthsetter2{
+    width:95%;
+  }
   .flexBox{
     display:block;
   }
@@ -965,6 +997,7 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   .yes{
     margin-top:4vh;
     margin-left:-1.5vw;
+    /* flex-wrap: wrap; */
   }
   /* .none{
     display:none;
@@ -1023,6 +1056,9 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
     justify-content: center;
     align-items: center;
     gap:2rem;
+  }
+  .alignation{
+    text-align: center;
   }
   .displayprofile{
     padding:1rem;
@@ -1193,14 +1229,23 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
     width:90vw;
     height:60vh;
   }
+  .sizetext{
+    font-size: 1.8rem;
+  }
   .justice{
     text-align:center;
+  }
+  .padded{
+    padding:0.2rem;
   }
   .message{
     margin-left: 0rem;
   }
   .achievementbox{
     height:65vh;
+  }
+  .mart{
+    margin-top:-1rem;
   }
   .marginsetting{
     margin-right:0;
