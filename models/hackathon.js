@@ -27,7 +27,10 @@ const HackathonSchema = new Schema({
     },
     rewards:{
         type:String
-    }
+    },
+    link:{
+        type:string
+    },
 });
 
 const Hackathon = models.Hackathon || model("Hackathon", HackathonSchema);

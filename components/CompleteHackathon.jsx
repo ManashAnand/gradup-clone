@@ -1,5 +1,6 @@
 "use client"
 import * as React from 'react';
+import {Link} from 'next/link';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -80,7 +81,9 @@ export default function CompleteHackathon({post,display,setDisplay,display1,setD
     </CardContent>
     <CardActions sx={{float:"right"}}>
       <Button sx={{marginBottom:"2vh"}}  variant="contained" onClick={handleClick} size="small">Back</Button>
-      <Button sx={{marginRight:"2vw",marginBottom:"2vh"}} variant="contained" color="secondary" size="small">Apply</Button>
+      <Link href={post.link}>
+        <Button sx={{marginRight:"2vw",marginBottom:"2vh"}} variant="contained" color="secondary" size="small">Apply</Button>
+      </Link>
     </CardActions>
   </React.Fragment>
       </Card>
