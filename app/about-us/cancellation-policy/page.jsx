@@ -1,7 +1,7 @@
 import styles from 'styles/Page.module.css'
 export default function Cancellation() {
   return (
-    <div className=" w-full my-10">
+    <div className=" w-screen my-10">
       <p className="text-5xl font-semibold textnew mt-4 mb-8 animate-charcter text-center">REFUND & CANCELLATION POLICY</p>
       <div className="headingbox2 px-10 pt-10 pb-20">
         <p className="text-md mb-2 textnew justice text-white">For individual training programs offered on GradUp Trainings, except for Internet of Things training, a user may request a refund anytime before their chosen batch commencement date. A transaction processing charge of 20% of the training fee paid by the user will be deducted and the remaining will be refunded within 15 working days (Monday to Friday, excluding national holidays) of the refund request being raised by the user. </p>
