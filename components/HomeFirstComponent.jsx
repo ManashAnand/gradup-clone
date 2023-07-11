@@ -45,7 +45,7 @@ const HomeFirstComponent = () => {
                   onClick={() => {
                     signIn(provider.id);
                   }}
-                  className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white'>
+                  className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 font-semibold text-xl bg-white text-sky-700 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white'>
                   Sign In to Know More
                 </button>
               ))}

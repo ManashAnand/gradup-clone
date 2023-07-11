@@ -85,7 +85,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-        <h1 className='text-white textnew text-3xl font-semibold text-center mt-10'>Our Industry Experts (130+)</h1>
+        <h1 className='text-white textnew text-3xl underline decoration-white underline-offset-8 font-semibold text-center mt-10'>Our Industry Experts (130+)</h1>
         <Mentors />
         <Achievement />
         <BeMentorWithUs />

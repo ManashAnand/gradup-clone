@@ -1240,6 +1240,9 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   .padded2{
     padding:1rem;
   }
+  .block{
+    display:none;
+  }
   .sizetext{
     font-size: 1.8rem;
   }

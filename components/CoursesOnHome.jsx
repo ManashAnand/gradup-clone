@@ -46,7 +46,7 @@ export default function CoursesOnHome() {
   ];
 
   return (
-    <section className='flex-start flex-col my-16'>
+    <section className='flex-start flex-col mt-4 mb-16'>
     <div>
         <h1 className='text-3xl text-white font-semibold textnew text-center my-5'>Our Best Courses</h1>
         <p className="textnew text-center text-sky-400 text-xl mb-3">Master new Skills from Anywhere with our Online Courses</p>

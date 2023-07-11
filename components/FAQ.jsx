@@ -5,7 +5,9 @@ export default function FAQ() {
         <div>
         <p className="text-center text-white textnew text-3xl mt-12">FREQUENTLY ASKED QUESTIONS (FAQ's)</p>
         <div className="w-full flex displaystyle items-center">
-        <img className="m-auto" style={{height:"70vh"}} width="500" src="/assets/images/faqnew.png"></img>
+        <div className="block">
+        <img className="m-auto" style={{height:"60vh"}} width="400" src="/assets/images/faqnew.png"></img>
+        </div>
         <div className="widthsetter2 mt-10 mb-6 p-4 bg-sky-800 textnew">
             <Collapse.Group accordion={false}>
                 <Collapse title={<Text css={{color:"white"}} >Q. How to search for work from home jobs in my preferred category/profile?</Text>}>
