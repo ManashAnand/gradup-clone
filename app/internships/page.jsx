@@ -8,6 +8,7 @@ import Select from "react-select";
 import Spinner from "@components/Spinner";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 import { useSearchParams } from "next/navigation";
 import FilterInternships from "@components/internships/FilterInternships";
@@ -80,9 +81,21 @@ function Page({ index , setPage}) {
 }
 
 export default function App() {
+  const { data: session } = useSession();
+  
+  const [providers, setProviders] = useState(null);
+  useEffect(() => {
+    const setUpProviders = async()=> {
+        const response = await getProviders();
+        setProviders(response);
+    }
+    setUpProviders();
+  }, []);
   const [pageIndex, setPageIndex] = useState(1); 
   return (
-    <div className="mb-32">
+    <>
+    {session?.user ? (<>
+      <div className="mb-32">
       <div className="justify-center flex-center">
         <Page index={pageIndex} setPage={setPageIndex}/>
       </div>
@@ -97,7 +110,22 @@ export default function App() {
           Next
         </button>
       </div> */}
-    </div>
+    </div></>)
+    :(<>
+    {providers &&
+              Object.values(providers).map((provider) => (
+                <button 
+                  type='button'
+                  key={provider.name}
+                  onClick={() => {
+                    signIn(provider.id);
+                  }}
+                  className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white'
+                >
+                  Sign In to access jobs
+                </button>
+              ))} </>)}
+    </>
   );
 }
 
