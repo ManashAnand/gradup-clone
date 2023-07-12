@@ -34,7 +34,7 @@ export default function Student(){
   },60000)
  },[status1,status2,status3,status4,status5,status6])
     return(
-        <div className="{styles.container} w-screen mb-10">
+        <div className="{styles.container} w-screen mb-10 text-left">
         <div className={styles.box}>
         <img className={styles.groupimg} src="/assets/images/GDmodule.png" alt="group"></img>
         <div>

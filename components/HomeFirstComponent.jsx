@@ -29,7 +29,7 @@ const HomeFirstComponent = () => {
             <p style={{overflow:"hidden"}} className='mt-2'>Explore new <span className='animate-charcter font-semibold'>Opportunities</span></p>
         </div>
         <div className='text-left text-white textnew'>
-            <h1 className='mt-10 text-xl ml-1 mb-2'>One-step career solution. Grow your skills, get career help, and get hired.
+            <h1 className='mt-10 text-xl ml-1 mb-2'>One-step career solution . Grow your skills, get career help, and get hired.
             <br/>Your go-to destination to transform your dreams into reality
 </h1> 
         </div>

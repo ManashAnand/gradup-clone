@@ -1951,6 +1951,9 @@ input::placeholder,textarea::placeholder{
   transition:0.3s;
   -webkit-appearance: none;
 }
+.gapmedia{
+  gap:5rem;
+}
 .half-ellipse1 {
   background: #32557f;
   width: 150px;
@@ -2773,6 +2776,9 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   }
   .adjust{
     width:100%;
+  }
+  .gapmedia{
+    gap:0
   }
   .padded2{
     padding:3rem;

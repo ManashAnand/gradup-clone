@@ -20,7 +20,7 @@ function Page ({ id }) {
           <h1 className='mt-8 font-semibold text-2xl text-center'>
             <span className="text-blue-400 textnew">{jobs.companyName} hiring for <span className="text-purple-500 underline underline-offset-4 decoration-2 decoration-red-300">{jobs.title}</span></span>
           </h1>
-          <div className='w-4/5 mx-auto'>
+          <div className='w-4/5 mx-auto text-left'>
               <div>
                 <div >
                   <div className="mt-10">

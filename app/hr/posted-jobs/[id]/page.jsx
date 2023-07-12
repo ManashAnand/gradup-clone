@@ -69,7 +69,7 @@ export default function Page({params}){
                 </a>
              )}):""}
              </div>
-             {status?data.length>0?<div id="profile" style={{height:"fit-content",backgroundColor:"white"}} className='bg-white px-12 py-2 textnew mx-auto adjust' >
+             {status?data.length>0?<div id="profile" style={{height:"fit-content",backgroundColor:"white"}} className='bg-white text-left px-12 py-2 textnew mx-auto adjust' >
                 {data.length>0?<p className=' text-center text-xl text-sky-500 mt-1'><span className=""><img className='mx-auto' width="50" src="/assets/images/profpic.png"/>
          </span> {data[pos].name.toUpperCase()}</p>:""}
         <hr className='my-3'/>

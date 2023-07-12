@@ -23,11 +23,11 @@ const Footer = () => {
               {/* above svg and span will be removed by our img logo */}
               {/* <img src="/assets/images/TalentConnects.png" alt="TalentConnects"/> */}
               <Image
-                src='/assets/images/logowhite.png'
+                src='/assets/images/headerlogo.png'
                 alt='logo'
                 width={150}
                 height={90}
-                className='object-contain mx-auto'
+                className='rounded-md object-contain mx-auto'
               />
             </Link>
 
