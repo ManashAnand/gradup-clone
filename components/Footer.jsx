@@ -12,7 +12,7 @@ const Footer = () => {
         <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
     </svg> */}
       </div>
-      <footer style={{ backgroundColor: '' }} className= "text-gray-800 bg-gray-300 font-black  body-font w-screen">
+      <footer style={{ backgroundColor: '#041e48' }} className= "text-gray-200 bg-gray-300 font-black  body-font w-screen">
         <div className="container px-5 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div className="w-80 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mr-60">
             <Link href={'/'} className="flex title-font font-medium items-center md:justify-start justify-center black">
@@ -23,86 +23,89 @@ const Footer = () => {
               {/* above svg and span will be removed by our img logo */}
               {/* <img src="/assets/images/TalentConnects.png" alt="TalentConnects"/> */}
               <Image
-                src='/assets/images/logo-for-website.png'
+                src='/assets/images/logowhite.png'
                 alt='logo'
-                width={190}
+                width={150}
                 height={90}
                 className='object-contain mx-auto'
               />
             </Link>
 
-            <p className="mt-2 text-blue-900 text-center textnew">Built with ❤️ for the Students</p>
+            <p className="mt-4 text-blue-500 text-center textnew">Built with ❤️ for the Students</p>
             <hr style={{borderTop:"1px dotted darkslateblue",marginTop:"10px"}}/>
-            <p className='text-2xl textnew mt-2 text-center text-blue-900 font-semibold'>Stay Connected</p>
+            <p className='text-2xl textnew mt-2 text-center text-blue-500 font-semibold'>Stay Connected</p>
             <div className='text-center ml-20 mt-4'>
-            <div className=" textnew flex text-sm mb-4"><PhoneAndroidIcon sx={{color:"darkslateblue"}} color="white" fontSize="medium"/><p className='ml-4'> +91-7428376300</p></div>
-            <div className="textnew flex text-sm"><EmailIcon sx={{color:"darkslateblue"}} color="white" fontSize="medium"/><p className='ml-4'> info@gradup.in</p></div>
+            <div className=" textnew flex text-sm mb-4"><PhoneAndroidIcon sx={{color:"white"}} color="white" fontSize="medium"/><p className='ml-4'> +91-7428376300</p></div>
+            <div className="textnew flex text-sm"><EmailIcon sx={{color:"white"}} color="white" fontSize="medium"/><p className='ml-4'> info@gradup.in</p></div>
             </div>
           </div>
           <div className="flex-grow flex flex-wrap -mb-10 md:text-left mt-4 text-center">
             <div className="lg:w-1/4 md:w-1/2 w-full menu1">
-              <h2 className="title-font font-black   text-black tracking-widest text-xl mb-3">SERVICES</h2>
+              <h2 className="title-font font-black underline decoration-yellow-300 underline-offset-8 text-white tracking-widest text-xl mb-4">SERVICES</h2>
               <nav className="list-none mb-10 textnew">
                 <li className='mb-3'>
-                  <a href="/jobs" className="text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800 font-black text-left'>&#9830;</span> Jobs</a>
+                  <a href="/jobs" className="text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200 font-black text-left'>&#9830;</span> Jobs</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/courses" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Courses</a>
+                  <a href="/courses" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Courses</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/internships" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Internships</a>
+                  <a href="/internships" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Internships</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/for-startUps" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Startup Live Projects</a>
+                  <a href="/for-startUps" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Startup Live Projects</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/about-us/our-services-content/career" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Career Services</a>
+                  <a href="/about-us/our-services-content/career" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Career Services</a>
                 </li>
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4 menu2">
-              <h2 className="title-font font-black text-xl text-black tracking-widest mb-3">QUICK LINKS</h2>
+              <h2 className="title-font font-black text-xl  underline decoration-yellow-300 underline-offset-8 text-white tracking-widest mb-4">QUICK LINKS</h2>
               <nav className="list-none mb-10 textnew">
                <li className="mb-3">
-                  <a href="/blogs" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Blogs</a>
+                  <a href="/blogs" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Blogs</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/case-study" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Case Study</a>
+                  <a href="/case-study" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Case Study</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/hackathons" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Hackathons</a>
+                  <a href="/hackathons" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Hackathons</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/alumni-network" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Alumni Network</a>
+                  <a href="/alumni-network" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Alumni Network</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/alumni-network/manage" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Manage Alumni</a>
+                  <a href="/alumni-network/manage" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Manage Alumni</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/mcqs" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Exam Preparation</a>
+                  <a href="/mcqs" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Exam Preparation</a>
                 </li>
               </nav>
             </div>
             <div className="lg:w-1/3 md:w-1/2 w-full px-4 menu3">
-              <h2 className="title-font font-black text-xl text-black tracking-widest mb-3">ABOUT US</h2>
+              <h2 className="title-font font-black text-xl underline decoration-yellow-300 underline-offset-8 text-white tracking-widest mb-4">ABOUT US</h2>
               <nav className="list-none mb-10 textnew">
                 <li className="mb-3">
-                  <a href="/about-us" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> About Company</a>
+                  <a href="/about-us" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> About Company</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/about-us/our-services-content" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Our Services</a>
+                  <a href="/about-us/our-services-content" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Our Services</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/about-us/privacy-policy" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Privacy Policies</a>
+                  <a href="/about-us/privacy-policy" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Privacy Policies</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/problem-statement" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Problem Statement</a>
+                  <a href="/problem-statement" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Problem Statement</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/about-us/terms-and-condition" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Terms and Conditions</a>
+                  <a href="/about-us/terms-and-condition" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Terms and Conditions</a>
                 </li>
                 <li className="mb-3">
-                  <a href="/about-us/cancellation-policy" className= "text-gray-800 font-black  hover:text-sky-800 cursor-pointer mb-2"><span className= 'text-gray-800'>&#9830;</span> Refund & Cancellation Policy</a>
+                  <a href="/about-us/cancellation-policy" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Refund & Cancellation Policy</a>
+                </li>
+                <li className="mb-3">
+                  <a href="/Institutes-in-touch" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Institutes In Touch</a>
                 </li>
               </nav>
             </div>
