@@ -59,7 +59,7 @@ export default function About() {
       <div className="founderbox">
         <div className='flex flex-col'>
         <img className="founderimg" width="400" src="/assets/images/NEW PICS.jpg" alt="founder"></img>
-        <span className="flex gap-8 ml-8 mt-10">
+        <span className="flex gap-10 ml-8 mt-10">
               <a className="text-white my-auto" target="_blank" href="https://www.facebook.com/GradUp.in">
                 <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-7 h-7" viewBox="0 0 24 24">
                   <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>

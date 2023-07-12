@@ -93,6 +93,9 @@ const Footer = () => {
                   <a href="/about-us/our-services-content" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Our Services</a>
                 </li>
                 <li className="mb-3">
+                  <a href="/Institutes-in-touch" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Institutes In Touch</a>
+                </li>
+                <li className="mb-3">
                   <a href="/about-us/privacy-policy" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Privacy Policies</a>
                 </li>
                 <li className="mb-3">
@@ -103,9 +106,6 @@ const Footer = () => {
                 </li>
                 <li className="mb-3">
                   <a href="/about-us/cancellation-policy" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Refund & Cancellation Policy</a>
-                </li>
-                <li className="mb-3">
-                  <a href="/Institutes-in-touch" className= "text-gray-200 font-black  hover:text-blue-600 cursor-pointer mb-2"><span className= 'text-gray-200'>&#9830;</span> Institutes In Touch</a>
                 </li>
               </nav>
             </div>
