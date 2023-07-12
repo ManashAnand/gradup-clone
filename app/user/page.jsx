@@ -5,16 +5,16 @@ import Link from 'next/link';
 import Spinner from "@components/Spinner"
 import LoginAlert from '@components/LoginAlert';
 import { Input, Textarea, Spacer , Button, Popover} from "@nextui-org/react";
-import Education from "@components/userProfile/education"
+import Education from "@components/userProfile/Education"
 import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
 // import { IconButton } from "@styles/IconButton";
 import { EyeIcon } from "@styles/EyeIcon";
 import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
-import Project from '@components/userProfile/project';
-import Achievement from '@components/userProfile/achievement';
-import Experience from '@components/userProfile/experience';
+import Project from '@components/userProfile/Project';
+import Achievement from '@components/userProfile/Achievement';
+import Experience from '@components/userProfile/Experience';
 
 import { useState,useEffect } from 'react';
 import PlusIcon from '@rsuite/icons/Plus';
