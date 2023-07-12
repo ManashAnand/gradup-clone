@@ -76,7 +76,7 @@ export default function Contact(){
   <div class="form-container">
     <div class="left-container">
       <div class="left-inner-container">
-      <h2 className="h2contact textnew">Let's Chat</h2>
+      <h2 className="h2contact textnew">Let's Connect</h2>
       <div className="text-white mt-8">
       <div className="mb-4 textnew flex flex-col text-sm"><PhoneAndroidIcon sx={{margin:"auto"}} color="white" fontSize="small"/>+91-7428376300</div>
       <hr/>

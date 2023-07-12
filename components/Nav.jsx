@@ -20,16 +20,16 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav style={{backgroundColor:""}} className='w-screen bg-gray-300 flex-between pt-3 shadow-xl p-4'>
+    <nav style={{backgroundColor:"#041e48"}} className='w-screen flex-between pt-3 shadow-xl p-4'>
       <Link href='/' className='flex gap-2 flex-center'>
-        <Image
+       <img style={{boxShadow:"rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"}} width="90" className="rounded-md ml-3" src="/assets/images/headerlogo.png"></img>
+       {/* <Image
           src='/assets/images/website-icon.png'
           alt='logo'
           width={45}
           height={45}
-          className='object-contain'
-        />
-       <img width="80" src="/assets/images/logo-for-website.png"></img>
+          className='object-contain ml-3'
+        /> */}
       </Link>
       
 

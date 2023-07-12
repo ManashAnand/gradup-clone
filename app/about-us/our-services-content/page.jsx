@@ -10,6 +10,7 @@ export default function Services() {
         <p className="text-md mb-2 textnew text-white justice">Internship and job search: Internship and job seekers from all over India can search and apply for internships and jobs relevant to their coursework and interest free of cost. Visit gradup  Student Section to know more.</p>
         <p className="text-md mb-2 textnew text-white justice">Gradup Trainings: Gradup  offers a variety of online training programs across multiple disciplines (Machine Learning, Web Development, Digital Marketing, Java, French and several others) which students can do from the comfort of their homes and learn the skills needed in today’s industry. Visit Gradup  Trainings to know more.</p>
         <p className="text-md mb-2 textnew text-white justice">Gradup reserves the right to add/remove any product and service at its sole discretion or change the price charged for such offerings.</p>
+        <img width="700" className="mx-auto mt-10" src="/assets/images/TEKSILA PRIVATE LIMITED .jpg"></img>
         </div>
       {/* <div className={styles.box}>
         <img className={styles.groupimg} src="/assets/images/group.png" alt="group"></img>

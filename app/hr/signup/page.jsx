@@ -67,7 +67,7 @@ export default function HRSignup() {
   };
 
   return (
-    !posted?<div className="bg-blue-100 py-10 px-6 mt-10 mb-20 rounded-xl main-login">
+    !posted?<div className="bg-blue-100 text-left py-10 px-6 mt-10 mb-20 rounded-xl main-login">
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Image
           src="/assets/images/logo-for-website.png"
@@ -77,13 +77,14 @@ export default function HRSignup() {
           className="mb-6 font-bold text-center snap-center"
         />
       </div>
+      <p className="text-blue-800 text-center text-xl mt-5 mb-7">"Attention HR professionals: Take the next step in finding exceptional talent! Login now and post captivating job opportunities to attract top candidates and build your dream team."</p>
       <div className="flex items-center">
         <div className="side1">
           <form onSubmit={addHR}>
             <div className="mb-4">
               <label
                 htmlFor="email"
-                className=" text-sm font-semibold text-gray-600"
+                className=" text-sm ml-3 text-left font-semibold text-gray-600"
               >
                 Company Email *
               </label>
@@ -96,7 +97,7 @@ export default function HRSignup() {
             </div>
             <div className="mb-4">
               <label
-                className=" text-sm font-semibold text-gray-600"
+                className=" text-sm ml-3 text-left font-semibold text-gray-600"
               >
                 Company Name *
               </label>
@@ -111,7 +112,7 @@ export default function HRSignup() {
               <div className="flex flex-col">
                 <label
                   htmlFor="text"
-                  className=" text-sm font-semibold text-gray-600"
+                  className=" text-sm ml-3 font-semibold text-gray-600"
                 >
                   Phone Number *
                 </label>

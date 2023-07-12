@@ -200,7 +200,7 @@ export default function Profile() {
           <Button className='mt-7' onClick={beAlumni} flat color="primary">Enter Alumni</Button>
           {/* <p className='desc text-left'>{data.email}</p> */}
         </section>
-        <section className='border-solid border-white border-2 rounded-xl'>
+        <section className='border-solid border-white border-2 rounded-xl text-left'>
         <div className='m-6'>
         <div className='mx-3 item1 flex flex-col'>
           <label className="mb-2 ml-2 text text-blue-500 text-sm">Name*</label>

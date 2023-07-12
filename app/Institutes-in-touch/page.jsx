@@ -1,9 +1,21 @@
 import React from 'react'
 
 const page = () => {
+  let logos=["/assets/images/nitkuruk.png","/assets/images/christ.png","/assets/images/nithamir.png","/assets/images/nmims.png","/assets/images/ramjas.png","/assets/images/xlrijamshedpur.png","/assets/images/dypatil.png","/assets/images/bitmesra.png","/assets/images/bitsnew.png","/assets/images/hansraj.png","/assets/images/iimindore.png","/assets/images/iimkashi.png","/assets/images/iimrohtak.png","/assets/images/iimsirmaur.png","/assets/images/iimudaipur.png","/assets/images/iitdelhinew.png","/assets/images/iitkanpurnew.png","/assets/images/iitkharagnew.png","/assets/images/nitkarnataka.png","/assets/images/nitsikkim.png","/assets/images/pgdav.png","/assets/images/SGGSCC.png","/assets/images/src.png","/assets/images/symbiosis.png"]
   return (
-    <div>
-      IIM Bodhgaya
+    <div className='text-white my-20'>
+      <p className="mb-14 text-center text-5xl text-white underline decoration-white underline-offset-8">Institutes in Touch</p>
+      <div className='flex justify-center items-center flex-wrap gap-12 collegeslogo'>
+         {logos.map((ele,i)=>{
+          return(
+            <div>
+              <img width="150" src={ele} alt={ele}></img>
+            </div>
+          )
+         })}
+      </div>
+      <p className='text-center text-white text-5xl textnew mt-16 mb-6'>And many more ....</p>
+      {/* IIM Bodhgaya
       Hansraj college, DU
       Shaheed Rajguru college, DU
       Sri Guru Gobind Singh College, DU 
@@ -58,7 +70,7 @@ const page = () => {
       IIM Vishakhapatnam 
       NIT Hamirpur 
       NIT Karnataka 
-      Ponducherry University 
+      Ponducherry University  */}
     </div>
   )
 }

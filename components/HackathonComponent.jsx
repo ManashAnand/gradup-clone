@@ -16,7 +16,7 @@ const Img = styled("img")({
 
 const HackathonComponent = ({ post,display1,setDisplay1,display,setDisplay }) => {
   return (
-    <div>
+    <div className="text-left">
     <Paper
       sx={{
         p: 2,

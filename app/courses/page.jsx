@@ -165,9 +165,8 @@ const Courses = () => {
     <text className="text-4xl text" x="90" y="120" fill="deepskyblue">Learn from anywhere around</text>
     <text className="text-4xl text" x="90" y="160" fill="deepskyblue">the globe with us</text>
     {/* <text className="text-4xl text" x="90" y="200" fill="deepskyblue">with us.</text> */}
-    <text className="text-xl text" x="90" y="290" fill="white">Experience quality courses with us with</text>
-    <text className="text-xl text" x="90" y="320" fill="white">best price. You can get best courses</text>
-    <text className="text-xl text" x="90" y="350" fill="white">from us</text>
+    <text className="text-xl text" x="90" y="290" fill="white">Experience quality courses with us</text>
+    <text className="text-xl text" x="90" y="320" fill="white">with best price. You can get best courses from us</text>
      </svg>
     <div className='courseimg'>
       <img width="200" src="/assets/images/image1.png"></img>

@@ -34,7 +34,7 @@ export default function Student(){
   },60000)
  },[status1,status2,status3,status4,status5,status6])
     return(
-        <div className="{styles.container} w-screen mb-10">
+        <div className="{styles.container} w-screen mb-10 text-left">
         <div className={styles.box}>
         <img className={styles.groupimg} src="/assets/images/GDmodule.png" alt="group"></img>
         <div>
@@ -164,7 +164,7 @@ export default function Student(){
           <button onClick={handleClick4} className={styles.btn1}>Get Service</button>
         </div>
       </div>
-      {status4?<img className="m-auto" src="/assets/images/Corporate1.png"></img>:""}
+      {status4?<img width="600" className="mx-auto -mb-40" src="/assets/images/Corporate1.png"></img>:""}
       <div className={styles.box}>
         <img className={styles.groupimg4} src="/assets/images/digpro.png" alt="group"></img>
         <div>
