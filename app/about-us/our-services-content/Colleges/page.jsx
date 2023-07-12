@@ -1,6 +1,7 @@
+"use client"
 import React from "react"
 import styles from 'styles/Page.module.css'
-
+import { useState, useEffect } from "react"
 export default function Colleges(){
   const [status1,setStatus1]=useState(false)
   const [status2,setStatus2]=useState(false)
