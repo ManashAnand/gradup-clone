@@ -29,7 +29,10 @@ const HackathonSchema = new Schema({
         type:String
     },
     link:{
-        type:string
+        type:String
+    },
+    tags:{
+        type:[String]
     },
 });
 
