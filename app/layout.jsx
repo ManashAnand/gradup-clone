@@ -18,13 +18,17 @@ const Layout = ({children}) => {
             <link rel="icon" href="/assets/icons/favicon.ico"></link>
             {/* <!-- Google tag (gtag.js) --> */}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-85JYL3PDMK"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments)}
-              gtag('js', new Date());
+            <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-              gtag('config', 'G-85JYL3PDMK');
-            </script>
+        gtag('config', 'G-85JYL3PDMK');
+      `,
+    }}
+  ></script>
           </head>
             <body>
             <Provider>
