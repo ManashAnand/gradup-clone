@@ -1,5 +1,5 @@
 import OTP from '@models/otp';
-import { User } from '@models/user';
+import  User  from '@models/user';
 import { connectToDB } from '@utils/database';
 
 function getOTP(length) {

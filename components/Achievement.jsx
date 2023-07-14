@@ -48,7 +48,7 @@ const Achievement = () => {
             </div>
             <div className="w-48 h-28 datamile2 pt-2">
             <h1 className="text-4xl text-center text-white font-semibold">33+</h1>
-              <p className="text-xs font-semibold text-white text-center mb-1">PROJECTS DONE</p>
+              <p className="text-xs font-semibold text-white text-center mb-1">HACKATHONS DONE</p>
               <PeopleAltIcon sx={{color:"white"}} fontSize="large"></PeopleAltIcon>
             </div>
             <div className="w-48 h-28 datamile1 pt-2">
@@ -57,7 +57,7 @@ const Achievement = () => {
               <ThumbUpIcon sx={{color:"white"}} fontSize="large"></ThumbUpIcon>
             </div>
             <div className="w-48 h-28 datamile2 pt-2">
-            <h1 className="text-4xl text-center text-white font-semibold">30+</h1>
+            <h1 className="text-4xl text-center text-white font-semibold">42+</h1>
               <p className="text-xs font-semibold text-white text-center mb-1">TOP COMPANIES IN TOUCH</p>
               <GroupsIcon sx={{color:"white"}} fontSize="large"></GroupsIcon>
             </div>
@@ -67,8 +67,8 @@ const Achievement = () => {
               <AccountBalanceIcon sx={{color:"white"}} fontSize="large"></AccountBalanceIcon>
             </div>
             <div className="w-48 h-28 datamile2 pt-2">
-            <h1 className="text-4xl text-center text-white font-semibold">900+</h1>
-            <p className="text-xs font-semibold text-white text-center mb-1">INTERN STUDENTS</p>
+            <h1 className="text-4xl text-center text-white font-semibold">1500+</h1>
+            <p className="text-xs font-semibold text-white text-center mb-1">INTERNSHIPS COMPLETED</p>
             <HandshakeIcon sx={{color:"white"}} fontSize="large"></HandshakeIcon>
             </div>
            </div>

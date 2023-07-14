@@ -62,6 +62,7 @@ export default function CoursesOnHome() {
                 width="100%"
                 height={140}
                 alt={item.title}
+                decoding="async"
               />
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>

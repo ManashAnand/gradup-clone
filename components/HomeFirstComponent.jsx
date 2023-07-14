@@ -23,9 +23,9 @@ const HomeFirstComponent = () => {
   return (
     <section className='w-screen flex justify-around headingbox'>
       <div className="mb-12 flex flex-col justify-center">
-        <p className="text-left text-3xl text-white mb-3">Welcome to <span className='animate-charcter'>GradUp</span></p>
+        {/* <p className="text-left text-3xl text-white mb-3">Welcome to <span className='animate-charcter'>GradUp</span></p> */}
         <div style={{overflow:"hidden"}} className='text-xl sm:text-5xl text-white textnew text-left'>
-            <p className=''>Connecting talent with us to</p>
+            <p className=''>Connecting talent to</p>
             <p style={{overflow:"hidden"}} className=''>explore new <span className='animate-charcter font-semibold'>Opportunities</span></p>
         </div>
         <div className='text-left text-white textnew'>

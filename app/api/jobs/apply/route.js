@@ -1,5 +1,5 @@
 import Application from "@models/application";
-import {User} from "models/user";
+import User from '@models/user';
 import { connectToDB } from "@utils/database";
 import Job from '@models/job';
 export const POST = async(request) => {

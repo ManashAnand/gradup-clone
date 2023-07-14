@@ -11,7 +11,7 @@ export default function About() {
         <div>
           <div>
             <p className='text-5xl justice textnew mb-6 text-sky-500'>About Us</p>
-            <p className='text-white mb-1 textnew width-full text-justify'>Welcome to GradUp, the premier platform connecting talented students with top-tier companies. Our platform
+            <p className='text-white mb-1 textnew width-full text-justify font-semibold'>Welcome to GradUp, the premier platform connecting talented students with top-tier companies. GradUp is a Government of India recognized startup. Our platform
               provides students with a unique opportunity to unlock
               their potential by finding internships tailored to their
               individual skill sets and interests. We solve the problem
@@ -100,11 +100,11 @@ export default function About() {
         To take advantage of our platform, simply sign up for free and start exploring the many opportunities available
         to you. If you have any questions or concerns, our dedicated support team is always available to help.
         Join GradUp today and transform your dreams in the world of internships. "</p>
-      <p className="text-white text-3xl underline decoration-yellow-300 underline-offset-8 text-center mt-12 mb-9">Recognized By :-</p>
+      {/* <p className="text-white text-3xl underline decoration-yellow-300 underline-offset-8 text-center mt-12 mb-9">Recognized By :-</p>
       <div className='flex flex-wrap justify-center gapmedia'>
       <img className=' mb-16' width="300" src="/assets/images/dept.jpg"></img>
       <img className=' mb-16' width="300" src="/assets/images/startup.jpg"></img>
-      </div>
+      </div> */}
       {/* <div className='flex flex-wrap justify-center gapmedia'>
       <img className=' mb-16' width="200" src="/assets/achievements/media1.png"></img>
       <img className=' mb-16' width="200" src="/assets/achievements/media2.png"></img>

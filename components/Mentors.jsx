@@ -22,7 +22,7 @@ const Mentors = () => {
         {
             name: "Dharmendra Kumar",
             title:"IES Officer, 2019 Batch",
-            img:"/assets/mentors/mentor4.png"
+            img:"/assets/mentors/mentor4compres.jpg"
         },
         {
             name: "Mohit Agarwal",
@@ -36,7 +36,7 @@ const Mentors = () => {
         // },
         {
             name: "Saumya Singh",
-            title:" Area Manager,VBL-PespsiCo | IMT Ghaziabad",
+            title:" Area Manager  , VBL-PespsiCo |  IMT Ghaziabad",
             img:"/assets/mentors/mentor9.jpg"
         },
         // {

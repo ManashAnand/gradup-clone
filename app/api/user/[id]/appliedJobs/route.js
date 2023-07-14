@@ -2,7 +2,7 @@ import { connectToDB } from '@utils/database';
 import Job from '@models/job';
 import mongoose from 'mongoose';
 import Application from '@models/application';
-import {User} from '@models/user';
+import User from '@models/user';
 let page = 1;
 const pageSize = 10;
 

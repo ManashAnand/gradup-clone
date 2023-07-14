@@ -1,5 +1,5 @@
 import { connectToDB } from '@utils/database';
-import { User } from '@models/user';
+import  User  from '@models/user';
 import HR from '@models/hr'
 import OTP from '@models/otp'
 import mongoose from 'mongoose';

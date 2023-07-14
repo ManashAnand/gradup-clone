@@ -85,7 +85,7 @@ const Footer = () => {
 
                 <li>
                   <a href="/case-study" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Case Study
+                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Case Studies
                   </a>
                 </li>
 
@@ -103,7 +103,7 @@ const Footer = () => {
 
                 <li>
                   <a href="/alumni-network/manage" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Alumni Management
+                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Alumni Management Package
                   </a>
                 </li>
               </ul>
