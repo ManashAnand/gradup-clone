@@ -28,8 +28,13 @@ export default function BeMentorWithUs() {
   }
   return (
     <div className="w-full rounded-md flex justify-center">
+<<<<<<< HEAD
       {!status?<div style={{boxShadow:"rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(200, 37, 64, 0.35) 0px 0px 6px 8px inset"}} className="bg-white rounded-xl flex flex-col p-10 my-16">
         <p className="text-red-400 sizesetnew underline decoration-red-400 underline-offset-8 text-center font-semibold textnew">Join as an Industry Expert !!</p>
+=======
+      {!status?<div style={{boxShadow:"rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(200, 37, 64, 0.35) 0px 0px 6px 8px inset"}} className=" rounded-xl flex flex-col p-16 my-16">
+        <p className="text-red-400 text-3xl underline decoration-red-400 underline-offset-8 text-center font-semibold textnew">Join as an Industry Expert !!</p>
+>>>>>>> 1b31501d6525ca121250d7dfee53d64b933c9bba
         <button onClick={handleClick} className="bg-red-500 px-10 mt-9 text-center py-2 rounded-xl text-white">Join Now</button>
       </div>:""}
           {/* <form onSubmit={handleSubmit} className="mt-4 ">

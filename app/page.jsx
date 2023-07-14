@@ -41,10 +41,17 @@ const Home = () => {
            </div>
         </div>
         <div style={{background:"linear-gradient(220deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 60.90%,  rgba(9,158,248, 0.94) 99.86%)"}} className='p-10 w-screen'>
+<<<<<<< HEAD
           <div className="hide1">
           <p className='ml-24 text-xl text-left font-semibold mt-6 mb-1 text-white text'>Get Hired</p>
           <p className="ml-24 text-left textnew text-lg text-white">Work with your dream companies by applying for Full-time roles, Internships and Hackathon too.</p>
           </div>
+=======
+          {/* <div className="hide1">
+          <p className='text-xl text-left font-semibold mt-6 mb-1 text-white ml-32 text'>Get Hired</p>
+          <p className="ml-32 text-left textnew text-lg text-white">Work with your dream companies by applying for Full-time roles, Internships and Hackathon too.</p>
+          </div> */}
+>>>>>>> 1b31501d6525ca121250d7dfee53d64b933c9bba
           <div className="appbox">
            <a href="/jobs">
             <div className="rounded-md h-24 w-52 bg-green-200 flex items-center justify-evenly p-3 box9">
@@ -84,13 +91,21 @@ const Home = () => {
             </a>
           </div>
         </div>
+<<<<<<< HEAD
         <h1 className='text-white textnew text-2xl underline decoration-white underline-offset-8 font-semibold text-center mt-10'>Our Industry Experts (130+)</h1>
+=======
+        <h1 className='text-white textnew text-3xl decoration-white font-semibold text-center mt-10'>Our Industry Experts</h1>
+>>>>>>> 1b31501d6525ca121250d7dfee53d64b933c9bba
         <Mentors />
-        <Achievement />
         <BeMentorWithUs />
+        <Achievement />
         <Testimonial />
         <DownloadApp/>
         <ContactUs/>
+<<<<<<< HEAD
+=======
+        {/* <FAQ/> */}
+>>>>>>> 1b31501d6525ca121250d7dfee53d64b933c9bba
     </section>
     )
  }

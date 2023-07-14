@@ -83,24 +83,24 @@ export default function About() {
             </span>
          </div>
         <div className="p-6 mt-7 textnew text-justify">
-          <p className="text-white  mb-2" >Mr. Tanmay is a trailblazer, who is a 25 year young and budding entrepreneur whose meteoric rise from humble beginnings to becoming a well-known entrepreneur has been an inspiration to the students of the country. Failing consistently, being unable to face their fears, He couldn’t do what they wished for and unfortunately being at the lowest was their thing. Being named in the failure list, used to be no new for them until they discovered their inner own self. Starting from scratch, he embraced the challenges that awaited him, transforming adversity into opportunity.  Now, this young and budding entrepreneur has also received the award for India’s Top 100 Emerging Entrepreneurs-2023 by Fox Story India! They had a trailblazing Journey from Ground Zero to Remarkable Heights.</p>
-          <p className="text-white  mb-2">Coming from a family of educationists, our founder Mr Tanmay had the chance to interact with many students and parents. His interaction with the students helped him understand the most common problems faced by them  in their career initial phase of career after completing their degree. To provide a solution to this, GradUp (formerly, Attitude matterZ) was born.</p>
-          <p className="text-white  mb-2">He believes in continuous learning for everyone including their own self. Their story is a testament to resilience, unwavering determination, and an unparalleled drive for success. Tanmay is alumnus of NIT-IIM. He holds an Engineering degree, MBA degree and an Advanced degree in Digital Marketing & Entrepreneurship. Currently, He is pursuing Executive entrepreneurship Program at The Wharton School, University of Pennsylvania.</p>
-          <p className="text-white  mb-2">He has worked so hard despite facing several difficulties & being unvalued, still they manage to collaborate with some esteemed companies like PhonePe, Genpact, Toyota, LiuGong, Tata Steel Aashiyana, and PepsiCo (VBL) and has rich experience in framing digital marketing strategies for MSME clients.</p>
+          <p className="text-white  mb-2" >Mr. Tanmay is a trailblazer, who is a 25 year young and budding entrepreneur whose meteoric rise from humble beginnings to becoming a well-known entrepreneur has been an inspiration to the students of the country. Failing consistently, being unable to face their fears, He couldn’t do what they wished for and unfortunately being at the lowest was their thing. Starting from scratch, he embraced the challenges that awaited him, transforming adversity into opportunity.  Now, this young and budding entrepreneur has also received the award for India’s Top 100 Emerging Entrepreneurs-2023 by Fox Story India! They had a trailblazing Journey from Ground Zero to Remarkable Heights.</p>
+          {/* <p className="text-white  mb-2">Coming from a family of educationists, our founder Mr Tanmay had the chance to interact with many students and parents. His interaction with the students helped him understand the most common problems faced by them  in their career initial phase of career after completing their degree. To provide a solution to this, GradUp (formerly, Attitude matterZ) was born.</p> */}
+          <p className="text-white  mb-2">Tanmay is alumnus of NIT-IIM. He holds an Engineering degree, MBA degree and an Advanced degree in Digital Marketing & Entrepreneurship. Currently, He is pursuing Executive entrepreneurship Program at The Wharton School, University of Pennsylvania.</p>
+          {/* <p className="text-white  mb-2">He has worked so hard despite facing several difficulties & being unvalued, still they manage to collaborate with some esteemed companies like PhonePe, Genpact, Toyota, LiuGong, Tata Steel Aashiyana, and PepsiCo (VBL) and has rich experience in framing digital marketing strategies for MSME clients.</p> */}
           <p className="text-white  mb-2">He is rightly known for his networking, down to earth nature and leadership skills. He is presently a member of the International Youth Council, United Nations, and has been elected as the General Secretary and Vice President at various clubs and societies. Before GradUp (formerly Attitude matterZ), Tanmay co-founded a startup namely Business garage which aimed at providing digital marketing strategies to MSMEs.</p>
-          <p className='text-white  mb-2'>Tanmay is also a guest speaker, and he has been invited as a guest speaker by many premier institutions of India.</p>
+          {/* <p className='text-white  mb-2'>Tanmay is also a guest speaker, and he has been invited as a guest speaker by many premier institutions of India.</p> */}
           <p className="text-white  mb-2"><em>Tanmay has a vision to nurture the youth of “BHARAT” to be industry and future ready.</em></p>
           <br />
         </div>
       </div>
       {/* <img className='mx-auto mt-16 mb-16' src="/assets/images/certify.png" alt="certificate"></img> */}
       <p className='text-white text-center mb-6 textnew text-3xl mt-5'>Founder's Message</p>
-      <p className='text-black text-xl textnew mt-1 widthsetter m-auto bg-violet-300 rounded-2xl p-10'>" Thank you for considering GradUp as your go-to platform for internships. We're confident that our
+      <p className='text-black text-xl textnew mt-1 widthsetter m-auto bg-white rounded-2xl p-10'>" Thank you for considering GradUp as your go-to platform for internships. We're confident that our
         comprehensive features and flexible pricing model make us the best choice for students and businesses alike.
         To take advantage of our platform, simply sign up for free and start exploring the many opportunities available
         to you. If you have any questions or concerns, our dedicated support team is always available to help.
         Join GradUp today and transform your dreams in the world of internships. "</p>
-      <p className="text-white text-3xl underline decoration-yellow-300 underline-offset-8 text-center mt-12 mb-9">Recognized By :-</p>
+      {/* <p className="text-white text-3xl underline decoration-yellow-300 underline-offset-8 text-center mt-12 mb-9">Recognized By :-</p>
       <div className='flex flex-wrap justify-center gapmedia'>
       <img className=' mb-16' width="300" src="/assets/images/dept.jpg"></img>
       <img className=' mb-16' width="300" src="/assets/images/startup.jpg"></img>
@@ -110,9 +110,24 @@ export default function About() {
       <img className=' mb-16' width="200" src="/assets/achievements/media2.png"></img>
       <img className=' mb-16' width="200" src="/assets/achievements/media6.png"></img>
       <img className=' mb-16' width="200" src="/assets/achievements/media4.png"></img>
-      {/* <img className=' mb-16' width="200" src="/assets/achievements/media5.png"></img> */}
+      <img className=' mb-16' width="200" src="/assets/achievements/media5.png"></img>
       <img className=' mb-16' width="200" src="/assets/achievements/media3.png"></img>
+<<<<<<< HEAD
     </div>
+=======
+    </div> */}
+    {/* <p className='text-center textnew text-white mb-12 text-5xl font-semibold underline underline-offset-8 decoration-yellow-300'>Gallery</p>
+    <div className='flex flex-wrap justify-center gapmedia'>
+      <img style={{height:"70vh"}} className=' mb-16' width="350" src="/assets/achievements/gallery2.png"></img>
+      <img style={{height:"70vh"}} className=' mb-16' width="350" src="/assets/achievements/IMG_2228.jpeg"></img> */}
+      {/* <img style={{height:"60vh"}} className=' mb-16' width="350" src="/assets/achievements/IMG_1515.jpeg"></img> */}
+      {/* <img style={{height:"40vh"}} className=' mb-16' width="350" src="/assets/achievements/IMG_2081.jpeg"></img> */}
+      {/* <img style={{height:"70vh"}} className=' mb-16' width="350" src="/assets/achievements/IMG_2251.jpeg"></img> */}
+      {/* <img style={{height:"70vh"}} className=' mb-16' width="650" src="/assets/achievements/achievement2.png"></img> */}
+      {/* <img style={{height:"70vh"}} className='block mb-16' width="625" src="/assets/achievements/achievement3.png"></img>
+      <img style={{height:"70vh"}} className='block mb-16' width="625" src="/assets/achievements/achievement4.png"></img>
+    </div> */}
+>>>>>>> 1b31501d6525ca121250d7dfee53d64b933c9bba
     </div>
   )
 }

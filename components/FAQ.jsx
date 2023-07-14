@@ -26,7 +26,7 @@ export default function FAQ() {
                         1) Click on 'View Details' to get details about the company and the profile.<br />
                         2) Go through the details thoroughly and apply for jobs where your profile matches the requirements of the company.<br />
                         3) Click on 'Apply Now' and follow the steps to submit your application.<br />
-                        If you are not registered on Internshala, register yourself today to find your dream job.
+                        If you are not registered on GradUp, register yourself today to find your dream job.
                     </Text>
                 </Collapse>
                 <Collapse title={<Text css={{color:"white"}} >Q. Do I need to pay to apply for a job on GradUp?</Text>}>

@@ -11,9 +11,25 @@ export const metadata = {
     
 }
 const Layout = ({children}) => {
+   
     return (
         <html lang='en'>
-          <head><link rel="icon" href="/assets/icons/favicon.ico"></link></head>
+          <head>
+            <link rel="icon" href="/assets/icons/favicon.ico"></link>
+            {/* <!-- Google tag (gtag.js) --> */}
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-85JYL3PDMK"></script>
+            <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-85JYL3PDMK');
+      `,
+    }}
+  ></script>
+          </head>
             <body>
             <Provider>
             <div className='main'>
