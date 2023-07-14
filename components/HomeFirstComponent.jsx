@@ -1,9 +1,11 @@
 "use client"
 import React,{useState,useEffect} from 'react'
 import Link from 'next/link';
+import { Session } from 'next-auth'; 
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 const HomeFirstComponent = () => {
 
+  const { data: session } = useSession();
   const [providers, setProviders] = useState(null);
   const [current,setCurrent]=useState(0)
   useEffect(() => {
@@ -36,7 +38,9 @@ const HomeFirstComponent = () => {
               <button className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white' onClick={() =>
                 signIn()}>Sign In to Explore</button>
         </Link> */}
-        {providers &&
+        {session?.user.id ? <></>
+        :<>
+          {providers &&
               Object.values(providers).map((provider) => (
                 <button 
                   type='button'
@@ -52,6 +56,8 @@ const HomeFirstComponent = () => {
                   Sign In to Know More
                 </button>
               ))}
+        </>}
+        
         </div> 
         <div className="hideimage">
           {arr.map((ele,i)=>{

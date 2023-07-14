@@ -30,9 +30,9 @@ export default function HRSignup() {
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher);
   if (error) return <div>userFailed to loadinggggggg</div>;
   if (!data) return <div className="my-60 mx-auto"><Spinner /></div>;
-  if (data.role == "HR") {
-    // Router.push("/hr");
-  }
+  // if (data.role == "HR") {
+  //   // Router.push("/hr");
+  // }
   const addHR = async (e) => {
     e.preventDefault();
     // setIsSubmitting(true);
