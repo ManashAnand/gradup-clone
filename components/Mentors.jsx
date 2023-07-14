@@ -7,7 +7,7 @@ const Mentors = () => {
         {
             name: "Abhinaba Chakraborty",
             title:"XLRI Jamshedpur - InsideIIM | P&G | XLRI | BIT MESRA  at Microsoft",
-            img:"/assets/mentors/mentor1compress.jpg"
+            img:"/assets/mentors/mentor1.webp"
         },
         // {
         //     name: "Ashish Ambastha",
@@ -17,17 +17,17 @@ const Mentors = () => {
         {
             name: "Luv Saxena",
             title:"Assistant Vice President- magicpin | IIT Roorkee | IIM Bangalore |",
-            img:"/assets/mentors/mentor3compress.jpg"
+            img:"/assets/mentors/mentor3compress.webp"
         },
         {
             name: "Dharmendra Kumar",
             title:"IES Officer, 2019 Batch",
-            img:"/assets/mentors/mentor4compres.jpg"
+            img:"/assets/mentors/mentor4compres.webp"
         },
         {
             name: "Mohit Agarwal",
             title:"(Siemens EDA) | IIT BHU |",
-            img:"/assets/mentors/mentor5.png"
+            img:"/assets/mentors/mentor5.webp"
         },
         // {
         //     name: "Narendra Lamba",
@@ -37,7 +37,7 @@ const Mentors = () => {
         {
             name: "Saumya Singh",
             title:" Area Manager  , VBL-PespsiCo |  IMT Ghaziabad",
-            img:"/assets/mentors/mentor9.jpg"
+            img:"/assets/mentors/mentor9.webp"
         },
         // {
         //    name: "Pushkal Shukla",
