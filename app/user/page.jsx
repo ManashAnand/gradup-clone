@@ -203,46 +203,46 @@ export default function Profile() {
         <section className='border-solid border-white border-2 rounded-xl text-left'>
         <div className='m-6'>
         <div className='mx-3 item1 flex flex-col'>
-          <label className="mb-2 ml-2 text text-blue-500 text-sm">Name*</label>
+          <label className="mb-2 ml-2 text text-white text-sm">Name*</label>
           <Input  initialValue={data.name}/> <br/>
-          <label className="mb-2 ml-2 text text-blue-500 text-sm">Email*</label>
+          <label className="mb-2 ml-2 text text-white text-sm">Email*</label>
           <Input  initialValue={data.email}/> <br/>
-          <label className="mb-2 ml-2 text text-blue-500 text-sm">Phone No*</label>
+          <label className="mb-2 ml-2 text text-white text-sm">Phone No*</label>
           <Input  placeholder='Enter Phone Number' initialValue={data.contactNo} pattern='[0-9]{10}'/> <br/>
           </div>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className='mx-3'>
           <div>
             <span className='text-2xl font-semibold text-white my-auto'>Education</span>
-            <p className="text-sm text-blue-500">(Add from top to bottom hierarcy)</p>
+            <p className="text-sm text-white">(Add from top to bottom hierarcy)</p>
             <form onSubmit={addNewEducation} className="flex flex-col">
                 <div className="flexBox w-full">
                 <div className='flex item1 flex-col mb-5'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">College *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">College *</label>
                 <Input  css={{pr:"$2",width:"stretch"}} placeholder='Enter College' required/>
                 </div>
                 <div className='flex flex-col item2 mb-5'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Degree *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Degree *</label>
                 <Input  css={{pr:"$4",width:"stretch"}} placeholder='Enter degree' required/>
                 </div>
                 </div>
                 <div className="flexBox w-full">
                 <div className='flex item1 flex-col mb-5'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Branch *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Branch *</label>
                 <Input  css={{pr:"$2",width:"stretch"}} placeholder='Enter Branch' required/>
                 </div>
                 <div className='flex item2 flex-col item1 mb-5'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Grade</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Grade</label>
                 <Input  css={{pr:"$4",width:"stretch"}} placeholder='Enter grade'/>
                 </div>
                 </div>
                 <div className="flexBox w-full">
                 <div className='flex item1 flex-col mb-5'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Joining Date *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Joining Date *</label>
                 <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date' required/>
                 </div>
                 <div className='flex flex-col item2 mb-5'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Leaving Date *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Leaving Date *</label>
                 <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter ending date' required/>
                 </div>
                 </div>
@@ -294,20 +294,20 @@ export default function Profile() {
         <div className='mx-3'>
           <div>
             <span className='text-2xl font-semibold text-white my-auto'>Projects</span>
-            <p className="text-sm text-blue-500">(Enter all the project details)</p>
+            <p className="text-sm text-white">(Enter all the project details)</p>
             <form onSubmit={addNewProject}className="flex flex-col">
                 <div className='item1 flex flex-col'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Project Name *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Project Name *</label>
                 <Input  css={{pr:"$4",mb:"$6"}}  placeholder='Enter name'/>
                 </div>
-                <label className="mb-1 mt-3 ml-2 text text-blue-500 text-sm">Description *</label>
+                <label className="mb-1 mt-3 ml-2 text text-white text-sm">Description *</label>
                 <Textarea  css={{pr:"$4",mb:"$6"}} rows={5} placeholder='Enter Description'/>
                 <div className='item1 flex flex-col'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Skills Used *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Skills Used *</label>
                 <Input  css={{pr:"$4",mb:"$6"}} placeholder='Enter Skills'/>
                 </div>
                 <div className='item1 flex flex-col'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Working Links </label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Working Links </label>
                 <Input  css={{pr:"$4",mb:"$6"}} placeholder='Enter link'/>
                 </div>
                 <Button bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'>ADD</Button>
@@ -346,26 +346,26 @@ export default function Profile() {
         <div className='mx-3'>
           <div>
             <span className='text-2xl font-semibold text-white my-auto'>Experience</span>
-            <p className="text-xs text-blue-500">(Enter all of your previous and current work experiences)</p>
+            <p className="text-xs text-white">(Enter all of your previous and current work experiences)</p>
             <form onSubmit={addNewExperience} className="flex flex-col">
                 <div className="flexBox w-full">
                 <div className='flex item1 flex-col mb-5'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Company *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Company *</label>
                 <Input css={{pr:"$2",width:"stretch"}} placeholder='Enter Company' required/>
                 </div>
                 <div className='flex flex-col item2 mb-5'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Location</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Location</label>
                 <Input css={{pr:"$4",width:"stretch"}} placeholder='Enter Location'/>
                 </div>
                 </div>
                 <div className='item1 flex flex-col'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Title *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Title *</label>
                 <Input  css={{pr:"$4",mb:"$6"}} placeholder='Enter Title' required/>
                 </div>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Description *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Description *</label>
                 <Textarea  css={{pr:"$4",mb:"$6"}} rows={5} placeholder='Enter Description' required/>
                 <div className='item1 flex flex-col'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Skills *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Skills *</label>
                 <Input  css={{pr:"$4",mb:"$6"}} placeholder='Enter Skills' required/>
                 </div>
                 <div className="flexBox w-full">
@@ -374,7 +374,7 @@ export default function Profile() {
                 <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date' required/>
                 </div>
                 <div className='flex flex-col item2 mb-5'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Leaving Date *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Leaving Date *</label>
                 <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter ending date' required/>
                 </div>
                 </div>
@@ -423,7 +423,7 @@ export default function Profile() {
         <div className=' mx-3'>
           <div>
             <span className='text-2xl font-semibold text-white my-auto'>Achievement</span>
-            <p className="text-sm text-blue-500">(List all of your achievements)</p>
+            <p className="text-sm text-white">(List all of your achievements)</p>
             <form onSubmit={addNewAchievement} className="flex flex-col">
                 <Textarea  css={{pr:"$4",mt:"$4"}} rows={5} placeholder="Enter your achievements"/>
                 <Button bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'> ADD</Button>
@@ -453,7 +453,7 @@ export default function Profile() {
         </div>
         </div>
       </section>
-      {message && <div className="px-10 py-2 text-center text rounded-xl my-3 bg-blue-500 text-white">Please add atleast 1 Education, 1 Experience and 1 Project</div>}
+      {message && <div className="px-10 py-2 text-center text rounded-xl my-3 bg-white text-white">Please add atleast 1 Education, 1 Experience and 1 Project</div>}
       <Button flat color="primary" css={{float:"right",mt:"$10"}} onClick={handleSubmit}>Submit</Button>
     </div>:<div className='mb-20'>
     <img className="mt-16 mb-6" width="400" src="/assets/images/submitted.gif" alt="submitted"></img>

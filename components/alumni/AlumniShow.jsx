@@ -10,7 +10,7 @@ const AlumniShow = ({ selectedCollege }) => {
   const [loading,setLoading]=useState(true)
   var ourData;
   useEffect(() => {
-    fetch("http://localhost:3000/api/alumni", {
+    fetch("http://gradup.in/api/alumni", {
       method: "POST",
       body: JSON.stringify({
         collegeName: selectedCollege,
