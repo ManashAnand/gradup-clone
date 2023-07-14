@@ -100,34 +100,19 @@ export default function About() {
         To take advantage of our platform, simply sign up for free and start exploring the many opportunities available
         to you. If you have any questions or concerns, our dedicated support team is always available to help.
         Join GradUp today and transform your dreams in the world of internships. "</p>
-      {/* <p className="text-white text-3xl underline decoration-yellow-300 underline-offset-8 text-center mt-12 mb-9">Recognized By :-</p>
+      <p className="text-white text-3xl underline decoration-yellow-300 underline-offset-8 text-center mt-12 mb-9">Recognized By :-</p>
       <div className='flex flex-wrap justify-center gapmedia'>
       <img className=' mb-16' width="300" src="/assets/images/dept.jpg"></img>
       <img className=' mb-16' width="300" src="/assets/images/startup.jpg"></img>
       </div>
-      <div className='flex flex-wrap justify-center gapmedia'>
+      {/* <div className='flex flex-wrap justify-center gapmedia'>
       <img className=' mb-16' width="200" src="/assets/achievements/media1.png"></img>
       <img className=' mb-16' width="200" src="/assets/achievements/media2.png"></img>
       <img className=' mb-16' width="200" src="/assets/achievements/media6.png"></img>
       <img className=' mb-16' width="200" src="/assets/achievements/media4.png"></img>
       <img className=' mb-16' width="200" src="/assets/achievements/media5.png"></img>
       <img className=' mb-16' width="200" src="/assets/achievements/media3.png"></img>
-<<<<<<< HEAD
-    </div>
-=======
     </div> */}
-    {/* <p className='text-center textnew text-white mb-12 text-5xl font-semibold underline underline-offset-8 decoration-yellow-300'>Gallery</p>
-    <div className='flex flex-wrap justify-center gapmedia'>
-      <img style={{height:"70vh"}} className=' mb-16' width="350" src="/assets/achievements/gallery2.png"></img>
-      <img style={{height:"70vh"}} className=' mb-16' width="350" src="/assets/achievements/IMG_2228.jpeg"></img> */}
-      {/* <img style={{height:"60vh"}} className=' mb-16' width="350" src="/assets/achievements/IMG_1515.jpeg"></img> */}
-      {/* <img style={{height:"40vh"}} className=' mb-16' width="350" src="/assets/achievements/IMG_2081.jpeg"></img> */}
-      {/* <img style={{height:"70vh"}} className=' mb-16' width="350" src="/assets/achievements/IMG_2251.jpeg"></img> */}
-      {/* <img style={{height:"70vh"}} className=' mb-16' width="650" src="/assets/achievements/achievement2.png"></img> */}
-      {/* <img style={{height:"70vh"}} className='block mb-16' width="625" src="/assets/achievements/achievement3.png"></img>
-      <img style={{height:"70vh"}} className='block mb-16' width="625" src="/assets/achievements/achievement4.png"></img>
-    </div> */}
->>>>>>> 1b31501d6525ca121250d7dfee53d64b933c9bba
     </div>
   )
 }
