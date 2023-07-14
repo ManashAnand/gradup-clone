@@ -26,7 +26,7 @@ const HackathonComponent = ({ post,display1,setDisplay1,display,setDisplay }) =>
         marginY:"10px",
         display:display1,
         flexGrow: 1,
-        boxShadow:"10px 10px 5px darkslategray",
+        // boxShadow:"10px 10px 5px darkslategray inset",
         backgroundColor: (theme) =>
         theme.palette.mode === "dark" ? "#1A2027" : "#fff",
       }}

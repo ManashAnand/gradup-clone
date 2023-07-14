@@ -22,8 +22,8 @@ const ShowHackathon = ({ setHackathon,display,setDisplay,display1,setDisplay1 })
   const posts = data;
   console.log("INSIDE SHOW HACKATHON")
   return (
-    <div>
-      <div className="mx-5 hackathons">
+    <div className="mx-auto">
+      <div className=" hackathons">
         {posts.map((post) => (
           <div onClick={(e) => setHackathon(post)} className="mb-10">
             <HackathonComponent display={display} display1={display1} setDisplay={setDisplay} setDisplay1={setDisplay1} post={post} />

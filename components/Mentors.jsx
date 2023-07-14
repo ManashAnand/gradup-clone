@@ -35,9 +35,9 @@ const Mentors = () => {
             img:"/assets/mentors/mentor6.png"
         },
         {
-            name: "Charu Chaudhary",
-            title:" Software Engineer (Samsung)",
-            img:"/assets/mentors/mentor7.png"
+            name: "Saumya Singh",
+            title:" Area Manager,VBL-PespsiCo | IMT Ghaziabad",
+            img:"/assets/images/mentor9.png"
         },
         {
            name: "Pushkal Shukla",

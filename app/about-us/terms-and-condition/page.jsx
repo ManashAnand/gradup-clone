@@ -1,9 +1,9 @@
 import styles from 'styles/Page.module.css'
 export default function Terms() {
   return (
-    <div className="w-screen my-10">
-      <p className="text-5xl font-semibold textnew mt-4 mb-8 animate-charcter text-center">TERMS & CONDITIONS</p>
+    <div className="w-screen">
       <div className="headingbox2 px-10 pt-10 pb-20">
+      <p className="text-5xl font-semibold textnew mt-4 mb-8 animate-charcter text-center">TERMS & CONDITIONS</p>
         <p className="mb-2 text-white textnew justice">Welcome to GradUp.in , (hereinafter referred to as the "Site" or as "GradUp" interchangeably), a portal of Teksila Private Limited (hereinafter referred to as the TPL). These terms and conditions of use ("Terms") constitute a legal agreement between you and TPL. Use of this Site constitutes your unconditional acceptance of these Terms herein and by all terms, policies and guidelines incorporated by reference. These Terms apply to your use of this Site, and do not alter in any way the terms or conditions of any other agreement you may have with TPL, its subsidiaries or affiliates. If you are using the Site on behalf of any entity, you further represent and warrant that you are authorized to accept these Terms on such entity's behalf, and that such entity agrees to indemnify TPL for violations of these Terms. If you do not agree with these terms, please do not use this Site.</p>
         <p className="mb-2 text-white textnew justice">Any individual and organisation wanting to make use of Site to post internships/jobs (hereinafter referred to as the "Jobs") for self or for an organisation he/she represents is referred to as "Employer" or "Employers" as context may demand.</p>
         <p className="mb-8 text-white textnew justice">Any individual wanting to make use of Site to apply to Jobs listed on GradUp  is referred to as "Applicant" or "Applicants" as context may demand.</p>

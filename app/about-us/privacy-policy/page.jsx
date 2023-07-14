@@ -1,9 +1,9 @@
 import styles from 'styles/Page.module.css'
 export default function Privacy() {
   return (
-    <div className=" w-screen my-10">
-       <p className="text-5xl font-semibold textnew mt-4 mb-8 animate-charcter text-center">PRIVACY POLICY</p>
+    <div className=" w-screen">
         <div className="headingbox2 px-10 pt-10 pb-20">
+        <p className="text-5xl font-semibold textnew mt-4 mb-8 animate-charcter text-center">PRIVACY POLICY</p>
         <h1 className="text-2xl justice text-green-300  textnew mb-3">Privacy Policy</h1>
         <p className="mb-8 text-white textnew justice">This Privacy Policy applies to the online services offered by  at GradUp .in , its subdomains and Gradup’s app on Google Play Store. These are henceforth collectively known as Services.</p>
         <h1 className="text-2xl justice text-green-300 textnew mb-3">Overview</h1>
