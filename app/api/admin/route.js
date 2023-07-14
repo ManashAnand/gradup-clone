@@ -4,7 +4,7 @@
 //total alumni
 
 import { connectToDB } from '@utils/database';
-import {User} from '@models/user';
+import User from '@models/user';
 import HR from '@models/hr'
 import Job from '@models/job';
 import mongoose from 'mongoose';

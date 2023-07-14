@@ -7,17 +7,17 @@ const Mentors = () => {
         {
             name: "Abhinaba Chakraborty",
             title:"XLRI Jamshedpur - InsideIIM | P&G | XLRI | BIT MESRA  at Microsoft",
-            img:"/assets/mentors/mentor1.png"
+            img:"/assets/mentors/mentor1compress.jpg"
         },
-        {
-            name: "Ashish Ambastha",
-            title:"Software Development Engineer III  Flipkart",
-            img:"/assets/mentors/mentor2.png"
-        },
+        // {
+        //     name: "Ashish Ambastha",
+        //     title:"Software Development Engineer III  Flipkart",
+        //     img:"/assets/mentors/mentor2.png"
+        // },
         {
             name: "Luv Saxena",
             title:"Assistant Vice President- magicpin | IIT Roorkee | IIM Bangalore |",
-            img:"/assets/mentors/mentor3.png"
+            img:"/assets/mentors/mentor3compress.jpg"
         },
         {
             name: "Dharmendra Kumar",
@@ -29,21 +29,21 @@ const Mentors = () => {
             title:"(Siemens EDA) | IIT BHU |",
             img:"/assets/mentors/mentor5.png"
         },
-        {
-            name: "Narendra Lamba",
-            title:" (Ex-Intelligence Officer,GOI) IIFT DELHI & BIT MESRA Alumnus ",
-            img:"/assets/mentors/mentor6.png"
-        },
+        // {
+        //     name: "Narendra Lamba",
+        //     title:" (Ex-Intelligence Officer,GOI) IIFT DELHI & BIT MESRA Alumnus ",
+        //     img:"/assets/mentors/mentor6.png"
+        // },
         {
             name: "Saumya Singh",
             title:" Area Manager,VBL-PespsiCo | IMT Ghaziabad",
-            img:"/assets/images/mentor9.png"
+            img:"/assets/mentors/mentor9.jpg"
         },
-        {
-           name: "Pushkal Shukla",
-           title:"Adobe",
-           img: "/assets/mentors/mentor8.png"
-        },
+        // {
+        //    name: "Pushkal Shukla",
+        //    title:"Adobe",
+        //    img: "/assets/mentors/mentor8.png"
+        // },
         {
           name:"130 + Mentors",
           title:"",
@@ -57,7 +57,7 @@ const Mentors = () => {
         return(
           <div key={i} class="box">
             <div class="box-top">
-              <img class="box-image" src={items.img} alt="Mentor"/>
+              <img class="box-image" src={items.img} alt="Mentor" decoding="async"/>
             </div>
             <h3 class="text text-center text-md text-white">{items.name}</h3>
             <p class="user-follow-info text-center text-white text text-xs">{items.title}</p>
