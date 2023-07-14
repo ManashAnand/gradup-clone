@@ -9,7 +9,7 @@ const Achievement = () => {
     const list1 = ["/assets/achievements/media1.png","/assets/achievements/media2.png","/assets/achievements/media3.png","/assets/achievements/media4.png",,"/assets/achievements/media5.png",,"/assets/achievements/media6.png"]
     const list = ["/assets/achievements/achievement2.png","/assets/achievements/achievement3.png","/assets/achievements/achievement1.png","/assets/achievements/achievement4.png"]
   return (
-       <div className="achievementbox w-screen justify-center items-center">
+       <div className="achievementbox w-screen justify-center items-center mb-8">
             <div className="filter1"></div>
                 {/* <div className="w-screen media">
                 {list1.map((element)=>(
