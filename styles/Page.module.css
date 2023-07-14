@@ -17,7 +17,20 @@
   padding:1em 1em 1em 6em;
   font-size:19px;
   font-weight:bold;
-  color:#0CAFFF;
+  color:#17549f;
+}
+.subhead{
+  color:#17549f;
+  padding:0 1em 0 2.8em;
+  font-size:2.5em;
+  margin-bottom:2vh;
+}
+.enroll{
+  width:50vw;
+  color:#17549f;
+  font-size:1.4em;
+  padding:0 1em 0 5.1em;
+  margin-bottom:3vh;
 }
 .mainbox{
   display:flex;
@@ -25,7 +38,7 @@
 .box{
   padding:1em 0;
   display:flex;
-  background:rgb(27, 26, 26);
+  background:rgb(160, 199, 232);
   margin:3em 0 0 0;
 }
 .btn1{
@@ -96,8 +109,8 @@
   width:50%;
 }
 .partnerpara{
-  color:white;
-  font-size:16px;
+  color:#765959;
+  font-size:17px;
   margin-left:7rem;
   width:75%;
   padding-bottom:1.5rem;
@@ -180,25 +193,14 @@
   margin-top:8vh;
   font-family: 'Ubuntu', sans-serif;
 }
-.subhead{
-  color:#0CAFFF;
-  padding:0 1em 0 2.8em;
-  font-size:2.5em;
-  margin-bottom:2vh;
-}
+
 .subhead1{
   color:#0CAFFF;
   padding:0 1em 0 1em;
   font-size:2.5em;
   margin-bottom:2vh;
 }
-.enroll{
-  width:50vw;
-  color:#0CAFFF;
-  font-size:1.4em;
-  padding:0 1em 0 5.1em;
-  margin-bottom:3vh;
-}
+
 .groupimg{
   margin:auto 0 auto 10vw;
   height:50vh;

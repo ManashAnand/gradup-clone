@@ -23,14 +23,14 @@ const HomeFirstComponent = () => {
   return (
     <section className='w-screen flex justify-around headingbox'>
       <div className="my-12 flex flex-col justify-center">
-        <p className="text-left text-2xl text-white">Welcome to <span className='animate-charcter'>GradUp</span></p>
+        {/* <p className="text-left text-2xl text-white">Welcome to <span className='animate-charcter'>GradUp</span></p> */}
         <div style={{overflow:"hidden"}} className='text-5xl text-white textnew text-left'>
-            <p style={{overflow:""}}>Connecting Talent with us to</p>
-            <p style={{overflow:"hidden"}} className='mt-2'>Explore new <span className='animate-charcter font-semibold'>Opportunities</span></p>
+            <p style={{overflow:""}}>Connecting talent to</p>
+            <p style={{overflow:"hidden"}} className='mt-2'>explore new <span className='animate-charcter font-semibold'>Opportunities</span></p>
         </div>
         <div className='text-left text-white textnew'>
-            <h1 className='mt-10 text-xl ml-1 mb-2'>One-step career solution . Grow your skills, get career help, and get hired.
-            <br/>Your go-to destination to transform your dreams into reality
+            <h1 className='mt-10 text-xl ml-1 mb-2'>Transform your dreams: The ultimate platform for college-to-career success, offering skill-suited
+            internships, free courses, and expert guidance all in one place.
 </h1> 
         </div>
         {/* <Link href='/courses' className="area">
@@ -54,7 +54,7 @@ const HomeFirstComponent = () => {
                 </button>
               ))}
         </div> 
-        <div className="block mt-5">
+        <div className="block mt-5 pr-40">
           {arr.map((ele,i)=>{
             return(current===i &&
               <>
