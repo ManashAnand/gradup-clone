@@ -8,7 +8,7 @@ export const POST = async(request) => {
         await connectToDB();
         const newJob = new Job({ 
             hrId:data.HRId,
-            logo:"",
+            logo:data.logo,
             isStartUp:data.isStartUp,
             title:data.title,
             isIntern: data.isIntern,
@@ -29,7 +29,9 @@ export const POST = async(request) => {
          });
 
         const addedObj = await newJob.save();
+        console.log("11111111111")
         const currentHR = await HR.findById(data.HRId);
+        console.log("2222222222222")
         currentHR.posts.push({
             title:addedObj.title,
             status:true,
@@ -37,6 +39,7 @@ export const POST = async(request) => {
             _id:addedObj._id,
         })
         await currentHR.save();
+        console.log("3333333333333")
         return new Response("New Job Added", { status: 201 })
     } catch (error) {
         console.log("Error in Job Posting",error);

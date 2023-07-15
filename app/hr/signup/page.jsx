@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import {useState} from "react"
+import {useState,useEffect} from "react"
 import { useRouter } from "next/navigation";
 import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
@@ -29,12 +29,13 @@ export default function HRSignup() {
   const [posted, setPosted] = useState(false)
   const [err,setErr]=useState(false)
   const { data: session } = useSession();
+  console.log(data)
+  useEffect(()=>{
+    data?.role==="HR"?router.push("/hr"):""
+  })
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher);
   if (error) return <div>userFailed to loadinggggggg</div>;
   if (!data) return <div className="my-60 mx-auto"><Spinner /></div>;
-  // if (data.role == "HR") {
-  //   // Router.push("/hr");
-  // }
   const addHR = async (e) => {
     e.preventDefault();
     // setIsSubmitting(true);

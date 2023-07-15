@@ -454,7 +454,7 @@ export default function Profile() {
         </div>
       </section>
       {message && <div className="px-10 py-2 text-center text rounded-xl my-3 bg-white text-white">Please add atleast 1 Education, 1 Experience and 1 Project</div>}
-      <Button flat color="primary" css={{float:"right",mt:"$10"}} onClick={handleSubmit}>Submit</Button>
+      <a href="#"><button className='mt-5 bg-white rounded-md px-5 py-1 text-blue-500' onClick={handleSubmit}>Submit</button></a>
     </div>:<div className='mb-20'>
     <img className="mt-16 mb-6" width="400" src="/assets/images/submitted.gif" alt="submitted"></img>
     <div className="text-center my-50 text-4xl text-sky-600 text mb-16">Resume Sent Successfully</div>

@@ -136,6 +136,7 @@ const page = ({ params }) => {
         body: JSON.stringify({
           HRId: session?.user.id,
           title:title,
+          logo:session?.user.image,
           stipend:!onefield? e.target[4].value:e.target[5].value,
           companyName:!onefield? e.target[5].value:e.target[6].value,
           // companyLink: e.target[3].value,
@@ -225,7 +226,7 @@ const page = ({ params }) => {
                   <label className="text-md text-white my-3 ml-1">Job Title *</label>
                 </div>
               <Select
-              className="container"
+              className="container text-left"
               options={titleList}
               placeholder="Select job"
               onChange={handleTitle}
@@ -246,7 +247,7 @@ const page = ({ params }) => {
               <div className="flex flex-col mx-auto w-full">
                 <div className="flex">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "1.6vh", marginLeft: "0.6em" }}><path d="M21 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-1 11a3 3 0 0 0-3 3H7a3 3 0 0 0-3-3V9a3 3 0 0 0 3-3h10a3 3 0 0 0 3 3v6z"></path><path d="M12 8c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"></path></svg>
-                  <label className="text-md text-white my-3 ml-1">{value===true?"Stipend *": "Salary(per month)*"}</label>
+                  <label className="text-md text-white my-3 ml-1">{value===true?"Stipend *": "Salary (per month)*"}</label>
                 </div>
                 <input className="rounded-md p-2" css={{ backgroundColor: "$white" }} clearable placeholder={value===true?"Stipend":"Salary"} initialValue="" required />
               </div>
@@ -279,7 +280,7 @@ const page = ({ params }) => {
                 rows='8'
                 fullWidth="true"
                 placeholder="Eligibility Criteria"
-                initialValue=""
+                initialValue="1."
                 required
               />
             </div>
@@ -373,14 +374,14 @@ const page = ({ params }) => {
               label="Description of the Job"
               placeholder="Description of the Job"
             /> */}
-          <a href="#toppage"><button type='submit' className='py-2 px-10 rounded-xl bg-white ml-3 mt-7 border-sky-800 border-2 hover:bg-white hover:text-blue-500 hover:border-blue-600'  >Submit</button></a>
+          <a href="#"><button type='submit' className='py-2 px-10 rounded-xl bg-white ml-3 mt-7 border-sky-800 border-2 hover:bg-white hover:text-blue-500 hover:border-blue-600'  >Submit</button></a>
         </form>
-      </div> : err?<div id="toppage" className="flex flex-col items-center justify-center my-20"><img width="700" src="/assets/images/500error.png" alt="500 Error"></img></div>: <div className="flex flex-col justify-center items-center my-32">
+      </div> : err?<div className="flex flex-col items-center justify-center my-20"><img width="700" src="/assets/images/500error.png" alt="500 Error"></img></div>: <div className="flex flex-col justify-center items-center my-32">
       <img width="250" src="/assets/images/jobpost.gif"></img>
       <p className="text-4xl text text-lime-500 mb-4">Successfully published the job.</p>
-      <p className="text-white mt-5">Check the dashboard for tracking the application.</p>
+      <p className="text-white">Check the dashboard for tracking the application.</p>
       <div className="flex justify-center">
-      <a href="/hr/posted-jobs"><button className="px-5 py-2 rounded-md bg-white text-blue-500">Go to Dashboard</button></a>
+      <a href="/hr/posted-jobs"><button className="px-5 py-2 rounded-md bg-white text-blue-500 mt-5">Go to Dashboard</button></a>
       </div>
     </div>}</>
   )
