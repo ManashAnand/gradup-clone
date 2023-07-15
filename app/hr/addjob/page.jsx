@@ -188,7 +188,7 @@ const page = ({ params }) => {
   return (
     <>
     {!posted ?
-      <div className='justify-center w-full align-center justify-items-center hrjobs mt-6 mb-20 border-2 border-white px-4'>
+      <div className='justify-center w-full align-center justify-items-center hrjobs mt-6 mb-20 border-2 border-white px-4 textform'>
         <div style={{ display: "flex", justifyContent: "center" }}>
         {/* <Image
           src="/assets/images/logo-for-website.png"
@@ -199,7 +199,7 @@ const page = ({ params }) => {
         /> */}
       </div>
         <h1 className='font-bold text-5xl text-left mb-5'>
-        <p className='textnew text-4xl underline decoration-white underline-offset-8 text-center text-white mb-8'>Post a Job and hire the best Talent</p>
+        <p className='textform text-4xl underline decoration-white underline-offset-8 text-center text-white mb-8'>Post a Job and hire the best Talent</p>
         </h1>
         <form onSubmit={createNewJob} className='w-full'>
           <Grid.Container gap={2} >
@@ -272,15 +272,14 @@ const page = ({ params }) => {
             </Grid>
             <div className="flex flex-col mx-auto w-full">
               <div className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "1.6vh", marginLeft: "0.6em" }} ><path d="m2.394 13.742 4.743 3.62 7.616-8.704-1.506-1.316-6.384 7.296-3.257-2.486zm19.359-5.084-1.506-1.316-6.369 7.279-.753-.602-1.25 1.562 2.247 1.798z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "1.6vh", marginLeft: "0.9em" }} ><path d="m2.394 13.742 4.743 3.62 7.616-8.704-1.506-1.316-6.384 7.296-3.257-2.486zm19.359-5.084-1.506-1.316-6.369 7.279-.753-.602-1.25 1.562 2.247 1.798z"></path></svg>
                 <label className="text-md text-white mt-3 ml-1">Eligibility *</label>
               </div>
               <Textarea
-                css={{ mt: "$5", backgroundColor: "$white" }}
+                css={{ mt: "$5", mx:"$6", backgroundColor: "$white" }}
                 rows='8'
-                fullWidth="true"
                 placeholder="Eligibility Criteria"
-                initialValue="1."
+                initialValue={`Required Eligibility criteria :\n1. \n2.\n3.`}
                 required
               />
             </div>
@@ -322,42 +321,40 @@ const page = ({ params }) => {
             </Grid>
             <div className="flex flex-col mx-auto w-full">
               <div className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "4.7vh", marginLeft: "0.6em" }}><path d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2zm-4 2v11H8V8h8zm-1-4v2H9V4h6zM4 8h2v11H4V8zm14 11V8h2l.001 11H18z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "4.7vh", marginLeft: "0.9em" }}><path d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2zm-4 2v11H8V8h8zm-1-4v2H9V4h6zM4 8h2v11H4V8zm14 11V8h2l.001 11H18z"></path></svg>
                 <label className="text-md text-white mt-8 ml-1">Job Description *</label>
               </div>
               <Textarea
-                css={{ mt: "$5", backgroundColor: "$white" }}
+                css={{mx:"$6", mt: "$5", backgroundColor: "$white" }}
                 rows='10'
-                fullWidth="true"
-
                 placeholder="Description of the Job"
+                initialValue={`Job Description :\n1. \n2.\n3.`}
                 required
               />
             </div>
             <div className="flex flex-col mx-auto w-full">
               <div className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "4.7vh", marginLeft: "0.6em" }}><path d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM5 20V7h14V6l.002 14H5z"></path><path d="M7 9h10v2H7zm0 4h5v2H7z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "4.7vh", marginLeft: "0.9em" }}><path d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM5 20V7h14V6l.002 14H5z"></path><path d="M7 9h10v2H7zm0 4h5v2H7z"></path></svg>
                 <label className="text-md text-white mt-8 ml-1">Responsibilities *</label>
               </div>
               <Textarea
-                css={{ mt: "$5", backgroundColor: "$white" }}
+                css={{ mt: "$5",mx:"$6", backgroundColor: "$white" }}
                 rows='10'
-                fullWidth="true"
-
                 placeholder="Roles and Responsibilities"
+                initialValue={`Roles & Responsibilities include :\n1. \n2.\n3.`}
                 required
               />
             </div>
             <div className="flex flex-col mx-auto w-full">
               <div className="flex">
-                <MilitaryTechIcon style={{ fill: "white", marginTop: "4.7vh", marginLeft: "0.6em" }} />
+                <MilitaryTechIcon style={{ fill: "white", marginTop: "4.7vh", marginLeft: "0.9em" }} />
                 <label className="text-md text-white mt-8 ml-1">Perks & Benefits *</label>
               </div>
               <Textarea
-                css={{ mt: "$5", backgroundColor: "$white" }}
+                css={{ mt: "$5",mx:"$6", backgroundColor: "$white" }}
                 rows='10'
-                fullWidth="true"
                 placeholder="Perks"
+                initialValue={`Benefits :\n1. \n2.\n3.`}
                 required
               />
             </div>
@@ -374,7 +371,7 @@ const page = ({ params }) => {
               label="Description of the Job"
               placeholder="Description of the Job"
             /> */}
-          <a href="#"><button type='submit' className='py-2 px-10 rounded-xl bg-white ml-3 mt-7 border-sky-800 border-2 hover:bg-white hover:text-blue-500 hover:border-blue-600'  >Submit</button></a>
+          <a href="#"><button type='submit' className='py-2 px-10 float-left rounded-xl bg-white ml-3 mt-7 border-sky-800 border-2 hover:bg-white hover:text-blue-500 hover:border-blue-600'  >Submit</button></a>
         </form>
       </div> : err?<div className="flex flex-col items-center justify-center my-20"><img width="700" src="/assets/images/500error.png" alt="500 Error"></img></div>: <div className="flex flex-col justify-center items-center my-32">
       <img width="250" src="/assets/images/jobpost.gif"></img>

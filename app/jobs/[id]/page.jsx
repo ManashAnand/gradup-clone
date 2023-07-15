@@ -15,6 +15,20 @@ function Page ({ id }) {
   if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;
   console.log(data.record);
   const jobs=data
+  let perksdata=jobs.perks[0].split(/[\n](\d+)[.]/).filter((ele,i)=>{
+    return ele.length>0 && isNaN(ele)===true}).map((item,i)=>{
+     return item})
+     console.log(perksdata,"perks")
+     let descriptiondata=jobs.description.split(/[\n](\d+)[.]/).filter((ele,i)=>{
+      return ele.length>0 && isNaN(ele)===true}).map((item,i)=>{
+       return item})
+      console.log(descriptiondata,"describe")
+ let eligibilitydata=jobs.eligiblilty[0].split(/[\n](\d+)[.]/).filter((ele,i)=>{
+    return ele.length>0 && isNaN(ele)===true}).map((item,i)=>{
+      return item})
+ let roledata=jobs.responsilities[0].split(/[\n](\d+)[.]/).filter((ele,i)=>{
+    return ele.length>0 && isNaN(ele)===true}).map((item,i)=>{
+      return item})
     return (
         <div className='w-screen'>
           <h1 className='mt-8 font-semibold text-2xl text-center'>
@@ -51,19 +65,38 @@ function Page ({ id }) {
                   <input className="py-2 px-5 text-sm bg-white text-gray-600 rounded-md border-blue-300 border-2 w-5/6" value={jobs.noOfOpenings}></input>
                   <div className="flex mb-1">
                   <MilitaryTechIcon style={{marginTop:"2.2vh",color:"white",marginLeft:"0.5em"}}/>
-                  <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Perks</label>
+                  <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Perks & Benefits</label>
                   </div>
-                  <div className="py-2 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">{jobs.perks}</div>
+                  <div className="py-2 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">
+                    {perksdata.map((ele,i)=>{
+                       return(
+                        i>0 && <li className="mb-2">{ele}</li>
+                       )
+                    })}
+                  </div>
                   <div className="flex mb-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style={{fill: "white",marginTop:"2.2vh",marginLeft:"1em"}}><path d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2zm-4 2v11H8V8h8zm-1-4v2H9V4h6zM4 8h2v11H4V8zm14 11V8h2l.001 11H18z"></path></svg>
                   <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Job Description</label>
                   </div>
-                  <div className="py-4 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">{jobs.description}</div>
+                  <div className="py-4 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">
+                  {descriptiondata.map((ele,i)=>{
+                       return(
+                        i>0 && <li className="mb-2">{ele}</li>
+                       )
+                    })}
+                  </div>
                   <div className="flex mb-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style={{fill: "white",marginTop:"2.2vh",marginLeft:"1em"}} ><path d="m2.394 13.742 4.743 3.62 7.616-8.704-1.506-1.316-6.384 7.296-3.257-2.486zm19.359-5.084-1.506-1.316-6.369 7.279-.753-.602-1.25 1.562 2.247 1.798z"></path></svg>
                   <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Requirements</label>
                   </div>
-                  <div className="py-4 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">{jobs.eligiblilty}</div>
+                  <div className="py-4 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">
+                  {eligibilitydata.map((ele,i)=>{
+                       return(
+                        i>0 && <li className="mb-2">{ele}</li>
+                       )
+                    })}
+                  </div>
+                  </div>
                   <div className="flex mb-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style={{fill:"white",marginTop:"2.2vh",marginLeft:"1em"}}><path d="M5 22h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2h-2a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2zM5 5h2v2h10V5h2v15H5V5z"></path><path d="m11 13.586-1.793-1.793-1.414 1.414L11 16.414l5.207-5.207-1.414-1.414z"></path></svg>
                   <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Skills Required</label>
@@ -77,7 +110,13 @@ function Page ({ id }) {
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style={{fill: "white",marginTop:"2.2vh",marginLeft:"1em"}}><path d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM5 20V7h14V6l.002 14H5z"></path><path d="M7 9h10v2H7zm0 4h5v2H7z"></path></svg>
                   <label className="ml-1 mb-1 mt-4 text-sm text-white font-semibold">Roles and Responsibilities</label>
                   </div>
-                  <div className="py-4 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">{jobs.responsilities}</div>
+                  <div className="py-4 px-5 text-sm text-gray-600 bg-white rounded-md border-2 border-blue-300">
+                  {roledata.map((ele,i)=>{
+                       return(
+                        i>0 && <li className="mb-2">{ele}</li>
+                       )
+                    })}
+                  </div>
                   </div>
                 </div>
               </div>
@@ -85,7 +124,6 @@ function Page ({ id }) {
                 <button className="bg-blue-400 py-2 px-10 text-sm text-white rounded-md mt-8 mb-16 float-right">Apply</button>
               </Link>
           </div>
-        </div>
       )
   }
  
