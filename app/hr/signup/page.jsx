@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import {useState} from "react"
+import { useRouter } from "next/navigation";
 import { Table, Row, Col, Tooltip, User, Text } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
 import { IconButton } from "@styles/IconButton";
@@ -24,6 +25,7 @@ import { Button } from "@nextui-org/react";
 const fetcher = async (...args) => await fetch(...args).then((res) => res.json());
 export default function HRSignup() {
   let vari = 0;
+  const router=useRouter();
   const [posted, setPosted] = useState(false)
   const [err,setErr]=useState(false)
   const { data: session } = useSession();
@@ -47,9 +49,11 @@ export default function HRSignup() {
           otp: "1234"
         }),
       });
-      console.log(response, "here is the response from hr/signup");
+      console.log(response.status);
       vari = response.status;
+      console.log(vari)
       if (response.status == 201) {
+        router.push('/hr')
         setPosted(true)
         setErr(false)
       }
