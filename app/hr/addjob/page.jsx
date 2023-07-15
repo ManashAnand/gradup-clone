@@ -14,6 +14,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const page = ({ params }) => {
   const [value,setValue]=useState(false)
   const [value1,setValue1]=useState(false)
+  const [value2,setValue2]=useState(false)
   const [onefield,setOneField]=useState(false)
   const [posted, setPosted] = useState(false)
   const [err,setErr]=useState(false)
@@ -106,10 +107,13 @@ const page = ({ params }) => {
   ];
   // const [loading,setLoading]=useState(false)
   function handleChange(){
-    setValue(true)
+    value===true?setValue(false):setValue(true)
   }
   function handleChange1(){
-    setValue1(true)
+    value1===true?setValue1(false):setValue1(true)
+  }
+  function handleChange2(){
+    setValue(false)
   }
   const router = useRouter();
   const { data: session } = useSession();
@@ -132,21 +136,21 @@ const page = ({ params }) => {
         body: JSON.stringify({
           HRId: session?.user.id,
           title:title,
-          stipend:!onefield? e.target[3].value:e.target[4].value,
-          companyName:!onefield? e.target[4].value:e.target[5].value,
+          stipend:!onefield? e.target[4].value:e.target[5].value,
+          companyName:!onefield? e.target[5].value:e.target[6].value,
           // companyLink: e.target[3].value,
-          duration:!onefield? e.target[5].value:e.target[6].value,
+          duration:!onefield? e.target[6].value:e.target[7].value,
           
-          eligiblilty:!onefield?e.target[6].value:e.target[7].value,
-          lastDate:!onefield?e.target[7].value:e.target[8].value,
-          expectedStartDate:!onefield?e.target[8].value:e.target[9].value,
-          noOfOpenings:!onefield?e.target[9].value:e.target[10].value,
-          skillsRequired:!onefield?e.target[10].value:e.target[11].value,
-          description:!onefield?e.target[11].value:e.target[12].value,
-          responsibilities:!onefield?e.target[12].value:e.target[13].value,
-          perks:!onefield?e.target[13].value:e.target[14].value,
+          eligiblilty:!onefield?e.target[7].value:e.target[8].value,
+          lastDate:!onefield?e.target[8].value:e.target[9].value,
+          expectedStartDate:!onefield?e.target[9].value:e.target[10].value,
+          noOfOpenings:!onefield?e.target[10].value:e.target[11].value,
+          skillsRequired:!onefield?e.target[11].value:e.target[12].value,
+          description:!onefield?e.target[12].value:e.target[13].value,
+          responsibilities:!onefield?e.target[13].value:e.target[14].value,
+          perks:!onefield?e.target[14].value:e.target[15].value,
           isIntern:e.target[0].value,
-          isStartUp:e.target[1].value
+          isStartUp:e.target[2].value
           
           // 
           // workingHours: e.target[12].value,
@@ -198,18 +202,24 @@ const page = ({ params }) => {
         </h1>
         <form onSubmit={createNewJob} className='w-full'>
           <Grid.Container gap={2} >
+          <Grid xs={12} sm={12}>
+            <div className="flex justify-evenly w-full border-2 border-white items-center pb-4">
+            <div style={{}} className="text-white ml-4">
+              <input className="lg mt-6" value={value} onChange={handleChange} type="checkbox"></input>
+              <label className="text-lg ml-2">Internship</label>
+            </div>
+            <div style={{}} className="text-white ml-4">
+              <input className="lg mt-6" value={value} onChange={handleChange2} type="checkbox"></input>
+              <label className="text-lg ml-2">Full-Time Jobs</label>
+            </div>
+            <div style={{}} className="text-white ml-4">
+              <input className="lg mt-6" value={value1} onChange={handleChange1} type="checkbox"></input>
+              <label className="text-lg ml-2">Startup Projects</label>
+            </div>
+            </div>
+            </Grid>
             <Grid xs={12} sm={6}>
               <div className="flex flex-col mx-auto w-full">
-              <div className="flex">
-            <div style={{overflow:"hidden"}} className="text-white ml-4">
-              <input className="lg mt-6" value={value} onChange={handleChange} type="checkbox"></input>
-              <label className="text-lg ml-2">Intern</label>
-            </div>
-            <div style={{overflow:"hidden"}} className="text-white ml-40">
-              <input className="lg mt-6" value={value1} onChange={handleChange1} type="checkbox"></input>
-              <label className="text-lg ml-2">Startup</label>
-            </div>
-            </div>
                 <div className="flex">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "1.8vh", marginLeft: "0.6em" }}><path d="M12 10c1.151 0 2-.848 2-2s-.849-2-2-2c-1.15 0-2 .848-2 2s.85 2 2 2zm0 1c-2.209 0-4 1.612-4 3.6v.386h8V14.6c0-1.988-1.791-3.6-4-3.6z"></path><path d="M19 2H5c-1.103 0-2 .897-2 2v13c0 1.103.897 2 2 2h4l3 3 3-3h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-5 15-2 2-2-2H5V4h14l.002 13H14z"></path></svg>
                   <label className="text-md text-white my-3 ml-1">Job Title *</label>
@@ -236,9 +246,9 @@ const page = ({ params }) => {
               <div className="flex flex-col mx-auto w-full">
                 <div className="flex">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "1.6vh", marginLeft: "0.6em" }}><path d="M21 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-1 11a3 3 0 0 0-3 3H7a3 3 0 0 0-3-3V9a3 3 0 0 0 3-3h10a3 3 0 0 0 3 3v6z"></path><path d="M12 8c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"></path></svg>
-                  <label className="text-md text-white my-3 ml-1">Salary (per month) *</label>
+                  <label className="text-md text-white my-3 ml-1">{value===true?"Stipend *": "Salary(per month)*"}</label>
                 </div>
-                <input className="rounded-md p-2" css={{ backgroundColor: "$white" }} clearable placeholder="Stipend" initialValue="" required />
+                <input className="rounded-md p-2" css={{ backgroundColor: "$white" }} clearable placeholder={value===true?"Stipend":"Salary"} initialValue="" required />
               </div>
             </Grid>
             <Grid xs={12} sm={6}>
@@ -269,6 +279,7 @@ const page = ({ params }) => {
                 rows='8'
                 fullWidth="true"
                 placeholder="Eligibility Criteria"
+                initialValue=""
                 required
               />
             </div>
@@ -367,7 +378,10 @@ const page = ({ params }) => {
       </div> : err?<div id="toppage" className="flex flex-col items-center justify-center my-20"><img width="700" src="/assets/images/500error.png" alt="500 Error"></img></div>: <div className="flex flex-col justify-center items-center my-32">
       <img width="250" src="/assets/images/jobpost.gif"></img>
       <p className="text-4xl text text-lime-500 mb-4">Successfully published the job.</p>
-      <p className="text-white">Check the dashboard for tracking the application.</p>
+      <p className="text-white mt-5">Check the dashboard for tracking the application.</p>
+      <div className="flex justify-center">
+      <a href="/hr/posted-jobs"><button className="px-5 py-2 rounded-md bg-white text-blue-500">Go to Dashboard</button></a>
+      </div>
     </div>}</>
   )
 }

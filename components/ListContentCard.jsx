@@ -6,7 +6,7 @@ const ListContentCard = ({post}) => {
       <Card.Header>
         <img
           alt="nextui logo"
-          src='/assets/images/TalentConnects.png'
+          src={post.logo?post.logo:"/assets/images/website-icon.png"}
           width="50px"
           height="50px"
         />

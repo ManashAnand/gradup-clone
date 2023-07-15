@@ -37,7 +37,7 @@ const Home = () => {
             </div>
            </div>
            <div className='my-auto text-white text-2xl w-1/3 hide'>
-           <p className='textnew'>The best quality online courses from top institutions</p>
+           <p className='textnew'>The best quality online courses from the top institutions</p>
            </div>
         </div>
         <div style={{background:"linear-gradient(220deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 60.90%,  rgba(9,158,248, 0.94) 99.86%)"}} className='p-10 w-screen'>
@@ -90,7 +90,6 @@ const Home = () => {
         <Achievement />
         <Testimonial />
         <DownloadApp/>
-        <ContactUs/>
     </section>
     )
  }

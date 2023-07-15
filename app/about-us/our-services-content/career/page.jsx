@@ -10,29 +10,20 @@ export default function Student(){
   const [status5,setStatus5]=useState(false)
   const [status6,setStatus6]=useState(false)
   function handleClick1(){
-    setStatus1(true)
+    status1===false?setStatus1(true):setStatus1(false)
   }
   function handleClick2(){
-    setStatus2(true)
-  }
+    status2===false?setStatus2(true):setStatus2(false)
+    }
   function handleClick3(){
-    setStatus3(true)
+    status3===false?setStatus3(true):setStatus3(false)
   }
   function handleClick4(){
-    setStatus4(true)
+    status4===false?setStatus4(true):setStatus4(false)
   }
   function handleClick5(){
-    setStatus5(true)
+    status5===false?setStatus5(true):setStatus5(false)
   }
- useEffect(()=>{
-  setTimeout(()=>{
-    status1===true?setStatus1(false):""
-    status2===true?setStatus2(false):""
-    status3===true?setStatus3(false):""
-    status4===true?setStatus4(false):""
-    status5===true?setStatus5(false):""
-  },60000)
- },[status1,status2,status3,status4,status5,status6])
     return(
         <div className="{styles.container} w-screen mb-10 text-left">
         <div className={styles.box}>
@@ -68,7 +59,7 @@ export default function Student(){
           {/* <p className={styles.partnerpara}>Comprehensive Course Highlights:</p> */}
           <h1 className={styles.enroll}>GET FREE GradUp GD Handbook worth Rs. 599/- by enrolling:</h1>
           <h1 className={styles.enroll}>Never before- 1 Free Mock Interview(One-to-One) by Professional: 15 mins</h1>
-          <button onClick={handleClick2} className={styles.btn1}>Book a Slot</button>
+          <button onClick={handleClick2} className={styles.btn1}>{status2?"Show Less":"Show More"}</button>
         </div>
       </div>
       {status2?<img width="600" className="m-auto" src="/assets/images/pimodule1.png"></img>:""}
@@ -150,7 +141,7 @@ export default function Student(){
           <h1 className={styles.heading}>--Services</h1>
           <h1 className={styles.subhead}>Consulting Case Preparation and Guesstimate</h1>
           <p className={styles.partnerpara}>Have you ever come across questions like “ Tell me the number of people in Delhi wearing white shirts on a Tuesday” OR “ A company is witnessing reduced profits for last 6 months; find out the reason and suggest a solution” and you might have wondered what this question is all about and how to even get started about it? At GradUp , we will take you on a journey that would start from understanding these short cases and guesstimates to producing the best possible approach to solve them. We will train you in the basic techniques to handle questions of all types which will help you crack your case study round for the interview plus give you an edge over others in Corporate Case Competitions.</p>
-          <button onClick={handleClick3} className={styles.btn1}>Get Service</button>
+          <button onClick={handleClick3} className={styles.btn1}>{status3?"Show Less":"Show More"}</button>
         </div>
       </div>
       {status3?<img width="600" className="m-auto" src="/assets/images/Guesstimate1.png"></img>:""}
@@ -161,7 +152,7 @@ export default function Student(){
           <h1 className={styles.subhead}>Winning Corporate Competition</h1>
           <p className={styles.partnerpara}>Being a National Winner in B-School Case Competitions not only adds a star point to your resume but enables you to stand out from the crowd and showcase your real-life problem-solving abilities. Be a part of this 2-hour journey and learn from the winners to Ace all Corporate, Intra Campus, and Inter college competitions.</p>
           <p className={styles.partnerpara}>You get a FREE GradUp Handbook to guide you on upcoming competitions and access to 4 winning case study briefs with a solution.</p>
-          <button onClick={handleClick4} className={styles.btn1}>Get Service</button>
+          <button onClick={handleClick4} className={styles.btn1}>{status4?"Show Less":"Show More"}</button>
         </div>
       </div>
       {status4?<img width="600" className="mx-auto -mb-40" src="/assets/images/Corporate1.png"></img>:""}
@@ -203,7 +194,7 @@ export default function Student(){
           <h1 className={styles.subhead}>Communication Skills</h1>
           <p className={styles.partnerpara}>Effective communication is a key to success and if you don’t communicate your ideas well, the audience would never be able to connect the impact your idea could bring to the world. Have you ever wondered how these eloquent speakers just move the crowd by their words?</p>
           <p className={styles.partnerpara}>Have you ever noticed some of your college mates with an amazing presentation and communication skills grabbing all the attention even if the point they are trying to make is not impactful enough? That is the magic of communication where you make yourselves heard! Burst the myth now- A person fluent in English does not imply that he/she is a good communicator. Learn the fundamentals of effective communication, listening skills, note making in mind and touching all aspects of a topic via creating a mind tree in just an hour with our mentors.</p>
-          <button onClick={handleClick5} className={styles.btn1}>Get Service</button>
+          <button onClick={handleClick5} className={styles.btn1}>{status5?"Show Less":"Show More"}</button>
         </div>
       </div>
       {status5?<img width="600" className="m-auto" src="/assets/images/Communication1.png"></img>:""}    

@@ -214,7 +214,7 @@ export default function Profile() {
         <div className='mx-3'>
           <div>
             <span className='text-2xl font-semibold text-white my-auto'>Education</span>
-            <p className="text-sm text-white">(Add from top to bottom hierarcy)</p>
+            <p className="text-sm text-white">(Add from top to bottom hierarchy)</p>
             <form onSubmit={addNewEducation} className="flex flex-col">
                 <div className="flexBox w-full">
                 <div className='flex item1 flex-col mb-5'>
