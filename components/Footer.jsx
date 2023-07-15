@@ -119,7 +119,7 @@ const Footer = () => {
                 </li>
 
                 <li>
-                  <a href="/about-us/Institutes-in-touch" className="text-gray-300 transition hover:opacity-75">
+                  <a href="Institutes-in-touch" className="text-gray-300 transition hover:opacity-75">
                   <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Institutes In Touch
                   </a>
                 </li>
