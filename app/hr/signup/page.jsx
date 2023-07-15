@@ -79,10 +79,10 @@ export default function HRSignup() {
           alt="logo"
           width={180}
           height={80}
-          className="mb-6 font-bold text-center snap-center"
+          className=" font-bold text-center snap-center"
         />
       </div>
-      <p className="text-blue-800 text-center text-xl mt-5 mb-7">"Attention HR professionals: Take the next step in finding exceptional talent! Login now and post captivating job opportunities to attract top candidates and build your dream team."</p>
+      <p className="text-blue-800 text-center text-xl mb-7">"Attention HR professionals: Take the next step in finding exceptional talent! Login now and post captivating job opportunities to attract top candidates and build your dream team."</p>
       <div className="flex items-center">
         <div className="side1">
           <form onSubmit={addHR}>
