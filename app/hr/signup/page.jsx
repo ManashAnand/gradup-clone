@@ -43,9 +43,9 @@ export default function HRSignup() {
   },[emaildata])
   const { data: session } = useSession();
   console.log(data)
-  useEffect(()=>{
-    data?.role==="User"?router.push("/hr"):""
-  })
+  // useEffect(()=>{
+  //   data?.role==="HR"?router.push("/hr"):""
+  // })
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher);
   if (error) return <div>userFailed to loadinggggggg</div>;
   if (!data) return <div className="my-60 mx-auto"><Spinner /></div>;

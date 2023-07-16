@@ -3,14 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import useSWR from 'swr';
+// import {useSession} from "next-auth/react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-
+const fetcher = async (...args) =>await fetch(...args).then((res) => res.json());
 const Nav = () => {
   const { data: session } = useSession();
-
+  var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher)
+  console.log(data,"navdata")
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
-
   useEffect(() => {
     const setUpProviders = async()=> {
         const response = await getProviders();
@@ -46,8 +48,8 @@ const Nav = () => {
             <Link href='/courses' className='outline_btn'>
               Courses
             </Link>
-            <Link href='/hr/signup' className='outline_btn'>
-              HR Login
+            <Link href={data?.role==="HR"?'/hr':'/hr/signup'} className='outline_btn'>
+              {data?.role==="HR"?"HR Dashboard": "HR Login"}
             </Link>
             <Link href='/about-us' className='outline_btn'>
               About Us
@@ -55,6 +57,7 @@ const Nav = () => {
             {/* <Link href='/hackathons' className='rounded-md bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-center mr-3'>
               Hackathons
             </Link> */}
+
             <button type='button' onClick={signOut} className='black_btn'>
               Sign Out
             </button>
