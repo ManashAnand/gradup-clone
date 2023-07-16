@@ -1,6 +1,11 @@
--<urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+const page = () => {
+  return (
+    <div>
+      {/* <?xml version="1.0" encoding="UTF-8"?> */}
 
--<url>
+<urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
 
 <loc>http://gradup.in/</loc>
 
@@ -11,7 +16,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/jobs</loc>
 
@@ -22,7 +27,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/internships</loc>
 
@@ -33,7 +38,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/courses</loc>
 
@@ -44,7 +49,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/hackathons</loc>
 
@@ -55,7 +60,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/about-us/our-services-content/career</loc>
 
@@ -66,7 +71,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/for-startUps</loc>
 
@@ -77,7 +82,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/blogs</loc>
 
@@ -88,7 +93,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/mcqs</loc>
 
@@ -99,7 +104,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/case-study</loc>
 
@@ -110,7 +115,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/alumni-network</loc>
 
@@ -121,7 +126,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/alumni-network/manage</loc>
 
@@ -132,7 +137,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/about-us</loc>
 
@@ -143,7 +148,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/Institutes-in-touch</loc>
 
@@ -154,7 +159,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/about-us/privacy-policy</loc>
 
@@ -165,7 +170,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/about-us/our-services-content</loc>
 
@@ -176,7 +181,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/about-us/terms-and-condition</loc>
 
@@ -187,7 +192,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/about-us/cancellation-policy</loc>
 
@@ -198,7 +203,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/faq</loc>
 
@@ -209,7 +214,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/gallery</loc>
 
@@ -220,7 +225,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/ContactUs</loc>
 
@@ -231,7 +236,7 @@
 </url>
 
 
--<url>
+<url>
 
 <loc>http://gradup.in/problem-statement</loc>
 
@@ -242,3 +247,8 @@
 </url>
 
 </urlset>
+    </div>
+  )
+}
+
+export default page
