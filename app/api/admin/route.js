@@ -12,6 +12,12 @@ import mongoose from 'mongoose';
 export const GET = async(request, { params }) => {
     try {
         await connectToDB();
+        const search = new URL(request.url).search;
+        const urlParams = new URLSearchParams(search);
+        const email = urlParams.get('email');
+        if(email!="tanmayrajr@gmail.com"){
+            return new Response("Not authorized to see admin data", {status:201});
+        }
         let totalNoOfUsers = 0, totalHRs = 0, lastSevenDaysRegisteresUsers = 0, totalAlumni = 0, totalActiveJobs = 0, totalJobs = 0
         await User.countDocuments({}).then((count)=>{
             totalNoOfUsers = count
@@ -52,7 +58,7 @@ export const GET = async(request, { params }) => {
         return new Response(JSON.stringify(data), { status: 201 })
     } catch (error) {
         console.log(error);
-        return new Response("Failed to get Alumni Details", {
+        return new Response("Failed to get Admin-access Details", {
             status: 500
         })
     }

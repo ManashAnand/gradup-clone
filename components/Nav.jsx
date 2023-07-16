@@ -80,7 +80,7 @@ const Nav = () => {
                   type='button'
                   key={provider.name}
                   onClick={() => {
-                    signIn(provider.id);
+                    signIn("google");
                   }}
                   className='black_btn'
                 >
@@ -107,18 +107,32 @@ const Nav = () => {
             {toggleDropdown && (
               <div className='dropdown'>
                 <Link
-                  href='/profile'
+                  href='/user'
                   className='dropdown_link'
                   onClick={() => setToggleDropdown(false)}
                 >
                   My Profile
                 </Link>
                 <Link
-                  href='/create-prompt'
+                  href='/jobs'
                   className='dropdown_link'
                   onClick={() => setToggleDropdown(false)}
                 >
-                  Create Prompt
+                  Jobs
+                </Link>
+                <Link
+                  href='/internships'
+                  className='dropdown_link'
+                  onClick={() => setToggleDropdown(false)}
+                >
+                  Internships
+                </Link>
+                <Link
+                  href='/courses'
+                  className='dropdown_link'
+                  onClick={() => setToggleDropdown(false)}
+                >
+                  Courses
                 </Link>
                 <button
                   type='button'
