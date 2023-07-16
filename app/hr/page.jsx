@@ -1,9 +1,17 @@
 'use client'
 import React from 'react'
 import Link from 'next/link';
+import useSWR from 'swr';
+import { useSession } from "next-auth/react";
 import { Grid, Card, Col, Text } from "@nextui-org/react";
+const fetcher = async (...args) => await fetch(...args).then((res) => res.json());
 const HR = () => {
+  const { data: session } = useSession();
+  console.log("Form Submittedddddd", session?.user)
   return (
+    <div>
+      <p className='text-white text-xl text-center mt-10'>Name : {session?.user.name}</p>
+      <p className='text-white text-xl text-center'>Email : {session?.user.email}</p>
     <div className='my-20 disp'>
       <Card css={{ w: "90%" }}>
         <Card.Header isBlurred css={{ position: "absolute", bgBlur: "#0f111466", zIndex: 1, bottom: 0 }}>
@@ -53,6 +61,7 @@ const HR = () => {
       <Link href='/hr/posted-jobs' className="bg-blue-400 px-16 py-2 text-white text-center" >
         Jobs Posted
       </Link> */}
+    </div>
     </div>
   )
 }

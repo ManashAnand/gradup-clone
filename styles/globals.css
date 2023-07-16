@@ -2239,6 +2239,7 @@ input::placeholder,textarea::placeholder{
   justify-content: center;
   gap:8rem;
   width:80%;
+  margin:4rem auto;
 }
 .btn6{
   margin-left:2vw;

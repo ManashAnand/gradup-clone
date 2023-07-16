@@ -25,6 +25,40 @@ export default function Profile() {
   const { data: session } = useSession();
   const [submitted,setSubmitted]=useState(false)
   const [message,setMessage]=useState(false)
+  const [message2,setMessage2]=useState(false)
+  const [message3,setMessage3]=useState(false)
+  const [start,setStart]=useState("")
+  const [end,setEnd]=useState("")
+  const [start1,setStart1]=useState("")
+  const [end1,setEnd1]=useState("")
+  function handleChange1(e){
+    setStart(e.target.value)
+  }
+  function handleChange2(e){
+    setEnd(e.target.value)
+  }
+  function handleChange3(e){
+    setStart1(e.target.value)
+  }
+  function handleChange4(e){
+    setEnd1(e.target.value)
+  }
+  useEffect(()=>{
+    if(start>end){
+      setMessage2(true)
+    }
+    else{
+      setMessage2(false)
+    }
+  },[end])
+  useEffect(()=>{
+    if(start1>end1){
+      setMessage3(true)
+    }
+    else{
+      setMessage3(false)
+    }
+  },[end1])
 
   // console.log(session, "Ajay",data);
   // console.log("ye id haiiiiiiiiiii",  session?.user.id);
@@ -239,14 +273,15 @@ export default function Profile() {
                 <div className="flexBox w-full">
                 <div className='flex item1 flex-col mb-5'>
                 <label className="mb-1 ml-2 mt-3 text text-white text-sm">Joining Date *</label>
-                <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date' required/>
+                <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date' value={start} onChange={handleChange1} required/>
                 </div>
                 <div className='flex flex-col item2 mb-5'>
                 <label className="mb-1 ml-2 mt-3 text text-white text-sm">Leaving Date *</label>
-                <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter ending date' required/>
+                <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter ending date' value={end} onChange={handleChange2} required/>
+                {message2 && <p className='text-red-400 text-sm'>*Leaving date must be greater than joining date</p>}
                 </div>
                 </div>
-                <Button bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'>ADD</Button>
+                <Button disabled={message2?true:false} bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'>ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow type PopoverPlacement ="right">
               <Popover.Trigger>
@@ -371,14 +406,15 @@ export default function Profile() {
                 <div className="flexBox w-full">
                 <div className='flex item1 flex-col mb-5'>
                 <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Joining Date *</label>
-                <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date' required/>
+                <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date' value={start1} onChange={handleChange3} required/>
                 </div>
                 <div className='flex flex-col item2 mb-5'>
                 <label className="mb-1 ml-2 mt-3 text text-white text-sm">Leaving Date *</label>
-                <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter ending date' required/>
+                <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter ending date' value={end1} onChange={handleChange4} required/>
+                {message3 && <p className='text-red-400 text-sm'>*Leaving date must be greater than joining date</p>}
                 </div>
                 </div>
-                <Button bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'>ADD</Button>
+                <Button disabled={message3?true:false} bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'>ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow>
               <Popover.Trigger>

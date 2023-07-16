@@ -26,12 +26,25 @@ const fetcher = async (...args) => await fetch(...args).then((res) => res.json()
 export default function HRSignup() {
   let vari = 0;
   const router=useRouter();
+  const [emaildata,setEmaildata]=useState("")
   const [posted, setPosted] = useState(false)
   const [err,setErr]=useState(false)
+  const [message,setMessage]=useState(false)
+  function handleChange(e){
+    setEmaildata(e.target.value)
+  }
+  useEffect(()=>{
+    if(emaildata.includes("gmail")||emaildata.includes("hotmail")|| emaildata.includes("yahoo")|| emaildata.includes("outlook")){
+      setMessage(true)
+    }
+    else{
+      setMessage(false)
+    }
+  },[emaildata])
   const { data: session } = useSession();
   console.log(data)
   useEffect(()=>{
-    data?.role==="HR"?router.push("/hr"):""
+    data?.role==="User"?router.push("/hr"):""
   })
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher);
   if (error) return <div>userFailed to loadinggggggg</div>;
@@ -96,9 +109,12 @@ export default function HRSignup() {
               <input
                 type="email"
                 required
+                value={emaildata}
+                onChange={handleChange}
                 placeholder="Enter Company Email"
                 className=" w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
+              {message && <p className="text-red-500 text-sm ml-2 mt-1">Please Enter company mail only !</p>}
             </div>
             <div className="mb-4">
               <label
@@ -124,6 +140,7 @@ export default function HRSignup() {
                 <input
                   type="text"
                   placeholder="Enter Phone Number"
+                  pattern="[0-9]{10}"
                   required
                   className="phonewidth px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
@@ -149,7 +166,7 @@ export default function HRSignup() {
               <></>
             )} */}
             <div className="mt-10">
-              <button type="submit" className="mt-10 py-2 w-full textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl">
+              <button type="submit" disabled={message?true:false} className="mt-10 py-2 w-full textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl">
                 Submit
               </button>
             </div>
