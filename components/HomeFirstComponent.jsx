@@ -53,7 +53,7 @@ const HomeFirstComponent = () => {
                     <span></span>
                     <span></span>
                     <span></span>
-                  Sign In to Know More
+                  Sign In for more opportunities
                 </button>
               ))}
         </>}
