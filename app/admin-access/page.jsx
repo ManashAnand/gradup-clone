@@ -12,7 +12,7 @@ const page = () => {
         session?.user.email=="tanmayrajr@gmail.com"?setStatus(true):setStatus(false)
     },[session?.user.email])
     const { data, error } = useSWR(
-        `/api/admin`,
+        `/api/admin?email=${session?.user.email}`,
         fetcher
       );
       if (error) return <div>Failed to loadinggggggg</div>;
