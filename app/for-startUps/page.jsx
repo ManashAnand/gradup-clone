@@ -42,13 +42,13 @@ function Page({ index , setPage}) {
       <div className="headerpos">
         <div>
           <div className="font-bold jobpos">
-            <h1 className="text-white text-5xl">Get Hired</h1>
-            <h1 style={{color:"darkturquoise"}} className="text-5xl">
+            <h1 className="text-white text-left text-5xl">Explore Opportunities</h1>
+            <h1 className="text-5xl text-left text-white">
               <span className="underline decoration-yellow-300 underline-offset-8">
-                From Startups
+                 at <span className="animate-charcter">Startups</span>
               </span>
             </h1>
-            <p className="mt-10 text-xl text-white">Discover your perfect live project from the startups.</p>
+            <p className="mt-10 text-xl text-white">Discover the perfect live project from the startups.</p>
           </div>
           {/* <div className="inputcontainer">
             <input className="inputbox"  type="search" placeholder="🔍 Search Job Title"></input>

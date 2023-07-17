@@ -26,13 +26,6 @@ const Testimonial = () => {
 
   const list = [
     {
-      name: "Ajay Jeena",
-      title: "Student at NIT Raipur",
-      img: "/assets/images/Group 223.png",
-      desc: "I am very thankful to talent connect for their such beautiful courses these courses are really helpful"
-
-    },
-    {
       name: "Raunit Verma",
       title: "Student at NIT Raipur",
       img: "/assets/images/Group 224.png",

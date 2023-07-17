@@ -40,13 +40,13 @@ function Page({ index , setPage}) {
       <div className="headerpos">
         <div>
           <div className="font-bold jobpos">
-            <h1 className="text-white text-5xl">Internship</h1>
-            <h1 style={{color:"darkturquoise"}} className="text-5xl">
-              <span className="underline decoration-yellow-300 underline-offset-8">
+            <h1 className="text-white animate-charcter text-6xl text-left mb-1">Internship</h1>
+            <h1 style={{color:"darkturquoise"}} className="text-5xl text-left">
+              <span className="sizetext underline decoration-yellow-300 underline-offset-8">
                 Opportunities for you
               </span>
             </h1>
-            <p className="mt-10 text-xl text-white">Discover your perfect internship match, transform your dream and connect with top-tier companies.</p>
+            <p className="mt-10 text-xl text-left text-white">Discover your perfect internship match, transform your dream and connect with top-tier companies.</p>
           </div>
           {/* <div className="inputcontainer">
             <input className="inputbox"  type="search" placeholder="🔍 Search Job Title"></input>

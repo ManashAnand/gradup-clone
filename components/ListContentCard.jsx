@@ -12,7 +12,7 @@ const ListContentCard = ({post}) => {
         />
         <Grid.Container css={{ pl: "$6" }}>
           <Grid xs={12}>
-            <Text b h4 css={{ lineHeight: "$xs" }}>
+            <Text b css={{ lineHeight: "$xs",color:"$accent500" }}>
               {post.companyName}
             </Text>
           </Grid>
@@ -22,7 +22,7 @@ const ListContentCard = ({post}) => {
         </Grid.Container>
       </Card.Header>
       <Card.Body css={{pt:"$4"}}>
-        <Text css={{textAlign:"center",color:"$blue500",fontSize:"$md"}}>
+        <Text b css={{textAlign:"center",color:"$purple700",fontSize:"$md"}}>
           Hiring for {post.title}
         </Text>
       </Card.Body>

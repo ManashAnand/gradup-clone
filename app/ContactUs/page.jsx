@@ -5,6 +5,9 @@ import EmailIcon from '@mui/icons-material/Email';
 import BusinessIcon from '@mui/icons-material/Business';
 export default function Contact() {
     return (
+      <div>
+      <p className='text-center textnew text-white mt-10 mb-6 text-5xl font-semibold animate-charcter underline underline-offset-8 decoration-white'>Get in touch with us !</p>
+
         <div class="containercontact my-24">
             <div class="form-container">
                 <div class="left-container">
@@ -77,6 +80,7 @@ export default function Contact() {
                 <img width="40" src="/assets/images/threadsbg.png"></img>
               </a> */}
             </span>
+        </div>
         </div>
     )
 }

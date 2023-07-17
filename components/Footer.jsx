@@ -53,6 +53,12 @@ const Footer = () => {
                   </a>
                 </li>
 
+                {/* <li>
+                  <a href="/hr" className="text-gray-300 transition hover:opacity-75">
+                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Publish Opportunity
+                  </a>
+                </li> */}
+
                 <li>
                   <a href="/about-us/our-services-content/career" className="text-gray-300 transition hover:opacity-75">
                   <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Career Services
@@ -64,6 +70,13 @@ const Footer = () => {
                   <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Startup Live Projects
                   </a>
                 </li>
+
+                <li>
+                  <a href="/careers" className="text-gray-300 transition hover:opacity-75">
+                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Careers
+                  </a>
+                </li>
+                
 
               </ul>
             </div>
@@ -146,7 +159,6 @@ const Footer = () => {
                   <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Refund & Cancellation Policy
                   </a>
                 </li>
-                
               </ul>
             </div>
 
@@ -173,8 +185,22 @@ const Footer = () => {
                 </li>
 
                 <li>
+                  <a href="/community" className="text-gray-300 transition hover:opacity-75">
+                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> GradUp Community
+                  </a>
+                </li>
+
+                
+
+                <li>
                   <a href="/problem-statement" className="text-gray-300 transition hover:opacity-75">
                   <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Problem Statement
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/sitemap" className="text-gray-300 transition hover:opacity-75">
+                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Sitemap
                   </a>
                 </li>
 

@@ -3,7 +3,7 @@ import styles from 'styles/Page.module.css'
 const page = () => {
   return (
     <div className='w-screen px-10 pb-20 headingbox2'>
-      <p className='text-4xl font-semibold textnew text-white text-center mt-14 mb-8'>Solution to the Problem !!</p>
+      <p className='text-4xl font-semibold textnew animate-charcter underline decoration-white underline-offset-8 text-white text-center mt-14 mb-8'>Solution to the Problem !!</p>
     <div className="">
       <div className="displaystyle gap-x-20 mb-10">
       <div className='text-white justice textnew widthsetter'>

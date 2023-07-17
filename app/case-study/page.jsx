@@ -3,7 +3,7 @@ import React from 'react'
 const page = () => {
   return (
     <div className='w-full'>
-      <p className="text-center text-white underline decoration-white underline-offset-8 textnew text-5xl font-semibold my-12">Important Case Studies</p>
+      <p className="text-center text-white underline decoration-white underline-offset-8 animate-charcter textnew text-5xl font-semibold my-12">Important Case Studies</p>
     <div className=" my-16 flex flex-wrap justify-evenly items-center">
       <a target="_blank" href="https://www.researchgate.net/publication/354392187_Gender_Gap_in_engineering_and_medical_Colleges_in_India" style={{cursor:"pointer"}} >
      <img style={{height:"30vh"}} className="mt-10 mx-auto" width="300" src="/assets/images/gendergap.png" alt="casestudy"></img>

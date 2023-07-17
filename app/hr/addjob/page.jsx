@@ -20,7 +20,10 @@ const page = ({ params }) => {
   const [err,setErr]=useState(false)
   const [title,setTitle]=useState("")
   const [joblist,setJoblist]=useState([])
+  const [perkslist,setPerkslist]=useState([])
+  let checkbox=["Certificate","Letter of recommendation","Flexible work hours","5 days a week","Life Insurance","Health Insurance"]
   let titleList = [
+    { value:"Others",label:"Others"},
     { value: "Software Developer/Engineer",label: "Software Developer/Engineer" },
     { value: "Front-End Developer",label: "Front-End Developer" },
     { value: "Back-End Developer",label: "Back-End Developer" },
@@ -103,7 +106,6 @@ const page = ({ params }) => {
     { value:"Video Editing",label:"Video Editing"},
     { value:"Cyber Security",label:"Cyber Security"},
     { value:"Supply Chain Management",label:"Supply Chain Management"},
-    { value:"Others",label:"Others"},
   ];
   // const [loading,setLoading]=useState(false)
   function handleChange(){
@@ -114,6 +116,19 @@ const page = ({ params }) => {
   }
   function handleChange2(){
     setValue(false)
+  }
+  function handleChange4(e){
+    console.log(e.target.value)
+    if (perkslist.includes(e.target.value)){
+     let perksremain=perkslist.filter((ele,i)=>{
+        return ele!==e.target.value
+      })
+    setPerkslist(perksremain)
+    }
+    else{
+    setPerkslist([...perkslist,e.target.value])
+    }
+    console.log(perkslist)
   }
   const router = useRouter();
   const { data: session } = useSession();
@@ -142,14 +157,14 @@ const page = ({ params }) => {
           // companyLink: e.target[3].value,
           duration:!onefield? e.target[6].value:e.target[7].value,
           
-          eligiblilty:!onefield?e.target[7].value:e.target[8].value,
-          lastDate:!onefield?e.target[8].value:e.target[9].value,
-          expectedStartDate:!onefield?e.target[9].value:e.target[10].value,
-          noOfOpenings:!onefield?e.target[10].value:e.target[11].value,
-          skillsRequired:!onefield?e.target[11].value:e.target[12].value,
-          description:!onefield?e.target[12].value:e.target[13].value,
-          responsibilities:!onefield?e.target[13].value:e.target[14].value,
-          perks:!onefield?e.target[14].value:e.target[15].value,
+          // eligiblilty:!onefield?e.target[7].value:e.target[8].value,
+          lastDate:!onefield?e.target[7].value:e.target[8].value,
+          expectedStartDate:!onefield?e.target[8].value:e.target[9].value,
+          noOfOpenings:!onefield?e.target[9].value:e.target[10].value,
+          skillsRequired:!onefield?e.target[10].value:e.target[11].value,
+          description:!onefield?e.target[11].value:e.target[12].value,
+          // responsibilities:!onefield?e.target[13].value:e.target[14].value,
+          perks:perkslist,
           isIntern:e.target[0].value,
           isStartUp:e.target[2].value
           
@@ -199,12 +214,12 @@ const page = ({ params }) => {
         /> */}
       </div>
         <h1 className='font-bold text-5xl text-left mb-5'>
-        <p className='textform text-4xl underline decoration-white underline-offset-8 text-center text-white mb-8'>Post a Job and hire the best Talent</p>
+        <p className='textform text-4xl underline decoration-white animate-charcter underline-offset-8 text-center text-white mb-8'>Post a Job and hire the best Talent</p>
         </h1>
         <form onSubmit={createNewJob} className='w-full'>
           <Grid.Container gap={2} >
           <Grid xs={12} sm={12}>
-            <div className="flex justify-evenly w-full border-2 border-white items-center pb-4">
+            <div className="flexset w-full border-2 border-white pb-4">
             <div style={{}} className="text-white ml-4">
               <input className="lg mt-6" value={value} onChange={handleChange} type="checkbox"></input>
               <label className="text-lg ml-2">Internship</label>
@@ -270,7 +285,7 @@ const page = ({ params }) => {
                 <input className="rounded-md p-2" css={{ backgroundColor: "$white" }} clearable placeholder="Duration" initialValue="" />
               </div>
             </Grid>
-            <div className="flex flex-col mx-auto w-full">
+            {/* <div className="flex flex-col mx-auto w-full">
               <div className="flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "1.6vh", marginLeft: "0.9em" }} ><path d="m2.394 13.742 4.743 3.62 7.616-8.704-1.506-1.316-6.384 7.296-3.257-2.486zm19.359-5.084-1.506-1.316-6.369 7.279-.753-.602-1.25 1.562 2.247 1.798z"></path></svg>
                 <label className="text-md text-white mt-3 ml-1">Eligibility *</label>
@@ -282,7 +297,7 @@ const page = ({ params }) => {
                 initialValue={`Required Eligibility criteria :\n1. \n2.\n3.`}
                 required
               />
-            </div>
+            </div> */}
             <Grid xs={12} sm={4}>
               <div className="flex flex-col mx-auto w-full">
                 <div className="flex">
@@ -314,15 +329,15 @@ const page = ({ params }) => {
               <div className="flex flex-col mx-auto w-full">
                 <div className="flex">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "1.6vh", marginLeft: "0.6em" }}><path d="M5 22h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2h-2a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2zM5 5h2v2h10V5h2v15H5V5z"></path><path d="m11 13.586-1.793-1.793-1.414 1.414L11 16.414l5.207-5.207-1.414-1.414z"></path></svg>
-                  <label className="text-md text-white my-3 ml-1">Skills Required * <span className="text-md text-white textnew">(Comma seperated skills)</span></label>
+                  <label className="text-md text-white mt-3 mb-2 ml-1">Skills Required * <span className="text-md text-white textnew">(Comma seperated skills)</span></label>
                 </div>
                 <input className="rounded-md p-2" type="text" css={{ backgroundColor: "$white" }} clearable Placeholder="Skills" initialValue="" required />
               </div>
             </Grid>
             <div className="flex flex-col mx-auto w-full">
               <div className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "4.7vh", marginLeft: "0.9em" }}><path d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2zm-4 2v11H8V8h8zm-1-4v2H9V4h6zM4 8h2v11H4V8zm14 11V8h2l.001 11H18z"></path></svg>
-                <label className="text-md text-white mt-8 ml-1">Job Description *</label>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "auto", marginLeft: "0.9em" }}><path d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2zm-4 2v11H8V8h8zm-1-4v2H9V4h6zM4 8h2v11H4V8zm14 11V8h2l.001 11H18z"></path></svg>
+                <label className="text-md text-white mt-9 ml-1">{value?"Intern's Responsibilities":"Job Description & Responsibilities *"}</label>
               </div>
               <Textarea
                 css={{mx:"$6", mt: "$5", backgroundColor: "$white" }}
@@ -332,7 +347,7 @@ const page = ({ params }) => {
                 required
               />
             </div>
-            <div className="flex flex-col mx-auto w-full">
+            {/* <div className="flex flex-col mx-auto w-full">
               <div className="flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "4.7vh", marginLeft: "0.9em" }}><path d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM5 20V7h14V6l.002 14H5z"></path><path d="M7 9h10v2H7zm0 4h5v2H7z"></path></svg>
                 <label className="text-md text-white mt-8 ml-1">Responsibilities *</label>
@@ -344,19 +359,27 @@ const page = ({ params }) => {
                 initialValue={`Roles & Responsibilities include :\n1. \n2.\n3.`}
                 required
               />
-            </div>
+            </div> */}
             <div className="flex flex-col mx-auto w-full">
-              <div className="flex">
-                <MilitaryTechIcon style={{ fill: "white", marginTop: "4.7vh", marginLeft: "0.9em" }} />
-                <label className="text-md text-white mt-8 ml-1">Perks & Benefits *</label>
+              <div className="flex mb-4">
+                <MilitaryTechIcon style={{ fill: "white", marginTop: "auto", marginLeft: "0.9em" }} />
+                <label className="text-md text-white mt-9 ml-1">Perks & Benefits *</label>
               </div>
-              <Textarea
+              {/* <Textarea
                 css={{ mt: "$5",mx:"$6", backgroundColor: "$white" }}
                 rows='10'
                 placeholder="Perks"
                 initialValue={`Benefits :\n1. \n2.\n3.`}
                 required
-              />
+              /> */}
+              <div className="gridset text-white text-left border-2 border-white px-10 py-5">
+                {checkbox.map((ele,i)=>{
+                   return(<div className="my-3" key={i}>
+                     <input className="lg" value={ele} onChange={handleChange4} type="checkbox"></input>
+                     <label className="ml-2 text-lg">{ele}</label>
+                   </div>)
+                })}
+              </div> 
             </div>
           </Grid.Container>
 

@@ -1904,14 +1904,22 @@ body {
 }
 .pos{
   position:fixed;
-  bottom:30px;
+  bottom:90px;
   right:8px;
+}
+.gridset{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.flexset{
+  display: flex;
+  justify-content: space-evenly;
 }
 .marginsetting{
   margin-right:6rem;
 }
 .padded{
-  padding:0.75rem;
+  padding:0.35rem;
 }
 
 .slideshowDot {
@@ -2291,7 +2299,7 @@ input::placeholder,textarea::placeholder{
 }
 .founderimg{
   width:40vw;
-  height:60vh;
+  height:47vh;
   border-radius:10px;
   margin:auto 0;
   border-top:5px solid deepskyblue;
@@ -2341,7 +2349,7 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   transform:rotate(2deg);
 }
 .mobilepara{
-  width:40vw;
+  width:60vw;
 }
 .mar{
   margin-left:1.75rem;
@@ -2990,6 +2998,20 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   .padded2{
     padding:1rem;
   }
+  .gridset{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+  }
+  .flexset{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .rotation{
+    /* transform: rotate(270deg); */
+    margin-bottom: 4.5vh;
+    margin-right:0;
+  }
   .marginset3{
     margin-bottom:-1rem;
   }
@@ -3006,7 +3028,7 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
     text-align:center;
   }
   .padded{
-    padding:0.2rem;
+    padding:0.5rem;
   }
   .message{
     margin-left: 0rem;
@@ -3580,7 +3602,7 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   @apply rounded-none border border-black bg-black py-2.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-base font-inter flex items-center justify-center;
 }
 .outline_btn {
-  @apply rounded-full bg-transparent py-2 px-7 text-gray-100 transition-all hover:bg-blue-500 hover:text-white text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full text-lg textform bg-transparent py-2 px-7 text-gray-100 transition-all hover:bg-blue-500 hover:text-white text-center font-inter flex items-center justify-center;
 }
 
 .head_text {

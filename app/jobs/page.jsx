@@ -40,14 +40,12 @@ function Page({ index , setPage}) {
       <div className="headerpos">
         <div>
           <div className="font-bold jobpos">
-            <h1 className="text-white sizetext">Find your job &</h1>
-            <h1 className="text-blue-400 sizetext">
-              grab{" "}
-              <span className="underline decoration-yellow-300 underline-offset-8">
-                the opportunities
+            <h1 className="text-white sizetext text-left">Find your <span className="animate-charcter">job</span> &</h1>
+            <h1 style={{overflow:"hidden"}} className="text-blue-400 sizetext text-left">
+              grab<span className="underline decoration-white underline-offset-8"> the<span className="animate-charcter"> opportunities</span>
               </span>
             </h1>
-            <p className="mt-10 text-xl text-white">Just one step to change your career. Apply to thousands of Job opportunities across top Companies and Startups.</p>
+            <p className="mt-10 text-xl text-white text-left">Just one step to change your career. Apply to thousands of Job opportunities across top Companies and Startups.</p>
           </div>
           {/* <div className="inputcontainer">
             <input className="inputbox"  type="search" placeholder="🔍 Search Job Title"></input>

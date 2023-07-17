@@ -6,42 +6,42 @@ export default function CoursesOnHome() {
     {
       title: "Web Development",
       img: "/assets/images/web.gif",
-      price: "Rs 8999",
+      price: "8999",
     },
     {
       title: "Data Science",
       img: "/assets/images/datasc.gif",
-      price: "Rs 6799",
+      price: "6799",
     },
     {
       title: "Blockchain",
       img: "/assets/images/blockchain.gif",
-      price: "Rs 5999",
+      price: "5999",
     },
     {
       title: "Python",
       img: "/assets/images/python.gif",
-      price: "Rs 6299",
+      price: "6299",
     },
     {
       title: "Cyber Security",
       img: "/assets/images/cyber.gif",
-      price: "Rs 4999",
+      price: "4999",
     },
     {
       title: "Digital Marketing",
       img: "/assets/images/digitalmarket.gif",
-      price: "Rs 3999",
+      price: "3999",
     },
     {
       title: "Graphic Design",
       img:"/assets/images/webdesign.gif",
-      price: "Rs 3999",
+      price: "3999",
     },
     {
       title: "Video Editing",
       img: "/assets/images/videoedit.gif",
-      price: "Rs 2999",
+      price: "2999",
     },
   ];
 
@@ -69,7 +69,7 @@ export default function CoursesOnHome() {
               <Row wrap="wrap" justify="space-between" align="center">
                 <Text css={{color:"$gray800", fontWeight: "$semibold"}}>{item.title}</Text>
                 <Text css={{ color:"$red700", fontWeight: "$semibold",fontSize: "$sm" }}>
-                  {item.price}
+                &#8377; {item.price}
                 </Text>
               </Row>
             </Card.Footer>

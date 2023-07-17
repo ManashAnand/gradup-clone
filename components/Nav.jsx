@@ -48,7 +48,7 @@ const Nav = () => {
             <Link href='/courses' className='outline_btn'>
               Courses
             </Link>
-            <Link href={data?.role==="HR"?'/hr':'/hr/signup'} className='outline_btn'>
+            <Link href={data?.role==="User"?'/hr':'/hr/signup'} className='outline_btn'>
               {data?.role==="HR"?"HR Dashboard": "HR Login"}
             </Link>
             <Link href='/about-us' className='outline_btn'>
