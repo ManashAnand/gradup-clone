@@ -1,11 +1,16 @@
 "use client"
 import React from 'react';
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 export default function Watsapp() {
   const [status,setStatus]=useState(false)
   function handleClick(){
         status===true?setStatus(false):setStatus(true)
     }
+  useEffect(()=>{
+    setTimeout(()=>{
+        status===true?setStatus(false):""
+    },5000)
+  },[status])
     return (
         <>
         {status?<div className='pos rotation px-2 mb-10 rounded-md bg-blue-400'>
