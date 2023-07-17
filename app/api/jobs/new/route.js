@@ -6,6 +6,7 @@ export const POST = async(request) => {
     const data = await request.json();
     try {
         await connectToDB();
+        const currentHR = await HR.findById(data.HRId);
         const newJob = new Job({ 
             hrId:data.HRId,
             logo:data.logo,
@@ -25,12 +26,12 @@ export const POST = async(request) => {
             workingHours: data.workingHours,
             postedDate: data.postedDate,
             responsilities:data.responsibilities,
-            description:data.description
+            description:data.description,
+            aboutCompany:currentHR.aboutCompany,
          });
 
         const addedObj = await newJob.save();
         console.log("11111111111")
-        const currentHR = await HR.findById(data.HRId);
         console.log("2222222222222")
         currentHR.posts.push({
             title:addedObj.title,

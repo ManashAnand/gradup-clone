@@ -8,6 +8,9 @@ const JobSchema = new Schema({
     hrId:{
         type:String,
     },
+    aboutCompany:{
+        type:String,
+    },
     logo:{
         type:String,
     },

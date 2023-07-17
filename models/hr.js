@@ -25,6 +25,9 @@ const HRSchema = new Schema({
     _id:{
         type:mongoose.Types.ObjectId
     },
+    aboutCompany:{
+        type:String,
+    },
     name:{
         type:String,
         required:[true,'Name is required'],
