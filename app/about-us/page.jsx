@@ -89,7 +89,10 @@ export default function About() {
           {/* <p className="text-white  mb-2">He has worked so hard despite facing several difficulties & being unvalued, still they manage to collaborate with some esteemed companies like PhonePe, Genpact, Toyota, LiuGong, Tata Steel Aashiyana, and PepsiCo (VBL) and has rich experience in framing digital marketing strategies for MSME clients.</p> */}
           <p className="text-white  mb-2">He is rightly known for his networking, down to earth nature and leadership skills. He is presently a member of the International Youth Council, United Nations, and has been elected as the General Secretary and Vice President at various clubs and societies. Before GradUp (formerly Attitude matterZ), Tanmay co-founded a startup namely Business garage which aimed at providing digital marketing strategies to MSMEs.</p>
           {/* <p className='text-white  mb-2'>Tanmay is also a guest speaker, and he has been invited as a guest speaker by many premier institutions of India.</p> */}
-          <p className="text-white  mb-2"><em>Tanmay has a vision to nurture the youth of “BHARAT” to be industry and future ready.</em></p>
+          <p className="text-white  mb-2">Tanmay has a vision to nurture the youth of “BHARAT” to be industry and future ready.</p>
+          <div className="flex justify-center mt-6">
+          <a target="_blank" href="https://www.openpr.com/news/3131935/gradup-the-premier-platform-connecting-talented-students-with"><button className="bg-blue-500 px-8 py-2 text-white rounded-xl hover:bg-blue-700">Read More</button></a>
+          </div>
           <br />
         </div>
       </div>
