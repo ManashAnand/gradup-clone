@@ -10,7 +10,6 @@ const fetcher = async (...args) =>await fetch(...args).then((res) => res.json())
 const Nav = () => {
   const { data: session } = useSession();
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher)
-  console.log(data,"navdata")
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
   useEffect(() => {
@@ -36,7 +35,7 @@ const Nav = () => {
       
 
       {/* Desktop Navigation */}
-      <div className='lg:flex hidden'>
+      <div className='md:flex hidden'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-2'>
             <Link href='/jobs' className='outline_btn'>
@@ -58,11 +57,11 @@ const Nav = () => {
               Hackathons
             </Link> */}
 
-            <button type='button' onClick={signOut} className='black_btn'>
+            <button type='button' onClick={signOut}  className='mt-1 text-sm bg-red-400 rounded-md px-3 text-white pt-3 pb-2.5'>
               Sign Out
             </button>
 
-            <Link href='/user'>
+            <Link className="my-auto" href='/user'>
               <Image
                 src={session?.user.image}
                 width={37}
@@ -82,7 +81,7 @@ const Nav = () => {
                   onClick={() => {
                     signIn("google");
                   }}
-                  className='black_btn'
+                  className='px-8 py-2 bg-blue-700 rounded-full text-white hover:bg-blue-500'
                 >
                   Sign in
                 </button>
@@ -92,7 +91,7 @@ const Nav = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className='lg:hidden flex relative'>
+      <div className='md:hidden flex relative'>
         {session?.user ? (
           <div className='flex'>
             <Image
@@ -114,11 +113,11 @@ const Nav = () => {
                   My Profile
                 </Link>
                 <Link
-                  href='/jobs'
+                  href={data.role==="HR"?'/hr':'/hr/signup'}
                   className='dropdown_link'
                   onClick={() => setToggleDropdown(false)}
                 >
-                  Jobs
+                 {data?.role==="HR"?'Dashboard':'HR Login'} 
                 </Link>
                 <Link
                   href='/internships'
@@ -134,13 +133,20 @@ const Nav = () => {
                 >
                   Courses
                 </Link>
+                <Link
+                  href='/jobs'
+                  className='dropdown_link'
+                  onClick={() => setToggleDropdown(false)}
+                >
+                  Jobs
+                </Link>
                 <button
                   type='button'
                   onClick={() => {
                     setToggleDropdown(false);
                     signOut();
                   }}
-                  className='mt-5 w-full black_btn'
+                  className='mt-1 w-full text-sm bg-red-400 rounded-md px-3 text-white py-2'
                 >
                   Sign Out
                 </button>

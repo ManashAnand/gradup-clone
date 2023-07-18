@@ -75,36 +75,20 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
         <Input labelLeft="Skills" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.skills} onChange={(e)=>setExperience({...experience,skills:e.target.value})}/>
         <Textarea css={{mt:"$4",width:"stretch",height:"fit-content" ,mb:"$4"}} initialValue={experience.description} onChange={(e)=>setExperience({...experience,description:e.target.value})}/>
         </div>
-        <div className="flex justify-center">
+        <div className='flex justify-center gap-4'>
             {
                 (updating==0)?(<>
-                <Tooltip className='mt-4 mr-3'>
-                 <IconButton onClick={() => setIsUpdating(1)}>
-                     <EditIcon size={20} fill="#979797" />
-                    </IconButton>
-                </Tooltip>
-                </>):((updating==1)?(<><button className='text-blue-800' onClick={updateExperience}>Save</button></>)
-                :(<>
-                    <div className='mx-2'>
-                 <Button disabled auto bordered color="secondary" css={{ px: "$13",mt:"$15" }}>
-                     <Loading type="spinner" color="currentColor" size="sm" />
-                 </Button>
-                 </div>
-                </>))
+                <div>
+                 <button className='text-white bg-blue-500 px-6 py-1 rounded-md mt-4' onClick={() => setIsUpdating(1)}>Edit</button>
+                </div>
+                </>):((updating==1)?(<button className='text-white bg-blue-500 px-3 py-1 rounded-md mt-4' onClick={updateExperience}>Update</button>)
+                :(<></>))
             }
-            <Tooltip
-                color="error"
-                onClick={deleteExperience }
-                className='mt-4 ml-3'
-            >
-            <IconButton css={{ml:"$8"}} className='mx-15'>
-              <DeleteIcon size={20} fill="#FF0080" />
-            </IconButton>
-            </Tooltip>
+            <button onClick={deleteExperience} className='text-white bg-blue-500 px-3 py-1 rounded-md mt-4'>Delete</button>
         </div>
         </div>
-        <div className='mb-15 pb-10'></div>
-     </div>
+      <div className='mb-15 pb-10'></div>
+    </div>
     )
 }
 

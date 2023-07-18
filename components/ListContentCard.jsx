@@ -2,32 +2,32 @@ import { Card, Grid, Text, Link } from "@nextui-org/react";
 
 const ListContentCard = ({post}) => {
   return (
-     <Card css={{ p: "$3", mw: "400px",width:"96%",margin:"auto" }}>
-      <Card.Header>
+     <Card css={{ p: "$2", mw: "400px",width:"100%"}}>
+      <Card.Header css={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}} >
         <img
-          alt="nextui logo"
+          className="p-2 border-2 border-gray-400"
+          alt="company_logo"
           src={post.logo?post.logo:"/assets/images/website-icon.png"}
-          width="50px"
-          height="50px"
+          width="90px"
+          height="90px"
         />
-        <Grid.Container css={{ pl: "$6" }}>
+        {/* <Grid.Container css={{ pl: "$6" }}>
           <Grid xs={12}>
             <Text b css={{ lineHeight: "$xs",color:"$accent500" }}>
               {post.companyName}
             </Text>
-          </Grid>
+          </Grid> */}
           {/* <Grid xs={12}>
             <Text css={{ color: "$accents8" }}>{post.skillsRequired}</Text>
           </Grid> */}
-        </Grid.Container>
-      </Card.Header>
-      <Card.Body css={{pt:"$4"}}>
-        <Text b css={{textAlign:"center",color:"$purple700",fontSize:"$md"}}>
+        {/* </Grid.Container> */}
+        <Text b css={{textAlign:"center",lineHeight: "$xs",color:"$accent500",marginBottom:"$2",marginTop:"$6"}}>
+          {post.companyName}
+        </Text>
+        <Text css={{textAlign:"center",color:"$blue700",fontSize:"$md",marginBottom:"$6"}}>
           Hiring for {post.title}
         </Text>
-      </Card.Body>
-      <Card.Footer css={{display:"flex",justifyContent:"right"}}>
-        <Link css={{backgroundColor:"$blue500",color:"white",px:"$10",pt:"$1",pb:"$2",borderRadius:"$lg"}}
+        <Link css={{backgroundColor:"$blue700",color:"white",px:"$16",pt:"$2",pb:"$3",borderRadius:"$sm"}}
           icon
           color="primary"
           target="_blank"
@@ -35,7 +35,7 @@ const ListContentCard = ({post}) => {
         >
           Apply
         </Link>
-      </Card.Footer>
+        </Card.Header>
     </Card>
   )
 }

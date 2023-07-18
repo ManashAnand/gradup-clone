@@ -12,13 +12,8 @@ import { EyeIcon } from "@styles/EyeIcon";
 import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
 
- function Page({index}) {  
-  const { data: session } = useSession();
-  var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}/appliedJobs?page=${index}` : null, fetcher)
-  if (error) return <div>userFailed to loadinggggggg</div>;
-  if (!data) return <div className="my-60"><Spinner/></div>;
-  let user=data
-  console.log("mohit",user);
+ function Page({user}) {  
+  
   const columns = [
     { name: "NAME", uid: "companyName" },
     { name: "ROLE", uid: "title" },
@@ -27,16 +22,22 @@ import { DeleteIcon } from "@styles/DeleteIcon";
     { name: "APPLICANTS", uid: "appliedCandidates" },
   ];
   return (
-    <div className='w-full mt-16'>
+    <div className='w-screen px-3 mt-16'>
+      <div className='w-9/10'>
        <p className='text-4xl text-center mb-8'>
-       <span className='textnew text-white'>Your Applications</span>
+       <span className='textform text-5xl animate-charcter font-semibold text-white'>Your Applications</span>
        </p>
         
     {user.length>0?<Table
-      aria-label="Example table with dynamic content & infinity pagination"
-      css={{ width: "100%",backgroundColor:"WhiteSmoke"}}
-      color="primary"
-    >
+     aria-label="Example table with custom cells"
+     color="primary"
+     css={{
+       height: "auto",
+       minWidth: "100%",
+       backgroundColor:"WhiteSmoke"
+     }}
+     selectionMode="none"
+   >
       <Table.Header columns={columns} css={{backgroundColor:"blue"}}>
         {(column) => (
           <Table.Column css={{backgroundColor:"$cyan600",fontSize:"15px",px:"$4",color:"WhiteSmoke",width:"30vw",textAlign:"left"}} key={column.uid}>{column.name}</Table.Column>
@@ -57,25 +58,34 @@ import { DeleteIcon } from "@styles/DeleteIcon";
         align="center"
         rowsPerPage={25}
       /> */}
-    </Table>:<div className="text-center text-xl my-32 textnew text-white">No More Applications Available<br/>Please Go to Previous Page</div>}
+    </Table>:<div className="text-center text-xl my-32 textnew text-white">No Applications Available</div>}
+    </div>
     </div>
   );
 }
 export default function App() {
   const [pageIndex, setPageIndex] = useState(1);
+  const [opacity1,setOpacity1]=useState(1)
+  const [opacity2,setOpacity2]=useState(1)
+  const { data: session } = useSession();
+  var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}/appliedJobs?page=${pageIndex}` : null, fetcher)
+  if (error) return <div>userFailed to loadinggggggg</div>;
+  if (!data) return <div className="my-60"><Spinner/></div>;
+  let user=data
+  console.log("mohit",user);
   return (
-    <div className='mt-10'>
+    <div className='w-full mt-10'>
       <div className="justify-center flex-center">
-        <Page index={pageIndex} />
+        <Page user={user} />
       </div>
       {/* <div style={{ display: "none" }}>
         <Page index={pageIndex + 1} />
       </div> */}
-      <div className="flex buttonpos mb-16">
-        <button disabled={pageIndex===1?true:false} class="btn2 bg-sky-500" onClick={() => setPageIndex(pageIndex - 1)}>
+      <div className="flex mt-6 mb-16 justify-center items-center">
+        <button  disabled={pageIndex===1?true:false} class="btn2 bg-sky-500" onClick={() => setPageIndex(pageIndex - 1)}>
           Prev
         </button>
-        <button class="btn3 bg-sky-500" onClick={() => setPageIndex(pageIndex + 1)}>
+        <button  class="btn3 bg-sky-500" onClick={() => setPageIndex(pageIndex + 1)}>
           Next
         </button>
       </div>

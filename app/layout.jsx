@@ -1,7 +1,9 @@
+"use client"
 import '@styles/globals.css';
 import Navbar from '@components/Navbar';
 import Head from 'next/head';
 import Nav from '@components/Nav';
+import { useEffect } from 'react';
 import Provider from '@components/Provider';
 import Footer from '@components/Footer';
 import Watsapp from '@components/Watsapp';
@@ -11,6 +13,9 @@ export const metadata = {
     
 }
 const Layout = ({children}) => {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
    
     return (
         <html lang='en'>

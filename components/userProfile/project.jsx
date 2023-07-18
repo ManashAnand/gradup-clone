@@ -70,34 +70,18 @@ const Project = ({ projectName, skillsUsed, projectDes, projectLinks, id }) => {
           <Textarea css={{ mt: "$4", width: "stretch",height:"fit-content", mb: "$4" }} initialValue={project.projectDes} onChange={(e) => setProject({ ...project, projectDes: e.target.value })} />
           <Input labelLeft="Working Link" css={{ mt: "$4", width: "stretch", mb: "$4", height: "35px" }} initialValue={project.projectLinks} onChange={(e) => setProject({ ...project, projectLinks: e.target.value })} />
         </div>
-        <div className="flex justify-center">
-          {
-            (updating == 0) ? (<>
-              <Tooltip className=' mr-4 mt-4'>
-                <IconButton onClick={() => setIsUpdating(1)}>
-                  <EditIcon size={20} fill="#979797" />
-                </IconButton>
-              </Tooltip>
-            </>) : ((updating == 1) ? (<><button className="text-blue-800" onClick={updateProject}>Save</button></>)
-              : (<>
-                <div className='mx-2'>
-                  <Button disabled auto bordered color="secondary" css={{ px: "$13", mt: "$15" }}>
-                    <Loading type="spinner" color="currentColor" size="sm" />
-                  </Button>
+        <div className='flex justify-center gap-4'>
+            {
+                (updating==0)?(<>
+                <div>
+                 <button className='text-white bg-blue-500 px-6 py-1 rounded-md mt-4' onClick={() => setIsUpdating(1)}>Edit</button>
                 </div>
-              </>))
-          }
-          <Tooltip
-            color="error"
-            onClick={deleteProject}
-            className='mr-4 mt-4'
-          >
-            <IconButton css={{ ml: "$8" }} className='mx-15'>
-              <DeleteIcon size={20} fill="#FF0080" />
-            </IconButton>
-          </Tooltip>
+                </>):((updating==1)?(<button className='text-white bg-blue-500 px-3 py-1 rounded-md mt-4' onClick={updateProject}>Update</button>)
+                :(<></>))
+            }
+            <button onClick={deleteProject} className='text-white bg-blue-500 px-3 py-1 rounded-md mt-4'>Delete</button>
         </div>
-      </div>
+        </div>
       <div className='mb-15 pb-10'></div>
     </div>
   )

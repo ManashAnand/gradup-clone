@@ -38,7 +38,7 @@
 .box{
   padding:1em 0;
   display:flex;
-  background:rgb(160, 199, 232);
+  background:rgb(123, 187, 240);
   margin:3em 0 0 0;
 }
 .btn1{
@@ -377,11 +377,14 @@
     text-align:center;
   }
   .heading{
-   padding:1em 1em 1em 4em; 
+   padding:1em 1em 1em 3.2em; 
   }
   .subhead{
-     padding:0 1em 0 2em;
+     padding:0em 1em 0em 1.5em;
   }
+  .btn1{
+    margin:1em 0em 1em 3.5em;
+ }
   .partnerpara{
     margin-left:4rem;
   }
@@ -389,7 +392,7 @@
    padding:1em 1em 0 1em; 
   }
   .para{
-     padding:1em 1em 0 2em;
+     padding:1em 1em 0 4em;
   }
   .frame1,.frame2{
     width:70vw;
@@ -398,6 +401,10 @@
   .enroll{
     display:none;
   }
+  .groupimg4,.groupimg1,.groupimg2,.groupimg{
+    height:27vh;
+    width:40vw;
+    }
   .grid{
     grid-template-columns:repeat(2,1fr);
     gap:5vw;
@@ -491,7 +498,7 @@
   }
   .groupimg4,.groupimg1,.groupimg2,.groupimg{
   margin:auto;
-  height:50vh;
+  height:40vh;
   width:95vw;
   }
   .enroll{

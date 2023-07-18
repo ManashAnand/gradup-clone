@@ -66,35 +66,19 @@ const Achievement = ({achievementName,id}) => {
       <label className="text-sm ml-2">Achievement</label>
       <Textarea css={{height:"fit-content",width:"stretch",mt:"$4"}} initialValue={achievement.achievementName} onChange={(e)=>setAchievement({...achievement,achievementName:e.target.value})}/>
       </div> 
-        <div className='flex justify-center'>
+      <div className='flex justify-center gap-4'>
             {
                 (updating==0)?(<>
-                <Tooltip className='mt-4 mr-3'>
-                 <IconButton onClick={() => setIsUpdating(1)}>
-                     <EditIcon size={20} fill="#979797" />
-                    </IconButton>
-                </Tooltip>
-                </>):((updating==1)?(<><button className='text-blue-800' onClick={updateAchievement}>Save</button></>)
-                :(<>
-                    <div className='mx-2'>
-                 <Button disabled auto bordered color="secondary" css={{ px: "$13",mt:"$15" }}>
-                     <Loading type="spinner" color="currentColor" size="sm" />
-                 </Button>
-                 </div>
-                </>))
+                <div>
+                 <button className='text-white bg-blue-500 px-6 py-1 rounded-md mt-4' onClick={() => setIsUpdating(1)}>Edit</button>
+                </div>
+                </>):((updating==1)?(<button className='text-white bg-blue-500 px-3 py-1 rounded-md mt-4' onClick={updateAchievement}>Update</button>)
+                :(<></>))
             }
-            <Tooltip
-                color="error"
-                onClick={deleteAchievement}
-                className='mt-4 ml-3'
-            >
-            <IconButton css={{ml:"$8"}} className='my-auto'>
-              <DeleteIcon size={20} fill="#FF0080" />
-            </IconButton>
-            </Tooltip>
+            <button onClick={deleteAchievement} className='text-white bg-blue-500 px-3 py-1 rounded-md mt-4'>Delete</button>
         </div>
-    </div>
-    <div className='mb-15 pb-10'></div>
+        </div>
+      <div className='mb-15 pb-10'></div>
     </div>
     )
 }

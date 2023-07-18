@@ -12,6 +12,7 @@ export const POST = async(request) => {
             logo:data.logo,
             isStartUp:data.isStartUp,
             title:data.title,
+            location: data.location,
             isIntern: data.isIntern,
             companyName: data.companyName,
             companyLink: data.companyLink,

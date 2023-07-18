@@ -146,24 +146,22 @@ export default function HRSignup() {
                   className="phonewidth px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
-              <div className="mb-4">
-              <label
-                className=" text-sm ml-3 text-left font-semibold text-gray-600"
-              >
-                About Company *
-              </label>
-              <input
-                type="textarea"
-                required
-                placeholder="Enter a brief introduction about your company"
-                className=" w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
-              />
-            </div>
               {/* <div className="mx-4 mt-7 ">
               <button type="submit" className="otppos w-auto text-sm text bg-white text-violet-500 px-5 py-2 my-auto rounded-xl border-2 border-violet-300">
                 Get OTP
               </button>
             </div> */}
+            </div>
+            <div className="mb-4 mt-2">
+              <label className=" text-sm ml-3 text-left font-semibold text-gray-600">
+                About Company *
+              </label>
+              <textarea
+                rows={8}
+                required
+                placeholder="Enter a brief introduction about your company"
+                className=" w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              />
             </div>
             {/* {vari == 1 ? (
               <>
@@ -179,7 +177,7 @@ export default function HRSignup() {
             ) : (
               <></>
             )} */}
-            <div className="mt-10">
+            <div className="mt-2">
               <button type="submit" disabled={message?true:false} className="mt-10 py-2 w-full textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl">
                 Submit
               </button>

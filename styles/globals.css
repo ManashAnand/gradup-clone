@@ -166,7 +166,9 @@ html{
 .justice{
  text-align: justify;
 }
-
+.showmobile{
+  display:none;
+}
 .slide {
   display: inline-block;
   width:100%;
@@ -1904,8 +1906,11 @@ body {
 }
 .pos{
   position:fixed;
-  bottom:90px;
+  bottom:50px;
   right:8px;
+}
+.sizetext2{
+  font-size: 23px;
 }
 .gridset{
   display: grid;
@@ -2703,8 +2708,8 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
     grid-template-columns: repeat(2,1fr);
     margin-left:5vh;
     margin-top: auto;
-    padding:8px;
-    gap:8px;
+    padding:14px;
+    gap:14px;
   }
   .hackathons{
     grid-template-columns:repeat(1,1fr);
@@ -2784,6 +2789,9 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
     justify-content: center; */
     display:none;
   }
+  .showmobile{
+    display: block;
+  }
   .otp{
     display:block;
   } 
@@ -2809,6 +2817,9 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   }
   .adjust{
     width:100%;
+  }
+  .showmobile{
+    display:block;
   }
   .gapmedia{
     gap:0
@@ -2938,7 +2949,7 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   .arrange{
     margin-left:0;
     margin-top:-3vh;
-    padding:10px 5px;
+    padding:15px;
   }
   .filterbox{
     margin:-15vh auto 10vh auto;
@@ -3595,14 +3606,14 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
 }
 
 .black_btn {
-  @apply rounded-full bg-blue-500 py-2 px-7 text-white transition-all hover:bg-white hover:text-gray-600 hover:border-gray-600 text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full bg-blue-500 py-1 px-3 text-white transition-all hover:bg-white hover:text-gray-600 hover:border-gray-600 text-center text-sm font-inter flex items-center justify-center;
 }
 
 .black_btn2 {
   @apply rounded-none border border-black bg-black py-2.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-base font-inter flex items-center justify-center;
 }
 .outline_btn {
-  @apply rounded-full text-lg textform bg-transparent py-2 px-7 text-gray-100 transition-all hover:bg-blue-500 hover:text-white text-center font-inter flex items-center justify-center;
+  @apply rounded-xl text-sm textform bg-transparent py-1 mx-auto px-3 text-gray-100 transition-all hover:bg-blue-500 hover:text-white text-center font-inter flex items-center justify-center;
 }
 
 .head_text {
@@ -3666,7 +3677,7 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
 }
 
 .dropdown {
-  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute right-0 top-full mt-3 w-fit p-2 rounded-lg bg-white min-w-[140px] flex flex-col gap-2 justify-center items-center;
 }
 
 .dropdown_link {

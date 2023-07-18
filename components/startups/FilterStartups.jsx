@@ -17,12 +17,36 @@ const FilterStartups = ({
   const [city,setCity] = useState([]);
   const [title,setTitle] = useState([]);
   const cityList = [
-    { value: "delhi", label: "Delhi" },
-    { value: "mumbai", label: "Mumbai" },
-    { value: "dehradun", label: "Dehradun" },
-    { value: "patna", label: "Patna" },
-    { value: "gaya", label: "Gaya" },
-    { value: "remote", label: "Remote" },
+    { value: "Remote", label: "Remote" },
+    { value: "Delhi", label: "Delhi" },
+    { value: "Rajasthan", label: "Rajasthan" },
+    { value: "Karnataka", label: "Karnataka" },
+    { value: "Tamil Nadu", label: "Tamil Nadu" },
+    { value: "Bihar", label: "Bihar" },
+    { value: "Kerala", label: "Kerala" },
+    { value: "Gujarat", label: "Gujarat" },
+    { value: "Haryana", label: "Haryana" },
+    { value: "Maharashtra", label: "Maharashtra" },
+    { value: "Uttar Pradesh", label: "Uttar Pradesh" },
+    { value: "Punjab", label: "Punjab" },
+    { value: "Assam", label: "Assam" },
+    { value: "Odisha", label: "Odisha" },
+    { value: "West Bengal", label: "West Bengal" },
+    { value: "Himachal Pradesh", label: "Himachal Pradesh" },
+    { value: "Arunachal Pradesh", label: "Arunachal Pradesh" },
+    { value: "Sikkim", label: "Sikkim" },
+    { value: "Nagaland", label: "Nagaland" },
+    { value: "Jharkhand", label: "Jharkhand" },
+    { value: "Goa", label: "Goa" },
+    { value: "Telangana", label: "Telangana" },
+    { value: "Tripura", label: "Tripura" },
+    { value: "Manipur", label: "Manipur" },
+    { value: "Uttarakhand", label: "Uttarakhand" },
+    { value: "Jammu & Kashmir", label: "Jammu & Kashmir" },
+    { value: "Chattisgarh", label: "Chattisgarh" },
+    { value: "Mizoram", label: "Mizoram" },
+    { value: "Andhra Pradesh", label: "Andhra Pradesh" },
+    { value: "Madhya Pradesh", label: "Madhya Pradesh" },
   ];
   let titleList = [
     { value: "Software Developer/Engineer",label: "Software Developer/Engineer" },
@@ -147,6 +171,7 @@ const FilterStartups = ({
         <div>
           <div className="p-3">
             <Select
+              className="text-left"
               options={cityList}
               placeholder="Select city"
               value={city}
@@ -157,7 +182,7 @@ const FilterStartups = ({
           </div>
           <div className="p-3">
             <Select
-              className="container"
+              className="container text-left"
               options={titleList}
               placeholder="Select job"
               value={title}

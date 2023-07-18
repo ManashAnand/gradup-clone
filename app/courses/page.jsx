@@ -177,6 +177,11 @@ const Courses = () => {
     </div>
     <div className='w-full max-w-full flex-start flex-col my-10'>
     <div>
+    <div className='showmobile'>
+      <p className='text-white text-xl'>Learn from anywhere around the globe with us</p>
+      <p className='text-white text-xl'>Experience quality courses with us with best price. You can get best courses from us</p>
+      <img className='mx-auto' width="280" src="/assets/images/image1.png"></img>
+    </div>
     <h1 className='text-4xl font-bold text-sky-500 text text-center my-5'>Our Best Courses</h1>
     <Grid.Container gap={3} justify="flex-start">
       {list.map((item, index) => (

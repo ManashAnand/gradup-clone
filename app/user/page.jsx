@@ -78,7 +78,7 @@ export default function Profile() {
     console.log("Adding new edu")
     data.education.push(newEdu)
   }
-  if (error) return <div><LoginAlert/></div>;
+  if (error) return <div></div>;
   if (!data) return <div className="my-60"><Spinner/></div>;
   console.log("ajay", data);
       // useEffect(()=>{
@@ -228,10 +228,12 @@ export default function Profile() {
     !submitted?<div className='w-full mb-16'>
         <section className='w-full headingBox'>
           <h2 className='text-4xl text-white my-7 text'>Your Resume</h2>
-          <Link href={'/user/applications'} className='mt-7'>
-            <Button flat color="primary">Your Applications</Button>
+          <Link href='/user/applications' className='mt-7'>
+            <button className='py-2 px-5 bg-blue-500 text-white rounded-md'>Your Applications</button>
           </Link>
-          <Button className='mt-7' onClick={beAlumni} flat color="primary">Enter Alumni</Button>
+          <Link href="">
+          <button className=' py-2 px-5 bg-blue-500 text-white rounded-md mt-7' onClick={beAlumni}>Enter Alumni</button>
+          </Link>
           {/* <p className='desc text-left'>{data.email}</p> */}
         </section>
         <section className='border-solid border-white border-2 rounded-xl text-left'>
@@ -405,7 +407,7 @@ export default function Profile() {
                 </div>
                 <div className="flexBox w-full">
                 <div className='flex item1 flex-col mb-5'>
-                <label className="mb-1 ml-2 mt-3 text text-blue-500 text-sm">Joining Date *</label>
+                <label className="mb-1 ml-2 mt-3 text text-white text-sm">Joining Date *</label>
                 <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date' value={start1} onChange={handleChange3} required/>
                 </div>
                 <div className='flex flex-col item2 mb-5'>

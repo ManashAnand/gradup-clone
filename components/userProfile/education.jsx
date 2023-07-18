@@ -44,9 +44,9 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
         }
     }
     const deleteEducation=async ()=>{
-        // e.preventDefault();
         // console.log(e.target[0].value);
         try {
+          
           const response = await fetch(`/api/user/${session?.user.id}/?type=education&action=delete`, {
             method: "POST",
             body: JSON.stringify({
@@ -73,28 +73,16 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
         <Input labelLeft="Date of Joining" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.startYear.split("T")[0]}  onChange={(e)=>setEducation({...education,startYear:e.target.value})}/> 
         <Input labelLeft="Date of Leaving" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={education.endYear.split("T")[0]}  onChange={(e)=>setEducation({...education,endYear:e.target.value})}/>
       </div>
-        <div className='flex justify-center'>
+        <div className='flex justify-center gap-4'>
             {
                 (updating==0)?(<>
-                <Tooltip className=' mt-4 mr-4'>
-                 <IconButton onClick={() => setIsUpdating(1)}>
-                     <EditIcon size={20} fill="#979797" />
-                    </IconButton>
-                </Tooltip>
-                </>):((updating==1)?(<> <RSuiteIconButton onClick={updateEducation} icon={<SaveIcon />}/></>)
-                :(<>
-                 <RButton appearance="primary" loading size="xs">Primary</RButton>
-                </>))
+                <div>
+                 <button className='text-white bg-blue-500 px-6 py-1 rounded-md mt-4' onClick={() => setIsUpdating(1)}>Edit</button>
+                </div>
+                </>):((updating==1)?(<button className='text-white bg-blue-500 px-3 py-1 rounded-md mt-4' onClick={updateEducation}>Update</button>)
+                :(<></>))
             }
-            <Tooltip
-                color="error"
-                onClick={deleteEducation }
-                className=' mt-4 ml-4'
-            >
-            <IconButton css={{}} className='mx-15'>
-              <DeleteIcon size={20} fill="#FF0080" />
-            </IconButton>
-            </Tooltip>
+            <button onClick={deleteEducation} className='text-white bg-blue-500 px-3 py-1 rounded-md mt-4'>Delete</button>
         </div>
         </div>
       <div className='mb-15 pb-10'></div>
