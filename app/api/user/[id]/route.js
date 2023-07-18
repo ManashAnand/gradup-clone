@@ -66,8 +66,8 @@ export const POST = async(request, { params }) => {
                         "education.$.degreeName": data.degreeName,
                         "education.$.branch": data.branch,
                         "education.$.grade": data.grade,
-                        "education.$.startYear": new Date(),
-                        "education.$.endYear": new Date(),
+                        "education.$.startYear": data.startYear,
+                        "education.$.endYear": data.endYear,
                             }
                     })
                 return new Response(("Education Updated"), { status: 201 })
@@ -77,8 +77,8 @@ export const POST = async(request, { params }) => {
                     degreeName: data.degreeName,
                     branch: data.branch,
                     grade: data.grade,
-                    startYear: new Date(),
-                    endYear: new Date(),
+                    startYear: data.startYear,
+                    endYear: data.endYear,
                 });
                 await currentUser.save()
                 return new Response(("New Education Added"), { status: 201 })
@@ -137,8 +137,8 @@ export const POST = async(request, { params }) => {
                     location: data.location,
                     title: data.title,
                     skills: data.skills,
-                    startYear: new Date(),
-                    endYear: new Date(),
+                    startYear: data.startYear,
+                    endYear: data.startDate,
                     description:data.description,
                 });
                 await currentUser.save()
