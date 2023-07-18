@@ -71,12 +71,12 @@ const Footer = () => {
                   </a>
                 </li>
 
-                <li>
+                {/* <li>
                   <a href="/careers" className="text-gray-300 transition hover:opacity-75">
                   <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Careers
                   </a>
                 </li>
-                
+                 */}
 
               </ul>
             </div>
