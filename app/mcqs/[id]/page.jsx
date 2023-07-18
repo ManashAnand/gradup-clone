@@ -5,7 +5,7 @@ import Spinner from "@components/Spinner"
 import HelpIcon from '@mui/icons-material/Help';
 import Link from "next/link";
 import { useState,useEffect } from "react";
-const fetcher = (url) => fetch("https://api.jsonbin.io/v3/b/649318cf8e4aa6225eb211a2").then((res) => res.json());
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const page = ({id}) => {
   const [que,setQue]=useState([])
   const [current,setCurrent]=useState("")

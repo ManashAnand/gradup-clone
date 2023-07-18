@@ -3,7 +3,7 @@ import React from 'react'
 import useSWR from "swr";
 import Spinner from "@components/Spinner"
 import { Card, Row, Text } from "@nextui-org/react";
-const fetcher = (url) => fetch("https://api.jsonbin.io/v3/b/649318cf8e4aa6225eb211a2").then((res) => res.json());
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const page = (id) => {
   const { data, error } = useSWR( '/api/mcq/', fetcher)
   // ... handle loading and error states
