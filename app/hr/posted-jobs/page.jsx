@@ -136,7 +136,7 @@ export default function App() {
   return (
     <div className='w-full my-16'>
     <div className='w-9/10'>
-        <h1 className='my-8 text-center'>
+        <h1 className='my-10 text-center'>
             <span className='text-white animate-charcter text-5xl font-semibold mb-10 textnew'>Jobs Posted</span> 
         </h1>
     <Table
