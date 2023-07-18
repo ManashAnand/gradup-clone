@@ -1909,6 +1909,9 @@ body {
   bottom:50px;
   right:8px;
 }
+.flexbasis{
+  flex:50%;
+}
 .sizetext2{
   font-size: 23px;
 }
@@ -2346,6 +2349,9 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
 }
 .cardslide{
   height:80vh;
+}
+.padded4{
+  padding:3rem;
 }
 .achievements:hover{
   transition:transform 0.4s ease-in;
@@ -3012,6 +3018,12 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   .gridset{
     display: grid;
     grid-template-columns: repeat(1,1fr);
+  }
+  .sizetext3{
+    font-size:13px;
+  }
+  .padded4{
+    padding:0.5rem;
   }
   .flexset{
     display: flex;

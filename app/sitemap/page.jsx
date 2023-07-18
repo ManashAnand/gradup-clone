@@ -95,12 +95,12 @@ const siteList=[
 const page = () => {
 
   return (
-    <div className="w-full headingbox2 px-10 py-3">
-        <p className='text-5xl animate-charcter text-left underline decoration-white underline-offset-8 my-12 textform text-sky-500'>Sitemap</p>
+    <div className="w-full headingbox2 padded4">
+        <p className='text-4xl animate-charcter text-left underline decoration-white underline-offset-8 my-8 textform text-sky-500'>Sitemap</p>
         <div className='flex flex-wrap justify-evenly'>
         {siteList.map((link)=>(
-                <div className='basis-6/12 textform'>
-                <li className='text-white text-left'>
+                <div className='flexbasis textform'>
+                <li className='text-white sizetext3 text-left'>
                    <Link href={link.l}>
                       {link.name}
                    </Link>
