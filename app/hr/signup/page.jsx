@@ -60,6 +60,7 @@ export default function HRSignup() {
           companyEmail: e.target[0].value,
           companyName: e.target[1].value,
           contact: e.target[2].value,
+          aboutCompany:e.target[3].value,
           otp: "1234"
         }),
       });
@@ -145,6 +146,19 @@ export default function HRSignup() {
                   className="phonewidth px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
+              <div className="mb-4">
+              <label
+                className=" text-sm ml-3 text-left font-semibold text-gray-600"
+              >
+                About Company *
+              </label>
+              <input
+                type="textarea"
+                required
+                placeholder="Enter a brief introduction about your company"
+                className=" w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              />
+            </div>
               {/* <div className="mx-4 mt-7 ">
               <button type="submit" className="otppos w-auto text-sm text bg-white text-violet-500 px-5 py-2 my-auto rounded-xl border-2 border-violet-300">
                 Get OTP

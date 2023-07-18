@@ -28,6 +28,7 @@ export const POST = async(request, { params }) => {
                     email:currUser.email,
                     name:currUser.name,
                     companyName:data.companyName,
+                    aboutCompany:data.aboutCompany,
                     posts:[],
                     contact:data.contact
                 })
