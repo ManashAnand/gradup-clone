@@ -74,12 +74,12 @@ const Project = ({ projectName, skillsUsed, projectDes, projectLinks, id }) => {
             {
                 (updating==0)?(<>
                 <div>
-                 <button className='text-white bg-blue-500 px-6 py-1 rounded-md mt-4' onClick={() => setIsUpdating(1)}>Edit</button>
+                 <button className='text-white bg-blue-400 hover:bg-blue-500 px-6 py-1 rounded-md mt-4' onClick={() => setIsUpdating(1)}>Edit</button>
                 </div>
-                </>):((updating==1)?(<button className='text-white bg-blue-500 px-3 py-1 rounded-md mt-4' onClick={updateProject}>Update</button>)
+                </>):((updating==1)?(<button className='text-white bg-blue-400 hover:bg-blue-500 px-3 py-1 rounded-md mt-4' onClick={updateProject}>Update</button>)
                 :(<></>))
             }
-            <button onClick={deleteProject} className='text-white bg-blue-500 px-3 py-1 rounded-md mt-4'>Delete</button>
+            <button onClick={deleteProject} className='text-white bg-red-400 hover:bg-red-500 px-3 py-1 rounded-md mt-4'>Delete</button>
         </div>
         </div>
       <div className='mb-15 pb-10'></div>

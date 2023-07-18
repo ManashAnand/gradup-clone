@@ -79,12 +79,12 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
             {
                 (updating==0)?(<>
                 <div>
-                 <button className='text-white bg-blue-500 px-6 py-1 rounded-md mt-4' onClick={() => setIsUpdating(1)}>Edit</button>
+                 <button className='text-white bg-blue-400 hover:bg-blue-500 px-6 py-1 rounded-md mt-4' onClick={() => setIsUpdating(1)}>Edit</button>
                 </div>
-                </>):((updating==1)?(<button className='text-white bg-blue-500 px-3 py-1 rounded-md mt-4' onClick={updateExperience}>Update</button>)
+                </>):((updating==1)?(<button className='text-white bg-blue-400 hover:bg-blue-500 px-3 py-1 rounded-md mt-4' onClick={updateExperience}>Update</button>)
                 :(<></>))
             }
-            <button onClick={deleteExperience} className='text-white bg-blue-500 px-3 py-1 rounded-md mt-4'>Delete</button>
+            <button onClick={deleteExperience} className='text-white bg-red-400 hover:bg-red-500 px-3 py-1 rounded-md mt-4'>Delete</button>
         </div>
         </div>
       <div className='mb-15 pb-10'></div>
