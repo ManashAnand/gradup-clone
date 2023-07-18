@@ -184,7 +184,7 @@ const FilterJobs = ({
             <Select
               className="container text-left"
               options={titleList}
-              placeholder="Select job"
+              placeholder="Select Job"
               value={title}
               onChange={handleTitle}
               isSearchable={true}
