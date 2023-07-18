@@ -8,13 +8,13 @@ import Spinner from "@components/Spinner"
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 async function getData() {
-  const response = await fetch("http://localhost:3000/api/hackathon");
+  const response = await fetch("/api/hackathon");
   const data = await response.json();
   return data;
 }
 const ShowHackathon = ({ setHackathon,display,setDisplay,display1,setDisplay1 }) => {
   const { data, error } = useSWR(
-    "http://localhost:3000/api/hackathon",
+    "/api/hackathon",
     fetcher
   );
   if (error) return <div>Failed to loadinggggggg</div>;
