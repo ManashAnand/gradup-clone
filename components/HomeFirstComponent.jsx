@@ -16,12 +16,12 @@ const HomeFirstComponent = () => {
     setUpProviders();
   }, []);
 
-  useEffect(()=>{
-    setTimeout(()=>{
-      current<4?setCurrent(current+1):setCurrent(0)
-    },3500)
-  },[current])
-  let arr=["/assets/images/home1.png","/assets/images/home2.png","/assets/images/home3.png","/assets/images/home4.png","/assets/images/home5.png"]
+  // useEffect(()=>{
+  //   setTimeout(()=>{
+  //     current<4?setCurrent(current+1):setCurrent(0)
+  //   },3500)
+  // },[current])
+  // let arr=["/assets/images/home1.png","/assets/images/home2.png","/assets/images/home3.png","/assets/images/home4.png","/assets/images/home5.png"]
   return (
     <section className='w-screen flex justify-around headingbox'>
       <div className="mb-12 flex flex-col justify-center">
@@ -59,15 +59,12 @@ const HomeFirstComponent = () => {
         </>}
         
         </div> 
-        <div className="hideimage">
-          {arr.map((ele,i)=>{
-            return(current===i &&
-              <>
-               <img className="" width="350" src={ele} alt="home-gif"></img>
-              </>
-            )
-          })}
-          </div>
+        <div className=' hideimage grid grid-cols-2 my-auto gap-4'>
+          <img width="150" src="/assets/images/gif1.gif" alt="company"></img>
+          <img width="150" src="/assets/images/gif5.gif" alt="company"></img>
+          <img width="150" src="/assets/images/gif3.gif" alt="company"></img>
+          <img className='' width="150" src="/assets/images/gif4.gif" alt="company"></img>
+        </div>
     </section>
   )
 }

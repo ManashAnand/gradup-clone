@@ -20,7 +20,7 @@ export const POST = async(request, { params }) => {
             const HRExists = await HR.findOne({
                 email:currUserEmail
             });
-            console.log("here is response          searched HR",params.id,currUserEmail, HRExists);
+            console.log("here is response searched HR",params.id,currUserEmail, HRExists);
             if(!HRExists){
                 await HR.create({
                     _id:params.id,
@@ -30,7 +30,8 @@ export const POST = async(request, { params }) => {
                     companyName:data.companyName,
                     aboutCompany:data.aboutCompany,
                     posts:[],
-                    contact:data.contact
+                    contact:data.contact,
+                    companyPhoto: data.companyPhoto,
                 })
             }
             return new Response("You are now a HR. Mobile Number Verified.", { status: 201 })

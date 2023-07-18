@@ -173,7 +173,7 @@ const FilterJobs = ({
             <Select
               className="text-left"
               options={cityList}
-              placeholder="Select city"
+              placeholder="Select State"
               value={city}
               onChange={handleCity}
               isSearchable={true}

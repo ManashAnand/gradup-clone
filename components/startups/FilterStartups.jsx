@@ -173,7 +173,7 @@ const FilterStartups = ({
             <Select
               className="text-left"
               options={cityList}
-              placeholder="Select city"
+              placeholder="Select state"
               value={city}
               onChange={handleCity}
               isSearchable={true}

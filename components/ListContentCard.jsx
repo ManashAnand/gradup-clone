@@ -2,14 +2,13 @@ import { Card, Grid, Text, Link } from "@nextui-org/react";
 
 const ListContentCard = ({post}) => {
   return (
-     <Card css={{ p: "$2", mw: "400px",width:"100%"}}>
+     <Card style={{boxShadow:"rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset"}} css={{ p: "$2", mw: "400px",width:"100%",borderRadius:"$2xl"}}>
       <Card.Header css={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}} >
         <img
-          className="p-2 border-2 border-gray-400"
+          className="p-3 border-2 border-gray-200"
           alt="company_logo"
           src={post.logo?post.logo:"/assets/images/website-icon.png"}
           width="90px"
-          height="90px"
         />
         {/* <Grid.Container css={{ pl: "$6" }}>
           <Grid xs={12}>
@@ -21,7 +20,7 @@ const ListContentCard = ({post}) => {
             <Text css={{ color: "$accents8" }}>{post.skillsRequired}</Text>
           </Grid> */}
         {/* </Grid.Container> */}
-        <Text b css={{textAlign:"center",lineHeight: "$xs",color:"$accent500",marginBottom:"$2",marginTop:"$6"}}>
+        <Text className="textform text-xl" css={{textAlign:"center",lineHeight: "$xs",color:"$accent500",marginBottom:"$4",marginTop:"$6"}}>
           {post.companyName}
         </Text>
         <Text css={{textAlign:"center",color:"$blue700",fontSize:"$md",marginBottom:"$6"}}>

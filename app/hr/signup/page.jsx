@@ -27,9 +27,45 @@ export default function HRSignup() {
   let vari = 0;
   const router=useRouter();
   const [emaildata,setEmaildata]=useState("")
+  const [imageurl,setImageurl]=useState("")
   const [posted, setPosted] = useState(false)
   const [err,setErr]=useState(false)
   const [message,setMessage]=useState(false)
+  async function imageUploaded() {
+    return new Promise((resolve, reject) => {
+      let base64String = "";
+      let file = document.querySelector("input[type=file]").files[0];
+      const fileSizeLimit = 300 * 1024;
+
+      if (file.size > fileSizeLimit) {
+        alert("File Size Limit of 300Kb exceeded.");
+        reject("File size limit exceeded");
+        return;
+      }
+
+      let reader = new FileReader();
+
+      reader.onload = function () {
+        base64String = reader.result;
+        resolve(base64String);
+      };
+
+      reader.onerror = function (error) {
+        reject(error);
+      };
+
+      reader.readAsDataURL(file);
+    });
+  }
+  async function main() {
+    try {
+      const base64String = await imageUploaded();
+      console.log(base64String);
+      setImageurl(base64String)
+    } catch (error) {
+      console.error(error);
+    }
+  }
   function handleChange(e){
     setEmaildata(e.target.value)
   }
@@ -61,6 +97,7 @@ export default function HRSignup() {
           companyName: e.target[1].value,
           contact: e.target[2].value,
           aboutCompany:e.target[3].value,
+          companyPhoto:imageurl,
           otp: "1234"
         }),
       });
@@ -86,7 +123,7 @@ export default function HRSignup() {
   };
 
   return (
-    !posted?<div className="bg-blue-100 text-left py-10 px-6 mt-10 mb-20 rounded-xl main-login">
+    !posted?<div className="bg-blue-100 text-left pb-10 pt-2 px-6 mt-10 mb-20 rounded-xl main-login">
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Image
           src="/assets/images/logo-for-website.png"
@@ -96,7 +133,7 @@ export default function HRSignup() {
           className=" font-bold text-center snap-center"
         />
       </div>
-      <p className="text-blue-800 text-center text-xl mb-7">"Attention HR professionals: Take the next step in finding exceptional talent! Login now and post captivating job opportunities to attract top candidates and build your dream team."</p>
+      <p className="text-blue-800 text-center text-xl mb-7">"Attention HR professionals: Take the next step in finding exceptional talent!<br/>Login now and post captivating job opportunities to attract top candidates and build your dream team."</p>
       <div className="flex items-center">
         <div className="side1">
           <form onSubmit={addHR}>
@@ -163,6 +200,10 @@ export default function HRSignup() {
                 className=" w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
+            <div className="mb-4 mt-2 flex flex-col">
+              <label className="mb-2 text-sm ml-3 text-left font-semibold text-gray-600">Company Logo *</label>
+              <input className="w-fit px-3 pb-2 text-gray-700 rounded-md" type="file" onChange={main} required></input>
+            </div>
             {/* {vari == 1 ? (
               <>
                 <div>
@@ -178,7 +219,7 @@ export default function HRSignup() {
               <></>
             )} */}
             <div className="mt-2">
-              <button type="submit" disabled={message?true:false} className="mt-10 py-2 w-full textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl">
+              <button type="submit" disabled={message?true:false} className=" py-2 w-full textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl">
                 Submit
               </button>
             </div>

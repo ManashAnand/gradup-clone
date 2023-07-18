@@ -9,7 +9,7 @@ export const POST = async(request) => {
         const currentHR = await HR.findById(data.HRId);
         const newJob = new Job({ 
             hrId:data.HRId,
-            logo:data.logo,
+            logo:currentHR.companyPhoto,
             isStartUp:data.isStartUp,
             title:data.title,
             location: data.location,
