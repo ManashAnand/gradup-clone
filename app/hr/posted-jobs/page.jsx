@@ -36,10 +36,10 @@ export default function App() {
   if (error) return <div><LoginAlert /></div>;
   if (!data) return <div className='my-60 mx-auto'><Spinner /></div>;
   // const data=getData(url);
-  console.log(data,"datashow");
+  // console.log(data,"datashow111111111111111111111111111");
   const columns = [
     { name: "Title", uid: "title" },
-    { name: "Total Views", uid: "impression" },
+    { name: "Total Applicants", uid: "impression" },
     { name: "Status", uid: "status" },
     { name: "Upgrade to premium", uid: "canSee" },
     { name: "ACTIONS", uid: "actions" },

@@ -59,8 +59,8 @@ const Mentors = () => {
             <div class="box-top">
               <img class="box-image" src={items.img} alt="Mentor" decoding="async"/>
             </div>
-            <h3 class="text text-center text-md text-white">{items.name}</h3>
-            <p class="user-follow-info text-center text-white text text-xs">{items.title}</p>
+            <h3 class="textform text-center text-md text-white">{items.name}</h3>
+            <p class="user-follow-info text-center text-white textform text-xs">{items.title}</p>
             </div>
         )
       })}

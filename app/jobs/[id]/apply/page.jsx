@@ -28,7 +28,7 @@ const page = ({params}) => {
     const createApplication = async (e) => {
       e.preventDefault();
       // setIsSubmitting(true);
-      console.log("Form Submitted");
+      // console.log("Form Submitted");
       try {
         const response = await fetch("/api/jobs/apply", {
           method: "POST",

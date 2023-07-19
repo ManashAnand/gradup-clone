@@ -49,8 +49,8 @@ const Home = () => {
            <a href="/jobs">
             <div className="rounded-md h-24 w-52 bg-green-200 flex items-center justify-evenly p-3 box9">
               <div>
-              <p className='text-sky-700 text text-sm'>Full time</p>
-              <p className='text-sky-700 text text-sm font-semibold'>Jobs</p>
+              <p className='text-sky-700 textform text-sm'>Full time</p>
+              <p className='text-sky-700 textform text-sm font-semibold'>Jobs</p>
               </div>
               <img src="/assets/icons/image 153.png" width="70"></img>
             </div>
@@ -58,8 +58,8 @@ const Home = () => {
             <a href="/internships">
             <div className="rounded-md h-24 w-52 bg-purple-200 flex items-center justify-evenly p-3 box8">
               <div>
-              <p className='text-sky-700 text text-sm'>Paid</p>
-              <p className='text-sky-700 text text-sm font-semibold'>Internships</p>
+              <p className='text-sky-700 textform text-sm'>Paid</p>
+              <p className='text-sky-700 textform text-sm font-semibold'>Internships</p>
               </div>
               <img src="/assets/icons/image 153.png" width="70"></img>
             </div>
@@ -67,8 +67,8 @@ const Home = () => {
             <a href="/courses">
             <div className="rounded-md h-24 w-52 bg-red-200 flex items-center justify-evenly p-3 box7">
               <div>
-              <p className='text-sky-700 text text-sm'>Learn</p>
-              <p className='text-sky-700 text text-sm font-semibold'>Courses</p>
+              <p className='text-sky-700 textform text-sm'>Learn</p>
+              <p className='text-sky-700 textform text-sm font-semibold'>Courses</p>
               </div>
               <img src="/assets/icons/image 153.png" width="70"></img>
             </div>
@@ -76,8 +76,8 @@ const Home = () => {
             <a href="/hackathons">
             <div className="rounded-md h-24 w-52 bg-blue-200 flex items-center justify-evenly p-3 box6">
               <div>
-              <p className='text-sky-700 text text-sm'>Participate</p>
-              <p className='text-sky-700 text text-sm font-semibold'>Hackathons</p>
+              <p className='text-sky-700 textform text-sm'>Participate</p>
+              <p className='text-sky-700 textform text-sm font-semibold'>Hackathons</p>
               </div>
               <img src="/assets/icons/image 153.png" width="70"></img>
             </div>

@@ -68,7 +68,7 @@ const Achievement = () => {
             </div>
             <div className="w-48 h-28 datamile2 pt-2">
             <h1 className="text-4xl text-center text-white font-semibold">1500+</h1>
-            <p className="text-xs font-semibold text-white text-center mb-1">INTERNSHIPS COMPLETED</p>
+            <p className="text-xs font-semibold text-white text-center mb-1">LEARNERS</p>
             <HandshakeIcon sx={{color:"white"}} fontSize="large"></HandshakeIcon>
             </div>
            </div>
