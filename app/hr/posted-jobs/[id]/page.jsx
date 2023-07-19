@@ -10,6 +10,7 @@ import {useState,useEffect} from "react"
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 export default function Page({params}){
   const [index,setIndex]=useState(1)
+  const [color,setColor]=useState(localStorage.getItem("color")||"#fff")
     const [status,setStatus]=useState(true)
     const [pos,setPos]=useState(0)
   const { data: session } = useSession();
@@ -17,6 +18,19 @@ export default function Page({params}){
     setStatus(true)
     setPos(i)
   }
+  function handleClick1(){
+    setColor("#fde047")
+    localStorage.setItem("color","#fde047")
+  }
+  function handleClick2(){
+    setColor("#4ade80")
+    localStorage.setItem("color","#4ade80")
+  }
+  function handleClick3(){
+    setColor("#f87171")
+    localStorage.setItem("color","#f87171")
+  }
+  
   const { data, error } = useSWR( `/api/hr/${session?.user.id}/postedJob/${params.id}?page=${index}`, fetcher)
   // ... handle loading and error states
   if (error) return <div className='text-white  text-center mx-auto my-20'>Some Error Occured!! Please try again</div>;
@@ -33,22 +47,18 @@ export default function Page({params}){
           <div className={data.length>1?"grid grid-cols-1 overflow-y-scroll cardslide pr-6 gap-y-6 gap-x-10 mb-6":"grid grid-cols-1 cardslide pr-6 gap-y-6 gap-x-10 mb-6"}>
             {data.length>0?data.map((ele, i) => {
               return(
-                <a href="#profile">
-                <Card onClick={()=>handleClick(i)} key={i} className='box1' css={{height:"max-content"}} isPressable>
-                  <Card.Body css={{ px:"$16",py:"$6",background:"#29335c",borderRadius:"$md"}}>
-                    <Card.Image
-                      src="/assets/images/profpic.png"
-                      objectFit="contain"
-                      width="100%"
-                      height={140}
-                      alt="profile"
-                    />
-                  </Card.Body>
+                <a href="#">
+                <Card style={{backgroundColor:color}} onClick={()=>handleClick(i)} key={i} className='box1' css={{height:"max-content",padding:"$5"}} isPressable>
                       <Text css={{fontWeight: "$semibold", fontSize: "$md",width:"stretch",textAlign:"center",pt:"$5" }}>{ele.name}</Text>
                       <Text css={{fontSize: "$sm" ,pb:"$5",textAlign:"center"}}>
                       {ele.education.length>0?ele.education[0].collegeName:""}
                       </Text>
-                  <button onClick={()=>createPDF(i)} style={{backgroundColor:"#29335c"}} className="px-7 py-1 text-xs text-white mb-3 rounded-full">Download Resume</button>
+                  <button onClick={()=>createPDF(i)} style={{backgroundColor:"#29335c"}} className="px-7 py-1 text-xs text-white mt-5 mb-2 rounded-full">Download Resume</button>
+                  <button onClick={handleClick1} className="px-7 py-1 bg-yellow-600 text-xs text-white mb-2 rounded-full">Shortlisted</button>
+                  <div className='flex gap-2'>
+                  <button onClick={handleClick2} className="px-7 py-1 text-xs text-white mb-2 bg-green-500 rounded-full">Hired</button>
+                  <button onClick={handleClick3} className="px-4 py-1 text-xs text-white mb-2 bg-red-500 rounded-full focus:bg-red-100">Not Hired</button>
+                  </div>
                 </Card>
                 </a>
              )}):""}
