@@ -42,6 +42,21 @@ export const POST = async(request) => {
         const currJob = await Job.findOne({_id:jobId})
         currJob.appliedCandidates.push(userId);
         await currJob.save()
+        const currHR = await HR.findOne({_id:userId});
+        const currJobinHr = await currHR.posts.findOne({_id:jobId});
+        // currJobinHr.impressions=currJobinHr.impressions+1;
+        // await currJobinHr.save();
+        // await currHR.save();
+
+        const id = {
+            "_id":userId ,
+            "posts._id":jobId 
+        };
+        const updateImpression = await HR.findOneAndUpdate(id, {
+            "$set":{
+                "posts.$.impressions": currJobinHr.impressions+1,
+                }
+            })
         return new Response(JSON.stringify(newApplication), { status: 201 })
     } catch (error) {
         console.log(error);
