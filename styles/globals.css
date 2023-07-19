@@ -1907,7 +1907,7 @@ body {
 .pos{
   position:fixed;
   bottom:50px;
-  right:8px;
+  right:15px;
 }
 .flexbasis{
   flex:50%;
@@ -2250,6 +2250,9 @@ input::placeholder,textarea::placeholder{
 .sizesetnew{
   font-size: 2rem;
 }
+.lowwidth{
+  display:none;
+}
 .disp{
   display:flex;
   justify-content: center;
@@ -2362,6 +2365,109 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
 .mobilepara{
   width:60vw;
 }
+.underlined{
+  position:relative;
+}
+.underlined:after{
+  content:"";
+  position:absolute;
+  bottom:-10px;
+  left:0;
+  height:12px;
+  width:100%;
+  border:3px solid deepskyblue;
+  border-color:deepskyblue transparent transparent transparent;
+  border-radius:100%;
+}
+
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 2rem 0rem 0rem 0rem;
+  max-width: 1100px;
+}
+
+.table-cell {
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 100%;
+  padding: 0.8em 1.2em;
+  overflow: hidden;
+  list-style-type: none;
+  outline: 1px solid #ddd;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 1px;
+  margin-left: 1px;
+}
+
+.table-cell:first-child {
+  outline: 1px solid #fff;
+  background: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  .table-cell:first-child {
+    display: none;
+  }
+}
+
+.table-cell:nth-child(3) {
+  outline: 1px solid #30305b;
+}
+
+.table-cell:nth-child(-n+3) {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.table-cell > h3 {
+  font-size: 26px;
+  margin-top: 0;
+}
+
+.table-cell.cell-feature {
+  text-align: left;
+  font-size: 18px;
+}
+
+.table-cell.plattform {
+  color: limegreen;
+}
+
+
+.table-cell.enterprise {
+  background-color: #30305b;
+  color: #85bafc;
+}
+
+/* Table columns */
+.table-cell {
+  width: calc(33.33% - 1px);
+}
+
+.table-cell.cell-feature {
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+svg.enterprise-check path {
+  fill: #30305b !important;
+}
+
+a.btn {
+  border: 2px solid;
+  padding: 0.6rem 0.9rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  border-radius: 0.3rem;
+}
+
 .mar{
   margin-left:1.75rem;
 }
@@ -3014,6 +3120,15 @@ background: linear-gradient(316deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, r
   }
   .padded2{
     padding:1rem;
+  }
+  .highwidth{
+    display: none;
+  }
+  .underlined{
+    display:none;
+  }
+  .lowwidth{
+    display:block;
   }
   .gridset{
     display: grid;
