@@ -24,6 +24,7 @@ const page = ({params}) => {
     // }
     function handleClick(){
       setLoading(true)
+      window.scrollTo(0,0)
     }
     const createApplication = async (e) => {
       e.preventDefault();
