@@ -35,6 +35,10 @@ export default function Profile() {
   const [collegedata,setCollegedata]=useState([])
   const [start1,setStart1]=useState("")
   const [end1,setEnd1]=useState("")
+  const [disability1,setDisability1]=useState(false)
+  const [disability2,setDisability2]=useState(false)
+  const [disability3,setDisability3]=useState(false)
+  const [disability4,setDisability4]=useState(false)
   const collegeList = [
     { value: "Others", label: "Others" },
     { value: "Indian Institute of Technology Bombay", label: "Indian Institute of Technology Bombay" },
@@ -220,16 +224,9 @@ export default function Profile() {
       //       }
       //       fetchData();
       //  },[]);
-
-      function handleSubmit(){
-         data.experience.length>0 && data.education.length>0 && data.project.length>0?setSubmitted(true):setSubmitted(false)
-         data.experience.length===0 || data.education.length===0 || data.project.length===0?setMessage(true):setMessage(false)
-         console.log(message)
-      }
-      setTimeout(()=>{
-        message===true?setMessage(false):""
-      },3000)
       const addNewEducation=async (e)=>{
+        e.preventDefault()
+        setDisability4(true)
         // console.log("ye id aii ", session?.user.id);
         try {
           const response = await fetch(`/api/user/${session?.user.id}/?type=education&action=create`, {
@@ -244,6 +241,10 @@ export default function Profile() {
             }),
           });
           console.log(response.status)
+          response.status===201?window.location.reload():""
+          response.status===500?alert("Education not added"):""
+          response.status===201?alert("Education added successfully"):""
+          setDisability4(false)
         } catch (error) {
           console.log(error);
         } finally {
@@ -258,6 +259,8 @@ export default function Profile() {
       }
       // Function for Add New Project
       const addNewProject=async (e)=>{
+        e.preventDefault();
+        setDisability3(true)
         console.log(e.target[0].value);
         try {
           const response = await fetch(`/api/user/${session?.user.id}/?type=project&action=create`, {
@@ -270,6 +273,10 @@ export default function Profile() {
             }),
           });
           console.log(response.status)
+          response.status===201?window.location.reload():""
+          response.status===500?alert("Project not added"):""
+          response.status===201?alert("Project added successfully"):""
+          setDisability3(false)
         } catch (error) {
           console.log(error);
         } finally {
@@ -278,7 +285,8 @@ export default function Profile() {
       }
       //
       const addNewExperience=async (e)=>{
-        
+        e.preventDefault()
+        setDisability2(true)
         console.log(e.target[0].value);
         try {
           const response = await fetch(`/api/user/${session?.user.id}/?type=experience&action=create`, {
@@ -288,16 +296,19 @@ export default function Profile() {
               location:e.target[1].value,
               title:e.target[2].value,
               description:e.target[3].value,
-              currentlyWorking:e.target[4].value,
+              skills:e.target[4].value,
               startDate:e.target[5].value,
               endDate:e.target[6].value,
             }),
           });
           console.log(response.status)
+          response.status===201?window.location.reload():""
+          response.status===500?alert("Experience not added"):""
+          response.status===201?alert("Experience added successfully"):""
+          setDisability2(false)
         } catch (error) {
           console.log(error);
         } finally {
-          
         }
       }
 
@@ -321,6 +332,9 @@ export default function Profile() {
 
 
       const addNewAchievement=async (e)=>{
+        setDisability1(true)
+        e.preventDefault()
+        window.scrollTo(0,0)
         console.log(e.target[0].value);
         try {
           const response = await fetch(`/api/user/${session?.user.id}/?type=achievement&action=create`, {
@@ -330,6 +344,10 @@ export default function Profile() {
             }),
           });
           console.log(response.status)
+          response.status===201?window.location.reload():""
+          response.status===500?alert("Achievement not added"):""
+          response.status===201?alert("Achievement added successfully"):""
+          setDisability1(false)
         } catch (error) {
           console.log(error);
         } finally {
@@ -338,7 +356,7 @@ export default function Profile() {
       }
       const ButtonStyle = { margin: "0px 0.5rem" };
   return (
-    !submitted?<div className='w-full mb-16'>
+    <div className='w-full mb-16'>
         <section className='w-full headingBox'>
           <h2 className='text-4xl text-white my-7 text'>Your Resume</h2>
           <Link href='/user/applications' className='mt-7'>
@@ -361,7 +379,7 @@ export default function Profile() {
           </div>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className='mx-3'>
-          <div>
+          <div id="education">
             <span className='text-2xl font-semibold text-white my-auto'>Education</span>
             <p className="text-sm text-white">(Add from top to bottom hierarchy)</p>
             <form onSubmit={addNewEducation} className="flex flex-col">
@@ -407,7 +425,7 @@ export default function Profile() {
                 {message2 && <p className='text-red-400 text-sm'>*Leaving date must be greater than joining date</p>}
                 </div>
                 </div>
-                <Button disabled={message2?true:false} bordered color="primary" css={{mx:"auto",mt:"30px",width:"fit-content"}} type='submit'>ADD</Button>
+                <Link href="#education"><Button disabled={disability4 && message2?true:false} bordered color="primary" css={{mx:"auto",mt:"30px",width:"fit-content"}} type='submit'>ADD</Button></Link>
                 </form>
             {/* <Popover isBordered disableShadow type PopoverPlacement ="right">
               <Popover.Trigger>
@@ -471,7 +489,7 @@ export default function Profile() {
                 <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Working Links </label>
                 <Input  css={{pr:"$4",mb:"$6"}} placeholder='Enter link'/>
                 </div>
-                <Button bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'>ADD</Button>
+                <Button bordered color="primary" disabled={disability3?true:false} css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'>ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow>
               <Popover.Trigger>
@@ -540,7 +558,7 @@ export default function Profile() {
                 {message3 && <p className='text-red-400 text-sm'>*Leaving date must be greater than joining date</p>}
                 </div>
                 </div>
-                <Button disabled={message3?true:false} bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'>ADD</Button>
+                <Button disabled={message3 && disability2?true:false} bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'>ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow>
               <Popover.Trigger>
@@ -588,7 +606,7 @@ export default function Profile() {
             <p className="text-sm text-white">(List all of your achievements)</p>
             <form onSubmit={addNewAchievement} className="flex flex-col">
                 <Textarea  css={{pr:"$4",mt:"$4"}} rows={5} placeholder="Enter your achievements"/>
-                <Button bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'> ADD</Button>
+                <Button disabled={disability1?true:false} bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'> ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow>
               <Popover.Trigger>
@@ -615,11 +633,6 @@ export default function Profile() {
         </div>
         </div>
       </section>
-      {message && <div className="px-10 py-2 text-center textform rounded-xl my-3 bg-white text-white">Please add atleast 1 Education, 1 Experience and 1 Project</div>}
-      <a href="#"><button className='mt-5 bg-white rounded-md px-5 py-1 text-blue-500' onClick={handleSubmit}>Submit</button></a>
-    </div>:<div className='mb-20'>
-    <img className="mt-16 mb-6" width="400" src="/assets/images/submitted.gif" alt="submitted"></img>
-    <div className="text-center my-50 text-4xl text-sky-600 textform mb-16">Resume Sent Successfully</div>
     </div>
   );
 }

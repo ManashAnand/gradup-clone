@@ -1,6 +1,6 @@
 "use client"
 import * as React from 'react';
-import {Link} from 'next/link';
+import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -17,13 +17,13 @@ import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import TaskAltTwoToneIcon from '@mui/icons-material/TaskAltTwoTone';
 import {useState} from "react"
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)'}}
-  >
-  </Box>
-);
+// const bull = (
+//   <Box
+//     component="span"
+//     sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)'}}
+//   >
+//   </Box>
+// );
 
 
 export default function CompleteHackathon({post,display,setDisplay,display1,setDisplay1}) {
@@ -34,7 +34,7 @@ export default function CompleteHackathon({post,display,setDisplay,display1,setD
     console.log("From complete hackathon", post);
     if(post==null)return (<></>)
   return (
-    <Box sx={{minWidth:"35vw",marginTop:"10px",marginBottom:"4rem",display:display,marginX:"auto",marginRight:"6vw"}}>
+    <Box sx={{minWidth:"35vw",marginTop:"10px",marginBottom:"4rem",display:display,marginX:"auto",marginRight:"6vw",textAlign:"left"}}>
       <Card>
       <React.Fragment>
       <CardMedia
@@ -43,7 +43,7 @@ export default function CompleteHackathon({post,display,setDisplay,display1,setD
         title="Hackathon"
       />
     <CardContent>
-      <Typography sx={{color:"darkslateblue"}} variant="h6" component="div">
+      <Typography sx={{color:"darkslateblue"}} component="div">
         <ViewModuleIcon color="primary" fontSize='small'/> {post.title}
       </Typography>
       <Typography sx={{ fontSize: 13,marginLeft:"2.6vw",color:"purple" }} gutterBottom>
@@ -52,13 +52,13 @@ export default function CompleteHackathon({post,display,setDisplay,display1,setD
       <Typography sx={{fontSize: 13, mb: 1.5,marginLeft:"2.7vw",color:"purple" }}>
         <AccessTimeIcon fontSize='small' color="action"/> Register by {post.registerEndDate}
       </Typography>
-      <Typography sx={{color:"darkslateblue"}} variant="h6">
+      <Typography sx={{color:"darkslateblue"}}>
        <DescriptionTwoToneIcon fontSize='small' color="primary"/> Description
       </Typography>
       <Typography sx={{ fontSize: 13,mb: 1.5,marginLeft:"2.7vw",color:"purple" }}>
         <TaskAltTwoToneIcon fontSize='small' color="action"/> {post.description}
       </Typography>
-      <Typography sx={{color:"darkslateblue"}} variant="h6">
+      <Typography sx={{color:"darkslateblue"}}>
         <CurrencyRupeeIcon fontSize='small' color="primary"/> Rewards
       </Typography>
       <Typography sx={{fontSize: 13, mb: 1.5,marginLeft:"2.7vw",color:"purple" }}>
@@ -80,9 +80,9 @@ export default function CompleteHackathon({post,display,setDisplay,display1,setD
       </Typography>
     </CardContent>
     <CardActions sx={{float:"right"}}>
-      <Button sx={{marginBottom:"2vh"}}  variant="contained" onClick={handleClick} size="small">Back</Button>
+      <Button sx={{marginBottom:"2vh",marginRight:"1vw"}} variant="outlined" color="primary" onClick={handleClick} size="small">Back</Button>
       <Link href={post.link}>
-        <Button sx={{marginRight:"2vw",marginBottom:"2vh"}} variant="contained" color="secondary" size="small">Apply</Button>
+        <Button sx={{marginRight:"2vw",marginBottom:"2vh"}} variant="outlined" color="secondary" size="small">Apply</Button>
       </Link>
     </CardActions>
   </React.Fragment>

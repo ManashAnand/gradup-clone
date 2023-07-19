@@ -137,8 +137,8 @@ export const POST = async(request, { params }) => {
                     location: data.location,
                     title: data.title,
                     skills: data.skills,
-                    startYear: data.startYear,
-                    endYear: data.startDate,
+                    startDate: data.startDate,
+                    endDate: data.endDate,
                     description:data.description,
                 });
                 await currentUser.save()

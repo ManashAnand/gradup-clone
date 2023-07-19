@@ -42,6 +42,8 @@ const Project = ({ projectName, skillsUsed, projectDes, projectLinks, id }) => {
     }
   }
   const deleteProject = async () => {
+    window.location.reload();
+    window.scrollTo(0,0)
     // e.preventDefault();
     // console.log(e.target[0].value);
     try {

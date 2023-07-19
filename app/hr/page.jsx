@@ -7,7 +7,6 @@ import { Grid, Card, Col, Text } from "@nextui-org/react";
 const fetcher = async (...args) => await fetch(...args).then((res) => res.json());
 const HR = () => {
   const { data: session } = useSession();
-  console.log("Form Submittedddddd", session?.user)
   return (
     <div>
       <p className='text-white text-xl text-center mt-10'>Name : {session?.user.name}</p>

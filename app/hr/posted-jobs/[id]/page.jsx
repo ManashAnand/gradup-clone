@@ -10,33 +10,17 @@ import {useState,useEffect} from "react"
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 export default function Page({params}){
   const [index,setIndex]=useState(1)
-  console.log(params)
     const [status,setStatus]=useState(true)
     const [pos,setPos]=useState(0)
   const { data: session } = useSession();
   function handleClick(i){
     setStatus(true)
     setPos(i)
-    console.log(data[i])
   }
-  // async function fetch_data(){
-  //   let data=await fetch(`/api/hr/${session?.user.id}/postedJob/${params.id}?page=1`)
-  //   let parsedData=await data.json()
-  //   setProfiledata(parsedData)
-  //   console.log(parsedData)
-  //   setEducation(parsedData.education)
-  //   setExperience(parsedData.experience)
-  //   setProjects(parsedData.projects)
-  //   setAchievement(parsedData.achievement)
-  //   }
-  //   useEffect(()=>{
-  //     fetch_data()
-  //   },[])
   const { data, error } = useSWR( `/api/hr/${session?.user.id}/postedJob/${params.id}?page=${index}`, fetcher)
   // ... handle loading and error states
   if (error) return <div className='text-white  text-center mx-auto my-20'>Some Error Occured!! Please try again</div>;
   if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;
-  console.log("data come isssssssssssssssssssssssssssss",data);
   const createPDF = async(index) => {   
     const pdf=document.getElementById("profile")
     let dataprofile=await data

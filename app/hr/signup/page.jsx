@@ -60,11 +60,13 @@ export default function HRSignup() {
   async function main() {
     try {
       const base64String = await imageUploaded();
-      console.log(base64String);
       setImageurl(base64String)
     } catch (error) {
       console.error(error);
     }
+  }
+  function handleSubmit(){
+    window.scrollTo(0,0);
   }
   function handleChange(e){
     setEmaildata(e.target.value)
@@ -78,7 +80,6 @@ export default function HRSignup() {
     }
   },[emaildata])
   const { data: session } = useSession();
-  console.log(data)
   // useEffect(()=>{
   //   data?.role==="HR"?router.push("/hr"):""
   // })
@@ -88,7 +89,6 @@ export default function HRSignup() {
   const addHR = async (e) => {
     e.preventDefault();
     // setIsSubmitting(true);
-    console.log("Form Submittedddddd", session?.user.id);
     try {
       const response = await fetch(`/api/verify/${session?.user.id}`, {
         method: "POST",
@@ -101,9 +101,7 @@ export default function HRSignup() {
           otp: "1234"
         }),
       });
-      console.log(response.status);
       vari = response.status;
-      console.log(vari)
       if (response.status == 201) {
         router.push('/hr')
         setPosted(true)
@@ -114,7 +112,6 @@ export default function HRSignup() {
         setErr(true)
       }
     } catch (error) {
-      console.log(error);
     } finally {
       // setIsSubmitting(false);
       // 
@@ -219,7 +216,7 @@ export default function HRSignup() {
               <></>
             )} */}
             <div className="mt-2">
-              <button type="submit" disabled={message?true:false} className=" py-2 w-full textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl">
+              <button type="submit" onClick={handleSubmit} disabled={message?true:false} className=" py-2 w-full textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl">
                 Submit
               </button>
             </div>

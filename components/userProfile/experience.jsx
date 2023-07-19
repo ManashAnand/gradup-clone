@@ -29,8 +29,8 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
               id:id,
               companyName:experience.companyName, 
               location:experience.location, 
-              startDate:experience.startDate,
-              endDate:experience.endDate,
+              startDate:startDate,
+              endDate:endDate,
               title:experience.title, 
               skills:experience.skills,
               description:experience.description,
@@ -45,6 +45,8 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
       }
   }
   const deleteExperience=async ()=>{
+    window.location.reload();
+    window.scrollTo(0,0)
       // e.preventDefault();
       // console.log(e.target[0].value);
       try {
@@ -69,8 +71,8 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
         <div className="px-3 py-3 rounded-2xl text-white resumedatabox bg-sky-700 text-center mt-6 mx-auto">
         <Input labelLeft="Company" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.companyName} onChange={(e)=>setExperience({...experience,companyName:e.target.value})}/>
         <Input labelLeft="Location" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.location} onChange={(e)=>setExperience({...experience,location:e.target.value})}/>
-        <Input labelLeft="Start Date" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.startDate} onChange={(e)=>setExperience({...experience,startDate:e.target.value})}/>
-        <Input labelLeft="End Date"css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.endDate} onChange={(e)=>setExperience({...experience,endDate:e.target.value})}/> 
+        <Input labelLeft="Start Date" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.startDate.split("T")[0]} onChange={(e)=>setExperience({...experience,startDate:e.target.value})}/>
+        <Input labelLeft="End Date"css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.endDate.split("T")[0]} onChange={(e)=>setExperience({...experience,endDate:e.target.value})}/> 
         <Input labelLeft="Title" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.title} onChange={(e)=>setExperience({...experience,title:e.target.value})}/>
         <Input labelLeft="Skills" css={{mt:"$4",width:"stretch",mb:"$4",height:"35px"}} initialValue={experience.skills} onChange={(e)=>setExperience({...experience,skills:e.target.value})}/>
         <Textarea css={{mt:"$4",width:"stretch",height:"fit-content" ,mb:"$4"}} initialValue={experience.description} onChange={(e)=>setExperience({...experience,description:e.target.value})}/>

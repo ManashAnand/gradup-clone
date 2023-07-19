@@ -40,6 +40,8 @@ const Achievement = ({achievementName,id}) => {
       }
   }
   const deleteAchievement=async ()=>{
+    window.location.reload();
+    window.scrollTo(0,0)
       // e.preventDefault();
       // console.log(e.target[0].value);
       try {

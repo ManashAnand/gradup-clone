@@ -43,7 +43,10 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
             
         }
     }
-    const deleteEducation=async ()=>{
+    const deleteEducation=async (event)=>{
+      console.log(event)
+      window.location.reload();
+      window.scrollTo(0,0)
         // console.log(e.target[0].value);
         try {
           

@@ -139,14 +139,14 @@ export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, searc
           loading={loading}
         />
       </div>
-      {jobs.length>0?<div className="flex buttonpos">
+      <div className="flex buttonpos ml-2">
         <button style={{backgroundColor:"#0076ce",opacity:opacity1}} disabled={index===1?true:false} class="btn2" onClick={() => setPage(index - 1)}>
           Prev
         </button>
         <button style={{backgroundColor:"#0076ce",opacity:opacity2}} disabled={jobs.length<6?true:false} class="btn3" onClick={() => setPage(index + 1)}>
           Next
         </button>
-      </div>:""}
+      </div>
     </div>
   );
 }
