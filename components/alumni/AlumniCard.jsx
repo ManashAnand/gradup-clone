@@ -11,8 +11,8 @@ export default function AlumniCard({data}) {
           className="rounded-full mb-4"
           alt="nextui logo"
           src={data.profilePhoto}
-          width="120px"
-          height="120px"
+          width="100px"
+          height="100px"
         />
         <Grid.Container css={{ pl: "$6" }}>
           <Grid xs={12} css={{display:"flex",justifyContent:"center"}}>
@@ -25,9 +25,9 @@ export default function AlumniCard({data}) {
       <Card.Body css={{ py: "$5",mt:"$4",fontSize:"$xs"}}>
         <Text css={{marginLeft:"$6",display:"flex",justifyContent:"space-evenly"}}>
           <div>
-          <BusinessIcon color="primary" sx={{marginBottom:"5px"}}/> GradUp {data.companyName} <br /></div>
+          <BusinessIcon color="primary" sx={{marginBottom:"5px"}}/>{data.companyName} <br /></div>
           <div>
-          <PhoneAndroidIcon color="primary" sx={{marginBottom:"5px"}}/> +91-94********
+          <PhoneAndroidIcon color="primary" sx={{marginBottom:"5px"}}/> 
           </div>
         </Text>
       </Card.Body>

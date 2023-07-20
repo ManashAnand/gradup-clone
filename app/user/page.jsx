@@ -323,6 +323,9 @@ export default function Profile() {
             })
           });
           console.log(response.status);
+          if(response.status===201){
+            alert("You are added as an alumni")
+          }
         }catch(error){
           console.log(error);
         }finally{
@@ -362,7 +365,7 @@ export default function Profile() {
           <Link href='/user/applications' className='mt-7'>
             <button className='py-2 px-5 bg-blue-500 text-white rounded-md'>Your Applications</button>
           </Link>
-          <Link href="">
+          <Link href="/alumni-network">
           <button className=' py-2 px-5 bg-blue-500 text-white rounded-md mt-7' onClick={beAlumni}>Enter Alumni</button>
           </Link>
           {/* <p className='desc text-left'>{data.email}</p> */}

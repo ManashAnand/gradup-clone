@@ -1,20 +1,21 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import {useSession} from "next-auth/react";
 import useSWR from "swr";
 import AlumniCard from "./AlumniCard";
 import Spinner from "@components/Spinner"
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const AlumniShow = ({ selectedCollege }) => {
+const AlumniShow = ({data}) => {
   const [alumniData, setAlumniData] = useState([]);
+  const [collegeName,setcollegeName]=useState("")
+
   const [loading,setLoading]=useState(true)
-  var ourData;
   useEffect(() => {
-    fetch("http://gradup.in/api/alumni", {
+    fetch("/api/alumni", {
       method: "POST",
       body: JSON.stringify({
-        collegeName: selectedCollege,
-        college: "NIT Raipur",
+        college:data?data.education[0].collegeName:"",
       }),
     })
       .then((response) => {
@@ -31,13 +32,16 @@ const AlumniShow = ({ selectedCollege }) => {
       })
       .finally(() => {});
   }, []);
+  console.log(collegeName)
   return (
+    <>
+    {loading && <Spinner/>}
     <div className="alumnicardcontainer px-4 rounded-xl">
-      {loading && <Spinner/>}
       {alumniData.map((d) => (
         <AlumniCard data={d} />
       ))}
     </div>
+    </>
   );
   //   const [alumniData, setAlumnniData] = useState(null);
   //   const [loading, setLoading] = useState(true);
