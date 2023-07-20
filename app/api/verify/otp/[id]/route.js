@@ -30,14 +30,12 @@ function sendSMS(apikey, numbers, sender, message) {
   })
   .then(function(response) {
     if (response.ok) {
-      console.log("MESSAGE SENT");
       return response.text();
     } else {
       throw new Error('An error occurred');
     }
   })
   .then(function(responseText) {
-    console.log("This is the Response Text",responseText);
   })
   .catch(function(error) {
     console.error("This is the error.",error);
@@ -71,7 +69,6 @@ function sendSMS(apikey, numbers, sender, message) {
         }
         return new Response("Params not Defined in OTP Verification", { status: 500 })
     } catch (error) {
-        console.log(error);
         return new Response("Failed to get User Details in HR Verification" + error.toString() +params.id.toString(), {
             status: 500
         })
@@ -92,7 +89,6 @@ export const GET = async(req, { params }) => {
       }
       return new Response("Error", { status: 500 })
   } catch (error) {
-      console.log(error);
       return new Response("Failed to get User Details in HR Verification" + error.toString() +params.id.toString(), {
           status: 500
       })

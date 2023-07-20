@@ -57,7 +57,6 @@ export const GET = async(request, { params }) => {
 
         return new Response(JSON.stringify(data), { status: 201 })
     } catch (error) {
-        console.log(error);
         return new Response("Failed to get Admin-access Details", {
             status: 500
         })

@@ -32,8 +32,6 @@ export const POST = async(request) => {
          });
 
         const addedObj = await newJob.save();
-        console.log("11111111111")
-        console.log("2222222222222")
         currentHR.posts.push({
             title:addedObj.title,
             status:true,
@@ -41,10 +39,8 @@ export const POST = async(request) => {
             _id:addedObj._id,
         })
         await currentHR.save();
-        console.log("3333333333333")
         return new Response("New Job Added", { status: 201 })
     } catch (error) {
-        console.log("Error in Job Posting",error);
         return new Response("Failed to create a new prompt", { status: 500 });
     }
 }

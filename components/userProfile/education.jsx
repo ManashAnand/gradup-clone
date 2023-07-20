@@ -35,16 +35,13 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
                 endYear:endYear,
               }),
             });
-            console.log(response.status)
             setIsUpdating(0);
         }catch (error) {
-            console.log(error);
         }finally {
             
         }
     }
     const deleteEducation=async (event)=>{
-      console.log(event)
       window.location.reload();
       window.scrollTo(0,0)
         // console.log(e.target[0].value);
@@ -56,9 +53,7 @@ const Education = ({collegeName,degreeName,branch,grade,startYear,endYear,id}) =
               id:id,
             }),
           });
-          console.log(response.status)
         } catch (error) {
-          console.log(error);
         } finally {
           
         }

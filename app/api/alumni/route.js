@@ -15,7 +15,6 @@ export const POST = async(request, { params }) => {
         }).select("name profilePhoto");
         return new Response(JSON.stringify(alumni), { status: 201 })
     } catch (error) {
-        console.log(error);
         return new Response("Failed to get Alumni Details", {
             status: 500
         })

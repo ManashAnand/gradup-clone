@@ -18,7 +18,6 @@ export const GET = async(req,{params}) => {
         // const a=await Job.find();
         // console.log("aaa ",a);
         // category=Microsoft;
-        console.log(pageNumber,intern,startup,"Details of job here")
         const userDetails=await Job.aggregate
         ([
             {
@@ -38,7 +37,6 @@ export const GET = async(req,{params}) => {
         return new Response(JSON.stringify(userDetails),{status:201})
     }
     catch(error){
-        console.log(error);
         return new Response(error,{
             status:500
         })

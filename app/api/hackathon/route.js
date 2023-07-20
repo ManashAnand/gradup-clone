@@ -19,7 +19,6 @@ export const GET = async(req, { params }) => {
         const hackathonDetails = await Hackathon.find({});
         return new Response(JSON.stringify(hackathonDetails), { status: 201 })
     } catch (error) {
-        console.log(error);
         return new Response("Failed to get Hackathon Details", {
             status: 500
         })

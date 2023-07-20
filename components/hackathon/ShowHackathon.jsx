@@ -20,7 +20,6 @@ const ShowHackathon = ({ setHackathon,display,setDisplay,display1,setDisplay1 })
   if (error) return <div>Failed to loadinggggggg</div>;
   if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;
   const posts = data;
-  console.log("INSIDE SHOW HACKATHON")
   return (
     <div className="mx-auto">
       <div className=" hackathons">

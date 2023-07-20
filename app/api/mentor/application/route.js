@@ -13,10 +13,8 @@ export const POST = async(request) => {
          });
 
         const addedObj = await newApplication.save();
-        console.log(addedObj)
         return new Response("New application for mentor created", { status: 201 })
     } catch (error) {
-        console.log("Error is this",error);
         return new Response("Failed to create a new application for mentor", { status: 500 });
     }
 }

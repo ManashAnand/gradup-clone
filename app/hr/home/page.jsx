@@ -42,7 +42,6 @@ const HRHome = () => {
 
     //     setMyPosts(filteredPosts);
     //   } catch (error) {
-    //     console.log(error);
     //   }
     // }
   };

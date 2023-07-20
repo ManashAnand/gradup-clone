@@ -86,7 +86,6 @@ export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, searc
   const fetchData = async() =>{
 
     try {
-      console.log("Cities Selected: ",selectedCity,"Title Selected: ",selectedTitle,"Page No:",index);
     const response = await fetch(`/api/jobs/filter`, {
       method: "POST",
       body: JSON.stringify({
@@ -98,13 +97,10 @@ export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, searc
         page:index
       }),
     });
-    console.log(response.status)
     const newData = await response.json();
     setJobs(newData);
     setLoading(false)
-    console.log(newData,"Data is here");
     }   catch (error) {
-        console.log(error);
       } 
   }
   useEffect(()=>{

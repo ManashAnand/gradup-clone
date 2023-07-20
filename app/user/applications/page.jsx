@@ -72,7 +72,6 @@ export default function App() {
   if (error) return <div>userFailed to loadinggggggg</div>;
   if (!data) return <div className="my-60"><Spinner/></div>;
   let user=data
-  console.log("mohit",user);
   return (
     <div className='w-full mt-10'>
       <div className="justify-center flex-center">

@@ -7,7 +7,6 @@ import Spinner from "@components/Spinner"
 const page = () => {
     const { data: session } = useSession();
     const [status,setStatus]=useState(false)
-    console.log(session?.user.email)
     useEffect(()=>{
         session?.user.email=="tanmayrajr@gmail.com"?setStatus(true):setStatus(false)
     },[session?.user.email])
@@ -17,7 +16,6 @@ const page = () => {
       );
       if (error) return <div>Failed to loadinggggggg</div>;
       if (!data) return <div className="my-60"><Spinner/></div>;
-      console.log(data);
   return (
     status?<div className="text-white my-20 flex flex-col items-center justify-center">
         <div className="flex justify-center m-auto">

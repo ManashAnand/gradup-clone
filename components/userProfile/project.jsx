@@ -20,7 +20,6 @@ const Project = ({ projectName, skillsUsed, projectDes, projectLinks, id }) => {
 
   const updateProject = async (e) => {
     // e.preventDefault();
-    console.log("Ajjajajajajajjjajajajaj");
     setIsUpdating(2);
     try {
       const response = await fetch(`/api/user/${session?.user.id}/?type=project&action=update`, {
@@ -33,10 +32,8 @@ const Project = ({ projectName, skillsUsed, projectDes, projectLinks, id }) => {
           projectLinks: project.projectLinks,
         }),
       });
-      console.log(response.status)
       setIsUpdating(0);
     } catch (error) {
-      console.log(error);
     } finally {
 
     }
@@ -53,9 +50,7 @@ const Project = ({ projectName, skillsUsed, projectDes, projectLinks, id }) => {
           id: id,
         }),
       });
-      console.log(response.status)
     } catch (error) {
-      console.log(error);
     } finally {
 
     }

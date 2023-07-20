@@ -27,7 +27,6 @@ export const GET = async(req, { params }) => {
         // console.log("Quiz", QuizDetails);
         return new Response(JSON.stringify(QuizDetails), { status: 201 })
     } catch (error) {
-        console.log(error);
         return new Response("Failed to get Hackathon Details"+error, {
             status: 500
         })

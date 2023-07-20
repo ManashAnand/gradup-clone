@@ -54,7 +54,6 @@ const handler = NextAuth({
                 }
                 return true;
             }catch(error){
-                console.log("Error while signin", error.message);
             }
         }
     }

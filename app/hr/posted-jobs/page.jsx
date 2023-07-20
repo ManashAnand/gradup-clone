@@ -36,7 +36,6 @@ export default function App() {
   if (error) return <div><LoginAlert /></div>;
   if (!data) return <div className='my-60 mx-auto'><Spinner /></div>;
   // const data=getData(url);
-  // console.log(data,"datashow111111111111111111111111111");
   const columns = [
     { name: "Title", uid: "title" },
     { name: "Total Applicants", uid: "impression" },

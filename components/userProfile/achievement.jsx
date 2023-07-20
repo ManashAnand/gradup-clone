@@ -31,10 +31,8 @@ const Achievement = ({achievementName,id}) => {
               achievementName:achievement.achievementName,
             }),
           });
-          console.log(response.status)
           setIsUpdating(0);
       }catch (error) {
-          console.log(error);
       }finally {
           
       }
@@ -51,9 +49,7 @@ const Achievement = ({achievementName,id}) => {
             id:id,
           }),
         });
-        console.log(response.status)
       } catch (error) {
-        console.log(error);
       } finally {
         
       }

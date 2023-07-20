@@ -20,7 +20,6 @@ export const POST = async(request, { params }) => {
             const HRExists = await HR.findOne({
                 email:currUserEmail
             });
-            console.log("here is response searched HR",params.id,currUserEmail, HRExists);
             if(!HRExists){
                 await HR.create({
                     _id:params.id,
@@ -38,7 +37,6 @@ export const POST = async(request, { params }) => {
         }
         return new Response("Error message while making HR ", { status: 500 })
     } catch (error) {
-        console.log(error);
         return new Response("Failed to get User Details in HR Verification " + error.toString(), {
             status: 500
         })

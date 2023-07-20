@@ -11,8 +11,6 @@ export const GET = async(req,res) => {
         return new Response(JSON.stringify(userDetails),{status:201})
     }
     catch(error){
-        console.log("Error found")
-        console.log(error);
         return new Response("Failed to get prompt",{
             status:500
         })

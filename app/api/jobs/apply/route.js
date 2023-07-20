@@ -52,9 +52,7 @@ export const POST = async(request) => {
         );
         return new Response(JSON.stringify(newApplication), { status: 201 })
     } catch (error) {
-        console.log(error);
         return new Response("Failed to create a new prompt", { status: 500 });
     } finally {
-        console.log(currentUser);
     }
 }

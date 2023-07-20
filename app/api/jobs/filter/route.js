@@ -13,7 +13,6 @@ export const POST = async (request, { params }) => {
         let intern = data.intern === "true" ? true : false;
         let startup = data.startup === "true" ? true : false;
         var currentDate = new Date();
-        console.log(currentDate);
         var query = {};
         query.isIntern=intern
         query.isStartUp=startup
@@ -26,7 +25,6 @@ export const POST = async (request, { params }) => {
         return new Response(JSON.stringify(JobDetails),{status:201})
     }
     catch(error){
-        console.log(error);
         return new Response(error,{
             status:500
         })

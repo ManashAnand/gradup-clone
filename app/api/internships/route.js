@@ -11,7 +11,6 @@ export const GET = async(req,{params}) => {
         const search=new URL(req.url).search;
         const urlParams=new URLSearchParams(search);
         pageNumber = urlParams.get('page');
-        console.log("page number is ", pageNumber);
         await connectToDB();
         // for getting only the array of objects we can use . find method but we will use aggregate so that we can do more operation
         // const a=await Job.find();
@@ -39,7 +38,6 @@ export const GET = async(req,{params}) => {
         return new Response(JSON.stringify(userDetails),{status:201})
     }
     catch(error){
-        console.log(error);
         return new Response("Failed to get User Details",{
             status:500
         })

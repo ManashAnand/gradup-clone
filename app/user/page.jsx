@@ -143,7 +143,6 @@ export default function Profile() {
     data.value!=="Others"?setcollegeName(data.value):setcollegeName("")
     data.value==="Others"?setOneField(true):setOneField(false)
     setCollegedata(data)
-    console.log(collegeName)
   }
   function handlenewCollegename(e){
     setcollegeName(e.target.value)
@@ -192,12 +191,10 @@ export default function Profile() {
     endYear: "",
     currentlyStudying: ""
     }
-    console.log("Adding new edu")
     data.education.push(newEdu)
   }
   if (error) return <div></div>;
   if (!data) return <div className="my-60"><Spinner/></div>;
-  console.log("ajay", data);
       // useEffect(()=>{
       //   const fetchData = async () =>{
       //     const d = await fetch(`/api/user/${session?.user.id}`)
@@ -227,7 +224,6 @@ export default function Profile() {
       const addNewEducation=async (e)=>{
         e.preventDefault()
         setDisability4(true)
-        // console.log("ye id aii ", session?.user.id);
         try {
           const response = await fetch(`/api/user/${session?.user.id}/?type=education&action=create`, {
             method: "POST",
@@ -240,13 +236,11 @@ export default function Profile() {
               endYear:!onefield?e.target[5].value:e.target[6].value,
             }),
           });
-          console.log(response.status)
           response.status===201?window.location.reload():""
           response.status===500?alert("Education not added"):""
           response.status===201?alert("Education added successfully"):""
           setDisability4(false)
         } catch (error) {
-          console.log(error);
         } finally {
           
         }
@@ -261,7 +255,6 @@ export default function Profile() {
       const addNewProject=async (e)=>{
         e.preventDefault();
         setDisability3(true)
-        console.log(e.target[0].value);
         try {
           const response = await fetch(`/api/user/${session?.user.id}/?type=project&action=create`, {
             method: "POST",
@@ -272,13 +265,11 @@ export default function Profile() {
               projectLinks:e.target[3].value,
             }),
           });
-          console.log(response.status)
           response.status===201?window.location.reload():""
           response.status===500?alert("Project not added"):""
           response.status===201?alert("Project added successfully"):""
           setDisability3(false)
         } catch (error) {
-          console.log(error);
         } finally {
           
         }
@@ -287,7 +278,6 @@ export default function Profile() {
       const addNewExperience=async (e)=>{
         e.preventDefault()
         setDisability2(true)
-        console.log(e.target[0].value);
         try {
           const response = await fetch(`/api/user/${session?.user.id}/?type=experience&action=create`, {
             method: "POST",
@@ -301,13 +291,11 @@ export default function Profile() {
               endDate:e.target[6].value,
             }),
           });
-          console.log(response.status)
           response.status===201?window.location.reload():""
           response.status===500?alert("Experience not added"):""
           response.status===201?alert("Experience added successfully"):""
           setDisability2(false)
         } catch (error) {
-          console.log(error);
         } finally {
         }
       }
@@ -322,12 +310,10 @@ export default function Profile() {
               data:"aaa"
             })
           });
-          console.log(response.status);
           if(response.status===201){
             alert("You are added as an alumni")
           }
         }catch(error){
-          console.log(error);
         }finally{
 
         }
@@ -338,7 +324,6 @@ export default function Profile() {
         setDisability1(true)
         e.preventDefault()
         window.scrollTo(0,0)
-        console.log(e.target[0].value);
         try {
           const response = await fetch(`/api/user/${session?.user.id}/?type=achievement&action=create`, {
             method: "POST",
@@ -346,13 +331,11 @@ export default function Profile() {
               achievementName:e.target[0].value,
             }),
           });
-          console.log(response.status)
           response.status===201?window.location.reload():""
           response.status===500?alert("Achievement not added"):""
           response.status===201?alert("Achievement added successfully"):""
           setDisability1(false)
         } catch (error) {
-          console.log(error);
         } finally {
           
         }

@@ -143,7 +143,6 @@ const FilterJobs = ({
   // };
 
   function handleCity(data) {
-    console.log("City Name",data);
     var arr=[]
     data.forEach(element => {
       arr.push(element.value);

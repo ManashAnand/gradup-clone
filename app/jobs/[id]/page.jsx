@@ -10,19 +10,15 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 function Page ({ id }) {
   const { data, error } = useSWR( `/api/jobs/${id}`, fetcher)
   // ... handle loading and error states
-  console.log("abbbbbbbbbbbbbbb",data);
   if (error) return <div>Failed to loadinggggggg job data</div>;
   if (!data) return <div className="my-60 mx-auto"><Spinner/></div>;
-  console.log(data.record);
   const jobs=data
   // let perksdata=jobs.perks[0].split(/[\n](\d+)[.]/).filter((ele,i)=>{
   //   return ele.length>0 && isNaN(ele)===true}).map((item,i)=>{
   //    return item})
-  //    console.log(perksdata,"perks")
      let descriptiondata=jobs.description.split(/[\n](\d+)[.]/).filter((ele,i)=>{
       return ele.length>0 && isNaN(ele)===true}).map((item,i)=>{
        return item})
-      console.log(descriptiondata,"describe")
 //  let eligibilitydata=jobs.eligiblilty[0].split(/[\n](\d+)[.]/).filter((ele,i)=>{
 //     return ele.length>0 && isNaN(ele)===true}).map((item,i)=>{
 //       return item})

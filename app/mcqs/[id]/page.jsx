@@ -7,16 +7,13 @@ import Link from "next/link";
 import { useState,useEffect } from "react";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const page = ({params}) => {
-  console.log(params.id)
   const [que,setQue]=useState([])
   const [current,setCurrent]=useState("")
   const [message1,setMessage1]=useState(false)
   const [message2,setMessage2]=useState(false)
   function handleClick(position,index,ans){
-    console.log(position)
     setCurrent(position);
     index+1===ans? setMessage1(true):setMessage2(true)
-    console.log(current)
   }
   const { data, error } = useSWR( `/api/mcq/${params.id}`, fetcher);
   // useEffect(()=>{
@@ -35,7 +32,6 @@ const page = ({params}) => {
   // ... handle loading and error states
   if (error) return <div>Failed to loadinggggggg job data</div>;
   if (!data) return <div className="mx-auto my-60"><Spinner/></div>;
-  console.log(data)
   return (
     <div className="mb-20 w-screen">
     <p className="text-4xl font-semibold animate-charcter text-center text-white textform mt-8 mb-12">{`Top ${data.title} MCQ's for practice`}</p>

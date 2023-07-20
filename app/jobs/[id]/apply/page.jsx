@@ -43,7 +43,6 @@ const page = ({params}) => {
             CTC:"post.expectedCTC",
           }),
         });
-        console.log(response.status)
        
       if(response.status==201){
         setSubmit(true)
@@ -60,7 +59,6 @@ const page = ({params}) => {
           setLoading(false)
         }
       } catch (error) {
-        console.log(error);
       } finally {
         // setIsSubmitting(false);
         // alert("Submitted");

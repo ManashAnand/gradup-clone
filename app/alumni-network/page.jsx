@@ -18,7 +18,6 @@ const page = () => {
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher)
   if (error) return <div></div>;
   if (!data) return <div className="my-60"><Spinner/></div>;
-  console.log("mohittttttttttttt", data);
   return (
     <>
       <div className="alumnitop w-full mt-6">

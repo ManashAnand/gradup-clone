@@ -36,10 +36,8 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
               description:experience.description,
             }),
           });
-          console.log(response.status)
           setIsUpdating(0);
       }catch (error) {
-          console.log(error);
       }finally {
           
       }
@@ -56,9 +54,7 @@ const Experience = ({companyName, location, startDate, endDate,title, skills,des
             id:id,
           }),
         });
-        console.log(response.status)
       } catch (error) {
-        console.log(error);
       } finally {
         
       }

@@ -19,20 +19,16 @@ const AlumniShow = ({data}) => {
       }),
     })
       .then((response) => {
-        console.log(response.status);
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setAlumniData(data);
         setLoading(false)
       })
       .catch((error) => {
-        console.log(error);
       })
       .finally(() => {});
   }, []);
-  console.log(collegeName)
   return (
     <>
     {loading && <Spinner/>}

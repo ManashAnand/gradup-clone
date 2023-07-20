@@ -19,9 +19,7 @@ export default function BeMentorWithUs() {
           email:e.target[3].value,
         }),
       });
-      console.log(response.status)
     }catch(error){
-      console.log(error," on be mentor api");
     }finally{
 
     }

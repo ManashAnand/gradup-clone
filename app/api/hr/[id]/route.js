@@ -11,7 +11,6 @@ export const GET = async(req, { params }) => {
         }
         return new Response("Error", { status: 500 })
     } catch (error) {
-        console.log(error);
         return new Response("Failed to get HR Details", {
             status: 500
         })

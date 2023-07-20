@@ -22,14 +22,12 @@ export const GET = async(req, { params }) => {
         let paginatedJobs;
         if (startIndex >= appliedCandiates.length) { paginatedJobs = []; } else { paginatedJobs = appliedCandiates.slice(startIndex, endIndex); }
         let appliedData = [];
-        console.log(paginatedJobs,"JObs applied")
         for(let i = 0; i<paginatedJobs.length; i++){
             const currUserData = await Application.findOne({_id:jobid+"_"+paginatedJobs[i]});
             appliedData.push(currUserData);
         }
         return new Response(JSON.stringify(appliedData), { status: 201 })
     } catch (error) {
-        // console.log(error);
         return new Response(error, {
             status: 500
         })

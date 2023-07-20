@@ -11,7 +11,6 @@ export const GET = async (request, { params }) => {
     // }
     try{
         await connectToDB();
-        console.log(params, "params in user")
         if(params.id!="undefined"){
         const userDetails = await Job.findOne({_id:new mongoose.Types.ObjectId(params.id)})
         return new Response(JSON.stringify(userDetails),{status:201})
@@ -19,7 +18,6 @@ export const GET = async (request, { params }) => {
         return new Response("Error",{status:500})
     }
     catch(error){
-        console.log(error);
         return new Response("Failed to get User Details",{
             status:500
         })
