@@ -15,7 +15,7 @@ const AlumniShow = ({data}) => {
     fetch("/api/alumni", {
       method: "POST",
       body: JSON.stringify({
-        college:data?data.education[0].collegeName:"",
+        college:data?(data.education.length>0?data.education[0].collegeName:""):(""),
       }),
     })
       .then((response) => {
