@@ -22,7 +22,7 @@ const Mentors = () => {
         {
             name: "Dharmendra Kumar",
             title:"IES Officer, 2019 Batch",
-            img:"/assets/mentors/mentor4compres.webp"
+            img:"/assets/mentors/mentor4new.jpg"
         },
         {
             name: "Mohit Agarwal",

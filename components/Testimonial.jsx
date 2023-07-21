@@ -59,7 +59,7 @@ const Testimonial = () => {
   ];
   return (
     <div>
-       <p className="text-center textnew text-white text-3xl font-bold marginset3">What <span className="text-red-400">our Students</span><br/>have to say ?</p>
+       <p className="text-center textnew text-white text-3xl font-bold marginset3">What <span className="text-red-400">our Interns</span><br/>have to say ?</p>
       <div className="w-full slideshow">
         <div style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }} className="slideshowSlider">
           {/* <div > */}
