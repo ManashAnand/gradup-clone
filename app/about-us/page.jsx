@@ -46,12 +46,12 @@ export default function About() {
           <div className={styles.contain2}>
             <Diversity2Icon sx={{ color: "deepskyblue", fontSize: "60px" }} />
             <p className="text-sky-400 text-center text-2xl mb-4 font-semibold">Our Solution</p>
-            <p className="text-center text-white">A comprehensive platform with user friendly interface,solving for internships,profile matching and simplifying the recruitment process.</p>
+            <p className="text-center text-white">A comprehensive platform with user friendly interface,solving for internships,profile matching jobs, upskilling courses and simplifying the recruitment process.</p>
           </div>
           <div className={styles.contain3}>
             <TravelExploreIcon sx={{ color: "deepskyblue", fontSize: "60px" }} />
             <p className="text-sky-400 text-2xl text-center mb-4 font-semibold">Our Vision</p>
-            <p className="text-center text-white">We want to make the Youth of India more employable and future ready.</p>
+            <p className="text-center text-white">We want to make the Youth of Bharat more employable and future ready.</p>
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@ export default function About() {
             </span>
          </div>
         <div className="p-6 textform text-justify">
-          <p className="text-white  mb-2" >Mr. Tanmay is a trailblazer, who is a 25 year young and budding entrepreneur whose meteoric rise from humble beginnings to becoming a well-known entrepreneur has been an inspiration to the students of the country. Failing consistently, being unable to face their fears, He couldn’t do what they wished for and unfortunately being at the lowest was their thing. Starting from scratch, he embraced the challenges that awaited him, transforming adversity into opportunity.  Now, this young and budding entrepreneur has also received the award for India’s Top 100 Emerging Entrepreneurs-2023 by Fox Story India! They had a trailblazing Journey from Ground Zero to Remarkable Heights.</p>
+          <p className="text-white  mb-2" >Mr. Tanmay is a trailblazer, who is a 25 years young and budding entrepreneur whose meteoric rise from humble beginnings to becoming a well-known entrepreneur has been an inspiration to the students of the country. Failing consistently, being unable to face their fears, He couldn’t do what they wished for and unfortunately being at the lowest was their thing. Starting from scratch, he embraced the challenges that awaited him, transforming adversity into opportunity.  Now, this young and budding entrepreneur has also received the award for India’s Top 100 Emerging Entrepreneurs-2023 by Fox Story India! They had a trailblazing Journey from Ground Zero to Remarkable Heights.</p>
           {/* <p className="text-white  mb-2">Coming from a family of educationists, our founder Mr Tanmay had the chance to interact with many students and parents. His interaction with the students helped him understand the most common problems faced by them  in their career initial phase of career after completing their degree. To provide a solution to this, GradUp (formerly, Attitude matterZ) was born.</p> */}
           <p className="text-white  mb-2">Tanmay is alumnus of NIT-IIM. He holds an Engineering degree, MBA degree and an Advanced degree in Digital Marketing & Entrepreneurship. Currently, He is pursuing Executive entrepreneurship Program at The Wharton School, University of Pennsylvania.</p>
           {/* <p className="text-white  mb-2">He has worked so hard despite facing several difficulties & being unvalued, still they manage to collaborate with some esteemed companies like PhonePe, Genpact, Toyota, LiuGong, Tata Steel Aashiyana, and PepsiCo (VBL) and has rich experience in framing digital marketing strategies for MSME clients.</p> */}
@@ -98,11 +98,10 @@ export default function About() {
       </div>
       {/* <img className='mx-auto mt-16 mb-16' src="/assets/images/certify.png" alt="certificate"></img> */}
       <p className='text-white text-center mb-6 textform text-3xl mt-5'>Founder's Message</p>
-      <p className='text-black text-xl textform mt-1 widthsetter m-auto bg-white rounded-2xl p-10'>" Thank you for considering GradUp as your go-to platform for internships. We're confident that our
+      <p className='text-black text-xl textform mt-1 widthsetter m-auto bg-white rounded-2xl p-10'>" Thank you for considering GradUp as your go-to platform for upskilling courses, internships, hackathons and jobs. We're confident that our
         comprehensive features and flexible pricing model make us the best choice for students and businesses alike.
         To take advantage of our platform, simply sign up for free and start exploring the many opportunities available
-        to you. If you have any questions or concerns, our dedicated support team is always available to help.
-        Join GradUp today and transform your dreams in the world of internships. "</p>
+        to you. If you have any questions or concerns, our dedicated support team is always available to help. Join GradUp today and transform your dreams into reality."</p>
       {/* <p className="text-white text-3xl underline decoration-yellow-300 underline-offset-8 text-center mt-12 mb-9">Recognized By :-</p>
       <div className='flex flex-wrap justify-center gapmedia'>
       <img className=' mb-16' width="300" src="/assets/images/dept.jpg"></img>

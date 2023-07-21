@@ -6,7 +6,7 @@ const Mentors = () => {
     const list = [
         {
             name: "Abhinaba Chakraborty",
-            title:"XLRI Jamshedpur - InsideIIM | P&G | XLRI | BIT MESRA  at Microsoft",
+            title:"XLRI Jamshedpur - Inside IIM | P&G | XLRI | BIT MESRA",
             img:"/assets/mentors/mentor1.webp"
         },
         // {
@@ -16,12 +16,12 @@ const Mentors = () => {
         // },
         {
             name: "Luv Saxena",
-            title:"Assistant Vice President- magicpin | IIT Roorkee | IIM Bangalore |",
+            title:'Assistant Vice President- magicpin | IIT Roorkee | IIM Bangalore | CAT Topper-2016',
             img:"/assets/mentors/mentor3compress.webp"
         },
         {
             name: "Dharmendra Kumar",
-            title:"IES Officer, 2019 Batch",
+            title:"IES Officer, 2019 Batch, AIR-87, NIT Calicut",
             img:"/assets/mentors/mentor4new.jpg"
         },
         {
