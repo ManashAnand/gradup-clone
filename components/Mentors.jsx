@@ -36,19 +36,19 @@ const Mentors = () => {
         // },
         {
             name: "Saumya Singh",
-            title:" Area Manager  , VBL-PespsiCo |  IMT Ghaziabad",
-            img:"/assets/mentors/mentor9.webp"
+            title:"NKAM, Streax |  IMT Ghaziabad",
+            img:"/assets/images/mentornew1.jpg"
         },
-        // {
-        //    name: "Pushkal Shukla",
-        //    title:"Adobe",
-        //    img: "/assets/mentors/mentor8.png"
-        // },
         {
           name:"130 + Mentors",
           title:"",
           img:"/assets/images/mentors.png"
         }
+        // {
+        //    name: "Pushkal Shukla",
+        //    title:"Adobe",
+        //    img: "/assets/mentors/mentor8.png"
+        // },
       ];
   return (
     <div className="background pt-10">

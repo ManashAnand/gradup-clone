@@ -39,43 +39,43 @@ const Footer = () => {
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
                   <a href="/jobs" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Jobs
+                  <span className= 'text-gray-200 font-black text-left'></span> Jobs
                   </a>
                 </li>
 
                 <li>
                   <a href="/courses" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Courses 
+                  <span className= 'text-gray-200 font-black text-left'></span> Courses 
                   </a>
                 </li>
 
                 <li>
                   <a href="/internships" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Internships
+                  <span className= 'text-gray-200 font-black text-left'></span> Internships
                   </a>
                 </li>
 
                 {/* <li>
                   <a href="/hr" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Publish Opportunity
+                  <span className= 'text-gray-200 font-black text-left'></span> Publish Opportunity
                   </a>
                 </li> */}
 
                 <li>
                   <a href="/about-us/our-services-content/career" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Career Services
+                  <span className= 'text-gray-200 font-black text-left'></span> Career Services
                   </a>
                 </li>
 
                 <li>
                   <a href="/for-startUps" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Startup Live Projects
+                  <span className= 'text-gray-200 font-black text-left'></span> Startup Live Projects
                   </a>
                 </li>
 
                 {/* <li>
                   <a href="/careers" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Careers
+                  <span className= 'text-gray-200 font-black text-left'></span> Careers
                   </a>
                 </li>
                  */}
@@ -88,37 +88,37 @@ const Footer = () => {
               <ul className="mt-6 space-y-4 text-sm">
               <li>
                   <a href="/blogs" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Blogs
+                  <span className= 'text-gray-200 font-black text-left'></span> Blogs
                   </a>
                 </li>
 
                 <li>
                   <a href="/mcqs" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Quizzes
+                  <span className= 'text-gray-200 font-black text-left'></span> Quizzes
                   </a>
                 </li>
 
                 <li>
                   <a href="/case-study" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Case Studies
+                  <span className= 'text-gray-200 font-black text-left'></span> Case Studies
                   </a>
                 </li>
 
                 <li>
                   <a href="/hackathons" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Hackathons
+                  <span className= 'text-gray-200 font-black text-left'></span> Hackathons
                   </a>
                 </li>
 
                 <li>
                   <a href="/alumni-network" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Alumni Network 
+                  <span className= 'text-gray-200 font-black text-left'></span> Alumni Network 
                   </a>
                 </li>
 
                 <li>
                   <a href="/alumni-network/manage" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Alumni Management Package
+                  <span className= 'text-gray-200 font-black text-left'></span> Alumni Management Package
                   </a>
                 </li>
               </ul>
@@ -129,36 +129,36 @@ const Footer = () => {
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
                   <a href="/about-us" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> About Us 
+                  <span className= 'text-gray-200 font-black text-left'></span> About Us 
                   </a>
                 </li>
 
                 <li>
                   <a href="Institutes-in-touch" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Institutes In Touch
+                  <span className= 'text-gray-200 font-black text-left'></span> Institutes In Touch
                   </a>
                 </li>
 
                 <li>
                   <a href="/about-us/privacy-policy" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Privacy Policy
+                  <span className= 'text-gray-200 font-black text-left'></span> Privacy Policy
                   </a>
                 </li>
 
                 <li>
                   <a href="/about-us/our-services-content" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Products & Services
+                  <span className= 'text-gray-200 font-black text-left'></span> Products & Services
                   </a>
                 </li>
                 <li>
                   <a href="/about-us/terms-and-condition" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Terms & Conditions
+                  <span className= 'text-gray-200 font-black text-left'></span> Terms & Conditions
                   </a>
                 </li>
 
                 <li>
                   <a href="/about-us/cancellation-policy" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Refund & Cancellation Policy
+                  <span className= 'text-gray-200 font-black text-left'></span> Refund & Cancellation Policy
                   </a>
                 </li>
               </ul>
@@ -170,25 +170,25 @@ const Footer = () => {
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
                   <a href="/faq" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> FAQs
+                  <span className= 'text-gray-200 font-black text-left'></span> FAQs
                   </a>
                 </li>
 
                 <li>
                   <a href="/gallery" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Gallery
+                  <span className= 'text-gray-200 font-black text-left'></span> Gallery
                   </a>
                 </li>
 
                 <li>
                   <a href="/ContactUs" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Contact Us
+                  <span className= 'text-gray-200 font-black text-left'></span> Contact Us
                   </a>
                 </li>
 
                 <li>
                   <a href="/community" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> GradUp Community
+                  <span className= 'text-gray-200 font-black text-left'></span> GradUp Community
                   </a>
                 </li>
 
@@ -196,13 +196,13 @@ const Footer = () => {
 
                 <li>
                   <a href="/problem-statement" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Problem Statement
+                  <span className= 'text-gray-200 font-black text-left'></span> Problem Statement
                   </a>
                 </li>
 
                 <li>
                   <a href="/sitemap" className="text-gray-300 transition hover:opacity-75">
-                  <span className= 'text-gray-200 font-black text-left'>&#9830;</span> Sitemap
+                  <span className= 'text-gray-200 font-black text-left'></span> Sitemap
                   </a>
                 </li>
 

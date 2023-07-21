@@ -23,15 +23,15 @@ const HomeFirstComponent = () => {
   // },[current])
   // let arr=["/assets/images/home1.png","/assets/images/home2.png","/assets/images/home3.png","/assets/images/home4.png","/assets/images/home5.png"]
   return (
-    <section className='w-screen flex justify-around headingbox'>
+    <section className='w-screen flex justify-around gap-x-10 headingbox'>
       <div className="mb-12 flex flex-col justify-center">
         {/* <p className="text-left text-3xl text-white mb-3">Welcome to <span className='animate-charcter'>GradUp</span></p> */}
         <div style={{overflow:"hidden"}} className='text-xl sm:text-5xl text-white textnew text-left'>
             <p className=''>Connecting talent to</p>
             <p style={{overflow:"hidden"}} className=''>explore new <span className='animate-charcter font-semibold'>Opportunities</span></p>
         </div>
-        <div className='text-left text-white textnew'>
-            <h1 className='mt-6 text-xl mb-2'>Transform your dreams: the ultimate platform for college-to-career success, offering<br/> skill-suited internships, upskilling courses, and expert guidance all in one place.
+        <div className=' text-left text-white textnew'>
+            <h1 className='mt-6 text-xl mb-2'>Transform your dreams: the ultimate platform for college-to-career success, offering skill-suited internships, upskilling courses, and expert guidance all in one place.
             <br/></h1> 
         </div>
         {/* <Link href='/courses' className="area">
@@ -60,10 +60,10 @@ const HomeFirstComponent = () => {
         
         </div> 
         <div className=' hideimage grid grid-cols-2 my-auto gap-4'>
-          <img width="150" src="/assets/images/gif1.gif" alt="company"></img>
-          <img width="150" src="/assets/images/gif5.gif" alt="company"></img>
-          <img width="150" src="/assets/images/gif3.gif" alt="company"></img>
-          <img className='' width="150" src="/assets/images/gif4.gif" alt="company"></img>
+          <img width="200" src="/assets/images/gif1.gif" alt="company"></img>
+          <img width="200" src="/assets/images/gif5.gif" alt="company"></img>
+          <img width="200" src="/assets/images/gif3.gif" alt="company"></img>
+          <img className='' width="200" src="/assets/images/gif4.gif" alt="company"></img>
         </div>
     </section>
   )
