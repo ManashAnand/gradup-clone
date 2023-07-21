@@ -11,11 +11,11 @@ export default function About() {
         <div>
           <div>
             <p className='text-5xl animate-charcter justice textform mb-6 text-sky-500'>About Us</p>
-            <p className='text-white mb-1 textform width-full text-justify font-semibold'>Welcome to GradUp, the premier platform connecting talented students with top-tier companies. GradUp is a Government of India recognized startup. Our platform
+            <p className='text-white mb-1 textform width-full text-justify font-semibold'>Welcome to GradUp, the premier platform connecting talented students with top-tier companies. GradUp is a Government of India-recognized startup. Our platform
               provides students with a unique opportunity to unlock
-              their potential by finding internships tailored to their
+              their potential by finding upskilling courses, internships, startup live projects, jobs, hackathons, case studies, blogs, preparation for job placements, and other career opportunities tailored to their
               individual skill sets and interests. We solve the problem
-              of finding quality internships by offering a user-friendly
+              of finding quality career opportunities by offering a user-friendly
               and comprehensive platform that connects students
               with companies across India.
             </p>
@@ -98,7 +98,7 @@ export default function About() {
       </div>
       {/* <img className='mx-auto mt-16 mb-16' src="/assets/images/certify.png" alt="certificate"></img> */}
       <p className='text-white text-center mb-6 textform text-3xl mt-5'>Founder's Message</p>
-      <p className='text-black text-xl textform mt-1 widthsetter m-auto bg-white rounded-2xl p-10'>" Thank you for considering GradUp as your go-to platform for upskilling courses, internships, hackathons and jobs. We're confident that our
+      <p className='text-black text-xl textform mt-1 widthsetter m-auto bg-white rounded-2xl p-10'>" Thank you for considering GradUp as your go-to platform for upskilling courses, internships, hackathons, and jobs. We're confident that our
         comprehensive features and flexible pricing model make us the best choice for students and businesses alike.
         To take advantage of our platform, simply sign up for free and start exploring the many opportunities available
         to you. If you have any questions or concerns, our dedicated support team is always available to help. Join GradUp today and transform your dreams into reality."</p>
