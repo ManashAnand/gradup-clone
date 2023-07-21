@@ -344,7 +344,7 @@ export default function Profile() {
   return (
     <div className='w-full mb-16'>
         <section className='w-full headingBox'>
-          <h2 className='text-4xl text-white my-7 text'>Your Resume</h2>
+          <h2 className='text-4xl text-white my-7 text'>Make Your Resume</h2>
           <Link href='/user/applications' className='mt-7'>
             <button className='py-2 px-5 bg-blue-500 text-white rounded-md'>Your Applications</button>
           </Link>
