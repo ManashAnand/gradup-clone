@@ -17,6 +17,7 @@ import Project from '@components/userProfile/project';
 import Achievement from '@components/userProfile/achievement';
 import Experience from '@components/userProfile/experience';
 
+import { signIn, signOut,  getProviders } from "next-auth/react";
 import { useState,useEffect } from 'react';
 import PlusIcon from '@rsuite/icons/Plus';
 import {IconButton} from 'rsuite';
@@ -39,6 +40,14 @@ export default function Profile() {
   const [disability2,setDisability2]=useState(false)
   const [disability3,setDisability3]=useState(false)
   const [disability4,setDisability4]=useState(false)
+  const [providers, setProviders] = useState(null);
+  useEffect(() => {
+    const setUpProviders = async()=> {
+        const response = await getProviders();
+        setProviders(response);
+    }
+    setUpProviders();
+  }, []);
   const collegeList = [
     { value: "Others", label: "Others" },
     { value: "Indian Institute of Technology Bombay", label: "Indian Institute of Technology Bombay" },
@@ -193,7 +202,9 @@ export default function Profile() {
     }
     data.education.push(newEdu)
   }
-  if (error) return <div></div>;
+  if (error) return <div>
+    <p className='text-3xl animate-charcter justice textform mb-5 text-sky-500 '>Please Sign In to make your Profile</p>
+  </div>;
   if (!data) return <div className="my-60"><Spinner/></div>;
       // useEffect(()=>{
       //   const fetchData = async () =>{
@@ -342,6 +353,9 @@ export default function Profile() {
       }
       const ButtonStyle = { margin: "0px 0.5rem" };
   return (
+    <div>
+    {session?.user ?(
+    <>
     <div className='w-full mb-16'>
         <section className='w-full headingBox'>
           <h2 className='text-4xl text-white my-7 text'>Make Your Resume</h2>
@@ -619,6 +633,13 @@ export default function Profile() {
         </div>
         </div>
       </section>
+    </div>
+    </>):(<>
+    <div>
+    Please Sign In
+    </div>
+    
+    </>)}
     </div>
   );
 }
