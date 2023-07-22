@@ -35,7 +35,7 @@ export default function CoursesOnHome() {
     },
     {
       title: "Graphic Design",
-      img:"/assets/images/webdesign.gif",
+      img:"/assets/images/webdesigncompress.gif",
       price: "3999",
     },
     {

@@ -27,7 +27,7 @@ const Mentors = () => {
         {
             name: "Mohit Agarwal",
             title:"(Siemens EDA) | IIT BHU |",
-            img:"/assets/mentors/mohitcompress.jpg"
+            img:"/assets/mentors/Mohitcompress.jpg"
         },
         // {
         //     name: "Narendra Lamba",
