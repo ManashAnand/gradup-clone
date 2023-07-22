@@ -354,8 +354,8 @@ export default function Profile() {
       const ButtonStyle = { margin: "0px 0.5rem" };
   return (
     <div>
-    {session?.user ?(
-    <>
+    {/* {session?.user ?(
+    <> */}
     <div className='w-full mb-16'>
         <section className='w-full headingBox'>
           <h2 className='text-4xl text-white my-7 text'>Make Your Resume</h2>
@@ -634,12 +634,12 @@ export default function Profile() {
         </div>
       </section>
     </div>
-    </>):(<>
+    {/* </>):(<>
     <div>
     Please Sign In
     </div>
     
-    </>)}
+    </>)} */}
     </div>
   );
 }
