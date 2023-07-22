@@ -7,7 +7,7 @@ const Mentors = () => {
         {
             name: "Abhinaba Chakraborty",
             title:"XLRI Jamshedpur - Inside IIM | P&G | BIT MESRA",
-            img:"/assets/mentors/mentor1.webp"
+            img:"/assets/mentors/Abhinabacompress.jpg"
         },
         // {
         //     name: "Ashish Ambastha",
@@ -22,12 +22,12 @@ const Mentors = () => {
         {
             name: "Dharmendra Kumar",
             title:"IES Officer, 2019 Batch, AIR-87, NIT Calicut",
-            img:"/assets/mentors/mentor4new.jpg"
+            img:"/assets/mentors/Dharmendracompress.jpg"
         },
         {
             name: "Mohit Agarwal",
             title:"(Siemens EDA) | IIT BHU |",
-            img:"/assets/mentors/mentor5.webp"
+            img:"/assets/mentors/mohitcompress.jpg"
         },
         // {
         //     name: "Narendra Lamba",
