@@ -6,7 +6,7 @@ const Mentors = () => {
     const list = [
         {
             name: "Abhinaba Chakraborty",
-            title:"XLRI Jamshedpur - Inside IIM | P&G | XLRI | BIT MESRA",
+            title:"XLRI Jamshedpur - Inside IIM | P&G | BIT MESRA",
             img:"/assets/mentors/mentor1.webp"
         },
         // {
