@@ -76,6 +76,9 @@ const Nav = () => {
           </div>
         ) : (
           <>
+            <Link href='/user' className='outline_btn'>
+              Create Profile
+            </Link>
             {providers &&
               Object.values(providers).map((provider) => (
                 <button
