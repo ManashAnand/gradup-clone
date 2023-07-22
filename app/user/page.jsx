@@ -194,7 +194,7 @@ export default function Profile() {
     data.education.push(newEdu)
   }
   if (error) return <div>
-  <p className='text-3xl animate-charcter justice textform mb-5 text-sky-500 '>Please Sign In to make your Profile</p>
+  <p className='text-3xl animate-charcter justice textform mb-5 text-sky-500 '>Please Sign In to make your Profile !</p>
 </div>;
   if (!data) return <div className="my-60"><Spinner/></div>;
       // useEffect(()=>{
