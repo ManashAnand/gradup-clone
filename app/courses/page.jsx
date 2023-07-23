@@ -6,12 +6,12 @@ const Courses = () => {
   const list = [
     {
       title: "computer science compress.jpg",
-      img: "/assets/icons/computerr.png",
+      img: "/assets/icons/ccomputer science compress.jpg",
       price: "Rs 8999",
     },
     {
       title: "ITcompress.png",
-      img: "/assets/icons/IT.png",
+      img: "/assets/icons/ITcompress.png",
       price: "Rs 6799",
     },
     {
@@ -21,7 +21,7 @@ const Courses = () => {
     },
     {
       title: "managementcompress.png",
-      img: "/assets/icons/management.png",
+      img: "/assets/icons/managementcompress.png",
       price: "Rs 6299",
     },
     {
@@ -31,7 +31,7 @@ const Courses = () => {
     },
     {
       title: "Art and Humanities",
-      img: "/assets/icons/art.png",
+      img: "/assets/icons/artcompress.jpg",
       price: "Rs 3999",
     },
   ];
