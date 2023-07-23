@@ -13,7 +13,6 @@ import { StyledBadge } from "@styles/StyledBadged";
 import { EyeIcon } from "@styles/EyeIcon";
 import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
-import html2pdf from 'html2pdf.js';
 import Project from '@components/userProfile/project';
 import Achievement from '@components/userProfile/achievement';
 import Experience from '@components/userProfile/experience';
@@ -176,12 +175,7 @@ export default function Profile() {
       setMessage3(false)
     }
   },[end1])
-  const createPDF = async() => {   
-    const pdf=document.getElementById("")
-    let dataprofile=await data
-    var opt={margin:[0,-60],filename:`${dataprofile.name}`,image:{type:"jpeg",quality:0.98},html2canvas:{scale:2},jsPDF:{unit:"mm",format:"a4"}}
-    html2pdf().from(profile).set(opt).save();
-  };
+
   // console.log(session, "Ajay",data);
   // console.log("ye id haiiiiiiiiiii",  session?.user.id);
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher)
@@ -359,9 +353,6 @@ export default function Profile() {
           <Link href="/alumni-network">
           <button className=' py-2 px-5 bg-blue-500 text-white rounded-md mt-7' onClick={beAlumni}>Enter Alumni</button>
           </Link>
-          <a href="#profile">
-            <button onClick={()=>createPDF()} style={{backgroundColor:"#29335c"}} className="px-7 py-1 text-xs text-white mb-3 rounded-full">Download Resume</button>
-          </a>
           {/* <p className='desc text-left'>{data.email}</p> */}
         </section>
         <section className='border-solid border-white border-2 rounded-xl text-left'>
