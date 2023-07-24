@@ -5,12 +5,12 @@ const Courses = () => {
   const[results,setResults]=useState(false)
   const list = [
     {
-      title: "computer science compress.jpg",
-      img: "/assets/icons/ccomputer science compress.jpg",
+      title: "Computer Science",
+      img: "/assets/icons/computer science compress.jpg",
       price: "Rs 8999",
     },
     {
-      title: "ITcompress.png",
+      title: "Information Technology",
       img: "/assets/icons/ITcompress.png",
       price: "Rs 6799",
     },
@@ -20,7 +20,7 @@ const Courses = () => {
       price: "Rs 5999",
     },
     {
-      title: "managementcompress.png",
+      title: "Management",
       img: "/assets/icons/managementcompress.png",
       price: "Rs 6299",
     },
