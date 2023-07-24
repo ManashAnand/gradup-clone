@@ -99,6 +99,9 @@ const ApplicationSchema = new Schema({
         type:String,
         required:[true,"_id is requiresd"],
     },
+    email:{
+        type:String,
+    },
     userID: {
         type: String,
         required: [true, "UserId is required."],

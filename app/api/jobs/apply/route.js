@@ -33,7 +33,8 @@ export const POST = async(request) => {
             gender: currentUser.gender,
             achievement: currentUser.achievement,
             expectedJoiningDate: joiningDate,
-            expectedCTC: CTC
+            expectedCTC: CTC, 
+            email:currentUser.email
         });
 
         await newApplication.save();
