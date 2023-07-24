@@ -6,12 +6,12 @@ const Courses = () => {
   const list = [
     {
       title: "Computer Science",
-      img: "/assets/icons/computerr.png",
+      img: "/assets/icons/computer science compress.jpg",
       price: "Rs 8999",
     },
     {
       title: "Information Technology",
-      img: "/assets/icons/IT.png",
+      img: "/assets/icons/ITcompress.png",
       price: "Rs 6799",
     },
     {
@@ -21,137 +21,149 @@ const Courses = () => {
     },
     {
       title: "Management",
-      img: "/assets/icons/management.png",
+      img: "/assets/icons/managementcompress.png",
       price: "Rs 6299",
     },
     {
       title: "Design and Product",
-      img: "/assets/icons/productdesign.png",
+      img: "/assets/icons/productdesigncompress.png",
       price: "Rs 4999",
     },
     {
       title: "Art and Humanities",
-      img: "/assets/icons/art.png",
+      img: "/assets/icons/artcompress.jpg",
       price: "Rs 3999",
     },
   ];
   const list1 = [
     {
       title: "Web Development",
-      img: "/assets/images/web.gif",
-      price: "$14",
+      img: "/assets/images/webcompresss.gif",
+      price: "Rs 8999",
     },
     {
       title: "Full Stack Development",
-      img: "/assets/images/fullStack.gif",
-      price: "$14",
+      img: "/assets/images/fullStackcompress.gif",
+      price: "Rs 11999",
     },
     {
       title: "Python Programming",
-      img: "/assets/images/python.gif",
-      price: "$14",
+      img: "/assets/images/pythoncompresss.gif",
+      price: "Rs 6299",
     },
     {
       title: "C Programming",
       img: "/assets/images/C.gif",
-      price: "$14",
+      price: "Rs 4999",
     },
   ];
   const list2 = [
     {
       title: "Blockchain Technology",
       img: "/assets/images/blockchain.gif",
-      price: "$14",
+      price: "Rs 5999",
     },
     {
       title: "Cyber Security",
       img: "/assets/images/cyber.gif",
-      price: "$14",
+      price: "Rs 4999",
     },
     {
       title: "Cloud Computing",
-      img: "/assets/images/cloud.gif",
-      price: "$14",
+      img: "/assets/images/cloudcompress.gif",
+      price: "Rs 5499",
     },
     {
       title: "Machine Learning & AI",
-      img: "/assets/images/AI.gif",
-      price: "$14",
+      img: "/assets/images/AIcompress.gif",
+      price: "Rs 6999",
     },
   ];
   const list3 = [
     {
       title: "Embedded System",
-      img: "/assets/images/circuit.gif",
-      price: "$14",
+      img: "/assets/images/circuitcompress.gif",
+      price: "Rs 3999",
     },
     {
       title: "Robotic Process Automation",
-      img: "/assets/images/robot.gif",
-      price: "$14",
+      img: "/assets/images/robotcompress.gif",
+      price: "Rs 4999",
     },
     {
       title: "Virtual Reality",
-      img: "/assets/images/vr.gif",
-      price: "$14",
+      img: "/assets/images/vrcompress.gif",
+      price: "Rs 2499",
     },
     {
       title: "3D Printing",
-      img: "/assets/images/3dprinter.gif",
-      price: "$14",
+      img: "/assets/images/3dprintercompress.gif",
+      price: "2499",
     },
   ];
   const list4 = [
     {
       title: "Product Management",
-      img: "/assets/images/productiter.gif",
-      price: "$14",
+      img: "/assets/images/productitercompress.gif",
+      price: "Rs 3999",
     },
     {
       title: "Financial Planning",
-      img: "/assets/images/finplanning.gif",
-      price: "$14",
+      img: "/assets/images/finplanningcompress.gif",
+      price: "Rs 5499",
     },
     {
       title: "Digital Marketing",
-      img: "/assets/images/digitalmarket.gif",
-      price: "$14",
+      img: "/assets/images/digitalmarketcompresss.gif",
+      price: "Rs 4999",
     },
   ];
   const list5 = [
     {
       title: "Foreign Language",
-      img: "/assets/images/foreignlanguage.gif",
-      price: "$14",
+      img: "/assets/images/foreignlanguagecompress.gif",
+      price: "Rs 4999",
     },
     {
+<<<<<<< HEAD
       title: "IELTS/ English Proficiency",
       img: "/assets/images/english.gif",
       price: "$14",
+=======
+      title: "IELTS/English Proficiency",
+      img: "/assets/images/englishcompress.gif",
+      price: "Rs 4999",
+>>>>>>> 3ae5551508be47126cdf3390f2fa232ed5ddfef9
     },
   ];
   const list6 = [
     {
+<<<<<<< HEAD
       title: "User Experience (UX/UI) Design",
       img: "/assets/images/UIUX.gif",
       price: "$14",
+=======
+      title: "User Experience(UX/UI) Design",
+      img: "/assets/images/UIUXcompress.gif",
+      price: "Rs 3499",
+>>>>>>> 3ae5551508be47126cdf3390f2fa232ed5ddfef9
     },
     {
       title: "Graphic Designer",
-      img: "/assets/images/webdesign.gif",
-      price: "$14",
+      img: "/assets/images/webdesigncompresss.gif",
+      price: "Rs 3999",
     },
   ];
   const list7 = [
     {
       title: "Painting",
-      img: "/assets/images/painting.gif",
-      price: "$14",
+      img: "/assets/images/paintingcompress.gif",
+      price: "Rs 3999",
     },
     {
       title: "Resume Writing",
-      img: "/assets/images/resume.gif",
-      price: "$14",
+      img: "/assets/images/resumecompress.gif",
+      price: "Rs 2999",
     },
   ];
   function handleCourses(){

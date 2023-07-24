@@ -5,42 +5,47 @@ export default function CoursesOnHome() {
   const list = [
     {
       title: "Web Development",
-      img: "/assets/images/web.gif",
+      img: "/assets/images/webcompress.gif",
       price: "8999",
     },
     {
       title: "Data Science",
-      img: "/assets/images/datasc.gif",
+      img: "/assets/images/datasccompress.gif",
       price: "6799",
     },
     {
       title: "Blockchain",
-      img: "/assets/images/blockchain.gif",
+      img: "/assets/images/blockchaincompress.gif",
       price: "5999",
     },
     {
+<<<<<<< HEAD
       title: "Python Programming",
       img: "/assets/images/python.gif",
+=======
+      title: "Python",
+      img: "/assets/images/pythoncompress.gif",
+>>>>>>> 3ae5551508be47126cdf3390f2fa232ed5ddfef9
       price: "6299",
     },
     {
       title: "Cyber Security",
-      img: "/assets/images/cyber.gif",
+      img: "/assets/images/cybercompress.gif",
       price: "4999",
     },
     {
       title: "Digital Marketing",
-      img: "/assets/images/digitalmarket.gif",
+      img: "/assets/images/digitalmarketcompress.gif",
       price: "3999",
     },
     {
       title: "Graphic Design",
-      img:"/assets/images/webdesign.gif",
+      img:"/assets/images/webdesigncompress.gif",
       price: "3999",
     },
     {
       title: "Video Editing",
-      img: "/assets/images/videoedit.gif",
+      img: "/assets/images/videoeditcompress.gif",
       price: "2999",
     },
   ];
