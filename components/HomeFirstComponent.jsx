@@ -62,7 +62,7 @@ const HomeFirstComponent = () => {
         </>}
         
         </div> 
-        <div className=' hideimage grid grid-cols-2 my-auto gap-4'>
+        <div className=' hideimage z-10 grid grid-cols-2 my-auto gap-4'>
           <img width="240" src="/assets/images/gif1.gif" alt="company"></img>
           <img width="240" src="/assets/images/gif5.gif" alt="company"></img>
           <img width="240" src="/assets/images/gif3.gif" alt="company"></img>
