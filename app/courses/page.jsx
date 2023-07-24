@@ -125,28 +125,16 @@ const Courses = () => {
       price: "Rs 4999",
     },
     {
-<<<<<<< HEAD
-      title: "IELTS/ English Proficiency",
-      img: "/assets/images/english.gif",
-      price: "$14",
-=======
       title: "IELTS/English Proficiency",
       img: "/assets/images/englishcompress.gif",
       price: "Rs 4999",
->>>>>>> 3ae5551508be47126cdf3390f2fa232ed5ddfef9
     },
   ];
   const list6 = [
     {
-<<<<<<< HEAD
-      title: "User Experience (UX/UI) Design",
-      img: "/assets/images/UIUX.gif",
-      price: "$14",
-=======
       title: "User Experience(UX/UI) Design",
       img: "/assets/images/UIUXcompress.gif",
       price: "Rs 3499",
->>>>>>> 3ae5551508be47126cdf3390f2fa232ed5ddfef9
     },
     {
       title: "Graphic Designer",
@@ -203,7 +191,7 @@ const Courses = () => {
             <Card.Body css={{ p:0 }}>
               <Card.Image
                 src={item.img}
-                objectFit="fit"
+                objectFit="cover"
                 width="100%"
                 height={180}
                 alt={item.title}

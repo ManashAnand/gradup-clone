@@ -19,13 +19,8 @@ export default function CoursesOnHome() {
       price: "5999",
     },
     {
-<<<<<<< HEAD
-      title: "Python Programming",
-      img: "/assets/images/python.gif",
-=======
       title: "Python",
       img: "/assets/images/pythoncompress.gif",
->>>>>>> 3ae5551508be47126cdf3390f2fa232ed5ddfef9
       price: "6299",
     },
     {
