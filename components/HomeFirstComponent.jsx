@@ -23,16 +23,19 @@ const HomeFirstComponent = () => {
   // },[current])
   // let arr=["/assets/images/home1.png","/assets/images/home2.png","/assets/images/home3.png","/assets/images/home4.png","/assets/images/home5.png"]
   return (
-    <section className='w-screen flex justify-around gap-x-10 headingbox'>
-      <div className="mb-12 flex flex-col justify-center">
+    <section className='w-screen flex justify-between headingbox'>
+      {/* <video id="filter" autoPlay loop muted>
+        <source src="/assets/images/backvid.mp4" type="video/mp4"></source>
+      </video> */}
+      <div className='filter'></div>
+      <div className="mb-6 z-10 flex flex-col justify-center">
         {/* <p className="text-left text-3xl text-white mb-3">Welcome to <span className='animate-charcter'>GradUp</span></p> */}
-        <div style={{overflow:"hidden"}} className='text-xl sm:text-5xl text-white textnew text-left'>
+        <div style={{overflow:"hidden"}} className='text-2xl sm:text-5xl text-white textnew text-left'>
             <p className=''>Connecting talent to</p>
-            <p style={{overflow:"hidden"}} className=''>explore new <span className='animate-charcter font-semibold'>Opportunities</span></p>
+            <p style={{overflow:"hidden"}} className=''>Explore new <span className='animate-charcter font-semibold'>Opportunities</span></p>
         </div>
         <div className=' text-left text-white textnew'>
-            <h1 className='mt-6 text-xl mb-2'>Transform your dreams: the ultimate platform for college-to-career success, offering skill-suited internships, upskilling courses, and expert guidance all in one place.
-            <br/></h1> 
+            <h1 className='mt-6 sm:text-xl mb-6'>Transform your dreams: the ultimate platform for college-to-career success, offering skill-suited internships, upskilling courses, and expert guidance all in one place.</h1> 
         </div>
         {/* <Link href='/courses' className="area">
               <button className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white' onClick={() =>
@@ -48,7 +51,7 @@ const HomeFirstComponent = () => {
                   onClick={() => {
                     signIn(provider.id);
                   }}
-                  className='animated-button1 rounded-2xl py-1 px-6 textnew text-xl mt-6'>
+                  className='animated-button1 rounded-2xl py-1 px-6 textnew'>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -60,10 +63,10 @@ const HomeFirstComponent = () => {
         
         </div> 
         <div className=' hideimage grid grid-cols-2 my-auto gap-4'>
-          <img width="200" src="/assets/images/gif1.gif" alt="company"></img>
-          <img width="200" src="/assets/images/gif5.gif" alt="company"></img>
-          <img width="200" src="/assets/images/gif3.gif" alt="company"></img>
-          <img className='' width="200" src="/assets/images/gif4.gif" alt="company"></img>
+          <img width="240" src="/assets/images/gif1.gif" alt="company"></img>
+          <img width="240" src="/assets/images/gif5.gif" alt="company"></img>
+          <img width="240" src="/assets/images/gif3.gif" alt="company"></img>
+          <img width="240" src="/assets/images/gif4.gif" alt="company"></img>
         </div>
     </section>
   )

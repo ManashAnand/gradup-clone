@@ -125,14 +125,14 @@ const Courses = () => {
       price: "$14",
     },
     {
-      title: "IELTS/English Proficiency",
+      title: "IELTS/ English Proficiency",
       img: "/assets/images/english.gif",
       price: "$14",
     },
   ];
   const list6 = [
     {
-      title: "User Experience(UX/UI) Design",
+      title: "User Experience (UX/UI) Design",
       img: "/assets/images/UIUX.gif",
       price: "$14",
     },
@@ -162,11 +162,11 @@ const Courses = () => {
     <div className='coursebox'>
     <svg height="400" width="600">
     <polygon points="500,50 500,320 10,400 10,50" style={{fill:"#090D34"}}/>
-    <text className="text-4xl text" x="90" y="120" fill="deepskyblue">Learn from anywhere around</text>
-    <text className="text-4xl text" x="90" y="160" fill="deepskyblue">the globe with us</text>
+    <text className="text-3xl text" x="90" y="120" fill="deepskyblue">Learn from anywhere around</text>
+    <text className="text-3xl text" x="90" y="160" fill="deepskyblue">the globe with us.</text>
     {/* <text className="text-4xl text" x="90" y="200" fill="deepskyblue">with us.</text> */}
     <text className="text-xl text" x="90" y="290" fill="white">Experience quality courses with us</text>
-    <text className="text-xl text" x="90" y="320" fill="white">with best price. You can get best courses from us</text>
+    <text className="text-xl text" x="90" y="320" fill="white">with best price. You can get best courses from us.</text>
      </svg>
     <div className='courseimg'>
       <img width="200" src="/assets/images/image1.png"></img>
@@ -177,29 +177,29 @@ const Courses = () => {
     </div>
     <div className='w-full max-w-full flex-start flex-col my-10'>
     <div>
-    <div className='showmobile'>
+    <div className='showmobile textform'>
       <p className='text-white text-xl'>Learn from anywhere around the globe with us</p>
-      <p className='text-white text-xl'>Experience quality courses with us with best price. You can get best courses from us</p>
+      <p className='text-white text-xl'>Experience quality courses with us with best price. You can get best courses from us.</p>
       <img className='mx-auto' width="280" src="/assets/images/image1.png"></img>
     </div>
     <h1 className='text-4xl font-bold text-sky-500 text text-center my-5'>Our Best Courses</h1>
-    <Grid.Container gap={3} justify="flex-start">
+    <Grid.Container gap={2} justify="flex-start">
       {list.map((item, index) => (
         <Grid xs={6} sm={4} key={index}>
           {/* <Link href="/courses"> */}
           <Card isPressable>
-            <Card.Body css={{ p: 0 }}>
+            <Card.Body css={{ p:0 }}>
               <Card.Image
                 src={item.img}
-                objectFit="cover"
+                objectFit="fit"
                 width="100%"
-                height={140}
+                height={180}
                 alt={item.title}
               />
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>
-              <Row wrap="wrap" justify="space-between" align="center">
-                <Text b>{item.title}</Text>
+              <Row wrap="wrap" justify="space-between" align="left">
+                <Text b css={{textAlign:"left",fontSize:"$sm"}}>{item.title}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Explore &rarr;</button>
                 </Text>
@@ -213,8 +213,8 @@ const Courses = () => {
     </div>
     </div>
     <p className='text-xl text-left text font-semibold text-white mb-8'>Computer Science</p>
-    <div className="p-2 rounded-xl bg-sky-200">
-    <Grid.Container gap={2} justify="flex-start">
+    <div className="p-1 text-left rounded-xl bg-sky-200">
+    <Grid.Container gap={1} justify="flex-start">
       {list1.map((item, index) => (
         <Grid xs={6} sm={3} key={index}>
           {/* <Link href="/courses"> */}
@@ -230,7 +230,7 @@ const Courses = () => {
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
-                <Text css={{mr:"$10"}} b>{item.title}</Text>
+                <Text css={{mr:"$10",fontSize:"$sm"}} b>{item.title}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
@@ -243,8 +243,8 @@ const Courses = () => {
     </Grid.Container>
     </div>
     <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Information Technology</p>
-    <div className="p-2 rounded-xl bg-purple-200">
-    <Grid.Container gap={2} justify="flex-start">
+    <div className="p-1 text-left rounded-xl bg-purple-200">
+    <Grid.Container gap={1} justify="flex-start">
       {list2.map((item, index) => (
         <Grid xs={6} sm={3} key={index}>
           {/* <Link href="/courses"> */}
@@ -260,7 +260,7 @@ const Courses = () => {
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
-                <Text css={{mr:"$10"}} b>{item.title}</Text>
+                <Text css={{mr:"$10",fontSize:"$sm"}} b>{item.title}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
@@ -273,8 +273,8 @@ const Courses = () => {
     </Grid.Container>
     </div>
     <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Automation Technology</p>
-    <div className="p-2 rounded-xl bg-red-200">
-    <Grid.Container gap={2} justify="flex-start">
+    <div className="p-1 text-left rounded-xl bg-red-200">
+    <Grid.Container gap={1} justify="flex-start">
       {list3.map((item, index) => (
         <Grid xs={6} sm={3} key={index}>
           {/* <Link href="/courses"> */}
@@ -290,7 +290,7 @@ const Courses = () => {
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
-                <Text css={{mr:"$16"}} b>{item.title}</Text>
+                <Text css={{mr:"$16",fontSize:"$sm"}} b>{item.title}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
@@ -303,8 +303,8 @@ const Courses = () => {
     </Grid.Container>
     </div>
     <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Management</p>
-    <div className="p-2 rounded-xl bg-cyan-200">
-    <Grid.Container gap={2} justify="flex-start">
+    <div className="p-1 text-left rounded-xl bg-cyan-200">
+    <Grid.Container gap={1} justify="flex-start">
       {list4.map((item, index) => (
         <Grid xs={6} sm={4} key={index}>
           {/* <Link href="/courses"> */}
@@ -320,7 +320,7 @@ const Courses = () => {
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
-                <Text b>{item.title}</Text>
+                <Text b css={{fontSize:"$sm"}}>{item.title}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
@@ -333,8 +333,8 @@ const Courses = () => {
     </Grid.Container>
     </div>
     <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Language Learning</p>
-    <div className="p-2 rounded-xl bg-violet-200">
-    <Grid.Container gap={2} justify="flex-start">
+    <div className="p-1 text-left rounded-xl bg-violet-200">
+    <Grid.Container gap={1} justify="flex-start">
       {list5.map((item, index) => (
         <Grid xs={6} sm={6} key={index}>
           {/* <Link href="/courses"> */}
@@ -350,7 +350,7 @@ const Courses = () => {
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
-                <Text b>{item.title}</Text>
+                <Text b css={{fontSize:"$sm"}}>{item.title}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
@@ -363,8 +363,8 @@ const Courses = () => {
     </Grid.Container>
     </div>
     <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Design and Product</p>
-    <div className="p-2 rounded-xl bg-pink-200">
-    <Grid.Container gap={2} justify="flex-start">
+    <div className="p-1 text-left rounded-xl bg-pink-200">
+    <Grid.Container gap={1} justify="flex-start">
       {list6.map((item, index) => (
         <Grid xs={6} sm={6} key={index}>
           {/* <Link href="/courses"> */}
@@ -380,7 +380,7 @@ const Courses = () => {
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
-                <Text b>{item.title}</Text>
+                <Text b css={{fontSize:"$sm"}}>{item.title}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>
@@ -393,8 +393,8 @@ const Courses = () => {
     </Grid.Container>
     </div>
     <p className='text-xl text-left text font-semibold text-white mt-16 mb-8'>Arts and Humanities</p>
-    <div className="p-2 rounded-xl bg-green-200 mb-20">
-    <Grid.Container gap={2} justify="flex-start">
+    <div className="p-1 text-left rounded-xl bg-green-200 mb-20">
+    <Grid.Container gap={1} justify="flex-start">
       {list7.map((item, index) => (
         <Grid xs={6} sm={6} key={index}>
           {/* <Link href="/courses"> */}
@@ -410,7 +410,7 @@ const Courses = () => {
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
-                <Text b>{item.title}</Text>
+                <Text css={{fontSize:"$sm"}} b>{item.title}</Text>
                 <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
                   <button className="text-sm text-blue-600" onClick={handleCourses}>Start Course &rarr;</button>
                 </Text>

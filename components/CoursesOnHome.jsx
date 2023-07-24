@@ -19,7 +19,7 @@ export default function CoursesOnHome() {
       price: "5999",
     },
     {
-      title: "Python",
+      title: "Python Programming",
       img: "/assets/images/python.gif",
       price: "6299",
     },
@@ -50,7 +50,7 @@ export default function CoursesOnHome() {
     <div>
         <h1 className='text-3xl text-white font-semibold underline decoration-white underline-offset-8 textform text-center my-5'>Placement guarantee courses</h1>
         <p className="textnew text-center text-gray-200 text-2xl mb-3">Master new skills from anywhere with our online courses</p>
-    <Grid.Container gap={2}>
+    <Grid.Container gap={1}>
       {list.map((item, index) => (
         <Grid xs={6} sm={3} key={index}>
           {/* <Link href="/courses"> */}
@@ -67,7 +67,7 @@ export default function CoursesOnHome() {
             </Card.Body>
             <Card.Footer css={{ justifyItems: "flex-start" }}>
               <Row wrap="wrap" justify="space-between" align="center">
-                <Text css={{color:"$gray800", fontWeight: "$semibold"}}>{item.title}</Text>
+                <Text css={{color:"$gray800", fontWeight: "$semibold",textAlign:"left"}}>{item.title}</Text>
                 <Text css={{ color:"$red700", fontWeight: "$semibold",fontSize: "$sm" }}>
                 &#8377; {item.price}
                 </Text>
