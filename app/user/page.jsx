@@ -345,19 +345,22 @@ export default function Profile() {
       const ButtonStyle = { margin: "0px 0.5rem" };
   return (
     <div className='w-full mb-16'>
-        <section className='w-full headingBox'>
-          <h2 className='text-4xl text-white my-7 text'>Make Your Resume</h2>
-          <Link href='/user/applications' className='mt-7'>
-            <button className='py-2 px-5 bg-blue-500 text-white rounded-md'>Your Applications</button>
+        <section className='w-full headingBox mb-10'>
+        <h2 className=' text-4xl text-white margintop animate-charcter textform'>Create Your Profile</h2>
+          <Link href='/user/applications' className='margintop marginright'>
+            <button className='py-2 px-5 bg-blue-400 text-white rounded-md hover:bg-blue-500'>Your Applications</button>
           </Link>
           <Link href="/alumni-network">
-          <button className=' py-2 px-5 bg-blue-500 text-white rounded-md mt-7' onClick={beAlumni}>Enter Alumni</button>
+          <button className=' py-2 px-5 bg-blue-400 text-white rounded-md margintop hover:bg-blue-500 marginright' onClick={beAlumni}>Enter Alumni</button>
+          </Link>
+          <Link href="/user/resume">
+          <button className=' py-2 px-5 bg-blue-400 text-white rounded-md margintop hover:bg-blue-500'>Download Resume</button>
           </Link>
           {/* <p className='desc text-left'>{data.email}</p> */}
         </section>
         <section className='border-solid border-white border-2 rounded-xl text-left'>
-        <div className='m-6'>
-        <div className='mx-3 item1 flex flex-col'>
+        <div className='m-5'>
+        <div className=' item1 flex flex-col'>
           <label className="mb-2 ml-2 textform text-white text-sm">Name*</label>
           <Input  initialValue={data.name}/> <br/>
           <label className="mb-2 ml-2 textform text-white text-sm">Email*</label>
@@ -366,7 +369,7 @@ export default function Profile() {
           <Input  placeholder='Enter Phone Number' initialValue={data.contactNo} pattern='[0-9]{10}'/> <br/>
           </div>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-        <div className='mx-3'>
+        <div className=''>
           <div id="education">
             <span className='text-2xl font-semibold text-white my-auto'>Education</span>
             <p className="text-sm text-white">(Add from top to bottom hierarchy)</p>
@@ -376,7 +379,7 @@ export default function Profile() {
                 <label className="mb-1 ml-2 mt-3 textform text-white text-sm">College *</label>
                 <Select
                 style={{height:"30vh"}}
-                 className=" text-left pr-4"
+                 className=" text-left pr-2"
                  options={collegeList}
                  placeholder="Select College"
                  onChange={handleCollegename}
@@ -391,7 +394,7 @@ export default function Profile() {
                 <div className="flexBox w-full">
                 <div className='flex item1 flex-col mb-5'>
                 <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Degree</label>
-                <Input  css={{pr:"$2",width:"stretch"}}  placeholder='Enter Degree'/>
+                <Input  css={{pr:"$4",width:"stretch"}}  placeholder='Enter Degree'/>
                 </div>
                 <div className='flex item2 flex-col item1 mb-5'>
                 <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Grade</label>
@@ -400,12 +403,12 @@ export default function Profile() {
                 </div>
                 <div className='flex item1 flex-col mb-5 mr-2'>
                 <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Branch*</label>
-                <Input  css={{pr:"$6",width:"stretch"}} placeholder='Enter Branch' required/>
+                <Input  css={{pr:"$4",width:"stretch"}} placeholder='Enter Branch' required/>
                 </div>
                 <div className="flexBox w-full">
                 <div className='flex item1 flex-col mb-5'>
                 <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Joining Date *</label>
-                <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date' value={start} onChange={handleChange1} required/>
+                <Input  type="date" css={{pr:"$4"}} placeholder='Enter starting date' value={start} onChange={handleChange1} required/>
                 </div>
                 <div className='flex flex-col item2 mb-5'>
                 <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Leaving Date *</label>
@@ -458,7 +461,7 @@ export default function Profile() {
           }
         </div>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-        <div className='mx-3'>
+        <div className=''>
           <div>
             <span className='text-2xl font-semibold text-white my-auto'>Projects</span>
             <p className="text-sm text-white">(Enter all the project details)</p>
@@ -510,7 +513,7 @@ export default function Profile() {
           ))}
         </div>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-        <div className='mx-3'>
+        <div className=''>
           <div>
             <span className='text-2xl font-semibold text-white my-auto'>Experience</span>
             <p className="text-xs text-white">(Enter all of your previous and current work experiences)</p>
@@ -518,7 +521,7 @@ export default function Profile() {
                 <div className="flexBox w-full">
                 <div className='flex item1 flex-col mb-5'>
                 <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Company *</label>
-                <Input css={{pr:"$2",width:"stretch"}} placeholder='Enter Company' required/>
+                <Input css={{pr:"$4",width:"stretch"}} placeholder='Enter Company' required/>
                 </div>
                 <div className='flex flex-col item2 mb-5'>
                 <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Location</label>
@@ -542,7 +545,7 @@ export default function Profile() {
                 </div>
                 <div className='flex flex-col item2 mb-5'>
                 <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Leaving Date *</label>
-                <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter ending date' value={end1} onChange={handleChange4} required/>
+                <Input  type="date" css={{pr:"$4"}} placeholder='Enter ending date' value={end1} onChange={handleChange4} required/>
                 {message3 && <p className='text-red-400 text-sm'>*Leaving date must be greater than joining date</p>}
                 </div>
                 </div>
@@ -588,7 +591,7 @@ export default function Profile() {
           ))}
         </div>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-        <div className=' mx-3'>
+        <div className=' '>
           <div>
             <span className='text-2xl font-semibold text-white my-auto'>Achievement</span>
             <p className="text-sm text-white">(List all of your achievements)</p>
