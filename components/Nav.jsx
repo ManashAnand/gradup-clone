@@ -87,7 +87,7 @@ const Nav = () => {
                   onClick={() => {
                     signIn("google");
                   }}
-                  className='px-8 py-2 bg-blue-700 rounded-full text-white hover:bg-blue-500'
+                  className='px-8 py-2 bg-blue-500 rounded-md text-white hover:bg-blue-600'
                 >
                   Sign in
                 </button>
@@ -169,9 +169,9 @@ const Nav = () => {
                   onClick={() => {
                     signIn(provider.id);
                   }}
-                  className='black_btn'
+                  className='px-4 py-2 bg-blue-500 rounded-lg text-white hover:bg-blue-600'
                 >
-                  Sign in
+                  Sign In
                 </button>
               ))}
           </>
