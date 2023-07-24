@@ -1,17 +1,16 @@
 "use client"
 import useSWR from 'swr';
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 import html2pdf from 'html2pdf.js';
 import Spinner from "@components/Spinner"
 import {useSession} from "next-auth/react";
-import { useState,useEffect } from 'react';
 const fetcher = async (...args) =>await fetch(...args).then((res) => res.json());
-
-export default function Resume() {
+export default function Page() {
     const { data: session } = useSession();
     var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher)
     if (error) return <div>userFailed to loadinggggggg</div>;
     if (!data) return <div className="my-60 mx-auto"><Spinner /></div>;
-    console.log(data)
     const createPDF = async() => {   
         const pdf=document.getElementById("profile")
         let dataprofile=await data
