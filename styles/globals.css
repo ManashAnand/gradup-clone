@@ -163,6 +163,9 @@ html{
   transition: ease 1000ms;
 
 }
+.css-1rg2j5i-MuiCardMedia-root{
+  background-size:contain;
+}
 .justice{
  text-align: justify;
 }
