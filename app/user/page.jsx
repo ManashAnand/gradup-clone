@@ -5,9 +5,11 @@ import Select from "react-select";
 import Link from 'next/link';
 import Spinner from "@components/Spinner"
 import LoginAlert from '@components/LoginAlert';
-import { Input, Textarea, Spacer , Button, Popover} from "@nextui-org/react";
+import { Input, Textarea, Spacer ,Button, Popover} from "@nextui-org/react";
 import Education from "@components/userProfile/education"
-import { Table, Row, Col, Tooltip, User, textform } from "@nextui-org/react";
+// import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+// import { Table, Row, Col, Tooltip, User, textform } from "@nextui-org/react";
 import { StyledBadge } from "@styles/StyledBadged";
 // import { IconButton } from "@styles/IconButton";
 import { EyeIcon } from "@styles/EyeIcon";
@@ -23,6 +25,7 @@ import {IconButton} from 'rsuite';
 const fetcher = async (...args) =>await fetch(...args).then((res) => res.json());
 
 export default function Profile() {
+  const [show,setShow]=useState(true)
   const { data: session } = useSession();
   const [submitted,setSubmitted]=useState(false)
   const [message,setMessage]=useState(false)
@@ -301,10 +304,11 @@ export default function Profile() {
         } finally {
         }
       }
-
+      function handleShow(){
+        data.education.length>0?setShow(false):setShow(true)
+      }
       // For converting a user into alumni;
       const beAlumni=async(e)=>{
-
         try{
           const response = await fetch(`/api/user/${session?.user.id}/?type=alumni&action=update`,{
             method:"POST",
@@ -348,13 +352,13 @@ export default function Profile() {
         <section className='w-full headingBox mb-10'>
         <h2 className=' text-4xl text-white margintop animate-charcter textform'>Create Your Profile</h2>
           <Link href='/user/applications' className='margintop marginright'>
-            <button className='py-2 px-5 bg-blue-400 text-white rounded-md hover:bg-blue-500'>Your Applications</button>
+            <Button className='py-2 px-5 bg-blue-400 text-white rounded-md hover:bg-blue-500'>Your Applications</Button>
           </Link>
-          <Link href="/alumni-network">
-          <button className=' py-2 px-5 bg-blue-400 text-white rounded-md margintop hover:bg-blue-500 marginright' onClick={beAlumni}>Enter Alumni</button>
-          </Link>
+          <div>
+            <Button className=' py-2 px-5 bg-blue-400 text-white rounded-md margintop hover:bg-blue-500 marginright' disabled={data.education.length>0?false:true} onClick={beAlumni}>Enter Alumni</Button>
+          </div>
           <Link href="/user/resume">
-          <button className=' py-2 px-5 bg-blue-400 text-white rounded-md margintop hover:bg-blue-500'>Download Resume</button>
+          <Button className=' py-2 px-5 bg-blue-400 text-white rounded-md margintop hover:bg-blue-500'>Download Resume</Button>
           </Link>
           {/* <p className='desc text-left'>{data.email}</p> */}
         </section>

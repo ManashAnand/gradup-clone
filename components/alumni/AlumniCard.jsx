@@ -25,9 +25,9 @@ export default function AlumniCard({data}) {
       <Card.Body css={{ py: "$5",mt:"$4",fontSize:"$xs"}}>
         <Text css={{marginLeft:"$6",display:"flex",justifyContent:"space-evenly"}}>
           <div>
-          <BusinessIcon color="primary" sx={{marginBottom:"5px"}}/>{data.companyName} <br /></div>
+          <BusinessIcon color="primary" sx={{marginBottom:"5px"}}/>{data.companyName} ********** <br /></div>
           <div>
-          <PhoneAndroidIcon color="primary" sx={{marginBottom:"5px"}}/> 
+          <PhoneAndroidIcon color="primary" sx={{marginBottom:"5px"}}/>+91-********** 
           </div>
         </Text>
       </Card.Body>
