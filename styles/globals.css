@@ -2323,7 +2323,7 @@ input::placeholder,textarea::placeholder{
 }
 .founderimg{
   width:40vw;
-  height:50vh;
+  height:55vh;
   border-radius:10px;
   margin:auto 0;
   border-top:5px solid deepskyblue;
@@ -2331,7 +2331,7 @@ input::placeholder,textarea::placeholder{
 }
 .founderbox{
   display:flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 .headingbox{
@@ -2802,6 +2802,9 @@ a.btn {
    gap:20px;
    padding:4rem 2rem;
   }
+  .block1{
+    display: none;
+  }
   .alignmentset2{
     text-align:center;
   }
@@ -2884,9 +2887,7 @@ a.btn {
   .aboutbox{
     display:block;
   }
-  .founderbox{
-    display:block;
-  }
+  
   .alumnitop{
     display:block;
   }
@@ -2896,8 +2897,8 @@ a.btn {
     align-items: center;
   }
   .founderimg{
-    width:70vw;
-    height:100vh;
+    width:50vw;
+    height:60vh;
     margin:auto;
   }
   .yes{
@@ -2947,6 +2948,12 @@ a.btn {
     margin-top:-2vh;
   }
 }
+@media screen and (max-width:950px) {
+  .founderimg{
+    height:45vh;
+    width:45vw;
+  }
+}
 @media screen and (max-width:800px) {
   .headerpos{
     display:block;
@@ -2956,11 +2963,20 @@ a.btn {
       display:block;
     }
   }
+  .block2{
+    visibility: hidden;
+  }
   .flexmade{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+ .founderbox{
+    display:block;
+  }
+  .founderimg{
+    width:65vw;
   }
   .adjust{
     width:100%;
@@ -3150,8 +3166,8 @@ a.btn {
 }
 @media screen and (max-width:570px) {
   .founderimg{
-    width:90vw;
-    height:60vh;
+    width:70vw;
+    height:45vh;
   }
   .padded2{
     padding:1rem;
@@ -3289,6 +3305,11 @@ a.btn {
   .box9,.box8,.box7,.box6{
     margin:auto;
     width:60vw;
+  }
+}
+@media screen and (max-width:450px) {
+  .founderimg{
+    width:90vw;
   }
 }
 @media screen and (max-width:350px) {

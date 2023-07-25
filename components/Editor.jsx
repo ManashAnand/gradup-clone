@@ -1,6 +1,7 @@
 import html2pdf from "html2pdf.js";
 import React,{useEffect} from "react";
 import Spinner from "@components/Spinner"
+import Login from "./LoginAlert"
 import {useSession} from "next-auth/react";
 const fetcher = async (...args) =>await fetch(...args).then((res) => res.json());
 import useSWR from 'swr';
@@ -8,7 +9,7 @@ import useSWR from 'swr';
  export default function Editor(){
     const { data: session } = useSession();
     var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher)
-    if (error) return <div>userFailed to loadinggggggg</div>;
+    if (error) return <div><Login/></div>;
     if (!data) return <div className="my-60 mx-auto"><Spinner /></div>;
     const createPDF = async() => {   
         const pdf=document.getElementById("profile")

@@ -51,13 +51,13 @@ export default function About() {
           <div className={styles.contain3}>
             <TravelExploreIcon sx={{ color: "deepskyblue", fontSize: "60px" }} />
             <p className="text-sky-400 text-2xl text-center mb-4 font-semibold">Our Vision</p>
-            <p className="text-center text-white">We want to make the Youth of Bharat more employable and future ready.</p>
+            <p className="text-center text-white">We want to make the Youth of Bharat more skilled, employable and future ready.</p>
           </div>
         </div>
       </div>
-      <h1 className="text-center text-4xl underline underline-offset-8 decoration-white text mt-8 text-blue-500">Meet Our Founder</h1>
+      <h1 className="text-center text-4xl mb-2 text mt-8 text-blue-500">Meet Our Founder</h1>
       <div className="founderbox">
-        <div className='flex flex-col'>
+        <div className='flex flex-col items-center'>
         <img className="founderimg" width="400" src="/assets/images/NEW PICS.jpg" alt="founder"></img>
         <span className="flex gap-10 ml-8 mt-10">
               <a className="text-white my-auto" target="_blank" href="https://www.facebook.com/GradUp.in">
@@ -87,7 +87,7 @@ export default function About() {
           {/* <p className="text-white  mb-2">Coming from a family of educationists, our founder Mr Tanmay had the chance to interact with many students and parents. His interaction with the students helped him understand the most common problems faced by them  in their career initial phase of career after completing their degree. To provide a solution to this, GradUp (formerly, Attitude matterZ) was born.</p> */}
           <p className="text-white  mb-2">Tanmay is alumnus of NIT-IIM. He holds an Engineering degree, MBA degree and an Advanced degree in Digital Marketing & Entrepreneurship. Currently, He is pursuing Executive entrepreneurship Program at The Wharton School, University of Pennsylvania.</p>
           {/* <p className="text-white  mb-2">He has worked so hard despite facing several difficulties & being unvalued, still they manage to collaborate with some esteemed companies like PhonePe, Genpact, Toyota, LiuGong, Tata Steel Aashiyana, and PepsiCo (VBL) and has rich experience in framing digital marketing strategies for MSME clients.</p> */}
-          <p className="text-white  mb-2">He is rightly known for his networking, down to earth nature and leadership skills. He is presently a member of the International Youth Council, United Nations, and has been elected as the General Secretary and Vice President at various clubs and societies. Before GradUp (formerly Attitude matterZ), Tanmay co-founded a startup namely Business garage which aimed at providing digital marketing strategies to MSMEs.</p>
+          <p className=" block1 text-white  mb-2">He is rightly known for his networking, down to earth nature and leadership skills. He is presently a member of the International Youth Council, United Nations, and has been elected as the General Secretary and Vice President at various clubs and societies. Before GradUp (formerly Attitude matterZ), Tanmay co-founded a startup namely Business garage which aimed at providing digital marketing strategies to MSMEs.</p>
           {/* <p className='text-white  mb-2'>Tanmay is also a guest speaker, and he has been invited as a guest speaker by many premier institutions of India.</p> */}
           <p className="text-white  mb-2">Tanmay has a vision to nurture the youth of “BHARAT” to be industry and future ready.</p>
           <div className="flex justify-center mt-6">
@@ -98,7 +98,7 @@ export default function About() {
       </div>
       {/* <img className='mx-auto mt-16 mb-16' src="/assets/images/certify.png" alt="certificate"></img> */}
       <p className='text-white text-center mb-6 textform text-3xl mt-5'>Founder's Message</p>
-      <p className='text-black text-xl textform mt-1 widthsetter m-auto bg-white rounded-2xl p-10'>" Thank you for considering GradUp as your go-to platform for upskilling courses, internships, hackathons, and jobs. We're confident that our
+      <p className='text-gray-800 text-xl text-left textform mt-1 widthsetter m-auto bg-white rounded-2xl p-10'>" Thank you for considering GradUp as your go-to platform for upskilling courses, internships, hackathons, and jobs. We're confident that our
         comprehensive features and flexible pricing model make us the best choice for students and businesses alike.
         To take advantage of our platform, simply sign up for free and start exploring the many opportunities available
         to you. If you have any questions or concerns, our dedicated support team is always available to help. Join GradUp today and transform your dreams into reality."</p>

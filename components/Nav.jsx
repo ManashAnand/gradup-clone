@@ -76,7 +76,7 @@ const Nav = () => {
           </div>
         ) : (
           <>
-            <Link href='/user' className='outline_btn'>
+            <Link href='/user' className='mr-4 text-white px-4 py-2 hover:bg-blue-500 hover:rounded-2xl'>
               Create Profile
             </Link>
             {providers &&

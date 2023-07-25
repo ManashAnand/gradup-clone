@@ -72,7 +72,7 @@ export default function CoursesOnHome() {
       <div>
         <h1 className='text-3xl text-white font-semibold underline decoration-white underline-offset-8 textform text-center my-5'>Placement guarantee courses</h1>
         <p className="textnew text-center text-gray-200 text-2xl mb-8">Master new skills from anywhere with our online courses</p>
-        <Grid container spacing={3}>
+        <Grid container spacing={5}>
           {list.map((item, index) => (
             <Grid item xs={12} sm={4} key={index}>
               <Card sx={{ maxWidth: 500 }}>

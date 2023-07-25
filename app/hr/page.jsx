@@ -1,66 +1,51 @@
 'use client'
 import React from 'react'
 import Link from 'next/link';
-import useSWR from 'swr';
 import { useSession } from "next-auth/react";
-import { Grid, Card, Col, Text } from "@nextui-org/react";
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 const fetcher = async (...args) => await fetch(...args).then((res) => res.json());
 const HR = () => {
+  const list=[{img:"/assets/images/jbs.png",title:"Add Jobs"},{img:"/assets/images/jobpost.png",title:"Posted Jobs"}]
   const { data: session } = useSession();
   return (
-    <div>
+    <div className='w-screen'>
       <p className='text-white text-xl text-center mt-10'>Name : {session?.user.name}</p>
       <p className='text-white text-xl text-center'>Email : {session?.user.email}</p>
-    <div className='my-20 disp'>
-      <Card css={{ w: "90%" }}>
-        <Card.Header isBlurred css={{ position: "absolute", bgBlur: "#0f111466", zIndex: 1, bottom: 0 }}>
-          <Col>
-          <Text size={15} css={{ textAlign: "center",marginBottom:"$6" }} weight="bold" transform="uppercase" color="#ffffff">
-              Add Jobs
-            </Text>
-            <Text css={{ textAlign: "center",marginBottom:"$4" }}>
-              <Link href='/hr/addjob' className='bg-blue-400 px-10 rounded-xl py-2 text-white text-center'>
-                Add Job
-              </Link>
-            </Text>
-          </Col>
-        </Card.Header>
-        <Card.Image
-          src="/assets/images/jobpost.png"
-          width="100%"
-          height={280}
-          objectFit="cover"
-          alt="Card image background"
-        />
-      </Card>
-      <Card css={{ w: "90%" }}>
-        <Card.Header isBlurred css={{ position: "absolute", bgBlur: "#0f111466", zIndex: 1, bottom: 0 }}>
-          <Col>
-            <Text size={15} css={{ textAlign: "center",marginBottom:"$6" }} weight="bold" transform="uppercase" color="#ffffff">
-              Posted Jobs
-            </Text>
-            <Text css={{ textAlign: "center",marginBottom:"$4" }}>
-              <Link href='/hr/posted-jobs' className='bg-blue-400 px-10 rounded-xl py-2 text-white text-center'>
-                Posted Jobs
-              </Link>
-            </Text>
-          </Col>
-        </Card.Header>
-        <Card.Image
-          src="/assets/images/jbs.png"
-          width="100%"
-          height={280}
-          objectFit="cover"
-          alt="Card image background"
-        />
-      </Card>
+      <div className=' flex justify-center mt-10 mb-10'>
+      <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
+        {list.map((item, index) => (
+          <Grid item xs={12} sm={4} key={index}>
+            <Card sx={{ maxWidth: 300, marginX: "auto" }}>
+              <CardMedia
+                sx={{ height: 170 }}
+                image={item.img}
+                title="courses"
+              />
+              <CardContent sx={{ display: "flex",flexDirection:"column" }}>
+                {/* <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
+                  {item.title}
+                </Typography> */}
+                <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
+                  <a href={index===0?"/hr/addjob":"/hr/posted-jobs"}><Button variant="outlined" size="small" color="primary">
+                    {index===0?"Add Jobs":"Posted Jobs"}
+                  </Button></a>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>))}
+      </Grid>
+      </div>
       {/* <Link href='/hr/addjob' className='bg-blue-400 px-20 py-2 text-white text-center mb-10'>
         Add Job
       </Link>
       <Link href='/hr/posted-jobs' className="bg-blue-400 px-16 py-2 text-white text-center" >
         Jobs Posted
       </Link> */}
-    </div>
     </div>
   )
 }
