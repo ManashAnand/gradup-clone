@@ -26,27 +26,27 @@ export default function CoursesOnHome() {
       price: "8999",
     },
     {
-      title: "Data Science",
+      title: "Data Science Course",
       img: "/assets/images/datasc.gif",
       price: "6799",
     },
-    // {
-    //   title: "Blockchain",
-    //   img: "/assets/images/Blockchain1.png",
-    //   price: "5999",
-    // },
-    // {
-    //   title: "Python",
-    //   img: "/assets/images/pyth.png",
-    //   price: "6299",
-    // },
+    {
+      title: "Blockchain Course",
+      img: "/assets/images/blockchain.gif",
+      price: "5999",
+    },
+    {
+      title: "Python Programming",
+      img: "/assets/images/python.gif",
+      price: "6299",
+    },
     {
       title: "Cyber Security",
       img: "/assets/images/cyber.gif",
       price: "4999",
     },
     {
-      title: "Digital Marketing",
+      title: "Digital Market",
       img: "/assets/images/digitalmarket.gif",
       price: "3999",
     },
@@ -56,15 +56,10 @@ export default function CoursesOnHome() {
       price: "3999",
     },
     {
-      title: "Video Editing",
+      title: "Video Editing Course",
       img: "/assets/images/videoedit.gif",
       price: "2999",
     },
-    // {
-    //   title: "Video Editing",
-    //   img: "/assets/images/video.png",
-    //   price: "2999",
-    // },
   ];
 
   return (
@@ -72,16 +67,16 @@ export default function CoursesOnHome() {
       <div>
         <h1 className='text-3xl text-white font-semibold underline decoration-white underline-offset-8 textform text-center my-5'>Placement guarantee courses</h1>
         <p className="textnew text-center text-gray-200 text-2xl mb-8">Master new skills from anywhere with our online courses</p>
-        <Grid container spacing={5}>
+        <Grid container spacing={3}>
           {list.map((item, index) => (
-            <Grid item xs={12} sm={4} key={index}>
+            <Grid item xs={6} sm={3} key={index}>
               <Card sx={{ maxWidth: 500 }}>
                 <CardMedia
                   sx={{ height: 170}}
                   image={item.img}
                   title="courses"
                 />
-                <CardContent sx={{display:"flex",justifyContent:"space-between"}}>
+                <CardContent sx={{display:"flex", flexWrap:"wrap",justifyContent:"space-between"}}>
                   <Typography sx={{textAlign:"left",marginY:"auto"}} gutterBottom variant="subtitle1" component="div">
                     {item.title}
                   </Typography>

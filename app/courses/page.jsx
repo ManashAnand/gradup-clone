@@ -141,12 +141,12 @@ const Courses = () => {
   ];
   const list6 = [
     {
-      title: "User Experience(UX/UI) Design",
+      title: "(UX/UI) Design",
       img: "/assets/images/UIUX.gif",
       price: "Rs 3499",
     },
     {
-      title: "Graphic Designer",
+      title: "Graphic Design",
       img: "/assets/images/webdesign.gif",
       price: "Rs 3999",
     },
@@ -218,7 +218,7 @@ const Courses = () => {
       <p className='text-xl text-center text font-semibold text-white mb-8'>Computer Science</p>
       <Grid container spacing={4}>
         {list1.map((item, index) => (
-          <Grid item xs={12} sm={3} key={index}>
+          <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 500 }}>
               <CardMedia
                 sx={{ height: 170 }}
@@ -241,7 +241,7 @@ const Courses = () => {
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Information Technology</p>
       <Grid container spacing={4}>
         {list2.map((item, index) => (
-          <Grid item xs={12} sm={3} key={index}>
+          <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 500 }}>
               <CardMedia
                 sx={{ height: 170 }}
@@ -264,7 +264,7 @@ const Courses = () => {
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Automation Technology</p>
       <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list3.map((item, index) => (
-          <Grid item xs={12} sm={3} key={index}>
+          <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto" }}>
               <CardMedia
                 sx={{ height: 170 }}
@@ -287,7 +287,7 @@ const Courses = () => {
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Management</p>
       <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list4.map((item, index) => (
-          <Grid item xs={12} sm={4} key={index}>
+          <Grid item xs={6} sm={4} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto" }}>
               <CardMedia
                 sx={{ height: 170 }}
@@ -310,7 +310,7 @@ const Courses = () => {
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Language Learning</p>
       <Grid container spacing={4} sx={{ display: "flex",justifyContent:"center" }}>
         {list5.map((item, index) => (
-          <Grid item xs={12} sm={4} key={index}>
+          <Grid item xs={6} sm={4} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto" }}>
               <CardMedia
                 sx={{ height: 170 }}
@@ -333,7 +333,7 @@ const Courses = () => {
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Design and Product</p>
       <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list6.map((item, index) => (
-          <Grid item xs={12} sm={4} key={index}>
+          <Grid item xs={6} sm={4} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", }}>
               <CardMedia
                 sx={{ height: 170 }}
@@ -356,7 +356,7 @@ const Courses = () => {
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Arts and Humanities</p>
       <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list7.map((item, index) => (
-          <Grid item xs={12} sm={4} key={index}>
+          <Grid item xs={6} sm={4} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", }}>
               <CardMedia 
                 className='objec-contain'
