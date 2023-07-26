@@ -191,11 +191,11 @@ const Courses = () => {
           <p className='text-white text-xl'>Experience quality courses with us with best price. You can get best courses from us.</p>
           <img className='mx-auto' width="280" src="/assets/images/image1.png"></img>
         </div>
-        <h1 className='text-4xl font-bold text-sky-500 textform animate-charcter text-centermy-5'>Our Best Courses</h1>
-        {/* <Grid container spacing={4}>
+        <h1 className='text-4xl font-bold text-sky-500 textform animate-charcter text-center my-10'>Our Best Courses</h1>
+        <Grid container spacing={4}>
           {list.map((item, index) => (
-            <Grid item xs={12} sm={4} key={index}>
-              <Card sx={{ maxWidth: 500 }}>
+            <Grid item xs={6} sm={3} key={index} sx={{marginX:"auto"}}>
+              <Card sx={{ maxWidth: 500,marginX:"auto" }}>
                 <CardMedia
                   sx={{ height: 170 }}
                   image={item.img}
@@ -213,9 +213,9 @@ const Courses = () => {
                 </CardContent>
               </Card>
             </Grid>))}
-        </Grid> */}
+        </Grid>
       </div>
-      <p className='text-xl text-center text font-semibold text-white mb-8'>Computer Science</p>
+      <p className='text-xl text-center text font-semibold text-white mb-8 mt-16'>Computer Science</p>
       <Grid container spacing={4}>
         {list1.map((item, index) => (
           <Grid item xs={6} sm={3} key={index}>
