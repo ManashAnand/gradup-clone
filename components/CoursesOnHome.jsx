@@ -46,7 +46,7 @@ export default function CoursesOnHome() {
       price: "4999",
     },
     {
-      title: "Digital Market",
+      title: "Digital Marketing",
       img: "/assets/images/digitalmarket.gif",
       price: "3999",
     },
@@ -70,13 +70,13 @@ export default function CoursesOnHome() {
         <Grid container spacing={3}>
           {list.map((item, index) => (
             <Grid item xs={6} sm={3} key={index}>
-              <Card sx={{ maxWidth: 500 }}>
+              <Card sx={{ maxWidth: 500, borderRadius: '16px'  }}>
                 <CardMedia
                   sx={{ height: 170}}
                   image={item.img}
                   title="courses"
                 />
-                <CardContent sx={{display:"flex", flexWrap:"wrap",justifyContent:"space-between"}}>
+                <CardContent sx={{display:"flex", flexWrap:"wrap",justifyContent:"space-between" , p:1, '&:last-child': { pb: 0 }}} >
                   <Typography sx={{textAlign:"left",marginY:"auto"}} gutterBottom variant="subtitle1" component="div">
                     {item.title}
                   </Typography>

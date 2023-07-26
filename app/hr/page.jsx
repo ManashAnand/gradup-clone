@@ -31,7 +31,7 @@ const HR = () => {
                   {item.title}
                 </Typography> */}
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <a href={index===0?"/hr/addjob":"/hr/posted-jobs"}><Button variant="outlined" size="small" color="primary">
+                  <a href={index===0?"/hr/addjob":"/hr/posted-jobs"}><Button variant="outlined" size="small" color="primary" className='outline_btn'>
                     {index===0?"Add Jobs":"Posted Jobs"}
                   </Button></a>
                 </Typography>

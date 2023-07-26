@@ -195,13 +195,13 @@ const Courses = () => {
         <Grid container spacing={4}>
           {list.map((item, index) => (
             <Grid item xs={6} sm={3} key={index} sx={{marginX:"auto"}}>
-              <Card sx={{ maxWidth: 500,marginX:"auto" }}>
+              <Card sx={{ maxWidth: 500,marginX:"auto", borderRadius: '16px' }}>
                 <CardMedia
                   sx={{ height: 170 }}
                   image={item.img}
                   title="courses"
                 />
-                <CardContent sx={{ display: "flex",flexDirection:"column" }}>
+                <CardContent sx={{ display: "flex",flexDirection:"column", p:1, '&:last-child': { pb: 0 } }}>
                   <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                     {item.title}
                   </Typography>
@@ -219,13 +219,13 @@ const Courses = () => {
       <Grid container spacing={4}>
         {list1.map((item, index) => (
           <Grid item xs={6} sm={3} key={index}>
-            <Card sx={{ maxWidth: 500 }}>
+            <Card sx={{ maxWidth: 500, borderRadius: '16px' }}>
               <CardMedia
                 sx={{ height: 170 }}
                 image={item.img}
                 title="courses"
               />
-              <CardContent sx={{ display: "flex",flexDirection:"column" }}>
+              <CardContent sx={{ display: "flex",flexDirection:"column", p:1, '&:last-child': { pb: 0 } }}>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
@@ -242,13 +242,13 @@ const Courses = () => {
       <Grid container spacing={4}>
         {list2.map((item, index) => (
           <Grid item xs={6} sm={3} key={index}>
-            <Card sx={{ maxWidth: 500 }}>
+            <Card sx={{ maxWidth: 500 , borderRadius: '16px'}}>
               <CardMedia
                 sx={{ height: 170 }}
                 image={item.img}
                 title="courses"
               />
-              <CardContent sx={{ display: "flex",flexDirection:"column" }}>
+              <CardContent sx={{ display: "flex",flexDirection:"column" , p:1, '&:last-child': { pb: 0 }}}>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
@@ -265,13 +265,13 @@ const Courses = () => {
       <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list3.map((item, index) => (
           <Grid item xs={6} sm={3} key={index}>
-            <Card sx={{ maxWidth: 300, marginX: "auto" }}>
+            <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
               <CardMedia
                 sx={{ height: 170 }}
                 image={item.img}
                 title="courses"
               />
-              <CardContent sx={{ display: "flex",flexDirection:"column" }}>
+              <CardContent sx={{ display: "flex",flexDirection:"column", p:1, '&:last-child': { pb: 0 } }}>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
@@ -288,13 +288,13 @@ const Courses = () => {
       <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list4.map((item, index) => (
           <Grid item xs={6} sm={4} key={index}>
-            <Card sx={{ maxWidth: 300, marginX: "auto" }}>
+            <Card sx={{ maxWidth: 300, marginX: "auto" , borderRadius: '16px'}}>
               <CardMedia
                 sx={{ height: 170 }}
                 image={item.img}
                 title="courses"
               />
-              <CardContent sx={{ display: "flex",flexDirection:"column" }}>
+              <CardContent sx={{ display: "flex",flexDirection:"column", p:1, '&:last-child': { pb: 0 } }}>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
@@ -311,13 +311,13 @@ const Courses = () => {
       <Grid container spacing={4} sx={{ display: "flex",justifyContent:"center" }}>
         {list5.map((item, index) => (
           <Grid item xs={6} sm={4} key={index}>
-            <Card sx={{ maxWidth: 300, marginX: "auto" }}>
+            <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
               <CardMedia
                 sx={{ height: 170 }}
                 image={item.img}
                 title="courses"
               />
-              <CardContent sx={{ display: "flex",flexDirection:"column" }}>
+              <CardContent sx={{ display: "flex",flexDirection:"column", p:1, '&:last-child': { pb: 0 } }}>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
@@ -334,13 +334,13 @@ const Courses = () => {
       <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list6.map((item, index) => (
           <Grid item xs={6} sm={4} key={index}>
-            <Card sx={{ maxWidth: 300, marginX: "auto", }}>
+            <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
               <CardMedia
                 sx={{ height: 170 }}
                 image={item.img}
                 title="courses"
               />
-              <CardContent sx={{ display: "flex",flexDirection:"column" }}>
+              <CardContent sx={{ display: "flex",flexDirection:"column", p:1, '&:last-child': { pb: 0 } }}>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
@@ -357,14 +357,14 @@ const Courses = () => {
       <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list7.map((item, index) => (
           <Grid item xs={6} sm={4} key={index}>
-            <Card sx={{ maxWidth: 300, marginX: "auto", }}>
+            <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
               <CardMedia 
                 className='objec-contain'
                 sx={{ height: 170 }}
                 image={item.img}
                 title="courses"
               />
-              <CardContent sx={{ display: "flex", flexDirection:"column" }}>
+              <CardContent sx={{ display: "flex", flexDirection:"column" , p:1, '&:last-child': { pb: 0 }}}>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
