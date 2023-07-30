@@ -9,6 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Image from 'next/image';
 // import { Card, Grid, Row, Text } from "@nextui-org/react";
 const Courses = () => {
   const [results, setResults] = useState(false)
@@ -168,22 +169,29 @@ const Courses = () => {
     setResults(true)
   }
   return (
-    !results ? <div className='mb-10'>
+    !results ? <div className='mt-12'>
       <div className='coursebox'>
-        <svg height="400" width="600">
+        <svg height="400" width="600" className='mx-12'>
           <polygon points="500,50 500,320 10,400 10,50" style={{ fill: "#090D34" }} />
           <text className="text-3xl text" x="90" y="120" fill="deepskyblue">Learn from anywhere around</text>
           <text className="text-3xl text" x="90" y="160" fill="deepskyblue">the globe with us.</text>
           {/* <text className="text-4xl text" x="90" y="200" fill="deepskyblue">with us.</text> */}
-          <text className="text-xl text" x="90" y="290" fill="white">Experience quality courses with us</text>
-          <text className="text-xl text" x="90" y="320" fill="white">with best price. You can get best courses from us.</text>
+          {/* <text className="text-xl text" x="90" y="290" fill="white">Experience quality courses with us</text>
+          <text className="text-xl text" x="90" y="320" fill="white">with best price. You can get best courses from us.</text> */}
         </svg>
-        <div className='courseimg'>
+        <div className='courseimg flex'>
           <img width="200" src="/assets/images/image1.png"></img>
           <img width="200" src="/assets/images/image2.png"></img>
-          <img width="200" src="/assets/images/image4.png"></img>
-          <img width="200" src="/assets/images/image3.png"></img>
+          {/* <img width="200" src="/assets/images/image4.png"></img>
+          <img width="200" src="/assets/images/image3.png"></img> */}
         </div>
+      </div>
+      <div className='text-blue-400 px-12 -mt-20 w-[100vw] m-4 py-4 flex justify-between'>
+      <Image className='mx-4' width="100" height="50" src="/assets/images/icons8-amazon.png" alt="logo"></Image>
+      <Image className='mx-4' width="100" height="50" src="/assets/images/icons8-google-96.png" alt="logo"></Image>
+      <Image className='mx-4' width="100" height="50" src="/assets/images/icons8-microsoft-96.png" alt="logo"></Image>
+      <Image className='mx-4' width="100" height="50" src="/assets/images/icons8-netflix-96.png" alt="logo"></Image>
+      <Image className='mx-4' width="100" height="50" src="/assets/images/icons8-meta-48.png" alt="logo"></Image>
       </div>
       <div className='w-fit flex mx-auto flex-col my-10'>
         <div className='showmobile textform'>
@@ -192,21 +200,21 @@ const Courses = () => {
           <img className='mx-auto' width="280" src="/assets/images/image1.png"></img>
         </div>
         <h1 className='text-4xl font-bold text-sky-500 textform animate-charcter text-center my-10'>Our Best Courses</h1>
-        <Grid container spacing={4}>
+        <Grid  className='px-12' container spacing={4}>
           {list.map((item, index) => (
             <Grid item xs={6} sm={3} key={index} sx={{marginX:"auto"}}>
               <Card sx={{ maxWidth: 500,marginX:"auto", borderRadius: '16px' }}>
-                <CardMedia
-                  sx={{ height: 170 }}
+                <CardMedia className="p-2 w-[100%] h-[200px]"
+                  // sx={{ height: 170 }}
                   image={item.img}
-                  title="courses"
+                  title={item.title}
                 />
                 <CardContent sx={{ display: "flex",flexDirection:"column", p:1, '&:last-child': { pb: 0 } }}>
-                  <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
+                  <Typography className='text-xl font-medium' sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                     {item.title}
                   </Typography>
                   <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button onClick={handleCourses} size="small" color="primary">
+                  <Button className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md' onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -216,21 +224,21 @@ const Courses = () => {
         </Grid>
       </div>
       <p className='text-xl text-center text font-semibold text-white mb-8 mt-16'>Computer Science</p>
-      <Grid container spacing={4}>
+      <Grid className='px-12' container spacing={4}>
         {list1.map((item, index) => (
           <Grid item xs={6} sm={3} key={index}>
-            <Card sx={{ maxWidth: 500, borderRadius: '16px' }}>
-              <CardMedia
-                sx={{ height: 170 }}
+            <Card sx={{ maxWidth: 500 , borderRadius: '16px'}}>
+              <CardMedia className="p-2 w-[100%] h-[200px]"
+                // sx={{ height: 170 }}
                 image={item.img}
-                title="courses"
+                title={item.title}
               />
-              <CardContent sx={{ display: "flex",flexDirection:"column", p:1, '&:last-child': { pb: 0 } }}>
-                <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
+              <CardContent sx={{ display: "flex",flexDirection:"column" , p:1, '&:last-child': { pb: 0 }}}>
+                <Typography  className='text-xl font-medium' sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button onClick={handleCourses} size="small" color="primary">
+                  <Button  className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md' onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -238,22 +246,23 @@ const Courses = () => {
             </Card>
           </Grid>))}
       </Grid>
+      
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Information Technology</p>
-      <Grid container spacing={4}>
+      <Grid className='px-12' container spacing={4}>
         {list2.map((item, index) => (
           <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 500 , borderRadius: '16px'}}>
-              <CardMedia
-                sx={{ height: 170 }}
+              <CardMedia className="p-2 w-[100%] h-[200px]"
+                // sx={{ height: 170 }}
                 image={item.img}
-                title="courses"
+                title={item.title}
               />
               <CardContent sx={{ display: "flex",flexDirection:"column" , p:1, '&:last-child': { pb: 0 }}}>
-                <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
+                <Typography  className='text-xl font-medium' sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button onClick={handleCourses} size="small" color="primary">
+                  <Button  className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md' onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -262,21 +271,21 @@ const Courses = () => {
           </Grid>))}
       </Grid>
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Automation Technology</p>
-      <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
+      <Grid className='px-12' container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list3.map((item, index) => (
           <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
-              <CardMedia
-                sx={{ height: 170 }}
+              <CardMedia className="p-2 w-[100%] h-[200px]"
+                // sx={{ height: 170 }}
                 image={item.img}
-                title="courses"
+                title={item.title}
               />
               <CardContent sx={{ display: "flex",flexDirection:"column", p:1, '&:last-child': { pb: 0 } }}>
-                <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
+                <Typography className='text-xl font-medium' sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button onClick={handleCourses} size="small" color="primary">
+                  <Button className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'  onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -285,21 +294,21 @@ const Courses = () => {
           </Grid>))}
       </Grid>
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Management</p>
-      <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
+      <Grid className='px-12' container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list4.map((item, index) => (
           <Grid item xs={6} sm={4} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto" , borderRadius: '16px'}}>
-              <CardMedia
-                sx={{ height: 170 }}
+              <CardMedia className="p-2 w-[100%] h-[200px]"
+                // sx={{ height: 170 }}
                 image={item.img}
-                title="courses"
+                title={item.title}
               />
               <CardContent sx={{ display: "flex",flexDirection:"column", p:1, '&:last-child': { pb: 0 } }}>
-                <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
+                <Typography className='text-xl font-medium' sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button onClick={handleCourses} size="small" color="primary">
+                  <Button className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md' onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -308,21 +317,21 @@ const Courses = () => {
           </Grid>))}
       </Grid>
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Language Learning</p>
-      <Grid container spacing={4} sx={{ display: "flex",justifyContent:"center" }}>
+      <Grid className='px-12' container spacing={4} sx={{ display: "flex",justifyContent:"center" }}>
         {list5.map((item, index) => (
           <Grid item xs={6} sm={4} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
-              <CardMedia
-                sx={{ height: 170 }}
+              <CardMedia className="p-2 w-[100%] h-[200px]"
+                // sx={{ height: 170 }}
                 image={item.img}
-                title="courses"
+                title={item.title}
               />
               <CardContent sx={{ display: "flex",flexDirection:"column", p:1, '&:last-child': { pb: 0 } }}>
-                <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
+                <Typography className='text-xl font-medium' sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button onClick={handleCourses} size="small" color="primary">
+                  <Button className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'  onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -331,21 +340,21 @@ const Courses = () => {
           </Grid>))}
       </Grid>
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Design and Product</p>
-      <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
+      <Grid  className='px-12' container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list6.map((item, index) => (
           <Grid item xs={6} sm={4} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
-              <CardMedia
-                sx={{ height: 170 }}
+              <CardMedia className="p-2 w-[100%] h-[200px]"
+                // sx={{ height: 170 }}
                 image={item.img}
-                title="courses"
+                title={item.title}
               />
               <CardContent sx={{ display: "flex",flexDirection:"column", p:1, '&:last-child': { pb: 0 } }}>
-                <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
+                <Typography className='text-xl font-medium' sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button onClick={handleCourses} size="small" color="primary">
+                  <Button className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'  onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -354,22 +363,22 @@ const Courses = () => {
           </Grid>))}
       </Grid>
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Arts and Humanities</p>
-      <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
+      <Grid className='px-12 mb-8'container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list7.map((item, index) => (
           <Grid item xs={6} sm={4} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
-              <CardMedia 
-                className='objec-contain'
+              <CardMedia
+                className='objec-contain p-2 w-[100%] h-[200px]'
                 sx={{ height: 170 }}
                 image={item.img}
-                title="courses"
+                title={item.title}
               />
               <CardContent sx={{ display: "flex", flexDirection:"column" , p:1, '&:last-child': { pb: 0 }}}>
-                <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
+                <Typography className='text-xl font-medium' sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button onClick={handleCourses} size="small" color="primary">
+                  <Button className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'  onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>

@@ -43,14 +43,11 @@ const HomeFirstComponent = () => {
         </Link> */}
         {session?.user.id ? <></>
         :<>
-          {providers &&
-              Object.values(providers).map((provider) => (
+          {/* {providers && */}
+
+              {/* // Object.values(providers).map((provider) => ( */}
+              <Link href="/loginuser">
                 <button 
-                  type='button'
-                  key={provider.name}
-                  onClick={() => {
-                    signIn(provider.id);
-                  }}
                   className='animated-button1 rounded-2xl py-1 px-6 textnew'>
                     <span></span>
                     <span></span>
@@ -58,7 +55,8 @@ const HomeFirstComponent = () => {
                     <span></span>
                   Sign In for more opportunities
                 </button>
-              ))}
+                </Link>
+              {/* // } */}
         </>}
         
         </div> 

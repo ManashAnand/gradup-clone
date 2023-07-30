@@ -27,7 +27,9 @@ const Footer = () => {
             <hr style={{ borderTop: "1px dashed darkslateblue", marginTop: "10px" }} />
             <p className='text-2xl textnew mt-2 text-center text-blue-500 font-semibold'>Stay Connected</p>
             <div className=" textnew text-center justify-center flex text-sm mt-6 mb-3"><PhoneAndroidIcon sx={{ color: "deepskyblue" }} color="white" fontSize="medium" /><p className='ml-4 text-white'> +91-7428376300</p></div>
-            <div className="textnew text-center justify-center flex text-sm"><EmailIcon sx={{ color: "deepskyblue" }} color="" fontSize="medium" /><p className='ml-5 text-white'> info@gradup.in</p></div>
+            <div className="textnew text-center justify-center flex text-sm"><EmailIcon sx={{ color: "deepskyblue" }} color="" fontSize="medium" />
+            <a className='ml-5 text-white' href="mailto:info@gradup.in">info@gradup.in</a>
+            </div>
           </div>
 
           <div
