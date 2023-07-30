@@ -1,6 +1,7 @@
 import OTP from '@models/otp';
 import  User  from '@models/user';
 import { connectToDB } from '@utils/database';
+import nodemailer from 'nodemailer';
 
 function getOTP(length) {
   let result = '';
@@ -42,9 +43,45 @@ function sendSMS(apikey, numbers, sender, message) {
   });
 }
 
+function sendEmailAsync(receiverEmail,message){
+  // Replace these values with your actual Gmail account credentials
+const emailFrom = 'contact.shyptsolution@gmail.com';
+const emailPassword = 'dtjiljsssmrnqbzs';
+
+// Create a transporter using Gmail's SMTP
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: emailFrom,
+    pass: emailPassword,
+  },
+});
+
+// Email content
+const mailOptions = {
+  from: emailFrom,
+  to: receiverEmail,
+  subject: "OTP from GradUp.in",
+  text: message,
+};
+
+return new Promise((resolve, reject) => {
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      reject(error);
+    } else {
+      resolve(info); 
+    }
+  });
+});
+
+}
+
+
+
   export const POST = async(request, { params }) => {
     const data = await request.json();
-    const userPhone = data.phone 
+    const email = data.email
     try {
         await connectToDB();
         if (params.id != "undefined") {
@@ -62,8 +99,14 @@ function sendSMS(apikey, numbers, sender, message) {
             }
             else {
               currOTP = prevOTP.otp
-              return new Response("OTP Already Sent. Try again after 15 Minutes." + currOTP, { status: 201 })
+              // return new Response("OTP Already Sent. Try again after 15 Minutes." + currOTP, { status: 201 })
             }
+            try {
+              const info = await sendEmailAsync(email,currOTP);
+              console.log("Email sent successfully:", info);
+            } catch (error) {
+              console.error("Error sending email:", error);
+            } 
             // sendSMS(process.env.SMS_VERIFY, userPhone,'600010', "Hi there, thank you for sending your first test message from Textlocal. See how you can send effective SMS campaigns here: https://tx.gl/r/2nGVj/");
             return new Response("This is the OTP " + currOTP, { status: 201 })
         }
@@ -80,7 +123,7 @@ export const GET = async(req, { params }) => {
   try {
       await connectToDB();
       if (params.id != "undefined") {
-          const prevOTP = await OTP.find();
+          const prevOTP = await OTP.findById(params.id);
           const d = new Date();
           if(!prevOTP){
               return new Response("OTP Verified" + prevOTP.toString(), { status: 201 })
