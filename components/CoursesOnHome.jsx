@@ -70,17 +70,17 @@ export default function CoursesOnHome() {
         <Grid container spacing={3}>
           {list.map((item, index) => (
             <Grid item xs={6} sm={3} key={index}>
-              <Card sx={{ maxWidth: 500, borderRadius: '16px'  }}>
+              <Card  className='hover:scale-110 duration-300 ease-in-out transition cursor-pointer p-2' sx={{ maxWidth: 500, borderRadius: '16px'  }}>
                 <CardMedia
                   sx={{ height: 170}}
                   image={item.img}
-                  title="courses"
+                  title={item.title}
                 />
                 <CardContent sx={{display:"flex", flexWrap:"wrap",justifyContent:"space-between" , p:1, '&:last-child': { pb: 0 }}} >
-                  <Typography sx={{textAlign:"left",marginY:"auto"}} gutterBottom variant="subtitle1" component="div">
+                  <Typography  className='font-semibold' sx={{textAlign:"left",marginY:"auto"}} gutterBottom variant="subtitle1" component="div">
                     {item.title}
                   </Typography>
-                  <Typography sx={{color:"tomato",marginY:"auto"}} gutterBottom variant="subtitle1" component="div">
+                  <Typography className='text-black font-bold' sx={{marginY:"auto"}} gutterBottom variant="subtitle1" component="div">
                   &#8377; {item.price}
                   </Typography>
                 </CardContent>

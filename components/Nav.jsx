@@ -6,19 +6,39 @@ import { useEffect, useState } from "react";
 import useSWR from 'swr';
 // import {useSession} from "next-auth/react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+
 const fetcher = async (...args) =>await fetch(...args).then((res) => res.json());
 const Nav = () => {
   const { data: session } = useSession();
   var { data, error } = useSWR(`${session?.user.id}` ? `/api/user/${session?.user.id}` : null, fetcher)
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
+
+  const getProviders = async () => {
+    // Simulate API call or fetching data from a source
+    return [
+      { name: 'Google', id: 'google' },
+      { name: 'GitHub', id: 'github' },
+      { name: 'Twitter', id: 'twitter' },
+    ];
+  };
+  const setUpProviders = async () => {
+    const response = await getProviders();
+    setProviders(response);
+  };
+
   useEffect(() => {
-    const setUpProviders = async()=> {
-        const response = await getProviders();
-        setProviders(response);
-    }
     setUpProviders();
   }, []);
+
+  // useEffect(() => {
+  //   const setUpProviders = async()=> {
+      
+  //       const response = await getProviders();
+  //       setProviders(response);
+  //   }
+  //   setUpProviders();
+  // }, []);
 
   return (
     <nav style={{backgroundColor:"#041e48"}} className='w-screen flex-between pt-3 shadow-xl p-4'>
@@ -79,19 +99,20 @@ const Nav = () => {
             <Link href='/user' className='mr-4 text-white px-4 py-2 hover:bg-blue-500 hover:rounded-2xl'>
               Create Profile
             </Link>
-            {providers &&
-              Object.values(providers).map((provider) => (
-                <button
-                  type='button'
-                  key={provider.name}
-                  onClick={() => {
-                    signIn("google");
-                  }}
-                  className='px-8 py-2 bg-blue-500 rounded-md text-white hover:bg-blue-600'
-                >
-                  Sign in
-                </button>
-              ))}
+            {/* {providers &&
+              Object.values(providers).map((provider) => ( */}
+                {/* // <button
+                //   type='button'
+                //   key={provider.name}
+                //   onClick={() => {
+                //     signIn(`${provider.name}`);
+                //   }}
+                //   className='px-8 py-2 bg-blue-500 rounded-md text-white hover:bg-blue-600'
+                // >
+                //   Sign in {provider.name}
+                // </button>
+                // ))} */}
+                <Link href ="/loginuser"><button className="px-8 py-2 bg-blue-500 rounded-md text-white hover:bg-blue-600">Sign in</button></Link>
           </>
         )}
       </div>
@@ -171,7 +192,7 @@ const Nav = () => {
                   }}
                   className='px-4 py-2 bg-blue-500 rounded-lg text-white hover:bg-blue-600'
                 >
-                  Sign In
+                  Sign In {provider.name}
                 </button>
               ))}
           </>
