@@ -45,8 +45,8 @@ function sendSMS(apikey, numbers, sender, message) {
 
 function sendEmailAsync(receiverEmail,message){
   // Replace these values with your actual Gmail account credentials
-const emailFrom = 'contact.shyptsolution@gmail.com';
-const emailPassword = 'dtjiljsssmrnqbzs';
+const emailFrom = 'gradup.ops@gmail.com';
+const emailPassword = '';
 
 // Create a transporter using Gmail's SMTP
 const transporter = nodemailer.createTransport({
@@ -62,7 +62,7 @@ const mailOptions = {
   from: emailFrom,
   to: receiverEmail,
   subject: "OTP from GradUp.in",
-  text: message,
+  text:"OTP for HR verification will be valid for 15 minutes and OTP is " + message,
 };
 
 return new Promise((resolve, reject) => {
