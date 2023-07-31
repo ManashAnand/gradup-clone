@@ -10,9 +10,9 @@ export const POST = async(request, { params }) => {
     try {
         await connectToDB();
         if (params.id != "undefined") {
-            // const userOTP = await OTP.findById(params.id);
-            // if(!userOTP)return new Response("Unauthorized Request", { status: 500 })
-            // if(userOTP.otp!=submittedOTP)return new Response("Wrong OTP, Try Again", { status: 500 })
+            const userOTP = await OTP.findById(params.id);
+            if(!userOTP)return new Response("Unauthorized Request", { status: 500 })
+            if(userOTP.otp!=submittedOTP)return new Response("Wrong OTP, Try Again", { status: 500 })
             const currUser = await User.findById(params.id);
             currUser.role="HR";
             const currUserEmail=currUser.email;
@@ -35,10 +35,10 @@ export const POST = async(request, { params }) => {
             }
             return new Response("You are now a HR. Mobile Number Verified.", { status: 201 })
         }
-        return new Response("Error message while making HR ", { status: 500 })
+        return new Response("Error message while making HR ", { status: 502 })
     } catch (error) {
         return new Response("Failed to get User Details in HR Verification " + error.toString(), {
-            status: 500
+            status: 502
         })
     }
 
