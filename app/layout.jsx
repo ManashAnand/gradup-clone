@@ -8,8 +8,8 @@ import Footer from '@components/Footer';
 import Watsapp from '@components/Watsapp';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-import Spinner from "@components/Spinner"
-import { useState } from 'react';
+// import Spinner from "@components/Spinner"
+// import { useState } from 'react';
 // import Spinner2 from '@components/Spinner2';
 export const metadata = {
     title:"GradUp - Transforming Dreams into Careers",
@@ -18,35 +18,35 @@ export const metadata = {
 }
 const Layout = ({children}) => {
   const router = useRouter()
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const handleStart = () => {
-      setLoading(true);
-    };
+  // useEffect(() => {
+  //   const handleStart = () => {
+  //     setLoading(true);
+  //   };
 
-    const handleComplete = () => {
-      setLoading(false);
-    };
+  //   const handleComplete = () => {
+  //     setLoading(false);
+  //   };
 
-    import('next/router').then((router) => {
-      if (router?.events) {
-        router.events.on('routeChangeStart', handleStart);
-        router.events.on('routeChangeComplete', handleComplete);
-        router.events.on('routeChangeError', handleComplete);
-      }
-    });
+  //   import('next/router').then((router) => {
+  //     if (router?.events) {
+  //       router.events.on('routeChangeStart', handleStart);
+  //       router.events.on('routeChangeComplete', handleComplete);
+  //       router.events.on('routeChangeError', handleComplete);
+  //     }
+  //   });
 
-    return () => {
-      import('next/router').then((router) => {
-        if (router?.events) {
-          router.events.off('routeChangeStart', handleStart);
-          router.events.off('routeChangeComplete', handleComplete);
-          router.events.off('routeChangeError', handleComplete);
-        }
-      });
-    };
-  }, [router]);
+  //   return () => {
+  //     import('next/router').then((router) => {
+  //       if (router?.events) {
+  //         router.events.off('routeChangeStart', handleStart);
+  //         router.events.off('routeChangeComplete', handleComplete);
+  //         router.events.off('routeChangeError', handleComplete);
+  //       }
+  //     });
+  //   };
+  // }, [router]);
 
   useEffect(() => {
     const func=()=>{
@@ -96,7 +96,7 @@ const Layout = ({children}) => {
               <Footer />
             </main>
             </Provider>
-            {loading && <GlobalSpinner />}
+            {/* {loading && <GlobalSpinner />} */}
             </body>
         </html>
       );
