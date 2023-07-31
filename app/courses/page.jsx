@@ -202,7 +202,7 @@ const Courses = () => {
         <h1 className='text-4xl font-bold text-sky-500 textform animate-charcter text-center my-10'>Our Best Courses</h1>
         <Grid  className='px-12' container spacing={4}>
           {list.map((item, index) => (
-            <Grid item xs={6} sm={3} key={index} sx={{marginX:"auto"}}>
+            <Grid item xs={12} sm={3} key={index} sx={{marginX:"auto"}}>
               <Card sx={{ maxWidth: 500,marginX:"auto", borderRadius: '16px' }}>
                 <CardMedia className="p-2 w-[100%] h-[200px]"
                   // sx={{ height: 170 }}

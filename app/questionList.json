@@ -1,0 +1,332 @@
+[{
+    "question": "A train running at the speed of 60 km/hr crosses a pole in 9 seconds. What is the length of the train?",
+    "options": {
+      "a": "120 metres",
+      "b": "180 metres",
+      "c": "324 metres",
+      "d": "150 metres"
+    },
+    "correct_answer": "d"
+},
+{
+    "question": "A person crosses a 600 m long street in 5 minutes. What is his speed in km per hour?",
+    "options": {
+      "a": "3.6",
+      "b": "7.2",
+      "c": "8.4",
+      "d": "10"
+    },
+    "correct_answer": "b"
+},
+{
+    "question": "Two ships are sailing in the sea on the two sides of a lighthouse. The angle of elevation of the top of the lighthouse is observed from the ships are 30° and 45° respectively. If the lighthouse is 100 m high, the distance between the two ships is:",
+    "options": {
+      "a": "173 m",
+      "b": "200 m",
+      "c": "273 m",
+      "d": "300 m"
+    },
+    "correct_answer": "c"
+  },
+  {
+    "question": "A can do a work in 15 days and B in 20 days. If they work on it together for 4 days, then the fraction of the work that is left is:",
+    "options": {
+      "a": "1/4",
+      "b": "1/10",
+      "c": "7/15",
+      "d": "8/15"
+    },
+    "correct_answer": "d"
+  },
+  {
+    "question": "A sum of money at simple interest amounts to Rs. 815 in 3 years and to Rs. 854 in 4 years. The sum is:",
+    "options": {
+      "a": "Rs. 650",
+      "b": "Rs. 690",
+      "c": "Rs. 698",
+      "d": "Rs. 700"
+    },
+    "correct_answer": "c"
+  },
+  {
+    "question": "A bank offers 5% compound interest calculated on half-yearly basis. A customer deposits Rs. 1600 each on 1st January and 1st July of a year. At the end of the year, the amount he would have gained by way of interest is:",
+    "options": {
+      "a": "Rs. 120",
+      "b": "Rs. 121",
+      "c": "Rs. 122",
+      "d": "Rs. 123"
+    },
+    "correct_answer": "b"
+  },
+  {
+    "question": "The cost price of 20 articles is the same as the selling price of x articles. If the profit is 25%, then the value of x is:",
+    "options": {
+      "a": "15",
+      "b": "16",
+      "c": "18",
+      "d": "25"
+    },
+    "correct_answer": "b"
+  },
+  {
+    "question": "A and B invest in a business in the ratio 3 : 2. If 5% of the total profit goes to charity and A's share is Rs. 855, the total profit is:",
+    "options": {
+      "a": "Rs. 1425",
+      "b": "Rs. 1500",
+      "c": "Rs. 1537.50",
+      "d": "Rs. 1576"
+    },
+    "correct_answer": "b"
+  },
+  {
+    "question": "Two students appeared at an examination. One of them secured 9 marks more than the other and his marks were 56% of the sum of their marks. The marks obtained by them are:",
+    "options": {
+      "a": "39, 30",
+      "b": "41, 32",
+      "c": "42, 33",
+      "d": "43, 34"
+    },
+    "correct_answer": "c"
+  },
+  {
+    "question": "The sum of ages of 5 children born at intervals of 3 years each is 50 years. What is the age of the youngest child?",
+    "options": {
+      "a": "4 years",
+      "b": "8 years",
+      "c": "10 years",
+      "d": "None of these"
+    },
+    "correct_answer": "b"
+  },
+  {
+    "question": "It was Sunday on Jan 1, 2006. What was the day of the week on Jan 1, 2010?",
+    "options": {
+      "a": "Sunday",
+      "b": "Saturday",
+      "c": "Friday",
+      "d": "Wednesday"
+    },
+    "correct_answer": "c"
+  },
+  {
+    "question": "An accurate clock shows 8 o'clock in the morning. Through how many degrees will the hour hand rotate when the clock shows 2 o'clock in the afternoon?",
+    "options": {
+      "a": "144°",
+      "b": "150°",
+      "c": "168°",
+      "d": "180°"
+    },
+    "correct_answer": "d"
+  },
+  {
+    "question": "In the first 10 overs of a cricket game, the run rate was only 3.2. What should be the run rate in the remaining 40 overs to reach the target of 282 runs?",
+    "options": {
+      "a": "6.25",
+      "b": "6.5",
+      "c": "6.75",
+      "d": "7"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "The ratio between the length and the breadth of a rectangular park is 3 : 2. If a man cycling along the boundary of the park at the speed of 12 km/hr completes one round in 8 minutes, then the area of the park (in sq. m) is:",
+    "options": {
+      "a": "15360",
+      "b": "153600",
+      "c": "30720",
+      "d": "307200"
+    },
+    "correct_answer": "b"
+  },
+  {
+    "question": "In a shower, 5 cm of rain falls. The volume of water that falls on 1.5 hectares of ground is:",
+    "options": {
+      "a": "75 cu. m",
+      "b": "750 cu. m",
+      "c": "7500 cu. m",
+      "d": "75000 cu. m"
+    },
+    "correct_answer": "b"
+  },
+  {
+    "question": "From a group of 7 men and 6 women, five persons are to be selected to form a committee so that at least 3 men are there on the committee. In how many ways can it be done?",
+    "options": {
+      "a": "564",
+      "b": "645",
+      "c": "735",
+      "d": "756"
+    },
+    "correct_answer": "d"
+  },
+  {
+    "question": "Which one of the following is not a prime number?",
+    "options": {
+      "a": "31",
+      "b": "61",
+      "c": "71",
+      "d": "91"
+    },
+    "correct_answer": "d"
+  },
+  {
+    "question": "If one-third of one-fourth of a number is 15, then three-tenth of that number is:",
+    "options": {
+      "a": "35",
+      "b": "36",
+      "c": "45",
+      "d": "54"
+    },
+    "correct_answer": "d"
+  },
+  {
+    "question": "Find the greatest number that will divide 43, 91, and 183 so as to leave the same remainder in each case.",
+    "options": {
+      "a": "4",
+      "b": "7",
+      "c": "9",
+      "d": "13"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "What decimal of an hour is a second?",
+    "options": {
+      "a": ".0025",
+      "b": ".0256",
+      "c": ".00027",
+      "d": ".000126"
+    },
+    "correct_answer": "c"
+  },
+  {
+    "question": "A man has Rs. 480 in the denominations of one-rupee notes, five-rupee notes, and ten-rupee notes. The number of notes of each denomination is equal. What is the total number of notes that he has?",
+    "options": {
+      "a": "45",
+      "b": "60",
+      "c": "75",
+      "d": "90"
+    },
+    "correct_answer": "d"
+  },
+  {
+    "question": "The cube root of 0.000216 is:",
+    "options": {
+      "a": ".6",
+      "b": ".06",
+      "c": "77",
+      "d": "87"
+    },
+    "correct_answer": "b"
+  },
+  {
+    "question": "A tank is filled by three pipes with uniform flow. The first two pipes operating simultaneously fill the tank in the same time during which the tank is filled by the third pipe alone. The second pipe fills the tank 5 hours faster than the first pipe and 4 hours slower than the third pipe. The time required by the first pipe is:",
+    "options": {
+      "a": "6 hours",
+      "b": "10 hours",
+      "c": "15 hours",
+      "d": "30 hours"
+    },
+    "correct_answer": "c"
+  },
+  {
+    "question": "A boat can travel with a speed of 13 km/hr in still water. If the speed of the stream is 4 km/hr, find the time taken by the boat to go 68 km downstream.",
+    "options": {
+      "a": "2 hours",
+      "b": "3 hours",
+      "c": "4 hours",
+      "d": "5 hours"
+    },
+    "correct_answer": "c"
+  },
+  {
+    "question": "A can contains a mixture of two liquids A and B in the ratio 7 : 5. When 9 liters of the mixture is drawn off and the can is filled with B, the ratio of A and B becomes 7 : 9. How many liters of liquid A was contained by the can initially?",
+    "options": {
+      "a": "10",
+      "b": "20",
+      "c": "21",
+      "d": "25"
+    },
+    "correct_answer": "c"
+  },
+  {
+    "question": "If log 2 = 0.3010 and log 3 = 0.4771, the value of log5 512 is:",
+    "options": {
+      "a": "2.870",
+      "b": "2.967",
+      "c": "3.876",
+      "d": "3.912"
+    },
+    "correct_answer": "c"
+  },
+  {
+    "question": "In a 100 m race, A can give B 10 m and C 28 m. In the same race, B can give C:",
+    "options": {
+      "a": "18 m",
+      "b": "20 m",
+      "c": "27 m",
+      "d": "9 m"
+    },
+    "correct_answer": "b"
+  },
+  {
+    "question": "In order to obtain an income of Rs. 650 from 10% stock at Rs. 96, one must make an investment of:",
+    "options": {
+      "a": "Rs. 3100",
+      "b": "Rs. 6240",
+      "c": "Rs. 6500",
+      "d": "Rs. 9600"
+    },
+    "correct_answer": "b"
+  },
+  {
+    "question": "A man purchased a cow for Rs. 3000 and sold it the same day for Rs. 3600, allowing the buyer a credit of 2 years. If the rate of interest be 10% per annum, then the man has a gain of:",
+    "options": {
+      "a": "0%",
+      "b": "5%",
+      "c": "7.5%",
+      "d": "10%"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "The banker's discount on a bill due 4 months hence at 15% is Rs. 420. The true discount is:",
+    "options": {
+      "a": "Rs. 400",
+      "b": "Rs. 360",
+      "c": "Rs. 480",
+      "d": "Rs. 320"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "Odd one out: 3, 5, 11, 14, 17, 21",
+    "options": {
+      "a": "21",
+      "b": "17",
+      "c": "14",
+      "d": "3"
+    },
+    "correct_answer": "c"
+  },
+  {
+    "question": "3 pumps, working 8 hours a day, can empty a tank in 2 days. How many hours a day must 4 pumps work to empty the tank in 1 day?",
+    "options": {
+      "a": "9",
+      "b": "10",
+      "c": "11",
+      "d": "12"
+    },
+    "correct_answer": "d"
+  },
+  {
+    "question": "Two numbers are respectively 20% and 50% more than a third number. The ratio of the two numbers is:",
+    "options": {
+      "a": "2 : 5",
+      "b": "3 : 5",
+      "c": "4 : 5",
+      "d": "6 : 7"
+    },
+    "correct_answer": "c"
+  }
+
+]

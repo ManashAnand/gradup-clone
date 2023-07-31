@@ -22,7 +22,7 @@ const HackathonComponent = ({ post,display1,setDisplay1,display,setDisplay }) =>
         p: 2,
         borderRadius:"25px",
         margin: "auto",
-        maxWidth:450,
+        maxWidth:500,
         marginY:"10px",
         display:display1,
         flexGrow: 1,
@@ -33,9 +33,10 @@ const HackathonComponent = ({ post,display1,setDisplay1,display,setDisplay }) =>
     >
       <Grid container spacing={2}>
         <Grid item>
-          <ButtonBase sx={{ width: 128, height: 128,border:"1px solid blue",marginLeft:"1vw",marginTop:"1vh" }}>
+          <Link href="/"> <a><ButtonBase sx={{ width: 128, height: 128,border:"1px solid blue",marginLeft:"1vw",marginTop:"1vh" }}>
             <Img alt="complex" src="/assets/images/hackathon.png" />
-          </ButtonBase>
+          </ButtonBase></a>
+          </Link>
         </Grid>
         <Grid item xs={12} sm container>
           <Grid item xs container direction="column" spacing={2}>
@@ -69,7 +70,7 @@ const HackathonComponent = ({ post,display1,setDisplay1,display,setDisplay }) =>
           <Grid item xs container direction="column" spacing={2}>
             <Grid item>
             <Grid item>
-              <Link sx={{textDecoration:"none",marginTop:"1vh",marginRight:"1.2vw",paddingX:"30px",paddingY:"4px",backgroundColor:"darkslateblue",borderRadius:"10px",float:"right",color:"white"}}
+              <Link href="#" sx={{textDecoration:"none",marginTop:"1vh",marginRight:"1.2vw",paddingX:"30px",paddingY:"4px",backgroundColor:"darkslateblue",borderRadius:"10px",float:"right",color:"white"}}
                 component="button"
                 variant="body2"
                 onClick={() => {

@@ -131,7 +131,7 @@ const Nav = () => {
             />
 
             {toggleDropdown && (
-              <div className='dropdown'>
+              <div className='dropdown z-50'>
                 <Link
                   href='/user'
                   className='dropdown_link'
@@ -181,21 +181,22 @@ const Nav = () => {
             )}
           </div>
         ) : (
-          <>
-            {providers &&
-              Object.values(providers).map((provider) => (
-                <button
-                  type='button'
-                  key={provider.name}
-                  onClick={() => {
-                    signIn(provider.id);
-                  }}
-                  className='px-4 py-2 bg-blue-500 rounded-lg text-white hover:bg-blue-600'
-                >
-                  Sign In {provider.name}
-                </button>
-              ))}
-          </>
+          // <>
+          //   {providers &&
+          //     Object.values(providers).map((provider) => (
+          //       <button
+          //         type='button'
+          //         key={provider.name}
+          //         onClick={() => {
+          //           signIn(provider.id);
+          //         }}
+          //         className='px-4 py-2 bg-blue-500 rounded-lg text-white hover:bg-blue-600'
+          //       >
+          //         Sign In {provider.name}
+          //       </button>
+          //     ))}
+          // </>
+          <Link href ="/loginuser"><button className="px-8 py-2 bg-blue-500 rounded-md text-white hover:bg-blue-600">Sign in</button></Link>
         )}
       </div>
     </nav>

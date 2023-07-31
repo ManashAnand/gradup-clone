@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import Spinner from "@components/Spinner"
 import { useState } from 'react';
-import Spinner2 from '@components/Spinner2';
+// import Spinner2 from '@components/Spinner2';
 export const metadata = {
     title:"GradUp - Transforming Dreams into Careers",
     description:"Transforming Dreams Into Careers"
