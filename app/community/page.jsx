@@ -3,8 +3,9 @@ import React from "react"
 export default function Community(){
     return(
         <div className="w-screen text-left p-10 headingbox2">
-    <p className='text-center textnew text-white mb-6 text-5xl font-semibold animate-charcter underline underline-offset-8 decoration-white'>GradUp Community</p>
-    <p className="text-left text-xl mb-4 text-white textform">Are you passionate about Entrepreneurship? Look no further! We invite you to join our vibrant WhatsApp community, where like-minded individuals gather to share knowledge, exchange ideas, and foster engaging discussions.</p>
+    <p className='text-center textnew text-white mb-2 text-5xl font-semibold animate-charcter'>GradUp Community</p>
+    <p className="text-2xl text-white mb-8 text-center underline underline-offset-8 decoration-white"> A community to support you. </p>
+    <p className="text-left text-xl mb-4 text-white textform">Join GradUp community of over 15k college students. We invite you to join our vibrant WhatsApp community, where like-minded individuals gather to share knowledge, exchange ideas, and foster engaging discussions.</p>
     <p className="text-left text-xl mb-4 text-white textform">In our community, you will have the opportunity to connect with individuals who share your enthusiasm for Entrepreneurship. Whether you're a beginner seeking guidance or an expert looking to share your expertise, our community provides a supportive and inclusive space for everyone.</p> 
     <p className="text-left text-xl mb-2 text-white textform">Here's what you can expect by joining us:</p> 
     <ul className="text-xl">

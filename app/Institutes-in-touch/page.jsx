@@ -5,11 +5,11 @@ const page = () => {
   return (
     <div className='text-white my-20'>
       <p className="mb-14 text-center text-5xl animate-charcter text-white underline decoration-white underline-offset-8">Presence in Academia</p>
-      <div className='flex justify-center items-center flex-wrap gap-12 collegeslogo'>
+      <div className='flex justify-center  items-center flex-wrap gap-12 collegeslogo'>
          {logos.map((ele,i)=>{
           return(
             <div>
-              <img width="150" src={ele} alt={ele}></img>
+              <img className='rounded-xl object-cover h-p[50px] w-[150px] hover:scale-125 ease-in-out transform duration-200 transition' src={ele} alt={ele}></img>
             </div>
           )
          })}
