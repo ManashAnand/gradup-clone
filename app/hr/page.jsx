@@ -10,13 +10,16 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 const fetcher = async (...args) => await fetch(...args).then((res) => res.json());
 const HR = () => {
-  const list=[{img:"/assets/images/jbs.png",title:"Add Jobs"},{img:"/assets/images/jobpost.png",title:"Posted Jobs"}]
+  const list=[
+    {img:"/assets/images/jbs.png",title:"Add Jobs", link:"/hr/addjob"},
+    {img:"/assets/images/jobpost.png",title:"Post Jobs", link:"/hr/posted-jobs"},
+    {img:"/assets/images/jbs.png",title:"Get Premium", link:"/premium"}]
   const { data: session } = useSession();
   return (
     <div className='w-screen'>
       <p className='text-white text-xl text-center mt-10'>Name : {session?.user.name}</p>
       <p className='text-white text-xl text-center'>Email : {session?.user.email}</p>
-      <div className=' flex justify-center mt-10 mb-10'>
+      <div className=' flex justify-center my-12 mx-24'>
       <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
         {list.map((item, index) => (
           <Grid item xs={12} sm={4} key={index}>
@@ -31,9 +34,11 @@ const HR = () => {
                   {item.title}
                 </Typography> */}
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <a href={index===0?"/hr/addjob":"/hr/posted-jobs"}><Button variant="outlined" size="small" color="primary" className='outline_btn'>
-                    {index===0?"Add Jobs":"Posted Jobs"}
-                  </Button></a>
+                  <a href={item.link}>
+                    <Button variant='outlined' className='rounded-xl mt-2'>
+                    {item.title}
+                    </Button>
+                  </a>
                 </Typography>
               </CardContent>
             </Card>

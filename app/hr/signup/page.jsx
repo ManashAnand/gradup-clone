@@ -200,18 +200,18 @@ export default function HRSignup() {
                 type="submit"
                 onClick={handleGetOTP}
                 disabled={false}
-                className=" py-2 textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl"
+                className=" p-2 textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl"
               >
                 Get OTP
               </button>
-              <label className=" text-sm ml-3 text-left font-semibold text-gray-600">
-                Enter OTP
+              <label className=" text-sm mx-4 text-left font-semibold text-gray-600">
+                Enter OTP: 
               </label>
               <input
                 type="text"
                 required
                 placeholder="Enter OTP received on Email"
-                className=" px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="w-[16rem] px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
             <div className="mb-4">
@@ -238,7 +238,7 @@ export default function HRSignup() {
                   placeholder="Enter Phone Number"
                   pattern="[0-9]{10}"
                   required
-                  className="phonewidth px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="w-[28.3rem] px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
               {/* <div className="mx-4 mt-7 ">

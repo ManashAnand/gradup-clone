@@ -214,7 +214,7 @@ const Courses = () => {
                     {item.title}
                   </Typography>
                   <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md' onClick={handleCourses} size="small" color="primary">
+                  <Button variant='outlined' className='hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md' onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -229,7 +229,7 @@ const Courses = () => {
           <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 500 , borderRadius: '16px'}}>
               <CardMedia className="p-2 w-[100%] h-[200px]"
-                // sx={{ height: 170 }}
+                sx={{ height: 170 }}
                 image={item.img}
                 title={item.title}
               />
@@ -238,7 +238,7 @@ const Courses = () => {
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button  className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md' onClick={handleCourses} size="small" color="primary">
+                  <Button  variant='outlined'  className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md' onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -253,7 +253,7 @@ const Courses = () => {
           <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 500 , borderRadius: '16px'}}>
               <CardMedia className="p-2 w-[100%] h-[200px]"
-                // sx={{ height: 170 }}
+                sx={{ height: 170 }}
                 image={item.img}
                 title={item.title}
               />
@@ -262,7 +262,7 @@ const Courses = () => {
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button  className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md' onClick={handleCourses} size="small" color="primary">
+                  <Button  variant='outlined'  className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md' onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -276,7 +276,7 @@ const Courses = () => {
           <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
               <CardMedia className="p-2 w-[100%] h-[200px]"
-                // sx={{ height: 170 }}
+                sx={{ height: 170 }}
                 image={item.img}
                 title={item.title}
               />
@@ -285,7 +285,7 @@ const Courses = () => {
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'  onClick={handleCourses} size="small" color="primary">
+                  <Button  variant='outlined' className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'  onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -299,7 +299,7 @@ const Courses = () => {
           <Grid item xs={6} sm={4} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto" , borderRadius: '16px'}}>
               <CardMedia className="p-2 w-[100%] h-[200px]"
-                // sx={{ height: 170 }}
+                sx={{ height: 170 }}
                 image={item.img}
                 title={item.title}
               />
@@ -308,7 +308,7 @@ const Courses = () => {
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md' onClick={handleCourses} size="small" color="primary">
+                  <Button  variant='outlined' className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md' onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -322,7 +322,7 @@ const Courses = () => {
           <Grid item xs={6} sm={4} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
               <CardMedia className="p-2 w-[100%] h-[200px]"
-                // sx={{ height: 170 }}
+                sx={{ height: 170 }}
                 image={item.img}
                 title={item.title}
               />
@@ -331,7 +331,7 @@ const Courses = () => {
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'  onClick={handleCourses} size="small" color="primary">
+                  <Button variant='outlined' className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'  onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -345,7 +345,7 @@ const Courses = () => {
           <Grid item xs={6} sm={4} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
               <CardMedia className="p-2 w-[100%] h-[200px]"
-                // sx={{ height: 170 }}
+                sx={{ height: 170 }}
                 image={item.img}
                 title={item.title}
               />
@@ -354,7 +354,7 @@ const Courses = () => {
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'  onClick={handleCourses} size="small" color="primary">
+                  <Button variant='outlined' className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'  onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>
@@ -378,7 +378,7 @@ const Courses = () => {
                   {item.title}
                 </Typography>
                 <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <Button className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'  onClick={handleCourses} size="small" color="primary">
+                  <Button variant='outlined' className='border hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'  onClick={handleCourses} size="small" color="primary">
                     Start Course
                   </Button>
                 </Typography>

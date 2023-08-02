@@ -69,7 +69,7 @@ export default function CoursesOnHome() {
         <p className="textnew text-center text-gray-200 text-2xl mb-8">Master new skills from anywhere with our online courses</p>
         <Grid container spacing={3}>
           {list.map((item, index) => (
-            <Grid item xs={6} sm={3} key={index}>
+            <Grid item xs={12} sm={3} key={index}>
               <Card  className='hover:scale-110 duration-300 ease-in-out transition cursor-pointer p-2' sx={{ maxWidth: 500, borderRadius: '16px'  }}>
                 <CardMedia
                   sx={{ height: 170}}
@@ -80,7 +80,7 @@ export default function CoursesOnHome() {
                   <Typography  className='font-semibold' sx={{textAlign:"left",marginY:"auto"}} gutterBottom variant="subtitle1" component="div">
                     {item.title}
                   </Typography>
-                  <Typography className='text-black font-bold' sx={{marginY:"auto"}} gutterBottom variant="subtitle1" component="div">
+                  <Typography className='text-black font-bold ' sx={{marginY:"auto"}} gutterBottom variant="subtitle1" component="div">
                   &#8377; {item.price}
                   </Typography>
                 </CardContent>
