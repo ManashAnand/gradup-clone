@@ -63,8 +63,8 @@ function Page({ selectedCity, selectedTitle, salaryExp, search,index ,jobs,loadi
         {jobs.map((job) => (
           <ListContentCard post={job} />
         ))}
-      </div>) : (<div className="text-white text-center m-auto text-2xl">
-        No more Jobs to display!!
+      </div>) : (<div className="text-white text-center my-32 mx-60 text-2xl">
+        No more internships to display!!
       </div>)}
     {/* ) : (
       <div className="text-white text-center m-auto text-2xl">
@@ -138,7 +138,7 @@ export default function ShowInternships({ selectedCity, selectedTitle, salaryExp
           loading={loading}
         />
       </div>
-        <p className="bg-white">No internships available currently</p>
+        {/* <p className="bg-white">No internships available currently</p> */}
       <div className="flex buttonpos ml-2">
         <button style={{backgroundColor:"#0076ce",opacity:opacity1}} disabled={index===1?true:false} class="btn2" onClick={() => setPage(index - 1)}>
           Prev

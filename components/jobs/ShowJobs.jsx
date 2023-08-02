@@ -63,8 +63,8 @@ function Page({ selectedCity, selectedTitle, salaryExp, search,index ,jobs,loadi
         {jobs.map((job) => (
           <ListContentCard post={job} />
         ))}
-      </div>) : (<div className="text-white text-center m-auto text-2xl">
-        No more Jobs to display!!
+      </div>) : (<div className="text-white text-center my-32 mx-60 text-2xl">
+        No more jobs to display!!
       </div>)}
     {/* ) : (
       <div className="text-white text-center m-auto text-2xl">
