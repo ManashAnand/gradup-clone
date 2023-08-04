@@ -23,7 +23,7 @@ const Home = () => {
           <div className="filter"></div>
            <div className="grid grid-cols-2 gap-x-14 gap-y-8 my-auto data">
             <div className="w-32 h-20 data1 pt-2">
-              <h1 className="text-4xl text-center text-white font-semibold">15K+</h1>
+              <h1 className="text-4xl text-center text-white font-semibold">21K+</h1>
               <p className="text-xs font-semibold text-white text-center">Active Users</p>
             </div>
             <div className="w-32 h-20 data2 pt-2">
