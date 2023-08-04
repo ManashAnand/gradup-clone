@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Download(){
     return(
-        <div style={{backgroundColor:"cornflowerblue"}} className=" w-screen pt-10 flex flex-col lg:flex-row mx-4 lg:mx-0 items-center justify-evenly">
+        <div style={{backgroundColor:"cornflowerblue"}} className=" w-screen p-5 flex flex-col lg:flex-row mx-4 lg:mx-0 items-center justify-evenly">
             <img className="mb-6 mx-4 lg:mx-0" width="500" src="/assets/images/mobileapp.png" alt="mobile-app"></img>
             <div className="flex flex-col">
                 <p className="textform text-left ml-4 text-lg text-white">Apply for Jobs and Internships, enhance your careers by our upskilling courses & trainings modules and do much more from the gadget you adore - <span className="font-bold">Your Smartphone</span> </p>

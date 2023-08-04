@@ -14,7 +14,8 @@
   padding-bottom:0.3em;
 }
 .heading{
-  padding:1em 1em 1em 6em;
+  padding:1em 1em 1em 0em;
+  margin-left:7rem;
   font-size:19px;
   font-weight:bold;
   color:#17549f;
@@ -28,9 +29,9 @@
 .enroll{
   width:50vw;
   color:#17549f;
-  font-size:1.4em;
-  padding:0 1em 0 5.1em;
-  margin-bottom:3vh;
+  font-size:1.2em;
+  margin-left:7rem;
+  margin-top:1vh;
 }
 .mainbox{
   display:flex;
@@ -38,16 +39,23 @@
 .box{
   padding:1em 0;
   display:flex;
-  background:rgb(123, 187, 240);
-  margin:3em 0 0 0;
+  background:rgb(240, 247, 250);
+  margin:2em 0;
+  padding:2em;
 }
 .btn1{
   background-color:#0CAFFF;
   color:white;
-  margin-left:7em;
+  margin-left:7rem;
+  margin-top:2vh;
   margin-bottom:2em;
-  padding:0.5em 1em;
-  border-radius:10px;
+  padding:0.3em 1em;
+  border-radius:6px;
+}
+.paragraph{
+  margin-left: 7rem;
+  color:#17549F;
+  text-align: justify;
 }
 .btn5{
   background-color:#0CAFFF;
@@ -202,9 +210,9 @@
 }
 
 .groupimg{
-  margin:auto 0 auto 10vw;
-  height:50vh;
-  width:27vw;
+  margin:auto 0 auto 5vw;
+  height:45vh;
+  width:25vw;
 }
 .desc{
   width:60%;
@@ -231,14 +239,14 @@
   list-style:none;
 }
 .groupimg1{
-  margin:auto 0 auto 10vw;
-  height:60vh;
-  width:33vw;
+  margin:auto 0 auto 5vw;
+  height:45vh;
+  width:25vw;
 }
 .groupimg2{
-  margin:auto 0 auto 10vw;
-  height:50vh;
-  width:28vw;
+  margin:auto 0 auto 5vw;
+  height:45vh;
+  width:25vw;
 }
 .resumegroup{
   display:flex;
@@ -248,15 +256,15 @@
 .resume1{
   margin:0 auto 2vh auto;
   width:17vw;
-  background-color:#081f5a;
+  background-color:#2a58ac;
   padding:2em 1em;
   border-radius:20px;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 .groupimg4{
   margin:auto 0 auto 5vw;
-  height:65vh;
-  width:38vw;
+  height:45vh;
+  width:25vw;
 }
 .digitalgrid{
   margin:3vh 0;
@@ -474,14 +482,15 @@
     text-align:center;
   }
   .heading{
-    padding:1em 1em 0.5em 2.2em;
+    padding:0 1.8em;
+    margin:auto;
   }
   .partnerpara{
     margin-left:2.5rem;
     width:80%;
   }
   .btn1{
-    margin-left:2.5em;
+    margin:2em;
   }
   .circle{
     width:12vw;
@@ -497,19 +506,26 @@
     width:80vw;
   }
   .groupimg4,.groupimg1,.groupimg2,.groupimg{
-  margin:auto;
+  margin:1em auto;
   height:40vh;
-  width:95vw;
+  width:90vw;
   }
   .enroll{
-    padding:0 1em 0 1.8em;
+    padding:0 2em;
     width:90vw;
+    margin:auto;
+  }
+  .paragraph{
+    margin:auto;
+    padding:0 2em;
+    text-align:left;
   }
   .logo{
   margin:auto 0 auto 9vw;
   }
   .subhead{
-  padding:0 1em 0 1.3em;
+  padding:0 1.5em;
+  font-size:1.4em;
   }
   .digitalgrid{
     display:block;

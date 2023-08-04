@@ -62,7 +62,7 @@ const Courses = () => {
       price: "Rs 6299",
     },
     {
-      title: "C Programming Course",
+      title: "C Programming",
       img: "/assets/images/C.gif",
       price: "Rs 4999",
     },
@@ -169,38 +169,34 @@ const Courses = () => {
     setResults(true)
   }
   return (
-    !results ? <div className='mt-12'>
-      <div className='coursebox'>
-        <svg height="400" width="600" className='mx-12'>
-          <polygon points="500,50 500,320 10,400 10,50" style={{ fill: "#090D34" }} />
-          <text className="text-3xl text" x="90" y="120" fill="deepskyblue">Learn from anywhere around</text>
-          <text className="text-3xl text" x="90" y="160" fill="deepskyblue">the globe with us.</text>
-          {/* <text className="text-4xl text" x="90" y="200" fill="deepskyblue">with us.</text> */}
-          {/* <text className="text-xl text" x="90" y="290" fill="white">Experience quality courses with us</text>
-          <text className="text-xl text" x="90" y="320" fill="white">with best price. You can get best courses from us.</text> */}
-        </svg>
-        <div className='courseimg flex'>
+    !results ? <div>
+      <div className='coursebox w-fit m-auto'>
+        <div>
+      <p className='text-white text-left text-xl'>Learn from anywhere around the globe with us</p>
+      <p className='text-white text-left text-xl'>Experience quality courses with us with best price. You can get best courses from us.</p>
+      </div>
+        <div className=''>
           <img width="200" src="/assets/images/image1.png"></img>
-          <img width="200" src="/assets/images/image2.png"></img>
+          {/* <img width="200" src="/assets/images/image2.png"></img> */}
           {/* <img width="200" src="/assets/images/image4.png"></img>
           <img width="200" src="/assets/images/image3.png"></img> */}
         </div>
       </div>
-      <div className='text-blue-400 px-12 -mt-20 w-[100vw] m-4 py-4 flex justify-between'>
+      {/* <div className='text-blue-400 px-12 -mt-20 m-4 py-4 flex justify-between'>
       <Image className='mx-4' width="100" height="50" src="/assets/images/icons8-amazon.png" alt="logo"></Image>
       <Image className='mx-4' width="100" height="50" src="/assets/images/icons8-google-96.png" alt="logo"></Image>
       <Image className='mx-4' width="100" height="50" src="/assets/images/icons8-microsoft-96.png" alt="logo"></Image>
       <Image className='mx-4' width="100" height="50" src="/assets/images/icons8-netflix-96.png" alt="logo"></Image>
       <Image className='mx-4' width="100" height="50" src="/assets/images/icons8-meta-48.png" alt="logo"></Image>
-      </div>
-      <div className='w-fit flex mx-auto flex-col my-10'>
+      </div> */}
+      <div className='w-fit flex mx-auto flex-col mb-10 mt-5'>
         <div className='showmobile textform'>
           <p className='text-white text-xl'>Learn from anywhere around the globe with us</p>
           <p className='text-white text-xl'>Experience quality courses with us with best price. You can get best courses from us.</p>
-          <img className='mx-auto' width="280" src="/assets/images/image1.png"></img>
+          <img className='mx-auto block' width="280" src="/assets/images/image1.png"></img>
         </div>
-        <h1 className='text-4xl font-bold text-sky-500 textform animate-charcter text-center my-10'>Our Best Courses</h1>
-        <Grid  className='px-12' container spacing={4}>
+        <h1 className='text-4xl font-bold text-sky-500 textform animate-charcter text-center mb-6 mt-3'>Our Best Courses</h1>
+        <Grid  className='px-12' container spacing={2}>
           {list.map((item, index) => (
             <Grid item xs={12} sm={3} key={index} sx={{marginX:"auto"}}>
               <Card sx={{ maxWidth: 500,marginX:"auto", borderRadius: '16px' }}>
@@ -224,7 +220,7 @@ const Courses = () => {
         </Grid>
       </div>
       <p className='text-xl text-center text font-semibold text-white mb-8 mt-16'>Computer Science</p>
-      <Grid className='px-12' container spacing={4}>
+      <Grid className='' container spacing={2}>
         {list1.map((item, index) => (
           <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 500 , borderRadius: '16px'}}>
@@ -248,7 +244,7 @@ const Courses = () => {
       </Grid>
       
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Information Technology</p>
-      <Grid className='px-12' container spacing={4}>
+      <Grid className='' container spacing={2}>
         {list2.map((item, index) => (
           <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 500 , borderRadius: '16px'}}>
@@ -271,7 +267,7 @@ const Courses = () => {
           </Grid>))}
       </Grid>
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Automation Technology</p>
-      <Grid className='px-12' container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
+      <Grid className='' container spacing={2} sx={{ display: "flex", justifyContent: "center" }}>
         {list3.map((item, index) => (
           <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
@@ -294,9 +290,9 @@ const Courses = () => {
           </Grid>))}
       </Grid>
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Management</p>
-      <Grid className='px-12' container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
+      <Grid className='' container spacing={2} sx={{ display: "flex", justifyContent: "center" }}>
         {list4.map((item, index) => (
-          <Grid item xs={6} sm={4} key={index}>
+          <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto" , borderRadius: '16px'}}>
               <CardMedia className="p-2 w-[100%] h-[200px]"
                 sx={{ height: 170 }}
@@ -317,9 +313,9 @@ const Courses = () => {
           </Grid>))}
       </Grid>
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Language Learning</p>
-      <Grid className='px-12' container spacing={4} sx={{ display: "flex",justifyContent:"center" }}>
+      <Grid className='' container spacing={2} sx={{ display: "flex",justifyContent:"center" }}>
         {list5.map((item, index) => (
-          <Grid item xs={6} sm={4} key={index}>
+          <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
               <CardMedia className="p-2 w-[100%] h-[200px]"
                 sx={{ height: 170 }}
@@ -340,9 +336,9 @@ const Courses = () => {
           </Grid>))}
       </Grid>
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Design and Product</p>
-      <Grid  className='px-12' container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
+      <Grid  className='' container spacing={2} sx={{ display: "flex", justifyContent: "center" }}>
         {list6.map((item, index) => (
-          <Grid item xs={6} sm={4} key={index}>
+          <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
               <CardMedia className="p-2 w-[100%] h-[200px]"
                 sx={{ height: 170 }}
@@ -363,9 +359,9 @@ const Courses = () => {
           </Grid>))}
       </Grid>
       <p className='text-xl text-center text font-semibold text-white mt-16 mb-8'>Arts and Humanities</p>
-      <Grid className='px-12 mb-8'container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
+      <Grid className=' mb-8'container spacing={2} sx={{ display: "flex", justifyContent: "center" }}>
         {list7.map((item, index) => (
-          <Grid item xs={6} sm={4} key={index}>
+          <Grid item xs={6} sm={3} key={index}>
             <Card sx={{ maxWidth: 300, marginX: "auto", borderRadius: '16px' }}>
               <CardMedia
                 className='objec-contain p-2 w-[100%] h-[200px]'
@@ -386,6 +382,13 @@ const Courses = () => {
             </Card>
           </Grid>))}
       </Grid>
+      <div className='text-blue-400 mt-6 mb-12 flex justify-evenly items-center'>
+      <Image className="mx-2" width="60" height="50" src="/assets/images/icons8-amazon.png" alt="logo"></Image>
+      <Image className="mx-2" width="60" height="50" src="/assets/images/icons8-google-96.png" alt="logo"></Image>
+      <Image className='mx-2' width="60" height="50" src="/assets/images/icons8-microsoft-96.png" alt="logo"></Image>
+      <Image className='block mx-2' width="60" height="50" src="/assets/images/icons8-netflix-96.png" alt="logo"></Image>
+      <Image width="60" height="50" src="/assets/images/icons8-meta-48.png" alt="logo"></Image>
+      </div>
     </div> : <div>
       <img className="my-10 mx-auto" width="400" src="/assets/images/maintenance.gif" alt="maintenance"></img>
       {/* <p className="text-5xl text-center mt-4 textnew text-sky-400">Stay tuned !!</p> */}

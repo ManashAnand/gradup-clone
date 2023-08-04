@@ -16,16 +16,16 @@ const Footer = () => {
             <Image
               src='/assets/images/headerlogo.png'
               alt='logo'
-              width={150}
-              height={90}
+              width={120}
+              height={50}
               className='rounded-md object-contain mx-auto'
             />
 
-            <p className="mt-4 text-blue-500 text-2xl font-semibold text-center textnew">Built with ❤️ for the Students</p>
+            <p className="mt-4 text-blue-500 text-xl font-semibold text-center textnew">Built with ❤️ for the Students</p>
             <hr style={{ borderTop: "1px dashed darkslateblue", marginTop: "10px" }} />
-            <p className='text-2xl textform animate-charcter mt-2 text-center text-blue-500 font-semibold'>Boost your career today with GradUp</p>
+            <p className='text-xl textform animate-charcter mt-2 text-center text-blue-500 font-semibold'>Boost your career today with GradUp</p>
             <hr style={{ borderTop: "1px dashed darkslateblue", marginTop: "10px" }} />
-            <p className='text-2xl textnew mt-2 text-center text-blue-500 font-semibold'>Stay Connected</p>
+            <p className='text-xl textnew mt-2 text-center text-blue-500 font-semibold'>Stay Connected</p>
             <div className=" textnew text-center justify-center flex text-sm mt-6 mb-3"><PhoneAndroidIcon sx={{ color: "deepskyblue" }} color="white" fontSize="medium" /><p className='ml-4 text-white'> +91-7428376300</p></div>
             <div className="textnew text-center justify-center flex text-sm"><EmailIcon sx={{ color: "deepskyblue" }} color="" fontSize="medium" />
             <a className='ml-5 text-white' href="mailto:info@gradup.in">info@gradup.in</a>
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
           <div
-            className="grid grid-cols-1 alignmentset2 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-3"
+            className="grid grid-cols-1 alignmentset2 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4"
           >
             <div>
               <p className="text-lg underline decoration-yellow-400 underline-offset-8 text-white">Services</p>
@@ -215,7 +215,7 @@ const Footer = () => {
       </div>
     </footer>
     <div className="bg-gray-900">
-    <div className=" py-4 px-5 flex flex-wrap justify-around flex-col sm:flex-row">
+    <div className=" py-2 px-5 flex flex-wrap justify-around flex-col sm:flex-row">
       <p className="text-gray-300 my-auto text-lg text-center sm:text-center">© 2023 All Rights Reserved —
         <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-300 ml-1" target="_blank">@GradUp</a>
         {/* <span className='text-md text-gray-300 ml-2'>Designed & Developed by GradUp team.</span> */}

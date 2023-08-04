@@ -46,7 +46,7 @@ const Home = () => {
         <div style={{background:"linear-gradient(220deg, #044E83 0%, rgba(4, 78, 131, 0.98) 10.32%, rgba(4, 78, 131, 0.97) 17.79%, rgba(4, 78, 131, 0.96) 27.13%, rgba(4, 78, 131, 0.95) 60.90%,  rgba(9,158,248, 0.94) 99.86%)"}} className='p-10 w-screen'>
           <div className="hide1">
           {/* <p className='ml-24 text-xl text-left font-semibold mt-6 mb-1 text-white text'>Get Hired</p> */}
-          <p className="ml-24 text-left textnew text-lg text-white">Work with your dream companies by applying for Full-time roles, Internships and Hackathon too.</p>
+          {/* <p className="ml-24 text-left textnew text-lg text-white">Work with your dream companies by applying for Full-time roles, Internships and Hackathon too.</p> */}
           </div>
           <div className="appbox">
            <a href="/jobs">

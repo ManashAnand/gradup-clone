@@ -2008,7 +2008,7 @@ input::placeholder,textarea::placeholder{
 	opacity:0.1;
 } 
 .achievementbox{ 
-  margin-top:10vh;	
+  margin-top:1vh;	
 	height: 72vh;
 	color: deepskyblue;
 	display: flex;
@@ -2161,8 +2161,7 @@ input::placeholder,textarea::placeholder{
 .appbox{
   display:flex;
   align-items:center;
-  margin-top:2rem;
-  margin-left:6rem;
+  justify-content: center;
   gap:3rem;
 }
 .firstformbox{
@@ -2312,8 +2311,11 @@ input::placeholder,textarea::placeholder{
   margin-top:2rem;
 }
 .coursebox{
-  margin-top:3vh;
+  margin-top:1vh;
+  gap:20px;
   display:flex;
+  justify-content: center;
+  align-items: center;
   /* background-color:rgb(128, 175, 225); */
   padding:12px;
   border-radius:20px;
@@ -2499,7 +2501,6 @@ a.btn {
 }
 .courseimg{
   display:grid;
-  grid-template-columns: repeat(2,1fr);
  }
  .side1{
   width:40vw;
