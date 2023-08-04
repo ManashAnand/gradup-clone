@@ -48,7 +48,7 @@ const HomeFirstComponent = () => {
               {/* // Object.values(providers).map((provider) => ( */}
               <Link href="/loginuser">
                 <button 
-                  className='animated-button1 rounded-2xl py-1 px-6 textnew'>
+                  className='animated-button1 float-left rounded-2xl py-1 px-6 textnew'>
                     <span></span>
                     <span></span>
                     <span></span>
