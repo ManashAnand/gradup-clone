@@ -2009,7 +2009,7 @@ input::placeholder,textarea::placeholder{
 } 
 .achievementbox{ 
   margin-top:1vh;	
-	height: 72vh;
+	height: 60vh;
 	color: deepskyblue;
 	display: flex;
   justify-content: space-evenly;

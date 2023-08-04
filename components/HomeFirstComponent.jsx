@@ -35,7 +35,7 @@ const HomeFirstComponent = () => {
             <p style={{overflow:"hidden"}} className=''>Explore new <span className='animate-charcter font-semibold'>Opportunities</span></p>
         </div>
         <div className=' text-left text-white textnew'>
-            <h1 className='mt-6 sm:text-xl mb-6'>The ultimate platform for college-to-career success, offering skill-suited internships, jobs, upskilling courses, and expert guidance all in one place.</h1> 
+            <h1 className='mt-6 sm:text-xl mb-6'>The ultimate platform for college-to-career success, offering skill-suited internships, jobs, upskilling courses and expert guidance all in one place.</h1> 
         </div>
         {/* <Link href='/courses' className="area">
               <button className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white' onClick={() =>
