@@ -74,7 +74,7 @@ const Nav = () => {
               About Us
             </Link>
             <Link href='/user' className='outline_btn'>
-              Create Profile
+              Create Resume
             </Link>
             {/* <Link href='/hackathons' className='rounded-md bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-center mr-3'>
               Hackathons
@@ -97,7 +97,7 @@ const Nav = () => {
         ) : (
           <>
             <Link href='/user' className='mr-4 text-white px-4 py-2 hover:bg-blue-500 hover:rounded-2xl'>
-              Create Profile
+              Create Resume
             </Link>
             {/* {providers &&
               Object.values(providers).map((provider) => ( */}
