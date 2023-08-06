@@ -199,7 +199,7 @@ export default function HRSignup() {
               <button
                 type="submit"
                 onClick={handleGetOTP}
-                disabled={false}
+                disabled={message ? true : false}
                 className=" p-2 textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl"
               >
                 Get OTP
