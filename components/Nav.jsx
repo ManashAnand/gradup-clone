@@ -96,9 +96,27 @@ const Nav = () => {
           </div>
         ) : (
           <>
-            <Link href='/user' className='mr-4 text-white px-4 py-2 hover:bg-blue-500 hover:rounded-2xl'>
-              Create Resume
+            <div className='flex gap-3 md:gap-2'>
+            <Link href='/jobs' className='outline_btn'>
+              Jobs
             </Link>
+            <Link href='/internships' className='outline_btn'>
+              Internships
+            </Link>
+            <Link href='/courses' className='outline_btn'>
+              Courses
+            </Link>
+            <Link href={data?.role==="HR"?'/hr':'/hr/signup'} className='outline_btn'>
+              {data?.role==="HR"?"HR Dashboard": "HR Login"}
+            </Link>
+            <Link href='/about-us' className='outline_btn'>
+              About Us
+            </Link>
+            {/* <Link href='/hackathons' className='rounded-md bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-center mr-3'>
+              Hackathons
+            </Link> */}
+
+          </div>
             {/* {providers &&
               Object.values(providers).map((provider) => ( */}
                 {/* // <button
