@@ -191,8 +191,8 @@ const Courses = () => {
       </div> */}
       <div className='w-fit flex mx-auto flex-col mb-10 mt-5'>
         <div className='showmobile textform'>
-          <p className='text-white text-xl'>Learn from anywhere around the globe with us</p>
-          <p className='text-white text-xl'>Experience quality courses with us with best price. You can get best courses from us.</p>
+          <p className='text-white text-xl'>Embark on a journey of knowledge and affordability.</p>
+          <p className='text-white text-xl'>Discover exceptional courses tailored to your aspirations, all within your budget.Explore the excellence that awaits!</p>
           <img className='mx-auto block' width="280" src="/assets/images/image1.png"></img>
         </div>
         <h1 className='text-4xl font-bold text-sky-500 textform animate-charcter text-center mb-6 mt-3'>Our Best Courses</h1>
