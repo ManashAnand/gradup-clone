@@ -22,7 +22,7 @@ const HomeFirstComponent = () => {
   // },[current])
   // let arr=["/assets/images/home1.png","/assets/images/home2.png","/assets/images/home3.png","/assets/images/home4.png","/assets/images/home5.png"]
   return (
-    <section className='w-screen flex justify-between headingbox'>
+    <section className='w-screen flex justify-between headingbox '>
       {/* <video id="filter" autoPlay loop muted>
         <source src="/assets/images/backvid.mp4" type="video/mp4"></source>
       </video> */}
@@ -59,15 +59,17 @@ const HomeFirstComponent = () => {
             {/* {providers && */}
 
             {/* // Object.values(providers).map((provider) => ( */}
-            <Link href='/loginuser'>
-              <button className='animated-button1 float-left rounded-2xl py-1 px-6 textnew'>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Login for more opportunities
-              </button>
-            </Link>
+            <div>
+              <Link href='/loginuser'>
+                <button className='animated-button1  rounded-2xl py-1 px-6 textnew'>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Login for more opportunities
+                </button>
+              </Link>
+            </div>
             {/* // } */}
           </>
         )}

@@ -1,5 +1,6 @@
 'use client'
 
+import DropDownMenu from '@styles/DropDownMenu'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
@@ -117,6 +118,7 @@ const Nav = () => {
           </div>
         ) : (
           <>
+            <DropDownMenu />
             <div className='flex gap-3 md:gap-2'>
               <Link href='/jobs' className='outline_btn'>
                 Jobs
@@ -154,7 +156,7 @@ const Nav = () => {
                 // </button>
                 // ))} */}
             <Link href='/loginuser'>
-              <button className='px-8 py-2 bg-blue-500 rounded-md text-white hover:bg-blue-600'>
+              <button className='px-8 py-2 m-2 bg-blue-500 rounded-md text-white hover:bg-blue-600'>
                 Login
               </button>
             </Link>
