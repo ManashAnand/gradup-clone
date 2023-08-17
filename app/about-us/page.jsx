@@ -4,10 +4,9 @@ import RocketIcon from '@mui/icons-material/Rocket'
 import Diversity2Icon from '@mui/icons-material/Diversity2'
 import TravelExploreIcon from '@mui/icons-material/TravelExplore'
 import ContactUS from '@components/ContactUS'
-import { Grid, Stack, Typography, Box, Card, CardContent } from '@mui/material'
 export default function About() {
   return (
-    <div className='mb-10 w-screen padded2 text center'>
+    <div className='mb-10 w-screen padded2'>
       <div className='aboutbox'>
         <div>
           <div>
@@ -77,100 +76,43 @@ export default function About() {
         </h1>
         <h1 className={styles.sizing}>Be Different From Others</h1>
         <div className={styles.core}>
-          <Grid container my={8}>
-            <Grid container my={3} direction='row'>
-              <Grid item xs={12} md={4}>
-                <Card
-                  style={{
-                    height: '250px',
-                    borderRadius: '14px',
-                  }}
-                >
-                  <CardContent>
-                    <Typography gutterBottom variant='h4' my={3}>
-                      Our Story
-                    </Typography>
-                    <Typography variant='body-2' color={Text.secondary}>
-                      GradUp roots go back to 2017,since then, hundreds of
-                      students have found their dream companies, hence
-                      fulfilling our promises to transform dreams to reality
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={7}>
-                <Box
-                  my={5}
-                  backgroundColor='#041E48'
-                  display='flex'
-                  height='150px'
-                  p={2}
-                  color='#041E48'
-                ></Box>
-              </Grid>
-            </Grid>
-            <Grid container xs={12} my={4} direction='row-reverse'>
-              <Grid item xs={12} md={4}>
-                <Card
-                  style={{
-                    height: '250px',
-                    borderRadius: '14px',
-                  }}
-                >
-                  <CardContent>
-                    <Typography gutterBottom variant='h4' my={3}>
-                      Our Solution
-                    </Typography>
-                    <Typography variant='body-2' color={Text.secondary}>
-                      A comprehensive platform with user friendly interface,
-                      solving for internships, profile matching jobs, upskilling
-                      courses and simplifying the recruitment process.
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={7}>
-                <Box
-                  my={5}
-                  backgroundColor='#041E48'
-                  display='flex'
-                  height='150px'
-                  p={2}
-                  color='#041E48'
-                ></Box>
-              </Grid>
-            </Grid>
-            <Grid container xs={12} my={4} direction='row'>
-              <Grid item xs={12} md={4}>
-                <Card
-                  style={{
-                    height: '250px',
-                    borderRadius: '14px',
-                  }}
-                >
-                  <CardContent>
-                    <Typography gutterBottom variant='h4' my={3}>
-                      Our Vision
-                    </Typography>
-                    <Typography variant='body-2' color={Text.secondary}>
-                      We want to make the Youth of Bharat more skilled,
-                      employable and future ready.
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={7}>
-                <Box
-                  my={5}
-                  backgroundColor='#041E48'
-                  display='flex'
-                  height='150px'
-                  p={2}
-                  color='#041E48'
-                ></Box>
-              </Grid>
-            </Grid>
-          </Grid>
+          <div className={styles.contain1}>
+            <RocketIcon
+              sx={{ color: 'deepskyblue', fontSize: '70px' }}
+              fontSize='large'
+            />
+            <p className='text-sky-400 text-center text-2xl mb-4 font-semibold'>
+              Our Story
+            </p>
+            <p className='text-center text-white'>
+              GradUp roots go back to 2017,since then, hundreds of students have
+              found their dream companies, hence fulfilling our promises to
+              transform dreams to reality
+            </p>
+          </div>
+          <div className={styles.contain2}>
+            <Diversity2Icon sx={{ color: 'deepskyblue', fontSize: '60px' }} />
+            <p className='text-sky-400 text-center text-2xl mb-4 font-semibold'>
+              Our Solution
+            </p>
+            <p className='text-center text-white'>
+              A comprehensive platform with user friendly interface,solving for
+              internships,profile matching jobs, upskilling courses and
+              simplifying the recruitment process.
+            </p>
+          </div>
+          <div className={styles.contain3}>
+            <TravelExploreIcon
+              sx={{ color: 'deepskyblue', fontSize: '60px' }}
+            />
+            <p className='text-sky-400 text-2xl text-center mb-4 font-semibold'>
+              Our Vision
+            </p>
+            <p className='text-center text-white'>
+              We want to make the Youth of Bharat more skilled, employable and
+              future ready.
+            </p>
+          </div>
         </div>
       </div>
       <h1 className='text-center text-4xl mb-2 text mt-8 text-blue-500'>
@@ -263,7 +205,6 @@ export default function About() {
             by Fox Story India! They had a trailblazing Journey from Ground Zero
             to Remarkable Heights.
           </p>
-
           {/* <p className="text-white  mb-2">Coming from a family of educationists, our founder Mr Tanmay had the chance to interact with many students and parents. His interaction with the students helped him understand the most common problems faced by them  in their career initial phase of career after completing their degree. To provide a solution to this, GradUp (formerly, Attitude matterZ) was born.</p> */}
           <p className='text-white  mb-2'>
             Tanmay is alumnus of NIT-IIM. He holds an Engineering degree, MBA
@@ -330,40 +271,3 @@ export default function About() {
     </div>
   )
 }
-/*<div className={styles.contain1}>
-            <RocketIcon
-              sx={{ color: 'deepskyblue', fontSize: '70px' }}
-              fontSize='large'
-            />
-            <p className='text-sky-400 text-center text-2xl mb-4 font-semibold'>
-              Our Story
-            </p>
-            <p className='text-center text-white'>
-              GradUp roots go back to 2017,since then, hundreds of students have
-              found their dream companies, hence fulfilling our promises to
-              transform dreams to reality
-            </p>
-          </div>
-          <div className={styles.contain2}>
-            <Diversity2Icon sx={{ color: 'deepskyblue', fontSize: '60px' }} />
-            <p className='text-sky-400 text-center text-2xl mb-4 font-semibold'>
-              Our Solution
-            </p>
-            <p className='text-center text-white'>
-              A comprehensive platform with user friendly interface,solving for
-              internships,profile matching jobs, upskilling courses and
-              simplifying the recruitment process.
-            </p>
-          </div>
-          <div className={styles.contain3}>
-            <TravelExploreIcon
-              sx={{ color: 'deepskyblue', fontSize: '60px' }}
-            />
-            <p className='text-sky-400 text-2xl text-center mb-4 font-semibold'>
-              Our Vision
-            </p>
-            <p className='text-center text-white'>
-              We want to make the Youth of Bharat more skilled, employable and
-              future ready.
-            </p>
-          </div> */
