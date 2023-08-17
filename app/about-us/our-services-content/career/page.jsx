@@ -321,6 +321,40 @@ export default function Student() {
           />
         </Grid>
       </Grid>
+      <div>
+        <div className={styles.digitalgrid}>
+          <div className={styles.linkedincard}>
+            LinkedIn Tips and Tricks for Working Professionals
+            <p className='text-black mt-4'>
+              @<s>Rs 999/-</s>@ Rs 599/- per participant
+            </p>
+          </div>
+          <div className={styles.linkedincard}>
+            LinkedIn Tips and Tricks for Students
+            <p className='text-black mt-4'>
+              @<s>Rs 599/-</s>@ Rs 399/- per participant
+            </p>
+          </div>
+          <div className={styles.linkedincard}>
+            LinkedIn Tips and Tricks for Businesses
+            <p className='text-black mt-4'>
+              @<s>Rs 1999/-</s>@ Rs 999/- per participant
+            </p>
+          </div>
+          <div className={styles.linkedincard}>
+            LinkedIn Profile Building for Working Professionals
+            <p className='text-black mt-4'>@ Rs 1499/-</p>
+          </div>
+          <div className={styles.linkedincard}>
+            LinkedIn Profile Building for Students
+            <p className='text-black mt-4'>@ Rs 799/-</p>
+          </div>
+          <div className={styles.linkedincard}>
+            LinkedIn Profile Building for Businesses
+            <p className='text-black mt-4'>@ Rs 1999/-</p>
+          </div>
+        </div>
+      </div>
       {/*
       <div className={styles.serviceb}>
         <Grid container sm={12} direction='row' ml={4}>

@@ -19,12 +19,14 @@
   /* text-align: justify; */
 }
 .linkedincard {
-  display: block;
-  width: 13vw;
-  height: 20vw;
-  margin: 1em;
-  background: rgb(17, 101, 148);
-  color: rgb(240, 247, 250);
+  font-size: 20px;
+  width: 27vw;
+  background-color: rgb(17, 101, 148);
+  color: rgb(240 247 250);
+  font-weight: bold;
+  margin: 3vh auto;
+  padding: 2em;
+  border-radius: 20px;
 }
 .serviceb {
   padding: 1em 0;
