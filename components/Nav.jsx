@@ -73,6 +73,7 @@ const Nav = () => {
       <div className='md:flex hidden'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-2'>
+            <DropDownMenu />
             <Link href='/jobs' className='outline_btn'>
               Jobs
             </Link>
@@ -118,8 +119,8 @@ const Nav = () => {
           </div>
         ) : (
           <>
-            <DropDownMenu />
             <div className='flex gap-3 md:gap-2'>
+              <DropDownMenu />
               <Link href='/jobs' className='outline_btn'>
                 Jobs
               </Link>

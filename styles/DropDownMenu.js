@@ -103,7 +103,7 @@ const DropDownMenu = () => {
   const buttonStyle = {
     color: 'white',
     cursor: 'pointer',
-    padding: '10px',
+    padding: '5px',
   }
 
   const navigateToPage = (path) => {
@@ -144,6 +144,7 @@ const DropDownMenu = () => {
           style={buttonStyle}
           onClick={openMenu}
           endIcon={<ExpandMoreIcon />}
+          sx={{ textTransform: 'none' }}
         >
           Browse
         </Button>

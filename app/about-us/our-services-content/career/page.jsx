@@ -39,7 +39,8 @@ export default function Student() {
   return (
     <div className='{styles.container} w-screen mb-10 text-left'>
       <Typography
-        className=' text-center text-5xl p-8 '
+        variant='h2'
+        className=' text-center p-8 '
         style={{ fontFamily: 'Poppins', color: '#4B74C2', fontWeight: '600' }}
       >
         Career Services
@@ -47,7 +48,8 @@ export default function Student() {
 
       <img src='/serviceasset/pro.jpg' alt='group'></img>
       <Typography
-        className='text-blue-900 text-5xl p-10'
+        variant='h3'
+        className='text-blue-900 p-10'
         style={{ fontFamily: 'Poppins', color: '#4B74C2' }}
       >
         Services
@@ -74,7 +76,11 @@ export default function Student() {
         </Grid>
 
         <Grid item xs={12} md={4}>
-          <img src='/serviceasset/service-model1.jpg' alt='' />
+          <img
+            className='shadow-md hover:shadow-lg rounded-lg'
+            src='/serviceasset/service-model1.jpg'
+            alt=''
+          />
         </Grid>
       </Grid>
       <Grid container direction='row-reverse'>
@@ -112,6 +118,7 @@ export default function Student() {
 
         <Grid item xs={12} md={4} my={3}>
           <img
+            className='rounded-lg '
             src='/serviceasset/asset2.jpg'
             alt=''
             style={{ width: '100%', height: '400px', objectFit: 'cover' }}
@@ -139,7 +146,7 @@ export default function Student() {
         </Grid>
 
         <Grid item xs={12} md={4} my={3}>
-          <img src='/serviceasset/asset3.jpg' alt='' />
+          <img className='rounded-lg ' src='/serviceasset/asset3.jpg' alt='' />
         </Grid>
       </Grid>
       <div className={styles.serviceb}>
@@ -187,12 +194,7 @@ export default function Student() {
                     <ListItem>Professional Photo</ListItem>
                   </List>
                   <div className='flex flex-col items-center justify-center '>
-                    <Button
-                      variant='contained'
-                      sx={{ backgroundColor: 'white', borderRadius: '3' }}
-                    >
-                      Rs 800/-
-                    </Button>
+                    <Button variant='contained'>Rs 800/-</Button>
                   </div>
                 </div>
               </CardContent>
@@ -239,9 +241,15 @@ export default function Student() {
 
         <Grid item xs={12} md={4} my={3}>
           <img
+            className='rounded-lg '
             src='/serviceasset/asset4.jpg'
             alt=''
-            style={{ width: '100%', height: '500px', objectFit: 'cover' }}
+            style={{
+              width: '100%',
+              height: '500px',
+              objectFit: 'cover',
+              marginTop: '7px',
+            }}
           />
         </Grid>
       </Grid>
@@ -280,6 +288,7 @@ export default function Student() {
 
         <Grid item xs={12} md={4} my={3}>
           <img
+            className='rounded-lg '
             src='/serviceasset/asset5.jpg'
             alt=''
             style={{ width: '100%', height: '400px', objectFit: 'cover' }}
@@ -315,6 +324,7 @@ export default function Student() {
 
         <Grid item xs={12} md={4} my={3}>
           <img
+            className='rounded-lg '
             src='/serviceasset/asset6.jpg'
             alt=''
             style={{ width: '100%', height: '450px', objectFit: 'cover' }}
@@ -331,27 +341,27 @@ export default function Student() {
           </div>
           <div className={styles.linkedincard}>
             LinkedIn Tips and Tricks for Students
-            <p className='text-black mt-4'>
+            <p className='text-black mt-4 '>
               @<s>Rs 599/-</s>@ Rs 399/- per participant
             </p>
           </div>
           <div className={styles.linkedincard}>
             LinkedIn Tips and Tricks for Businesses
-            <p className='text-black mt-4'>
+            <p className='text-black mt-4 '>
               @<s>Rs 1999/-</s>@ Rs 999/- per participant
             </p>
           </div>
           <div className={styles.linkedincard}>
             LinkedIn Profile Building for Working Professionals
-            <p className='text-black mt-4'>@ Rs 1499/-</p>
+            <p className='text-black mt-4 '>@ Rs 1499/-</p>
           </div>
           <div className={styles.linkedincard}>
             LinkedIn Profile Building for Students
-            <p className='text-black mt-4'>@ Rs 799/-</p>
+            <p className='text-black mt-4 '>@ Rs 799/-</p>
           </div>
           <div className={styles.linkedincard}>
             LinkedIn Profile Building for Businesses
-            <p className='text-black mt-4'>@ Rs 1999/-</p>
+            <p className='text-black mt-4 '>@ Rs 1999/-</p>
           </div>
         </div>
       </div>
@@ -438,7 +448,7 @@ export default function Student() {
           <div className={styles.servicebox}>
             <Box>
               <h1 className={styles.servicehead}>Communication Skills</h1>
-              <p className={styles.serviceparah}>
+              <p className={`${styles.serviceparah} overflow-hidden`}>
                 Effective communication is a key to success and if you don’t
                 communicate your ideas well, the audience would never be able to
                 connect the impact your idea could bring to the world. Have you
@@ -471,6 +481,7 @@ export default function Student() {
 
         <Grid item xs={12} md={4} my={3}>
           <img
+            className='rounded-lg '
             src='/serviceasset/asset7.jpg'
             alt=''
             style={{ width: '100%', height: '500px', objectFit: 'cover' }}
@@ -506,6 +517,7 @@ export default function Student() {
 
         <Grid item xs={12} md={4} my={3}>
           <img
+            className='rounded-lg '
             src='/serviceasset/asset8.jpg'
             alt=''
             style={{ width: '100%', height: '450px', objectFit: 'cover' }}

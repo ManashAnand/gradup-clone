@@ -92,7 +92,15 @@ export default function HRSignup() {
     `${session?.user.id}` ? `/api/user/${session?.user.id}` : null,
     fetcher
   )
-  if (error) return <div>userFailed to loadinggggggg</div>
+  if (error)
+    return (
+      <div
+        className='text-white m-20 text-sm cursor-pointer md:text-xl lg:text-xl'
+        onClick={() => router.push('/loginuser')}
+      >
+        Please Login First...
+      </div>
+    )
   if (!data)
     return (
       <div className='my-60 mx-auto'>
