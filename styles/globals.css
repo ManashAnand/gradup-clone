@@ -2691,7 +2691,7 @@ textarea::placeholder {
 }
 .sortpos {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-top: 1rem;
   margin-right: 1rem;
 }
@@ -2715,7 +2715,7 @@ textarea::placeholder {
 }
 .buttonpos {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-right: 1vw;
   margin-top: 2rem;
 }
@@ -3168,7 +3168,7 @@ a.btn {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: start;
+    align-items: flex-start;
   }
   .user-follow-info {
     margin-top: 6px;
@@ -3181,7 +3181,7 @@ a.btn {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
   }
   .user-follow-info {
     margin-top: 6px;
@@ -3196,7 +3196,7 @@ a.btn {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: start;
+    align-items: flex-start;
   }
   .user-follow-info {
     margin-top: 6px;
@@ -3208,7 +3208,7 @@ a.btn {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
   }
   .user-follow-info {
     margin-top: 6px;
@@ -3223,7 +3223,7 @@ a.btn {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: start;
+    align-items: flex-start;
   }
   .user-follow-info {
     margin-top: 6px;
@@ -3647,7 +3647,7 @@ a.btn {
   .flexset {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   }
   .rotation {
     /* transform: rotate(270deg); */

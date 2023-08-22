@@ -345,6 +345,7 @@ export default function Student() {
               @<s>Rs 599/-</s>@ Rs 399/- per participant
             </p>
           </div>
+
           <div className={styles.linkedincard}>
             LinkedIn Tips and Tricks for Businesses
             <p className='text-black mt-4 '>
@@ -355,6 +356,7 @@ export default function Student() {
             LinkedIn Profile Building for Working Professionals
             <p className='text-black mt-4 '>@ Rs 1499/-</p>
           </div>
+
           <div className={styles.linkedincard}>
             LinkedIn Profile Building for Students
             <p className='text-black mt-4 '>@ Rs 799/-</p>

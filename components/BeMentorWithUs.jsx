@@ -1,40 +1,56 @@
-"use client"
-import { Card, Grid, Text, Link, Button } from "@nextui-org/react";
-import {useState} from "react"
+'use client'
+import { Card, Grid, Text, Link, Button } from '@nextui-org/react'
+import { useState } from 'react'
 export default function BeMentorWithUs() {
-  const [status,setStatus]=useState(false)
- function handleClick(){
-  setStatus(true)
- }
- function handleClose(){
-  setStatus(false)
- }
-  const handleSubmit =async (e)=>{
-    e.preventDefault();
-  
-    try{
-      const response = await fetch ("/api/mentor/application",{
-        method:"POST",
-        body:JSON.stringify({
-          name:e.target[0].value,
-          companyName:e.target[1].value,
-          mobileNo:e.target[2].value,
-          email:e.target[3].value,
-        }),
-      });
-    }catch(error){
-    }finally{
+  const [status, setStatus] = useState(false)
+  function handleClick() {
+    setStatus(true)
+  }
+  function handleClose() {
+    setStatus(false)
+  }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
 
+    try {
+      const response = await fetch('/api/mentor/application', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: e.target[0].value,
+          companyName: e.target[1].value,
+          mobileNo: e.target[2].value,
+          email: e.target[3].value,
+        }),
+      })
+    } catch (error) {
+    } finally {
     }
   }
   return (
     <>
-    <div className="w-full textform rounded-md flex justify-center">
-      {!status?<div style={{boxShadow:"rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(240, 57, 84, 0.35) 0px 0px 6px 8px inset"}} className=" rounded-xl flex flex-col px-14 py-10 my-16">
-        <p className="text-red-400 sizesetnew text-center font-semibold textform">Join as an Industry Expert !!</p>
-        <button onClick={handleClick} className="bg-red-400 px-10 mt-9 text-center py-2 rounded-xl text-white">Join Now</button>
-      </div>:""}
-          {/* <form onSubmit={handleSubmit} className="mt-4 ">
+      <div className='w-full textform rounded-md flex justify-center'>
+        {!status ? (
+          <div
+            style={{
+              boxShadow:
+                'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(240, 57, 84, 0.35) 0px 0px 6px 8px inset',
+            }}
+            className=' rounded-xl flex flex-col px-14 py-10 my-16'
+          >
+            <p className='text-red-400 sizesetnew text-center font-semibold textform'>
+              Join as an Industry Expert !!
+            </p>
+            <button
+              onClick={handleClick}
+              className='bg-red-400 px-10 mt-5 text-center py-2 rounded-xl text-white'
+            >
+              Join Now
+            </button>
+          </div>
+        ) : (
+          ''
+        )}
+        {/* <form onSubmit={handleSubmit} className="mt-4 ">
             <div className="font-bold text text-3xl">
                 <h2 className="text-center text-red-500 underline decoration-red-300 underline-offset-4">Want to Join our Expert's team</h2>
                 <h1 className="text-red-600" style={{marginTop:"1vh",fontSize:"13px",fontWeight:"normal",textAlign:"center"}}>
@@ -100,18 +116,38 @@ export default function BeMentorWithUs() {
           </Button>
         </div>
            </form> */}
-           {status?<iframe className="my-12" src="https://docs.google.com/forms/d/e/1FAIpQLSdIg6vulODuTQlKk1KsVu6s7GzEP2mPr4umdOqlELtBaEp_mA/viewform?embedded=true" width="640" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>:""}
-    </div>
-    {status?<button onClick={handleClose}  className="bg-red-400 text-white textform px-10 py-1 rounded-md">Close</button>:""}
+        {status ? (
+          <iframe
+            className='my-12'
+            src='https://docs.google.com/forms/d/e/1FAIpQLSdIg6vulODuTQlKk1KsVu6s7GzEP2mPr4umdOqlELtBaEp_mA/viewform?embedded=true'
+            width='640'
+            height='450'
+            frameborder='0'
+            marginheight='0'
+            marginwidth='0'
+          >
+            Loading…
+          </iframe>
+        ) : (
+          ''
+        )}
+      </div>
+      {status ? (
+        <button
+          onClick={handleClose}
+          className='bg-red-400 text-white textform px-10 py-1 rounded-md'
+        >
+          Close
+        </button>
+      ) : (
+        ''
+      )}
     </>
-  );
+  )
 }
 
-
-
-
-
-{/* <Card css={{ p: "$6",backgroundColor:"$cyan400" }}>
+{
+  /* <Card css={{ p: "$6",backgroundColor:"$cyan400" }}>
       <Card.Header>
         <Grid.Container css={{ pl: "$6" }}>
           <form onSubmit={handleSubmit} className="mt-4">
@@ -178,4 +214,5 @@ export default function BeMentorWithUs() {
       <Card.Body css={{ py: "$2" }}>
         
       </Card.Body>
-    </Card> */}
+    </Card> */
+}

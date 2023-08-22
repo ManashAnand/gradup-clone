@@ -1,18 +1,18 @@
-"use client";
-import ListContentCard from "@components/ListContentCard";
-import useSWR from "swr";
-import { useState, useEffect } from "react";
-import { Input } from "@nextui-org/react";
-import Select from "react-select";
-import Spinner from "@components/Spinner";
-import { useRouter } from "next/router";
-import Link from "next/link";
+'use client'
+import ListContentCard from '@components/ListContentCard'
+import useSWR from 'swr'
+import { useState, useEffect } from 'react'
+import { Input } from '@nextui-org/react'
+import Select from 'react-select'
+import Spinner from '@components/Spinner'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
-import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-import { useSearchParams } from "next/navigation";
-import FilterJobs from "@components/jobs/FilterJobs";
-import ShowJobs from "@components/jobs/ShowJobs";
+import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
+import { useSearchParams } from 'next/navigation'
+import FilterJobs from '@components/jobs/FilterJobs'
+import ShowJobs from '@components/jobs/ShowJobs'
 // const cityList = [
 //   { value: "delhi", label: "delhi" },
 //   { value: "mumbai", label: "mumbai" },
@@ -29,79 +29,100 @@ import ShowJobs from "@components/jobs/ShowJobs";
 //   { value: "software engineer", label: "software engineer" },
 // ];
 
-function Page({ index , setPage}) {
-  const [selectedCity, setSelectedCity] = useState([]);
-  const [selectedTitle, setSelectedTitle] = useState([]);
-  const [salaryExp, setSalaryExp] = useState(0);
-  const [searchresults, setSearchresults] = useState([]);
-  const [search, setSearch] = useState("");
+function Page({ index, setPage }) {
+  const [selectedCity, setSelectedCity] = useState([])
+  const [selectedTitle, setSelectedTitle] = useState([])
+  const [salaryExp, setSalaryExp] = useState(0)
+  const [searchresults, setSearchresults] = useState([])
+  const [search, setSearch] = useState('')
   return (
-    <section className="w-full">
-      <div className="headerpos">
+    <section className='w-full'>
+      <div className='headerpos'>
         <div>
-          <div className="font-bold jobpos">
-            <h1 className="text-white sizetext text-left">Find your <span className="animate-charcter">job</span> &</h1>
-            <h1 style={{overflow:"hidden"}} className="text-blue-400 sizetext text-left">
-              grab<span className="underline decoration-white underline-offset-8"> the<span className="animate-charcter"> opportunities</span>
+          <div className='font-bold jobpos'>
+            <h1 className='text-white sizetext text-left'>
+              Find your <span className='animate-charcter'>job</span> &
+            </h1>
+            <h1
+              style={{ overflow: 'hidden' }}
+              className='text-blue-400 sizetext text-left'
+            >
+              grab
+              <span className='underline decoration-white underline-offset-8'>
+                {' '}
+                the<span className='animate-charcter'> opportunities</span>
               </span>
             </h1>
-            <p className="mt-10 text-xl text-white text-left">Just one step to change your career. Apply to thousands of Job opportunities across top Companies and Startups.</p>
+            <p className='mt-10 text-xl text-white text-left'>
+              Just one step to change your career. Apply to thousands of Job
+              opportunities across top Companies and Startups.
+            </p>
           </div>
           {/* <div className="inputcontainer">
             <input className="inputbox"  type="search" placeholder="🔍 Search Job Title"></input>
           </div> */}
         </div>
         <img
-          className="giphy mt-6"
-          src="assets/images/image.gif"
-          alt="work-img"
+          className='giphy mt-6'
+          src='assets/images/image.gif'
+          alt='work-img'
         ></img>
       </div>
       <div>
-        <p className="heading my-20"></p>
+        <p className='heading my-20'></p>
       </div>
       {/* <div className="sortpos">
             <p className="-ml-10 text-white text-sm">Sort by:</p>
             <button className="btn6">Recently Released</button>
             <button className="btn6">Alphabetical</button>
           </div> */}
-      <div className="main-content">
-        <FilterJobs setSelectedCity={setSelectedCity}
-  setSelectedTitle={setSelectedTitle}
-  setSalaryExp={setSalaryExp}
-  selectedCity={selectedCity}
-  selectedTitle={selectedTitle}
-  setPage={setPage}
-  salaryExp={salaryExp} />
-        <ShowJobs selectedCity={selectedCity} selectedTitle={selectedTitle} salaryExp={salaryExp} search={search} index={index} setPage={setPage}/>
+      <div className='main-content'>
+        <FilterJobs
+          setSelectedCity={setSelectedCity}
+          setSelectedTitle={setSelectedTitle}
+          setSalaryExp={setSalaryExp}
+          selectedCity={selectedCity}
+          selectedTitle={selectedTitle}
+          setPage={setPage}
+          salaryExp={salaryExp}
+        />
+        <ShowJobs
+          selectedCity={selectedCity}
+          selectedTitle={selectedTitle}
+          salaryExp={salaryExp}
+          search={search}
+          index={index}
+          setPage={setPage}
+        />
       </div>
     </section>
-  );
+  )
 }
 
 export default function App() {
-  const { data: session } = useSession();
-  
-  const [providers, setProviders] = useState(null);
+  const { data: session } = useSession()
+
+  const [providers, setProviders] = useState(null)
   useEffect(() => {
-    const setUpProviders = async()=> {
-        const response = await getProviders();
-        setProviders(response);
+    const setUpProviders = async () => {
+      const response = await getProviders()
+      setProviders(response)
     }
-    setUpProviders();
-  }, []);
-  const [pageIndex, setPageIndex] = useState(1); 
+    setUpProviders()
+  }, [])
+  const [pageIndex, setPageIndex] = useState(1)
   return (
-    <div className="">
-    {session?.user ? (<>
-      <div className="mb-10">
-      <div className="justify-center flex-center">
-        <Page index={pageIndex} setPage={setPageIndex}/>
-      </div>
-      <div style={{ display: "none" }}>
-        <Page index={pageIndex + 1} setPage={setPageIndex}/>
-      </div>
-      {/* <div className="flex buttonpos">
+    <div className=''>
+      {session?.user ? (
+        <>
+          <div className='mb-10'>
+            <div className='justify-center flex-center'>
+              <Page index={pageIndex} setPage={setPageIndex} />
+            </div>
+            <div style={{ display: 'none' }}>
+              <Page index={pageIndex + 1} setPage={setPageIndex} />
+            </div>
+            {/* <div className="flex buttonpos">
         <button style={{backgroundColor:"#0076ce"}} class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
           Prev
         </button>
@@ -109,24 +130,27 @@ export default function App() {
           Next
         </button>
       </div> */}
-    </div></>)
-    :(<div className="">
-    {providers &&
-              Object.values(providers).map((provider) => (
-                <button 
-                  type='button'
-                  key={provider.name}
-                  onClick={() => {
-                    signIn(provider.id);
-                  }}
-                  className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 hover:bg-sky-400 hover:text-white hover:border-white'
-                >
-                  Sign In to access jobs
-                </button>
-              ))} </div>)}
+          </div>
+        </>
+      ) : (
+        <div className=''>
+          {providers &&
+            Object.values(providers).map((provider) => (
+              <button
+                type='button'
+                key={provider.name}
+                onClick={() => {
+                  signIn(provider.id)
+                }}
+                className='rounded-2xl my-5 py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 hover:bg-sky-400 hover:text-white hover:border-white'
+              >
+                Sign In to access jobs
+              </button>
+            ))}{' '}
+        </div>
+      )}
     </div>
-    
-  );
+  )
 }
 
 // "use client"
