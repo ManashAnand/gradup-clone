@@ -46,7 +46,7 @@ function Page({ index , setPage}) {
                 Opportunities for you
               </span>
             </h1>
-            <p className="mt-10 text-xl text-left text-white">Discover your perfect internship match, transform your dream and connect with top-tier companies.</p>
+            <p className="mt-10 text-xl text-left text-white">GradUp can help you get started in your profession right away. View the specially selected internship options for you !</p>
           </div>
           {/* <div className="inputcontainer">
             <input className="inputbox"  type="search" placeholder="🔍 Search Job Title"></input>
