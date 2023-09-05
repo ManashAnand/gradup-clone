@@ -178,8 +178,15 @@ export default function HRSignup() {
         Login now and post captivating job opportunities to attract top
         candidates and build your dream team."
       </p>
-      <div className='flex items-center'>
-        <div className='side1'>
+      <div className='flex items-center rounded-lg'>
+        <div className='hidden lg:flex w-[50%]'>
+          <img
+            src='/assets/images/frame.png'
+            alt='secure-login'
+            className='h-[776px]'
+          ></img>
+        </div>
+        <div className='side1 border'>
           <form onSubmit={addHR}>
             <div className='mb-4'>
               <label
@@ -302,14 +309,6 @@ export default function HRSignup() {
               </button>
             </div>
           </form>
-        </div>
-        <div className='side2'>
-          <img
-            width='300'
-            src='/assets/images/frame.png'
-            alt='secure-login'
-          ></img>
-          <p></p>
         </div>
       </div>
     </div>

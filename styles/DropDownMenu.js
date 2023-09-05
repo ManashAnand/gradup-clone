@@ -146,7 +146,7 @@ const DropDownMenu = () => {
           endIcon={<ExpandMoreIcon />}
           sx={{ textTransform: 'none' }}
         >
-          Browse
+          Explore
         </Button>
       </div>
       <Menu

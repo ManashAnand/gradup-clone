@@ -28,83 +28,57 @@ const page = () => {
     '/assets/images/symbiosis.png',
   ]
   return (
-    <div className='text-white mt-20 mb-10'>
-      <p className='mb-14 text-center text-5xl animate-charcter text-white underline decoration-white underline-offset-8'>
-        Presence in Academia
-      </p>
-      <div className='flex justify-center items-center flex-wrap gap-12 '>
-        {logos.map((ele, i) => {
-          return (
-            <div>
-              <img
-                className='rounded-xl object-cover h-p[50px] w-[150px] hover:scale-125 ease-in-out transform duration-200 transition'
-                src={ele}
-                alt={ele}
-              ></img>
-            </div>
-          )
-        })}
+    <>
+      {/* mobile view */}
+      <div className='md:hidden text-white mt-20 mb-10'>
+        <p className='mb-14 text-center text-5xl animate-charcter text-white underline decoration-white underline-offset-8'>
+          Presence in Academia
+        </p>
+        <div className='flex justify-center items-center flex-wrap gap-12 '>
+          {logos.map((ele, i) => {
+            return (
+              <div>
+                <img
+                  className='rounded-xl object-cover h-p[50px] w-[150px] hover:scale-125 ease-in-out transform duration-200 transition'
+                  src={ele}
+                  alt={ele}
+                ></img>
+              </div>
+            )
+          })}
+        </div>
+        <p className='text-center text-white animate-charcter text-5xl textnew mt-16'>
+          And many more ....
+        </p>
       </div>
-      <p className='text-center text-white animate-charcter text-5xl textnew mt-16'>
-        And many more ....
-      </p>
-      {/* IIM Bodhgaya
-      Hansraj college, DU
-      Shaheed Rajguru college, DU
-      Sri Guru Gobind Singh College, DU 
-      PG DAV College, DU
-      NIT Jamshedpur
-      IIT Kharagpur 
-      IIM Kafhipur 
-      IIM Sirmaur 
-      IIM Indore 
-      Dr. DY Patil Pune 
-      BITS Pilani (Hyderabad campus)
-      Bundelkhand University Jhansi 
-      Rajdhani College, DU 
-      KL University, Hyderabad 
-      Ramjas College, DU 
-      GNIOT Greater Noida 
-      AIESEC ,DU
-      NIT Sikkim
-      Shaheed Sukhdev College of Business Studies 
-      XLRI Jamshedpur 
-      BIT Mesra 
-      Aatma Ram Sanatam college, DU 
-      Xt Xavier College, Kolkata 
-      IIM Rohtak 
-      IIM Trichy 
-      LBSIM Delhi 
-      SIDTM Pune 
-      NMIMS Mumbai 
-      IIT Kanpur 
-      SOIL Gurgaon 
-      IIT Jodhpur 
-      BIIB Pune 
-      Delhi School of Economics 
-      PUMBA 
-      Jamia Milia Islamia 
-      IIT Dhanbad 
-      Christ University Banglore 
-      IIT Delhi 
-      NIT Agartala 
-      IIIT Una 
-      IIIT Gwalior 
-      MNIT Allahabad 
-      Faculty of Social Sciences BHU 
-      IMI Bhubneswar 
-      Symbiosis Noida 
-      Motilal Nehru College ,DU 
-      Kirorimal College, DU 
-      NMIMS Hyderabad 
-      Delhi Technical University 
-      IIM Ranchi 
-      IIM Udaipur 
-      IIM Vishakhapatnam 
-      NIT Hamirpur 
-      NIT Karnataka 
-      Ponducherry University  */}
-    </div>
+      {/* desktop view */}
+      <div className='sm:hidden md:block text-white mt-10 mb-10 '>
+        <p className='mb-14 text-center text-5xl animate-charcter text-white  underline-offset-8'>
+          Presence in Academia
+        </p>
+        <div className='flex justify-center items-center flex-wrap w-full rounded-2xl gap-6  border-[10px] border-solid border-blue-300  p-5 '>
+          {logos.map((ele, i) => {
+            return (
+              <div key={i}>
+                <img
+                  className='rounded-xl object-cover h-p[50px] w-[150px] hover:scale-125 ease-in-out transform duration-200 transition'
+                  src={ele}
+                  alt={ele}
+                ></img>
+              </div>
+            )
+          })}
+        </div>
+        <div className='flex justify-center items-center '>
+          <svg width='200' height='200' xmlns='http://www.w3.org/2000/svg'>
+            <polygon points='0,100 100,0 200,100' fill='#64b5f6' />
+          </svg>
+        </div>
+        <p className='text-center text-white animate-charcter text-5xl textnew '>
+          And many more ....
+        </p>
+      </div>
+    </>
   )
 }
 

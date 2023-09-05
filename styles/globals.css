@@ -2796,12 +2796,14 @@ textarea::placeholder {
   grid-template-columns: repeat(2, 1fr);
   gap: 60px;
 }
+
 .adjust {
   width: 100%;
 }
 .adjust1 {
   width: 100%;
 }
+
 .cardslide {
   height: 80vh;
 }
@@ -3151,7 +3153,12 @@ a.btn {
   align-items: center;
   margin-bottom: 10px;
 }
-
+.courseDes {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  height: 80px;
+}
 .box-image {
   box-shadow: rgb(250, 103, 103) 0px 22px 70px 4px;
   margin: 1vh 0;

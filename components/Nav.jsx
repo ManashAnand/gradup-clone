@@ -87,13 +87,13 @@ const Nav = () => {
               href={data?.role === 'HR' ? '/hr' : '/hr/signup'}
               className='outline_btn'
             >
-              {data?.role === 'HR' ? 'HR Dashboard' : 'HR Login'}
+              {data?.role === 'HR' ? 'HR Dashboard' : 'HR login'}
             </Link>
             <Link href='/about-us' className='outline_btn'>
               About Us
             </Link>
             <Link href='/user' className='outline_btn'>
-              Create Resume
+              Create resume
             </Link>
             {/* <Link href='/hackathons' className='rounded-md bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-center mr-3'>
               Hackathons
@@ -134,7 +134,7 @@ const Nav = () => {
                 href={data?.role === 'HR' ? '/hr' : '/hr/signup'}
                 className='outline_btn'
               >
-                {data?.role === 'HR' ? 'HR Dashboard' : 'HR Login'}
+                {data?.role === 'HR' ? 'HR Dashboard' : 'HR login'}
               </Link>
               <Link href='/about-us' className='outline_btn'>
                 About Us
@@ -192,7 +192,7 @@ const Nav = () => {
                   className='dropdown_link'
                   onClick={() => setToggleDropdown(false)}
                 >
-                  {data?.role === 'HR' ? 'Dashboard' : 'HR Login'}
+                  {data?.role === 'HR' ? 'Dashboard' : 'HR login'}
                 </Link>
                 <Link
                   href='/internships'
