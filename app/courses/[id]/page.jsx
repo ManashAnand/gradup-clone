@@ -7,6 +7,7 @@ import useSWR from 'swr'
 import Spinner from '@components/Spinner'
 import SectionCard from '@components/SectionCard'
 import CourseHighlight from '@components/CourseHighlight'
+import CourseModule from '@components/CourseModule'
 import PlacementAssistance from '@components/PlacementAssistance'
 
 {
@@ -52,6 +53,7 @@ export default function Courses({ params }) {
         registeredUsers={data.registeredUsers}
       />
       <CourseHighlight />
+      <CourseModule />
       <PlacementAssistance />
     </>
   )

@@ -1,6 +1,20 @@
 import { Schema, model, models } from 'mongoose'
 import mongoose from 'mongoose'
 
+const ChapterSchema = new Schema({
+  lecture: String,
+  lectureDescription: String,
+  lectureURL: String,
+  likes: Number,
+  dislikes: Number,
+  outerLinks: String,
+})
+
+const ModuleSchema = new Schema({
+  moduleName: String,
+  lectures: [ChapterSchema],
+})
+
 const courseSchema = new Schema({
   title: {
     type: String,
@@ -17,16 +31,19 @@ const courseSchema = new Schema({
   imageURL: {
     type: String,
   },
-  chapter: {
-    type: [String],
+  demoVideoURL: {
+    type: String,
   },
-  chapterDesc: {
-    type: [String],
-  },
-  VideoURL: {
-    type: [String],
+  moduleData: {
+    type: [ModuleSchema],
   },
   registeredUsers: {
+    type: Number,
+  },
+  totalModules: {
+    type: Number,
+  },
+  totalLectures: {
     type: Number,
   },
   tags: {

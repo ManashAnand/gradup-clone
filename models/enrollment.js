@@ -13,7 +13,7 @@ const enrollmentSchema = new Schema({
     required: true,
   },
   progressBar: {
-    type: [Boolean],
+    type: [[Boolean]],
   },
   progress: {
     type: Number,

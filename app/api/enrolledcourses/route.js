@@ -14,10 +14,7 @@ export async function GET(req) {
     const enrollments = await Enrollment.find({ userId: email })
 
     const courseIds = enrollments.map((enrollment) => enrollment.courseId)
-    const data = await Courses.find({ _id: { $in: courseIds } }).select(
-      '-VideoURL -Review -price'
-    )
-
+    const data = await Courses.find({ _id: { $in: courseIds } })
     return NextResponse.json(data, { status: 200 })
     // get all enrollments
   } catch (error) {
@@ -35,13 +32,14 @@ export async function POST(request) {
 
     const reqBody = await request.json()
 
-    const { userId, courseId } = reqBody
+    const { userId, courseId, progressBar } = reqBody
+    console.log(reqBody)
 
     await Enrollment.create({
       userId,
       courseId,
       progress: 0,
-      progressBar: 'false',
+      progressBar,
     })
     return NextResponse.json({ message: 'enrollment created' }, { status: 201 })
   } catch (error) {

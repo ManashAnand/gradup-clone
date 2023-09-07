@@ -9,20 +9,19 @@ export async function GET(req) {
     const path = url.pathname
     const email = url.searchParams.get('email')
     const id = path.split('enrolledcourses/')[1].split('?')[0]
-
-    console.log(email)
-
+    /*
     const enrollmentData = await Enrollment.findOne({
       userId: email,
       courseId: id,
     }).select('-userId -courseId')
-
+    
     if (!enrollmentData) {
       return NextResponse.json(
         { message: 'The logged-in user is not enrolled in this course' },
         { status: 200 }
       )
     }
+    */
 
     const courseData = await Courses.findOne({ _id: id })
     if (!courseData) {
@@ -34,7 +33,7 @@ export async function GET(req) {
 
     const data = {
       course: courseData,
-      enrollment: enrollmentData,
+      //enrollment: enrollmentData,
     }
 
     return NextResponse.json(data, { status: 200 })
@@ -69,7 +68,7 @@ export async function PATCH(req) {
     await connectToDB()
     console.log('request is working')
     {
-      /* Destruct the Progress Array here  */
+      /* Destructure the Progress Array here  */
     }
     const requestBody = await req.json()
 
@@ -81,9 +80,7 @@ export async function PATCH(req) {
     const totalCount = progressBar.length
     const progress = (trueCount / totalCount) * 100
     console.log(progress)
-    {
-      /************************************ */
-    }
+
     {
       /*Update the value of changed Progress Bar array */
     }
