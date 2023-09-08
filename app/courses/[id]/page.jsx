@@ -51,9 +51,10 @@ export default function Courses({ params }) {
         description={data.description}
         rating={data.rating}
         registeredUsers={data.registeredUsers}
+        price={data.price}
       />
       <CourseHighlight />
-      <CourseModule />
+      <CourseModule data={data.moduleData} />
       <PlacementAssistance />
     </>
   )

@@ -1,6 +1,6 @@
 const PlacementAssistance = () => {
   return (
-    <div className=' w-full flex flex-row justify-between'>
+    <div className=' w-full flex flex-row justify-between mb-10'>
       {/* text area */}
       <div className='text-left mt-10  '>
         <h1 className='font-black text-white text-4xl mt-5 '>

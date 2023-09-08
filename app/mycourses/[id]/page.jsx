@@ -1,19 +1,55 @@
 'use client'
 
 import { MdOutlineOndemandVideo } from 'react-icons/md'
+import { styled } from '@mui/material/styles'
 import React from 'react'
 import VimeoVideoPlayer from '@/components/VimeoVideoPlayer'
 import useSWR from 'swr'
 import axios from 'axios'
 import { useSession } from 'next-auth/react'
 import Spinner from '@components/Spinner'
-import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
-} from '@mui/material'
+import MuiAccordion from '@mui/material/Accordion'
+import MuiAccordionSummary from '@mui/material/AccordionSummary'
+import MuiAccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { Typography } from '@mui/material'
+import { GoThumbsup, GoThumbsdown } from 'react-icons/go'
+
+const Accordion = styled((props) => (
+  <MuiAccordion disableGutters elevation={0} square {...props} />
+))(({ theme }) => ({
+  border: `1px solid ${theme.palette.divider}`,
+  '&:not(:last-child)': {
+    borderBottom: 0,
+  },
+  '&:before': {
+    display: 'none',
+  },
+}))
+
+const AccordionSummary = styled((props) => (
+  <MuiAccordionSummary
+    expandIcon={<ExpandMoreIcon fontSize='5' />}
+    {...props}
+  />
+))(({ theme }) => ({
+  backgroundColor:
+    theme.palette.mode === 'dark'
+      ? 'rgba(255, 255, 255, .05)'
+      : 'rgba(0, 0, 0, .03)',
+  flexDirection: 'row',
+  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+    transform: 'rotate(180deg)',
+  },
+  '& .MuiAccordionSummary-content': {
+    marginLeft: theme.spacing(1),
+  },
+}))
+
+const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+  padding: theme.spacing(2),
+  borderTop: '1px solid rgba(0, 0, 0, .125)',
+}))
 
 {
   /* Get the course info  */
@@ -24,22 +60,35 @@ async function fetcher(url) {
 }
 
 export default function Courses({ params }) {
-  const [video, setVideo] = React.useState(857468865)
+  const [video, setVideo] = React.useState(null)
   const [lecture, setLecture] = React.useState(null)
   const [desc, setDesc] = React.useState(null)
   const [hydrated, setHydrated] = React.useState(0)
-  // const [checkboxArray, setCheckboxArray] = React.useState([])
+  const [expanded, setExpanded] = React.useState('panel1')
+  const [courseProg, setCourseProg] = React.useState(0)
+
+  const [checkboxArray, setCheckboxArray] = React.useState([])
 
   {
-    /* Patch request for the progress bar helper function 
-  const handleCheckboxChange = async (index) => {
-    const updatedArray = [...data.enrollment.progressBar] // Copy of the progressBar array
-    const id = data.enrollment._id
-    updatedArray[index] = !updatedArray[index] // Toggle the value at the specified index
-    setCheckboxArray(updatedArray) // Update checkboxArray state
-    await updateArray(updatedArray, id)
+    /* Patch request for the progress bar helper function
+     */
   }
-  */
+  const handleCheckboxChange = async (moduleIndex, lectureIndex) => {
+    const updatedArray = [...checkboxArray] // Copy of the progressBar array
+    console.log([updatedArray])
+    const id = data.enrollment._id
+    updatedArray[moduleIndex][lectureIndex] =
+      !updatedArray[moduleIndex][lectureIndex] // Toggle the value at the specified index
+    setCheckboxArray(updatedArray) // Update checkboxArray state
+    const trueCount = data.enrollment.progressBar
+      .flat()
+      .filter((value) => value === true).length
+    const totalCount = data.enrollment.progressBar.flat().length
+    const progress = (trueCount / totalCount) * 100
+
+    setCourseProg(progress)
+
+    await updateArray(updatedArray, id, progress)
   }
 
   {
@@ -51,14 +100,18 @@ export default function Courses({ params }) {
     fetcher
   )
   {
-    /* Progress bar data loading on the first render 
+    /* Progress bar data loading on the first render
+     */
+  }
   React.useEffect(() => {
-    if (data && data.enrollment && data.enrollment) {
+    if (data) {
       setCheckboxArray([...data.enrollment.progressBar])
+      setCourseProg(data.enrollment.progress)
+      console.log(data.enrollment.progressBar)
+      console.log(checkboxArray)
     }
   }, [data])
- */
-  }
+
   React.useEffect(() => {
     setHydrated(true)
   }, [])
@@ -68,9 +121,11 @@ export default function Courses({ params }) {
   }
   {
     /* patch request to handle course earlier
-  const updateArray = async (updatedArray, id) => {
+     */
+  }
+  const updateArray = async (updatedArray, id, progress) => {
     try {
-      const requestBody = { id, updatedArray }
+      const requestBody = { id, updatedArray, progress }
       const response = await axios.patch(
         `http://localhost:3000/api/enrolledcourses/${params.id}`,
         {
@@ -82,28 +137,29 @@ export default function Courses({ params }) {
       if (!response.ok) {
         throw new Error('An error occurred while updating the boolean array.')
       }
-      if (response.ok) {
-        window.location.reload()
-      }
     } catch (error) {
       console.error(error)
     }
   }
-   */
-  }
+
   {
-    /* handling course earlier 
-  
-  const handleClick = (index) => {
-    setVideo(data.course.VideoURL[index])
-    setLecture(data.course.chapter[index])
-    setDesc(data.course.chapterDesc[index])
+    /* handling course */
   }
-   */
+  const handleClick = (lectureIndex, moduleIndex) => {
+    setLecture(
+      data.course.moduleData[moduleIndex].lectures[lectureIndex].lecture
+    )
+    setVideo(
+      data.course.moduleData[moduleIndex].lectures[lectureIndex].lectureURL
+    )
+    setDesc(
+      data.course.moduleData[moduleIndex].lectures[lectureIndex]
+        .lectureDescription
+    )
   }
 
-  const handleClick = (lectureIndex) => {
-    setSelectedLecture(lectureIndex)
+  const handleChange = (panel) => (event, newExpanded) => {
+    setExpanded(newExpanded ? panel : false)
   }
 
   if (isLoading) {
@@ -122,19 +178,20 @@ export default function Courses({ params }) {
         <div className='bg-slate-600  mt-5 rounded-lg p-2 ml-2 mb-2 w-[40%] '>
           <div className=' text-white  items-center m-3'>
             <h1 className='font-bold text-xl'>
-              Videos 100{/* course progress */}%
+              Videos {Math.round(courseProg)}%
             </h1>
           </div>
           <div>
             {/* Render other course information */}
             {data.course.moduleData.map((module, moduleIndex) => (
               <Accordion
+                expanded={expanded === `module${moduleIndex}`}
+                onChange={handleChange(`module${moduleIndex}`)}
                 key={moduleIndex}
                 className='border-1 border-slate-900'
               >
                 <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls={`module${moduleIndex}-content`}
+                  aria-controls={`module${moduleIndex}d-content`}
                   id={`module${moduleIndex}-header`}
                 >
                   <Typography className='font-bold' variant='h6'>
@@ -142,72 +199,63 @@ export default function Courses({ params }) {
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  {module.lectures.map((lecture, lectureIndex) => (
+                  {module.lectures.map((title, lectureIndex) => (
                     <div
-                      className='text-left text-lg sm p-2 flex flex-row space-x-3  cursor-pointer rounded-lg hover:bg-slate-600 hover:text-white bg-white m-2 whitespace-nowrap overflow-hidden w-full '
+                      className={`text-left text-lg p-2 flex  justify-between cursor-pointer rounded-lg hover:bg-slate-600 hover:text-white  m-2 whitespace-nowrap overflow-hidden w-full ${
+                        title.lecture == lecture
+                          ? 'text-white bg-slate-600'
+                          : 'text-black'
+                      }
+                        `}
                       key={lectureIndex}
                     >
-                      <span>
-                        {moduleIndex + 1}.{lectureIndex + 1}
-                      </span>
-                      <MdOutlineOndemandVideo className='mt-1' />
-                      <a
-                        className={`lecture ${
-                          lecture === lectureIndex ? 'selected' : ''
-                        }`}
-                        onClick={() => handleClick(lectureIndex)}
+                      <div
+                        className='flex flex-row space-x-3'
+                        onClick={() => handleClick(lectureIndex, moduleIndex)}
                       >
-                        {lecture.lecture}
-                      </a>
+                        <span>
+                          {moduleIndex + 1}.{lectureIndex + 1}
+                        </span>
+                        <MdOutlineOndemandVideo className='mt-1' />
+                        <span>{title.lecture}</span>
+                      </div>
+                      <input
+                        type='checkbox'
+                        checked={
+                          data.enrollment.progressBar[moduleIndex][lectureIndex]
+                        }
+                        onClick={() =>
+                          handleCheckboxChange(moduleIndex, lectureIndex)
+                        }
+                      />
                     </div>
                   ))}
                 </AccordionDetails>
               </Accordion>
             ))}
-
-            {/* 
-            use reference of this data to build and Accordion 
-
-            {data.course.moduleData.map((title, index) => (
-              <div
-                key={index}
-                className={`cursor-pointer rounded-lg hover:bg-slate-900 hover:text-white mt-2 mr-2 whitespace-nowrap overflow-hidden p-2 ' ${
-                  title === lecture ? 'text-white bg-slate-800' : 'bg-white'
-                }`}
-                onClick={() => handleClick(index)}
-              >
-                <p>{title}</p>
-                 
-                 Use the data.enrollment for this part 
-                <input
-                  type='checkbox'
-                  checked={checkboxArray[index]}
-                  onChange={() => handleCheckboxChange(index)}
-                />
-                
-              </div>
-            ))}
-            */}
-            {/* Download Certificate Button should only appear when progress is 100%  
-
-            <ol className='text-left cursor-pointer rounded-lg hover:bg-slate-900 hover:text-white bg-white m-2 whitespace-nowrap overflow-hidden p-2 '>
-              Download Certificate
-            </ol>
-            
-            */}
           </div>
         </div>
 
         <div className='w-full bg-white m-5  '>
           {/* Video Player Section */}
           <div className='w-full block rounded-xl overflow-hidden '>
-            <VimeoVideoPlayer videoId={video} />
+            <VimeoVideoPlayer
+              videoId={
+                video ? video : data.course.moduleData[0].lectures[0].lectureURL
+              }
+            />
           </div>
           {/* data related to the video appears here */}
           <div className='mt-5  h-full rounded-lg text-left'>
-            <div className='flex flex-row spacing-x-2 items-center'>
-              <h2 className='text-bold'>Course Title : </h2>
-              <h3> {lecture}</h3>
+            <div className='flex flex-row justify-between'>
+              <div className='flex flex-row spacing-x-2 items-center'>
+                <h2 className='text-bold'>Chapter Title : </h2>
+                <h3> {lecture}</h3>
+              </div>
+              <div className='flex flex-row space-x-6 font-bold mr-6'>
+                <GoThumbsup fontSize={30} />
+                <GoThumbsdown fontSize={30} />
+              </div>
             </div>
             <hr className='border-t-2 border-black mt-2 mb-2' />
             <div className='flex flex-row spacing-x-2 items-center'>

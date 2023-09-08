@@ -1,8 +1,16 @@
-const SectionCard = ({ title, description, registeredUsers, rating }) => {
+import CourseForm from '@components/CourseForm'
+
+const SectionCard = ({
+  title,
+  description,
+  registeredUsers,
+  rating,
+  price,
+}) => {
   return (
-    <div className='flex flex-row bg-purple-500 w-full  rounded-lg mt-10 mb-5'>
+    <div className='flex sm:flex-row flex-col bg-purple-500 w-full rounded-lg mt-10 mb-5 justify-between'>
       {/*text on left */}
-      <div className=' w-[50%]  m-8 h-full justify-start'>
+      <div className='w-full sm:w-[50%] mt-8 ml-8  justify-start'>
         <p className='flex justify-start'>
           <span className='bg-yellow-300 rounded-lg text-lg font-bold pt-2 pb-2 pl-3 pr-3 '>
             Government Certified Online Training
@@ -15,7 +23,7 @@ const SectionCard = ({ title, description, registeredUsers, rating }) => {
           {description}
         </p>
         {/* for small info and tags */}
-        <div className=' rounded-lg flex flex-wrap mt-5 mb-5 font-bold'>
+        <div className='rounded-lg flex flex-wrap mt-auto  font-bold'>
           <p className='bg-white mr-2 rounded-xl p-3 mt-2'>5 star</p>
           <p className='bg-white mr-2 rounded-xl p-3 mt-2'>
             {registeredUsers} Students
@@ -25,14 +33,12 @@ const SectionCard = ({ title, description, registeredUsers, rating }) => {
           </p>
           <p className='bg-white mr-2 rounded-xl p-3 mt-2'>Flexible schedule</p>
         </div>
-        {/* ------------------- */}
       </div>
-      {/* --------------- */}
+
       {/* form in right */}
-      <div className=' w-[50%]  m-8 h-full justify-start'>
-        {/* ------------------- */}
+      <div className='w-full sm:w-[50%] m-8  flex items-center justify-center'>
+        <CourseForm price={price} />
       </div>
-      {/* ------------------- */}
     </div>
   )
 }
