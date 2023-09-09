@@ -8,7 +8,6 @@ import { useRouter } from "next/navigation"
   const router = useRouter();
 
   const RouteToCourse = () => {
-    console.log("working")
     router.push('/')
   }
 
