@@ -168,17 +168,17 @@ export default function Courses({ params }) {
 
   return (
     <>
-      <div>
-        <h1 className='text-4xl font-bold text-sky-500 textform animate-charcter text-center mb-6 mt-3 flex-row'>
+      <div> 
+        <div className='text-4xl font-bold text-sky-500  uppercase text-center mb-6 mt-3 flex-row  '>
           {data.course.title}
-        </h1>
+        </div>
       </div>
-      <div className='flex  w-screen bg-white'>
+      <div className='flex  w-screen bg-blue-900 text-white'> 
         {/* Video List and SideBar for Video List */}
-        <div className='bg-slate-600  mt-5 rounded-lg p-2 ml-2 mb-2 w-[40%] '>
+        <div className='bg-[#041E48]  mt-5 rounded-sm p-2 ml-2 mb-2 w-[40%]  '>
           <div className=' text-white  items-center m-3'>
             <h1 className='font-bold text-xl'>
-              Videos {Math.round(courseProg)}%
+            Completed {Math.round(courseProg)}%
             </h1>
           </div>
           <div>
@@ -201,7 +201,7 @@ export default function Courses({ params }) {
                 <AccordionDetails>
                   {module.lectures.map((title, lectureIndex) => (
                     <div
-                      className={`text-left text-lg p-2 flex  justify-between cursor-pointer rounded-lg hover:bg-slate-600 hover:text-white  m-2 whitespace-nowrap overflow-hidden w-full ${
+                      className={`text-left text-lg p-2 flex  justify-between cursor-pointer rounded-sm hover:bg-blue-600 hover:text-white  m-2 whitespace-nowrap overflow-hidden w-full ${
                         title.lecture == lecture
                           ? 'text-white bg-slate-600'
                           : 'text-black'
@@ -236,9 +236,9 @@ export default function Courses({ params }) {
           </div>
         </div>
 
-        <div className='w-full bg-white m-5  '>
+        <div className='w-full bg-blue-900 m-5  '>
           {/* Video Player Section */}
-          <div className='w-full block rounded-xl overflow-hidden '>
+          <div className='w-full block  overflow-hidden '>
             <VimeoVideoPlayer
               videoId={
                 video ? video : data.course.moduleData[0].lectures[0].lectureURL
@@ -246,7 +246,7 @@ export default function Courses({ params }) {
             />
           </div>
           {/* data related to the video appears here */}
-          <div className='mt-5  h-full rounded-lg text-left'>
+          <div className='mt-5  h-full  text-left'>
             <div className='flex flex-row justify-between'>
               <div className='flex flex-row spacing-x-2 items-center'>
                 <h2 className='text-bold'>Chapter Title : </h2>

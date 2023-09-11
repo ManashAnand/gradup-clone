@@ -7,6 +7,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import { useRouter } from 'next/navigation';
 import useSWR from 'swr';
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import Link from "next/link";
 
 const fetcher = async (...args) =>await fetch(...args).then((res) => res.json());
 const Login = () => {
@@ -51,7 +52,29 @@ const Login = () => {
     <button type='button' onClick={() => { signIn("google")}} className="btn border lg:w-[20rem] bg-green-600 text-white px-4 py-2 rounded-lg my-2 mx-auto"><GoogleIcon/> &nbsp; Login with Google</button>
     <button type='button' onClick={() => { signIn("github")}}  className="btn border lg:w-[20rem] bg-gray-600 text-white px-4 py-2 rounded-lg my-2 mx-auto"><GitHubIcon/> &nbsp;Login with GitHub</button>
     <button type='button' onClick={() => { signIn("twitter")}}  className="btn border lg:w-[20rem] bg-blue-400 text-white px-4 py-2 rounded-lg my-2 mb-12 mx-auto"><TwitterIcon/> &nbsp;Login with Twitter</button>
+
+    <div className="flex items-center justify-center text-white">
+  <div className="border-t border-gray-300 flex-grow"></div>
+  <div className="px-4 text-gray-500">Or</div>
+  <div className="border-t border-gray-300 flex-grow"></div>
+</div>
+
+
+    <div className="mb-4  flex flex-col flex-start">
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+            <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="xyz@gmail.com" />
+        </div>
+    <div className="mb-4  flex flex-col flex-start">
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+            <input type="password" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  />
+        </div>
+        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Login</button>
+        <p className="text-white">
+        Don't have an account?
+        <Link href='/signup' className="ml-2 hover:text-sky-500">Sign up </Link>
+        </p>
     </div>
+
     </>
   )
 }

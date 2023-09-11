@@ -30,7 +30,7 @@ const VimeoVideoPlayer = ({ videoId }) => {
     <div
       ref={playerContainerRef}
       style={{
-        borderRadius: '10px',
+        borderRadius: '2px',
         overflow: 'hidden',
       }}
     ></div>

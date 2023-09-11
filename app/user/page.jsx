@@ -351,24 +351,29 @@ export default function Profile() {
     <div className='w-full mb-16'>
         <section className='w-full headingBox mb-6'>
           <Link href='/user/applications' className='margintop marginright'>
-            <Button className='py-2 px-5 bg-blue-400 text-white rounded-md hover:bg-blue-500'>Your Applications</Button>
+            <Button className='py-2 px-5 bg-blue-400 text-white rounded-md hover:bg-blue-500 hover:text-white'>Your Applications</Button>
           </Link>
           <div>
-            <Button className=' py-2 px-5 bg-blue-400 text-white rounded-md margintop hover:bg-blue-500 marginright' disabled={data.education.length>0?false:true} onClick={beAlumni}>Enter Alumni</Button>
+            <Button className=' py-2 px-5 bg-blue-400 text-white rounded-md margintop hover:bg-blue-500 marginright hover:text-white' disabled={data.education.length>0?false:true} onClick={beAlumni}>Enter Alumni</Button>
           </div>
           <Link href="/user/resume">
-          <Button className=' py-2 px-5 bg-blue-400 text-white rounded-md margintop hover:bg-blue-500'>Download Resume</Button>
+          <Button className=' py-2 px-5 bg-blue-400 text-white rounded-md margintop  hover:bg-blue-500 hover:text-white' >Download Resume</Button>
           </Link>
           {/* <p className='desc text-left'>{data.email}</p> */}
         </section>
         <h2 className=' text-4xl text-white animate-charcter textform mb-4'>Create Your Resume</h2>
-        <section className='border-solid border-white border-2 rounded-xl text-left'>
+        <section className='  font-medium border-whitesmoke border rounded-xl text-left  bg-slate-900'>
+
+
+
+
+
         <div className='m-5'>
         <div className='w-2/4 flex flex-col m-auto'>
-          <label className="mb-2 ml-2 textform text-white text-center text-sm">Name*</label>
-          <Input  initialValue={data.name}/> <br/>
-          <label className="mb-2 ml-2 textform text-white text-center text-sm">Email*</label>
-          <Input  initialValue={data.email}/> <br/>
+          <label className="mb-2 ml-2 textform text-white text-center text-sm">Name</label>
+          <Input  initialValue={data.name} required/> <br/>
+          <label className="mb-2 ml-2 textform text-white text-center text-sm">Email</label>
+          <Input  initialValue={data.email} required/> <br/>
           </div>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className=''>
@@ -419,7 +424,7 @@ export default function Profile() {
                 {message2 && <p className='text-red-400 text-sm'>*Leaving date must be greater than joining date</p>}
                 </div>
                 </div>
-                <Link href="#education"><Button disabled={disability4 && message2?true:false} bordered color="primary" css={{mx:"auto",mt:"30px",width:"fit-content"}} type='submit'>ADD</Button></Link>
+                <Link href="#education"><Button disabled={disability4 && message2?true:false} bordered color="primary" css={{mx:"auto",mt:"30px",width:"fit-content"}} className="hover:bg-blue-600 hover:text-white" type='submit'>ADD</Button></Link>
                 </form>
             {/* <Popover isBordered disableShadow type PopoverPlacement ="right">
               <Popover.Trigger>
@@ -483,7 +488,7 @@ export default function Profile() {
                 <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Working Links </label>
                 <Input  css={{pr:"$4",mb:"$6"}} placeholder='Enter link'/>
                 </div>
-                <Button bordered color="primary" disabled={disability3?true:false} css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'>ADD</Button>
+                <Button bordered color="primary" disabled={disability3?true:false} css={{mx:"auto",mt:"25px",width:"fit-content"}} className="hover:bg-blue-600 hover:text-white" type='submit'>ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow>
               <Popover.Trigger>
@@ -552,7 +557,7 @@ export default function Profile() {
                 {message3 && <p className='text-red-400 text-sm'>*Leaving date must be greater than joining date</p>}
                 </div>
                 </div>
-                <Button disabled={message3 && disability2?true:false} bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'>ADD</Button>
+                <Button className="hover:bg-blue-600 hover:text-white" disabled={message3 && disability2?true:false} bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'>ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow>
               <Popover.Trigger>
@@ -600,7 +605,7 @@ export default function Profile() {
             <p className="text-sm text-white">(List all of your achievements)</p>
             <form onSubmit={addNewAchievement} className="flex flex-col">
                 <Textarea  css={{pr:"$4",mt:"$4"}} rows={5} placeholder="Enter your achievements" required/>
-                <Button disabled={disability1?true:false} bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'> ADD</Button>
+                <Button className="hover:bg-blue-600 hover:text-white" disabled={disability1?true:false} bordered color="primary" css={{mx:"auto",mt:"25px",width:"fit-content"}} type='submit'> ADD</Button>
                 </form>
             {/* <Popover isBordered disableShadow>
               <Popover.Trigger>

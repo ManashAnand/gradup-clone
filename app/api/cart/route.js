@@ -68,7 +68,7 @@ export async function DELETE(req) {
       userID: userId,
       courseID: courseId,
     })
-    return NextResponse.json({ message: 'deleted' })
+    return NextResponse.json({ message: 'deleted' },{status:204})
   } catch (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }

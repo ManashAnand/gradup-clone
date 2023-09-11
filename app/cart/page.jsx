@@ -3,30 +3,39 @@
 import CartItems from "@components/CartItems/page";
 import CourseRoutingBtn from "@components/CartItems/CourseRoutingBtn";
 import useSWR from 'swr'
+import Spinner from '@components/Spinner'
+import { useRouter } from "next/navigation";
+import { redirect } from 'next/navigation'
 
 async function fetcher(url) {
   const res = await fetch(url, { cache: 'no-store' })
   return await res.json()
 }
 
-export default async function Cart() {
 
-      
-const { data, error, isLoading } = useSWR(
-  `http://localhost:3000/api/cart`,
-  fetcher)
+export default function Cart2() {
 
-    // const CartData = await GetCartData();
+  const Router = useRouter()
 
-    // const subTotal = CartData?.course.reduce((sum, book) => sum + book.price, 0).toFixed(2)
+  const { data, error, isLoading } = useSWR(
+    'http://localhost:3000/api/cart',
+    fetcher
+  )
+  if (isLoading) {
+    return <Spinner />
+  }
+  if(data){
+    const subTotal = data?.course.reduce((sum, book) => sum + book.price, 0).toFixed(2)
 
     const handleDeleteOneItem = async (id,email) => {
       try {
-        const deleteUrl = `http://localhost:3000/api/cart?courseId=${id}&email=${email}`;
+        const deleteUrl = `http://localhost:3000/api/cart?courseId=${id}`;
+        // &email=${email}
     
         const response = await fetch(deleteUrl, {
           method: 'DELETE',
         });
+        redirect('/cart')
     
         if (response.status === 204) {
           console.log('Item deleted successfully');
@@ -35,20 +44,12 @@ const { data, error, isLoading } = useSWR(
         }
       } catch (error) {
         console.error('Fetch error:', error);
+      }finally{
       }
-    }     
+    }   
+    
     
 
-    console.log(data);
- 
-    if(data){
-      return (
-        <>
-        data is coming
-        </>
-      )
-    }
-    else{
 
   return (
     <>
@@ -88,7 +89,8 @@ const { data, error, isLoading } = useSWR(
                     </div>
                     <div className=" flex justify-around items-center xl:h-[45%]">
                     ₹{cartBook?.price}
-                        <span className="text-red-500 cursor-pointer" onClick={() => handleDeleteOneItem(cartBook?._id,userEmail)}>
+                        <span className="text-red-500 cursor-pointer" onClick={() => handleDeleteOneItem(cartBook?._id)}>
+                        {/* ,userEmail */}
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
                             </svg>
@@ -112,8 +114,8 @@ const { data, error, isLoading } = useSWR(
 
         </div>
 
-        <div className="text-white max-h-[25rem] rounded-md bg-slate-800 xl:w-[34%] p-5">
-            <div className=" flex  items-center p-2 text-2xl">Bill Details</div>
+        <div className=" mb-12 text-white max-h-[25rem] rounded-md bg-slate-800 xl:w-[34%] p-5  xl:translate-x-14 xl:translate-y-8">
+            <div className=" flex  items-center p-2 text-2xl ">Bill Details</div>
             <div className=" flex justify-between items-center p-2">
                 SubTotal
                 <span>₹{subTotal}</span>
@@ -149,4 +151,9 @@ const { data, error, isLoading } = useSWR(
     </>
   )
 }
-}
+    
+  }
+
+
+
+   

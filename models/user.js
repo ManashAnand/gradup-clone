@@ -159,6 +159,10 @@ const UserSchema = new Schema({
     },
     joinDate:{
         type:Date,
+    },
+    password:{
+        type:String,
+        required:true
     }
 });
 
