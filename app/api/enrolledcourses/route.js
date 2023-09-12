@@ -32,14 +32,14 @@ export async function POST(request) {
 
     const reqBody = await request.json()
 
-    const { userId, courseId, progressBar } = reqBody
-    console.log(reqBody)
+    const { userId, courseId } = reqBody
+    console.log(reqBody.userId)
+    console.log(reqBody.courseId)
 
     await Enrollment.create({
       userId,
       courseId,
       progress: 0,
-      progressBar,
     })
     return NextResponse.json({ message: 'enrollment created' }, { status: 201 })
   } catch (error) {
