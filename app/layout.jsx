@@ -12,9 +12,11 @@ export const metadata = {
 }
 const Layout = ({ children }) => {
   return (
-    <html lang='en'>
+    <html lang='en'>  
       <head>
         <link rel='icon' href='/assets/icons/favicon.ico'></link>
+        <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;700&display=swap" rel="stylesheet"></link>
+
         {/* <!-- Google tag (gtag.js) --> */}
         <script
           async
