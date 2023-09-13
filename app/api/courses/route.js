@@ -5,9 +5,10 @@ import { NextResponse } from 'next/server'
 export async function GET() {
   await connectToDB()
   try {
-    const data = await Courses.find()
+    const data = await Courses.find().populate('author')
     return NextResponse.json(data, { status: 200 })
   } catch (error) {
+    console.log(error)
     return NextResponse.json(
       { error: 'Internal Server Error' },
       { status: 500 }
@@ -20,6 +21,7 @@ export async function POST(request) {
     await connectToDB()
 
     const reqBody = await request.json()
+
     const {
       title,
       price,

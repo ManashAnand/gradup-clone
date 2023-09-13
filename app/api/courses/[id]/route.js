@@ -8,7 +8,9 @@ export async function GET(req) {
     const path = url.pathname
     const id = path.split('courses/')[1]
 
-    const data = await Courses.findOne({ _id: id }).select('-VideoURL')
+    const data = await Courses.findOne({ _id: id })
+      .select('-VideoURL')
+      .populate('author')
 
     return NextResponse.json(data, { status: 200 })
   } catch (error) {

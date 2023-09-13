@@ -3,9 +3,7 @@
 import Grid from '@mui/material/Grid'
 import Image from 'next/image'
 import CustomCard from '@components/CustomCard'
-
 import Spinner from '@components/Spinner'
-
 import React from 'react'
 import useSWR from 'swr'
 

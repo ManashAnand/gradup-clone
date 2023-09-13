@@ -1,6 +1,7 @@
 import CourseForm from '@components/CourseForm'
 
 const SectionCard = ({
+  id,
   title,
   description,
   registeredUsers,
@@ -37,7 +38,7 @@ const SectionCard = ({
 
       {/* form in right */}
       <div className='w-full sm:w-[50%] m-8  flex items-center justify-center'>
-        <CourseForm price={price} />
+        <CourseForm price={price} id={id} />
       </div>
     </div>
   )

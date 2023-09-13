@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
 
 async function fetcher(url) {
-  const res = await fetch(url, { cache: 'no-store' })
+  const res = await fetch(url)
   return await res.json()
 }
 
@@ -103,7 +103,7 @@ export default function Cart2() {
                     </div>
                     <div className='  xl:w-[40%] p-2  rounded-md border border-white xl:h-3/5 xl:p-0 xl:mt-8'>
                       <div className=' flex justify-around items-center xl:h-[45%] '>
-                        {cartBook?.author}
+                        {/*cartBook?.author */}
                         <span>Why this?</span>
                       </div>
                       <div className=' flex justify-around items-center xl:h-[45%]'>

@@ -1,9 +1,7 @@
 import { connectToDB } from '@utils/database'
 import { NextResponse } from 'next/server'
 import Enrollment from '@models/enrollment'
-
 import Courses from '@models/courses'
-import { NextRequest } from 'next/server'
 
 export async function GET(req) {
   try {
@@ -33,8 +31,6 @@ export async function POST(request) {
     const reqBody = await request.json()
 
     const { userId, courseId } = reqBody
-    console.log(reqBody.userId)
-    console.log(reqBody.courseId)
 
     await Enrollment.create({
       userId,
