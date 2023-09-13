@@ -1,18 +1,30 @@
+'use client'
 import React, { useState } from 'react'
-
-function CourseForm({ price }) {
+import { useRouter } from 'next/navigation'
+function CourseForm({ price, id }) {
+  const router = useRouter()
   const [email, setEmail] = useState('')
   const [couponCode, setCouponCode] = useState('')
   const [basePrice, setBasePrice] = useState(price)
   const [finalPrice, setFinalPrice] = useState(basePrice)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // You can add form validation and submission logic here.
-    console.log('Form submitted with:')
-    console.log('Email:', email)
-    console.log('Coupon Code:', couponCode)
-    console.log('Final Price:', finalPrice)
+    try {
+      const response = await fetch('/api/cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId: email, courseId: id }),
+      })
+      if (response.ok) {
+        console.log(response)
+        router.push('http://localhost:3000/cart')
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const applyCoupon = () => {

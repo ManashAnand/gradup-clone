@@ -8,6 +8,7 @@ import Spinner from '@components/Spinner'
 import SectionCard from '@components/SectionCard'
 import CourseHighlight from '@components/CourseHighlight'
 import CourseModule from '@components/CourseModule'
+import TutorsPage from '@components/TutorsPage'
 import PlacementAssistance from '@components/PlacementAssistance'
 
 {
@@ -42,10 +43,10 @@ export default function Courses({ params }) {
   if (error) {
     return <div>Error Occurred</div>
   }
-
   return (
     <>
       <SectionCard
+        id={data._id}
         url={data.imageURL}
         title={data.title}
         description={data.description}
@@ -55,6 +56,7 @@ export default function Courses({ params }) {
       />
       <CourseHighlight />
       <CourseModule data={data.moduleData} />
+      <TutorsPage authors={data.author} />
       <PlacementAssistance />
     </>
   )

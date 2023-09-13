@@ -7,9 +7,10 @@ export async function GET(req) {
   try {
     await connectToDB()
     const url = new URL(req.url)
-    const email = 'diyanshr@gmail.com' // url.searchParams.get('email')
+    const email = url.searchParams.get('email')
 
     const cartData = await Cart.find({ userId: email })
+
     const cartIds = cartData.map((cart) => {
       // Manually convert _id to a string
       const courseIdString = cart.courseId.toString()
@@ -17,8 +18,8 @@ export async function GET(req) {
     })
 
     const coursesData = await Courses.find({ _id: { $in: cartIds } })
-    .select('_id imageURL price title author');
-
+      .select('_id imageURL price title author')
+      .populate('author')
 
     const data = {
       course: coursesData,
@@ -26,6 +27,7 @@ export async function GET(req) {
 
     return NextResponse.json(data, { status: 200 })
   } catch (error) {
+    console.log(error)
     return NextResponse.json(
       { error: 'Error while getting courses' },
       { status: 500 }
@@ -40,7 +42,6 @@ export async function POST(request) {
     const reqBody = await request.json()
 
     const { userId, courseId } = reqBody
-    (reqBody)
 
     await Cart.create({
       userId,
@@ -48,7 +49,7 @@ export async function POST(request) {
     })
     return NextResponse.json({ message: 'Cart created' }, { status: 201 })
   } catch (error) {
-    (error)
+    error
     return NextResponse.json(
       { error: 'Internal Server Error' },
       { status: 500 }
@@ -56,19 +57,18 @@ export async function POST(request) {
   }
 }
 
-
 export async function DELETE(req) {
   try {
     await connectToDB()
     const url = new URL(req.url)
-    const userId = 'diyanshr@gmail.com'
+    const userId = url.searchParams.get('email')
     const courseId = url.searchParams.get('courseId')
 
     await Cart.findOneAndDelete({
       userID: userId,
       courseID: courseId,
     })
-    return NextResponse.json({ message: 'deleted' },{status:204})
+    return NextResponse.json({ message: 'deleted' }, { status: 204 })
   } catch (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }

@@ -1,5 +1,7 @@
 import { Schema, model, models } from 'mongoose'
 import mongoose from 'mongoose'
+import '@models/author'
+import '@models/review'
 
 const ChapterSchema = new Schema({
   lecture: String,
@@ -25,9 +27,14 @@ const courseSchema = new Schema({
   price: {
     type: Number,
   },
-  author: {
-    type: String,
-  },
+  author: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Author',
+      required: true,
+    },
+  ],
+
   imageURL: {
     type: String,
   },
@@ -49,10 +56,12 @@ const courseSchema = new Schema({
   tags: {
     type: [String],
   },
-  Review: {
-    type: [mongoose.Types.ObjectId],
-    ref: 'review', // Reference to the Review model
-  },
+  review: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Review', // Reference to the Review model
+    },
+  ],
 })
 
 const Courses = models.Courses || model('Courses', courseSchema)
