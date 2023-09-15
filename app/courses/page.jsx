@@ -55,7 +55,11 @@ const page = () => {
         </div>
       </>
     )
-  } else {
+  } 
+  if(error){
+    return <h1>It's a error </h1>
+  }
+  if(data){
     return (
       <>
         <div>
@@ -105,7 +109,7 @@ const page = () => {
           sx={{ display: 'flex', justifyContent: 'center' }}
         >
           {data
-            .filter((item) => item.tags[0] === 'popular')
+            ?.filter((item) => item.tags[0] === 'popular')
             .map((item, index) => (
               <Grid item xs={6} sm={3} key={index}>
                 <CustomCard

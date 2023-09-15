@@ -9,18 +9,19 @@ import { styled } from '@mui/material/styles'
 import { Typography } from '@mui/material'
 
 const Accordion = styled((props) => (
-  <MuiAccordion disableGutters elevation={0} square {...props} />
+  <MuiAccordion disableGutters elevation={0} square {...props} className="border " />
 ))(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
   '&:not(:last-child)': {
     borderBottom: 0,
+    padding: 0,
   },
   '&:before': {
     display: 'none',
-  },
+  }, 
 }))
 
-const AccordionSummary = styled((props) => (
+const AccordionSummary = styled((props) => ( 
   <MuiAccordionSummary
     expandIcon={<ExpandMoreIcon fontSize='5' />}
     {...props}
@@ -52,11 +53,11 @@ const CourseModule = (data) => {
   }
 
   return (
-    <div className='items-center w-[50%] m-10 '>
-      <h1 className='font-black text-4xl text-white m-5'>Course Module</h1>
+    <div className='items-center w-[100%]  '>
+      {/* <h1 className='font-black text-4xl text-white m-5'>Course Module</h1> */}
       {/* Render other course information */}
-      <div className='bg-slate-800 p-5 rounded-md'>
-        {data.data.map((module, moduleIndex) => (
+      <div className='bg-slate-800   rounded-md mb-2'>
+        {data?.data?.map((module, moduleIndex) => (
           <Accordion
             expanded={expanded === `module${moduleIndex}`}
             onChange={handleChange(`module${moduleIndex}`)}
