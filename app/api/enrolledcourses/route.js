@@ -31,10 +31,14 @@ export async function POST(request) {
     const reqBody = await request.json()
 
     const { userId, courseId } = reqBody
+    const course = await Courses.findOne({
+      _id: { $in: courseId },
+    })
 
     await Enrollment.create({
       userId,
       courseId,
+      progressBar: course.progressBar,
       progress: 0,
     })
     return NextResponse.json({ message: 'enrollment created' }, { status: 201 })

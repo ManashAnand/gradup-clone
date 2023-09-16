@@ -16,7 +16,7 @@ export default function Cart2() {
   const { data: session } = useSession()
   const email = session?.user.email
   const { data, error, isLoading } = useSWR(
-    `http://localhost:3000/api/cart?email=${session?.user.email}`,
+    `/api/cart?email=${session?.user.email}`,
     fetcher
   )
   if (isLoading) {

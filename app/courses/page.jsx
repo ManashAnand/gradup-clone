@@ -15,10 +15,7 @@ async function fetcher(url) {
 const page = () => {
   const [hydrated, setHydrated] = React.useState(false)
 
-  const { data, error, isLoading } = useSWR(
-    `http://localhost:3000/api/courses`,
-    fetcher
-  )
+  const { data, error, isLoading } = useSWR(`/api/courses`, fetcher)
   React.useEffect(() => {
     setHydrated(true)
   }, [])
@@ -55,6 +52,9 @@ const page = () => {
         </div>
       </>
     )
+  }
+  if (error) {
+    console.log(error)
   } else {
     return (
       <>

@@ -7,7 +7,7 @@ export async function GET(req) {
     await connectToDB()
     const url = new URL(req.url)
     const path = url.pathname
-    const email = 'diyanshr@gmail.com' // url.searchParams.get('email')
+    const email = url.searchParams.get('email')
     const id = path.split('enrolledcourses/')[1].split('?')[0]
 
     const enrollmentData = await Enrollment.findOne({
@@ -15,19 +15,14 @@ export async function GET(req) {
       courseId: id,
     }).select('-userId -courseId')
 
-    if (!enrollmentData) {
-      return NextResponse.json(
-        { message: 'The logged-in user is not enrolled in this course' },
-        { status: 200 }
-      )
+    if (enrollmentData == null) {
+      console.log(enrollmentData)
+      return NextResponse.redirect(new URL('/mycourses', req.nextUrl))
     }
 
     const courseData = await Courses.findOne({ _id: id })
     if (!courseData) {
-      return NextResponse.json(
-        { error: `No course found with the ID ${id}` },
-        { status: 404 }
-      )
+      return NextResponse.redirect(new URL('/mycourses', req.nextUrl))
     }
 
     const data = {

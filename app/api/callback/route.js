@@ -67,7 +67,7 @@ export const POST = async (request) => {
     }
 
     //DB storage
-    const data = await Payment.create({
+    await Payment.create({
       merchantId,
       transactionId: transactionId,
       merchantTransactionId: merchantTransactionId,

@@ -16,7 +16,7 @@ export async function GET(req) {
       const courseIdString = cart.courseId.toString()
       return courseIdString
     })
-
+    console.log(cartIds)
     const coursesData = await Courses.find({ _id: { $in: cartIds } })
       .select('_id imageURL price title author')
       .populate('author')
@@ -24,6 +24,7 @@ export async function GET(req) {
     const data = {
       course: coursesData,
     }
+    console.log(data)
 
     return NextResponse.json(data, { status: 200 })
   } catch (error) {

@@ -14,6 +14,7 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { Typography } from '@mui/material'
 import { GoThumbsup, GoThumbsdown } from 'react-icons/go'
+import { useRouter } from 'next/navigation'
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -60,6 +61,7 @@ async function fetcher(url) {
 }
 
 export default function Courses({ params }) {
+  const router = useRouter()
   const [video, setVideo] = React.useState(null)
   const [lecture, setLecture] = React.useState(null)
   const [desc, setDesc] = React.useState(null)
@@ -69,10 +71,28 @@ export default function Courses({ params }) {
 
   const [checkboxArray, setCheckboxArray] = React.useState([])
 
-  {
-    /* Patch request for the progress bar helper function
-     */
+  const { data: session } = useSession()
+
+  const { data, error, isLoading } = useSWR(
+    `/api/enrolledcourses/${params.id}?email=${session?.user.email}`,
+    fetcher
+  )
+  React.useEffect(() => {
+    if (data) {
+      setCheckboxArray([...data.enrollment.progressBar])
+      setCourseProg(data.enrollment.progress)
+      console.log(data.enrollment.progressBar)
+      console.log(checkboxArray)
+    }
+  }, [data])
+
+  React.useEffect(() => {
+    setHydrated(true)
+  }, [])
+  if (!hydrated) {
+    return null
   }
+
   const handleCheckboxChange = async (moduleIndex, lectureIndex) => {
     const updatedArray = [...checkboxArray] // Copy of the progressBar array
     console.log([updatedArray])
@@ -91,47 +111,12 @@ export default function Courses({ params }) {
     await updateArray(updatedArray, id, progress)
   }
 
-  {
-    /* calling the API to get the data  and sending the email as params for user and course validation */
-  }
-  const { data: session } = useSession()
-  const { data, error, isLoading } = useSWR(
-    `http://localhost:3000/api/enrolledcourses/${params.id}`, //?email=${session?.user.email}
-    fetcher
-  )
-  {
-    /* Progress bar data loading on the first render
-     */
-  }
-  React.useEffect(() => {
-    if (data) {
-      setCheckboxArray([...data.enrollment.progressBar])
-      setCourseProg(data.enrollment.progress)
-      console.log(data.enrollment.progressBar)
-      console.log(checkboxArray)
-    }
-  }, [data])
-
-  React.useEffect(() => {
-    setHydrated(true)
-  }, [])
-  if (!hydrated) {
-    // Returns null on first render, so the client and server match
-    return null
-  }
-  {
-    /* patch request to handle course earlier
-     */
-  }
   const updateArray = async (updatedArray, id, progress) => {
     try {
       const requestBody = { id, updatedArray, progress }
-      const response = await axios.patch(
-        `http://localhost:3000/api/enrolledcourses/${params.id}`,
-        {
-          requestBody,
-        }
-      )
+      const response = await axios.patch(`/api/enrolledcourses/${params.id}`, {
+        requestBody,
+      })
 
       console.log('patch request is made')
       if (!response.ok) {
@@ -165,106 +150,115 @@ export default function Courses({ params }) {
   if (isLoading) {
     return <Spinner />
   }
-
-  return (
-    <>
-      <div> 
-        <div className='text-4xl font-bold text-sky-500  uppercase text-center mb-6 mt-3 flex-row  '>
-          {data.course.title}
-        </div>
-      </div>
-      <div className='flex  w-screen bg-blue-900 text-white'> 
-        {/* Video List and SideBar for Video List */}
-        <div className='bg-[#041E48]  mt-5 rounded-sm p-2 ml-2 mb-2 w-[40%]  '>
-          <div className=' text-white  items-center m-3'>
-            <h1 className='font-bold text-xl'>
-            Completed {Math.round(courseProg)}%
-            </h1>
+  if (error) {
+    console.log(error)
+  }
+  if (data) {
+    console.log(data)
+    return (
+      <>
+        <div>
+          <div className='text-4xl font-bold text-sky-500  uppercase text-center mb-6 mt-3 flex-row  '>
+            {data.course.title}
           </div>
-          <div>
-            {/* Render other course information */}
-            {data.course.moduleData.map((module, moduleIndex) => (
-              <Accordion
-                expanded={expanded === `module${moduleIndex}`}
-                onChange={handleChange(`module${moduleIndex}`)}
-                key={moduleIndex}
-                className='border-1 border-slate-900'
-              >
-                <AccordionSummary
-                  aria-controls={`module${moduleIndex}d-content`}
-                  id={`module${moduleIndex}-header`}
+        </div>
+        <div className='flex  w-screen bg-blue-900 text-white'>
+          {/* Video List and SideBar for Video List */}
+          <div className='bg-[#041E48]  mt-5 rounded-sm p-2 ml-2 mb-2 w-[40%]  '>
+            <div className=' text-white  items-center m-3'>
+              <h1 className='font-bold text-xl'>
+                Completed {Math.round(courseProg)}%
+              </h1>
+            </div>
+            <div>
+              {/* Render other course information */}
+              {data.course.moduleData.map((module, moduleIndex) => (
+                <Accordion
+                  expanded={expanded === `module${moduleIndex}`}
+                  onChange={handleChange(`module${moduleIndex}`)}
+                  key={moduleIndex}
+                  className='border-1 border-slate-900'
                 >
-                  <Typography className='font-bold' variant='h6'>
-                    {module.moduleName}
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  {module.lectures.map((title, lectureIndex) => (
-                    <div
-                      className={`text-left text-lg p-2 flex  justify-between cursor-pointer rounded-sm hover:bg-blue-600 hover:text-white  m-2 whitespace-nowrap overflow-hidden w-full ${
-                        title.lecture == lecture
-                          ? 'text-white bg-slate-600'
-                          : 'text-black'
-                      }
-                        `}
-                      key={lectureIndex}
-                    >
+                  <AccordionSummary
+                    aria-controls={`module${moduleIndex}d-content`}
+                    id={`module${moduleIndex}-header`}
+                  >
+                    <Typography className='font-bold' variant='h6'>
+                      {module.moduleName}
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    {module.lectures.map((title, lectureIndex) => (
                       <div
-                        className='flex flex-row space-x-3'
-                        onClick={() => handleClick(lectureIndex, moduleIndex)}
+                        className={`text-left text-lg p-2 flex  justify-between cursor-pointer rounded-sm hover:bg-blue-600 hover:text-white  m-2 whitespace-nowrap overflow-hidden w-full ${
+                          title.lecture == lecture
+                            ? 'text-white bg-slate-600'
+                            : 'text-black'
+                        }
+                        `}
+                        key={lectureIndex}
                       >
-                        <span>
-                          {moduleIndex + 1}.{lectureIndex + 1}
-                        </span>
-                        <MdOutlineOndemandVideo className='mt-1' />
-                        <span>{title.lecture}</span>
+                        <div
+                          className='flex flex-row space-x-3'
+                          onClick={() => handleClick(lectureIndex, moduleIndex)}
+                        >
+                          <span>
+                            {moduleIndex + 1}.{lectureIndex + 1}
+                          </span>
+                          <MdOutlineOndemandVideo className='mt-1' />
+                          <span>{title.lecture}</span>
+                        </div>
+                        <input
+                          type='checkbox'
+                          checked={
+                            data.enrollment.progressBar[moduleIndex][
+                              lectureIndex
+                            ]
+                          }
+                          onClick={() =>
+                            handleCheckboxChange(moduleIndex, lectureIndex)
+                          }
+                        />
                       </div>
-                      <input
-                        type='checkbox'
-                        checked={
-                          data.enrollment.progressBar[moduleIndex][lectureIndex]
-                        }
-                        onClick={() =>
-                          handleCheckboxChange(moduleIndex, lectureIndex)
-                        }
-                      />
-                    </div>
-                  ))}
-                </AccordionDetails>
-              </Accordion>
-            ))}
+                    ))}
+                  </AccordionDetails>
+                </Accordion>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className='w-full bg-blue-900 m-5  '>
-          {/* Video Player Section */}
-          <div className='w-full block  overflow-hidden '>
-            <VimeoVideoPlayer
-              videoId={
-                video ? video : data.course.moduleData[0].lectures[0].lectureURL
-              }
-            />
-          </div>
-          {/* data related to the video appears here */}
-          <div className='mt-5  h-full  text-left'>
-            <div className='flex flex-row justify-between'>
-              <div className='flex flex-row spacing-x-2 items-center'>
-                <h2 className='text-bold'>Chapter Title : </h2>
-                <h3> {lecture}</h3>
-              </div>
-              <div className='flex flex-row space-x-6 font-bold mr-6'>
-                <GoThumbsup fontSize={30} />
-                <GoThumbsdown fontSize={30} />
-              </div>
+          <div className='w-full bg-blue-900 m-5  '>
+            {/* Video Player Section */}
+            <div className='w-full block  overflow-hidden '>
+              <VimeoVideoPlayer
+                videoId={
+                  video
+                    ? video
+                    : data.course.moduleData[0].lectures[0].lectureURL
+                }
+              />
             </div>
-            <hr className='border-t-2 border-black mt-2 mb-2' />
-            <div className='flex flex-row spacing-x-2 items-center'>
-              <h2>Description : </h2>
-              <p>{desc}</p>
+            {/* data related to the video appears here */}
+            <div className='mt-5  h-full  text-left'>
+              <div className='flex flex-row justify-between'>
+                <div className='flex flex-row spacing-x-2 items-center'>
+                  <h2 className='text-bold'>Chapter Title : </h2>
+                  <h3> {lecture}</h3>
+                </div>
+                <div className='flex flex-row space-x-6 font-bold mr-6'>
+                  <GoThumbsup fontSize={30} />
+                  <GoThumbsdown fontSize={30} />
+                </div>
+              </div>
+              <hr className='border-t-2 border-black mt-2 mb-2' />
+              <div className='flex flex-row spacing-x-2 items-center'>
+                <h2>Description : </h2>
+                <p>{desc}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </>
-  )
+      </>
+    )
+  }
 }

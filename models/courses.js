@@ -2,11 +2,13 @@ import { Schema, model, models } from 'mongoose'
 import mongoose from 'mongoose'
 import '@models/author'
 import '@models/review'
+import '@models/faq'
 
 const ChapterSchema = new Schema({
   lecture: String,
   lectureDescription: String,
   lectureURL: String,
+  lectureLen: String,
   likes: Number,
   dislikes: Number,
   outerLinks: String,
@@ -14,6 +16,7 @@ const ChapterSchema = new Schema({
 
 const ModuleSchema = new Schema({
   moduleName: String,
+  moduleLength: String,
   lectures: [ChapterSchema],
 })
 
@@ -60,6 +63,16 @@ const courseSchema = new Schema({
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Review', // Reference to the Review model
+    },
+  ],
+  progressBar: [[{ type: Boolean }]],
+  rating: {
+    type: String,
+  },
+  faq: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'FAQ', // Reference to the FAQ model
     },
   ],
 })

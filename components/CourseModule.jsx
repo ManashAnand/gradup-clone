@@ -78,10 +78,7 @@ const CourseModule = (data) => {
                         '
                   key={lectureIndex}
                 >
-                  <div
-                    className='flex flex-row space-x-3'
-                    onClick={() => handleClick(lectureIndex, moduleIndex)}
-                  >
+                  <div className='flex flex-row space-x-3'>
                     <span>
                       {moduleIndex + 1}.{lectureIndex + 1}
                     </span>

@@ -35,6 +35,9 @@ export async function POST(request) {
       totalModules,
       totalLectures,
       Review,
+      rating,
+      faq,
+      progressBar,
     } = reqBody
 
     await Courses.create({
@@ -50,6 +53,9 @@ export async function POST(request) {
       totalLectures,
       tags,
       Review,
+      rating,
+      faq,
+      progressBar,
     })
     return NextResponse.json({ message: 'course created' }, { status: 201 })
   } catch (error) {

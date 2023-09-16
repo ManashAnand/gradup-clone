@@ -26,7 +26,7 @@ export default function Courses({ params }) {
   const [hydrated, setHydrated] = React.useState(0)
 
   const { data, error, isLoading } = useSWR(
-    `http://localhost:3000/api/courses/${params.id}`,
+    `/api/courses/${params.id}`,
     fetcher
   )
 

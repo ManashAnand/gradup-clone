@@ -2,7 +2,7 @@
 
 import Grid from '@mui/material/Grid'
 import CustomCard from '@components/CustomCard'
-
+import Spinner from '@components/Spinner'
 import React from 'react'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
@@ -16,7 +16,7 @@ const page = () => {
   const [hydrated, setHydrated] = React.useState(false)
   const { data: session } = useSession()
   const { data, error, isLoading } = useSWR(
-    `http://localhost:3000/api/enrolledcourses?email=${session?.user.email}`,
+    `/api/enrolledcourses?email=${session?.user.email}`,
     fetcher
   )
   React.useEffect(() => {
@@ -26,50 +26,10 @@ const page = () => {
     // Returns null on first render, so the client and server match
     return null
   }
-  console.log('data', data)
-
-  if (data == null) {
-    return (
-      <>
-        <div>
-          <div className='coursebox w-fit m-auto'>
-            <div>
-              <p className='text-white text-left text-xl'>
-                Embark on a journey of knowledge and affordability. Discover
-                exceptional courses tailored to your aspirations, all within
-                your budget. Explore the excellence that awaits!
-              </p>
-            </div>
-            <div className=''>
-              <img width='200' src='/assets/images/image1.png'></img>
-            </div>
-          </div>
-          <div className='w-fit flex mx-auto flex-col mb-10 mt-5'>
-            <div className='showmobile textform'>
-              <p className='text-white text-xl'>
-                Embark on a journey of knowledge and affordability.
-              </p>
-              <p className='text-white text-xl'>
-                Discover exceptional courses tailored to your aspirations, all
-                within your budget.Explore the excellence that awaits!
-              </p>
-              <img
-                className='mx-auto block'
-                width='280'
-                src='/assets/images/image1.png'
-              ></img>
-            </div>
-            <h1 className='text-4xl font-bold text-sky-500 textform animate-charcter text-center mb-6 mt-3'>
-              My Courses
-            </h1>
-          </div>
-        </div>
-        <div>
-          <p>You haven't enrolled in any course yet.</p>
-        </div>
-      </>
-    )
-  } else {
+  if (isLoading) {
+    return <Spinner />
+  }
+  if (data) {
     return (
       <>
         <div>

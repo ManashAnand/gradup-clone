@@ -23,8 +23,10 @@
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
     "html2canvas": "^1.4.1",
     "html2pdf.js": "^0.10.1",
+    "jsonwebtoken": "^9.0.2",
     "jspdf": "^2.5.1",
     "lucide-react": "^0.269.0",
     "mongodb": "^5.4.0",
@@ -50,6 +52,7 @@
     "vimeo": "^2.3.1"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.4",
     "postcss-nested": "^6.0.1"
   }
 }
