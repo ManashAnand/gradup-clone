@@ -5,7 +5,7 @@ import useSWR from 'swr'
 import Spinner from '@components/Spinner'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
-import {useState} from 'react'
+import { useState } from 'react'
 
 async function fetcher(url) {
   const res = await fetch(url)
@@ -13,8 +13,8 @@ async function fetcher(url) {
 }
 
 export default function Cart2() {
-  const [subTotal,setSubTotal] = useState(0);
-   const [purchasedId,setPurchasedId] = useState([]);
+  const [subTotal, setSubTotal] = useState(0)
+  const [purchasedId, setPurchasedId] = useState([])
 
   const router = useRouter()
   const { data: session } = useSession()
@@ -51,7 +51,7 @@ export default function Cart2() {
     }
 
     const handlePayment = async (amount, id, email) => {
-    //  console.log(purchasedId)
+      //  console.log(purchasedId)
       try {
         const response = await fetch('/api/payment', {
           method: 'POST',
@@ -73,22 +73,22 @@ export default function Cart2() {
       }
     }
 
-    const handleClick = (e,id,title,price) => {
-      const isChecked = e.target.checked;
-      if(isChecked){
-        setSubTotal(subTotal+price);
-        setPurchasedId([...purchasedId, id]);
+    const handleClick = (e, id, title, price) => {
+      const isChecked = e.target.checked
+      if (isChecked) {
+        setSubTotal(subTotal + price)
+        setPurchasedId([...purchasedId, id])
+      } else {
+        setSubTotal(subTotal - price)
+        setPurchasedId(purchasedId.filter((itemId) => itemId !== id))
       }
-      else{
-        setSubTotal(subTotal-price)
-        setPurchasedId(purchasedId.filter(itemId => itemId !== id));
-      }
-
     }
 
     return (
       <>
-        <h1 className='text-white w-full text-2xl text-left'>Shopping Cart</h1>
+        <h1 className='text-white w-full text-2xl text-left mt-5'>
+          Shopping Cart
+        </h1>
 
         <div className='text-white  h-full w-full xl:flex p-2 '>
           <div className='text-white  xl:w-[66%] p-4'>
@@ -126,11 +126,26 @@ export default function Cart2() {
                         <span>Why this?</span>
 
                         <div>
-                          <input onClick={(e) => handleClick(e,cartBook?._id,cartBook?.title,cartBook?.price)} id={cartBook?._id} type="checkbox"  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 cursor-pointer"/>
-                          <label htmlFor="red-checkbox" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Select</label>
+                          <input
+                            onClick={(e) =>
+                              handleClick(
+                                e,
+                                cartBook?._id,
+                                cartBook?.title,
+                                cartBook?.price
+                              )
+                            }
+                            id={cartBook?._id}
+                            type='checkbox'
+                            className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 cursor-pointer'
+                          />
+                          <label
+                            htmlFor='red-checkbox'
+                            className='ml-2 text-sm font-medium text-gray-900 dark:text-gray-300'
+                          >
+                            Select
+                          </label>
                         </div>
-
-
                       </div>
                       <div className=' flex justify-around items-center xl:h-[45%]'>
                         ₹{cartBook?.price}
@@ -204,44 +219,35 @@ export default function Cart2() {
             <CourseRoutingBtn />
           </div>
         </div>
-
-
-<div className="  text-white w-full text-2xl text-left mt-4">
-            Previous Order
+        {/*
+        <div className='  text-white w-full text-2xl text-left mt-4'>
+          Previous Order
         </div>
-          <div className="  text-white w-full text-2xl text-left mt-2 ">
-               <div class="container m-auto sm:grid grid-cols-3 gap-4 py-2 px-6 flex flex-col ">
-        
-              {
-                data?.course?.map((cartBook) => {
-                  return(
-                    <>
-                    
-                    <div
-                      className="flex max-w-[18rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-slate-700">
-                      <div className="relative overflow-hidden bg-cover bg-no-repeat">
-                        <img
-                          className="rounded-t-lg h-full"
-                          src={cartBook?.imageURL}
-                          alt="" />
-                      </div>
-                      <div className="p-6">
-                        <p className="text-base text-neutral-600 dark:text-neutral-200 flex justify-center items-center">
-                          {cartBook?.title}
-                        </p>
-                      </div>
+        <div className='  text-white w-full text-2xl text-left mt-2 '>
+          <div class='container m-auto sm:grid grid-cols-3 gap-4 py-2 px-6 flex flex-col '>
+            {data?.course?.map((cartBook) => {
+              return (
+                <>
+                  <div className='flex max-w-[18rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-slate-700'>
+                    <div className='relative overflow-hidden bg-cover bg-no-repeat'>
+                      <img
+                        className='rounded-t-lg h-full'
+                        src={cartBook?.imageURL}
+                        alt=''
+                      />
                     </div>
-
-                    </>
-                  )
-                })
-              }
-               
-           
-                
-
-              </div>
+                    <div className='p-6'>
+                      <p className='text-base text-neutral-600 dark:text-neutral-200 flex justify-center items-center'>
+                        {cartBook?.title}
+                      </p>
+                    </div>
+                  </div>
+                </>
+              )
+            })}
           </div>
+        </div>
+        */}
       </>
     )
   }

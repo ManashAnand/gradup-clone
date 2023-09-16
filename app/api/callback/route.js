@@ -45,16 +45,13 @@ export const POST = async (request) => {
         const userId = email
         const courseId = id
         console.log(courseId)
-        const response = await fetch(
-          'http://localhost:3000/api/enrolledcourses',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ userId, courseId }),
-          }
-        )
+        const response = await fetch('/api/enrolledcourses', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ userId, courseId }),
+        })
 
         if (response.ok) {
           console.log('enrolled successfully:')
@@ -76,7 +73,7 @@ export const POST = async (request) => {
     //
     // payment Success Response
 
-    return Response.redirect('http://localhost:3000/mycourses', 302)
+    return Response.redirect('/mycourses', 302)
   } catch (error) {
     console.error(error)
     return new Response({ error: 'Internal server error' })

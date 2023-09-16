@@ -12,11 +12,11 @@ export const POST = async (request) => {
 
   try {
     const data = {
-      merchantId: 'PGTESTPAYUAT91',
+      merchantId: process.env.MERCHANTID,
       merchantTransactionId: generateMerchantTransactionId(),
       merchantUserId: 'MUID123',
       amount: amountInCents,
-      redirectUrl: `http:localhost:3000/api/callback?id=${id}&email=${email}`,
+      redirectUrl: `/callback?id=${id}&email=${email}`,
       redirectMode: 'POST',
       callbackUrl: 'api/callback',
       mobileNumber: '9999999999',
@@ -35,8 +35,7 @@ export const POST = async (request) => {
       .digest('hex')
 
     const finalXHeader = sha256 + '###' + saltIndex
-    const apiUrl = 'https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay'
-    // const apiUrl = "https://api.phonepe.com/apis/hermes";
+    const apiUrl = 'https://api.phonepe.com/apis/hermes'
     const requestData = {
       request: encode,
     }
