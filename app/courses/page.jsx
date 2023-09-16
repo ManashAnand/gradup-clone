@@ -52,9 +52,6 @@ const page = () => {
         </div>
       </>
     )
-  }
-  if (error) {
-    console.log(error)
   } else {
     return (
       <>
@@ -105,7 +102,7 @@ const page = () => {
           sx={{ display: 'flex', justifyContent: 'center' }}
         >
           {data
-            .filter((item) => item.tags[0] === 'popular')
+            ?.filter((item) => item.tags[0] === 'popular')
             .map((item, index) => (
               <Grid item xs={6} sm={3} key={index}>
                 <CustomCard

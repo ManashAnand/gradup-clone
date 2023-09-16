@@ -22,6 +22,10 @@ export default function CoursesOnHome() {
     return <Spinner />
   }
 
+  if(error){
+    return <>Error {error}</>
+  }
+
   return (
     <section className='flex-start flex-col mt-4'>
       <div>
