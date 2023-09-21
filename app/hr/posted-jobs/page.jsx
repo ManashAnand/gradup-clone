@@ -33,6 +33,7 @@ export default function App() {
   // const { data: session } = useSession();
   // const url=`api/hr/${session?.user.id}`;
   const { data: session } = useSession()
+
   var { data, error } = useSWR(
     `${session?.user.id}` ? `/api/hr/${session?.user.id}` : null,
     fetcher
@@ -187,11 +188,11 @@ export default function App() {
     }
   }
   return (
-    <div className='w-full my-16'>
+    <div className='w-full mb-16 '>
       <div>
         <h1 className='my-10 text-center'>
           <span className='text-white animate-charcter text-5xl font-semibold mb-10 textnew'>
-            Jobs Posted
+            Posted Jobs
           </span>
         </h1>
         <Table

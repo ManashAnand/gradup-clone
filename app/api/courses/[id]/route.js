@@ -10,7 +10,7 @@ export async function GET(req) {
 
     const data = await Courses.findOne({ _id: id })
       .select('-VideoURL')
-      .populate('author')
+      .populate('author faq')
 
     return NextResponse.json(data, { status: 200 })
   } catch (error) {

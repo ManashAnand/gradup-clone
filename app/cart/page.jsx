@@ -27,9 +27,6 @@ export default function Cart2() {
     return <Spinner />
   }
   if (data) {
-    // const subTotal = data?.course
-    //   .reduce((sum, book) => sum + book.price, 0)
-    //   .toFixed(2)
     const id = data?.course[0]?._id
     const handleDeleteOneItem = async (id, email) => {
       try {

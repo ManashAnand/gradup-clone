@@ -1,5 +1,4 @@
 import Card from '@mui/material/Card'
-import Grid from '@mui/material/Grid'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button'
@@ -47,6 +46,7 @@ const CustomCard = ({ image, title, url }) => {
             onClick={() => handleClick(url)}
             size='small'
             color='primary'
+            sx={{ marginBottom: '8px' }}
           >
             Start Course
           </Button>

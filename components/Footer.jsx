@@ -437,7 +437,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href='https://www.threads.net/@tanmaysinghrajput3'
+              href='https://www.threads.net/@gradup.in'
               className='ml-3 text-white my-auto'
               target='_blank'
             >

@@ -7,9 +7,7 @@ export async function POST(request) {
     await connectToDB()
 
     const reqBody = await request.json()
-
     const { faq } = reqBody
-
     await FAQ.create({
       faq,
     })

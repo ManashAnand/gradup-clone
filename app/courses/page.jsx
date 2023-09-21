@@ -104,7 +104,7 @@ const page = () => {
           {data
             ?.filter((item) => item.tags[0] === 'popular')
             .map((item, index) => (
-              <Grid item xs={6} sm={3} key={index}>
+              <Grid item xs={8} sm={3} key={index}>
                 <CustomCard
                   className='w-[50%]'
                   kye={index}
@@ -115,7 +115,7 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className='text-xl text-center text font-semibold text-white mb-8 mt-16'>
+        <p className='text-4xl text-center text font-semibold text-white mb-8 mt-16'>
           Computer Science
         </p>
         <Grid
@@ -127,7 +127,7 @@ const page = () => {
           {data
             .filter((item) => item.tags[0] === 'cs')
             .map((item, index) => (
-              <Grid item xs={6} sm={3} key={index}>
+              <Grid item xs={8} sm={3} key={index}>
                 <CustomCard
                   className='w-[50%]'
                   image={item.imageURL}
@@ -137,7 +137,7 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className='text-xl text-center text font-semibold text-white mb-8 mt-16'>
+        <p className='text-4xl text-center text font-semibold text-white mb-8 mt-16'>
           Information Technology
         </p>
         <Grid
@@ -149,7 +149,7 @@ const page = () => {
           {data
             .filter((item) => item.tags[0] === 'it')
             .map((item, index) => (
-              <Grid item xs={6} sm={3} key={index}>
+              <Grid item xs={8} sm={3} key={index}>
                 <CustomCard
                   className='w-[50%]'
                   kye={index}
@@ -160,7 +160,7 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className='text-xl text-center text font-semibold text-white mb-8 mt-16'>
+        <p className='text-4xl text-center text font-semibold text-white mb-8 mt-16'>
           Automation Technology
         </p>
         <Grid
@@ -172,7 +172,7 @@ const page = () => {
           {data
             .filter((item) => item.tags[0] === 'automation')
             .map((item, index) => (
-              <Grid item xs={6} sm={3} key={index}>
+              <Grid item xs={8} sm={3} key={index}>
                 <CustomCard
                   className='w-[50%]'
                   kye={index}
@@ -183,7 +183,7 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className='text-xl text-center text font-semibold text-white mb-8 mt-16'>
+        <p className='text-4xl text-center text font-semibold text-white mb-8 mt-16'>
           Management
         </p>
         <Grid
@@ -195,7 +195,7 @@ const page = () => {
           {data
             .filter((item) => item.tags[0] === 'management')
             .map((item, index) => (
-              <Grid item xs={6} sm={3} key={index}>
+              <Grid item xs={8} sm={3} key={index}>
                 <CustomCard
                   className='w-[50%]'
                   kye={index}
@@ -206,7 +206,7 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className='text-xl text-center text font-semibold text-white mb-8 mt-16'>
+        <p className='text-4xl text-center text font-semibold text-white mb-8 mt-16'>
           Language
         </p>
         <Grid
@@ -218,7 +218,7 @@ const page = () => {
           {data
             .filter((item) => item.tags[0] === 'language')
             .map((item, index) => (
-              <Grid item xs={6} sm={3} key={index}>
+              <Grid item xs={8} sm={3} key={index}>
                 <CustomCard
                   className='w-[50%]'
                   kye={index}
@@ -229,7 +229,7 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className='text-xl text-center text font-semibold text-white mb-8 mt-16'>
+        <p className='text-4xl text-center text font-semibold text-white mb-8 mt-16'>
           Design And Product
         </p>
         <Grid
@@ -241,7 +241,7 @@ const page = () => {
           {data
             .filter((item) => item.tags[0] === 'design')
             .map((item, index) => (
-              <Grid item xs={6} sm={3} key={index}>
+              <Grid item xs={8} sm={3} key={index}>
                 <CustomCard
                   className='w-[50%]'
                   kye={index}
@@ -252,7 +252,7 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className='text-xl text-center text font-semibold text-white mb-8 mt-16'>
+        <p className='text-4xl text-center text font-semibold text-white mb-8 mt-16'>
           Arts and Humanities
         </p>
         <Grid
@@ -264,7 +264,7 @@ const page = () => {
           {data
             .filter((item) => item.tags[0] === 'art')
             .map((item, index) => (
-              <Grid item xs={6} sm={3} key={index}>
+              <Grid item xs={8} sm={3} key={index}>
                 <CustomCard
                   className='w-[50%]'
                   kye={index}

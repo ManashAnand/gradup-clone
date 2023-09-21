@@ -1,49 +1,69 @@
 'use client'
 import React from 'react'
-import Link from 'next/link';
-import { useSession } from "next-auth/react";
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-const fetcher = async (...args) => await fetch(...args).then((res) => res.json());
+import Link from 'next/link'
+import { useSession } from 'next-auth/react'
+import Grid from '@mui/material/Grid'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import CardMedia from '@mui/material/CardMedia'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+const fetcher = async (...args) =>
+  await fetch(...args).then((res) => res.json())
 const HR = () => {
-  const list=[
-    {img:"/assets/images/jbs.png",title:"Add Jobs", link:"/hr/addjob"},
-    {img:"/assets/images/jobpost.png",title:"Post Jobs", link:"/hr/posted-jobs"},
-    {img:"/assets/images/jbs.png",title:"Get Premium", link:"/premium"}]
-  const { data: session } = useSession();
+  const list = [
+    { img: '/assets/images/jbs.png', title: 'Add Jobs', link: '/hr/addjob' },
+    {
+      img: '/assets/images/jobpost.png',
+      title: 'Posted Jobs',
+      link: '/hr/posted-jobs',
+    },
+    { img: '/assets/images/jbs.png', title: 'Get Premium', link: '/premium' },
+  ]
+  const { data: session } = useSession()
   return (
     <div className='w-screen'>
-      <p className='text-white text-xl text-center mt-10'>Name : {session?.user.name}</p>
-      <p className='text-white text-xl text-center'>Email : {session?.user.email}</p>
+      <p className='text-white text-xl text-center mt-10'>
+        Name : {session?.user.name}
+      </p>
+      <p className='text-white text-xl text-center'>
+        Email : {session?.user.email}
+      </p>
       <div className=' flex justify-center my-12 mx-24'>
-      <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center" }}>
-        {list.map((item, index) => (
-          <Grid item xs={12} sm={4} key={index}>
-            <Card sx={{ maxWidth: 300, marginX: "auto" }}>
-              <CardMedia
-                sx={{ height: 170 }}
-                image={item.img}
-                title="courses"
-              />
-              <CardContent sx={{ display: "flex",flexDirection:"column" }}>
-                {/* <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
+        <Grid
+          container
+          spacing={4}
+          sx={{ display: 'flex', justifyContent: 'center' }}
+        >
+          {list.map((item, index) => (
+            <Grid item xs={12} sm={4} key={index}>
+              <Card sx={{ maxWidth: 300, marginX: 'auto' }}>
+                <CardMedia
+                  sx={{ height: 170 }}
+                  image={item.img}
+                  title='courses'
+                />
+                <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
+                  {/* <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
                   {item.title}
                 </Typography> */}
-                <Typography sx={{ textAlign: "center", marginY: "auto" }} gutterBottom variant="subtitle1" component="div">
-                  <a href={item.link}>
-                    <Button variant='outlined' className='rounded-xl mt-2'>
-                    {item.title}
-                    </Button>
-                  </a>
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>))}
-      </Grid>
+                  <Typography
+                    sx={{ textAlign: 'center', marginY: 'auto' }}
+                    gutterBottom
+                    variant='subtitle1'
+                    component='div'
+                  >
+                    <a href={item.link}>
+                      <Button variant='outlined' className='rounded-xl mt-2'>
+                        {item.title}
+                      </Button>
+                    </a>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </div>
       {/* <Link href='/hr/addjob' className='bg-blue-400 px-20 py-2 text-white text-center mb-10'>
         Add Job
@@ -56,20 +76,6 @@ const HR = () => {
 }
 
 export default HR
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // "use client";
 

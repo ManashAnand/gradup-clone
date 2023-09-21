@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import useSWR from 'swr'
 
 import Spinner from '@components/Spinner'
-
+import CourseFaq from '@components/CourseFaq'
 import CourseModule from '@components/CourseModule'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
@@ -44,7 +44,6 @@ export default function Courses({ params }) {
     return null
   }
   const Enroll = async (id, email) => {
-    //  console.log(purchasedId)
     try {
       const response = await fetch('/api/cart', {
         method: 'POST',
@@ -69,7 +68,7 @@ export default function Courses({ params }) {
   if (error) {
     return <div>Error Occurred</div>
   }
-  console.log('From courses')
+
   console.log(data)
   if (data) {
     return (
@@ -453,190 +452,8 @@ export default function Courses({ params }) {
             <CourseModule data={data.moduleData} />
           </div>
 
-          {/* <div id="accordion-collapse" data-accordion="collapse">
-      <h2 id="accordion-collapse-heading-1">
-        <button
-          type="button"
-          className={`flex items-center justify-between w-full p-5 font-medium text-left text-gray-700 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 ${
-            activeSection === 'accordion-collapse-body-1' ? 'active' : ''
-          }`}
-          onClick={() => toggleSection('accordion-collapse-body-1')}
-          aria-expanded={activeSection === 'accordion-collapse-body-1'}
-          aria-controls="accordion-collapse-body-1"
-        >
-          <span>Module 1: Introduction to Production Management</span>
-          <svg
-            data-accordion-icon
-            className={`w-3 h-3 rotate-180 shrink-0 ${
-              activeSection === 'accordion-collapse-body-1' ? 'active' : ''
-            }`}
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 6"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M9 5 5 1 1 5"
-            />
-          </svg>
-        </button>
-      </h2>
-      <div
-        id="accordion-collapse-body-1"
-        className={`${
-          activeSection === 'accordion-collapse-body-1' ? 'block' : 'hidden'
-        }`}
-        aria-labelledby="accordion-collapse-heading-1"
-      >
-        <div className="p-5 border border-b-0 border-gray-200">
-          <p className="mb-2 text-gray-700">
-            Module 1 content goes here.
-          </p>
-        </div>
-      </div>
-
-      <h2 id="accordion-collapse-heading-2">
-        <button
-          type="button"
-          className={`flex items-center justify-between w-full p-5 font-medium text-left text-gray-700 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 ${
-            activeSection === 'accordion-collapse-body-2' ? 'active' : ''
-          }`}
-          onClick={() => toggleSection('accordion-collapse-body-2')}
-          aria-expanded={activeSection === 'accordion-collapse-body-2'}
-          aria-controls="accordion-collapse-body-2"
-        >
-          <span>Module 2: Another Module</span>
-          <svg
-            data-accordion-icon
-            className={`w-3 h-3 rotate-180 shrink-0 ${
-              activeSection === 'accordion-collapse-body-2' ? 'active' : ''
-            }`}
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 6"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M9 5 5 1 1 5"
-            />
-          </svg>
-        </button>
-      </h2>
-      <div
-        id="accordion-collapse-body-2"
-        className={`${
-          activeSection === 'accordion-collapse-body-2' ? 'block' : 'hidden'
-        }`}
-        aria-labelledby="accordion-collapse-heading-2"
-      >
-        <div className="p-5 border border-b-0 border-gray-200">
-          <p className="mb-2 text-gray-700">
-            Module 2 content goes here.
-          </p>
-        </div>
-      </div>
-
-      <h2 id="accordion-collapse-heading-3">
-        <button
-          type="button"
-          className={`flex items-center justify-between w-full p-5 font-medium text-left text-gray-700 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 ${
-            activeSection === 'accordion-collapse-body-3' ? 'active' : ''
-          }`}
-          onClick={() => toggleSection('accordion-collapse-body-3')}
-          aria-expanded={activeSection === 'accordion-collapse-body-3'}
-          aria-controls="accordion-collapse-body-3"
-        >
-          <span>Module 3: Yet Another Module</span>
-          <svg
-            data-accordion-icon
-            className={`w-3 h-3 rotate-180 shrink-0 ${
-              activeSection === 'accordion-collapse-body-3' ? 'active' : ''
-            }`}
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 6"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M9 5 5 1 1 5"
-            />
-          </svg>
-        </button>
-      </h2>
-      <div
-        id="accordion-collapse-body-3"
-        className={`${
-          activeSection === 'accordion-collapse-body-3' ? 'block' : 'hidden'
-        }`}
-        aria-labelledby="accordion-collapse-heading-3"
-      >
-        <div className="p-5 border border-b-0 border-gray-200">
-          <p className="mb-2 text-gray-700">
-            Module 3 content goes here.
-          </p>
-        </div>
-      </div>
-
-      <h2 id="accordion-collapse-heading-4">
-        <button
-          type="button"
-          className={`flex items-center justify-between w-full p-5 font-medium text-left text-gray-700 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 ${
-            activeSection === 'accordion-collapse-body-4' ? 'active' : ''
-          }`}
-          onClick={() => toggleSection('accordion-collapse-body-4')}
-          aria-expanded={activeSection === 'accordion-collapse-body-4'}
-          aria-controls="accordion-collapse-body-4"
-        >
-          <span>Module 4: Yet Another Module</span>
-          <svg
-            data-accordion-icon
-            className={`w-3 h-3 rotate-180 shrink-0 ${
-              activeSection === 'accordion-collapse-body-4' ? 'active' : ''
-            }`}
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 6"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M9 5 5 1 1 5"
-            />
-          </svg>
-        </button>
-      </h2>
-      <div
-        id="accordion-collapse-body-4"
-        className={`${
-          activeSection === 'accordion-collapse-body-4' ? 'block' : 'hidden'
-        }`}
-        aria-labelledby="accordion-collapse-heading-4"
-      >
-        <div className="p-5 border border-b-0 border-gray-200">
-          <p className="mb-2 text-gray-700">
-            Module 4 content goes here.
-          </p>
-        </div>
-      </div>
-    </div> */}
-
           <div class='shadow p-5 rounded-lg  bg-[#F7F9FC] my-4 '>
-            <p class='mt-4 text-3xl font-semibold font-medium mb-4 text-left'>
+            <p class='mt-4 text-3xl  font-medium mb-4 text-left'>
               What placement assistance will you receive?
             </p>
 
@@ -779,18 +596,12 @@ export default function Courses({ params }) {
           </div>
   */}
 
-          {/* <div className=" p-4 bg-white mt-4 rounded-md ">
-        <div className="text-4xl font-bold flex justify-items-start">
-        Frequently Asked Questions
-        </div>
-        <div className="flex justify-items-start">
-        Learners who complete this program will receive a 50% discount voucher to take the PL-300 Certification Exam. 
-         </div>
-
-        <CourseModule data={data.moduleData} />
-
-
-    </div> */}
+          <div className=' p-4 bg-white mt-4 rounded-md '>
+            <div className='text-4xl font-bold flex justify-items-start'>
+              Frequently Asked Questions
+            </div>
+            <CourseFaq data={data.faq[0]} />
+          </div>
 
           <div className='flex flex-wrap bg-[#F7F9FC] mt-4 rounded-lg items-center justify-evenly'>
             <img

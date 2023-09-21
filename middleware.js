@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
 
-// This function can be marked `async` if using `await` inside
 export default async function middleware(request) {
   const cookies = request.cookies.get('next-auth.session-token')
 
@@ -9,7 +8,6 @@ export default async function middleware(request) {
   }
 }
 
-// See "Matching Paths" below to learn more
 export const config = {
   matcher: [
     '/mycourses',
@@ -17,5 +15,6 @@ export const config = {
     '/internships',
     '/jobs',
     '/cart',
+    '/hr/signup',
   ],
 }

@@ -1,10 +1,9 @@
-'use client'
 import React from 'react'
 import MuiAccordion from '@mui/material/Accordion'
 import MuiAccordionSummary from '@mui/material/AccordionSummary'
 import MuiAccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import { MdOutlineOndemandVideo } from 'react-icons/md'
+
 import { styled } from '@mui/material/styles'
 import { Typography } from '@mui/material'
 
@@ -51,49 +50,34 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: '1px solid rgba(0, 0, 0, .125)',
 }))
 
-const CourseModule = (data) => {
-  const [expanded, setExpanded] = React.useState('panel1')
+const CourseFaq = ({ data }) => {
+  console.log(data)
+  const [expanded, setExpanded] = React.useState(null)
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false)
   }
 
   return (
-    <div className='items-center w-[100%]  '>
-      {/* <h1 className='font-black text-4xl text-white m-5'>Course Module</h1> */}
-      {/* Render other course information */}
-      <div className='bg-slate-800   rounded-md mb-2'>
-        {data?.data?.map((module, moduleIndex) => (
+    <div className='items-center w-[100%] mt-5'>
+      <div className='bg-slate-800 rounded-md mb-2'>
+        {data?.faq.map((faqItem, faqIndex) => (
           <Accordion
-            expanded={expanded === `module${moduleIndex}`}
-            onChange={handleChange(`module${moduleIndex}`)}
-            key={moduleIndex}
+            expanded={expanded === `faq${faqIndex}`}
+            onChange={handleChange(`faq${faqIndex}`)}
+            key={faqIndex}
             className='border-1 border-slate-900'
           >
             <AccordionSummary
-              aria-controls={`module${moduleIndex}d-content`}
-              id={`module${moduleIndex}-header`}
+              aria-controls={`faq${faqIndex}-content`}
+              id={`faq${faqIndex}-header`}
             >
-              <Typography className='font-bold' variant='h6'>
-                {module.moduleName}
+              <Typography className='font-bold text-left' variant='h6'>
+                {faqItem.question}
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              {module.lectures.map((title, lectureIndex) => (
-                <div
-                  className='text-left text-lg p-2 flex  justify-between cursor-pointer rounded-lg hover:bg-slate-600 hover:text-white  m-2 whitespace-nowrap overflow-hidden w-full 
-                        '
-                  key={lectureIndex}
-                >
-                  <div className='flex flex-row space-x-3'>
-                    <span>
-                      {moduleIndex + 1}.{lectureIndex + 1}
-                    </span>
-                    <MdOutlineOndemandVideo className='mt-1' />
-                    <span>{title.lecture}</span>
-                  </div>
-                </div>
-              ))}
+              <Typography className='text-left'>{faqItem.answer}</Typography>
             </AccordionDetails>
           </Accordion>
         ))}
@@ -101,4 +85,5 @@ const CourseModule = (data) => {
     </div>
   )
 }
-export default CourseModule
+
+export default CourseFaq
