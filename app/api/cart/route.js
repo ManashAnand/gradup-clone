@@ -21,7 +21,8 @@ export async function GET(req) {
       .populate('author')
     const enrollment = await Enrollment.find({ userId: email }).populate(
       'courseId'
-    )
+    ).select('price title imageURL')
+    
     console.log(enrollment)
     const data = {
       course: coursesData,
