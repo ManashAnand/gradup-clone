@@ -46,7 +46,7 @@ function sendSMS(apikey, numbers, sender, message) {
 function sendEmailAsync(receiverEmail,message){
   // Replace these values with your actual Gmail account credentials
 const emailFrom = 'gradup.ops@gmail.com';
-const emailPassword = '';
+const emailPassword = process.env.MAIL;
 
 // Create a transporter using Gmail's SMTP
 const transporter = nodemailer.createTransport({
