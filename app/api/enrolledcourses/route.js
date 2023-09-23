@@ -8,13 +8,10 @@ export async function GET(req) {
     await connectToDB()
     const url = new URL(req.url)
     const email = url.searchParams.get('email')
-
     const enrollments = await Enrollment.find({ userId: email })
-
     const courseIds = enrollments.map((enrollment) => enrollment.courseId)
     const data = await Courses.find({ _id: { $in: courseIds } })
     return NextResponse.json(data, { status: 200 })
-    // get all enrollments
   } catch (error) {
     console.log('Error', error)
     return NextResponse.json(

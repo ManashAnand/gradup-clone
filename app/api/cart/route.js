@@ -2,6 +2,7 @@ import { connectToDB } from '@utils/database'
 import { NextResponse } from 'next/server'
 import Cart from '@models/cart'
 import Courses from '@models/courses'
+import Enrollment from '@models/enrollment'
 
 export async function GET(req) {
   try {
@@ -18,9 +19,13 @@ export async function GET(req) {
     const coursesData = await Courses.find({ _id: { $in: cartIds } })
       .select('_id imageURL price title author')
       .populate('author')
-
+    const enrollment = await Enrollment.find({ userId: email }).populate(
+      'courseId'
+    )
+    console.log(enrollment)
     const data = {
       course: coursesData,
+      enrollment,
     }
     console.log(data)
 

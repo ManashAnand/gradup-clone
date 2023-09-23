@@ -1,15 +1,17 @@
 import { Schema, model, models } from 'mongoose'
 import mongoose from 'mongoose'
+import '@models/user'
+import '@models/courses'
 
 const enrollmentSchema = new Schema({
   userId: {
     type: String,
-    ref: 'user', //reference to user model
+    ref: 'User', //reference to user model
     required: true,
   },
   courseId: {
-    type: mongoose.Types.ObjectId,
-    ref: 'courses', //reference to courses model
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Courses', //reference to courses model
     required: true,
   },
   progressBar: {
