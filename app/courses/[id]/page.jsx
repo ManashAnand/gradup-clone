@@ -76,7 +76,7 @@ export default function Courses({ params }) {
         {/* start */}
         <div className=' text-black  w-screen bg-white p-8'>
           <div className='mb-5 bg-[#F7F9FC] shadow '>
-            <div className=' sm:flex pb-[2rem] w-full mt-2 pt-5 p-2 flex justify-between flex-col sm:flex-row'>
+            <div className=' sm:flex pb-[2rem] w-full  pt-5 p-2 flex justify-between flex-col sm:flex-row'>
               <div className=' text-5xl text-left   font-semibold mb-2 sm:mb-0 flex w-[70%]  '>
                 {data.title}
               </div>
@@ -98,7 +98,7 @@ export default function Courses({ params }) {
             </div>
 
             {/* till more */}
-            <div className=' sm:flex  justify-between items-center font-bold mb-4  p-4 rounded-md mt-2 '>
+            <div className=' sm:flex  justify-between items-center font-bold mb-4  p-4 rounded-md mt-2  '>
               <div className='  flex flex-start justify-between  '>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -208,14 +208,14 @@ export default function Courses({ params }) {
 
           {/* course highlight suru karte hai */}
           <div className='  sm:flex mb-6 sm:mb-0 justify-between mt-5'>
-            <div className=' h-full sm:w-[50%] w-full bg-[#F7F9FC] rounded-md p-6'>
-              <div className=' font-bold text-2xl text-left'>
-                Course Highlights
+            <div className='text-white h-full sm:w-[50%] w-full bg-[#041E48] rounded-md p-6'>
+              <div className=' font-bold text-3xl  p-2 flex justify-center '>
+                <h3>Course Highlights</h3>
               </div>
 
-              <div className=' sm:flex justify-around '>
+              <div className=' sm:flex justify-around p-2 mt-2 '>
                 <div className='xl:w-1/2  flex flex-start flex-col '>
-                  <div className=' my-2 flex   items-center '>
+                  <div className='  flex my-4  items-center '>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
                       fill='none'
@@ -301,8 +301,8 @@ export default function Courses({ params }) {
                   </div>
                 </div>
 
-                <div className=' -purple-600 xl:w-1/2 flex flex-start flex-col'>
-                  <div className=' -blue-500 my-2 flex  items-center  '>
+                <div className='xl:w-1/2 flex flex-start flex-col'>
+                  <div className=' my-4 flex  items-center  '>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
                       fill='none'
@@ -390,18 +390,20 @@ export default function Courses({ params }) {
               </div>
             </div>
 
-            <div className='  sm:w-[45%] w-full bg-[#F7F9FC] rounded-md p-6'>
-              <div className=' font-bold text-2xl  -red-500 text-left'>
-                About Instructor
-              </div>
-
-              <div className='sm:flex h-[40%]'>
+            <div className='  sm:w-[45%] w-full bg-[#041E48] text-white rounded-md p-6'>
+              <div className=' font-bold text-3xl'>About Instructor</div>
+              <div className='sm:flex h-[45%] flex flex-row gap-2'>
                 {data.author.map((data, index) => {
                   return (
-                    <div key={index} className=' flex  items-center sm:w-1/2 '>
-                      <div className='border border-slate-400 h-16 w-16 rounded-full overflow-hidden flex justify-center items-center'>
-                        <img src={data.imageURL} />
-                      </div>
+                    <div
+                      key={index}
+                      className=' flex  items-center sm:w-1/2 text-left '
+                    >
+                      <img
+                        className='h-[4rem] w-20 rounded-md'
+                        src={data.imageURL}
+                      />
+
                       <div className='text-xl ml-4'>
                         {data.name}
                         <div className='text-xs'>{data.designation}</div>
@@ -410,14 +412,16 @@ export default function Courses({ params }) {
                   )
                 })}
               </div>
-              <hr className='border-2 border-gray-500' />
+              <hr className='border-2 border-white' />
               <div className='sm:flex h-[40%] mt-3'>
                 <div className=' flex-col  items-center sm:w-1/2 text-2xl font-bold'>
                   <div className='text-left mt-2'>Offered By</div>
                   <div className='flex mt-2'>
-                    <div className='border border-slate-400 h-[4rem] w-20 rounded-md overflow-hidden flex justify-center items-center'>
-                      <img src='/assets/icons/webLogo.jpeg' className='h-14' />
-                    </div>
+                    <img
+                      src='/assets/icons/webLogo.jpeg'
+                      className='h-[4rem] w-20 rounded-md '
+                    />
+
                     <div className='text-xl ml-4 pt-2 '>
                       GradUp
                       <div className='text-xs'>Visit Us</div>
@@ -427,9 +431,11 @@ export default function Courses({ params }) {
                 <div className=' flex-col  items-center sm:w-1/2 text-2xl font-bold'>
                   <div className='text-left mt-2'>Government of India</div>
                   <div className='flex mt-2'>
-                    <div className=' border border-slate-400 h-[4rem] w-20 rounded-md overflow-hidden flex justify-center items-center'>
-                      <img src='/assets/icons/govt.png' />
-                    </div>
+                    <img
+                      className='h-[4rem] w-20 rounded-md'
+                      src='/assets/icons/govt.png'
+                    />
+
                     <div className='text-xl ml-4 p-2'>
                       Learn Online
                       <div className='text-xs'>At your own schedule</div>
@@ -514,102 +520,23 @@ export default function Courses({ params }) {
               applications on GradUp.
             </div>
           </div>
-          {/*
-          <div class='shadow p-5 rounded-lg  bg-[#F7F9FC] border '>
-            <p class='mt-4 text-3xl font-semibold font-medium mb-4 text-left'>
-              Why people choose GradUp for their career
-            </p>
-
-            <div className='sm:flex gap-2'>
-              <div class='max-w-sm p-6 bg-white border  rounded-lg shadow'>
-                <div class='flex items-center'>
-                  <div class='w-12 h-12 rounded-full border border-gray-500 text-gray-500 bg-white flex items-center justify-center'></div>
-                  <a href='#' class='ml-3'>
-                    <h5 class='mb-2 text-2xl font-semibold tracking-tight text-gray-900'>
-                      John Doe
-                      <div class='text-xs text-gray-400'>
-                        Learner since 2018
-                      </div>
-                    </h5>
-                  </a>
-                </div>
-                <p class='mb-3 font-normal text-gray-500 text-left mt-2'>
-                  Follow our step-by-step guidelines on how to certify for your
-                  weekly benefits:
-                </p>
-              </div>
-
-              <div class='max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow'>
-                <div class='flex items-center'>
-                  <div class='w-12 h-12 rounded-full border border-gray-500 text-gray-500 bg-white flex items-center justify-center'></div>
-                  <a href='#' class='ml-3'>
-                    <h5 class='mb-2 text-2xl font-semibold tracking-tight text-gray-900'>
-                      John Doe
-                      <div class='text-xs text-gray-400'>
-                        Learner since 2018
-                      </div>
-                    </h5>
-                  </a>
-                </div>
-                <p class='mb-3 font-normal text-gray-500 text-left mt-2'>
-                  Follow our step-by-step guidelines on how to certify for your
-                  weekly benefits:
-                </p>
-              </div>
-
-              <div class='max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow'>
-                <div class='flex items-center'>
-                  <div class='w-12 h-12 rounded-full border border-gray-500 text-gray-500 bg-white flex items-center justify-center'></div>
-                  <a href='#' class='ml-3'>
-                    <h5 class='mb-2 text-2xl font-semibold tracking-tight text-gray-900'>
-                      John Doe
-                      <div class='text-xs text-gray-400'>
-                        Learner since 2018
-                      </div>
-                    </h5>
-                  </a>
-                </div>
-                <p class='mb-3 font-normal text-gray-500 text-left mt-2'>
-                  Follow our step-by-step guidelines on how to certify for your
-                  weekly benefits:
-                </p>
-              </div>
-
-              <div class='max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow'>
-                <div class='flex items-center'>
-                  <div class='w-12 h-12 rounded-full border border-gray-500 text-gray-500 bg-white flex items-center justify-center'></div>
-                  <a href='#' class='ml-3'>
-                    <h5 class='mb-2 text-2xl font-semibold tracking-tight text-gray-900'>
-                      John Doe
-                      <div class='text-xs text-gray-400'>
-                        Learner since 2018
-                      </div>
-                    </h5>
-                  </a>
-                </div>
-                <p class='mb-3 font-normal text-gray-500 text-left mt-2'>
-                  Follow our step-by-step guidelines on how to certify for your
-                  weekly benefits:
-                </p>
-              </div>
-            </div>
-          </div>
-  */}
-
-          <div className=' p-4 bg-white mt-4 rounded-md '>
+          <div className=' p-4 bg-[#F7F9FC] mt-4 rounded-md  '>
             <div className='text-4xl font-bold flex justify-items-start'>
               Frequently Asked Questions
             </div>
+
             <CourseFaq data={data.faq[0]} />
           </div>
 
           <div className='flex flex-wrap bg-[#F7F9FC] mt-4 rounded-lg items-center justify-evenly'>
-            <img
-              src='/assets/certificate_img/Cert.jpg'
-              className='rounded-lg m-2 w-80 h-80 sm:w-30 sm:h-30'
-              alt='non working'
-            />
-
+            <div className='m-3'>
+              <span className='text-2xl font-bold'>Your Certificate</span>
+              <img
+                src='/assets/certificate_img/Cert.jpg'
+                className=' m-2 w-80 h-60 sm:w-30 sm:h-30'
+                alt='non working'
+              />
+            </div>
             <div className='p-4 w-1/2'>
               <h1 className='font-bold text-2xl text-left '>
                 Industry recognized & government approved certification

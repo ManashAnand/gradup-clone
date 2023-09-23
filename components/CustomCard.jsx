@@ -26,8 +26,13 @@ const CustomCard = ({ image, title, url }) => {
         }}
       >
         <Typography
-          className='text-xl font-medium'
-          sx={{ textAlign: 'center', marginY: 'auto' }}
+          className='text-lg'
+          sx={{
+            textAlign: 'center',
+            marginY: 'auto',
+            textTransform: 'uppercase',
+            fontWeight: 900,
+          }}
           gutterBottom
           variant='subtitle1'
           component='div'
@@ -42,11 +47,23 @@ const CustomCard = ({ image, title, url }) => {
         >
           <Button
             variant='outlined'
-            className='hover:bg-green-400 hover:text-white my-2 px-4 py-2 rounded-md'
             onClick={() => handleClick(url)}
             size='small'
             color='primary'
-            sx={{ marginBottom: '8px' }}
+            sx={{
+              '&:hover': {
+                backgroundColor: '#34D399',
+                color: '#ffffff',
+              },
+              marginTop: '2px',
+              paddingLeft: '4px',
+              paddingRight: '4px',
+              paddingTop: '2px',
+              paddingBottom: '2px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              marginBottom: '8px',
+            }}
           >
             Start Course
           </Button>

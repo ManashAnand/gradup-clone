@@ -69,7 +69,7 @@ function Page({ index, setPage }) {
         ></img>
       </div>
       <div>
-        <p className='heading my-20'></p>
+        <p className='heading'></p>
       </div>
       {/* <div className="sortpos">
             <p className="-ml-10 text-white text-sm">Sort by:</p>

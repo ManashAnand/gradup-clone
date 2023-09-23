@@ -216,6 +216,7 @@ const Nav = () => {
                 >
                   My Profile
                 </Link>
+                <DropDownMenu />
                 <Link
                   href={data.role === 'HR' ? '/hr' : '/hr/signup'}
                   className='dropdown_link'

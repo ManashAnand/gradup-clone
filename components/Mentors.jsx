@@ -5,7 +5,7 @@ const Mentors = () => {
   const list = [
     {
       name: 'Abhinaba Chakraborty',
-      title: 'XLRI Jamshedpur| Sr. Manager, HR | P&G | BIT MESRA',
+      title: 'XLRI Jamshedpur | Sr. Manager, HR | P&G | BIT MESRA',
       img: '/assets/mentors/Abhinabacompress.jpg',
     },
     // {
@@ -15,8 +15,7 @@ const Mentors = () => {
     // },
     {
       name: 'Luv Saxena',
-      title:
-        'Assistant Vice President- magicpin | IIT Roorkee | IIM Bangalore | CAT Topper-2016',
+      title: 'AVP, magicpin | IIT Roorkee | CAT Topper-2016 | IIM Bangalore ',
       img: '/assets/mentors/mentor3compress.webp',
     },
     {
@@ -26,7 +25,7 @@ const Mentors = () => {
     },
     {
       name: 'Mohit Agarwal',
-      title: '(Siemens EDA) | IIT BHU |',
+      title: '(Siemens EDA) | IIT BHU ',
       img: '/assets/mentors/Mohitcompress.jpg',
     },
     // {
@@ -40,9 +39,10 @@ const Mentors = () => {
       img: '/assets/images/mentornew1.jpg',
     },
     {
-      name: '130 + Mentors',
-      title: '',
-      img: '/assets/images/mentors.png',
+      name: 'Saurabh Kumar',
+      title:
+        'AVP, Strategic Initiatives, Cube Highways | IIM Bangalore | IIT Bombay',
+      img: '/assets/images/Saurabh Kumar.jpg',
     },
     // {
     //    name: "Pushkal Shukla",
@@ -52,27 +52,36 @@ const Mentors = () => {
   ]
   return (
     <div className='background pt-10'>
-      <div className='wrap'>
+      <div className='flex flex-wrap gap-[30px] justify-center'>
         {list.map((items, i) => {
           return (
-            <div key={i} className='box'>
-              <div className='box-top'>
-                <img
-                  className='box-image'
-                  src={items.img}
-                  alt={items.name}
-                  decoding='async'
-                />
+            <div
+              key={i}
+              className='w-[20rem] h-[10rem] bg-slate-700 flex flex-row items-center p-3 rounded-xl gap-2'
+            >
+              <img
+                className='h-[8rem] w-30 rounded-md'
+                src={items.img}
+                alt={items.name}
+                decoding='async'
+              />
+
+              <div className='flex flex-col w-full h-[8rem] w-50 overflow-hidden  ml-2'>
+                <h3 className='text-center text-md font-bold text-white '>
+                  {items.name}
+                </h3>
+                <p className='text-white user-follow-info p-2 text-xs font-bold text-left whitespace-nowrap"'>
+                  {items.title}
+                </p>
               </div>
-              <h3 className='textform text-center text-md text-white'>
-                {items.name}
-              </h3>
-              <p className='user-follow-info text-center text-white textform text-xs'>
-                {items.title}
-              </p>
             </div>
           )
         })}
+      </div>
+      <div className='flex  justify-center mt-5'>
+        <span className='text-white font-bold text-md p-4 bg-slate-700 rounded-lg'>
+          And 130+ Experts
+        </span>
       </div>
     </div>
   )

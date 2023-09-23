@@ -104,6 +104,9 @@ const DropDownMenu = () => {
     color: 'white',
     cursor: 'pointer',
     padding: '5px',
+    '@media (max-width: 640px)': {
+      color: 'black',
+    },
   }
 
   const navigateToPage = (path) => {
