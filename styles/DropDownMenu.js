@@ -93,20 +93,18 @@ import React, { useState } from 'react'
 import { Button, Menu, MenuItem, Paper, Popover } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { useRouter } from 'next/navigation'
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const DropDownMenu = () => {
   const [menuAnchor, setMenuAnchor] = useState(null)
   const [submenuAnchor, setSubmenuAnchor] = useState(null)
   const [subitemMenuAnchor, setSubitemMenuAnchor] = useState(null)
   const router = useRouter()
-
+  const isSmallScreen = useMediaQuery('(max-width: 640px)')
   const buttonStyle = {
-    color: 'white',
     cursor: 'pointer',
     padding: '5px',
-    '@media (max-width: 640px)': {
-      color: 'black',
-    },
+    
   }
 
   const navigateToPage = (path) => {
@@ -147,7 +145,8 @@ const DropDownMenu = () => {
           style={buttonStyle}
           onClick={openMenu}
           endIcon={<ExpandMoreIcon />}
-          sx={{ textTransform: 'none' }}
+          sx={{ textTransform: 'none',color: isSmallScreen ? 'black' : 'white', }}
+          
         >
           Explore
         </Button>
