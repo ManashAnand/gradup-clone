@@ -22,9 +22,9 @@ import { DeleteIcon } from "@styles/DeleteIcon";
     { name: "APPLICANTS", uid: "appliedCandidates" },
   ];
   return (
-    <div className='w-screen px-3 mt-16'>
+    <div className='w-screen px-3 '>
       <div className='w-9/10'>
-       <p className='text-4xl text-center mb-8'>
+       <p className='text-center mb-8 '>
        <span className='textform text-5xl animate-charcter font-semibold text-white'>Your Applications</span>
        </p>
         
