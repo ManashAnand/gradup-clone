@@ -253,7 +253,7 @@ export default function HRSignup() {
                   placeholder='Enter Phone Number'
                   pattern='[0-9]{10}'
                   required
-                  className='w-[28.3rem] px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40'
+                  className='w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40'
                 />
               </div>
               {/* <div className="mx-4 mt-7 ">
