@@ -11,7 +11,6 @@ import {
   Button,
   List,
   ListItem,
-  Stack,
 } from '@mui/material'
 
 export default function Student() {
@@ -75,9 +74,9 @@ export default function Student() {
           </div>
         </Grid>
 
-        <Grid item xs={12} md={4}>
+        <Grid item md={4}>
           <img
-            className='shadow-md hover:shadow-lg rounded-lg'
+            className='hidden sm:block shadow-md hover:shadow-lg rounded-lg'
             src='/serviceasset/service-model1.jpg'
             alt=''
           />
@@ -100,9 +99,14 @@ export default function Student() {
                 Never before- 1 Free Mock Interview(One-to-One) by Professional:
                 15 mins
               </h1>
-              <button onClick={handleClick2} className={styles.btn1}>
-                {status2 ? 'Show Less' : 'Show More'}
-              </button>
+              <div className='flex justify-center mt-2'>
+                <button
+                  onClick={handleClick2}
+                  className='bg-blue-500 rounded-md p-2 text-white hover:bg-white hover:text-blue-500 hover:border-2 hover:border-blue-500'
+                >
+                  {status2 ? 'Show Less' : 'Show More'}
+                </button>
+              </div>
             </Box>
           </div>
           {status2 ? (
@@ -116,12 +120,12 @@ export default function Student() {
           )}
         </Grid>
 
-        <Grid item xs={12} md={4} my={3}>
+        <Grid item md={4} my={3}>
           <img
-            className='rounded-lg '
+            className='rounded-lg hidden sm:block'
             src='/serviceasset/asset2.jpg'
             alt=''
-            style={{ width: '100%', height: '400px', objectFit: 'cover' }}
+            style={{ width: '100%', height: '350px', objectFit: 'cover' }}
           />
         </Grid>
       </Grid>
@@ -145,8 +149,12 @@ export default function Student() {
           </div>
         </Grid>
 
-        <Grid item xs={12} md={4} my={3}>
-          <img className='rounded-lg ' src='/serviceasset/asset3.jpg' alt='' />
+        <Grid item md={4} my={3}>
+          <img
+            className='rounded-lg hidden sm:block '
+            src='/serviceasset/asset3.jpg'
+            alt=''
+          />
         </Grid>
       </Grid>
       <div className={styles.serviceb}>
@@ -223,9 +231,14 @@ export default function Student() {
                 round for the interview plus give you an edge over others in
                 Corporate Case Competitions.
               </p>
-              <button onClick={handleClick3} className={styles.btn1}>
-                {status3 ? 'Show Less' : 'Show More'}
-              </button>
+              <div className='flex justify-center mt-2'>
+                <button
+                  onClick={handleClick3}
+                  className='bg-blue-500 rounded-md p-2 text-white hover:bg-white hover:text-blue-500 hover:border-2 hover:border-blue-500'
+                >
+                  {status2 ? 'Show Less' : 'Show More'}
+                </button>
+              </div>
             </Box>
           </div>
           {status3 ? (
@@ -239,14 +252,14 @@ export default function Student() {
           )}
         </Grid>
 
-        <Grid item xs={12} md={4} my={3}>
+        <Grid item md={4} my={3}>
           <img
-            className='rounded-lg '
+            className='hidden sm:block shadow-md hover:shadow-lg rounded-lg'
             src='/serviceasset/asset4.jpg'
             alt=''
             style={{
               width: '100%',
-              height: '500px',
+              height: '450px',
               objectFit: 'cover',
               marginTop: '7px',
             }}
@@ -270,15 +283,20 @@ export default function Student() {
                 upcoming competitions and access to 4 winning case study briefs
                 with a solution.
               </p>
-              <button onClick={handleClick4} className={styles.btn1}>
-                {status4 ? 'Show Less' : 'Show More'}
-              </button>
+              <div className='flex justify-center mt-2'>
+                <button
+                  onClick={handleClick4}
+                  className='bg-blue-500 rounded-md p-2 text-white hover:bg-white hover:text-blue-500 hover:border-2 hover:border-blue-500'
+                >
+                  {status2 ? 'Show Less' : 'Show More'}
+                </button>
+              </div>
             </Box>
           </div>
           {status4 ? (
             <img
               width='600'
-              className='mx-auto -mb-40'
+              className='mx-auto'
               src='/assets/images/Corporate1.png'
             ></img>
           ) : (
@@ -288,10 +306,10 @@ export default function Student() {
 
         <Grid item xs={12} md={4} my={3}>
           <img
-            className='rounded-lg '
+            className='hidden sm:block shadow-md hover:shadow-lg rounded-lg'
             src='/serviceasset/asset5.jpg'
             alt=''
-            style={{ width: '100%', height: '400px', objectFit: 'cover' }}
+            style={{ width: '100%', height: '340px', objectFit: 'cover' }}
           />
         </Grid>
       </Grid>
@@ -324,10 +342,10 @@ export default function Student() {
 
         <Grid item xs={12} md={4} my={3}>
           <img
-            className='rounded-lg '
+            className='hidden sm:block shadow-md hover:shadow-lg rounded-lg'
             src='/serviceasset/asset6.jpg'
             alt=''
-            style={{ width: '100%', height: '450px', objectFit: 'cover' }}
+            style={{ width: '100%', height: '400px', objectFit: 'cover' }}
           />
         </Grid>
       </Grid>
@@ -367,7 +385,98 @@ export default function Student() {
           </div>
         </div>
       </div>
-      {/*
+
+      <Grid container direction='row' my={3}>
+        <Grid item xs={12} md={7} my={3}>
+          <div className={styles.servicebox}>
+            <Box>
+              <h1 className={styles.servicehead}>Communication Skills</h1>
+              <p className={`${styles.serviceparah} overflow-hidden`}>
+                Effective communication is a key to success and if you don’t
+                communicate your ideas well, the audience would never be able to
+                connect the impact your idea could bring to the world. Have you
+                ever wondered how these eloquent speakers just move the crowd by
+                their words? Have you ever noticed some of your college mates
+                with an amazing presentation and communication skills grabbing
+                all the attention even if the point they are trying to make is
+                not impactful enough? That is the magic of communication where
+                you make yourselves heard! Burst the myth now- A person fluent
+                in English does not imply that he/she is a good communicator.
+                Learn the fundamentals of effective communication, listening
+                skills, note making in mind and touching all aspects of a topic
+                via creating a mind tree in just an hour with our mentors.
+              </p>
+              <div className='flex justify-center mt-2'>
+                <button
+                  onClick={handleClick5}
+                  className='bg-blue-500 rounded-md p-2 text-white hover:bg-white hover:text-blue-500 hover:border-2 hover:border-blue-500'
+                >
+                  {status2 ? 'Show Less' : 'Show More'}
+                </button>
+              </div>
+            </Box>
+          </div>
+          {status5 ? (
+            <img
+              width='600'
+              className='m-auto'
+              src='/assets/images/Communication1.png'
+            ></img>
+          ) : (
+            ''
+          )}
+        </Grid>
+
+        <Grid item xs={12} md={4} my={3}>
+          <img
+            className='hidden sm:block shadow-md hover:shadow-lg rounded-lg'
+            src='/serviceasset/asset7.jpg'
+            alt=''
+            style={{ width: '100%', height: '450px', objectFit: 'cover' }}
+          />
+        </Grid>
+      </Grid>
+      <Grid container direction='row-reverse'>
+        <Grid item xs={12} md={7} my={3}>
+          <div className={styles.servicebox}>
+            <Box>
+              <h1 className={styles.servicehead}>Career Guidance </h1>
+              <p className={styles.serviceparah}>
+                The biggest mistake one can do in life is not follow his passion
+                and join a college without an aim. We have all seen students
+                taking a B.Tech degree just because other’s are doing the same,
+                students taking commerce as subjects in class 11 only because
+                they didn’t had a good physics teacher in class 10, students
+                taking up any branch/ specialization without knowing the career
+                progression and also sitting for college placements only by
+                looking at CTC and not company/job profile- and trust me this is
+                even prevalent in good colleges including IITs and IIMs. To have
+                a clear cut discussion on what subjects /specialization /jobs is
+                best suitable for you- GradUp presents a close knitted career
+                guidance program where small group of participants are heard,
+                their career path and interests is understood by our
+                professionally certified career counsellors and accordingly best
+                decision in taken. Come, let’s chat around your career
+                discussion plans!
+              </p>
+            </Box>
+          </div>
+        </Grid>
+
+        <Grid item xs={12} md={4} my={3}>
+          <img
+            className='hidden sm:block shadow-md hover:shadow-lg rounded-lg'
+            src='/serviceasset/asset8.jpg'
+            alt=''
+            style={{ width: '100%', height: '400px', objectFit: 'cover' }}
+          />
+        </Grid>
+      </Grid>
+    </div>
+  )
+}
+{
+  /*
       <div className={styles.serviceb}>
         <Grid container sm={12} direction='row' ml={4}>
           <Grid item>
@@ -444,88 +553,5 @@ export default function Student() {
           </Grid>
         </Grid>
       </div>
-      */}
-      <Grid container direction='row' my={3}>
-        <Grid item xs={12} md={7} my={3}>
-          <div className={styles.servicebox}>
-            <Box>
-              <h1 className={styles.servicehead}>Communication Skills</h1>
-              <p className={`${styles.serviceparah} overflow-hidden`}>
-                Effective communication is a key to success and if you don’t
-                communicate your ideas well, the audience would never be able to
-                connect the impact your idea could bring to the world. Have you
-                ever wondered how these eloquent speakers just move the crowd by
-                their words? Have you ever noticed some of your college mates
-                with an amazing presentation and communication skills grabbing
-                all the attention even if the point they are trying to make is
-                not impactful enough? That is the magic of communication where
-                you make yourselves heard! Burst the myth now- A person fluent
-                in English does not imply that he/she is a good communicator.
-                Learn the fundamentals of effective communication, listening
-                skills, note making in mind and touching all aspects of a topic
-                via creating a mind tree in just an hour with our mentors.
-              </p>
-              <button onClick={handleClick5} className={styles.btn1}>
-                {status5 ? 'Show Less' : 'Show More'}
-              </button>
-            </Box>
-          </div>
-          {status5 ? (
-            <img
-              width='600'
-              className='m-auto'
-              src='/assets/images/Communication1.png'
-            ></img>
-          ) : (
-            ''
-          )}
-        </Grid>
-
-        <Grid item xs={12} md={4} my={3}>
-          <img
-            className='rounded-lg '
-            src='/serviceasset/asset7.jpg'
-            alt=''
-            style={{ width: '100%', height: '500px', objectFit: 'cover' }}
-          />
-        </Grid>
-      </Grid>
-      <Grid container direction='row-reverse'>
-        <Grid item xs={12} md={7} my={3}>
-          <div className={styles.servicebox}>
-            <Box>
-              <h1 className={styles.servicehead}>Career Guidance </h1>
-              <p className={styles.serviceparah}>
-                The biggest mistake one can do in life is not follow his passion
-                and join a college without an aim. We have all seen students
-                taking a B.Tech degree just because other’s are doing the same,
-                students taking commerce as subjects in class 11 only because
-                they didn’t had a good physics teacher in class 10, students
-                taking up any branch/ specialization without knowing the career
-                progression and also sitting for college placements only by
-                looking at CTC and not company/job profile- and trust me this is
-                even prevalent in good colleges including IITs and IIMs. To have
-                a clear cut discussion on what subjects /specialization /jobs is
-                best suitable for you- GradUp presents a close knitted career
-                guidance program where small group of participants are heard,
-                their career path and interests is understood by our
-                professionally certified career counsellors and accordingly best
-                decision in taken. Come, let’s chat around your career
-                discussion plans!
-              </p>
-            </Box>
-          </div>
-        </Grid>
-
-        <Grid item xs={12} md={4} my={3}>
-          <img
-            className='rounded-lg '
-            src='/serviceasset/asset8.jpg'
-            alt=''
-            style={{ width: '100%', height: '450px', objectFit: 'cover' }}
-          />
-        </Grid>
-      </Grid>
-    </div>
-  )
+      */
 }

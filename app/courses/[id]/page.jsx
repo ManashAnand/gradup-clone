@@ -390,17 +390,14 @@ export default function Courses({ params }) {
               </div>
             </div>
 
-            <div className='  sm:w-[45%] w-full bg-[#041E48] text-white rounded-md p-6'>
+            <div className='  sm:w-[47%] w-full bg-[#041E48] text-white rounded-md p-6'>
               <div className=' font-bold text-3xl'>About Instructor</div>
-              <div className='sm:flex h-[45%] flex flex-row gap-2'>
+              <div className='h-[45%] flex flex-wrap gap-2'>
                 {data.author.map((data, index) => {
                   return (
-                    <div
-                      key={index}
-                      className=' flex  items-center sm:w-1/2 text-left '
-                    >
+                    <div key={index} className=' flex  items-center text-left '>
                       <img
-                        className='h-[4rem] w-20 rounded-md'
+                        className='h-[4rem] w-15 rounded-md'
                         src={data.imageURL}
                       />
 
@@ -412,7 +409,7 @@ export default function Courses({ params }) {
                   )
                 })}
               </div>
-              <hr className='border-2 border-white' />
+              <hr className='border-2 border-white mt-2' />
               <div className='sm:flex h-[40%] mt-3'>
                 <div className=' flex-col  items-center sm:w-1/2 text-2xl font-bold'>
                   <div className='text-left mt-2'>Offered By</div>

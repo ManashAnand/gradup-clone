@@ -65,9 +65,7 @@ function Page({ index, setPage }) {
           alt='work-img'
         ></img>
       </div>
-      <div>
-        <p className='heading'></p>
-      </div>
+      <div></div>
       {/* <div className="sortpos">
             <p className="-ml-10 text-white text-sm">Sort by:</p>
             <button className="btn6">Recently Released</button>
@@ -110,16 +108,14 @@ export default function App() {
   const [pageIndex, setPageIndex] = useState(1)
   return (
     <>
-      {session?.user ? (
-        <>
-          <div className='mb-32'>
-            <div className='justify-center flex-center'>
-              <Page index={pageIndex} setPage={setPageIndex} />
-            </div>
-            <div style={{ display: 'none' }}>
-              <Page index={pageIndex + 1} setPage={setPageIndex} />
-            </div>
-            {/* <div className="flex buttonpos">
+      <div className='mb-10'>
+        <div className='justify-center flex-center'>
+          <Page index={pageIndex} setPage={setPageIndex} />
+        </div>
+        <div style={{ display: 'none' }}>
+          <Page index={pageIndex + 1} setPage={setPageIndex} />
+        </div>
+        {/* <div className="flex buttonpos">
         <button style={{backgroundColor:"#0076ce"}} class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
           Prev
         </button>
@@ -127,25 +123,7 @@ export default function App() {
           Next
         </button>
       </div> */}
-          </div>
-        </>
-      ) : (
-        <>
-          {providers &&
-            Object.values(providers).map((provider) => (
-              <button
-                type='button'
-                key={provider.name}
-                onClick={() => {
-                  signIn(provider.id)
-                }}
-                className='rounded-2xl py-1 px-6 border-2 textnew border-sky-500 bg-white text-sky-700 mt-6 mb-10 hover:bg-sky-400 hover:text-white hover:border-white'
-              >
-                Sign In to access jobs
-              </button>
-            ))}{' '}
-        </>
-      )}
+      </div>
     </>
   )
 }

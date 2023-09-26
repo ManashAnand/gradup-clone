@@ -27,6 +27,7 @@ const fetcher = async (...args) =>
 export default function HRSignup() {
   let vari = 0
   const router = useRouter()
+  const [otp, setOTP] = useState('Get OTP')
   const [emaildata, setEmaildata] = useState('')
   const [imageurl, setImageurl] = useState('')
   const [posted, setPosted] = useState(false)
@@ -116,7 +117,10 @@ export default function HRSignup() {
           email: emaildata,
         }),
       })
-      console.log(response.status)
+
+      if (response.status == 201) {
+        setOTP('Resend')
+      }
     } catch (error) {
       console.log('error', error)
     } finally {
@@ -217,7 +221,7 @@ export default function HRSignup() {
                 disabled={message ? true : false}
                 className=' p-2 textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl'
               >
-                Get OTP
+                {otp}
               </button>
               <label className=' text-sm mx-4 text-left font-semibold text-gray-600'>
                 Enter OTP:
