@@ -32,7 +32,8 @@ export const POST = async (request) => {
         headers: {
           'Content-Type': 'application/json',
           accept: 'application/json',
-          'X-VERIFY': finalXHeader,
+          'X-VERIFY':
+            a2f24ebcb216571d2b1d0d449935160fad69579d3bfe7276e4ff7efaf2a61559###1,
           'X-MERCHANT-ID': merchantId,
         },
       }
