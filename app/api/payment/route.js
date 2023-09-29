@@ -8,15 +8,16 @@ export const POST = async (request) => {
     const randomId = Math.floor(Math.random() * 900000000) + 1000000000 // Generate a random 6-digit number
     return `MT${timestamp}${randomId}`.toString()
   }
+  const mtID = generateMerchantTransactionId();
   try {
     const data = {
       merchantId: process.env.MERCHANTID,
-      merchantTransactionId: generateMerchantTransactionId(),
+      merchantTransactionId: mtID,
       merchantUserId: 'MUID123',
       amount: amountInCents,
       redirectUrl: 'https://www.gradup.in/mycourses',
       redirectMode: 'REDIRECT',
-      callbackUrl: `https://www.gradup.in/api/callback?id=${id}&email=${email}`,
+      callbackUrl: `https://www.gradup.in/api/callback?id=${id}&email=${email}&mid=${mtID}`,
       paymentInstrument: {
         type: 'PAY_PAGE',
       },
