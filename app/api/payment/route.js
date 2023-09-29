@@ -15,9 +15,8 @@ export const POST = async (request) => {
       merchantUserId: 'MUID123',
       amount: amountInCents,
       redirectUrl: `/callback?id=${id}&email=${email}`,
-      redirectMode: 'REDIRECT',
-      callbackUrl: 'api/callback',
-      mobileNumber: '8398073052',
+      redirectMode: 'POST',
+      callbackUrl: '/api/callback',
       paymentInstrument: {
         type: 'PAY_PAGE',
       },

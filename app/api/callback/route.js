@@ -1,5 +1,6 @@
 import Payment from '@models/payment'
 import axios from 'axios'
+import SHA256 from 'crypto-js/sha256'
 export const POST = async (request) => {
   try {
     //after successful payment
@@ -18,10 +19,7 @@ export const POST = async (request) => {
     const saltKey = process.env.SALT_KEY
     const saltIndex = 1
     const finalXHeader =
-      require('crypto')
-        .createHash('sha256')
-        .update(`/pg/v1/status/${merchantId}/${transactionId}` + saltKey)
-        .digest('hex') +
+      SHA256(`/pg/v1/status/${merchantId}/${transactionId}` + saltKey) +
       '###' +
       saltIndex
 
