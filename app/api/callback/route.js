@@ -10,7 +10,7 @@ export const POST = async (request) => {
     console.log('callback url is called ')
 
     const merchantId = process.env.MERCHANTID;
-    const transactionId  = url.searchParams.get('mID');
+    const transactionId  = url.searchParams.get('mid');
     const saltKey = process.env.SALT_KEY
     const saltIndex = 1
     const finalXHeader =
