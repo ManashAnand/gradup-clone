@@ -36,7 +36,7 @@ export const POST = async (request) => {
         const userId = email
         const courseId = id
         console.log(courseId)
-        const response = await fetch('/api/enrolledcourses', {
+        const response = await fetch('https://www.gradup.in/api/enrolledcourses', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ export const POST = async (request) => {
     //
     // payment Success Response
 
-    return Response.redirect('/mycourses', 302)
+    return Response.redirect('https://www.gradup.in/mycourses', 302)
   } catch (error) {
     console.error(error)
     return new Response({ error: 'Internal server error' })
