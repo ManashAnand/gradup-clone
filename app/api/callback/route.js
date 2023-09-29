@@ -8,14 +8,9 @@ export const POST = async (request) => {
     const id = url.searchParams.get('id')
     const email = url.searchParams.get('email')
     console.log('callback url is called ')
-    const body = await request.text()
-    const dataObject = {}
-    body.split('&').forEach((pair) => {
-      const [key, value] = pair.split('=')
-      dataObject[key] = decodeURIComponent(value)
-    })
 
-    const { merchantId, transactionId } = dataObject
+    const merchantId = process.env.MERCHANTID;
+    const transactionId  = url.searchParams.get('mID');
     const saltKey = process.env.SALT_KEY
     const saltIndex = 1
     const finalXHeader =
