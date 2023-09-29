@@ -7,7 +7,7 @@ export const POST = async (request) => {
     const url = new URL(request.url)
     const id = url.searchParams.get('id')
     const email = url.searchParams.get('email')
-
+    console.log('callback url is called ')
     const body = await request.text()
     const dataObject = {}
     body.split('&').forEach((pair) => {
@@ -36,8 +36,6 @@ export const POST = async (request) => {
       }
     )
     const { merchantTransactionId, amount } = response.data.data
-
-    console.log(response.data.data)
     if (response.data.data.responseCode == 'SUCCESS') {
       try {
         const userId = email

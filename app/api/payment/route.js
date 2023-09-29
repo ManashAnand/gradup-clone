@@ -14,9 +14,9 @@ export const POST = async (request) => {
       merchantTransactionId: generateMerchantTransactionId(),
       merchantUserId: 'MUID123',
       amount: amountInCents,
-      redirectUrl: `https://www.gradup.in/api/callback?id=${id}&email=${email}`,
+      redirectUrl: 'https://www.gradup.in/mycourses',
       redirectMode: 'REDIRECT',
-      callbackUrl: 'https://www.gradup.in/api/callback',
+      callbackUrl: `https://www.gradup.in/api/callback?id=${id}&email=${email}`,
       paymentInstrument: {
         type: 'PAY_PAGE',
       },

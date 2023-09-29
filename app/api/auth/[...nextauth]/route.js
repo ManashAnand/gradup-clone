@@ -174,10 +174,8 @@ const handler = NextAuth({
         session = Object.assign({}, session, {
           access_token: token.access_token,
         })
-        console.log(session)
       }
       session.user.id = sessionUser._id.toString()
-      console.log(session.user)
 
       return session
     },
