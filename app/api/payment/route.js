@@ -16,7 +16,7 @@ export const POST = async (request) => {
       amount: amountInCents,
       redirectUrl: `www.gradup.in/callback?id=${id}&email=${email}`,
       redirectMode: 'REDIRECT',
-      callbackUrl: 'www.gradup.in//api/callback',
+      callbackUrl: 'www.gradup.in/api/callback',
       paymentInstrument: {
         type: 'PAY_PAGE',
       },
