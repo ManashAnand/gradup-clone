@@ -38,6 +38,7 @@ export default function Courses({ params }) {
   )
 
   React.useEffect(() => {
+    window.scrollTo(0,0);
     setHydrated(true)
   }, [])
   if (!hydrated) {
@@ -77,7 +78,7 @@ export default function Courses({ params }) {
         <div className=' text-black  w-screen bg-white p-8'>
           <div className='mb-5 bg-[#F7F9FC] shadow '>
             <div className=' sm:flex pb-[2rem] w-full  pt-5 p-2 flex justify-between flex-col sm:flex-row'>
-              <div className=' text-5xl text-left   font-semibold mb-2 sm:mb-0 flex w-[70%]  '>
+              <div className=' text-xl text-left   font-semibold mb-2 sm:mb-0 flex w-[70%]  '>
                 {data.title}
               </div>
               <div className='   h-full flex justify-end items-center '>
@@ -99,7 +100,7 @@ export default function Courses({ params }) {
 
             {/* till more */}
             <div className=' sm:flex  justify-between items-center font-bold mb-4  p-4 rounded-md mt-2  '>
-              <div className='  flex flex-start justify-between  '>
+              <div className='  flex flex-start justify-between mb-1 '>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -116,7 +117,7 @@ export default function Courses({ params }) {
                 </svg>
                 {data?.rating != '' ? data?.rating : '5'} Star
               </div>
-              <div className=' flex flex-start justify-between '>
+              <div className=' flex flex-start justify-between mb-1'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -134,7 +135,7 @@ export default function Courses({ params }) {
                 {data?.registeredUsers != '' ? data?.registeredUsers : '50'}{' '}
                 Students
               </div>
-              <div className='flex flex-start justify-between '>
+              <div className='flex flex-start justify-between mb-1'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -151,7 +152,7 @@ export default function Courses({ params }) {
                 </svg>
                 Assistance
               </div>
-              <div className=' flex flex-start justify-between'>
+              <div className=' flex flex-start justify-between mb-1'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -168,7 +169,7 @@ export default function Courses({ params }) {
                 </svg>
                 Flexible schedule
               </div>
-              <div className=' flex flex-start justify-between'>
+              <div className=' flex flex-start justify-between mb-1'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -185,7 +186,7 @@ export default function Courses({ params }) {
                 </svg>
                 Earn credits
               </div>
-              <div className=' flex flex-start justify-between'>
+              <div className=' flex flex-start justify-between mb-1'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -534,7 +535,7 @@ export default function Courses({ params }) {
                 alt='non working'
               />
             </div>
-            <div className='p-4 w-1/2'>
+            <div className='p-4 w-full'>
               <h1 className='font-bold text-2xl text-left '>
                 Industry recognized & government approved certification
               </h1>
