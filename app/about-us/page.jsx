@@ -231,7 +231,7 @@ export default function About() {
           <div className='flex justify-center mt-6'>
             <a
               target='_blank'
-              href='https://www.openpr.com/news/3131935/gradup-the-premier-platform-connecting-talented-students-with'
+              href='https://www.openpr.com/news/3202773/gradup-is-the-premier-platform-for-exploring-diverse'
             >
               <button className='bg-blue-500 px-8 py-2 text-white rounded-xl hover:bg-blue-700'>
                 Read More
