@@ -1,0 +1,19 @@
+.headingbox2 {
+  background: linear-gradient(
+    316deg,
+    #044e83 0%,
+    rgba(4, 78, 131, 0.98) 10.32%,
+    rgba(4, 78, 131, 0.97) 17.79%,
+    rgba(4, 78, 131, 0.96) 27.13%,
+    rgba(4, 78, 131, 0.95) 34.9%,
+    rgba(4, 41, 101, 0.94) 77.86%
+  );
+}
+
+.justice {
+  text-align: justify;
+}
+
+.textnew {
+  font-family: "Poppins", sans-serif;
+}

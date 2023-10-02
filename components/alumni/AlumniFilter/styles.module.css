@@ -1,0 +1,24 @@
+.filtercontainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+.textnew {
+  font-family: "Poppins", sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+  .none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .filtercontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

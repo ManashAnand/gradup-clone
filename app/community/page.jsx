@@ -1,19 +1,20 @@
 import React from "react"
+import styles from './styles.module.css'
 
 export default function Community(){
     return(
-        <div className="w-screen text-left p-10 headingbox2">
-    <p className='text-center textnew text-white mb-2 text-5xl font-semibold animate-charcter'>GradUp Community</p>
+        <div className={`w-screen text-left p-10 ${styles["headingbox2"]}`}>
+    <p className={`text-center ${styles["textnew"]} text-white mb-2 text-5xl font-semibold ${styles["animate-charcter"]}`}>GradUp Community</p>
     <p className="text-2xl text-white mb-8 text-center underline underline-offset-8 decoration-white"> A community to support you. </p>
-    <p className="text-left text-xl mb-4 text-white textform">Join GradUp community of over 15k college students. We invite you to join our vibrant WhatsApp community, where like-minded individuals gather to share knowledge, exchange ideas, and foster engaging discussions.</p>
-    <p className="text-left text-xl mb-4 text-white textform">In our community, you will have the opportunity to connect with individuals who share your enthusiasm for Entrepreneurship. Whether you're a beginner seeking guidance or an expert looking to share your expertise, our community provides a supportive and inclusive space for everyone.</p> 
-    <p className="text-left text-xl mb-2 text-white textform">Here's what you can expect by joining us:</p> 
+    <p className={`text-left text-xl mb-4 text-white ${styles["textform"]}`}>Join GradUp community of over 15k college students. We invite you to join our vibrant WhatsApp community, where like-minded individuals gather to share knowledge, exchange ideas, and foster engaging discussions.</p>
+    <p className={`text-left text-xl mb-4 text-white ${styles["textform"]}`}>In our community, you will have the opportunity to connect with individuals who share your enthusiasm for Entrepreneurship. Whether you're a beginner seeking guidance or an expert looking to share your expertise, our community provides a supportive and inclusive space for everyone.</p> 
+    <p className={`text-left text-xl mb-2 text-white ${styles["textform"]}`}>Here's what you can expect by joining us:</p> 
     <ul className="text-xl">
-        <li className="text-left text-white textform">1) Engaging Discussions</li>
-        <li className="text-left text-white textform">2) Knowledge Sharing</li>
-        <li className="text-left text-white textform">3) Networking Opportunities</li>
-        <li className="text-left text-white textform">4) Resource Exchange</li>
-        <li className="text-left text-white textform">5) Entrepreneurship support and Encouragement</li>
+        <li className={`text-left text-white ${styles["textform"]}`}>1) Engaging Discussions</li>
+        <li className={`text-left text-white ${styles["textform"]}`}>2) Knowledge Sharing</li>
+        <li className={`text-left text-white ${styles["textform"]}`}>3) Networking Opportunities</li>
+        <li className={`text-left text-white ${styles["textform"]}`}>4) Resource Exchange</li>
+        <li className={`text-left text-white ${styles["textform"]}`}>5) Entrepreneurship support and Encouragement</li>
     </ul> 
       <div className=" my-20 flex flex-wrap gap-6 justify-evenly">
         <a className="my-auto" href="https://chat.whatsapp.com/CvRIkXx9Xw0LYxgltYU1l4" target="_blank">

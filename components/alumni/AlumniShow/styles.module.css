@@ -1,0 +1,16 @@
+.alumnicardcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5vh auto 10vh auto;
+}
+
+@media screen and (max-width: 800px) {
+  .alumnicardcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

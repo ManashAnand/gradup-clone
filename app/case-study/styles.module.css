@@ -1,0 +1,26 @@
+.textnew {
+  font-family: "Poppins", sans-serif;
+}
+
+.textform {
+  font-family: "Inter", sans-serif;
+}
+
+.animate-charcter {
+  background-image: linear-gradient(
+    -225deg,
+    #2390f7 0%,
+    #f40dcd 29%,
+    #edf75c 67%,
+    #63bef7 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-emphasis-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+}

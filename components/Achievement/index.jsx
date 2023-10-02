@@ -5,6 +5,8 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import GroupsIcon from '@mui/icons-material/Groups'
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance'
 import HandshakeIcon from '@mui/icons-material/Handshake'
+import styles from "./styles.module.css"
+
 const Achievement = () => {
   const list1 = [
     '/assets/achievements/media1.png',
@@ -23,8 +25,8 @@ const Achievement = () => {
     '/assets/achievements/achievement4.png',
   ]
   return (
-    <div className='achievementbox w-screen justify-center items-center mb-8'>
-      <div className='filter1'></div>
+    <div className={`${styles["achievementbox"]} w-screen justify-center items-center mb-8`}>
+      <div className={`${styles["filter1"]}`}></div>
       {/* <div className="w-screen media">
                 {list1.map((element)=>(
                     <div className="mx-3">
@@ -54,15 +56,15 @@ const Achievement = () => {
                      </div>
                 ))}
                 </div> */}
-      <div className='milestones gap-x-16 gap-y-12 my-auto'>
-        <div className='w-48 h-28 datamile1 pt-2'>
+      <div className={`${styles["milestones"]} gap-x-16 gap-y-12 my-auto`}>
+        <div className={`w-48 h-28 ${styles["datamile1"]} pt-2`}>
           <h1 className='text-4xl text-center text-white font-semibold'>3+</h1>
           <p className='text-xs font-semibold text-white text-center mb-1'>
             YEARS IN BUSINESS
           </p>
           <BusinessIcon sx={{ color: 'white' }} fontSize='large'></BusinessIcon>
         </div>
-        <div className='w-48 h-28 datamile2 pt-2'>
+        <div className={`w-48 h-28 ${styles["datamile2"]} pt-2`}>
           <h1 className='text-4xl text-center text-white font-semibold'>33+</h1>
           <p className='text-xs font-semibold text-white text-center mb-1'>
             HACKATHONS DONE
@@ -72,7 +74,7 @@ const Achievement = () => {
             fontSize='large'
           ></PeopleAltIcon>
         </div>
-        <div className='w-48 h-28 datamile1 pt-2'>
+        <div className={`w-48 h-28 ${styles["datamile1"]} pt-2`}>
           <h1 className='text-4xl text-center text-white font-semibold'>
             15000+
           </h1>
@@ -81,14 +83,14 @@ const Achievement = () => {
           </p>
           <ThumbUpIcon sx={{ color: 'white' }} fontSize='large'></ThumbUpIcon>
         </div>
-        <div className='w-48 h-28 datamile2 pt-2'>
+        <div className={`w-48 h-28 ${styles["datamile2"]} pt-2`}>
           <h1 className='text-4xl text-center text-white font-semibold'>42+</h1>
           <p className='text-xs font-semibold text-white text-center mb-1'>
             TOP COMPANIES IN TOUCH
           </p>
           <GroupsIcon sx={{ color: 'white' }} fontSize='large'></GroupsIcon>
         </div>
-        <div className='w-48 h-28 datamile1 pt-2'>
+        <div className={`w-48 h-28 ${styles["datamile1"]} pt-2`}>
           <h1 className='text-4xl text-center text-white font-semibold'>
             100+
           </h1>
@@ -100,7 +102,7 @@ const Achievement = () => {
             fontSize='large'
           ></AccountBalanceIcon>
         </div>
-        <div className='w-48 h-28 datamile2 pt-2'>
+        <div className={`w-48 h-28 ${styles["datamile2"]} pt-2`}>
           <h1 className='text-4xl text-center text-white font-semibold'>
             1500+
           </h1>

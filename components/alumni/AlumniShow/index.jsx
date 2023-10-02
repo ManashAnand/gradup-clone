@@ -2,9 +2,10 @@ import React from "react";
 import { useEffect, useState } from "react";
 import {useSession} from "next-auth/react";
 import useSWR from "swr";
-import AlumniCard from "./AlumniCard";
+import AlumniCard from "../AlumniCard";
 import Spinner from "@components/Spinner"
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import styles from "./styles.module.css"
 
 const AlumniShow = ({data}) => {
   const [alumniData, setAlumniData] = useState([]);
@@ -32,7 +33,7 @@ const AlumniShow = ({data}) => {
   return (
     <>
     {loading && <Spinner/>}
-    <div className="alumnicardcontainer px-4 rounded-xl">
+    <div className={`${styles["alumnicardcontainer"]} px-4 rounded-xl`}>
       {alumniData.map((d) => (
         <AlumniCard data={d} />
       ))}
