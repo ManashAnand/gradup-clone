@@ -6,7 +6,6 @@ import Spinner from '@components/Spinner'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
 import { useState } from 'react'
-import axios from 'axios'
 
 async function fetcher(url) {
   const res = await fetch(url)
@@ -33,7 +32,6 @@ export default function Cart2() {
     //   .reduce((sum, book) => sum + book.price, 0)
     //   .toFixed(2)
 
-    const id = data?.course[0]?._id
     const handleDeleteOneItem = async (id, email) => {
       try {
         const deleteUrl = `/api/cart?courseId=${id}&email=${email}`
@@ -55,9 +53,9 @@ export default function Cart2() {
       }
     }
 
-    const handlePayment = async (amount, id, email) => {
-      //  console.log(purchasedId)
+    const handlePayment = async (id, email) => {
       try {
+        const amount = subTotal + parseFloat((0.18 * subTotal).toFixed(2))
         const response = await fetch('/api/payment', {
           method: 'POST',
           headers: {
@@ -203,7 +201,7 @@ export default function Cart2() {
             <div className=' flex justify-between items-center p-2'>
               <button
                 className='bg-yellow-500 hover:bg-yellow-700 w-full text-white font-bold py-2 px-4 rounded'
-                onClick={() => handlePayment(subTotal, id, email)}
+                onClick={() => handlePayment(purchasedId, email)}
               >
                 Checkout
               </button>
