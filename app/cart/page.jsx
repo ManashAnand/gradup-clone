@@ -242,7 +242,7 @@ export default function Cart2() {
                     </div>
                     <div className='p-6 flex flex-col flex-start items-center justify-around '>
                       <p className='text-base    text-neutral-600 dark:text-neutral-200 flex justify-center items-center'>
-                        {course?.courseId?.title}
+                        ₹{course?.courseId?.title}
                       </p>
                       <p className='text-base text-neutral-600 dark:text-neutral-200 flex justify-center items-center'>
                         ${course?.courseId?.price}
