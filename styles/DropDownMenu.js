@@ -94,6 +94,7 @@ import { Button, Menu, MenuItem, Paper, Popover } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { useRouter } from 'next/navigation'
 import useMediaQuery from '@mui/material/useMediaQuery';
+import styles from "./DropDown.module.css"
 
 const DropDownMenu = () => {
   const [menuAnchor, setMenuAnchor] = useState(null)
@@ -104,7 +105,6 @@ const DropDownMenu = () => {
   const buttonStyle = {
     cursor: 'pointer',
     padding: '5px',
-    
   }
 
   const navigateToPage = (path) => {
@@ -139,7 +139,7 @@ const DropDownMenu = () => {
   }
 
   return (
-    <div className='outline_btn'>
+    <div className={styles["outline_btn"]}>
       <div>
         <Button
           style={buttonStyle}

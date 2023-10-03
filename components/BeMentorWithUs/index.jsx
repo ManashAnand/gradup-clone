@@ -1,6 +1,8 @@
 'use client'
 import { Card, Grid, Text, Link, Button } from '@nextui-org/react'
 import { useState } from 'react'
+import styles from "./styles.module.css";
+
 export default function BeMentorWithUs() {
   const [status, setStatus] = useState(false)
   function handleClick() {
@@ -28,16 +30,16 @@ export default function BeMentorWithUs() {
   }
   return (
     <>
-      <div className='w-full textform rounded-md flex justify-center'>
+      <div className={`w-full ${styles["textform"]} rounded-md flex justify-center`}>
         {!status ? (
           <div
             style={{
               boxShadow:
                 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(240, 57, 84, 0.35) 0px 0px 6px 8px inset',
             }}
-            className=' rounded-xl flex flex-col px-14 py-10 my-16'
+            className='rounded-xl flex flex-col px-14 py-10 my-16'
           >
-            <p className='text-red-400 sizesetnew text-center font-semibold textform'>
+            <p className={`text-red-400 ${styles["sizesetnew"]} text-center font-semibold ${styles["textform"]}`}>
               Join as an Industry Expert !!
             </p>
             <button
@@ -135,7 +137,7 @@ export default function BeMentorWithUs() {
       {status ? (
         <button
           onClick={handleClose}
-          className='bg-red-400 text-white textform px-10 py-1 rounded-md'
+          className={`bg-red-400 text-white ${styles["textform"]} px-10 py-1 rounded-md`}
         >
           Close
         </button>

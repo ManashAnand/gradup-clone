@@ -1,0 +1,13 @@
+.textform {
+  font-family: "Inter", sans-serif;
+}
+
+.sizesetnew {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 570px) {
+  .sizesetnew {
+    font-size: 1.5rem;
+  }
+}

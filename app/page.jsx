@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import HomeFirstComponent from '@components/HomeFirstComponent'
+import HomeFirstComponent from "@components/HomeFirstComponent"
 import CoursesOnHome from '@components/CoursesOnHome'
 import Mentors from '@components/Mentors'
 import Achievement from '@components/Achievement'
@@ -10,6 +10,7 @@ import DownloadApp from '@components/DownloadApp'
 import Script from 'next/script'
 import ContactUs from '@components/ContactUS'
 import Link from 'next/link'
+import styles from "./styles.module.css"
 
 const Home = () => {
   const [loading, setLoading] = useState(false)
@@ -19,10 +20,10 @@ const Home = () => {
       <section className='w-full flex-center flex-col'>
         <HomeFirstComponent />
         <CoursesOnHome />
-        <div className='w-screen databox'>
-          <div className='filter'></div>
-          <div className='grid grid-cols-2 gap-x-14 gap-y-8 my-auto data'>
-            <div className='w-32 h-20 data1 pt-2'>
+        <div className={`w-screen ${styles["databox"]}`}>
+          <div className={styles["filter"]}></div>
+          <div className={`grid grid-cols-2 gap-x-14 gap-y-8 my-auto ${styles["data"]}`}>
+            <div className={`w-32 h-20 ${styles["data1"]} pt-2`}>
               <h1 className='text-4xl text-center text-white font-semibold'>
                 21K+
               </h1>
@@ -30,7 +31,7 @@ const Home = () => {
                 Active Users
               </p>
             </div>
-            <div className='w-32 h-20 data2 pt-2'>
+            <div className={`w-32 h-20 ${styles["data2"]} pt-2`}>
               <h1 className='text-4xl text-center text-white font-semibold'>
                 100+
               </h1>
@@ -38,7 +39,7 @@ const Home = () => {
                 Colleges
               </p>
             </div>
-            <div className='w-32 h-20 data3 pt-2'>
+            <div className={`w-32 h-20 ${styles["data3"]} pt-2`}>
               <h1 className='text-4xl text-center text-white font-semibold'>
                 30+
               </h1>
@@ -46,7 +47,7 @@ const Home = () => {
                 Our Courses
               </p>
             </div>
-            <div className='w-32 h-20 data4 pt-2'>
+            <div className={`w-32 h-20 ${styles["data4"]} pt-2`}>
               <h1 className='text-4xl text-center text-white font-semibold'>
                 5000+
               </h1>
@@ -55,8 +56,8 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className='my-auto text-white text-2xl w-1/3 hide'>
-            <p className='textnew'>
+          <div className={`my-auto text-white text-2xl w-1/3 ${styles["hide"]}`}>
+            <p className={styles["textnew"]}>
               The best quality online courses from the top institutions
             </p>
           </div>
@@ -68,16 +69,16 @@ const Home = () => {
           }}
           className='p-10 w-screen'
         >
-          <div className='hide1'>
+          <div className={styles["hide1"]}>
             {/* <p className='ml-24 text-xl text-left font-semibold mt-6 mb-1 text-white text'>Get Hired</p> */}
             {/* <p className="ml-24 text-left textnew text-lg text-white">Work with your dream companies by applying for Full-time roles, Internships and Hackathon too.</p> */}
           </div>
-          <div className='appbox'>
+          <div className={styles["appbox"]}>
             <a href='/jobs'>
-              <div className='rounded-md h-24 w-52 bg-green-200 flex items-center justify-evenly p-3 box9'>
+              <div className={`rounded-md h-24 w-52 bg-green-200 flex items-center justify-evenly p-3 ${styles["box9"]}`}>
                 <div>
-                  <p className='text-sky-700 textform text-sm'>Full time</p>
-                  <p className='text-sky-700 textform text-sm font-semibold'>
+                  <p className={`text-sky-700 ${styles["textform"]} text-sm`}>Full time</p>
+                  <p className={`text-sky-700 ${styles["textform"]} text-sm font-semibold`}>
                     Jobs
                   </p>
                 </div>
@@ -85,10 +86,10 @@ const Home = () => {
               </div>
             </a>
             <a href='/internships'>
-              <div className='rounded-md h-24 w-52 bg-purple-200 flex items-center justify-evenly p-3 box8'>
+              <div className={`rounded-md h-24 w-52 bg-purple-200 flex items-center justify-evenly p-3 ${styles["box8"]}`}>
                 <div>
-                  <p className='text-sky-700 textform text-sm'>Paid</p>
-                  <p className='text-sky-700 textform text-sm font-semibold'>
+                  <p className={`text-sky-700 ${styles["textform"]} text-sm`}>Paid</p>
+                  <p className={`text-sky-700 ${styles["textform"]} text-sm font-semibold`}>
                     Internships
                   </p>
                 </div>
@@ -96,10 +97,10 @@ const Home = () => {
               </div>
             </a>
             <a href='/courses'>
-              <div className='rounded-md h-24 w-52 bg-red-200 ease-in-out flex items-center justify-evenly p-3 box7'>
+              <div className={`rounded-md h-24 w-52 bg-red-200 ease-in-out flex items-center justify-evenly p-3 ${styles["box7"]}`}>
                 <div>
-                  <p className='text-sky-700 textform text-sm'>Learn</p>
-                  <p className='text-sky-700 textform text-sm font-semibold'>
+                  <p className={`text-sky-700 ${styles["textform"]} text-sm`}>Learn</p>
+                  <p className={`text-sky-700 ${styles["textform"]} text-sm font-semibold`}>
                     Courses
                   </p>
                 </div>
@@ -107,10 +108,10 @@ const Home = () => {
               </div>
             </a>
             <a href='/hackathons'>
-              <div className='rounded-md h-24 w-52 bg-blue-200 flex items-center justify-evenly p-3 box6'>
+              <div className={`rounded-md h-24 w-52 bg-blue-200 flex items-center justify-evenly p-3 ${styles["box6"]}`}>
                 <div>
-                  <p className='text-sky-700 textform text-sm'>Participate</p>
-                  <p className='text-sky-700 textform text-sm font-semibold'>
+                  <p className={`text-sky-700 ${styles["textform"]} text-sm`}>Participate</p>
+                  <p className={`text-sky-700 ${styles["textform"]} text-sm font-semibold`}>
                     Hackathons
                   </p>
                 </div>
@@ -119,7 +120,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-        <h1 className='text-white textnew text-3xl decoration-white font-semibold text-center mt-10'>
+        <h1 className={`text-white ${styles["textnew"]} text-3xl decoration-white font-semibold text-center mt-10`}>
           Our Industry Experts
         </h1>
         <Mentors />

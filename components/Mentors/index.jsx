@@ -51,7 +51,7 @@ const Mentors = () => {
     // },
   ]
   return (
-    <div className='background pt-10'>
+    <div className='pt-10'>
       <div className='flex flex-wrap gap-[30px] justify-center'>
         {list.map((items, i) => {
           return (
