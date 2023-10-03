@@ -27,13 +27,12 @@ export async function POST(request) {
     const reqBody = await request.json()
 
     const { userId, courseId } = reqBody
-    console.log(courseId)
+
     for (const id of courseId) {
-      console.log(id)
       const course = await Courses.findOne({
         _id: id,
       })
-      console.log(course) // This will log each course individually
+      // This will log each course individually
       await Enrollment.create({
         userId,
         courseId: id,
