@@ -219,7 +219,9 @@ const Nav = () => {
                 >
                   My Profile
                 </Link>
-                <DropDownMenu />
+                <div className='dropdown_link'>
+                  <DropDownMenu />
+                </div>
                 <Link
                   href={data.role === 'HR' ? '/hr' : '/hr/signup'}
                   className='dropdown_link'
@@ -248,7 +250,7 @@ const Nav = () => {
                 >
                   Jobs
                 </Link>
-                <Link href='/mycourses' className='outline_btn'>
+                <Link href='/mycourses' className='dropdown_link'>
                   My Courses
                 </Link>
                 <button

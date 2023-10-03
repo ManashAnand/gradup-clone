@@ -5,12 +5,11 @@ export const POST = async (request) => {
   try {
     //after successful payment
     const url = new URL(request.url)
-    const id = url.searchParams.get('id')
+    const ids = url.searchParams.get('id')
     const email = url.searchParams.get('email')
-    console.log('callback url is called ')
-
-    const merchantId = process.env.MERCHANTID;
-    const transactionId  = url.searchParams.get('mid');
+    const id = ids.split(',')
+    const merchantId = process.env.MERCHANTID
+    const transactionId = url.searchParams.get('mid')
     const saltKey = process.env.SALT_KEY
     const saltIndex = 1
     const finalXHeader =
@@ -36,13 +35,16 @@ export const POST = async (request) => {
         const userId = email
         const courseId = id
         console.log(courseId)
-        const response = await fetch('https://www.gradup.in/api/enrolledcourses', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ userId, courseId }),
-        })
+        const response = await fetch(
+          'https://www.gradup.in/api/enrolledcourses',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userId, courseId }),
+          }
+        )
 
         if (response.ok) {
           console.log('enrolled successfully:')

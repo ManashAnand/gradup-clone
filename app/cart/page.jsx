@@ -55,6 +55,7 @@ export default function Cart2() {
 
     const handlePayment = async (id, email) => {
       try {
+        console.log(id)
         const amount = subTotal + parseFloat((0.18 * subTotal).toFixed(2))
         const response = await fetch('/api/payment', {
           method: 'POST',
@@ -112,7 +113,6 @@ export default function Cart2() {
                         alt='book cover'
                         className='w-[6rem] h-[6rem] rounded-md '
                       />
-                      <h3> ₹{cartBook?.price}</h3>
                     </div>
                     <div className='  xl:w-[30%] flex justify-center items-center'>
                       {cartBook?.title}
@@ -140,7 +140,7 @@ export default function Cart2() {
                           />
                           <label
                             htmlFor='red-checkbox'
-                            className='ml-2 text-sm font-medium text-yellow-900 dark:text-yellow-300'
+                            className='ml-2 text-sm font-medium text-yellow-300'
                           >
                             Select
                           </label>
@@ -241,11 +241,11 @@ export default function Cart2() {
                       />
                     </div>
                     <div className='p-6 flex flex-col flex-start items-center justify-around '>
-                      <p className='text-base    text-neutral-600 dark:text-neutral-200 flex justify-center items-center'>
-                        ₹{course?.courseId?.title}
+                      <p className='text-base text-neutral-600 dark:text-neutral-200 flex justify-center items-center'>
+                        {course?.courseId?.title}
                       </p>
                       <p className='text-base text-neutral-600 dark:text-neutral-200 flex justify-center items-center'>
-                        ${course?.courseId?.price}
+                        ₹{course?.courseId?.price}
                       </p>
                     </div>
                   </div>
