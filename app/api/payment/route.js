@@ -2,6 +2,7 @@ import SHA256 from 'crypto-js/sha256'
 export const POST = async (request) => {
   const { amount, id, email } = await request.json()
   const amountInCents = Number(amount) * 100
+
   const ids = id.join(',')
 
   // Function to generate a unique merchantTransactionId
