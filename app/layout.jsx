@@ -6,6 +6,7 @@ import Provider from '@components/Provider'
 import Footer from '@components/Footer'
 import Watsapp from '@components/Watsapp'
 import Script from 'next/script'
+import styles from './styles.module.css'
 
 export const metadata = {
   title: 'GradUp - Transforming Dreams into Careers',
@@ -40,13 +41,12 @@ const Layout = ({ children }) => {
       </head>
       <body>
         <Provider>
-          <div className='main'>
-            <div className='gradient' />
+          <div className={styles["main"]}>
+            <div className={styles["gradient"]} />
           </div>
 
-          <main className='app'>
+          <main className={styles["app"]}>
             <Nav />
-
             {children}
             <Script
               async

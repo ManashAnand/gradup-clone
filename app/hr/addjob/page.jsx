@@ -10,6 +10,8 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech'
 import { useState } from 'react'
+import styles from './styles.module.css'
+
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 const page = ({ params }) => {
   const [value, setValue] = useState(false)
@@ -252,7 +254,7 @@ const page = ({ params }) => {
   return (
     <>
       {!posted ? (
-        <div className='justify-center w-full align-center justify-items-center hrjobs mt-6 mb-20 border-2 border-white px-4 textform'>
+        <div className={`justify-center w-full align-center justify-items-center ${styles["hrjobs"]} mt-6 mb-20 border-2 border-white px-4 ${styles["textform"]}`}>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             {/* <Image
           src="/assets/images/logo-for-website.png"
@@ -263,14 +265,14 @@ const page = ({ params }) => {
         /> */}
           </div>
           <h1 className='font-bold text-5xl text-left mb-5'>
-            <p className='textform text-4xl underline decoration-white animate-charcter underline-offset-8 text-center text-white mb-8'>
+            <p className={`${styles["textform"]} text-4xl underline decoration-white ${styles["animate-charcter"]} underline-offset-8 text-center text-white mb-8`}>
               Post a Job and hire the best Talent
             </p>
           </h1>
           <form onSubmit={createNewJob} className='w-full'>
             <Grid.Container gap={2}>
               <Grid xs={12} sm={12}>
-                <div className='flexset w-full border-2 border-white pb-4'>
+                <div className={`${styles["flexset"]} w-full border-2 border-white pb-4`}>
                   <div style={{}} className='text-white ml-4'>
                     <input
                       className='lg mt-6'
@@ -614,7 +616,7 @@ const page = ({ params }) => {
                     </svg>
                     <label className=' text-white mt-3 mb-2 ml-1'>
                       Skills Required *{' '}
-                      <span className='text-sm text-white textnew'>
+                      <span className={`text-sm text-white ${styles["textnew"]}`}>
                         (Comma seperated skills)
                       </span>
                     </label>
@@ -690,7 +692,7 @@ const page = ({ params }) => {
                 initialValue={`Benefits :\n1. \n2.\n3.`}
                 required
               /> */}
-                <div className='gridset text-white text-left border-2 border-white px-10 py-5'>
+                <div className={`${styles["gridset"]} text-white text-left border-2 border-white px-10 py-5`}>
                   {checkbox.map((ele, i) => {
                     return (
                       <div className='my-3' key={i}>

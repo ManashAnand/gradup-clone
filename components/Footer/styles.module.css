@@ -1,22 +1,9 @@
-.headingbox2 {
-  background: linear-gradient(
-    316deg,
-    #044e83 0%,
-    rgba(4, 78, 131, 0.98) 10.32%,
-    rgba(4, 78, 131, 0.97) 17.79%,
-    rgba(4, 78, 131, 0.96) 27.13%,
-    rgba(4, 78, 131, 0.95) 34.9%,
-    rgba(4, 41, 101, 0.94) 77.86%
-  );
+.textnew {
+  font-family: "Poppins", sans-serif;
 }
 
 .textform {
   font-family: "Inter", sans-serif;
-}
-@keyframes textclip {
-  to {
-    background-position: 200% center;
-  }
 }
 
 .animate-charcter {
@@ -38,6 +25,18 @@
   animation: textclip 3s linear infinite;
 }
 
-.textnew {
-  font-family: "Poppins", sans-serif;
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.alignmentset2 {
+  text-align: left;
+}
+
+@media screen and (max-width: 1130px) {
+  .alignmentset2 {
+    text-align: center;
+  }
 }

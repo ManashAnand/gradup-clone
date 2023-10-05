@@ -1,6 +1,7 @@
 import { Site } from '@rsuite/icons'
 import React from 'react'
 import Link from 'next/link'
+import styles from './styles.module.css'
 
 const siteList = [
   {
@@ -94,14 +95,14 @@ const siteList = [
 ]
 const page = () => {
   return (
-    <div className='w-full headingbox2 padded4 m-10 rounded-xl'>
-      <p className='text-4xl font-semibold animate-charcter text-left underline decoration-white underline-offset-8 mt-2 mb-12 textform text-sky-500'>
+    <div className={`w-full ${styles["headingbox2"]} padded4 m-10 rounded-xl`}>
+      <p className={`text-4xl font-semibold ${styles["animate-charcter"]} text-left underline decoration-white underline-offset-8 mt-2 mb-12 textform text-sky-500`}>
         Sitemap
       </p>
       <div className='flex flex-wrap justify-evenly'>
         {siteList.map((link) => (
-          <div className='flexbasis textform'>
-            <li className='text-white sizetext3 text-left hover:text-blue-500'>
+          <div className={`${styles["flexbasis"]} textform`}>
+            <li className={`text-white ${styles["sizetext3"]} text-left hover:text-blue-500`}>
               <Link href={link.l}>{link.name}</Link>
             </li>
             <br />

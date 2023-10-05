@@ -6,6 +6,7 @@ import Spinner from '@components/Spinner'
 import React from 'react'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
+import styles from './styles.module.css'
 
 async function fetcher(url) {
   const res = await fetch(url, { cache: 'no-store' })
@@ -33,7 +34,7 @@ const page = () => {
     return (
       <>
         <div>
-          <div className='coursebox w-fit m-auto'>
+          <div className={`${styles["coursebox"]} w-fit m-auto`}>
             <div>
               <p className='text-white text-left text-xl'>
                 Embark on a journey of knowledge and affordability. Discover
@@ -46,7 +47,7 @@ const page = () => {
             </div>
           </div>
           <div className='w-fit flex mx-auto flex-col mb-5 mt-5'>
-            <div className='showmobile textform'>
+            <div className={`${styles["showmobile"]} ${styles["textform"]}`}>
               <p className='text-white text-xl'>
                 Embark on a journey of knowledge and affordability.
               </p>
@@ -61,7 +62,7 @@ const page = () => {
               ></img>
             </div>
             <div className='w-screen '>
-              <h1 className='text-4xl font-bold text-sky-500 textform animate-charcter text-center mb-2 mt-3'>
+              <h1 className={`text-4xl font-bold text-sky-500 ${styles["textform"]} ${styles["animate-charcter"]} text-center mb-6`}>
                 My Courses
               </h1>
             </div>

@@ -12,6 +12,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 import { useSearchParams } from 'next/navigation'
 import FilterInternships from '@components/internships/FilterInternships'
 import ShowInternships from '@components/internships/ShowInternships'
+import styles from './styles.module.css'
 // const cityList = [
 //   { value: "delhi", label: "delhi" },
 //   { value: "mumbai", label: "mumbai" },
@@ -36,17 +37,17 @@ function Page({ index, setPage }) {
   const [search, setSearch] = useState('')
   return (
     <section className='w-full mt-2'>
-      <div className='headerpos'>
+      <div className={styles["headerpos"]}>
         <div>
-          <div className='font-bold jobpos'>
-            <h1 className='text-white animate-charcter text-6xl text-left mb-1'>
+          <div className={`font-bold ${styles["jobpos"]}`}>
+            <h1 className={`text-white ${styles["animate-charcter"]} text-6xl text-left mb-1`}>
               Internship
             </h1>
             <h1
               style={{ color: 'darkturquoise' }}
               className='text-5xl text-left'
             >
-              <span className='sizetext underline decoration-yellow-300 underline-offset-8'>
+              <span className={`${styles["sizetext"]} underline decoration-yellow-300 underline-offset-8`}>
                 Opportunities for you
               </span>
             </h1>
@@ -60,13 +61,13 @@ function Page({ index, setPage }) {
           </div> */}
         </div>
         <img
-          className='giphy mt-4'
+          className={`${styles["giphy"]} mt-4`}
           src='assets/images/working4.gif'
           alt='work-img'
         ></img>
       </div>
       <div>
-        <p className='heading'></p>
+        <p className={styles["heading"]}></p>
       </div>
       {/* <div className="sortpos">
             <p className="-ml-10 text-white text-sm">Sort by:</p>

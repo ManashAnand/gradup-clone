@@ -17,6 +17,20 @@
   position: relative;
 }
 
+.app {
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+}
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(9, 13, 52);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+}
+
 .databox .filter {
   background: url("/assets/images/divback.png") no-repeat;
   background-size: fit;

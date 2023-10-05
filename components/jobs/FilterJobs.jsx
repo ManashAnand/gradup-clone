@@ -4,6 +4,7 @@ import useSWR from "swr";
 import { useState, useEffect } from "react";
 import { Input } from "@nextui-org/react";
 import Select from "react-select";
+import styles from "./styles.module.css"
 
 const FilterJobs = ({
   setSelectedCity,
@@ -166,7 +167,7 @@ const FilterJobs = ({
   };
   return (
     <div className="pt-16">
-      <div style={{ backgroundColor: "#0076ce" }} className="filterbox">
+      <div style={{ backgroundColor: "#0076ce" }} className={styles["filterbox"]}>
         <div>
           <div className="p-3">
             <Select
@@ -181,7 +182,7 @@ const FilterJobs = ({
           </div>
           <div className="p-3">
             <Select
-              className="container text-left"
+              className={`${styles["container"]} text-left`}
               options={titleList}
               placeholder="Select Job"
               value={title}
@@ -203,7 +204,7 @@ const FilterJobs = ({
           ></input>
         </div>
         <div className="mt-4 text-center w-full">
-          <div className="salary">{`MIN SALARY - Rs. ${salaryExp}`}</div>
+          <div className={styles["salary"]}>{`MIN SALARY - Rs. ${salaryExp}`}</div>
         </div>
       </div>
     </div>

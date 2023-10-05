@@ -1,0 +1,107 @@
+.headerpos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.jobpos {
+  margin-top: 3rem;
+}
+
+.sizetext {
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 570px) {
+  .sizetext {
+    font-size: 1.8rem;
+  }
+  .giphy {
+    width: 80%;
+  }
+}
+
+.animate-charcter {
+  background-image: linear-gradient(
+    -225deg,
+    #2390f7 0%,
+    #f40dcd 29%,
+    #edf75c 67%,
+    #63bef7 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-emphasis-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .headerpos {
+    display: block;
+  }
+  .jobpos {
+    margin: 3rem auto;
+    text-align: center;
+  }
+  .giphy {
+    display: block;
+    margin: 5vh auto 15vh auto;
+    width: 60%;
+  }
+}
+
+.giphy {
+  margin-left: 10vh;
+  width: 22vw;
+  border-radius: 40px;
+}
+
+@media screen and (max-width: 1130px) {
+  .giphy {
+    display: none;
+  }
+}
+
+.heading {
+  margin-top: 3rem;
+  color: deepskyblue;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 0vw;
+  font-size: 22px;
+}
+
+.heading,
+.heading1 {
+  opacity: 0;
+}
+
+@media screen and (max-width: 350px) {
+  .giphy {
+    width: 90vw;
+  }
+}
+
+.main-content {
+  display: flex;
+}
+
+@media screen and (max-width: 800px) {
+  .main-content {
+    display: block;
+  }
+}
+
+.textnew {
+  font-family: "Poppins", sans-serif;
+}

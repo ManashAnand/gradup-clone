@@ -7,6 +7,7 @@ import { Input } from "@nextui-org/react";
 import Select from "react-select";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import styles from './styles.module.css'
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 import { useSearchParams } from "next/navigation";
 const vari=1;
@@ -57,9 +58,9 @@ function Page({ selectedCity, selectedTitle, salaryExp, search,index ,jobs,loadi
         ))}
       </div>
     ) : jobs.length > 0 ? ( */}
-      {loading && <div className="text-center message"><Spinner/></div>}
+      {loading && <div className={`text-center ${styles["message"]}`}><Spinner/></div>}
       {jobs.length>0 ? (
-      <div style={{ backgroundColor: "darkturquoise" }} className="mt-10 arrange">
+      <div style={{ backgroundColor: "darkturquoise" }} className={`mt-10 ${styles["arrange"]}`}>
         {jobs.map((job) => (
           <ListContentCard post={job} />
         ))}
@@ -139,11 +140,11 @@ export default function ShowInternships({ selectedCity, selectedTitle, salaryExp
         />
       </div>
         {/* <p className="bg-white">No internships available currently</p> */}
-      <div className="flex buttonpos ml-2">
-        <button style={{backgroundColor:"#0076ce",opacity:opacity1}} disabled={index===1?true:false} class="btn2" onClick={() => setPage(index - 1)}>
+      <div className={`flex ${styles["buttonpos"]} ml-2`}>
+        <button style={{backgroundColor:"#0076ce",opacity:opacity1}} disabled={index===1?true:false} className={styles["btn2"]} onClick={() => setPage(index - 1)}>
           Prev
         </button>
-        <button style={{backgroundColor:"#0076ce",opacity:opacity2}} disabled={jobs.length<6?true:false} class="btn3" onClick={() => setPage(index + 1)}>
+        <button style={{backgroundColor:"#0076ce",opacity:opacity2}} disabled={jobs.length<6?true:false} className={styles["btn3"]} onClick={() => setPage(index + 1)}>
           Next
         </button>
       </div>

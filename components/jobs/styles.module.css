@@ -1,0 +1,143 @@
+.filterbox {
+  margin-top: -4vh;
+  padding: 2em 0.4em;
+  border-radius: 15px;
+  background-image: linear-gradient(
+    150.74deg,
+    rgba(69, 146, 253, 0.266012) 15.21%,
+    rgba(248, 199, 234, 0.779514) 22.96%,
+    rgba(239, 203, 227, 0.711805) 45.74%,
+    rgba(0, 120, 234, 0.1602) 91.53%,
+    rgba(66, 169, 249, 0.19) 98.92%,
+    rgba(38, 134, 200, 0.0842839) 98.93%,
+    rgba(152, 198, 224, 0.37) 98.96%,
+    rgba(176, 227, 255, 0.378155) 99.65%,
+    rgba(9, 129, 197, 0) 100.35%,
+    #ffc8e3 1.07%
+  );
+  width: 20vw;
+}
+
+@media screen and (max-width: 625px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .filterbox {
+    margin: -15vh auto 10vh auto;
+    width: 80vw;
+  }
+}
+
+.buttonpos {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1vw;
+  margin-top: 2rem;
+}
+
+.arrange {
+  background-image: linear-gradient(
+    150.74deg,
+    rgba(69, 146, 253, 0.266012) 15.21%,
+    rgba(248, 199, 234, 0.779514) 22.96%,
+    rgba(239, 203, 227, 0.711805) 45.74%,
+    rgba(0, 120, 234, 0.1602) 91.53%,
+    rgba(66, 169, 249, 0.19) 98.92%,
+    rgba(38, 134, 200, 0.0842839) 98.93%,
+    rgba(152, 198, 224, 0.37) 98.96%,
+    rgba(176, 227, 255, 0.378155) 99.65%,
+    rgba(9, 129, 197, 0) 100.35%,
+    #ffc8e3 1.07%
+  );
+  padding: 20px;
+  min-width: 50vw;
+  /* width:auto; */
+  border-radius: 20px;
+  margin-left: 18vh;
+  margin-top: 3vh;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.message {
+  margin-left: 10rem;
+  margin-top: 6rem;
+}
+
+.btn2 {
+  padding: 0.2em 1.5em;
+  border-radius: 8px;
+  color: white;
+  margin-right: 1vw;
+}
+
+
+
+@media screen and (max-width: 1130px) {
+  .buttonpos {
+    justify-content: center;
+    margin-left: 40vw;
+  }
+  .filterbox {
+    margin-top: -5vh;
+    width: 27vw;
+  }
+  .arrange {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 5vh;
+    margin-top: auto;
+    padding: 14px;
+    gap: 14px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .buttonpos {
+    text-align: center;
+    margin: 6vh auto;
+  }
+  .arrange {
+    margin-left: 0;
+    margin-top: -3vh;
+    padding: 15px;
+  }
+  .btn2,.btn3{
+    text-align:center;
+    margin-left:1vh;
+  }
+}
+
+.btn3 {
+  padding: 0.2em 1.5em;
+  border-radius: 8px;
+  color: white;
+}
+
+@media screen and (max-width: 350px) {
+  .filterbox {
+    width: 85vw;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .message {
+    margin-left: 0rem;
+  }
+  .arrange {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.salary {
+  width: 88%;
+  background-color: white;
+  color: grey;
+  padding: 0.4em 1em;
+  border-radius: 5px;
+  margin: auto;
+}

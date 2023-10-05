@@ -11,6 +11,7 @@ import { IconButton } from "@styles/IconButton";
 import { EyeIcon } from "@styles/EyeIcon";
 import { EditIcon } from "@styles/EditIcon";
 import { DeleteIcon } from "@styles/DeleteIcon";
+import styles from './styles.module.css'
 
  function Page({user}) {  
   
@@ -25,7 +26,7 @@ import { DeleteIcon } from "@styles/DeleteIcon";
     <div className='w-screen px-3 '>
       <div className='w-9/10'>
        <p className='text-center mb-8 '>
-       <span className='textform text-5xl animate-charcter font-semibold text-white'>Your Applications</span>
+       <span className={`${styles["textform"]} text-5xl ${styles["animate-charcter"]} font-semibold text-white`}>Your Applications</span>
        </p>
         
     {user.length>0?<Table
@@ -58,7 +59,7 @@ import { DeleteIcon } from "@styles/DeleteIcon";
         align="center"
         rowsPerPage={25}
       /> */}
-    </Table>:<div className="text-center text-xl my-32 textnew text-white">No Applications Available</div>}
+    </Table>:<div className={`text-center text-xl my-32 ${styles["textnew"]} text-white`}>No Applications Available</div>}
     </div>
     </div>
   );
@@ -81,10 +82,10 @@ export default function App() {
         <Page index={pageIndex + 1} />
       </div> */}
       <div className="flex mt-6 mb-16 justify-center items-center">
-        <button  disabled={pageIndex===1?true:false} class="btn2 bg-sky-500" onClick={() => setPageIndex(pageIndex - 1)}>
+        <button  disabled={pageIndex===1?true:false} className={`${styles["btn2"]} bg-sky-500`} onClick={() => setPageIndex(pageIndex - 1)}>
           Prev
         </button>
-        <button  class="btn3 bg-sky-500" onClick={() => setPageIndex(pageIndex + 1)}>
+        <button  className={`${styles["btn3"]} bg-sky-500`} onClick={() => setPageIndex(pageIndex + 1)}>
           Next
         </button>
       </div>

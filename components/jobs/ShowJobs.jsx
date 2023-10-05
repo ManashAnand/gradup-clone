@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 import { useSearchParams } from "next/navigation";
+import styles from "./styles.module.css"
 const vari=1;
 function Page({ selectedCity, selectedTitle, salaryExp, search,index ,jobs,loading,searchresults,setSearchresults}) {
   // const [jobs,setJobs] = useState([]);
@@ -57,9 +58,9 @@ function Page({ selectedCity, selectedTitle, salaryExp, search,index ,jobs,loadi
         ))}
       </div>
     ) : jobs.length > 0 ? ( */}
-      {loading && <div className="text-center message"><Spinner/></div>}
+      {loading && <div className={`text-center ${styles["message"]}`}><Spinner/></div>}
       {jobs.length>0 ? (
-      <div style={{ backgroundColor: "#0076ce" }} className="mt-10 arrange">
+      <div style={{ backgroundColor: "#0076ce" }} className={`mt-10 ${styles["arrange"]}`}>
         {jobs.map((job) => (
           <ListContentCard post={job} />
         ))}
@@ -137,11 +138,11 @@ export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, searc
           loading={loading}
         />
       </div>
-      <div className="flex buttonpos ml-2">
-        <button style={{backgroundColor:"#0076ce",opacity:opacity1}} disabled={index===1?true:false} class="btn2" onClick={() => setPage(index - 1)}>
+      <div className={`flex ${styles["buttonpos"]} ml-2`}>
+        <button style={{backgroundColor:"#0076ce",opacity:opacity1}} disabled={index===1?true:false} className={styles["btn2"]} onClick={() => setPage(index - 1)}>
           Prev
         </button>
-        <button style={{backgroundColor:"#0076ce",opacity:opacity2}} disabled={jobs.length<6?true:false} class="btn3" onClick={() => setPage(index + 1)}>
+        <button style={{backgroundColor:"#0076ce",opacity:opacity2}} disabled={jobs.length<6?true:false} className={styles["btn3"]} onClick={() => setPage(index + 1)}>
           Next
         </button>
       </div>

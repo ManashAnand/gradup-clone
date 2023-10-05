@@ -4,6 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid'
 import EmailIcon from '@mui/icons-material/Email'
+import styles from './styles.module.css'
 const Footer = () => {
   return (
     <div>
@@ -19,7 +20,7 @@ const Footer = () => {
                 className='rounded-md object-contain mx-auto'
               />
 
-              <p className='mt-4 text-blue-500 text-xl font-semibold text-center textnew'>
+              <p className={`mt-4 text-blue-500 text-xl font-semibold text-center ${styles["textnew"]}`}>
                 Built with ❤️ for the Students
               </p>
               <hr
@@ -28,7 +29,7 @@ const Footer = () => {
                   marginTop: '10px',
                 }}
               />
-              <p className='text-xl textform animate-charcter mt-2 text-center text-blue-500 font-semibold'>
+              <p className={`text-xl ${styles["textform"]} ${styles["animate-charcter"]} mt-2 text-center text-blue-500 font-semibold`}>
                 Boost your career today with GradUp
               </p>
               <hr
@@ -37,10 +38,10 @@ const Footer = () => {
                   marginTop: '10px',
                 }}
               />
-              <p className='text-xl textnew mt-2 text-center text-blue-500 font-semibold'>
+              <p className={`text-xl ${styles["textnew"]} mt-2 text-center text-blue-500 font-semibold`}>
                 Stay Connected
               </p>
-              <div className=' textnew text-center justify-center flex text-sm mt-6 mb-3'>
+              <div className={`${styles["textnew"]} text-center justify-center flex text-sm mt-6 mb-3`}>
                 <PhoneAndroidIcon
                   sx={{ color: 'deepskyblue' }}
                   color='white'
@@ -48,7 +49,7 @@ const Footer = () => {
                 />
                 <p className='ml-4 text-white'> +91-7428376300</p>
               </div>
-              <div className='textnew text-center justify-center flex text-sm'>
+              <div className={`${styles["textnew"]} text-center justify-center flex text-sm`}>
                 <EmailIcon
                   sx={{ color: 'deepskyblue' }}
                   color=''
@@ -60,7 +61,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className='grid grid-cols-1 alignmentset2 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4 whitespace-nowrap'>
+            <div className={`grid grid-cols-1 ${styles["alignmentset2"]} gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4 whitespace-nowrap`}>
               <div>
                 <p className='text-lg underline decoration-yellow-400 underline-offset-8 text-white'>
                   Services

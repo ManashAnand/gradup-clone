@@ -18,6 +18,7 @@ import { DeleteIcon } from "@styles/DeleteIcon";
 import Project from '@components/userProfile/project';
 import Achievement from '@components/userProfile/achievement';
 import Experience from '@components/userProfile/experience';
+import styles from "./styles.module.css"
 
 import { useState,useEffect } from 'react';
 import PlusIcon from '@rsuite/icons/Plus';
@@ -349,30 +350,26 @@ export default function Profile() {
       const ButtonStyle = { margin: "0px 0.5rem" };
   return (
     <div className='w-full mb-16'>
-        <section className='w-full headingBox mb-6'>
-          <Link href='/user/applications' className='margintop marginright'>
+        <section className={`w-full ${styles["headingBox"]} mb-6`}>
+          <Link href='/user/applications' className={`${styles["margintop"]} ${styles["marginright"]}`}>
             <Button className='py-2 px-5 bg-blue-400 text-white rounded-md hover:bg-blue-500 hover:text-white'>Your Applications</Button>
           </Link>
           <div>
-            <Button className=' py-2 px-5 bg-blue-400 text-white rounded-md margintop hover:bg-blue-500 marginright hover:text-white' disabled={data.education.length>0?false:true} onClick={beAlumni}>Enter Alumni</Button>
+            <Button className={`py-2 px-5 bg-blue-400 text-white rounded-md ${styles["margintop"]} hover:bg-blue-500 ${styles["marginright"]} hover:text-white`} disabled={data.education.length>0?false:true} onClick={beAlumni}>Enter Alumni</Button>
           </div>
           <Link href="/user/resume">
-          <Button className=' py-2 px-5 bg-blue-400 text-white rounded-md margintop  hover:bg-blue-500 hover:text-white' >Download Resume</Button>
+          <Button className={`py-2 px-5 bg-blue-400 text-white rounded-md ${styles["margintop"]} hover:bg-blue-500 hover:text-white`} >Download Resume</Button>
           </Link>
           {/* <p className='desc text-left'>{data.email}</p> */}
         </section>
-        <h2 className=' text-4xl text-white animate-charcter textform mb-4'>Create Your Resume</h2>
+        <h2 className={`text-4xl text-white ${styles["animate-charcter"]} ${styles["textform"]} mb-4`}>Create Your Resume</h2>
         <section className='  font-medium border-whitesmoke border rounded-xl text-left  bg-slate-900'>
-
-
-
-
 
         <div className='m-5'>
         <div className='w-2/4 flex flex-col m-auto'>
-          <label className="mb-2 ml-2 textform text-white text-center text-sm">Name</label>
+          <label className={`mb-2 ml-2 ${styles["textform"]} text-white text-center text-sm`}>Name</label>
           <Input  initialValue={data.name} required/> <br/>
-          <label className="mb-2 ml-2 textform text-white text-center text-sm">Email</label>
+          <label className={`mb-2 ml-2 ${styles["textform"]} text-white text-center text-sm`}>Email</label>
           <Input  initialValue={data.email} required/> <br/>
           </div>
         <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
@@ -381,9 +378,9 @@ export default function Profile() {
             <span className='text-2xl font-semibold text-white my-auto'>Education</span>
             <p className="text-sm text-white">(Add from top to bottom hierarchy)</p>
             <form onSubmit={addNewEducation} className="flex flex-col">
-                <div className="flexBox w-full">
-                <div className='flex item1 flex-col mb-5'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">College *</label>
+                <div className={`${styles["flexBox"]} w-full`}>
+                <div className={`flex ${styles["item1"]} flex-col mb-5`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>College *</label>
                 <Select
                 style={{height:"30vh"}}
                  className=" text-left pr-2"
@@ -394,32 +391,32 @@ export default function Profile() {
                  required
                 />  
                 </div>
-                {onefield?<div className='flex flex-col item2 mb-5'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">If Others, please specify</label>
+                {onefield?<div className={`flex ${styles["item2"]} flex-col mb-5`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>If Others, please specify</label>
                 <Input  css={{pr:"$4",width:"stretch"}} onChange={handlenewCollegename} placeholder='Enter College Name' required/>
                 </div>:""}
                 </div>
-                <div className="flexBox w-full">
-                <div className='flex item1 flex-col mb-5'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Degree</label>
+                <div className={`${styles["flexBox"]} w-full`}>
+                <div className={`flex ${styles["item1"]} flex-col mb-5`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Degree</label>
                 <Input  css={{pr:"$4",width:"stretch"}}  placeholder='Enter Degree' required/>
                 </div>
-                <div className='flex item2 flex-col item1 mb-5'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Grade</label>
+                <div className={`flex ${styles["item2"]} flex-col ${styles["item1"]} mb-5`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Grade</label>
                 <Input  css={{pr:"$4",width:"stretch"}} placeholder='Enter Grade' required/>
                 </div>
                 </div>
-                <div className='flex item1 flex-col mb-5 mr-2'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Branch*</label>
+                <div className={`flex ${styles["item1"]} flex-col mb-5 mr-2`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Branch*</label>
                 <Input  css={{pr:"$4",width:"stretch"}} placeholder='Enter Branch' required/>
                 </div>
-                <div className="flexBox w-full">
-                <div className='flex item1 flex-col mb-5'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Joining Date *</label>
+                <div className={`${styles["flexBox"]} w-full`}>
+                <div className={`flex ${styles["item1"]} flex-col mb-5`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Joining Date *</label>
                 <Input  type="date" css={{pr:"$4"}} placeholder='Enter starting date' value={start} onChange={handleChange1} required/>
                 </div>
-                <div className='flex flex-col item2 mb-5'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Leaving Date *</label>
+                <div className={`flex flex-col ${styles["item2"]} mb-5`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Leaving Date *</label>
                 <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter ending date' value={end} onChange={handleChange2} required/>
                 {message2 && <p className='text-red-400 text-sm'>*Leaving date must be greater than joining date</p>}
                 </div>
@@ -473,19 +470,19 @@ export default function Profile() {
           <div>
             <span className='text-2xl font-semibold text-white my-auto'>Projects</span>
             <p className="text-sm text-white">(Enter all the project details)</p>
-            <form onSubmit={addNewProject}className="flex flex-col">
-                <div className='item1 flex flex-col'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Project Name *</label>
+            <form onSubmit={addNewProject} className="flex flex-col">
+                <div className={`flex ${styles["item1"]} flex-col`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Project Name *</label>
                 <Input  css={{pr:"$4",mb:"$6"}}  placeholder='Enter name' required/>
                 </div>
                 <label className="mb-1 mt-3 ml-2 textform text-white text-sm">Description *</label>
                 <Textarea  css={{pr:"$4",mb:"$6"}} rows={5} placeholder='Enter Description' required/>
-                <div className='item1 flex flex-col'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Skills Used *</label>
+                <div className={`flex ${styles["item1"]} flex-col`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Skills Used *</label>
                 <Input  css={{pr:"$4",mb:"$6"}} placeholder='Enter Skills' required/>
                 </div>
-                <div className='item1 flex flex-col'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Working Links </label>
+                <div className={`flex ${styles["item1"]} flex-col`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Working Links </label>
                 <Input  css={{pr:"$4",mb:"$6"}} placeholder='Enter link'/>
                 </div>
                 <Button bordered color="primary" disabled={disability3?true:false} css={{mx:"auto",mt:"25px",width:"fit-content"}} className="hover:bg-blue-600 hover:text-white" type='submit'>ADD</Button>
@@ -526,33 +523,33 @@ export default function Profile() {
             <span className='text-2xl font-semibold text-white my-auto'>Experience</span>
             <p className="text-xs text-white">(Enter all of your previous and current work experiences)</p>
             <form onSubmit={addNewExperience} className="flex flex-col">
-                <div className="flexBox w-full">
-                <div className='flex item1 flex-col mb-5'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Company *</label>
+                <div className={`${styles["flexBox"]} w-full`}>
+                <div className={`flex ${styles["item1"]} flex-col mb-5`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Company *</label>
                 <Input css={{pr:"$4",width:"stretch"}} placeholder='Enter Company' required/>
                 </div>
-                <div className='flex flex-col item2 mb-5'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Location</label>
+                <div className={`flex flex-col ${styles["item2"]} mb-5`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Location</label>
                 <Input css={{pr:"$4",width:"stretch"}} placeholder='Enter Location'/>
                 </div>
                 </div>
-                <div className='item1 flex flex-col'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Title *</label>
+                <div className={`${styles["item1"]} flex flex-col`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Title *</label>
                 <Input  css={{pr:"$4",mb:"$6"}} placeholder='Enter Title' required/>
                 </div>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Description *</label>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Description *</label>
                 <Textarea  css={{pr:"$4",mb:"$6"}} rows={5} placeholder='Enter Description' required/>
-                <div className='item1 flex flex-col'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Skills *</label>
+                <div className={`${styles["item1"]} flex flex-col`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Skills *</label>
                 <Input  css={{pr:"$4",mb:"$6"}} placeholder='Enter Skills' required/>
                 </div>
-                <div className="flexBox w-full">
-                <div className='flex item1 flex-col mb-5'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Joining Date *</label>
+                <div className={`${styles["flexBox"]} w-full`}>
+                <div className={`flex ${styles["item1"]} flex-col mb-5`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Joining Date *</label>
                 <Input  type="date" css={{pr:"$4",mb:"$6"}} placeholder='Enter starting date' value={start1} onChange={handleChange3} required/>
                 </div>
-                <div className='flex flex-col item2 mb-5'>
-                <label className="mb-1 ml-2 mt-3 textform text-white text-sm">Leaving Date </label>
+                <div className={`flex flex-col ${styles["item2"]} mb-5`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Leaving Date </label>
                 <Input  type="date" css={{pr:"$4"}} placeholder='Enter ending date' value={end1} onChange={handleChange4}/>
                 {message3 && <p className='text-red-400 text-sm'>*Leaving date must be greater than joining date</p>}
                 </div>
