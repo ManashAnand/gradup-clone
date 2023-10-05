@@ -55,14 +55,14 @@ export default function Cart2() {
 
     const handlePayment = async (id, email) => {
       try {
-        console.log(id)
+        const type = 'enrollment'
         const amount = subTotal + parseFloat((0.18 * subTotal).toFixed(2))
         const response = await fetch('/api/payment', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ amount, id, email }),
+          body: JSON.stringify({ amount, id, email, type }),
         })
         if (response.ok) {
           const responseData = await response.json()

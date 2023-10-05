@@ -2,6 +2,7 @@
 import React from 'react'
 import styles from 'styles/Page.module.css'
 import { useState, useEffect } from 'react'
+import { useSession } from 'next-auth/react'
 import {
   Typography,
   Grid,
@@ -35,6 +36,30 @@ export default function Student() {
   function handleClick5() {
     status5 === false ? setStatus5(true) : setStatus5(false)
   }
+  const { data: session } = useSession()
+  const email = session?.user.email
+  const handlePayment = async (amount, id, type) => {
+    try {
+      const response = await fetch('/api/payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ amount, id, email, type }),
+      })
+      if (response.ok) {
+        const responseData = await response.json()
+        console.log(responseData)
+
+        window.location.href = responseData
+      } else {
+        console.error('Payment initiation failed.')
+      }
+    } catch (error) {
+      console.error('An error occurred:', error.message)
+    }
+  }
+
   return (
     <div className='{styles.container} w-screen mb-10 text-left'>
       <Typography
@@ -181,7 +206,12 @@ export default function Student() {
                     <ListItem>Email Body Snapshot</ListItem>
                   </List>
                   <div className='flex flex-col items-center justify-center '>
-                    <Button variant='contained'>Rs 700/-</Button>
+                    <Button
+                      onClick={() => handlePayment(700, ['UG'], 'resume')}
+                      variant='contained'
+                    >
+                      Rs 700/-
+                    </Button>
                   </div>
                 </div>
               </CardContent>
@@ -202,7 +232,12 @@ export default function Student() {
                     <ListItem>Professional Photo</ListItem>
                   </List>
                   <div className='flex flex-col items-center justify-center '>
-                    <Button variant='contained'>Rs 800/-</Button>
+                    <Button
+                      onClick={() => handlePayment(700, ['PG'], 'resume')}
+                      variant='contained'
+                    >
+                      Rs 800/-
+                    </Button>
                   </div>
                 </div>
               </CardContent>

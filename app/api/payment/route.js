@@ -1,13 +1,9 @@
 import SHA256 from 'crypto-js/sha256'
 export const POST = async (request) => {
-  const { amount, id, email } = await request.json()
+  const { amount, id, email, type } = await request.json()
   const amountInCents = Number(amount) * 100
-  let ids
-  if (typeof id == 'number') {
-    ids = id
-  } else {
-    ids = id.join(',')
-  }
+  const ids = id.join(',')
+  console.log(amount, id, email, type)
 
   // Function to generate a unique merchantTransactionId
   function generateMerchantTransactionId() {
@@ -24,7 +20,7 @@ export const POST = async (request) => {
       amount: amountInCents,
       redirectUrl: 'https://www.gradup.in/mycourses',
       redirectMode: 'REDIRECT',
-      callbackUrl: `https://www.gradup.in/api/callback?id=${ids}&email=${email}&mid=${mtID}`,
+      callbackUrl: `https://www.gradup.in/api/callback?id=${ids}&email=${email}&mid=${mtID}&type=${type}`,
       paymentInstrument: {
         type: 'PAY_PAGE',
       },

@@ -8,32 +8,32 @@ export default function premium() {
       title: '1 Month Plan',
       off_price: 5999,
       price: 6999,
-      time: 1,
+      id: ['1'],
     },
     {
       title: '6 Month Plan',
       off_price: 29999,
       price: 41999,
-      time: 6,
+      id: ['6'],
     },
     {
       title: '1 Year Plan',
       off_price: 34999,
       price: 83999,
-      time: 12,
+      id: ['12'],
     },
   ]
   const { data: session } = useSession()
   const email = session?.user.email
   const handlePayment = async (id, amount) => {
-    console.log(id, email, amount)
     try {
+      const type = 'premium'
       const response = await fetch('/api/payment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ amount, id, email }),
+        body: JSON.stringify({ amount, id, email, type }),
       })
       if (response.ok) {
         const responseData = await response.json()
@@ -87,7 +87,7 @@ export default function premium() {
               </p>
               <button
                 className='mt-5 text-white bg-orange-400 rounded-md width-full px-14 py-1'
-                onClick={() => handlePayment(card.time, card.off_price)}
+                onClick={() => handlePayment(card.id, card.off_price)}
               >
                 Buy now
               </button>

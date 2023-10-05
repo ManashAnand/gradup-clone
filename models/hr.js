@@ -23,9 +23,6 @@ const jobSchema = new Schema({
 })
 
 const HRSchema = new Schema({
-  _id: {
-    type: mongoose.Types.ObjectId,
-  },
   aboutCompany: {
     type: String,
   },
@@ -60,7 +57,7 @@ const HRSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  startDare: {
+  startDate: {
     type: Date,
   },
   endDate: {

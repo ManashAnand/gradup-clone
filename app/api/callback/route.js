@@ -8,6 +8,7 @@ export const POST = async (request) => {
     const ids = url.searchParams.get('id')
     const email = url.searchParams.get('email')
     const id = ids.split(',')
+    const type = url.searchParams.get('type')
     const merchantId = process.env.MERCHANTID
     const transactionId = url.searchParams.get('mid')
     const saltKey = process.env.SALT_KEY
@@ -31,17 +32,18 @@ export const POST = async (request) => {
     )
     const { merchantTransactionId, amount } = response.data.data
     if (response.data.data.responseCode == 'SUCCESS') {
-      if (typeof id == 'number') {
+      if (type == 'premium') {
         try {
+          const num = Number(id)
           const currentDate = new Date()
           const startDate = currentDate
           const endDate = new Date(
             currentDate.getFullYear(),
-            currentDate.getMonth() + id,
+            currentDate.getMonth() + num,
             currentDate.getDate()
           )
           if (endDate <= currentDate) {
-            endDate.setMonth(endDate.getMonth() + id)
+            endDate.setMonth(endDate.getMonth() + num)
           }
           const response = await fetch('https://www.gradup.in/api/premium', {
             method: 'PUT',
@@ -59,7 +61,7 @@ export const POST = async (request) => {
         } catch (error) {
           console.log('Error during HR premium:', error)
         }
-      } else {
+      } else if (type == 'enrollment') {
         try {
           const userId = email
           const courseId = id
