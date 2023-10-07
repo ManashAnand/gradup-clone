@@ -33,10 +33,10 @@ const Home = () => {
             </div>
             <div className={`w-32 h-20 ${styles["data2"]} pt-2`}>
               <h1 className='text-4xl text-center text-white font-semibold'>
-                100+
+                4.9
               </h1>
               <p className='text-xs font-semibold text-white text-center'>
-                Colleges
+                Rating
               </p>
             </div>
             <div className={`w-32 h-20 ${styles["data3"]} pt-2`}>

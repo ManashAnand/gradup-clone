@@ -5,7 +5,7 @@ const page = () => {
     <div className='w-screen px-10 textform pb-20 pt-10 headingbox2'>
       <h1 className="text-white text-center text-4xl animate-charcter font-semibold mb-10">Are you struggling in maintaining good relationship with your Alumni ?</h1>
       <div>
-        <p className='text-2xl text-white text-center mb-12'>Dear College, facing trouble to manage your Alumni ! Don't worry now our company will help you in establishing a good connection with you and your alumni .</p>
+        <p className='text-2xl text-white text-center mb-12'>Hello Team, facing trouble to manage your Alumni ! Don't worry now our company will help you in establishing a good connection with you and your alumni .</p>
         <img className='mx-auto my-12 ' width="350" src="/assets/images/alumni-manage.png"></img>
         <div className='text-white justice textform text-lg'>To maintain a good relationship between a college and its alumni, a company or institution can provide various services and initiatives. These efforts aim to engage and support alumni, fostering a strong connection with the institution and encouraging their continued involvement. Here are some common services and activities:
 

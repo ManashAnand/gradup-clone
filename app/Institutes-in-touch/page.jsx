@@ -29,30 +29,8 @@ const page = () => {
   ]
   return (
     <>
-      {/* mobile view */}
-      <div className='md:hidden text-white mt-20 mb-10'>
-        <p className='mb-14 text-center text-5xl animate-charcter text-white underline decoration-white underline-offset-8'>
-          Presence in Academia
-        </p>
-        <div className='flex justify-center items-center flex-wrap gap-12 '>
-          {logos.map((ele, i) => {
-            return (
-              <div>
-                <img
-                  className='rounded-xl object-cover h-p[50px] w-[150px] hover:scale-125 ease-in-out transform duration-200 transition'
-                  src={ele}
-                  alt={ele}
-                ></img>
-              </div>
-            )
-          })}
-        </div>
-        <p className='text-center text-white animate-charcter text-5xl textnew mt-16'>
-          And many more ....
-        </p>
-      </div>
       {/* desktop view */}
-      <div className='sm:hidden md:block text-white mt-10 mb-10 '>
+      <div className=' text-white mt-10 mb-10 '>
         <p className='mb-14 text-center text-5xl animate-charcter text-white  underline-offset-8'>
           Presence in Academia
         </p>

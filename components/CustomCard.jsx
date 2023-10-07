@@ -31,7 +31,7 @@ const CustomCard = ({ image, title, url }) => {
             textAlign: 'center',
             marginY: 'auto',
             textTransform: 'uppercase',
-            fontWeight: 900,
+            fontWeight: 700,
           }}
           gutterBottom
           variant='subtitle1'

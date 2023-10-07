@@ -5,17 +5,16 @@ import useSWR from 'swr'
 import Spinner from '@components/Spinner'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
-import {useState} from 'react'
-import axios from 'axios'
+import { useState } from 'react'
 
 async function fetcher(url) {
   const res = await fetch(url)
   return await res.json()
 }
 
-export default  function Cart2() {
-  const [subTotal,setSubTotal] = useState(0);
-   const [purchasedId,setPurchasedId] = useState([]);
+export default function Cart2() {
+  const [subTotal, setSubTotal] = useState(0)
+  const [purchasedId, setPurchasedId] = useState([])
 
   const router = useRouter()
   const { data: session } = useSession()
@@ -25,9 +24,6 @@ export default  function Cart2() {
     fetcher
   )
 
-
-
-   
   if (isLoading) {
     return <Spinner />
   }
@@ -35,8 +31,7 @@ export default  function Cart2() {
     // const subTotal = data?.course
     //   .reduce((sum, book) => sum + book.price, 0)
     //   .toFixed(2)
-    
-    const id = data?.course[0]?._id
+
     const handleDeleteOneItem = async (id, email) => {
       try {
         const deleteUrl = `/api/cart?courseId=${id}&email=${email}`
@@ -58,19 +53,20 @@ export default  function Cart2() {
       }
     }
 
-    const handlePayment = async (amount, id, email) => {
-    //  console.log(purchasedId)
+    const handlePayment = async (id, email) => {
       try {
+        const type = 'enrollment'
+        const amount = subTotal + parseFloat((0.18 * subTotal).toFixed(2))
         const response = await fetch('/api/payment', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ amount, id, email }),
+          body: JSON.stringify({ amount, id, email, type }),
         })
         if (response.ok) {
           const responseData = await response.json()
-          console.log('+++++++++++++++++++++++++++++++++++++++++', responseData)
+          console.log(responseData)
 
           window.location.href = responseData
         } else {
@@ -81,17 +77,15 @@ export default  function Cart2() {
       }
     }
 
-    const handleClick = (e,id,title,price) => {
-      const isChecked = e.target.checked;
-      if(isChecked){
-        setSubTotal(subTotal+price);
-        setPurchasedId([...purchasedId, id]);
+    const handleClick = (e, id, title, price) => {
+      const isChecked = e.target.checked
+      if (isChecked) {
+        setSubTotal(subTotal + price)
+        setPurchasedId([...purchasedId, id])
+      } else {
+        setSubTotal(subTotal - price)
+        setPurchasedId(purchasedId.filter((itemId) => itemId !== id))
       }
-      else{
-        setSubTotal(subTotal-price)
-        setPurchasedId(purchasedId.filter(itemId => itemId !== id));
-      }
-
     }
 
     return (
@@ -119,7 +113,6 @@ export default  function Cart2() {
                         alt='book cover'
                         className='w-[6rem] h-[6rem] rounded-md '
                       />
-                      <h3> ₹{cartBook?.price}</h3>
                     </div>
                     <div className='  xl:w-[30%] flex justify-center items-center'>
                       {cartBook?.title}
@@ -132,15 +125,26 @@ export default  function Cart2() {
                         {/*cartBook?.author */}
                         <span>Why this?</span>
                         <div>
-                          <input onClick={(e) => handleClick(e,cartBook?._id,cartBook?.title,cartBook?.price)} id={cartBook?._id} type="checkbox"  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 cursor-pointer"/>
-                          <label htmlFor="red-checkbox" className="ml-2 text-sm font-medium text-yellow-900 dark:text-yellow-300">Select</label>
+                          <input
+                            onClick={(e) =>
+                              handleClick(
+                                e,
+                                cartBook?._id,
+                                cartBook?.title,
+                                cartBook?.price
+                              )
+                            }
+                            id={cartBook?._id}
+                            type='checkbox'
+                            className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 cursor-pointer'
+                          />
+                          <label
+                            htmlFor='red-checkbox'
+                            className='ml-2 text-sm font-medium text-yellow-300'
+                          >
+                            Select
+                          </label>
                         </div>
-
-
-
-                        
-
-
                       </div>
                       <div className=' flex justify-around items-center xl:h-[45%]'>
                         ₹{cartBook?.price}
@@ -190,12 +194,14 @@ export default  function Cart2() {
             </div>
             <div className=' flex justify-between items-center p-2'>
               Total Amount
-              <span>₹{subTotal + parseFloat((0.18 * subTotal).toFixed(2))}</span>
+              <span>
+                ₹{subTotal + parseFloat((0.18 * subTotal).toFixed(2))}
+              </span>
             </div>
             <div className=' flex justify-between items-center p-2'>
               <button
                 className='bg-yellow-500 hover:bg-yellow-700 w-full text-white font-bold py-2 px-4 rounded'
-                onClick={() => handlePayment(subTotal, id, email)}
+                onClick={() => handlePayment(purchasedId, email)}
               >
                 Checkout
               </button>
@@ -215,47 +221,39 @@ export default  function Cart2() {
           </div>
         </div>
 
-
-<div className="  text-white w-full text-2xl text-left mt-4">
-            Previous Order
+        <div className='  text-white w-full text-2xl text-left mt-4'>
+          Previous Order
         </div>
-          <div className="  text-white w-full text-2xl text-left mt-2 ">
-               <div class="container m-auto sm:grid grid-cols-3 gap-4 py-2 px-6 flex flex-col ">
-        
-              {
-                data?.enrollment?.map((course) => {
-                  return(
-                    <>
-                    
-                    <div
+        <div className='  text-white w-full text-2xl text-left mt-2 '>
+          <div class='container m-auto sm:grid grid-cols-3 gap-4 py-2 px-6 flex flex-col '>
+            {data?.enrollment?.map((course) => {
+              return (
+                <>
+                  <div
                     key={course.id}
-                      className="flex max-w-[18rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-slate-700">
-                      <div className="relative overflow-hidden bg-cover bg-no-repeat">
-                        <img
-                          className="rounded-t-lg h-full"
-                          src={course?.courseId?.imageURL}
-                          alt="" />
-                      </div>
-                      <div className="p-6 flex flex-col flex-start items-center justify-around ">
-                        <p className="text-base    text-neutral-600 dark:text-neutral-200 flex justify-center items-center">
-                        {course?.courseId?.title}
-                        </p>
-                        <p className="text-base text-neutral-600 dark:text-neutral-200 flex justify-center items-center">
-                        ${course?.courseId?.price}
-                        </p>
-                      </div>
+                    className='flex max-w-[18rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-slate-700'
+                  >
+                    <div className='relative overflow-hidden bg-cover bg-no-repeat'>
+                      <img
+                        className='rounded-t-lg h-full'
+                        src={course?.courseId?.imageURL}
+                        alt=''
+                      />
                     </div>
-
-                    </>
-                  )
-                })
-              }
-               
-           
-                
-
-              </div>
+                    <div className='p-6 flex flex-col flex-start items-center justify-around '>
+                      <p className='text-base text-neutral-600 dark:text-neutral-200 flex justify-center items-center'>
+                        {course?.courseId?.title}
+                      </p>
+                      <p className='text-base text-neutral-600 dark:text-neutral-200 flex justify-center items-center'>
+                        ₹{course?.courseId?.price}
+                      </p>
+                    </div>
+                  </div>
+                </>
+              )
+            })}
           </div>
+        </div>
       </>
     )
   }

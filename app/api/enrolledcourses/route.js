@@ -20,7 +20,6 @@ export async function GET(req) {
     )
   }
 }
-
 export async function POST(request) {
   try {
     await connectToDB()
@@ -28,16 +27,19 @@ export async function POST(request) {
     const reqBody = await request.json()
 
     const { userId, courseId } = reqBody
-    const course = await Courses.findOne({
-      _id: { $in: courseId },
-    })
 
-    await Enrollment.create({
-      userId,
-      courseId,
-      progressBar: course.progressBar,
-      progress: 0,
-    })
+    for (const id of courseId) {
+      const course = await Courses.findOne({
+        _id: id,
+      })
+      // This will log each course individually
+      await Enrollment.create({
+        userId,
+        courseId: id,
+        progressBar: course.progressBar,
+        progress: 0,
+      })
+    }
     return NextResponse.json({ message: 'enrollment created' }, { status: 201 })
   } catch (error) {
     return NextResponse.json(

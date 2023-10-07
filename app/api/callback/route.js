@@ -1,33 +1,26 @@
 import Payment from '@models/payment'
 import axios from 'axios'
+import SHA256 from 'crypto-js/sha256'
 export const POST = async (request) => {
   try {
     //after successful payment
     const url = new URL(request.url)
-    const id = url.searchParams.get('id')
+    const ids = url.searchParams.get('id')
     const email = url.searchParams.get('email')
-
-    const body = await request.text()
-    const dataObject = {}
-    body.split('&').forEach((pair) => {
-      const [key, value] = pair.split('=')
-      dataObject[key] = decodeURIComponent(value)
-    })
-
-    const { merchantId, transactionId } = dataObject
+    const id = ids.split(',')
+    const type = url.searchParams.get('type')
+    const merchantId = process.env.MERCHANTID
+    const transactionId = url.searchParams.get('mid')
     const saltKey = process.env.SALT_KEY
     const saltIndex = 1
     const finalXHeader =
-      require('crypto')
-        .createHash('sha256')
-        .update(`/pg/v1/status/${merchantId}/${transactionId}` + saltKey)
-        .digest('hex') +
+      SHA256(`/pg/v1/status/${merchantId}/${transactionId}` + saltKey) +
       '###' +
       saltIndex
 
     //Check Status API
     const response = await axios.get(
-      `https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/status/${merchantId}/${transactionId}`,
+      `https://api.phonepe.com/apis/hermes/pg/v1/status/${merchantId}/${transactionId}`,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -38,28 +31,60 @@ export const POST = async (request) => {
       }
     )
     const { merchantTransactionId, amount } = response.data.data
-
-    console.log(response.data.data)
     if (response.data.data.responseCode == 'SUCCESS') {
-      try {
-        const userId = email
-        const courseId = id
-        console.log(courseId)
-        const response = await fetch('/api/enrolledcourses', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ userId, courseId }),
-        })
+      if (type == 'premium') {
+        try {
+          const num = Number(id)
+          const currentDate = new Date()
+          const startDate = currentDate
+          const endDate = new Date(
+            currentDate.getFullYear(),
+            currentDate.getMonth() + num,
+            currentDate.getDate()
+          )
+          if (endDate <= currentDate) {
+            endDate.setMonth(endDate.getMonth() + num)
+          }
+          const response = await fetch('https://www.gradup.in/api/premium', {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, startDate, endDate }),
+          })
 
-        if (response.ok) {
-          console.log('enrolled successfully:')
-        } else {
-          console.log('Enrollment failed:', response.status)
+          if (response.ok) {
+            console.log('HR premium successfully:')
+          } else {
+            console.log('HR premium failed:', response.status)
+          }
+        } catch (error) {
+          console.log('Error during HR premium:', error)
         }
-      } catch (error) {
-        console.log('Error during enrollment:', error)
+      } else if (type == 'enrollment') {
+        try {
+          const userId = email
+          const courseId = id
+          console.log(courseId)
+          const response = await fetch(
+            'https://www.gradup.in/api/enrolledcourses',
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ userId, courseId }),
+            }
+          )
+
+          if (response.ok) {
+            console.log('enrolled successfully:')
+          } else {
+            console.log('Enrollment failed:', response.status)
+          }
+        } catch (error) {
+          console.log('Error during enrollment:', error)
+        }
       }
     }
 
@@ -73,7 +98,7 @@ export const POST = async (request) => {
     //
     // payment Success Response
 
-    return Response.redirect('/mycourses', 302)
+    return Response.redirect('https://www.gradup.in/mycourses', 302)
   } catch (error) {
     console.error(error)
     return new Response({ error: 'Internal server error' })

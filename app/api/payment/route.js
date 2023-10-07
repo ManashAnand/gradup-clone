@@ -1,41 +1,38 @@
-import crypto from 'crypto'
+import SHA256 from 'crypto-js/sha256'
 export const POST = async (request) => {
-  const { amount, id, email } = await request.json()
-
+  const { amount, id, email, type } = await request.json()
   const amountInCents = Number(amount) * 100
+  const ids = id.join(',')
+  console.log(amount, id, email, type)
+
   // Function to generate a unique merchantTransactionId
   function generateMerchantTransactionId() {
     const timestamp = Date.now()
     const randomId = Math.floor(Math.random() * 900000000) + 1000000000 // Generate a random 6-digit number
-    return `MT${timestamp}${randomId}`
+    return `MT${timestamp}${randomId}`.toString()
   }
-
+  const mtID = generateMerchantTransactionId()
   try {
     const data = {
       merchantId: process.env.MERCHANTID,
-      merchantTransactionId: generateMerchantTransactionId(),
+      merchantTransactionId: mtID,
       merchantUserId: 'MUID123',
       amount: amountInCents,
-      redirectUrl: `/callback?id=${id}&email=${email}`,
-      redirectMode: 'POST',
-      callbackUrl: 'api/callback',
-      mobileNumber: '9999999999',
+      redirectUrl: 'https://www.gradup.in/mycourses',
+      redirectMode: 'REDIRECT',
+      callbackUrl: `https://www.gradup.in/api/callback?id=${ids}&email=${email}&mid=${mtID}&type=${type}`,
       paymentInstrument: {
         type: 'PAY_PAGE',
       },
     }
-
+    const jsondata = JSON.stringify(data)
     const saltKey = process.env.SALT_KEY
     const saltIndex = 1
-    const encode = Buffer.from(JSON.stringify(data), 'utf8').toString('base64')
+    const encode = Buffer.from(jsondata).toString('base64')
     const string = encode + '/pg/v1/pay' + saltKey
-    const sha256 = require('crypto')
-      .createHash('sha256')
-      .update(string)
-      .digest('hex')
-
+    const sha256 = SHA256(string).toString()
     const finalXHeader = sha256 + '###' + saltIndex
-    const apiUrl = 'https://api.phonepe.com/apis/hermes'
+    const apiUrl = 'https://api.phonepe.com/apis/hermes/pg/v1/pay'
     const requestData = {
       request: encode,
     }
@@ -48,12 +45,10 @@ export const POST = async (request) => {
       headers: headers,
       body: JSON.stringify(requestData),
     })
-
     if (!response.ok) {
-      throw new Error(`Failed to make a POST request to ${url}`)
+      throw new Error(`Failed to make a POST request to ${apiUrl}`)
     }
     const responseData = await response.json()
-    console.log('**************', responseData)
 
     //Redirect the user to the PhonePe payment page
     if (responseData.data && responseData.data.instrumentResponse) {
@@ -65,7 +60,7 @@ export const POST = async (request) => {
       console.error('Failed to initiate PhonePe payment.')
     }
   } catch (err) {
-    // console.log(err);
+    console.log(err)
     return new Response(err)
   }
 }

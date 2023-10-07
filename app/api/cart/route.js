@@ -19,20 +19,17 @@ export async function GET(req) {
     const coursesData = await Courses.find({ _id: { $in: cartIds } })
       .select('_id imageURL price title author')
       .populate('author')
-    const enrollment = await Enrollment.find({ userId: email }).populate(
-      'courseId'
-    ).select('price title imageURL')
-    
-    console.log(enrollment)
+    const enrollment = await Enrollment.find({ userId: email })
+      .populate('courseId')
+      .select('price title imageURL')
+
     const data = {
       course: coursesData,
       enrollment,
     }
-    console.log(data)
 
     return NextResponse.json(data, { status: 200 })
   } catch (error) {
-    console.log(error)
     return NextResponse.json(
       { error: 'Error while getting courses' },
       { status: 500 }

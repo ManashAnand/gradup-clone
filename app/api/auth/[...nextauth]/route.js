@@ -98,8 +98,6 @@ const handler = NextAuth({
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials, req) {
-        console.log(credentials)
-
         try {
           await connectToDB()
 
@@ -174,10 +172,8 @@ const handler = NextAuth({
         session = Object.assign({}, session, {
           access_token: token.access_token,
         })
-        console.log(session)
       }
       session.user.id = sessionUser._id.toString()
-      console.log(session.user)
 
       return session
     },
