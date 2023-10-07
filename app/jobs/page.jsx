@@ -37,7 +37,7 @@ function Page({ index, setPage }) {
   const [searchresults, setSearchresults] = useState([])
   const [search, setSearch] = useState('')
   return (
-    <section className='w-full'>
+    <section className='w-screen px-16'>
       <div className={styles["headerpos"]}>
         <div>
           <div className={`font-bold ${styles["jobpos"]}`}>

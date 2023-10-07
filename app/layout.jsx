@@ -38,6 +38,7 @@ const Layout = ({ children }) => {
       `,
           }}
         ></script>
+        <meta name="p:domain_verify" content="eaddbbae73971743e1464497eadd174d"/>
       </head>
       <body>
         <Provider>
