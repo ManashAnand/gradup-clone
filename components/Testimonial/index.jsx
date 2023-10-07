@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Card, Grid, Row, Text } from '@nextui-org/react'
 import SimpleImageSlider from 'react-simple-image-slider'
+import styles from "./styles.module.css"
 
 const Testimonial = () => {
   const [index, setIndex] = useState(0)
@@ -61,21 +62,20 @@ const Testimonial = () => {
   ]
   return (
     <div>
-      <p className='text-center textnew text-white text-3xl font-bold marginset3'>
+      <p className={`text-center ${styles["textnew"]} text-white text-3xl font-bold ${styles["marginset3"]}`}>
         What <span className='text-red-400'>our Interns</span>
         <br />
         have to say ?
       </p>
 
-      <div className='  w-full slideshow'>
+      <div className={`w-full ${styles.slideshow}`}>
         <div
           style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-          className='slideshowSlider'
+          className={`${styles.slideshowSlider}`}
         >
-          {/* <div > */}
           {list.map((item, i) => {
             return (
-              <div className='slide' key={i}>
+              <div className={styles.slide} key={i}>
                 <Card css={{ backgroundColor: 'rgba(28, 73, 128, 0.50)' }}>
                   <Card.Body
                     css={{
@@ -99,11 +99,11 @@ const Testimonial = () => {
           })}
           {/* </div> */}
         </div>
-        <div className='slideshowDots'>
+        <div className={styles.slideshowDots}>
           {list.map((_, idx) => (
             <div
               key={idx}
-              className={`slideshowDot${index === idx ? ' active' : ''}`}
+              className={`${styles.slideshowDot} ${index === idx ? ' active' : ''}`}
               onClick={() => {
                 setIndex(idx)
               }}

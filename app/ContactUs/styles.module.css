@@ -1,0 +1,105 @@
+.textnew {
+  font-family: "Poppins", sans-serif;
+}
+.animate-charcter {
+  background-image: linear-gradient(
+    -225deg,
+    #2390f7 0%,
+    #f40dcd 29%,
+    #edf75c 67%,
+    #63bef7 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-emphasis-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.containercontact {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-width: 355px;
+}
+
+.form-container {
+  display: flex;
+}
+
+.left-container {
+  flex: 1;
+  height: 480px;
+  background-color: rgb(14, 46, 95);
+}
+
+.left-container {
+  display: flex;
+  flex: 1;
+  height: 480px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.left-inner-container {
+  width: 85%;
+  text-align: center;
+  line-height: 22px;
+}
+
+.left-container p {
+  font-size: 0.9rem;
+}
+
+.textnew {
+  font-family: "Poppins", sans-serif;
+}
+
+.h2contact {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+}
+.right-container {
+  display: flex;
+  flex: 1;
+  height: 480px;
+  background: url("/assets/images/con1.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-inner-container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .left-inner-container {
+    padding: 3rem;
+  }
+  .right-container {
+    display: none;
+  }
+}

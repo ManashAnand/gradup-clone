@@ -1,0 +1,114 @@
+.headingbox .filter:before {
+  content: "";
+  background: url("/assets/images/divback.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.marginright {
+  margin-right: 1rem;
+}
+
+.margintop {
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 570px) {
+  .margintop {
+    margin-top: 1rem;
+  }
+  .marginright {
+    margin-right: 0;
+  }
+}
+
+.headingBox {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.headingbox {
+  background: linear-gradient(
+    320deg,
+    #498cbd 0%,
+    rgba(11, 15, 112, 0.98) 10.32%,
+    rgba(15, 26, 122, 0.97) 17.79%,
+    rgba(11, 31, 111, 0.96) 27.13%,
+    rgba(13, 32, 110, 0.95) 50.9%,
+    rgba(4, 41, 101, 0.94) 100%
+  );
+  position: relative;
+  padding: 30px;
+}
+
+.flexBox {
+  display: flex;
+}
+
+.textform {
+  font-family: "Inter", sans-serif;
+}
+
+.justice {
+  text-align: justify;
+}
+
+.item1 {
+  width: 50%;
+}
+.item2 {
+  margin-left: 1rem;
+  width: 50%;
+}
+@media screen and (max-width: 1130px) {
+  .item1,
+  .item2 {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .flexBox {
+    display: block;
+  }
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.animate-charcter {
+  background-image: linear-gradient(
+    -225deg,
+    #2390f7 0%,
+    #f40dcd 29%,
+    #edf75c 67%,
+    #63bef7 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-emphasis-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+}
+
+@media screen and (max-width: 800px) {
+  .headingBox {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4vh;
+  }
+}

@@ -10,6 +10,7 @@ import { EditIcon } from '@styles/EditIcon'
 import { DeleteIcon } from '@styles/DeleteIcon'
 import useSWR from 'swr'
 import Spinner from '@components/Spinner'
+import styles from './styles.module.css'
 // const HRSignup = () => {
 //   return (
 //     <div>HRSignup</div>
@@ -165,7 +166,7 @@ export default function HRSignup() {
   }
 
   return !posted ? (
-    <div className='bg-blue-100 text-left pb-10 pt-2 px-6 mt-10 mb-20 rounded-xl main-login'>
+    <div className={`bg-blue-100 text-left pb-10 pt-2 px-6 mt-10 mb-20 rounded-xl ${styles["main-login"]}`}>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Image
           src='/assets/images/logo-for-website.png'
@@ -190,7 +191,7 @@ export default function HRSignup() {
             className='h-[776px]'
           ></img>
         </div>
-        <div className='side1 border'>
+        <div className={`${styles["side1"]} border`}>
           <form onSubmit={addHR}>
             <div className='mb-4'>
               <label
@@ -219,7 +220,7 @@ export default function HRSignup() {
                 type='submit'
                 onClick={handleGetOTP}
                 disabled={message ? true : false}
-                className=' p-2 textnew font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl'
+                className={`p-2 ${styles["textnew"]} font-semibold border-violet-400 border-2 text-center bg-white hover:border-violet-700 text-violet-700 rounded-xl`}
               >
                 {otp}
               </button>

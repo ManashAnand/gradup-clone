@@ -1,0 +1,161 @@
+.databox {
+  margin-top: 10vh;
+  height: 40vh;
+  color: deepskyblue;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  background: linear-gradient(
+    320deg,
+    #1b126f 0%,
+    rgba(13, 16, 98, 0.98) 10.32%,
+    rgba(15, 26, 122, 0.97) 17.79%,
+    rgba(11, 31, 111, 0.96) 27.13%,
+    rgba(13, 32, 110, 0.95) 50.9%,
+    rgba(4, 41, 101, 0.94) 100%
+  );
+  position: relative;
+}
+
+.app {
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+}
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(9, 13, 52);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+}
+
+.databox .filter {
+  background: url("/assets/images/divback.png") no-repeat;
+  background-size: fit;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.1;
+}
+
+.filter:before {
+  content: "";
+  background: url("/assets/images/divback.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.data1 {
+  background: linear-gradient(
+    to bottom right,
+    rgb(251, 70, 203),
+    rgb(249, 53, 89)
+  );
+  border-radius: 10px;
+}
+
+.data2 {
+  background: linear-gradient(
+    to bottom right,
+    rgb(249, 65, 194),
+    rgb(9, 106, 141)
+  );
+  border-radius: 10px;
+}
+.data3 {
+  background: linear-gradient(
+    to bottom right,
+    rgb(55, 156, 251),
+    rgb(230, 12, 245)
+  );
+  border-radius: 10px;
+}
+.data4 {
+  background: linear-gradient(
+    to bottom right,
+    rgb(244, 96, 202),
+    rgb(240, 22, 120)
+  );
+  border-radius: 10px;
+}
+
+.textnew {
+  font-family: "Poppins", sans-serif;
+}
+
+.hide1 {
+  display: none;
+}
+
+.appbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.box6:hover,
+.box7:hover,
+.box8:hover,
+.box9:hover {
+  transition: transform 0.3s ease-in;
+}
+
+.box6:hover,
+.box7:hover,
+.box8:hover,
+.box9:hover {
+  transform: scale(1.1);
+}
+
+.textform {
+  font-family: "Inter", sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+  .hide {
+    display: none;
+  }
+  .appbox {
+    margin: auto;
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .appbox {
+    display: grid;
+    margin: auto 5vw auto 10vw;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+@media screen and (max-width: 570px) {
+  .appbox {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .box9,
+  .box8,
+  .box7,
+  .box6 {
+    margin: auto;
+    width: 60vw;
+  }
+}

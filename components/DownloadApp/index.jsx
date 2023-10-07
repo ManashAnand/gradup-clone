@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from "./styles.module.css"
 
 export default function Download() {
   return (
@@ -13,7 +14,7 @@ export default function Download() {
         alt='mobile-app'
       ></img>
       <div className='flex flex-col'>
-        <p className='textform text-left ml-4 text-lg text-rose-50'>
+        <p className={`${styles["textform"]} text-left ml-4 text-lg text-rose-50`}>
           Apply for Jobs and Internships, enhance your careers by our upskilling
           courses & trainings modules and do much more from the gadget you adore
           - <span className='font-bold text-red-50'>Your Smartphone</span>{' '}

@@ -7,6 +7,7 @@ import Select from 'react-select'
 import Spinner from '@components/Spinner'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import styles from "./styles.module.css"
 
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
@@ -37,20 +38,20 @@ function Page({ index, setPage }) {
   const [search, setSearch] = useState('')
   return (
     <section className='w-full'>
-      <div className='headerpos'>
+      <div className={styles["headerpos"]}>
         <div>
-          <div className='font-bold jobpos'>
-            <h1 className='text-white sizetext text-left'>
-              Find your <span className='animate-charcter'>job</span> &
+          <div className={`font-bold ${styles["jobpos"]}`}>
+            <h1 className={`text-white ${styles["sizetext"]} text-left`}>
+              Find your <span className={styles["animate-charcter"]}>job</span> &
             </h1>
             <h1
               style={{ overflow: 'hidden' }}
-              className='text-blue-400 sizetext text-left'
+              className={`text-blue-400 ${styles["sizetext"]} text-left`}
             >
               grab
               <span className='underline decoration-white underline-offset-8'>
                 {' '}
-                the<span className='animate-charcter'> opportunities</span>
+                the<span className={styles["animate-charcter"]}> opportunities</span>
               </span>
             </h1>
             <p className='mt-10 text-xl text-white text-left'>
@@ -63,18 +64,20 @@ function Page({ index, setPage }) {
           </div> */}
         </div>
         <img
-          className='giphy mt-6'
+          className={`${styles["giphy"]} mt-6`}
           src='assets/images/image.gif'
           alt='work-img'
         ></img>
       </div>
-      <div></div>
+      <div>
+        <p className={styles["heading"]}></p>
+      </div>
       {/* <div className="sortpos">
             <p className="-ml-10 text-white text-sm">Sort by:</p>
             <button className="btn6">Recently Released</button>
             <button className="btn6">Alphabetical</button>
           </div> */}
-      <div className='main-content'>
+      <div className={styles["main-content"]}>
         <FilterJobs
           setSelectedCity={setSelectedCity}
           setSelectedTitle={setSelectedTitle}
@@ -111,14 +114,42 @@ export default function App() {
   const [pageIndex, setPageIndex] = useState(1)
   return (
     <div className=''>
-      <div className='mb-10'>
-        <div className='justify-center flex-center'>
-          <Page index={pageIndex} setPage={setPageIndex} />
+      {session?.user ? (
+        <>
+          <div className='mb-10'>
+            <div className='justify-center flex-center'>
+              <Page index={pageIndex} setPage={setPageIndex} />
+            </div>
+            <div style={{ display: 'none' }}>
+              <Page index={pageIndex + 1} setPage={setPageIndex} />
+            </div>
+            {/* <div className="flex buttonpos">
+        <button style={{backgroundColor:"#0076ce"}} class="btn2" onClick={() => setPageIndex(pageIndex - 1)}>
+          Prev
+        </button>
+        <button style={{backgroundColor:"#0076ce"}} class="btn3" onClick={() => setPageIndex(pageIndex + 1)}>
+          Next
+        </button>
+      </div> */}
+          </div>
+        </>
+      ) : (
+        <div className=''>
+          {providers &&
+            Object.values(providers).map((provider) => (
+              <button
+                type='button'
+                key={provider.name}
+                onClick={() => {
+                  signIn(provider.id)
+                }}
+                className={`rounded-2xl my-5 py-1 px-6 border-2 ${styles["textnew"]} border-sky-500 bg-white text-sky-700 hover:bg-sky-400 hover:text-white hover:border-white`}
+              >
+                Sign In to access jobs
+              </button>
+            ))}{' '}
         </div>
-        <div style={{ display: 'none' }}>
-          <Page index={pageIndex + 1} setPage={setPageIndex} />
-        </div>
-      </div>
+      )}
     </div>
   )
 }

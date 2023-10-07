@@ -59,9 +59,6 @@ const Certificate = async () => {
                 <Image width={350} height={350} src={Sponser} className=' -translate-y-8' alt="non working"/>
                 <Image width={200} height={150} src={CeoSign} className=' ' alt="non working"/>
                 </div>
-                
-
-
             </div>
      </div>
     </>

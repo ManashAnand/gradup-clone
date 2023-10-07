@@ -1,11 +1,12 @@
 import React from 'react'
+import styles from './styles.module.css'
 
 const page = () => {
   return (
-    <div  className='w-screen headingbox2'>
+    <div  className={`w-screen ${styles["headingbox2"]}`}>
     <div className='my-10 w-4/5 mx-auto'>
-        <p className='text-3xl underline decoration-violet-400 underline-offset-8 textnew text-white'>GradUp Blogs</p>
-        <p className='textnew text-xl text-white mt-4'>Be the first to know about our founder, mentors and updates on hiring opportunities, exams, & college events and ace your interviews with placement tips.</p>
+        <p className={`text-3xl underline decoration-violet-400 underline-offset-8 ${styles["textnew"]} text-white`}>GradUp Blogs</p>
+        <p className={`${styles["textnew"]} text-xl text-white mt-4`}>Be the first to know about our founder, mentors and updates on hiring opportunities, exams, & college events and ace your interviews with placement tips.</p>
         {/* <img className='mt-10 mx-auto h-60' width="400" src="/assets/images/blog.png"></img> */}
     </div>
     <div className='flex flex-col justify-center items-center my-6'>

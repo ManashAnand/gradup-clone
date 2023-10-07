@@ -1,0 +1,93 @@
+.achievementbox {
+  height: 50vh;
+}
+
+.datamile1 {
+  background: linear-gradient(
+    to bottom right,
+    rgb(251, 76, 76),
+    rgb(248, 86, 199)
+  );
+  border-radius: 10px;
+  width: 13rem;
+}
+
+.datamile2 {
+  background: linear-gradient(
+    to bottom right,
+    rgb(24, 50, 252),
+    rgb(25, 255, 98)
+  );
+  border-radius: 10px;
+  width: 13rem;
+}
+
+.milestones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.achievementbox {
+  margin-top: 1vh;
+  height: 60vh;
+  color: deepskyblue;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  background: linear-gradient(
+    320deg,
+    #191574 0%,
+    rgba(11, 15, 112, 0.98) 10.32%,
+    rgba(15, 26, 122, 0.97) 17.79%,
+    rgba(11, 31, 111, 0.96) 27.13%,
+    rgba(13, 32, 110, 0.95) 50.9%,
+    rgba(4, 41, 101, 0.94) 100%
+  );
+  position: relative;
+}
+
+.achievementbox .filter1 {
+  background: url("/assets/images/divback.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.1;
+}
+
+@media screen and (max-width: 1130px) {
+  .achievementbox {
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .achievementbox {
+    height: 72vh;
+  }
+  .milestones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .achievementbox {
+    height: 65vh;
+  }
+
+  .milestones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .datamile1,
+  .datamile2 {
+    width: 10.5rem;
+  }
+}

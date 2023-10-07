@@ -3,10 +3,11 @@ import {useSession} from "next-auth/react";
 import useSWR from "swr";
 import Spinner from "@components/Spinner"
 import AlumniFilter from '@components/alumni/AlumniFilter'
-import AlumniShow from '@components/alumni/AlumniShow'
+import AlumniShow from  '@components/alumni/AlumniShow'
 import React from 'react'
 import { useState } from 'react'
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import styles from "./styles.module.css"
 
 const page = () => {
     const [selectedCollege, setSelectedCollege]=useState()
@@ -20,7 +21,7 @@ const page = () => {
   if (!data) return <div className="my-60"><Spinner/></div>;
   return (
     <>
-      <div className="alumnitop w-full mt-6">
+      <div className={`${styles["alumnitop"]} w-full mt-6`}>
         <div className="my-auto">
          <p className="text-5xl text mb-4">Alumni Network</p>
          <p><em>"Nobody is bothered about its institution more than<br/>its Alumni"</em></p>

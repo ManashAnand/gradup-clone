@@ -3,30 +3,30 @@ import React from "react"
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import EmailIcon from '@mui/icons-material/Email';
 import BusinessIcon from '@mui/icons-material/Business';
+import styles from './styles.module.css'
 export default function Contact() {
   return (
     <>
-      <p className='text-center textnew text-white mt-10 mb-6 text-5xl font-semibold animate-charcter'>Get in touch with us !</p>
+      <p className={`text-center ${styles["textnew"]} text-white mt-10 mb-6 text-5xl font-semibold ${styles["animate-charcter"]}`}>Get in touch with us !</p>
 
-      <div class="containercontact mb-24 mt-12">
-        <div class="form-container">
-          <div class="left-container">
-            <div class="left-inner-container">
-              <h2 className="h2contact textnew mt-5 underline decoration-2 decoration-white underline-offset-4">Let's Chat</h2>
+      <div class={`${styles["containercontact"]} mb-24 mt-12`}>
+        <div class={styles["form-container"]}>
+          <div class={styles["left-container"]}>
+            <div class={styles["left-inner-container"]}>
+              <h2 className={`${styles["h2contact"]} ${styles["textnew"]} mt-5 underline decoration-2 decoration-white underline-offset-4`}>Let's Chat</h2>
               <div className="text-white mt-6">
-                <div className="mb-2 textnew flex flex-col text-sm"><PhoneAndroidIcon sx={{ margin: "auto" }} color="white" fontSize="small" />+91-7428376300</div>
+                <div className={`mb-2 ${styles["textnew"]} flex flex-col text-sm`}><PhoneAndroidIcon sx={{ margin: "auto" }} color="white" fontSize="small" />+91-7428376300</div>
                 <hr />
-                <div className="mt-2 textnew mb-2 flex flex-col text-sm"><EmailIcon sx={{ margin: "auto" }} color="white" fontSize="small" />info@gradup.in </div>
+                <div className={`mt-2 ${styles["textnew"]} mb-2 flex flex-col text-sm`}><EmailIcon sx={{ margin: "auto" }} color="white" fontSize="small" />info@gradup.in </div>
                 <hr />
-                <div className="text-sm textnew my-2 flex flex-col"><BusinessIcon sx={{ margin: "auto" }} color="white" fontSize="small" /><div className="decoration-white underline underline-offset-4 mb-2">Head Office</div>UG Floor, Regus, TOWER-2,<br />Assotech Business Cresterra<br />Plot No.22, Sector 135, <br />Noida, Uttar Pradesh, 201301</div>
+                <div className={`text-sm ${styles["textnew"]} my-2 flex flex-col`}><BusinessIcon sx={{ margin: "auto" }} color="white" fontSize="small" /><div className="decoration-white underline underline-offset-4 mb-2">Head Office</div>UG Floor, Regus, TOWER-2,<br />Assotech Business Cresterra<br />Plot No.22, Sector 135, <br />Noida, Uttar Pradesh, 201301</div>
                 <hr />
-                <div className="text-sm textnew my-2 flex flex-col"><BusinessIcon sx={{ margin: "auto" }} color="white" fontSize="small" /><div className="decoration-white underline underline-offset-4 mb-2">Branch Office</div>4 Fairlie Place, HMP House,<br />1st Floor, Room No 113<br />Kolkata, 700001</div>
+                <div className={`text-sm ${styles["textnew"]} my-2 flex flex-col`}><BusinessIcon sx={{ margin: "auto" }} color="white" fontSize="small" /><div className="decoration-white underline underline-offset-4 mb-2">Branch Office</div>4 Fairlie Place, HMP House,<br />1st Floor, Room No 113<br />Kolkata, 700001</div>
               </div>
             </div>
           </div>
-          <div class="right-container">
-            <div class="right-inner-container">
-
+          <div class={styles["right-container"]}>
+            <div class={styles["right-inner-container"]}>
             </div>
           </div>
         </div>
