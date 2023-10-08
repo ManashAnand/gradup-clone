@@ -113,18 +113,21 @@ export default function ShowJobs({ selectedCity, selectedTitle, salaryExp, searc
   return (
     <div>
       <div className="justify-center">
-        <Page
-          // index={pageIndex}
-          selectedCity={selectedCity}
-          selectedTitle={selectedTitle}
-          salaryExp={salaryExp}
-          search={search}
-          index={index}
-          searchresults={searchresults}
-          setSearchresults={setSearchresults}
-          jobs={jobs}
-          loading={loading}
-        />
+      <div className="border-10 border-red-600">
+          <Page
+            // index={pageIndex}
+            selectedCity={selectedCity}
+            selectedTitle={selectedTitle}
+            salaryExp={salaryExp}
+            search={search}
+            index={index}
+            searchresults={searchresults}
+            setSearchresults={setSearchresults}
+            jobs={jobs}
+            loading={loading}
+          />
+
+      </div>
       </div>
       <div style={{ display: "none" }}>
         <Page

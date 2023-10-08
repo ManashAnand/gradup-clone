@@ -15,6 +15,8 @@ import FilterInternships from "@components/internships/FilterInternships";
 import ShowInternships from "@components/internships/ShowInternships";
 import FilterStartups from "@components/startups/FilterStartups";
 import ShowStartups from "@components/startups/ShowStartups";
+import styles from "./styles.module.css"
+
 // const cityList = [
 //   { value: "delhi", label: "delhi" },
 //   { value: "mumbai", label: "mumbai" },
@@ -68,14 +70,18 @@ function Page({ index , setPage}) {
             <button className="btn6">Recently Released</button>
             <button className="btn6">Alphabetical</button>
           </div> */}
-      <div className="main-content">
-        <FilterStartups setSelectedCity={setSelectedCity}
+      <div className={`${styles["main-content"]} `}>
+      <div className=" w-[20rem] rounded-md bg-gradient-to-br from-[rgba(69,146,253,.266)] via-[rgba(248,199,234,.78)] to-[rgba(0,120,234,.16)] via-[rgba(239,203,227,.712)] to-[rgba(66,169,249,.19)] via-[rgba(38,134,200,.084)] to-[rgba(152,198,224,.37)] via-[rgba(176,227,255,.378)] to-[rgba(9,129,197,0)] via-[#ffc8e3]">
+
+        <FilterStartups
+        setSelectedCity={setSelectedCity}
   setSelectedTitle={setSelectedTitle}
   setSalaryExp={setSalaryExp}
   selectedCity={selectedCity}
   selectedTitle={selectedTitle}
   setPage={setPage}
   salaryExp={salaryExp} />
+      </div>
         <ShowStartups selectedCity={selectedCity} selectedTitle={selectedTitle} salaryExp={salaryExp} search={search} index={index} setPage={setPage}/>
       </div>
     </section>

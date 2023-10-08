@@ -100,7 +100,7 @@ export default function Courses({ params }) {
 
             {/* till more */}
             <div className=' sm:flex  justify-between items-center font-bold mb-4  p-4 rounded-md mt-2  '>
-              <div className='  flex flex-start justify-between mb-1 '>
+              <div className='  flex flex-start md:justify-between justify-start gap-4 md:gap-0 mb-1 '>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -117,7 +117,7 @@ export default function Courses({ params }) {
                 </svg>
                 {data?.rating != '' ? data?.rating : '4.9'} Rating
               </div>
-              <div className=' flex flex-start justify-between mb-1'>
+              <div className=' flex flex-start md:justify-between justify-start gap-4 md:gap-0 mb-1 '>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -135,7 +135,7 @@ export default function Courses({ params }) {
                 {data?.registeredUsers != '' ? data?.registeredUsers : '50'}+
                 Enrolled
               </div>
-              <div className='flex flex-start justify-between mb-1'>
+              <div className='flex flex-start md:justify-between justify-start gap-4 md:gap-0 mb-1 '>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -152,7 +152,7 @@ export default function Courses({ params }) {
                 </svg>
                 Placement Assistance
               </div>
-              <div className=' flex flex-start justify-between mb-1'>
+              <div className=' flex flex-start md:justify-between justify-start gap-4 md:gap-0 mb-1 '>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -169,7 +169,7 @@ export default function Courses({ params }) {
                 </svg>
                 Flexible schedule
               </div>
-              <div className=' flex flex-start justify-between mb-1'>
+              <div className=' flex flex-start md:justify-between justify-start gap-4 md:gap-0 mb-1 '>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -186,7 +186,7 @@ export default function Courses({ params }) {
                 </svg>
                 Earn credits
               </div>
-              <div className=' flex flex-start justify-between mb-1'>
+              <div className=' flex flex-start md:justify-between justify-start gap-4 md:gap-0 mb-1 '>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -202,7 +202,7 @@ export default function Courses({ params }) {
                   />
                 </svg>
 
-                <div className='ml-2'>10hrs</div>
+                <div className=''>10hrs</div>
               </div>
             </div>
           </div>

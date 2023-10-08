@@ -77,25 +77,29 @@ function Page({ index, setPage }) {
             <button className="btn6">Recently Released</button>
             <button className="btn6">Alphabetical</button>
           </div> */}
-      <div className={styles["main-content"]}>
-        <FilterJobs
-          setSelectedCity={setSelectedCity}
-          setSelectedTitle={setSelectedTitle}
-          setSalaryExp={setSalaryExp}
-          selectedCity={selectedCity}
-          selectedTitle={selectedTitle}
-          setPage={setPage}
-          salaryExp={salaryExp}
-        />
-        <ShowJobs
-          selectedCity={selectedCity}
-          selectedTitle={selectedTitle}
-          salaryExp={salaryExp}
-          search={search}
-          index={index}
-          setPage={setPage}
-        />
-      </div>
+          
+            <div className={styles["main-content"]}>
+            <div className=" -translate-x-10 sm:-translate-x-0">
+
+              <FilterJobs
+                setSelectedCity={setSelectedCity}
+                setSelectedTitle={setSelectedTitle}
+                setSalaryExp={setSalaryExp}
+                selectedCity={selectedCity}
+                selectedTitle={selectedTitle}
+                setPage={setPage}
+                salaryExp={salaryExp}
+              />
+            </div>
+              <ShowJobs
+                selectedCity={selectedCity}
+                selectedTitle={selectedTitle}
+                salaryExp={salaryExp}
+                search={search}
+                index={index}
+                setPage={setPage}
+              />
+            </div>
     </section>
   )
 }

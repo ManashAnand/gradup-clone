@@ -204,7 +204,7 @@ const FilterStartups = ({
           ></input>
         </div>
         <div className="mt-4 text-center w-full">
-          <div className="salary">{`MIN SALARY - Rs. ${salaryExp}`}</div>
+          <div className="salary text-white">{`MIN SALARY - Rs. ${salaryExp}`}</div>
         </div>
       </div>
     </div>

@@ -27,7 +27,7 @@
 @media screen and (max-width: 800px) {
   .filterbox {
     margin: -15vh auto 10vh auto;
-    width: 80vw;
+    width: 80vw !important;
   }
 }
 
