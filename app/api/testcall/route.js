@@ -4,10 +4,10 @@ export const POST = async (request) => {
   try {
     //after successful payment
     const url = new URL(request.url)
-    const ids = '12'
+    const ids = 'create my resume request'
     const email = url.searchParams.get('email')
     const id = ids.split(',')
-    const type = 'premium'
+    const type = 'resume'
     if (type == 'premium') {
       const num = Number(id)
       const currentDate = new Date()
@@ -36,6 +36,26 @@ export const POST = async (request) => {
         console.log('HR premium failed:', response.status)
       }
       return NextResponse.json({ message: 'Hurray' }, { status: 200 })
+    } else {
+      try {
+        // call mail
+        const response = await fetch('http://localhost:3000/api/mailer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, id }),
+        })
+
+        if (response.ok) {
+          console.log('mail sent successfully:')
+          redirect = 'cart'
+        } else {
+          console.log('mail failed:', response.status)
+        }
+      } catch (error) {
+        console.log('Error during sending mail:', error)
+      }
     }
   } catch (error) {
     console.error(error)

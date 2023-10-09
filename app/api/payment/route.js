@@ -3,7 +3,6 @@ export const POST = async (request) => {
   const { amount, id, email, type } = await request.json()
   const amountInCents = Number(amount) * 100
   const ids = id.join(',')
-  console.log(amount, id, email, type)
 
   // Function to generate a unique merchantTransactionId
   function generateMerchantTransactionId() {

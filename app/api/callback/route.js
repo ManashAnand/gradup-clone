@@ -30,6 +30,7 @@ export const POST = async (request) => {
         },
       }
     )
+    let redirect = ''
     const { merchantTransactionId, amount } = response.data.data
     if (response.data.data.responseCode == 'SUCCESS') {
       if (type == 'premium') {
@@ -55,6 +56,7 @@ export const POST = async (request) => {
 
           if (response.ok) {
             console.log('HR premium successfully:')
+            redirect = 'cart'
           } else {
             console.log('HR premium failed:', response.status)
           }
@@ -65,7 +67,6 @@ export const POST = async (request) => {
         try {
           const userId = email
           const courseId = id
-          console.log(courseId)
           const response = await fetch(
             'https://www.gradup.in/api/enrolledcourses',
             {
@@ -79,11 +80,32 @@ export const POST = async (request) => {
 
           if (response.ok) {
             console.log('enrolled successfully:')
+            redirect = 'mycourses'
           } else {
             console.log('Enrollment failed:', response.status)
           }
         } catch (error) {
           console.log('Error during enrollment:', error)
+        }
+      } else {
+        try {
+          // call mail
+          const response = await fetch('https://www.gradup.in/api/mailer', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, id }),
+          })
+
+          if (response.ok) {
+            console.log('mail sent successfully:')
+            redirect = 'cart'
+          } else {
+            console.log('mail failed:', response.status)
+          }
+        } catch (error) {
+          console.log('Error during sending mail:', error)
         }
       }
     }
@@ -98,7 +120,7 @@ export const POST = async (request) => {
     //
     // payment Success Response
 
-    return Response.redirect('https://www.gradup.in/mycourses', 302)
+    return Response.redirect(`https://www.gradup.in/${redirect}`, 302)
   } catch (error) {
     console.error(error)
     return new Response({ error: 'Internal server error' })
