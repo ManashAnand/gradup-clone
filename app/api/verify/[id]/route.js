@@ -4,7 +4,7 @@ import HR from '@models/hr'
 import OTP from '@models/otp'
 import mongoose from 'mongoose'
 import { NextResponse } from 'next/server'
-
+/*
 export const POST = async (request, { params }) => {
   const data = await request.json()
 
@@ -35,9 +35,8 @@ export const POST = async (request, { params }) => {
     )
   }
 }
+**/
 
-{
-  /**
 export const POST = async (request, { params }) => {
   const data = await request.json()
   const submittedOTP = data.otp
@@ -84,7 +83,4 @@ export const POST = async (request, { params }) => {
       }
     )
   }
-}
-
- */
 }

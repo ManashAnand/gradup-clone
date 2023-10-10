@@ -1,21 +1,17 @@
 'use client'
-
 import CourseRoutingBtn from '@components/CartItems/CourseRoutingBtn'
 import useSWR from 'swr'
 import Spinner from '@components/Spinner'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
 import { useState } from 'react'
-
 async function fetcher(url) {
   const res = await fetch(url)
   return await res.json()
 }
-
 export default function Cart2() {
   const [subTotal, setSubTotal] = useState(0)
   const [purchasedId, setPurchasedId] = useState([])
-
   const router = useRouter()
   const { data: session } = useSession()
   const email = session?.user.email
@@ -23,7 +19,6 @@ export default function Cart2() {
     `/api/cart?email=${session?.user.email}`,
     fetcher
   )
-
   if (isLoading) {
     return <Spinner />
   }
@@ -31,8 +26,7 @@ export default function Cart2() {
     // const subTotal = data?.course
     //   .reduce((sum, book) => sum + book.price, 0)
     //   .toFixed(2)
-
-    const handleDeleteOneItem = async (id, email) => {
+    const handleDeleteOneItem = async (id) => {
       try {
         const deleteUrl = `/api/cart?courseId=${id}&email=${email}`
 

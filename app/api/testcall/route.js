@@ -7,6 +7,8 @@ export const POST = async (request) => {
     const ids = 'create my resume request'
     const email = url.searchParams.get('email')
     const id = ids.split(',')
+    const mid = 'adsfasdfa'
+    const amount = 2000
     const type = 'resume'
     if (type == 'premium') {
       const num = Number(id)
@@ -39,12 +41,13 @@ export const POST = async (request) => {
     } else {
       try {
         // call mail
+        console.log(email, id)
         const response = await fetch('http://localhost:3000/api/mailer', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ email, id }),
+          body: JSON.stringify({ email, id, mid, amount }),
         })
 
         if (response.ok) {

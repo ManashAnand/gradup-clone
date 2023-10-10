@@ -176,7 +176,7 @@ export default function Student() {
         Employment enhancement programs featuring tailor-made modules aimed at
         advancing one's career through specialized career services
       </Typography>
-      <div className='flex flex-wrap gap-10 justify-evenly mt-10'>
+      <div className='flex flex-wrap gap-10 justify-evenly mt-10 p-2'>
         {cards.map((card, index) => (
           <div key={index} className='rounded-md p-2 w-[650px] bg-white'>
             <img src={card.img} className='h-[200px] w-[650px]' />

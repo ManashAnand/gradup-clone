@@ -95,7 +95,7 @@ export const POST = async (request) => {
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email, id }),
+            body: JSON.stringify({ email, id, mid, amount }),
           })
 
           if (response.ok) {
