@@ -12,11 +12,11 @@ const Footer = () => {
         <div className='mx-auto max-w-screen space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8'>
           <div className='grid grid-cols-1 gap-20 lg:grid-cols-3'>
             <div>
-              <Image
+              <img
                 src='/assets/headerlogo.png'
                 alt='logo'
-                width={120}
-                height={50}
+                width='120'
+                height='50'
                 className='rounded-md object-contain mx-auto'
               />
 
