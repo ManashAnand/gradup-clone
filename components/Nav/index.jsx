@@ -91,7 +91,9 @@ const Nav = () => {
             <Link href='/user' className={styles["outline_btn"]}>
               Create resume
             </Link>
-
+            <Link href='/mycourses' className={styles["outline_btn"]}>
+              My Courses
+            </Link>
             <Link href='/cart' className={styles["outline_btn"]}>
               <svg
                 xmlns='http://www.w3.org/2000/svg'

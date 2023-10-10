@@ -169,7 +169,7 @@ export default function HRSignup() {
     <div className={`bg-blue-100 text-left pb-10 pt-2 px-6 mt-10 mb-20 rounded-xl ${styles["main-login"]}`}>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Image
-          src='/assets/images/logo-for-website.png'
+          src='/assets/logo-for-website.png'
           alt='logo'
           width={180}
           height={80}
