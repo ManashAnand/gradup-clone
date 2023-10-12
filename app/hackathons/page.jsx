@@ -41,7 +41,7 @@ const page = () => {
           Hackathons- Bring Your Coding Skills
         </div>
         <div className='flex flex-row w-screen  h-[700px] mt-4'>
-          <div className=' w-full sm:w-[35%]  overflow-y-auto  flex flex-col  items-center'>
+          <div className='w-full sm:w-[35%]  overflow-y-auto  flex flex-col  items-center px-7'>
             {data.map((hack, index) => (
               <HackathonCard
                 key={index}

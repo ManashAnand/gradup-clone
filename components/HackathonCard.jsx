@@ -3,13 +3,13 @@ import { FaUsers, FaTeamspeak } from 'react-icons/fa'
 import { BsClock } from 'react-icons/bs'
 import { useRouter } from 'next/navigation'
 
-const HackathonCard = ({ data, isSelected, onClick, w, h }) => {
+const HackathonCard = ({ data, isSelected, onClick }) => {
   const router = useRouter()
   console.log(data)
   return (
     <div
       onClick={() => onClick(data)}
-      className={` bg-white  text-[#010048] p-2 rounded-md my-2 cursor-pointer hover:shadow-lg w-[400px]  ${
+      className={` bg-white  text-[#010048] p-2 rounded-md my-2 cursor-pointer hover:shadow-lg w-full ${
         isSelected ? 'border border-[#010048]' : ''
       }`}
     >
@@ -40,11 +40,13 @@ const HackathonCard = ({ data, isSelected, onClick, w, h }) => {
             <FaUsers className='mt-1' />
             <p>{data.applicant.length}</p>
           </div>
-          <div
-            className=''
-            onClick={() => router.push(`/hackathons/${data._id}`)}
-          >
-            <button className=' px-4 bg-blue-500 rounded-sm'>View</button>
+          <div>
+            <button
+              onClick={() => router.push(`/hackathons/${data._id}`)}
+              className=' px-4 bg-blue-500 rounded-sm'
+            >
+              View
+            </button>
           </div>
         </div>
       </div>

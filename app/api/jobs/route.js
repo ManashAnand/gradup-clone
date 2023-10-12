@@ -1,45 +1,61 @@
-var category = null; //the optional filter for category
-var pageSize = 6;
-var pageNumber = 0;
+import { connectToDB } from '@utils/database'
+import Job from '@models/job'
+import HR from '@models/hr' // Import the HR model or use your actual HR model
+import mongoose from 'mongoose'
+import { NextResponse } from 'next/server'
 
-import {connectToDB} from '@utils/database';
-import Job from '@models/job';
-import mongoose from 'mongoose';
+export const GET = async (req) => {
+  try {
+    await connectToDB()
 
-export const GET = async(req,{params}) => {
-    try{
-        const search=new URL(req.url).search;
-        const urlParams=new URLSearchParams(search);
-        pageNumber = urlParams.get('page');
-        let intern = urlParams.get('intern') === "true" ? true : false;
-        let startup = urlParams.get('startup') === "true" ? true : false;
-        await connectToDB();
-        // for getting only the array of objects we can use . find method but we will use aggregate so that we can do more operation
-        // const a=await Job.find();
-        // console.log("aaa ",a);
-        // category=Microsoft;
-        const userDetails=await Job.aggregate
-        ([
-            {
-                $match:
-                {
-                    "isIntern":intern,
-                    "isStartUp":startup
-                }
-            },
-            {
-                $skip: pageSize * pageNumber
-            },
-            {
-                $limit:pageSize
-            }
-        ])
-        return new Response(JSON.stringify(userDetails),{status:201})
+    // Calculate the date two months ago from the current date
+    const today = new Date()
+    const twoMonthsAgo = new Date()
+    twoMonthsAgo.setMonth(today.getMonth() - 2)
+    const currentYear = today.getFullYear()
+    const allJobs = await Job.aggregate([
+      {
+        $match: {
+          'application.postedDate': {
+            $gte: twoMonthsAgo,
+            $lte: today,
+          },
+        },
+      },
+      {
+        $addFields: {
+          postedYear: { $year: '$application.postedDate' },
+          currentYear: { $year: today },
+        },
+      },
+      {
+        $match: {
+          postedYear: currentYear,
+        },
+      },
+    ])
+
+    // Create an array to store jobs with HR premium status
+    const premiumJobs = []
+
+    // Loop through the jobs and query the HR premium status
+    for (const job of allJobs) {
+      const hr = await HR.findById(job.hrId)
+      if (hr && hr.premium) {
+        premiumJobs.push(job)
+      }
     }
-    catch(error){
-        return new Response(error,{
-            status:500
-        })
-    }
 
+    // Create an array for non-premium jobs (those without a premium HR)
+    const nonPremiumJobs = allJobs.filter((job) => !premiumJobs.includes(job))
+
+    // Combine premium and non-premium jobs to send premium jobs on top
+    const data = premiumJobs.concat(nonPremiumJobs)
+
+    return NextResponse.json(data, { status: 200 })
+  } catch (error) {
+    return new Response(error, {
+      status: 500,
+    })
+  }
 }
