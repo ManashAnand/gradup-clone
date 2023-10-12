@@ -12,11 +12,10 @@ import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
 
-const JobCard = ({ data, isSelected, onClick }) => {
+const JobCard = ({ data }) => {
   const router = useRouter()
-  console.log(data)
   return (
-    <Card className='rounded-lg my-2 w-[50vh]'>
+    <Card className='rounded-lg w-[50vh]  text-[#010048] p-2 cursor-pointer hover:shadow-lg '>
       <div className='flex flex-row gap-5 px-4 pt-4 mx-4'>
         <CardMedia
           className='w-[10vh] h-[10vh] border border-gray-500'
@@ -53,7 +52,7 @@ const JobCard = ({ data, isSelected, onClick }) => {
               />
             ))}
           </div>
-          <div className='flex flex-row gap-2 mt-4 justify-evenly'>
+          <div className='flex flex-row gap-2 mt-4 justify-between'>
             <div className='flex flex-row gap-1'>
               <CreditCardIcon style={{ color: `#010048` }} />
               <span>{data.stipend}</span>

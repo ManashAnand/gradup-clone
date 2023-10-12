@@ -153,7 +153,12 @@ const FilterJobs = ({
   // };
 
   function handleCity(data) {
-    setSelectedCity(data)
+    var arr = []
+    data.forEach((element) => {
+      arr.push(element.value)
+    })
+    setSelectedCity(arr)
+    setCity(data)
   }
   function handleTitle(data) {
     var arr = []
