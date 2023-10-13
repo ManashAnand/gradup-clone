@@ -15,10 +15,10 @@ import Chip from '@mui/material/Chip'
 const JobCard = ({ data }) => {
   const router = useRouter()
   return (
-    <Card className='rounded-lg w-[50vh]  text-[#010048] p-2 cursor-pointer hover:shadow-lg '>
-      <div className='flex flex-row gap-5 px-4 pt-4 mx-4'>
+    <Card className='rounded-lg  text-[#010048] p-2 cursor-pointer hover:shadow-lg '>
+      <div className='flex flex-row gap-5 pt-4 mx-4 my-2'>
         <CardMedia
-          className='w-[10vh] h-[10vh] border border-gray-500'
+          className='w-[10vh] h-[10vh] border border-gray-500 rounded-md'
           image={data.logo}
           title={data.title}
         />
@@ -35,14 +35,14 @@ const JobCard = ({ data }) => {
           </Typography>
         </CardContent>
       </div>
-      <hr className='mx-2 ' />
+      <hr className='mx-2 mt-2 ' />
       <div>
         <CardContent className='text-left'>
           <div>
             <LocationOnIcon />
-            <span className='pt-2'>{data.location}</span>
+            <span className='mt-3'>{data.location}</span>
           </div>
-          <div className='flex flex-row gap-2 mt-2'>
+          <div className='flex flex-row gap-2 mt-4'>
             {data.skillsRequired.map((skill, index) => (
               <Chip
                 key={index}
@@ -52,7 +52,7 @@ const JobCard = ({ data }) => {
               />
             ))}
           </div>
-          <div className='flex flex-row gap-2 mt-4 justify-between'>
+          <div className='flex flex-wrap gap-2 mt-4 justify-between'>
             <div className='flex flex-row gap-1'>
               <CreditCardIcon style={{ color: `#010048` }} />
               <span>{data.stipend}</span>
@@ -66,6 +66,13 @@ const JobCard = ({ data }) => {
               <span>{data.noOfOpenings} openings</span>
             </div>
           </div>
+          {window.innerWidth < 768 && (
+            <div className='hidden sm:block w-full'>
+              <button onClick={() => router.push(`/jobs/${data.id}`)}>
+                View{' '}
+              </button>
+            </div>
+          )}
         </CardContent>
       </div>
     </Card>
