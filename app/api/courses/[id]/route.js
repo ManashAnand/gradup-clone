@@ -1,14 +1,11 @@
 import { connectToDB } from '@utils/database'
 import { NextResponse } from 'next/server'
 import Courses from '@models/courses'
-export async function GET(req) {
+export async function GET(req, { params }) {
   try {
     await connectToDB()
-    const url = new URL(req.url)
-    const path = url.pathname
-    const id = path.split('courses/')[1]
 
-    const data = await Courses.findOne({ _id: id })
+    const data = await Courses.findOne({ _id: params.id })
       .select('-VideoURL')
       .populate('author faq')
 

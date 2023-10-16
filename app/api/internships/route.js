@@ -1,7 +1,6 @@
 import { connectToDB } from '@utils/database'
 import Job from '@models/job'
-import HR from '@models/hr' // Import the HR model or use your actual HR model
-import mongoose from 'mongoose'
+import HR from '@models/hr'
 import { NextResponse } from 'next/server'
 
 export const GET = async (req) => {
@@ -20,7 +19,7 @@ export const GET = async (req) => {
             $gte: twoMonthsAgo,
             $lte: today,
           },
-          $or: [{ isIntern: true }, { IsStartup: true }],
+          $or: [{ isIntern: true }, { isStartUp: true }],
         },
       },
       {
@@ -32,7 +31,6 @@ export const GET = async (req) => {
       {
         $match: {
           postedYear: currentYear,
-          // Additional conditions can be added here
         },
       },
     ])

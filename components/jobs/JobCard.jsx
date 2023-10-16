@@ -13,26 +13,19 @@ import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
 
 const JobCard = ({ data }) => {
+  const isSmallScreen = window.innerWidth < 768
   const router = useRouter()
   return (
-    <Card className='rounded-lg  text-[#010048] p-2 cursor-pointer hover:shadow-lg '>
-      <div className='flex flex-row gap-5 pt-4 mx-4 my-2'>
+    <Card className='rounded-lg  text-[#010048] p-2 cursor-pointer hover:shadow-lg w-[50vh]'>
+      <div className='flex flex-row gap-5  mx-4 my-2 items-center'>
         <CardMedia
-          className='w-[10vh] h-[10vh] border border-gray-500 rounded-md'
+          className='w-[10vh] h-[10vh] border border-gray-300 rounded-md '
           image={data.logo}
           title={data.title}
         />
-        <CardContent className='text-left'>
-          <Typography
-            variant='h6'
-            component='div'
-            className='font-bold text-lg'
-          >
-            {data.title}
-          </Typography>
-          <Typography variant='p' component='div'>
-            {data.companyName}
-          </Typography>
+        <CardContent className='text-left '>
+          <h1 className='font-bold text-md'>{data.title}</h1>
+          <h2>{data.companyName}</h2>
         </CardContent>
       </div>
       <hr className='mx-2 mt-2 ' />
@@ -59,19 +52,20 @@ const JobCard = ({ data }) => {
             </div>
             <div className='flex flex-row gap-1'>
               <AccessTimeIcon />
-              Experince
+              Experience
             </div>
             <div className='flex flex-row gap-1'>
               <PeopleOutlineOutlinedIcon />
               <span>{data.noOfOpenings} openings</span>
             </div>
           </div>
-          {window.innerWidth < 768 && (
-            <div className='hidden sm:block w-full'>
-              <button onClick={() => router.push(`/jobs/${data.id}`)}>
-                View{' '}
-              </button>
-            </div>
+          {isSmallScreen && (
+            <button
+              className='mt-4 rounded-xl bg-blue-300 px-4 '
+              onClick={() => router.push(`/jobs/${data._id}`)}
+            >
+              View{' '}
+            </button>
           )}
         </CardContent>
       </div>

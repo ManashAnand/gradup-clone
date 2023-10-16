@@ -64,12 +64,12 @@ function Page() {
           />
         </div>
         <div className='flex flex-row w-screen  h-[700px] mt-4'>
-          <div className='w-full sm:w-[35%] gap-5 overflow-y-auto  flex flex-col  items-center px-7'>
+          <div className='w-full sm:w-[35%] gap-5 overflow-y-auto  flex flex-col  items-center px-7 '>
             {filteredJobs.map((job, index) => (
               <div
                 className={`${
                   job === selectedCard
-                    ? 'rounded-lg border-2 border-blue-950'
+                    ? 'rounded-lg border border-gray-400'
                     : ''
                 }`}
                 onClick={() => handleCardClick(job)}

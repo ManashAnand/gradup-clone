@@ -14,8 +14,8 @@ import Chip from '@mui/material/Chip'
 const JobCardR = ({ data }) => {
   return (
     <Card className='rounded-lg  text-[#010048]  cursor-pointer hover:shadow-lg'>
-      <div className='flex flex-row gap-5 px-4 pt-4 mx-4'>
-        <div className=' flex flex-row w-full'>
+      <div className='flex flex-row gap-5  pt-4 mx-4 items-center'>
+        <div className=' flex flex-row w-full items-center'>
           <CardMedia
             className='w-[10vh] h-[10vh] border border-gray-500 rounded-md'
             image={data.logo}

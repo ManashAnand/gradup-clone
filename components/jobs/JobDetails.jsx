@@ -109,7 +109,7 @@ const JobDetails = ({ data }) => {
       <div className='mb-4 '>
         <JobCardR data={data} />
       </div>
-      <div className='flex flex-row '>
+      <div className='flex flex-row items-center justify-start'>
         {dataItems.map((item) => (
           <Button
             key={item.key}

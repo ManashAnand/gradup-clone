@@ -1,6 +1,5 @@
 import { connectToDB } from '@utils/database'
 import HR from '@models/hr'
-import mongoose from 'mongoose'
 
 export const GET = async (req, { params }) => {
   try {
