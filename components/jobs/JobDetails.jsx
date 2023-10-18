@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
 import JobCardR from '@components/jobs/JobsCardR'
+import styles from './styles.module.css'
 const JobDescription = ({
   description,
   perks,
@@ -10,7 +11,7 @@ const JobDescription = ({
   responsilities,
   job,
 }) => (
-  <div className='p-5 text-left text-[#010048]'>
+  <div className='p-5 text-left'>
     <h1 className='font-bold text-2xl'>Job Description</h1>
     {description && <p className='mt-3'>{description}</p>}
 
@@ -66,7 +67,7 @@ const JobDescription = ({
 
 const SkillsRequired = ({ skillsRequired }) => (
   <div className='text-left p-5'>
-    <h1 className='font-bold text-2xl text-[#010048]'>Skills Required</h1>
+    <h1 className='font-bold text-2xl '>Skills Required</h1>
     <p className='mt-3'>
       {skillsRequired.map((skill) => (
         <li key={skill}>{skill}</li>
@@ -77,7 +78,7 @@ const SkillsRequired = ({ skillsRequired }) => (
 
 const CompanyDetails = ({ aboutCompany }) => (
   <div className='text-left p-5'>
-    <h1 className='font-bold text-2xl text-[#010048]'>About Company</h1>
+    <h1 className='font-bold text-2xl'>About Company</h1>
     <p className='mt-3'>{aboutCompany}</p>
     {/* Add more data from companyInfo as needed */}
   </div>
@@ -103,29 +104,31 @@ const JobDetails = ({ data }) => {
   ]
 
   const [selectedKey, setSelectedKey] = useState(dataItems[0].key)
-
+  console.log(data)
   return (
-    <div className='mx-2'>
+    <div className='mx-2 p-2'>
       <div className='mb-4 '>
         <JobCardR data={data} />
       </div>
-      <div className='flex flex-row items-center justify-start'>
-        {dataItems.map((item) => (
-          <Button
-            key={item.key}
-            onClick={() => setSelectedKey(item.key)}
-            variant='text'
-            style={{
-              color: selectedKey === item.key ? '#010048' : '',
-            }}
-          >
-            {item.id}
-          </Button>
-        ))}
-      </div>
-      <hr className='mx-4 border-1 border-blue-950 mb-4' />
-      <div className='bottom-section'>
-        <Paper elevation={3} className='paper'>
+
+      <Paper elevation={5} className={`${styles['jobcard']} 'py-5 '`}>
+        <div className='flex flex-row items-center justify-start ml-4'>
+          {dataItems.map((item) => (
+            <Button
+              key={item.key}
+              onClick={() => setSelectedKey(item.key)}
+              variant='text'
+              style={{
+                color: '#6f6f6f',
+                margin: '2px',
+              }}
+            >
+              {item.id}
+            </Button>
+          ))}
+        </div>
+        <hr className='mx-4 border-1 border-[#E0E3EB] ' />
+        <div className='bottom-section'>
           {dataItems.map((item) => (
             <div
               key={item.key}
@@ -134,8 +137,31 @@ const JobDetails = ({ data }) => {
               {<item.component {...data} />}
             </div>
           ))}
-        </Paper>
-      </div>
+        </div>
+      </Paper>
+      <Paper elevation={5} className={`${styles['jobcard']} py-5 mt-5`}>
+        <h1 className='text-xl font-bold text-left ml-4 mb-2'>
+          Additional Information
+        </h1>
+        <div className='flex flex-row gap-2 justify-start ml-4 '>
+          <div className={`${styles['jobcard']} px-10 rounded-lg py-2`}>
+            <h1 className='font-bold text-md'>Job Location</h1>
+            <p>{data.location}</p>
+          </div>
+          <div className={`${styles['jobcard']} px-10 rounded-lg py-2`}>
+            <h1 className='font-bold text-md'>Experience</h1>
+            <p>5-7 yrs</p>
+          </div>
+          <div className={`${styles['jobcard']} px-10 rounded-lg py-2`}>
+            <h1 className='font-bold text-md'>Salary</h1>
+            <p>₹ {data.stipend}/-</p>
+          </div>
+          <div className={`${styles['jobcard']} px-10 rounded-lg py-2`}>
+            <h1 className='font-bold text-md'>Job-type</h1>
+            <p>In-office</p>
+          </div>
+        </div>
+      </Paper>
     </div>
   )
 }

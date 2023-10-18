@@ -9,12 +9,18 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import Chip from '@mui/material/Chip'
-
+import styles from './styles.module.css'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import Button from '@mui/material/Button'
+import DateRangeIcon from '@mui/icons-material/DateRange'
+import { useRouter } from 'next/navigation'
 const JobCardR = ({ data }) => {
+  const router = useRouter()
   return (
-    <Card className='rounded-lg  text-[#010048]  cursor-pointer hover:shadow-lg'>
-      <div className='flex flex-row gap-5  pt-4 mx-4 items-center'>
+    <Card
+      className={`${styles['jobcard']} 'mt-2 rounded-lg cursor-pointer flex flex-row'`}
+    >
+      <div className='  pt-4 mx-4 items-center w-[50%]'>
         <div className=' flex flex-row w-full items-center'>
           <CardMedia
             className='w-[10vh] h-[10vh] border border-gray-500 rounded-md'
@@ -35,41 +41,75 @@ const JobCardR = ({ data }) => {
             </Typography>
           </CardContent>
         </div>
-        <a href={`/jobs/${data._id}/apply`} className='flex justify-end w-full'>
-          Apply Now {'->'}
-        </a>
-      </div>
-      <hr className='mx-2 ' />
-      <div>
+
         <CardContent className='text-left'>
-          <div>
-            <LocationOnIcon />
-            <span className='pt-2'>{data.location}</span>
-          </div>
-          <div className='flex flex-row gap-2 mt-2'>
+          <div className='flex flex-row gap-2 mt-2 '>
             {data.skillsRequired.map((skill, index) => (
-              <Chip
+              <span
                 key={index}
-                label={skill}
-                style={{ backgroundColor: 'lightsteelblue', color: 'white' }}
-                variant='Filled Chip'
-              />
+                className='py-2 px-4 border border-gray-200 rounded-lg text-sm'
+              >
+                #{skill}
+              </span>
             ))}
           </div>
         </CardContent>
-        <div className='flex flex-wrap gap-2 mt-4 justify-between bg-blue-100 p-5'>
-          <div className='flex flex-row gap-1'>
-            <CreditCardIcon style={{ color: `#010048` }} />
-            <span>{data.stipend}</span>
+      </div>
+      <div className='pt-4 px-4 items-center w-[50%] border-l-2 border-gray-200 my-2'>
+        <div className='flex flex-wrap  mt-4 justify-start gap-10 ml-5 '>
+          <div>
+            <CreditCardIcon />
+            <span className='ml-2 mt-3'>{data.stipend}</span>
           </div>
-          <div className='flex flex-row gap-1'>
+          <div>
             <AccessTimeIcon />
-            Experince
+            4-7 yrs
           </div>
-          <div className='flex flex-row gap-1'>
+        </div>
+        <div className='flex flex-wrap  mt-4 justify-start gap-10 ml-5 '>
+          <div>
             <PeopleOutlineOutlinedIcon />
-            <span>{data.noOfOpenings} openings</span>
+            <span className='ml-2 mt-3'>{data.noOfOpenings}+</span>
           </div>
+          <div>
+            <LocationOnIcon />
+            <span className='ml-2 mt-3'>{data.location}</span>
+          </div>
+        </div>
+        <div className='flex flex-row mt-7 gap-4 justify-center'>
+          <Button
+            variant='outlined'
+            size='small'
+            startIcon={<FavoriteIcon />}
+            style={{
+              border: '#6F6F6F',
+              color: '#6F6F6F',
+            }}
+          >
+            Wishlist
+          </Button>
+          <Button
+            variant='outlined'
+            size='small'
+            startIcon={<DateRangeIcon />}
+            style={{
+              border: '#6F6F6F',
+              color: '#6F6F6F',
+            }}
+          >
+            Calender
+          </Button>
+          <Button
+            variant='contained'
+            size='small'
+            style={{
+              backgroundColor: '#0066C8',
+              color: 'white',
+            }}
+            onClick={() => router.push(`/jobs/${data._id}/apply`)}
+          >
+            Apply Now
+          </Button>
         </div>
       </div>
     </Card>

@@ -21,6 +21,10 @@ const Layout = ({ children }) => {
           href='https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;700&display=swap'
           rel='stylesheet'
         ></link>
+        <link
+          rel='stylesheet'
+          href='https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700&display=swap'
+        />
 
         {/* <!-- Google tag (gtag.js) --> */}
         <script
@@ -38,15 +42,18 @@ const Layout = ({ children }) => {
       `,
           }}
         ></script>
-        <meta name="p:domain_verify" content="eaddbbae73971743e1464497eadd174d"/>
+        <meta
+          name='p:domain_verify'
+          content='eaddbbae73971743e1464497eadd174d'
+        />
       </head>
       <body>
         <Provider>
-          <div className={styles["main"]}>
-            <div className={styles["gradient"]} />
+          <div className={styles['main']}>
+            <div className={styles['gradient']} />
           </div>
 
-          <main className={styles["app"]}>
+          <main className={styles['app']}>
             <Nav />
             {children}
             <Script

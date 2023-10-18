@@ -8,7 +8,7 @@ import { useRef, useEffect } from 'react'
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 const Internship = () => {
   const router = useRouter()
-  const { data, error, isLoading } = useSWR('/api/jobs', fetcher)
+  const { data, error, isLoading } = useSWR('/api/premiumIntern', fetcher)
   const scrollContainerRef = useRef(null)
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const Internship = () => {
         <h1 className='text-4xl font-bold text-white'>Premium Internships</h1>
         <div
           ref={scrollContainerRef}
-          className='w-full h-full overflow-x-scroll scroll scroll-continuous whitespace-nowrap scrollbar-hide mt-5'
+          className='w-full h-full overflow-x-auto scroll scroll-continuous whitespace-nowrap scrollbar-hide mt-5'
         >
           {data.map((job) => (
             <div

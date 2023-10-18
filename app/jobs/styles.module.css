@@ -103,5 +103,12 @@
 }
 
 .textnew {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+.shadow {
+  background-color: white; /* Set the background color of your div */
+  box-shadow: 0 0 10px 5px #abbed166; /* Apply the blue drop shadow */
+  z-index: 5;
+  margin: 0.75rem;
 }
