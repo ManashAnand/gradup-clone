@@ -9,69 +9,65 @@ import React from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
-import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
+import styles from './styles.module.css'
 
 const JobCard = ({ data }) => {
+  const isSmallScreen = window.innerWidth < 768
   const router = useRouter()
   return (
-    <Card className='rounded-lg  text-[#010048] p-2 cursor-pointer hover:shadow-lg '>
-      <div className='flex flex-row gap-5 pt-4 mx-4 my-2'>
+    <Card
+      className={`${styles['jobcard']} 'rounded-xl  p-2 cursor-pointer shadow-lg sm:w-[45vh] '`}
+    >
+      <div className='flex flex-row   mx-4 my-2 items-center h-[10vh]'>
         <CardMedia
-          className='w-[10vh] h-[10vh] border border-gray-500 rounded-md'
+          className='w-[10vh] h-[10vh] border border-gray-300 rounded-md '
           image={data.logo}
           title={data.title}
         />
-        <CardContent className='text-left'>
-          <Typography
-            variant='h6'
-            component='div'
-            className='font-bold text-lg'
-          >
-            {data.title}
-          </Typography>
-          <Typography variant='p' component='div'>
-            {data.companyName}
-          </Typography>
+        <CardContent className='text-left '>
+          <h1 className='font-bold text-xl '>{data.title}</h1>
+          <h2 className='text-lg'>{data.companyName}</h2>
         </CardContent>
       </div>
-      <hr className='mx-2 mt-2 ' />
-      <div>
+
+      <div className=''>
         <CardContent className='text-left'>
-          <div>
-            <LocationOnIcon />
-            <span className='mt-3'>{data.location}</span>
-          </div>
-          <div className='flex flex-row gap-2 mt-4'>
+          <div className='flex flex-row gap-2'>
             {data.skillsRequired.map((skill, index) => (
-              <Chip
+              <span
                 key={index}
-                label={skill}
-                style={{ backgroundColor: 'lightsteelblue', color: 'white' }}
-                variant='Filled Chip'
-              />
+                className='py-2 px-4 border border-gray-200 rounded-lg text-sm'
+              >
+                #{skill}
+              </span>
             ))}
           </div>
-          <div className='flex flex-wrap gap-2 mt-4 justify-between'>
-            <div className='flex flex-row gap-1'>
-              <CreditCardIcon style={{ color: `#010048` }} />
-              <span>{data.stipend}</span>
+          <div className='flex flex-row gap-1 mt-4 justify-between overflow-auto text-sm'>
+            <div>
+              <CreditCardIcon />
+              <span className='ml-2 mt-3'>{data.stipend}</span>
             </div>
-            <div className='flex flex-row gap-1'>
+            <div>
               <AccessTimeIcon />
-              Experince
+              <span className='text-sm'>4-7 yrs</span>
             </div>
-            <div className='flex flex-row gap-1'>
+            <div>
               <PeopleOutlineOutlinedIcon />
-              <span>{data.noOfOpenings} openings</span>
+              <span className='ml-2 mt-3'>{data.noOfOpenings}+</span>
+            </div>
+            <div>
+              <LocationOnIcon />
+              <span className='ml-2 mt-3'>{data.location}</span>
             </div>
           </div>
-          {window.innerWidth < 768 && (
-            <div className='hidden sm:block w-full'>
-              <button onClick={() => router.push(`/jobs/${data.id}`)}>
-                View{' '}
-              </button>
-            </div>
+          {isSmallScreen && (
+            <button
+              className='mt-4 rounded-xl bg-blue-300 px-4 '
+              onClick={() => router.push(`/jobs/${data._id}`)}
+            >
+              View{' '}
+            </button>
           )}
         </CardContent>
       </div>

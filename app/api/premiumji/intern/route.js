@@ -19,6 +19,7 @@ export const GET = async (req) => {
             $gte: twoMonthsAgo,
             $lte: today,
           },
+          $or: [{ isIntern: true }, { isStartUp: true }],
         },
       },
       {
@@ -33,22 +34,15 @@ export const GET = async (req) => {
         },
       },
     ])
-    // Create an array to store jobs with HR premium status
-    const premiumJobs = []
 
-    // Loop through the jobs and query the HR premium status
+    const data = []
+
     for (const job of allJobs) {
       const hr = await HR.findById(job.hrId)
       if (hr && hr.premium) {
-        premiumJobs.push(job)
+        data.push(job)
       }
     }
-
-    // Create an array for non-premium jobs (those without a premium HR)
-    const nonPremiumJobs = allJobs.filter((job) => !premiumJobs.includes(job))
-
-    // Combine premium and non-premium jobs to send premium jobs on top
-    const data = premiumJobs.concat(nonPremiumJobs)
 
     return NextResponse.json(data, { status: 200 })
   } catch (error) {

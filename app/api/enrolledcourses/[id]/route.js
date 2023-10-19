@@ -2,17 +2,15 @@ import { connectToDB } from '@utils/database'
 import { NextResponse } from 'next/server'
 import Courses from '@models/courses'
 import Enrollment from '@models/enrollment'
-export async function GET(req) {
+export async function GET(req, { params }) {
   try {
     await connectToDB()
     const url = new URL(req.url)
-    const path = url.pathname
     const email = url.searchParams.get('email')
-    const id = path.split('enrolledcourses/')[1].split('?')[0]
 
     const enrollmentData = await Enrollment.findOne({
       userId: email,
-      courseId: id,
+      courseId: params.id,
     }).select('-userId -courseId')
 
     if (enrollmentData == null) {

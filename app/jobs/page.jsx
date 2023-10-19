@@ -6,6 +6,7 @@ import Spinner from '@components/Spinner'
 import JobCard from '@components/jobs/JobCard'
 import FilterJobs from '@components/jobs/FilterJobs'
 import JobDetails from '@components/jobs/JobDetails'
+import styles from './styles.module.css'
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 function Page() {
   const { data, error, isLoading } = useSWR('/api/jobs', fetcher)
@@ -14,7 +15,8 @@ function Page() {
   const [selectedTitle, setSelectedTitle] = useState([])
   const [salaryExp, setSalaryExp] = useState(0)
   const [filteredJobs, setFilteredJobs] = useState([])
-  function filterJobs(jobs, selectedCity, selectedTitle, salaryExp) {
+  const [type, setType] = useState('full-time')
+  function filterJobs(jobs, selectedCity, selectedTitle, salaryExp, type) {
     return jobs.filter((job) => {
       // Filter by city
       if (selectedCity.length > 0 && !selectedCity.includes(job.location)) {
@@ -28,17 +30,32 @@ function Page() {
       if (job.stipend < salaryExp) {
         return false
       }
+      if (type) {
+        if (type == 'internship' && !job.isIntern) {
+          return false
+        } else if (type == 'startup' && !job.isStartUp) {
+          return false
+        } else if (type == 'full-time' && (job.isIntern || job.isStartUp)) {
+          return false
+        }
+      }
       return true
     })
   }
   useEffect(() => {
     if (data) {
       // Apply filters and set filtered jobs
-      const filtered = filterJobs(data, selectedCity, selectedTitle, salaryExp)
+      const filtered = filterJobs(
+        data,
+        selectedCity,
+        selectedTitle,
+        salaryExp,
+        type
+      )
       setFilteredJobs(filtered)
       setSelectedCard(filtered[0])
     }
-  }, [data, selectedCity, selectedTitle, salaryExp])
+  }, [data, selectedCity, selectedTitle, salaryExp, type])
   const handleCardClick = (job) => {
     setSelectedCard(job)
   }
@@ -52,29 +69,23 @@ function Page() {
   }
   if (data) {
     return (
-      <div className='bg-gray-200 pb-10'>
-        <div className='z-10 shadow-xl hidden sm:block md:block'>
+      <div className='bg-white pb-10'>
+        <div className={`${styles['shadow']}  rounded-full m-3`}>
           <FilterJobs
             setSelectedCity={setSelectedCity}
             setSelectedTitle={setSelectedTitle}
             setSalaryExp={setSalaryExp}
+            setType={setType}
             selectedCity={selectedCity}
             selectedTitle={selectedTitle}
             salaryExp={salaryExp}
+            type={type}
           />
         </div>
         <div className='flex flex-row w-screen  h-[700px] mt-4'>
-          <div className='w-full sm:w-[35%] gap-5 overflow-y-auto  flex flex-col  items-center px-7'>
+          <div className='w-full sm:w-[35%] gap-5 overflow-y-auto  flex flex-col  items-center px-7 py-2 '>
             {filteredJobs.map((job, index) => (
-              <div
-                className={`${
-                  job === selectedCard
-                    ? 'rounded-lg border-2 border-blue-950'
-                    : ''
-                }`}
-                onClick={() => handleCardClick(job)}
-                key={index}
-              >
+              <div onClick={() => handleCardClick(job)} key={index}>
                 <JobCard data={job} />
               </div>
             ))}

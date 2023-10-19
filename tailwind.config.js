@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   fontFamily: {
-    'helvetica': ['Helvetica Neue', 'sans'],
+    helvetica: ['Helvetica Neue', 'sans'],
   },
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -11,12 +11,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        satoshi: ['Satoshi', 'sans-serif'],
+        satoshi: ['Satoshi', 'sans-serif', 'Lexend'],
         inter: ['Inter', 'sans-serif'],
       },
       colors: {
         'primary-orange': '#FF5722',
-      }
+      },
     },
   },
   plugins: [],

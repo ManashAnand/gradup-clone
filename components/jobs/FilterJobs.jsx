@@ -8,12 +8,20 @@ const FilterJobs = ({
   setSelectedCity,
   setSelectedTitle,
   setSalaryExp,
+  setType,
   selectedCity,
   selectedTitle,
   salaryExp,
+  type,
 }) => {
   const [city, setCity] = useState([])
   const [title, setTitle] = useState([])
+  const [typeF, setTypeF] = useState()
+  const typeList = [
+    { value: 'full-time', label: 'Full Time' },
+    { value: 'internships', label: 'Internships' },
+    { value: 'startup', label: 'Start up' },
+  ]
   const cityList = [
     { value: 'Remote', label: 'Remote' },
     { value: 'Delhi', label: 'Delhi' },
@@ -160,6 +168,10 @@ const FilterJobs = ({
     setSelectedCity(arr)
     setCity(data)
   }
+  function handleType(data) {
+    setTypeF(data)
+    setType(data.value)
+  }
   function handleTitle(data) {
     var arr = []
     data.forEach((element) => {
@@ -168,15 +180,15 @@ const FilterJobs = ({
     setSelectedTitle(arr)
     setTitle(data)
   }
-  useEffect(() => {}, [selectedCity, selectedTitle, salaryExp])
+  useEffect(() => {}, [selectedCity, selectedTitle, salaryExp, setTypeF])
   const changeSalaryRxp = (event) => {
     setSalaryExp(event.target.value)
   }
   return (
-    <div className='flex flex-row '>
-      <div className='p-3 w-full'>
+    <div className='flex flex-wrap items-center justify-center gap-5 p-3 font-Lexend'>
+      <div className='w-[200px]'>
         <Select
-          className='text-left'
+          className='font-Lexend'
           options={cityList}
           placeholder='Select State'
           value={city}
@@ -185,9 +197,19 @@ const FilterJobs = ({
           isMulti
         />
       </div>
-      <div className='p-3 w-full'>
+      <div className='w-[200px]'>
         <Select
-          className={`${styles['container']} text-left`}
+          className=''
+          options={typeList}
+          placeholder='Type'
+          value={typeF}
+          onChange={handleType}
+          isSearchable={true}
+        />
+      </div>
+      <div className='w-[200px]'>
+        <Select
+          className=''
           options={titleList}
           placeholder='Select Job'
           value={title}
@@ -195,23 +217,6 @@ const FilterJobs = ({
           isSearchable={true}
           isMulti
         />
-      </div>
-
-      <div className='text-center mt-4 w-full'>
-        <input
-          className='w-4/5'
-          type='range'
-          onChange={changeSalaryRxp}
-          min={0}
-          max={50000}
-          step={5000}
-          value={salaryExp}
-        ></input>
-      </div>
-      <div className='mt-4 text-center w-full'>
-        <div className={styles['salary']}>
-          {`MIN SALARY - Rs. ${salaryExp}`}
-        </div>
       </div>
     </div>
   )
