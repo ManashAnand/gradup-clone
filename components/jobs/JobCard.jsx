@@ -19,7 +19,7 @@ const JobCard = ({ data }) => {
     <Card
       className={`${styles['jobcard']} 'rounded-xl  p-2 cursor-pointer shadow-lg sm:w-[45vh] '`}
     >
-      <div className='flex flex-row gap-5  mx-4 my-2 items-center'>
+      <div className='flex flex-row   mx-4 my-2 items-center h-[10vh]'>
         <CardMedia
           className='w-[10vh] h-[10vh] border border-gray-300 rounded-md '
           image={data.logo}
@@ -31,7 +31,7 @@ const JobCard = ({ data }) => {
         </CardContent>
       </div>
 
-      <div>
+      <div className=''>
         <CardContent className='text-left'>
           <div className='flex flex-row gap-2'>
             {data.skillsRequired.map((skill, index) => (
@@ -43,14 +43,14 @@ const JobCard = ({ data }) => {
               </span>
             ))}
           </div>
-          <div className='flex flex-wrap gap-1 mt-4 justify-between'>
+          <div className='flex flex-row gap-1 mt-4 justify-between overflow-auto text-sm'>
             <div>
               <CreditCardIcon />
               <span className='ml-2 mt-3'>{data.stipend}</span>
             </div>
             <div>
               <AccessTimeIcon />
-              4-7 yrs
+              <span className='text-sm'>4-7 yrs</span>
             </div>
             <div>
               <PeopleOutlineOutlinedIcon />

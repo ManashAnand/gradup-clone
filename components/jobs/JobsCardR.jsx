@@ -20,8 +20,8 @@ const JobCardR = ({ data }) => {
     <div
       className={`${styles['jobcard']} mt-2 rounded-lg cursor-pointer flex flex-col sm:flex-row`}
     >
-      <div className='  pt-4 mx-4 items-center w-[50%]'>
-        <div className=' flex flex-row w-full items-center'>
+      <div className='  pt-4 mx-4 items-center sm:w-[50%] w-full'>
+        <div className=' flex flex-row w-full items-center '>
           <CardMedia
             className='w-[10vh] h-[10vh] border border-gray-500 rounded-md'
             image={data.logo}
@@ -42,7 +42,7 @@ const JobCardR = ({ data }) => {
           </CardContent>
         </div>
 
-        <CardContent className='text-left'>
+        <CardContent>
           <div className='flex flex-wrap gap-2 mt-2 '>
             {data.skillsRequired.map((skill, index) => (
               <span

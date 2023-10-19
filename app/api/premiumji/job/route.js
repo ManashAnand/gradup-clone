@@ -19,7 +19,7 @@ export const GET = async (req) => {
             $gte: twoMonthsAgo,
             $lte: today,
           },
-          $or: [{ isIntern: true }, { isStartUp: true }],
+          $and: [{ isIntern: false }, { isStartUp: false }],
         },
       },
       {
@@ -43,7 +43,6 @@ export const GET = async (req) => {
         data.push(job)
       }
     }
-    console.log(data)
 
     return NextResponse.json(data, { status: 200 })
   } catch (error) {

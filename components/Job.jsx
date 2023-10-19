@@ -9,7 +9,7 @@ import styles from '@components/CoursesOnHome/styles.module.css'
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 const Internship = () => {
   const router = useRouter()
-  const { data, error, isLoading } = useSWR('/api/premiumji/intern', fetcher)
+  const { data, error, isLoading } = useSWR('/api/premiumji/job', fetcher)
   const scrollContainerRef = useRef(null)
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const Internship = () => {
         <h1
           className={`text-3xl text-white font-semibold underline decoration-white underline-offset-8 ${styles['textform']} text-center my-5`}
         >
-          Premium Internship
+          Premium Jobs
         </h1>
         <div
           ref={scrollContainerRef}
@@ -79,6 +79,7 @@ const Internship = () => {
       </div>
     )
   }
+
   return null
 }
 export default Internship

@@ -12,6 +12,7 @@ import ContactUs from '@components/ContactUS'
 import Link from 'next/link'
 import styles from './styles.module.css'
 import Internship from '@components/Internship'
+import Job from '@components/Job'
 
 const Home = () => {
   const [loading, setLoading] = useState(false)
@@ -22,6 +23,7 @@ const Home = () => {
         <HomeFirstComponent />
         <CoursesOnHome />
         <Internship />
+        <Job />
 
         <div className={`w-screen ${styles['databox']}`}>
           <div className={styles['filter']}></div>
