@@ -104,7 +104,7 @@ const JobDetails = ({ data }) => {
   ]
 
   const [selectedKey, setSelectedKey] = useState(dataItems[0].key)
-  console.log(data)
+
   return (
     <div className='mx-2 p-2'>
       <div className='mb-4 '>
@@ -143,7 +143,7 @@ const JobDetails = ({ data }) => {
         <h1 className='text-xl font-bold text-left ml-4 mb-2'>
           Additional Information
         </h1>
-        <div className='flex flex-row gap-2 justify-start ml-4 '>
+        <div className='flex flex-wrap gap-2 justify-start ml-4 '>
           <div className={`${styles['jobcard']} px-10 rounded-lg py-2`}>
             <h1 className='font-bold text-md'>Job Location</h1>
             <p>{data.location}</p>

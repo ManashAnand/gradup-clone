@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid'
 import useSWR from 'swr'
 import Spinner from '@components/Spinner'
 import CustomCard from '@components/CustomCard'
-import styles from "./styles.module.css"
+import styles from '@components/CoursesOnHome/styles.module.css'
 
 async function fetcher(url) {
   const res = await fetch(url)
@@ -23,12 +23,16 @@ export default function CoursesOnHome() {
   }
   if (data) {
     return (
-      <section className={`${styles["flex-start"]} flex-col mt-4`}>
+      <section className={`${styles['flex-start']} flex-col mt-4`}>
         <div>
-          <h1 className={`text-3xl text-white font-semibold underline decoration-white underline-offset-8 ${styles["textform"]} text-center my-5`}>
+          <h1
+            className={`text-3xl text-white font-semibold underline decoration-white underline-offset-8 ${styles['textform']} text-center my-5`}
+          >
             Placement Guarantee Courses
           </h1>
-          <p className={`${styles["textnew"]} text-center text-gray-200 text-2xl mb-8`}>
+          <p
+            className={`${styles['textnew']} text-center text-gray-200 text-2xl mb-8`}
+          >
             Master new skills from anywhere with our online courses
           </p>
           <Grid

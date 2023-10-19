@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import useSWR from 'swr'
 import { useSelector } from 'react-redux'
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
-import styles from "./styles.module.css";
+import styles from './styles.module.css'
 
 const fetcher = async (...args) =>
   await fetch(...args).then((res) => res.json())
@@ -69,32 +69,32 @@ const Nav = () => {
           <div className='flex gap-3 md:gap-2'>
             <DropDownMenu />
 
-            <Link href='/jobs' className={styles["outline_btn"]}>
+            <Link href='/jobs' className={styles['outline_btn']}>
               Jobs
             </Link>
-            <Link href='/internships' className={styles["outline_btn"]}>
+            <Link href='/jobs' className={styles['outline_btn']}>
               Internships
             </Link>
-            <Link href='/courses' className={styles["outline_btn"]}>
+            <Link href='/courses' className={styles['outline_btn']}>
               Courses
             </Link>
             <Link
               href={data?.role === 'HR' ? '/hr' : '/hr/signup'}
-              className={styles["outline_btn"]}
+              className={styles['outline_btn']}
             >
               {data?.role === 'HR' ? 'HR Dashboard' : 'HR login'}
             </Link>
 
-            <Link href='/about-us' className={styles["outline_btn"]}>
+            <Link href='/about-us' className={styles['outline_btn']}>
               About Us
             </Link>
-            <Link href='/user' className={styles["outline_btn"]}>
+            <Link href='/user' className={styles['outline_btn']}>
               Create resume
             </Link>
-            <Link href='/mycourses' className={styles["outline_btn"]}>
+            <Link href='/mycourses' className={styles['outline_btn']}>
               My Courses
             </Link>
-            <Link href='/cart' className={styles["outline_btn"]}>
+            <Link href='/cart' className={styles['outline_btn']}>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
@@ -137,25 +137,25 @@ const Nav = () => {
           <>
             <div className='flex gap-3 md:gap-2'>
               <DropDownMenu />
-              <Link href='/jobs' className={styles["outline_btn"]}>
+              <Link href='/jobs' className={styles['outline_btn']}>
                 Jobs
               </Link>
-              <Link href='/internships' className={styles["outline_btn"]}>
+              <Link href='/jobs' className={styles['outline_btn']}>
                 Internships
               </Link>
-              <Link href='/courses' className={styles["outline_btn"]}>
+              <Link href='/courses' className={styles['outline_btn']}>
                 Courses
               </Link>
               <Link
                 href={data?.role === 'HR' ? '/hr' : '/hr/signup'}
-                className={styles["outline_btn"]}
+                className={styles['outline_btn']}
               >
                 {data?.role === 'HR' ? 'HR Dashboard' : 'HR login'}
               </Link>
-              <Link href='/about-us' className={styles["outline_btn"]}>
+              <Link href='/about-us' className={styles['outline_btn']}>
                 About Us
               </Link>
-              <Link href='/cart' className={styles["outline_btn"]}>
+              <Link href='/cart' className={styles['outline_btn']}>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -214,7 +214,7 @@ const Nav = () => {
               <div className='dropdown z-50'>
                 <Link
                   href='/user'
-                  className={styles["dropdown_link"]}
+                  className={styles['dropdown_link']}
                   onClick={() => setToggleDropdown(false)}
                 >
                   My Profile
@@ -222,28 +222,28 @@ const Nav = () => {
                 <DropDownMenu />
                 <Link
                   href={data.role === 'HR' ? '/hr' : '/hr/signup'}
-                  className={styles["dropdown_link"]}
+                  className={styles['dropdown_link']}
                   onClick={() => setToggleDropdown(false)}
                 >
                   {data?.role === 'HR' ? 'Dashboard' : 'HR login'}
                 </Link>
                 <Link
-                  href='/internships'
-                  className={styles["dropdown_link"]}
+                  href='/jobs'
+                  className={styles['dropdown_link']}
                   onClick={() => setToggleDropdown(false)}
                 >
                   Internships
                 </Link>
                 <Link
                   href='/courses'
-                  className={styles["dropdown_link"]}
+                  className={styles['dropdown_link']}
                   onClick={() => setToggleDropdown(false)}
                 >
                   Courses
                 </Link>
                 <Link
                   href='/jobs'
-                  className={styles["dropdown_link"]}
+                  className={styles['dropdown_link']}
                   onClick={() => setToggleDropdown(false)}
                 >
                   Jobs

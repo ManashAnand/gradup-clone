@@ -17,8 +17,8 @@ import { useRouter } from 'next/navigation'
 const JobCardR = ({ data }) => {
   const router = useRouter()
   return (
-    <Card
-      className={`${styles['jobcard']} 'mt-2 rounded-lg cursor-pointer flex flex-row'`}
+    <div
+      className={`${styles['jobcard']} mt-2 rounded-lg cursor-pointer flex flex-col sm:flex-row`}
     >
       <div className='  pt-4 mx-4 items-center w-[50%]'>
         <div className=' flex flex-row w-full items-center'>
@@ -43,7 +43,7 @@ const JobCardR = ({ data }) => {
         </div>
 
         <CardContent className='text-left'>
-          <div className='flex flex-row gap-2 mt-2 '>
+          <div className='flex flex-wrap gap-2 mt-2 '>
             {data.skillsRequired.map((skill, index) => (
               <span
                 key={index}
@@ -55,18 +55,18 @@ const JobCardR = ({ data }) => {
           </div>
         </CardContent>
       </div>
-      <div className='pt-4 px-4 items-center w-[50%] border-l-2 border-gray-200 my-2'>
-        <div className='flex flex-wrap  mt-4 justify-start gap-10 ml-5 '>
+      <div className='pt-4 items-center w-[50%] sm:border-l-2 border-gray-200 my-2'>
+        <div className='flex flex-wrap  mt-4 justify-center gap-5'>
           <div>
             <CreditCardIcon />
             <span className='ml-2 mt-3'>{data.stipend}</span>
           </div>
           <div>
             <AccessTimeIcon />
-            4-7 yrs
+            <span className='ml-2 mt-3'>4-7 yrs</span>
           </div>
         </div>
-        <div className='flex flex-wrap  mt-4 justify-start gap-10 ml-5 '>
+        <div className='flex flex-wrap  mt-4 justify-center gap-5'>
           <div>
             <PeopleOutlineOutlinedIcon />
             <span className='ml-2 mt-3'>{data.noOfOpenings}+</span>
@@ -76,7 +76,7 @@ const JobCardR = ({ data }) => {
             <span className='ml-2 mt-3'>{data.location}</span>
           </div>
         </div>
-        <div className='flex flex-row mt-7 gap-4 justify-center'>
+        <div className='flex flex-wrap mt-7 gap-4 justify-center'>
           <Button
             variant='outlined'
             size='small'
@@ -112,7 +112,7 @@ const JobCardR = ({ data }) => {
           </Button>
         </div>
       </div>
-    </Card>
+    </div>
   )
 }
 export default JobCardR

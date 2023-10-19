@@ -17,7 +17,7 @@ const JobCard = ({ data }) => {
   const router = useRouter()
   return (
     <Card
-      className={`${styles['jobcard']} 'rounded-xl  p-2 cursor-pointer shadow-lg w-[50vh] '`}
+      className={`${styles['jobcard']} 'rounded-xl  p-2 cursor-pointer shadow-lg sm:w-[45vh] '`}
     >
       <div className='flex flex-row gap-5  mx-4 my-2 items-center'>
         <CardMedia

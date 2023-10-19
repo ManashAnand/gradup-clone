@@ -4,6 +4,7 @@ import Spinner from '@components/Spinner'
 import useSWR from 'swr'
 import { useRouter } from 'next/navigation'
 import { useRef, useEffect } from 'react'
+import styles from '@components/CoursesOnHome/styles.module.css'
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 const Internship = () => {
@@ -57,14 +58,18 @@ const Internship = () => {
   if (data) {
     return (
       <div className='w-screen mt-10 '>
-        <h1 className='text-4xl font-bold text-white'>Premium Internships</h1>
+        <h1
+          className={`text-3xl text-white font-semibold underline decoration-white underline-offset-8 ${styles['textform']} text-center my-5`}
+        >
+          Premium Internship
+        </h1>
         <div
           ref={scrollContainerRef}
           className='w-full h-full overflow-x-auto scroll scroll-continuous whitespace-nowrap scrollbar-hide mt-5'
         >
           {data.map((job) => (
             <div
-              className=' inline-block p-2 cursor-pointer '
+              className=' inline-block p-2 cursor-pointer'
               onClick={() => router.push(`/jobs/${job._id}`)}
             >
               <JobCard data={job} />

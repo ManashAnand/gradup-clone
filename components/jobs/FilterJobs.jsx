@@ -185,7 +185,7 @@ const FilterJobs = ({
     setSalaryExp(event.target.value)
   }
   return (
-    <div className='flex flex-row items-center justify-start gap-5 p-3 font-Lexend'>
+    <div className='flex flex-wrap items-center justify-center gap-5 p-3 font-Lexend'>
       <div className='w-[200px]'>
         <Select
           className='font-Lexend'
