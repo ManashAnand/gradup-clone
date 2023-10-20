@@ -146,6 +146,9 @@ const Nav = () => {
               <Link href='/courses' className={styles['outline_btn']}>
                 Courses
               </Link>
+              <Link href='/mycourses' className={styles['outline_btn']}>
+                My Courses
+              </Link>
               <Link
                 href={data?.role === 'HR' ? '/hr' : '/hr/signup'}
                 className={styles['outline_btn']}
@@ -247,6 +250,9 @@ const Nav = () => {
                   onClick={() => setToggleDropdown(false)}
                 >
                   Jobs
+                </Link>
+                <Link href='/mycourses' className={styles['dropdown_link']}>
+                  My Courses
                 </Link>
                 <button
                   type='button'

@@ -148,3 +148,16 @@
   color: #6f6f6f;
   z-index: 5;
 }
+.icon-container {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-container .text {
+  display: none;
+}
+
+.icon-container:hover .text {
+  display: inline;
+}
