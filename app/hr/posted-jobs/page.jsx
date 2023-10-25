@@ -22,7 +22,7 @@ export default function App() {
   const { data: session } = useSession()
   //changes this later
   var { data, isLoading, error } = useSWR(
-    `${session?.user.id}` ? `/api/hr/${session.user.id}` : null,
+    `${session?.user.id}` ? `/api/hr/${session?.user.id}` : null,
     fetcher
   )
   if (error)
