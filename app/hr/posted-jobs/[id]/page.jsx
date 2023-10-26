@@ -23,12 +23,13 @@ export default function Page({ params }) {
     fetcher
   )
   // ... handle loading and error states
-  if (error) console.log(error)
-  return (
-    <div className='text-white  text-center mx-auto my-20'>
-      Some Error Occured!! Please try again
-    </div>
-  )
+  if (error) {
+    return (
+      <div className='text-white  text-center mx-auto my-20'>
+        Some Error Occured!! Please try again
+      </div>
+    )
+  }
   if (data) {
     const createPDF = async (index) => {
       const pdf = document.getElementById('profile')

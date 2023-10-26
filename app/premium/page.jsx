@@ -7,21 +7,24 @@ export default function premium() {
   const plan = [
     {
       title: '1 Month Plan',
-      off_price: 5999,
-      price: 6999,
+      off_price: 1999,
+      price: 3000,
       id: ['1'],
+      off: 'save 33%',
     },
     {
       title: '6 Month Plan',
-      off_price: 29999,
-      price: 41999,
+      off_price: 9999,
+      price: 15000,
       id: ['6'],
+      off: 'save 33%',
     },
     {
       title: '1 Year Plan',
-      off_price: 34999,
-      price: 83999,
+      off_price: 18999,
+      price: 30000,
       id: ['12'],
+      off: 'save 35%',
     },
   ]
   const { data: session } = useSession()
@@ -82,7 +85,7 @@ export default function premium() {
               <p className='text-sm text-gray-500'>
                 <s>&#8377; {card.price}</s>{' '}
                 <span className='bg-blue-200 text-blue-500 text-sm px-2 rounded-2xl ml-2'>
-                  Save 15%
+                  {card.off}
                 </span>
               </p>
               <button

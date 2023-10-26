@@ -254,7 +254,9 @@ const page = ({ params }) => {
   return (
     <>
       {!posted ? (
-        <div className={`justify-center w-full align-center justify-items-center ${styles["hrjobs"]} mt-6 mb-20 border-2 border-white px-4 ${styles["textform"]}`}>
+        <div
+          className={`justify-center w-full align-center justify-items-center ${styles['hrjobs']} mt-6 mb-20 border-2 border-white px-4 ${styles['textform']}`}
+        >
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             {/* <Image
           src="/assets/images/logo-for-website.png"
@@ -265,14 +267,18 @@ const page = ({ params }) => {
         /> */}
           </div>
           <h1 className='font-bold text-5xl text-left mb-5'>
-            <p className={`${styles["textform"]} text-4xl underline decoration-white ${styles["animate-charcter"]} underline-offset-8 text-center text-white mb-8`}>
+            <p
+              className={`${styles['textform']} text-4xl underline decoration-white ${styles['animate-charcter']} underline-offset-8 text-center text-white mb-8`}
+            >
               Post a Job and hire the best Talent
             </p>
           </h1>
           <form onSubmit={createNewJob} className='w-full'>
             <Grid.Container gap={2}>
               <Grid xs={12} sm={12}>
-                <div className={`${styles["flexset"]} w-full border-2 border-white pb-4`}>
+                <div
+                  className={`${styles['flexset']} w-full border-2 border-white pb-4`}
+                >
                   <div style={{}} className='text-white ml-4'>
                     <input
                       className='lg mt-6'
@@ -459,36 +465,38 @@ const page = ({ params }) => {
                   />
                 </div>
               </Grid>
-              <Grid xs={12} sm={6}>
-                <div className='flex flex-col mx-auto w-full'>
-                  <div className='flex'>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='24'
-                      height='24'
-                      viewBox='0 0 24 24'
-                      style={{
-                        fill: 'white',
-                        marginTop: '1.6vh',
-                        marginLeft: '0.6em',
-                      }}
-                    >
-                      <path d='M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z'></path>
-                      <path d='M13 7h-2v6h6v-2h-4z'></path>
-                    </svg>
-                    <label className=' text-white my-3 ml-1'>
-                      Duration (in Months)
-                    </label>
+              {(value || value2) && (
+                <Grid xs={12} sm={6}>
+                  <div className='flex flex-col mx-auto w-full'>
+                    <div className='flex'>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='24'
+                        height='24'
+                        viewBox='0 0 24 24'
+                        style={{
+                          fill: 'white',
+                          marginTop: '1.6vh',
+                          marginLeft: '0.6em',
+                        }}
+                      >
+                        <path d='M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z'></path>
+                        <path d='M13 7h-2v6h6v-2h-4z'></path>
+                      </svg>
+                      <label className=' text-white my-3 ml-1'>
+                        Duration (in Months)
+                      </label>
+                    </div>
+                    <input
+                      className='rounded-md p-2'
+                      css={{ backgroundColor: '$white' }}
+                      clearable
+                      placeholder='Duration'
+                      initialValue=''
+                    />
                   </div>
-                  <input
-                    className='rounded-md p-2'
-                    css={{ backgroundColor: '$white' }}
-                    clearable
-                    placeholder='Duration'
-                    initialValue=''
-                  />
-                </div>
-              </Grid>
+                </Grid>
+              )}
               {/* <div className="flex flex-col mx-auto w-full">
               <div className="flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "1.6vh", marginLeft: "0.9em" }} ><path d="m2.394 13.742 4.743 3.62 7.616-8.704-1.506-1.316-6.384 7.296-3.257-2.486zm19.359-5.084-1.506-1.316-6.369 7.279-.753-.602-1.25 1.562 2.247 1.798z"></path></svg>
@@ -616,7 +624,9 @@ const page = ({ params }) => {
                     </svg>
                     <label className=' text-white mt-3 mb-2 ml-1'>
                       Skills Required *{' '}
-                      <span className={`text-sm text-white ${styles["textnew"]}`}>
+                      <span
+                        className={`text-sm text-white ${styles['textnew']}`}
+                      >
                         (Comma seperated skills)
                       </span>
                     </label>
@@ -692,7 +702,9 @@ const page = ({ params }) => {
                 initialValue={`Benefits :\n1. \n2.\n3.`}
                 required
               /> */}
-                <div className={`${styles["gridset"]} text-white text-left border-2 border-white px-10 py-5`}>
+                <div
+                  className={`${styles['gridset']} text-white text-left border-2 border-white px-10 py-5`}
+                >
                   {checkbox.map((ele, i) => {
                     return (
                       <div className='my-3' key={i}>

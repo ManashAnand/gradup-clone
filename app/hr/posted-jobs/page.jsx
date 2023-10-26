@@ -21,7 +21,7 @@ const fetcher = async (...args) =>
 export default function App() {
   const { data: session } = useSession()
   //changes this later
-  console.log(session?.user)
+
   var { data, isLoading, error } = useSWR(
     `${session?.user.id}` ? `/api/hr/${session?.user.id}` : null,
     fetcher
@@ -34,7 +34,6 @@ export default function App() {
     )
   if (isLoading) return <Spinner />
   if (data) {
-    console.log(data)
     const columns = [
       { name: 'Title', uid: 'title' },
       { name: 'Total Applicants', uid: 'impression' },
@@ -122,7 +121,7 @@ export default function App() {
                 }}
               >
                 {cellValue == false ? (
-                  <Link href='/jobs' className=''>
+                  <Link href='/premium' className=''>
                     Buy Premium
                   </Link>
                 ) : (
