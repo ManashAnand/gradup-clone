@@ -52,7 +52,7 @@ const Nav = () => {
           }}
           width='90'
           className='rounded-md ml-3'
-          src='/assets/images/headerlogo.png'
+          src='/assets/icons/webLogo.jpeg'
         ></img>
         {/* <Image
           src='/assets/images/website-icon.png'
