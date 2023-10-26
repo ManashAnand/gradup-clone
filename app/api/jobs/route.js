@@ -42,6 +42,7 @@ export const GET = async (req) => {
     const nonPremiumJobs = allJobs.filter((job) => !premiumJobs.includes(job))
     const data = premiumJobs.concat(nonPremiumJobs)
 
+    console.log("Herre is the list of all jobs from /api/jobs API ",data);
     return NextResponse.json(data, { status: 200 })
   } catch (error) {
     return new Response(error, {
