@@ -21,6 +21,24 @@ const fetcher = async (...args) =>
 export default function App() {
   const { data: session } = useSession()
   //changes this later
+  const deleteJob = async (id) => {
+    try {
+      const deleteUrl = `/api/jobs?jobId=${id}&hrId=${session.user.id}`
+      console.log(session.user.id)
+
+      const response = await fetch(deleteUrl, {
+        method: 'DELETE',
+      })
+
+      if (response.status === 204) {
+        console.log('job deleted successfully')
+      } else {
+        router.push('/hr')
+      }
+    } catch (error) {
+      console.error('Fetch error:', error)
+    }
+  }
 
   var { data, isLoading, error } = useSWR(
     `${session?.user.id}` ? `/api/hr/${session?.user.id}` : null,
@@ -164,17 +182,18 @@ export default function App() {
                 </IconButton>
               </Tooltip>
             </Col>
-            <Col css={{ d: "flex" }}>
-              <Tooltip
-                content="Delete"
-                color="error"
-                onClick={() => console.log("Delete user", user.id)}
-              >
-                <IconButton>
-                  <DeleteIcon size={20} fill="#FF0080" />
-                </IconButton>
-              </Tooltip>
-            </Col> */}
+                    */}
+              <Col css={{ d: 'flex' }}>
+                <Tooltip
+                  content='Delete'
+                  color='error'
+                  onClick={() => deleteJob(user.id)}
+                >
+                  <IconButton>
+                    <DeleteIcon size={20} fill='#FF0080' />
+                  </IconButton>
+                </Tooltip>
+              </Col>
             </Row>
           )
         default:

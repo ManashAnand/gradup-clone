@@ -45,7 +45,7 @@ export default function Page({ params }) {
     }
     return (
       <>
-        {data.length > 1 && !data[0].premium && (
+        {data.length > 0 && !data[0].premium && (
           <a
             href='/premium'
             className='text-center bg-red-500 text-white p-4 rounded-md mt-2 font-bold'

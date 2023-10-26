@@ -465,38 +465,42 @@ const page = ({ params }) => {
                   />
                 </div>
               </Grid>
-              {(value || value2) && (
-                <Grid xs={12} sm={6}>
-                  <div className='flex flex-col mx-auto w-full'>
-                    <div className='flex'>
-                      <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        width='24'
-                        height='24'
-                        viewBox='0 0 24 24'
-                        style={{
-                          fill: 'white',
-                          marginTop: '1.6vh',
-                          marginLeft: '0.6em',
-                        }}
-                      >
-                        <path d='M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z'></path>
-                        <path d='M13 7h-2v6h6v-2h-4z'></path>
-                      </svg>
-                      <label className=' text-white my-3 ml-1'>
-                        Duration (in Months)
-                      </label>
-                    </div>
-                    <input
-                      className='rounded-md p-2'
-                      css={{ backgroundColor: '$white' }}
-                      clearable
-                      placeholder='Duration'
-                      initialValue=''
-                    />
+
+              <Grid
+                xs={12}
+                sm={6}
+                style={{ display: value ? 'block' : 'none' }}
+              >
+                <div className='flex flex-col mx-auto w-full'>
+                  <div className='flex'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='24'
+                      height='24'
+                      viewBox='0 0 24 24'
+                      style={{
+                        fill: 'white',
+                        marginTop: '1.6vh',
+                        marginLeft: '0.6em',
+                      }}
+                    >
+                      <path d='M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z'></path>
+                      <path d='M13 7h-2v6h6v-2h-4z'></path>
+                    </svg>
+                    <label className=' text-white my-3 ml-1'>
+                      Duration (in Months)
+                    </label>
                   </div>
-                </Grid>
-              )}
+                  <input
+                    className='rounded-md p-2'
+                    css={{ backgroundColor: '$white' }}
+                    clearable
+                    placeholder='Duration'
+                    initialValue={0}
+                  />
+                </div>
+              </Grid>
+
               {/* <div className="flex flex-col mx-auto w-full">
               <div className="flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "white", marginTop: "1.6vh", marginLeft: "0.9em" }} ><path d="m2.394 13.742 4.743 3.62 7.616-8.704-1.506-1.316-6.384 7.296-3.257-2.486zm19.359-5.084-1.506-1.316-6.369 7.279-.753-.602-1.25 1.562 2.247 1.798z"></path></svg>
@@ -664,8 +668,8 @@ const page = ({ params }) => {
                 <Textarea
                   css={{ mx: '$6', mt: '$5', backgroundColor: '$white' }}
                   rows='10'
-                  placeholder='Description of the Job'
-                  initialValue={`Job Description :\n1. \n2.\n3.`}
+                  placeholder='Describe the roles and responsibilities for the job '
+                  initialValue={''}
                   required
                 />
               </div>

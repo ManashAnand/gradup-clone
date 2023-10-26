@@ -61,7 +61,7 @@ const Internship = () => {
         <h1
           className={`text-3xl text-white font-semibold underline decoration-white underline-offset-8 ${styles['textform']} text-center my-5`}
         >
-          Premium Internship
+          Featured Internship
         </h1>
         <div
           ref={scrollContainerRef}
