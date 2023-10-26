@@ -7,9 +7,8 @@ const JobDescription = ({
   description,
   perks,
   eligiblilty,
-  isActive,
   responsilities,
-  job,
+  expectedStartDate,
 }) => (
   <div className='p-5 text-left'>
     <h1 className='font-bold text-2xl'>Job Description</h1>
@@ -50,11 +49,11 @@ const JobDescription = ({
       </>
     )}
 
-    {job.expectedStartDate && (
+    {expectedStartDate && (
       <>
         <h1 className='font-bold text-2xl mt-5'>Expected Start Date:</h1>
         <p>
-          {new Date(job.expectedStartDate).toLocaleDateString('en-US', {
+          {new Date(expectedStartDate).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric',

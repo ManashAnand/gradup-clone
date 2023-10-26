@@ -13,7 +13,7 @@ export const GET = async (req) => {
     const allJobs = await Job.aggregate([
       {
         $match: {
-          'application.postedDate': {
+          postedDate: {
             $gte: twoMonthsAgo,
             $lte: today,
           },
@@ -21,7 +21,7 @@ export const GET = async (req) => {
       },
       {
         $addFields: {
-          postedYear: { $year: '$application.postedDate' },
+          postedYear: { $year: '$postedDate' },
           currentYear: { $year: today },
         },
       },

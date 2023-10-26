@@ -21,6 +21,7 @@ const fetcher = async (...args) =>
 export default function App() {
   const { data: session } = useSession()
   //changes this later
+  console.log(session?.user)
   var { data, isLoading, error } = useSWR(
     `${session?.user.id}` ? `/api/hr/${session?.user.id}` : null,
     fetcher

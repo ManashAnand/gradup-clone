@@ -20,7 +20,7 @@ const FilterJobs = ({
   const typeList = [
     { value: 'full-time', label: 'Full Time' },
     { value: 'internships', label: 'Internships' },
-    { value: 'startup', label: 'Start up' },
+    { value: 'startup', label: 'Is Start Up' },
   ]
   const cityList = [
     { value: 'Remote', label: 'Remote' },

@@ -31,7 +31,7 @@ function Page() {
         return false
       }
       if (type) {
-        if (type == 'internship' && !job.isIntern) {
+        if (type == 'internships' && !job.isIntern) {
           return false
         } else if (type == 'startup' && !job.isStartUp) {
           return false
