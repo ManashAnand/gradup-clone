@@ -27,9 +27,7 @@ const JobDescription = ({
 
     {perks.length > 0 && (
       <>
-        <h1 className='font-bold text-2xl text-left mt-5'>
-          Perks[What will you get]
-        </h1>
+        <h1 className='font-bold text-2xl text-left mt-5'>Perks</h1>
         <ul className='mt-3'>
           {perks.map((perk) => (
             <li key={perk}>{perk}</li>

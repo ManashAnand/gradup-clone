@@ -28,7 +28,7 @@ const JobCardR = ({ data }) => {
             title={data.title}
           />
 
-          <CardContent className='text-left'>
+          <div className='text-left ml-4'>
             <Typography
               variant='h5'
               component='h5'
@@ -39,7 +39,7 @@ const JobCardR = ({ data }) => {
             <Typography variant='p' component='div' className='text-xl'>
               {data.companyName}
             </Typography>
-          </CardContent>
+          </div>
         </div>
 
         <CardContent>
@@ -56,7 +56,7 @@ const JobCardR = ({ data }) => {
         </CardContent>
       </div>
       <div className='pt-4 items-center w-[50%] sm:border-l-2 border-gray-200 my-2'>
-        <div className='flex flex-wrap  mt-4 justify-center gap-5'>
+        <div className='flex flex-wrap  mt-4 justify-evenly gap-5'>
           <div>
             <CreditCardIcon />
             <span className='ml-2 mt-3'>{data.stipend}</span>
@@ -66,7 +66,7 @@ const JobCardR = ({ data }) => {
             <span className='ml-2 mt-3'>4-7 yrs</span>
           </div>
         </div>
-        <div className='flex flex-wrap  mt-4 justify-center gap-5'>
+        <div className='flex flex-wrap  mt-4 justify-evenly gap-5'>
           <div>
             <PeopleOutlineOutlinedIcon />
             <span className='ml-2 mt-3'>{data.noOfOpenings}+</span>

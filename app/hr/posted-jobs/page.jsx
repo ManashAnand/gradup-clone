@@ -21,7 +21,25 @@ const fetcher = async (...args) =>
 export default function App() {
   const { data: session } = useSession()
   //changes this later
-  console.log(session?.user)
+  const deleteJob = async (id) => {
+    try {
+      const deleteUrl = `/api/jobs?jobId=${id}&hrId=${session.user.id}`
+      console.log(session.user.id)
+
+      const response = await fetch(deleteUrl, {
+        method: 'DELETE',
+      })
+
+      if (response.status === 204) {
+        console.log('job deleted successfully')
+      } else {
+        router.push('/hr')
+      }
+    } catch (error) {
+      console.error('Fetch error:', error)
+    }
+  }
+
   var { data, isLoading, error } = useSWR(
     `${session?.user.id}` ? `/api/hr/${session?.user.id}` : null,
     fetcher
@@ -34,7 +52,6 @@ export default function App() {
     )
   if (isLoading) return <Spinner />
   if (data) {
-    console.log(data)
     const columns = [
       { name: 'Title', uid: 'title' },
       { name: 'Total Applicants', uid: 'impression' },
@@ -122,7 +139,7 @@ export default function App() {
                 }}
               >
                 {cellValue == false ? (
-                  <Link href='/jobs' className=''>
+                  <Link href='/premium' className=''>
                     Buy Premium
                   </Link>
                 ) : (
@@ -165,17 +182,18 @@ export default function App() {
                 </IconButton>
               </Tooltip>
             </Col>
-            <Col css={{ d: "flex" }}>
-              <Tooltip
-                content="Delete"
-                color="error"
-                onClick={() => console.log("Delete user", user.id)}
-              >
-                <IconButton>
-                  <DeleteIcon size={20} fill="#FF0080" />
-                </IconButton>
-              </Tooltip>
-            </Col> */}
+                    */}
+              <Col css={{ d: 'flex' }}>
+                <Tooltip
+                  content='Delete'
+                  color='error'
+                  onClick={() => deleteJob(user.id)}
+                >
+                  <IconButton>
+                    <DeleteIcon size={20} fill='#FF0080' />
+                  </IconButton>
+                </Tooltip>
+              </Col>
             </Row>
           )
         default:

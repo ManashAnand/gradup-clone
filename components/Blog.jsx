@@ -19,7 +19,9 @@ const Blog = () => {
               {blog.topic}
             </h1>
             <img src={blog.img} />
-            <p className='overflow-hidden text-left mt-2'>{blog.intro}</p>
+            <p className='overflow-auto text-left mt-2 h-[300px]'>
+              {blog.intro}
+            </p>
             <button
               onClick={() => router.push(`/blogs/${blog._id}`)}
               className='bg-blue-300 px-4 py-2 rounded-sm m-2'

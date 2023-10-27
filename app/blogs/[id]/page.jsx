@@ -10,16 +10,17 @@ const page = ({ params }) => {
   const { data, error, isLoading } = useSWR(`/api/blogs/${params.id}`, fetcher)
   if (isLoading) <Spinner />
   if (data) {
-    console.log(data)
     return (
-      <div className='my-10 p-4 flex flex-col items-center'>
+      <div className='my-10 p-4 flex flex-col items-left'>
         <h1 className='text-4xl font-bold text-white'>{data.topic}</h1>
         <img className='mt-5' src={data.img} />
         {data.content.map((outer) => (
           <div>
-            <h1 className='font-bold text-2xl text-white my-5'>{outer.head}</h1>
+            <h1 className='font-bold text-2xl text-white my-5 text-left'>
+              {outer.head}
+            </h1>
             {outer.data.map((inner) => (
-              <p className='text-white my-2 text-lg'>{inner}</p>
+              <p className='text-white my-2 text-lg text-left'>{inner}</p>
             ))}
           </div>
         ))}

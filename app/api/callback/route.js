@@ -56,7 +56,7 @@ export const POST = async (request) => {
 
           if (response.ok) {
             console.log('HR premium successfully:')
-            redirect = 'cart'
+            redirect = 'hr'
           } else {
             console.log('HR premium failed:', response.status)
           }
