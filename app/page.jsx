@@ -13,6 +13,7 @@ import Link from 'next/link'
 import styles from './styles.module.css'
 import Internship from '@components/Internship'
 import Job from '@components/Job'
+import CloseHover from '@components/CloseHover/CloseHover'
 
 const Home = () => {
   const [loading, setLoading] = useState(false)
@@ -20,6 +21,7 @@ const Home = () => {
     <>
       {loading && <Spinner />}
       <section className='w-full flex-center flex-col'>
+      <CloseHover/>
         <HomeFirstComponent />
         <CoursesOnHome />
         <Internship />
