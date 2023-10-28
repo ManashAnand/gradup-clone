@@ -1,5 +1,4 @@
 const Details = ({ data }) => {
-  console.log(data)
   return (
     <div className='p-2 cursor-pointer'>
       <img src={data.poster} className='w-full h-[300px] rounded-md ' />
@@ -16,9 +15,21 @@ const Details = ({ data }) => {
         <p className='ml-4 px-2 '>{data.rewards}</p>
         <hr className='m-4' />
         <h1 className=' ml-4 px-2 font-bold font-lg'>Start's On :</h1>
-        <p className='ml-4 px-2 '>{data.hackathonStartDate}</p>
+        <p className='ml-4 px-2 '>
+          {new Date(data.hackathonStartDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </p>
         <h1 className=' ml-4 px-2 font-bold font-lg mt-2'>End's On :</h1>
-        <p className='ml-4 px-2 '>{data.hackathonEndDate}</p>
+        <p className='ml-4 px-2 '>
+          {new Date(data.hackathonEndDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </p>
         <hr className='m-4' />
         <h1 className=' ml-4 px-2 font-bold font-lg mt-2'>Apply Here :</h1>
         <a href={data.link} className='ml-4 px-2 cursor-pointer '>

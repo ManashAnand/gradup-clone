@@ -44,6 +44,20 @@ export default function Courses({ params }) {
   if (!hydrated) {
     return null
   }
+  const handleData = async (course, email) => {
+    try {
+      await fetch('/api/data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, course }),
+      })
+    } catch (error) {
+      console.error('An error occurred:', error.message)
+    }
+  }
+
   const Enroll = async (id, email) => {
     try {
       const response = await fetch('/api/cart', {
@@ -69,9 +83,8 @@ export default function Courses({ params }) {
   if (error) {
     return <div>Error Occurred</div>
   }
-
-  console.log(data)
   if (data) {
+    //handleData(email, data.title)
     return (
       <>
         {/* start */}

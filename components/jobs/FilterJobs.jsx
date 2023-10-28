@@ -18,9 +18,9 @@ const FilterJobs = ({
   const [title, setTitle] = useState([])
   const [typeF, setTypeF] = useState()
   const typeList = [
-    { value: 'full-time', label: 'Full Time' },
+    { value: 'full-time', label: 'Jobs' },
     { value: 'internships', label: 'Internships' },
-    { value: 'startup', label: 'Is Start Up' },
+    { value: 'startup', label: 'StartUp Live Project' },
   ]
   const cityList = [
     { value: 'Remote', label: 'Remote' },

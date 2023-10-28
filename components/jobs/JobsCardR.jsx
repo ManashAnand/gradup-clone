@@ -5,10 +5,6 @@ import CreditCardIcon from '@mui/icons-material/CreditCard'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined'
 import React from 'react'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
-import Typography from '@mui/material/Typography'
 import styles from './styles.module.css'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import Button from '@mui/material/Button'
@@ -18,44 +14,38 @@ const JobCardR = ({ data }) => {
   const router = useRouter()
   return (
     <div
-      className={`${styles['jobcard']} mt-2 rounded-lg cursor-pointer flex flex-col sm:flex-row`}
+      className={`${styles['jobcard']} mt-2 rounded-lg cursor-pointer flex flex-col sm:flex-row font-lexend`}
     >
       <div className='  pt-4 mx-4 items-center sm:w-[50%] w-full'>
         <div className=' flex flex-row w-full items-center '>
-          <CardMedia
+          <img
             className='w-[10vh] h-[10vh] border border-gray-500 rounded-md'
-            image={data.logo}
-            title={data.title}
+            src={data.logo}
+            alt={data.title}
           />
 
-          <div className='text-left ml-4'>
-            <Typography
-              variant='h5'
-              component='h5'
-              className='font-extrabold text-2xl'
-            >
+          <div className='text-left ml-4 mt-2'>
+            <h1 className='font-extrabold text-xl font-lexend text-gray-500'>
               {data.title}
-            </Typography>
-            <Typography variant='p' component='div' className='text-xl'>
+            </h1>
+            <p className='text-lg font-lexend text-gray-400'>
               {data.companyName}
-            </Typography>
+            </p>
           </div>
         </div>
 
-        <CardContent>
-          <div className='flex flex-wrap gap-2 mt-2 '>
-            {data.skillsRequired.map((skill, index) => (
-              <span
-                key={index}
-                className='py-2 px-4 border border-gray-200 rounded-lg text-sm'
-              >
-                #{skill}
-              </span>
-            ))}
-          </div>
-        </CardContent>
+        <div className='flex flex-wrap gap-2 mt-4 text-gray-400 '>
+          {data.skillsRequired.map((skill, index) => (
+            <span
+              key={index}
+              className='py-1 px-4 border border-gray-200 rounded-lg text-sm'
+            >
+              #{skill}
+            </span>
+          ))}
+        </div>
       </div>
-      <div className='pt-4 items-center w-[50%] sm:border-l-2 border-gray-200 my-2'>
+      <div className='pt-4 items-center sm:w-[50%] sm:border-l-2 border-gray-200 my-2 text-gray-400 '>
         <div className='flex flex-wrap  mt-4 justify-evenly gap-5'>
           <div>
             <CreditCardIcon />
@@ -76,14 +66,14 @@ const JobCardR = ({ data }) => {
             <span className='ml-2 mt-3'>{data.location}</span>
           </div>
         </div>
-        <div className='flex flex-wrap mt-7 gap-4 justify-center'>
+        <div className='flex flex-wrap mt-7 gap-4 justify-center item-center'>
           <Button
             variant='outlined'
             size='small'
             startIcon={<FavoriteIcon />}
             style={{
-              border: '#6F6F6F',
-              color: '#6F6F6F',
+              border: '#969696',
+              color: '#969696',
             }}
           >
             Wishlist
@@ -93,8 +83,8 @@ const JobCardR = ({ data }) => {
             size='small'
             startIcon={<DateRangeIcon />}
             style={{
-              border: '#6F6F6F',
-              color: '#6F6F6F',
+              border: '#969696',
+              color: '#969696',
             }}
           >
             Calender

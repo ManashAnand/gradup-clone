@@ -83,7 +83,7 @@ function Page() {
           />
         </div>
         <div className='flex flex-row w-screen  h-[700px] mt-4'>
-          <div className='w-full sm:w-[35%] gap-5 overflow-y-auto  flex flex-col  items-center px-7 py-2 '>
+          <div className='w-full sm:w-[35%] gap-5 overflow-y-auto  flex flex-col  items-center px-2 py-2 '>
             {filteredJobs.map((job, index) => (
               <div onClick={() => handleCardClick(job)} key={index}>
                 <JobCard data={job} />

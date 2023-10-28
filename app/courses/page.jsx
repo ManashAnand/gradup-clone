@@ -6,7 +6,7 @@ import CustomCard from '@components/CustomCard'
 import Spinner from '@components/Spinner'
 import React from 'react'
 import useSWR from 'swr'
-import styles from "./styles.module.css"
+import styles from './styles.module.css'
 
 async function fetcher(url) {
   const res = await fetch(url, { cache: 'no-store' })
@@ -24,7 +24,6 @@ const page = () => {
     // Returns null on first render, so the client and server match
     return null
   }
-  console.log('data', data)
 
   if (isLoading) {
     return (
@@ -44,7 +43,9 @@ const page = () => {
               src='/assets/images/image1.png'
             ></img>
           </div>
-          <h1 className={`text-4xl font-bold text-sky-500 ${styles["textform"]} ${styles["animate-charcter"]} text-center mb-6 mt-3`}>
+          <h1
+            className={`text-4xl font-bold text-sky-500 ${styles['textform']} ${styles['animate-charcter']} text-center mb-6 mt-3`}
+          >
             Our Courses
           </h1>
         </div>
@@ -57,7 +58,7 @@ const page = () => {
     return (
       <>
         <div>
-          <div className={`${styles["coursebox"]} w-fit m-auto`}>
+          <div className={`${styles['coursebox']} w-fit m-auto`}>
             <div>
               <p className='text-white text-left text-xl'>
                 Embark on a journey of knowledge and affordability. Discover
@@ -74,7 +75,7 @@ const page = () => {
             </div>
           </div>
           <div className='w-fit flex mx-auto flex-col mt-5'>
-            <div className={`${styles["showmobile"]} ${styles["textform"]}`}>
+            <div className={`${styles['showmobile']} ${styles['textform']}`}>
               <p className='text-white text-xl'>
                 Embark on a journey of knowledge and affordability.
               </p>
@@ -89,7 +90,9 @@ const page = () => {
               ></img>
             </div>
             <div className='w-screen '>
-              <h1 className={`text-4xl font-bold text-sky-500 ${styles["textform"]} ${styles["animate-charcter"]} text-center mb-6`}>
+              <h1
+                className={`text-4xl font-bold text-sky-500 ${styles['textform']} ${styles['animate-charcter']} text-center mb-6`}
+              >
                 Popular Courses
               </h1>
             </div>
@@ -116,7 +119,9 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className={`text-4xl text-center ${styles["text"]} font-semibold text-white mb-8 mt-16`}>
+        <p
+          className={`text-4xl text-center ${styles['text']} font-semibold text-white mb-8 mt-16`}
+        >
           Computer Science
         </p>
         <Grid
@@ -138,7 +143,9 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className={`text-4xl text-center ${styles["text"]} font-semibold text-white mb-8 mt-16`}>
+        <p
+          className={`text-4xl text-center ${styles['text']} font-semibold text-white mb-8 mt-16`}
+        >
           Information Technology
         </p>
         <Grid
@@ -161,7 +168,9 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className={`text-4xl text-center ${styles["text"]} font-semibold text-white mb-8 mt-16`}>
+        <p
+          className={`text-4xl text-center ${styles['text']} font-semibold text-white mb-8 mt-16`}
+        >
           Automation Technology
         </p>
         <Grid
@@ -184,7 +193,9 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className={`text-4xl text-center ${styles["text"]} font-semibold text-white mb-8 mt-16`}>
+        <p
+          className={`text-4xl text-center ${styles['text']} font-semibold text-white mb-8 mt-16`}
+        >
           Management
         </p>
         <Grid
@@ -207,7 +218,9 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className={`text-4xl text-center ${styles["text"]} font-semibold text-white mb-8 mt-16`}>
+        <p
+          className={`text-4xl text-center ${styles['text']} font-semibold text-white mb-8 mt-16`}
+        >
           Language
         </p>
         <Grid
@@ -230,7 +243,9 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className={`text-4xl text-center ${styles["text"]} font-semibold text-white mb-8 mt-16`}>
+        <p
+          className={`text-4xl text-center ${styles['text']} font-semibold text-white mb-8 mt-16`}
+        >
           Design And Product
         </p>
         <Grid
@@ -253,7 +268,9 @@ const page = () => {
               </Grid>
             ))}
         </Grid>
-        <p className={`text-4xl text-center ${styles["text"]} font-semibold text-white mb-8 mt-16`}>
+        <p
+          className={`text-4xl text-center ${styles['text']} font-semibold text-white mb-8 mt-16`}
+        >
           Arts and Humanities
         </p>
         <Grid

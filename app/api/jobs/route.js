@@ -4,16 +4,12 @@ import HR from '@models/hr'
 import { NextResponse } from 'next/server'
 
 export const GET = async (req) => {
-  console.log("Entered the api of jobs ");
   try {
-    console.log("Entered the try block api of jobs ");
     await connectToDB()
     const today = new Date()
     const twoMonthsAgo = new Date()
     twoMonthsAgo.setMonth(today.getMonth() - 2)
     const currentYear = today.getFullYear()
-
-    console.log("Before the wait aggregate function ");
 
     const allJobs = await Job.aggregate([
       {
@@ -38,8 +34,6 @@ export const GET = async (req) => {
     ])
     const premiumJobs = []
 
-    console.log("Before the for loopssssssssssssss ");
-
     for (const job of allJobs) {
       const hr = await HR.findById(job.hrId)
       job.premium = hr ? hr.premium : false
@@ -48,15 +42,11 @@ export const GET = async (req) => {
       }
     }
 
-    console.log("Before the concat and filter optionsssssssss ");
-
     const nonPremiumJobs = allJobs.filter((job) => !premiumJobs.includes(job))
     const data = premiumJobs.concat(nonPremiumJobs)
 
-    console.log("Herre is the list of all jobs from /api/jobs API ",data);
     return NextResponse.json(data, { status: 200 })
   } catch (error) {
-    console.log("Inside the error blockssssssssssssss ");
     return new Response(error, {
       status: 500,
     })

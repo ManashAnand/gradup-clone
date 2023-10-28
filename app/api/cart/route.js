@@ -51,7 +51,6 @@ export async function POST(request) {
     })
     return NextResponse.json({ message: 'Cart created' }, { status: 201 })
   } catch (error) {
-    error
     return NextResponse.json(
       { error: 'Internal Server Error' },
       { status: 500 }
