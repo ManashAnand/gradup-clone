@@ -44,14 +44,14 @@ export default function Courses({ params }) {
   if (!hydrated) {
     return null
   }
-  const handleData = async (course, email) => {
+  const handleData = async (email, course, price) => {
     try {
       await fetch('/api/data', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, course }),
+        body: JSON.stringify({ email, course, price }),
       })
     } catch (error) {
       console.error('An error occurred:', error.message)
@@ -68,7 +68,7 @@ export default function Courses({ params }) {
         body: JSON.stringify({ userId: email, courseId: id }),
       })
       if (response.ok) {
-        const responseData = await response.json()
+        await response.json()
         router.push('/cart')
       } else {
         console.error('not able to add to cart')
@@ -84,7 +84,7 @@ export default function Courses({ params }) {
     return <div>Error Occurred</div>
   }
   if (data) {
-    //handleData(email, data.title)
+    handleData(email, data.title, data.price)
     return (
       <>
         {/* start */}

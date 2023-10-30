@@ -29,6 +29,21 @@ export default function premium() {
   ]
   const { data: session } = useSession()
   const email = session?.user.email
+
+  const handleData = async (email, course, price) => {
+    try {
+      await fetch('/api/data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, course, price }),
+      })
+    } catch (error) {
+      console.error('An error occurred:', error.message)
+    }
+  }
+
   const handlePayment = async (id, amount) => {
     try {
       const type = 'premium'
@@ -90,7 +105,10 @@ export default function premium() {
               </p>
               <button
                 className='mt-5 text-white bg-orange-400 rounded-md width-full px-14 py-1'
-                onClick={() => handlePayment(card.id, card.off_price)}
+                onClick={() => {
+                  handlePayment(card.id, card.off_price),
+                    handleData(email, card.title, card.off_price)
+                }}
               >
                 Buy now
               </button>
