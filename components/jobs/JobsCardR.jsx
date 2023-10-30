@@ -87,7 +87,7 @@ const JobCardR = ({ data }) => {
               color: '#969696',
             }}
           >
-            Calender
+            Calendar
           </Button>
           <Button
             variant='contained'

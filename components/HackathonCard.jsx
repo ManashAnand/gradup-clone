@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 const HackathonCard = ({ data, isSelected, onClick }) => {
   const router = useRouter()
-  console.log(data)
+
   return (
     <div
       onClick={() => onClick(data)}

@@ -23,8 +23,11 @@ export default function App() {
   //changes this later
   const deleteJob = async (id) => {
     try {
+      const jobIndex = data.posts.findIndex((job) => job._id === id)
+
+      // Remove the job from the array
+      data.posts.splice(jobIndex, 1)
       const deleteUrl = `/api/jobs?jobId=${id}&hrId=${session.user.id}`
-      console.log(session.user.id)
 
       const response = await fetch(deleteUrl, {
         method: 'DELETE',
@@ -74,7 +77,7 @@ export default function App() {
         canSee: data.posts[i].canSee,
       })
     }
-
+    console.log(users)
     const renderCell = (user, columnKey) => {
       const cellValue = user[columnKey]
       switch (columnKey) {
