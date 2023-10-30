@@ -29,7 +29,7 @@ function myTask() {
     })
 }
 // Schedule the task to run every day mid-night
-const job = schedule('* * * * *', myTask)
+const job = schedule('0 0 * * *', myTask)
 export const POST = async () => {
   return NextResponse.json(
     { message: 'Triggred Successfully' },
