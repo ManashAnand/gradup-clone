@@ -69,12 +69,8 @@ const Experience = ({
     }
   }
   const deleteExperience = async () => {
-    window.location.reload()
-    window.scrollTo(0, 0)
-    // e.preventDefault();
-    // console.log(e.target[0].value);
     try {
-      const response = await fetch(
+      await fetch(
         `/api/user/${session?.user.id}/?type=experience&action=delete`,
         {
           method: 'POST',

@@ -1,5 +1,6 @@
 'use client'
-import { Card, Grid, Row, Text } from '@nextui-org/react'
+import { AiFillLinkedin } from 'react-icons/ai'
+import { FaTwitterSquare } from 'react-icons/fa'
 
 const Mentors = () => {
   const list = [
@@ -44,44 +45,42 @@ const Mentors = () => {
         'AVP, Strategic Initiatives, Cube Highways | IIM Bangalore | IIT Bombay',
       img: '/assets/images/Saurabh Kumar.jpg',
     },
-    // {
-    //    name: "Pushkal Shukla",
-    //    title:"Adobe",
-    //    img: "/assets/mentors/mentor8.png"
-    // },
   ]
   return (
-    <div className='pt-10'>
-      <div className='flex flex-wrap gap-[30px] justify-center'>
+    <div>
+      <h1 className='text-3xl font-bold text-center mt-10 font-lexend text-[#4D4D4D]'>
+        Our Industry <span className='text-[#1C4980]'>Experts</span>
+      </h1>
+      <div className='flex flex-wrap gap-10 justify-center mt-5 p-2'>
         {list.map((items, i) => {
           return (
             <div
               key={i}
-              className='w-[20rem] h-[10rem] bg-slate-700 flex flex-row items-center p-3 rounded-xl gap-2'
+              className='w-[300px] p-2 rounded-xl border border-[#E0E3EB]'
             >
               <img
-                className='h-[8rem] w-30 rounded-md'
+                className='h-[150px] w-full rounded-md'
                 src={items.img}
                 alt={items.name}
                 decoding='async'
               />
 
-              <div className='flex flex-col w-full h-[8rem] w-50 overflow-hidden  ml-2'>
-                <h3 className='text-center text-md font-bold text-white '>
-                  {items.name}
-                </h3>
-                <p className='text-white user-follow-info p-2 text-xs font-bold text-left whitespace-nowrap"'>
+              <div className='flex flex-col w-full w-50 overflow-hidden mt-2'>
+                <h3 className='text-left text-md font-bold'>{items.name}</h3>
+                <p className=' text-xs font-bold text-left text-[#868686]'>
                   {items.title}
                 </p>
+                <div className='flex flex-row justify-between mt-2 '>
+                  <span className='text-[#1C4980]'>Industry Expert</span>
+                  <span className='flex flex-row gap-2'>
+                    <AiFillLinkedin size={25} color='#1C4980' />
+                    <FaTwitterSquare size={25} color='#1C4980' />
+                  </span>
+                </div>
               </div>
             </div>
           )
         })}
-      </div>
-      <div className='flex  justify-center mt-5'>
-        <span className='text-white font-bold text-md p-4 bg-slate-700 rounded-lg'>
-          And 130+ Experts
-        </span>
       </div>
     </div>
   )

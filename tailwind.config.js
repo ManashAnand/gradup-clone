@@ -14,6 +14,7 @@ module.exports = {
         satoshi: ['Satoshi', 'sans-serif'],
         lexend: ['Lexend', 'sans'],
         inter: ['Inter', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
       colors: {
         'primary-orange': '#FF5722',

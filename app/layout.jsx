@@ -10,7 +10,8 @@ import styles from './styles.module.css'
 
 export const metadata = {
   title: 'GradUp - Transforming Aspirations into Careers',
-  description: 'GradUp gives students the chance to maximize their potential locating upskilling programs, internship, startup, live projects, job opportunities catered to their unique skill sets & interests.',
+  description:
+    'GradUp gives students the chance to maximize their potential locating upskilling programs, internship, startup, live projects, job opportunities catered to their unique skill sets & interests.',
 }
 const Layout = ({ children }) => {
   return (

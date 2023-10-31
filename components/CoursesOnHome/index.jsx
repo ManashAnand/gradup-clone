@@ -3,8 +3,9 @@
 import Grid from '@mui/material/Grid'
 import useSWR from 'swr'
 import Spinner from '@components/Spinner'
-import CustomCard from '@components/CustomCard'
+import CourseCard from '@components/CourseCard'
 import styles from '@components/CoursesOnHome/styles.module.css'
+import { useState } from 'react'
 
 async function fetcher(url) {
   const res = await fetch(url)
@@ -12,7 +13,21 @@ async function fetcher(url) {
 }
 
 export default function CoursesOnHome() {
+  const list = [
+    { title: 'popular', value: 'popular' },
+    { title: 'comp sci', value: 'cs' },
+    { title: 'IT', value: 'it' },
+    { title: 'Automation', value: 'automation' },
+    { title: 'Management', value: 'management' },
+    { title: 'Language', value: 'language' },
+    { title: 'design', value: 'design' },
+    { title: 'Arts', value: 'art' },
+  ]
+  const [tag, setTag] = useState('popular')
   const { data, error, isLoading } = useSWR(`/api/courses`, fetcher)
+  const handleClick = (value) => {
+    setTag(value)
+  }
 
   if (isLoading) {
     return <Spinner />
@@ -23,37 +38,37 @@ export default function CoursesOnHome() {
   }
   if (data) {
     return (
-      <section className={`${styles['flex-start']} flex-col mt-4`}>
-        <div>
-          <h1
-            className={`text-3xl text-white font-semibold underline decoration-white underline-offset-8 ${styles['textform']} text-center my-5`}
-          >
-            Placement Guarantee Courses
+      <section className='mt-4 mx-5 text-left'>
+        <div className='flex flex-row justify-between items-center'>
+          <h1 className='text-2xl text-[#4D4D4D] font-bold text-left my-5'>
+            Featured <span className='text-[#1C4980]'>Courses on GradUp</span>
           </h1>
-          <p
-            className={`${styles['textnew']} text-center text-gray-200 text-2xl mb-8`}
-          >
-            Master new skills from anywhere with our online courses
-          </p>
-          <Grid
-            container
-            spacing={2}
-            sx={{ display: 'flex', justifyContent: 'center' }}
-          >
-            {data
-              .filter((item) => item.tags[0] === 'popular')
-              .map((item, index) => (
-                <Grid item xs={8} sm={3} key={index}>
-                  <CustomCard
-                    className='w-[50%]'
-                    kye={index}
-                    image={item.imageURL}
-                    title={item.title}
-                    url={`/courses/${item._id}`}
-                  />
-                </Grid>
-              ))}
-          </Grid>
+          <div className='sm:flex flex-row gap-2  hidden'>
+            {list.map((tags) => {
+              return (
+                <span
+                  className='text-sm py-1 text-[#1C4980] px-2 border border-[#1C4980] rounded-lg font-lexend cursor-pointer'
+                  onClick={() => handleClick(tags.value)}
+                >
+                  {tags.title}
+                </span>
+              )
+            })}
+          </div>
+        </div>
+        <div className=' flex flex-wrap gap-5 overflow-x-auto whitespace-nowrap justify-center items-center '>
+          {data
+            .filter((item) => item.tags[0] === tag)
+            .map((item, index) => (
+              <div className='flex-shrink-0 my-2'>
+                <CourseCard
+                  kye={index}
+                  image={item.imageURL}
+                  title={item.title}
+                  url={`/courses/${item._id}`}
+                />
+              </div>
+            ))}
         </div>
       </section>
     )

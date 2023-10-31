@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Card, Grid, Row, Text } from '@nextui-org/react'
 import SimpleImageSlider from 'react-simple-image-slider'
-import styles from "./styles.module.css"
+import styles from './styles.module.css'
 
 const Testimonial = () => {
   const [index, setIndex] = useState(0)
@@ -61,13 +61,11 @@ const Testimonial = () => {
     },
   ]
   return (
-    <div>
-      <p className={`text-center ${styles["textnew"]} text-white text-3xl font-bold ${styles["marginset3"]}`}>
-        What <span className='text-red-400'>our Interns</span>
-        <br />
+    <div className='bg-[#F5F7FA] py-3'>
+      <p className=' text-3xl font-bold font-lexend text-[#4D4D4D] mt-5 '>
+        What <span className='text-[#1C4980]'> our Interns </span>
         have to say ?
       </p>
-
       <div className={`w-full ${styles.slideshow}`}>
         <div
           style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
@@ -103,7 +101,9 @@ const Testimonial = () => {
           {list.map((_, idx) => (
             <div
               key={idx}
-              className={`${styles.slideshowDot} ${index === idx ? ' active' : ''}`}
+              className={`${styles.slideshowDot} ${
+                index === idx ? ' active' : ''
+              }`}
               onClick={() => {
                 setIndex(idx)
               }}

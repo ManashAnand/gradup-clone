@@ -1,11 +1,7 @@
 .textform {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .textnew {
-  font-family: "Poppins", sans-serif;
-}
-
-.flex-start {
-    @apply flex justify-start items-start;
+  font-family: 'Poppins', sans-serif;
 }
