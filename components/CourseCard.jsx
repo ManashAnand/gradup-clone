@@ -26,7 +26,7 @@ const CustomCard = ({ image, title, url }) => {
         </div>
         <div className='flex items-left ml-2'>
           <a className='text-sm mt-2' href={url}>
-            view details {'->'}
+            View details {'->'}
           </a>
         </div>
       </div>

@@ -21,7 +21,7 @@ const HomeFirstComponent = () => {
     <section
       className={`w-screen flex justify-between ${styles['headingbox']}`}
     >
-      <div className='mb-6 z-10 flex flex-col justify-center '>
+      <div className='mb-6  flex flex-col justify-center sm:ml-[100px]'>
         <div
           style={{ overflow: 'hidden' }}
           className={`text-2xl sm:text-6xl ${styles['textnew']} text-left font-bold`}
@@ -32,15 +32,18 @@ const HomeFirstComponent = () => {
           </p>
         </div>
         <div className={`text-left  ${styles['textnew']}`}>
-          <h1 className='mt-6 sm:text-md mb-6 text-[#717171]'>
+          <h1 className='mt-6 sm:text-md mb-6 text-[#717171] whitespace-normal'>
             Your Bridge to Success: Live projects, internships, jobs, upskilling
             courses, expert guidance – All in One Place!
           </h1>
         </div>
         <div className='text-left'>
-          <button className='py-2 px-4 text-white bg-[#1C4980] rounded-md'>
-            Know More
-          </button>
+          <a
+            href='/loginuser'
+            className='py-2 px-4 text-white bg-[#1C4980] rounded-md'
+          >
+            Login
+          </a>
         </div>
       </div>
       <div className={`${styles['hideimage']} `}>

@@ -204,9 +204,6 @@ const DropDownMenu = () => {
         transformOrigin={{ vertical: 'top', horizontal: 'left' }}
       >
         <Paper>
-          <MenuItem onClick={() => navigateToPage('/about-us')}>
-            About Us
-          </MenuItem>
           <MenuItem onClick={() => navigateToPage('/ContactUs')}>
             Contact Us
           </MenuItem>

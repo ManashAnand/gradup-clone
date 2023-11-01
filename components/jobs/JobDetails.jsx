@@ -115,6 +115,7 @@ const JobDetails = ({ data }) => {
               key={item.key}
               onClick={() => setSelectedKey(item.key)}
               variant='text'
+              className='border border-[#4D4D4D] py-1 px-2 rounded-lg'
               style={{
                 color: '#6f6f6f',
                 margin: '4px',

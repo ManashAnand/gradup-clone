@@ -5,7 +5,6 @@ import Spinner from '@components/Spinner'
 import useSWR from 'swr'
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 const page = ({ params }) => {
-  console.log(params.id)
   const { data, error, isLoading } = useSWR(`/api/jobs/${params.id}`, fetcher)
   if (error) {
     return <div>failed to load</div>

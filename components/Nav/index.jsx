@@ -45,9 +45,7 @@ const Nav = () => {
       className='w-screen flex-between pt-3 shadow-xl p-4'
     >
       <Link href='/' className='flex gap-2 flex-center'>
-        <h1 className='text-2xl font-bold text-[#353535] ml-5 font-inter'>
-          Grad<span className='text-[#1C4980]'>Up</span>
-        </h1>
+        <img src='/logo-for-website.png' className='h-[8vh]' />
       </Link>
 
       {/* Desktop Navigation */}

@@ -77,7 +77,6 @@ const Mentors = () => {
                 <span className='text-[#1C4980]'>Industry Expert</span>
                 <span className='flex flex-row gap-2'>
                   <AiFillLinkedin size={25} color='#1C4980' />
-                  <FaTwitterSquare size={25} color='#1C4980' />
                 </span>
               </div>
             </div>

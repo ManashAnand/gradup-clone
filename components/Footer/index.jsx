@@ -218,11 +218,11 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href='/'
+                      href='https://forms.gle/3i3P43Q1jfgE6dAn6'
                       className='text-gray-300 transition hover:opacity-75'
                     >
                       <span className='text-gray-200 font-black text-left'></span>{' '}
-                      Become Mentor
+                      Become a Mentor
                     </a>
                   </li>
                 </ul>
@@ -295,15 +295,15 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className='flex flex-col  sm:items-end  '>
-              <h1 className='text-3xl text-white font-bold font-inter'>
-                GradUp
-              </h1>
+            <div className='flex flex-col  sm:items-end   '>
+              <div className='flex flex-row items-center justify-center'>
+                <img src='/website-icon.png' className='h-[10vh]' />
+              </div>
               <p className='mt-4 text-white text-sm '>
-                Branch Office: UG Floor, Regus,
+                Head Office: UG Floor, Regus,
               </p>
               <p className='text-white text-sm mt-2'>
-                TOWER-2,Assotech Business CresterraPlot No.22,
+                TOWER-2,Assotech Business Cresterra Plot No.22,
               </p>
               <p className='text-white text-sm mt-2'>
                 Sector 135,Noida, Uttar Pradesh, 201301
