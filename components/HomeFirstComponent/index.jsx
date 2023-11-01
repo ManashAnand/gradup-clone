@@ -6,9 +6,10 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 import styles from './styles.module.css'
 
 const HomeFirstComponent = () => {
-  const { data: session } = useSession()
   const [providers, setProviders] = useState(null)
   const [current, setCurrent] = useState(0)
+  const { data: session } = useSession()
+  const email = session?.user.email
   useEffect(() => {
     const setUpProviders = async () => {
       const response = await getProviders()
@@ -38,12 +39,21 @@ const HomeFirstComponent = () => {
           </h1>
         </div>
         <div className='text-left'>
-          <a
-            href='/loginuser'
-            className='py-2 px-4 text-white bg-[#1C4980] rounded-md'
-          >
-            Login
-          </a>
+          {!email ? (
+            <a
+              href='/loginuser'
+              className='py-2 px-4 text-white bg-[#1C4980] rounded-md'
+            >
+              Login
+            </a>
+          ) : (
+            <a
+              href='/about-us'
+              className='py-2 px-4 text-white bg-[#1C4980] rounded-md'
+            >
+              Know More
+            </a>
+          )}
         </div>
       </div>
       <div className={`${styles['hideimage']} `}>

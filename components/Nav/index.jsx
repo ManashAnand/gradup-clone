@@ -220,6 +220,13 @@ const Nav = () => {
                   className={styles['dropdown_link']}
                   onClick={() => setToggleDropdown(false)}
                 >
+                  Jobs
+                </Link>
+                <Link
+                  href='/jobs'
+                  className={styles['dropdown_link']}
+                  onClick={() => setToggleDropdown(false)}
+                >
                   Internships
                 </Link>
                 <Link
@@ -227,15 +234,9 @@ const Nav = () => {
                   className={styles['dropdown_link']}
                   onClick={() => setToggleDropdown(false)}
                 >
-                  Courses
+                  Upskilling Courses
                 </Link>
-                <Link
-                  href='/jobs'
-                  className={styles['dropdown_link']}
-                  onClick={() => setToggleDropdown(false)}
-                >
-                  Jobs
-                </Link>
+
                 <Link href='/mycourses' className={styles['dropdown_link']}>
                   My Courses
                 </Link>
