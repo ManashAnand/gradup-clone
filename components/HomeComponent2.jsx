@@ -22,14 +22,14 @@ const HomeComponent2 = () => {
             <div className='flex flex-row gap-2'>
               <FiUsers size={50} color='#1C4980' />
               <div className='flex flex-col'>
-                <span className='font-bold '>15000+</span>
+                <span className='font-bold text-xl '>15000+</span>
                 <span className='text-[#717171] text-sm'>Students</span>
               </div>
             </div>
             <div className='flex flex-row gap-2'>
               <MdOutlineDiversity2 size={50} color='#1C4980' />
               <div className='flex flex-col'>
-                <span className='font-bold '>150+</span>
+                <span className='font-bold text-xl'>150+</span>
                 <span className='text-[#717171] text-sm'>Collaborations</span>
               </div>
             </div>
@@ -38,14 +38,14 @@ const HomeComponent2 = () => {
             <div className='flex flex-row gap-2'>
               <FcIdea size={50} color='#1C4980' />
               <div className='flex flex-col'>
-                <span className='font-bold '>4.9+</span>
+                <span className='font-bold text-xl'>4.9+</span>
                 <span className='text-[#717171] text-sm'>Overall Rating</span>
               </div>
             </div>
             <div className='flex flex-row gap-2'>
               <BsCreditCard2Back size={50} color='#1C4980' />
               <div className=' flex flex-col '>
-                <span className='font-bold '>21000+</span>
+                <span className='font-bold text-xl'>21000+</span>
                 <span className='text-[#717171] text-sm'>Active Users</span>
               </div>
             </div>

@@ -47,7 +47,7 @@ const HomeFirstComponent = () => {
         <img
           width='300'
           height='300'
-          src='/courses/webdev.avif'
+          src='/Illustration.png'
           alt='company'
         ></img>
       </div>

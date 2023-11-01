@@ -51,32 +51,34 @@ const Mentors = () => {
       <h1 className='text-3xl font-bold text-center mt-10 font-lexend text-[#4D4D4D]'>
         Our Industry <span className='text-[#1C4980]'>Experts</span>
       </h1>
-      <div className='flex flex-wrap gap-10 justify-center mt-5 p-2'>
+      <div className='flex flex-row gap-5 overflow-x-auto  items-center mx-5 my-2 '>
         {list.map((items, i) => {
           return (
             <div
               key={i}
-              className='w-[300px] p-2 rounded-xl border border-[#E0E3EB]'
+              className='w-[300px] h-[270px] p-2 rounded-xl border border-[#E0E3EB] flex-shrink-0 my-2 flex flex-col justify-between'
             >
-              <img
-                className='h-[150px] w-full rounded-md'
-                src={items.img}
-                alt={items.name}
-                decoding='async'
-              />
+              <div>
+                <img
+                  className='h-[150px] w-full rounded-md'
+                  src={items.img}
+                  alt={items.name}
+                  decoding='async'
+                />
 
-              <div className='flex flex-col w-full w-50 overflow-hidden mt-2'>
-                <h3 className='text-left text-md font-bold'>{items.name}</h3>
-                <p className=' text-xs font-bold text-left text-[#868686]'>
-                  {items.title}
-                </p>
-                <div className='flex flex-row justify-between mt-2 '>
-                  <span className='text-[#1C4980]'>Industry Expert</span>
-                  <span className='flex flex-row gap-2'>
-                    <AiFillLinkedin size={25} color='#1C4980' />
-                    <FaTwitterSquare size={25} color='#1C4980' />
-                  </span>
+                <div className='flex flex-col w-full mt-2'>
+                  <h3 className='text-left text-md font-bold'>{items.name}</h3>
+                  <p className=' text-xs font-bold text-left text-[#868686] whitespace-normal'>
+                    {items.title}
+                  </p>
                 </div>
+              </div>
+              <div className='flex flex-row justify-between mt-2 '>
+                <span className='text-[#1C4980]'>Industry Expert</span>
+                <span className='flex flex-row gap-2'>
+                  <AiFillLinkedin size={25} color='#1C4980' />
+                  <FaTwitterSquare size={25} color='#1C4980' />
+                </span>
               </div>
             </div>
           )

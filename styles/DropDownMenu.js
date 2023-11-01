@@ -93,8 +93,8 @@ import React, { useState } from 'react'
 import { Button, Menu, MenuItem, Paper, Popover } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { useRouter } from 'next/navigation'
-import useMediaQuery from '@mui/material/useMediaQuery';
-import styles from "./DropDown.module.css"
+import useMediaQuery from '@mui/material/useMediaQuery'
+import styles from './DropDown.module.css'
 
 const DropDownMenu = () => {
   const [menuAnchor, setMenuAnchor] = useState(null)
@@ -139,14 +139,16 @@ const DropDownMenu = () => {
   }
 
   return (
-    <div className={styles["outline_btn"]}>
+    <div className={styles['outline_btn']}>
       <div>
         <Button
           style={buttonStyle}
           onClick={openMenu}
           endIcon={<ExpandMoreIcon />}
-          sx={{ textTransform: 'none',color: isSmallScreen ? 'black' : 'white', }}
-          
+          sx={{
+            textTransform: 'none',
+            color: '#4D4D4D',
+          }}
         >
           Explore
         </Button>

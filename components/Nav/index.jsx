@@ -41,30 +41,17 @@ const Nav = () => {
 
   return (
     <nav
-      style={{ backgroundColor: '#041e48' }}
+      style={{ backgroundColor: '#FFFFFF' }}
       className='w-screen flex-between pt-3 shadow-xl p-4'
     >
       <Link href='/' className='flex gap-2 flex-center'>
-        <img
-          style={{
-            boxShadow:
-              'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset',
-          }}
-          width='50'
-          className='rounded-md ml-3'
-          src='/assets/icons/webLogo.jpeg'
-        ></img>
-        {/* <Image
-          src='/assets/images/website-icon.png'
-          alt='logo'
-          width={45}
-          height={45}
-          className='object-contain ml-3'
-        /> */}
+        <h1 className='text-2xl font-bold text-[#353535] ml-5 font-inter'>
+          Grad<span className='text-[#1C4980]'>Up</span>
+        </h1>
       </Link>
 
       {/* Desktop Navigation */}
-      <div className='md:flex hidden'>
+      <div className='md:flex hidden text-[#4D4D4D]'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-2'>
             <DropDownMenu />

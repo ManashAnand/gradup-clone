@@ -24,8 +24,9 @@ const Home = () => {
       <section className='w-screen  flex-col bg-white'>
         <CloseHover />
         <HomeFirstComponent />
+        <Internship />
+        <Job />
         <CoursesOnHome />
-
         <HomeComponent2 />
         <Mentors />
         <Testimonial />

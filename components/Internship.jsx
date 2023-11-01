@@ -57,26 +57,27 @@ const Internship = () => {
   }
   if (data && data.length > 0) {
     return (
-      <div className='w-screen mt-10 '>
-        <h1
-          className={`text-3xl text-white font-semibold underline decoration-white underline-offset-8 ${styles['textform']} text-center my-5`}
-        >
-          Featured Internship
-        </h1>
-        <div
-          ref={scrollContainerRef}
-          className='w-full h-full overflow-x-auto scroll scroll-continuous whitespace-nowrap scrollbar-hide mt-5'
-        >
-          {data.map((job) => (
-            <div
-              className=' inline-block p-2 cursor-pointer'
-              onClick={() => router.push(`/jobs/${job._id}`)}
-            >
-              <JobCard data={job} />
-            </div>
-          ))}
+      <section className='w-screen'>
+        <div className='mt-4  mx-5'>
+          <h1 className='text-2xl text-[#4D4D4D] font-bold text-left my-5'>
+            Featured
+            <span className='text-[#1C4980]'> Internships On GradUp</span>
+          </h1>
+          <div
+            ref={scrollContainerRef}
+            className='w-full h-full overflow-x-auto scroll scroll-continuous whitespace-nowrap scrollbar-hide mt-5'
+          >
+            {data.map((job) => (
+              <div
+                className=' inline-block p-2 cursor-pointer'
+                onClick={() => router.push(`/jobs/${job._id}`)}
+              >
+                <JobCard data={job} />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     )
   }
   return null

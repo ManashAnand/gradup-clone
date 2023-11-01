@@ -66,15 +66,12 @@ const Testimonial = () => {
         What <span className='text-[#1C4980]'> our Interns </span>
         have to say ?
       </p>
-      <div className={`w-full ${styles.slideshow}`}>
-        <div
-          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-          className={`${styles.slideshowSlider}`}
-        >
+      <div>
+        <div className='flex flex-row overflow-auto whitespace-normal gap-4 mx-5 my-4'>
           {list.map((item, i) => {
             return (
-              <div className={styles.slide} key={i}>
-                <Card css={{ backgroundColor: 'rgba(28, 73, 128, 0.50)' }}>
+              <div key={i} className='my-4 shrink-0 sm:w-[400px] w-[300px] '>
+                <Card>
                   <Card.Body
                     css={{
                       p: 0,
@@ -91,11 +88,9 @@ const Testimonial = () => {
                     />
                   </Card.Body>
                 </Card>
-                {/* <img src={item.img}/> */}
               </div>
             )
           })}
-          {/* </div> */}
         </div>
         <div className={styles.slideshowDots}>
           {list.map((_, idx) => (

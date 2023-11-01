@@ -15,6 +15,7 @@ module.exports = {
         lexend: ['Lexend', 'sans'],
         inter: ['Inter', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+        volkhov: ['Volkhov', 'sans'],
       },
       colors: {
         'primary-orange': '#FF5722',
