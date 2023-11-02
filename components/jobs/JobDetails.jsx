@@ -7,6 +7,7 @@ const JobDescription = ({
   eligiblilty,
   responsilities,
   expectedStartDate,
+  postedDate,
 }) => (
   <div className='p-5 text-left text-gray-400' style={{ fontFamily: 'Lexend' }}>
     <h1 className=' text-xl text-gray-500 '>Job Description</h1>
@@ -50,6 +51,18 @@ const JobDescription = ({
         <h1 className='text-xl mt-5 text-gray-500'>Expected Start Date:</h1>
         <p>
           {new Date(expectedStartDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </p>
+      </>
+    )}
+    {postedDate && (
+      <>
+        <h1 className='text-xl mt-5 text-gray-500'>Posted Date:</h1>
+        <p>
+          {new Date(postedDate).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric',
@@ -101,7 +114,7 @@ const JobDetails = ({ data }) => {
   ]
 
   const [selectedKey, setSelectedKey] = useState(dataItems[0].key)
-
+  console.log(data)
   return (
     <div className='mx-2 p-2'>
       <div className='mb-4 '>

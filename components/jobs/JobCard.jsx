@@ -9,6 +9,7 @@ import React from 'react'
 import styles from './styles.module.css'
 
 const JobCard = ({ data }) => {
+  console.log(data)
   const isSmallScreen = window.innerWidth < 768
   const router = useRouter()
 
@@ -69,7 +70,13 @@ const JobCard = ({ data }) => {
           </div>
           <div>
             <AccessTimeIcon />
-            <span className='text-sm ml-2'>4-7 yrs</span>
+            <span className='text-sm ml-2'>
+              {new Date(data.expectedStartDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric',
+              })}
+            </span>
           </div>
           <div>
             <PeopleOutlineOutlinedIcon />

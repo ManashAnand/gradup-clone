@@ -136,7 +136,7 @@ export default function Page({ params }) {
                   <Image
                     width='150'
                     height='50'
-                    src='/assets/images/logowhite.png'
+                    src='/logo-for-website.png'
                     alt='logo'
                   ></Image>
                   <div>

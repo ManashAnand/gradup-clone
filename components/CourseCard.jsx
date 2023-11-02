@@ -24,7 +24,7 @@ const CustomCard = ({ image, title, url }) => {
             <span>1 months</span>
           </div>
         </div>
-        <div className='flex items-left ml-2'>
+        <div className='flex items-left justify-end ml-2'>
           <a className='text-sm mt-2' href={url}>
             View details {'->'}
           </a>

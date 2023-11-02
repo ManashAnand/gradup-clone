@@ -3,7 +3,7 @@ import JobCard from '@components/jobs/JobCard'
 import Spinner from '@components/Spinner'
 import useSWR from 'swr'
 import { useRouter } from 'next/navigation'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import styles from '@components/CoursesOnHome/styles.module.css'
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())

@@ -21,7 +21,7 @@ export const POST = async (request) => {
       stipend: data.stipend,
       lastDate: data.lastDate,
       expectedStartDate: data.expectedStartDate,
-      skillsRequired: data.skillsRequired,
+      skillsRequired: data.skillsRequired.split(','),
       eligiblilty: data.eligiblilty,
       perks: data.perks,
       noOfOpenings: data.noOfOpenings,

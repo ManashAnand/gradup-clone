@@ -77,7 +77,6 @@ export default function App() {
         canSee: data.posts[i].canSee,
       })
     }
-    console.log(users)
     const renderCell = (user, columnKey) => {
       const cellValue = user[columnKey]
       switch (columnKey) {

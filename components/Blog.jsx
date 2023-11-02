@@ -12,7 +12,7 @@ const Blog = () => {
   if (isLoading) <Spinner />
   if (data) {
     return (
-      <div className='flex flex-wrap gap-5 items-center my-10 mx-5'>
+      <div className='flex flex-wrap gap-5 justify-center items-center my-10 mx-5'>
         {data.map((blog) => (
           <div className='w-[450px] bg-white rounded-sm p-2'>
             <h1 className='font-bold text-md justify-around my-2 h-[50px]'>

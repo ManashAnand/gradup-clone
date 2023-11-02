@@ -9,10 +9,12 @@ const HomeComponent2 = () => {
         <div className='text-left w-full flex flex-col justify-center sm:w-[50%] sm:px-10 sm:pl-[100px]'>
           <h1 className='font-bold sm:text-4xl text-xl'>
             The best quality of courses from
+            <span className='text-[#1C4980] font-bold sm:text-4xl  text-xl text-left'>
+              {' '}
+              top institutions
+            </span>
           </h1>
-          <span className='text-[#1C4980] font-bold sm:text-4xl  text-xl text-left'>
-            top institutions
-          </span>
+
           <p className='mt-2 text-[#4D4D4D] sm:text-md text-sm'>
             We reached here with our hard work and dedication
           </p>
