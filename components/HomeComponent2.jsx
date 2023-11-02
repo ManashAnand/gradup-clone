@@ -15,9 +15,7 @@ const HomeComponent2 = () => {
             </span>
           </h1>
 
-          <p className='mt-2 text-[#4D4D4D] sm:text-md text-sm'>
-            We reached here with our hard work and dedication
-          </p>
+         
         </div>
         <div className='flex flex-warp text-left gap-10 items-center justify-center  w-full sm:w-[50%] sm:mt-0 mt-5'>
           <div className='space-y-5'>

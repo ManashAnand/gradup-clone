@@ -34,7 +34,7 @@ const Details = ({ data }) => {
         <h1 className=' ml-4 px-2 font-bold font-lg my-2  '>Apply here :</h1>
         <a
           href={data.link}
-          className='ml-4 px-2 cursor-pointer py-1 rounded-md border border-black '
+          className='ml-4 px-2 cursor-pointer py-1 rounded-md border bg-blue-400 border-black '
         >
           {data.link}
         </a>
