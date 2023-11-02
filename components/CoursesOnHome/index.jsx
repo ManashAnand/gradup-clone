@@ -1,8 +1,12 @@
+"use client";
 import Grid from '@mui/material/Grid'
 import useSWR from 'swr'
 import Spinner from '@components/Spinner'
 import CourseCard from '@components/CourseCard'
 import { useState } from 'react'
+
+import React from 'react'
+import Marquee from "react-fast-marquee";
 
 async function fetcher(url) {
   const res = await fetch(url)
@@ -54,13 +58,16 @@ export default function CoursesOnHome() {
           ))}
         </div>
       </div>
-      <div className='flex flex-row gap-5 overflow-x-auto whitespace-nowrap items-center mx-5'>
+      <div className='flex flex-row gap-5 overflow-x-auto whitespace-nowrap items-center mx-5 '>
+      <Marquee className='max-w-[100%] ' pauseOnHover={true}>
         {data
           .filter((item) => item.tags[0] === tag)
-          .map((item, index) => (
-            <div
+          .map((item, index) => {
+            return(
+              <>
+              <div
               key={index}
-              className='flex-shrink-0 my-2'
+              className='flex-shrink-0 my-2 ml-10'
               style={{ width: '300px' }}
             >
               <CourseCard
@@ -70,7 +77,13 @@ export default function CoursesOnHome() {
                 url={`/courses/${item._id}`}
               />
             </div>
-          ))}
+              </>
+            )
+            
+
+          }
+          )}
+      </Marquee>
       </div>
     </section>
   )
