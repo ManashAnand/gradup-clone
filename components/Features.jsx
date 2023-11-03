@@ -7,7 +7,7 @@ const data = [
   { head: 'Participate', sec: 'Hackathons', link: '/hackathons' },
   { head: 'Startup Live ', sec: 'Projects', link: '/jobs' },
   {
-    head: 'Carreer',
+    head: 'Career',
     sec: 'Services',
     link: '/about-us/our-services-content/career',
   },
@@ -23,7 +23,7 @@ const Features = () => {
         {data.map((item) => {
           return (
             <div
-              className='bg-white font-inter rounded-md font-semibold pl-6 text-left w-[200px] h-[100px] flex flex-col items-start justify-center cursor-pointer'
+              className='bg-white font-inter rounded-md font-semibold pl-6 text-left w-[200px] h-[100px] flex flex-col items-start justify-center cursor-pointer hover:bg-blue-500 hover:text-white'
               onClick={() => router.push(item.link)}
             >
               <h1 className='text-[#4D4D4D]'>{item.head}</h1>

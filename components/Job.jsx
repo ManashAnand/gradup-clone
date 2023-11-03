@@ -147,7 +147,7 @@ const Job = () => {
               <Select
                 className='w-[200px]'
                 options={list}
-                placeholder='Search Here'
+                placeholder='Filter here'
                 defaultValue={title}
                 onChange={handleTitle}
                 isSearchable={false}

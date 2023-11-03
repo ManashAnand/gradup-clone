@@ -3,6 +3,8 @@ import { useState, useEffect, useRef } from 'react'
 import { Card, Grid, Row, Text } from '@nextui-org/react'
 import SimpleImageSlider from 'react-simple-image-slider'
 import styles from './styles.module.css'
+import Marquee from "react-fast-marquee";
+
 
 const Testimonial = () => {
   const [index, setIndex] = useState(0)
@@ -68,9 +70,10 @@ const Testimonial = () => {
       </p>
       <div>
         <div className='flex flex-row overflow-auto whitespace-normal gap-4 mx-5 my-4'>
-          {list.map((item, i) => {
+        <Marquee className='max-w-[100%] ' pauseOnHover={true}>
+       {list.map((item, i) => {
             return (
-              <div key={i} className='my-4 shrink-0 sm:w-[400px] w-[300px] '>
+              <div key={i} className='my-4 shrink-0 sm:w-[400px] w-[300px] ml-10'>
                 <Card>
                   <Card.Body
                     css={{
@@ -91,8 +94,10 @@ const Testimonial = () => {
               </div>
             )
           })}
+          
+      </Marquee>  
         </div>
-        <div className={styles.slideshowDots}>
+        {/* <div className={styles.slideshowDots}>
           {list.map((_, idx) => (
             <div
               key={idx}
@@ -104,7 +109,7 @@ const Testimonial = () => {
               }}
             ></div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   )

@@ -2,6 +2,8 @@
 import { AiFillLinkedin } from 'react-icons/ai'
 import { FaTwitterSquare } from 'react-icons/fa'
 
+import Marquee from "react-fast-marquee";
+
 const Mentors = () => {
   const list = [
     {
@@ -52,11 +54,12 @@ const Mentors = () => {
         Our Industry <span className='text-[#1C4980]'>Experts</span>
       </h1>
       <div className='flex flex-row gap-5 overflow-x-auto  items-center mx-5 my-2 '>
+      <Marquee className='max-w-[100%] ' pauseOnHover={true}>
         {list.map((items, i) => {
           return (
             <div
               key={i}
-              className='w-[300px] h-[270px] p-2 rounded-xl border border-[#E0E3EB] flex-shrink-0 my-2 flex flex-col justify-between'
+              className='w-[300px] h-[270px] p-2 rounded-xl border border-[#E0E3EB] flex-shrink-0 my-2 flex flex-col justify-between ml-10'
             >
               <div>
                 <img
@@ -74,14 +77,16 @@ const Mentors = () => {
                 </div>
               </div>
               <div className='flex flex-row justify-between mt-2 '>
-                <span className='text-[#1C4980]'>Industry Expert</span>
+                {/* <span className='text-[#1C4980]'>Industry Expert</span> */}
                 <span className='flex flex-row gap-2'>
                   <AiFillLinkedin size={25} color='#1C4980' />
                 </span>
               </div>
             </div>
           )
+          
         })}
+      </Marquee>  
       </div>
     </div>
   )
