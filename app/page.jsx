@@ -14,7 +14,9 @@ import Link from 'next/link'
 import styles from './styles.module.css'
 import Internship from '@components/Internship'
 import Job from '@components/Job'
+import Features from '@components/Features'
 import CloseHover from '@components/CloseHover/CloseHover'
+import HomePageHack from '@components/HomePageHack'
 
 const Home = () => {
   const [loading, setLoading] = useState(false)
@@ -26,8 +28,10 @@ const Home = () => {
         <HomeFirstComponent />
         <Internship />
         <Job />
+
         <CoursesOnHome />
         <HomeComponent2 />
+        <Features />
         <Mentors />
         <Testimonial />
         <DownloadApp />

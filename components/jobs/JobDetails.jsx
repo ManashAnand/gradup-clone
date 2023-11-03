@@ -114,7 +114,6 @@ const JobDetails = ({ data }) => {
   ]
 
   const [selectedKey, setSelectedKey] = useState(dataItems[0].key)
-  console.log(data)
   return (
     <div className='mx-2 p-2'>
       <div className='mb-4 '>
@@ -162,7 +161,7 @@ const JobDetails = ({ data }) => {
           </div>
           <div className={`${styles['jobcard']} px-10 rounded-lg py-2`}>
             <h1 className=' text-md font-lexend'>Experience</h1>
-            <p className='font-lexend text-gray-400'>5-7 yrs</p>
+            <p className='font-lexend text-gray-400'>1-2 yrs</p>
           </div>
           <div className={`${styles['jobcard']} px-10 rounded-lg py-2 `}>
             <h1 className=' text-md font-lexend'>Salary</h1>
@@ -170,7 +169,7 @@ const JobDetails = ({ data }) => {
           </div>
           <div className={`${styles['jobcard']} px-10 rounded-lg py-2 `}>
             <h1 className=' text-md font-lexend'>Job-type</h1>
-            <p className='font-lexend text-gray-400'>In-office</p>
+            <p className='font-lexend text-gray-400'>{data.location}</p>
           </div>
         </div>
       </div>
