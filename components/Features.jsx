@@ -1,10 +1,16 @@
 'use client'
 import { useRouter } from 'next/navigation'
 const data = [
-  { head: 'Full Time', sec: 'Job', link: '/jobs' },
+  { head: 'Full Time', sec: 'Jobs', link: '/jobs' },
   { head: 'Paid', sec: 'Internships', link: '/jobs' },
-  { head: 'Learn', sec: 'Courses', link: '/courses' },
+  { head: 'Upskilling', sec: 'Courses', link: '/courses' },
   { head: 'Participate', sec: 'Hackathons', link: '/hackathons' },
+  { head: 'Startup Live ', sec: 'Projects', link: '/jobs' },
+  {
+    head: 'Carreer',
+    sec: 'Services',
+    link: '/about-us/our-services-content/career',
+  },
 ]
 const Features = () => {
   const router = useRouter()

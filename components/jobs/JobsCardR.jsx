@@ -53,7 +53,7 @@ const JobCardR = ({ data }) => {
           </div>
           <div>
             <AccessTimeIcon />
-            <span className='ml-2 mt-3'>4-7 yrs</span>
+            <span className='ml-2 mt-3'>1-2 yrs</span>
           </div>
         </div>
         <div className='flex flex-wrap  mt-4 justify-evenly gap-5'>

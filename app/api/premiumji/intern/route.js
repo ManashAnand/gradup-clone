@@ -12,6 +12,7 @@ export const GET = async (req) => {
     const twoMonthsAgo = new Date()
     twoMonthsAgo.setMonth(today.getMonth() - 2)
     const currentYear = today.getFullYear()
+
     const allJobs = await Job.aggregate([
       {
         $match: {
@@ -28,6 +29,7 @@ export const GET = async (req) => {
           currentYear: { $year: today },
         },
       },
+
       {
         $match: {
           postedYear: currentYear,
@@ -46,7 +48,7 @@ export const GET = async (req) => {
 
     return NextResponse.json(data, { status: 200 })
   } catch (error) {
-    return new Response(error, {
+    return NextResponse.json(error, {
       status: 500,
     })
   }

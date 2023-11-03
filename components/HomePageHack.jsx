@@ -1,13 +1,16 @@
 'use client'
-import JobCard from '@components/jobs/JobCard'
+import { FaUsers, FaTeamspeak } from 'react-icons/fa'
+import { BsClock } from 'react-icons/bs'
+
 import Spinner from '@components/Spinner'
 import useSWR from 'swr'
 import { useRouter } from 'next/navigation'
-import styles from '@components/CoursesOnHome/styles.module.css'
+
 import HackathonCard from '@components/HackathonCard'
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 const HomePageHack = () => {
+  const router = useRouter()
   const { data, error, isLoading } = useSWR('/api/hackathon', fetcher)
 
   if (error) {
@@ -17,7 +20,6 @@ const HomePageHack = () => {
     return <Spinner />
   }
   if (data && data.length > 0) {
-    console.log(data)
     return (
       <section className='w-screen'>
         <div className='mt-4 mx-5'>
@@ -27,11 +29,45 @@ const HomePageHack = () => {
               <span className='text-[#1C4980]'>Hackathons On GradUp</span>
             </h1>
           </div>
-          <div className='w-full h-full flex overflow-x-auto whitespace-nowrap mt-5 justify-center items-center gap-3'>
+          <div className='w-full h-full flex overflow-x-auto whitespace-nowrap mt-5 items-center gap-5 mx-5 '>
             {data.map((item, index) => (
-              <div className=' inline-block p-2 cursor-pointer w-[300px]  '>
+              <div
+                className='my-5 inline-block p-2 cursor-pointer w-[300px] h-[200px] shadow-lg border border-gray-400 rounded-lg  flex-shrink-0'
+                onClick={() => router.push(`/hackathons/${item._id}`)}
+              >
+                <div className='flex flex-row gap-4 ml-4 mb-4'>
+                  <img
+                    src={item.logo}
+                    className='w-[75px] h-[75px] border border-gray-300 rounded-md '
+                  />
+                  <div className='flex flex-col justify-center gap-2 text-left'>
+                    <h3 className='font-bold text-lg'>{item.title}</h3>
+                    <p>{item.organizer}</p>
+                  </div>
+                </div>
+                <hr className='border-1 border-gray-600 mx-4 my-2'></hr>
                 <div>
-                  <img src={item.img} />
+                  <div className='flex flex-row gap-2 mx-4 my-4'>
+                    {item.tags.map((tag) => (
+                      <p className='px-2 py-1 bg-gray-300 rounded-md text-sm '>
+                        {tag}
+                      </p>
+                    ))}
+                  </div>
+                  <div className='flex flex-row gap-4 justify-around my-4'>
+                    <div className='flex flex-row gap-2'>
+                      <BsClock className='mt-1' />
+                      <p>Hybrid</p>
+                    </div>
+                    <div className='flex flex-row gap-2'>
+                      <FaTeamspeak className='mt-1' />
+                      <p>2-3</p>
+                    </div>
+                    <div className='flex flex-row gap-2'>
+                      <FaUsers className='mt-1' />
+                      <p>{item.applicant.length}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}

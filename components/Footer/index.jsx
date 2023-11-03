@@ -336,7 +336,6 @@ const Footer = () => {
               <p className='text-gray-300 my-auto text-lg text-center sm:text-center'>
                 © 2023 All Rights Reserved —
                 <a
-                  href='www.gradup.in'
                   rel='noopener noreferrer'
                   className='text-gray-300 ml-1'
                   target='_blank'
