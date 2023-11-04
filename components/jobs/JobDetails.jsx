@@ -121,7 +121,7 @@ const JobDetails = ({ data }) => {
       </div>
 
       <div className={`${styles['jobcard']} py-2 rounded-md`}>
-        <div className='flex flex-row items-center justify-start  gap-4 ml-4 my-2'>
+        <div className='flex flex-wrap items-center justify-start  sm:gap-4 gap-1 ml-4 my-2'>
           {dataItems.map((item) => (
             <button
               key={item.key}
