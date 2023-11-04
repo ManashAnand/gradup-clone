@@ -108,18 +108,6 @@ const page = ({ params }) => {
 
             <form onSubmit={createApplication} className='w-4/5 justify-center'>
               <label
-                htmlFor='coverLetter'
-                className='font-semibold text-left text-white text-md ml-2 mb-3'
-              >
-                Cover Letter
-              </label>{' '}
-              <br />
-              <textarea
-                rows='6'
-                className='p-2.5 w-full mb-6 text-sm text-gray-900 bg-gray-50 rounded-lg border border-blue-400'
-                placeholder='Beautiful Cover letter explaining why you are the best fit for this role...'
-              />
-              <label
                 htmlFor='projects'
                 className='font-semibold text-left text-white text-md ml-2 mb-3'
               >

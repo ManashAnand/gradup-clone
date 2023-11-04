@@ -22,7 +22,7 @@ const HackathonCard = ({ data, isSelected, onClick }) => {
       </div>
       <hr className='border-1 border-gray-600 mx-4 my-2'></hr>
       <div>
-        <div className='flex flex-row gap-2 mx-4 my-4'>
+        <div className='flex flex-wrap gap-2 mx-4 my-4'>
           {data.tags.map((tag) => (
             <p className='px-2 py-1 bg-gray-300 rounded-md text-sm '>{tag}</p>
           ))}

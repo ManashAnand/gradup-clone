@@ -4,8 +4,7 @@ import HR from '@models/hr'
 import { connectToDB } from '@utils/database'
 import Job from '@models/job'
 export const POST = async (request) => {
-  const { coverLetter, userId, projects, jobId, resume, joiningDate, CTC } =
-    await request.json()
+  const { userId, jobId, resume, joiningDate, CTC } = await request.json()
   await connectToDB()
   const currentUser = await User.findById(userId)
   try {
@@ -17,6 +16,7 @@ export const POST = async (request) => {
     const applicationAlreadyExists = await Application.findOne({
       _id: jobId + '_' + userId,
     })
+
     if (applicationAlreadyExists)
       return new Response('You Have Already Applied.', { status: 501 })
     const newApplication = new Application({
@@ -25,7 +25,6 @@ export const POST = async (request) => {
       name: currentUser.name,
       jobID: jobId,
       contactNo: currentUser.contactNo,
-      coverLetter: coverLetter,
       education: currentUser.education,
       resumeURL: resume,
       project: allProjects,
@@ -54,13 +53,14 @@ export const POST = async (request) => {
       { _id: userId, 'posts._id': jobId },
       {
         $set: {
-          'posts.$.impression': updateImpression.posts[0].impression + 1,
+          'posts.$.impression': hr.posts[jobIndex].impression + 1,
         },
       },
       { new: true }
     )
     return new Response(JSON.stringify(newApplication), { status: 201 })
   } catch (error) {
+    console.log(error)
     return new Response('Failed to create a new prompt', { status: 500 })
   } finally {
   }

@@ -5,7 +5,6 @@ const data = [
   { head: 'Paid', sec: 'Internships', link: '/jobs' },
   { head: 'Upskilling', sec: 'Courses', link: '/courses' },
   { head: 'Participate', sec: 'Hackathons', link: '/hackathons' },
-  { head: 'Startup Live ', sec: 'Projects', link: '/jobs' },
   {
     head: 'Carreer',
     sec: 'Services',

@@ -54,7 +54,7 @@ const JobCard = ({ data }) => {
       </div>
 
       <div className='text-left my-4 '>
-        <div className='flex flex-row gap-2'>
+        <div className='flex flex-wrap gap-2'>
           {data.skillsRequired.map((skill, index) => (
             <span
               key={index}
