@@ -14,7 +14,7 @@ const JobCard = ({ data }) => {
 
   return (
     <div
-      className={`${styles['jobcard']}  rounded-xl  p-2 cursor-pointer shadow-lg  pl-4 sm:w-[400px] w-[340px]`}
+      className={`${styles['jobcard']}  rounded-xl  p-2 cursor-pointer shadow-lg  pl-4 sm:w-[400px] w-[400px]`}
     >
       <div className='flex flex-row  gap-2 my-2 items-center w-full'>
         <img
@@ -54,7 +54,7 @@ const JobCard = ({ data }) => {
       </div>
 
       <div className='text-left my-4 '>
-        <div className='flex flex-row gap-2'>
+        <div className='flex flex-wrap gap-2'>
           {data.skillsRequired.map((skill, index) => (
             <span
               key={index}
@@ -64,7 +64,7 @@ const JobCard = ({ data }) => {
             </span>
           ))}
         </div>
-        <div className='flex flex-row gap-1 mt-3 justify-between overflow-auto text-sm px-2 text-gray-400 font-lexend'>
+        <div className='flex flex-row gap-1 mt-3 justify-between overflow-hidden text-sm px-2 text-gray-400 font-lexend'>
           <div>
             <CreditCardIcon />
             <span className='ml-2 mt-3'>{data.stipend}</span>

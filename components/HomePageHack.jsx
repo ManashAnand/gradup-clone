@@ -32,7 +32,7 @@ const HomePageHack = () => {
           <div className='w-full h-full flex overflow-x-auto whitespace-nowrap mt-5 items-center gap-5 mx-5 '>
             {data.map((item, index) => (
               <div
-                className='my-5 inline-block p-2 cursor-pointer w-[300px] h-[200px] shadow-lg border border-gray-400 rounded-lg  flex-shrink-0'
+                className='my-5 inline-block p-2 cursor-pointer w-[400px] h-[200px] shadow-lg border border-gray-400 rounded-lg  flex-shrink-0'
                 onClick={() => router.push(`/hackathons/${item._id}`)}
               >
                 <div className='flex flex-row gap-4 ml-4 mb-4'>
@@ -47,7 +47,7 @@ const HomePageHack = () => {
                 </div>
                 <hr className='border-1 border-gray-600 mx-4 my-2'></hr>
                 <div>
-                  <div className='flex flex-row gap-2 mx-4 my-4'>
+                  <div className='flex flex-wrap gap-2 mx-4 my-4'>
                     {item.tags.map((tag) => (
                       <p className='px-2 py-1 bg-gray-300 rounded-md text-sm '>
                         {tag}
