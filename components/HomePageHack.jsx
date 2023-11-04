@@ -5,6 +5,7 @@ import { BsClock } from 'react-icons/bs'
 import Spinner from '@components/Spinner'
 import useSWR from 'swr'
 import { useRouter } from 'next/navigation'
+import Marquee from "react-fast-marquee";
 
 import HackathonCard from '@components/HackathonCard'
 
@@ -29,10 +30,12 @@ const HomePageHack = () => {
               <span className='text-[#1C4980]'>Hackathons On GradUp</span>
             </h1>
           </div>
-          <div className='w-full h-full flex overflow-x-auto whitespace-nowrap mt-5 items-center gap-5 mx-5 '>
+          <div className='w-full h-full flex ml-10 overflow-x-auto whitespace-nowrap mt-5 items-center gap-5 mx-5 '>
+          <Marquee className='max-w-[100%] ' pauseOnHover={true}>
             {data.map((item, index) => (
+              
               <div
-                className='my-5 inline-block p-2 cursor-pointer w-[400px] h-[200px] shadow-lg border border-gray-400 rounded-lg  flex-shrink-0'
+                className='my-5 ml-10 inline-block p-2 cursor-pointer w-[400px] h-[200px] shadow-lg border border-gray-400 rounded-lg  flex-shrink-0'
                 onClick={() => router.push(`/hackathons/${item._id}`)}
               >
                 <div className='flex flex-row gap-4 ml-4 mb-4'>
@@ -53,6 +56,7 @@ const HomePageHack = () => {
                         {tag}
                       </p>
                     ))}
+                    
                   </div>
                   <div className='flex flex-row gap-4 justify-around my-4'>
                     <div className='flex flex-row gap-2'>
@@ -71,6 +75,8 @@ const HomePageHack = () => {
                 </div>
               </div>
             ))}
+            
+      </Marquee> 
           </div>
         </div>
       </section>

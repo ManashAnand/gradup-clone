@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useRef, useEffect, useState } from 'react'
 import styles from '@components/CoursesOnHome/styles.module.css'
 import Select from 'react-select'
+import Marquee from "react-fast-marquee";
 
 const list = [
   {
@@ -160,6 +161,7 @@ const Job = () => {
             </div>
           </div>
           <div className='w-full h-full overflow-x-auto whitespace-nowrap mt-5'>
+          <Marquee className='max-w-[100%] ' pauseOnHover={true}>
             {filteredJobs.map((job) => (
               <div
                 className=' inline-block p-2 cursor-pointer'
@@ -168,6 +170,8 @@ const Job = () => {
                 <JobCard data={job} />
               </div>
             ))}
+            
+      </Marquee> 
           </div>
         </div>
       </section>
