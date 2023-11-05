@@ -7,6 +7,7 @@ import React from 'react'
 import { useSession } from 'next-auth/react'
 import useSWR from 'swr'
 import styles from './styles.module.css'
+import CourseRoutingBtn from '@components/CartItems/CourseRoutingBtn'
 
 async function fetcher(url) {
   const res = await fetch(url, { cache: 'no-store' })
@@ -31,6 +32,7 @@ const page = () => {
     return <Spinner />
   }
   if (data) {
+    console.log(data);
     return (
       <>
         <div>
@@ -61,19 +63,31 @@ const page = () => {
                 src='/assets/images/image1.png'
               ></img>
             </div>
-            <div className='w-screen '>
+            <div className='w-screen'>
               <h1 className={`text-4xl font-bold text-sky-500 ${styles["textform"]} ${styles["animate-charcter"]} text-center mb-6`}>
                 My Courses
               </h1>
             </div>
           </div>
         </div>
+        {
+        data.length == 0 && (
+          
+          <>
+          <h1 className='text-white mb-6 font-bold -translate-y-5'>You haven't buy the courses now!</h1>
+          <CourseRoutingBtn/>
+          </>
+          
+        )
+      }
         <Grid
           className=' mb-8'
           container
           spacing={2}
           sx={{ display: 'flex', justifyContent: 'center' }}
         >
+
+
           {data.map((course, id) => (
             <Grid item xs={6} sm={3} key={id}>
               <CustomCard

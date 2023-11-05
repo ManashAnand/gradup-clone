@@ -36,6 +36,9 @@ export default function Cart2() {
 
         if (response.status === 204) {
           console.log('Item deleted successfully')
+          window.reload()
+          router.refresh()
+          router.push('/cart')
         } else {
           window.reload()
           router.refresh()
@@ -117,8 +120,13 @@ export default function Cart2() {
                     <div className='  xl:w-[40%] p-2  rounded-md border border-white xl:h-3/5 xl:p-0 xl:mt-8'>
                       <div className=' flex justify-around items-center xl:h-[45%] '>
                         {/*cartBook?.author */}
-                        <span>Why this?</span>
+                        <span>Select now →</span>
                         <div>
+                          
+                          <label
+                            htmlFor='red-checkbox '
+                            className='ml- text-sm font-medium text-yellow-300'
+                          >
                           <input
                             onClick={(e) =>
                               handleClick(
@@ -130,13 +138,12 @@ export default function Cart2() {
                             }
                             id={cartBook?._id}
                             type='checkbox'
-                            className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 cursor-pointer'
+                            className='w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 cursor-pointer'
                           />
-                          <label
-                            htmlFor='red-checkbox'
-                            className='ml-2 text-sm font-medium text-yellow-300'
-                          >
+                            <span className='ml-2 text-lg'>
+
                             Select
+                            </span>
                           </label>
                         </div>
                       </div>

@@ -34,15 +34,37 @@ export default function Profile() {
   const [message3,setMessage3]=useState(false)
   const [start,setStart]=useState("")
   const [end,setEnd]=useState("")
+
   const [onefield,setOneField]=useState(false)
   const [collegeName,setcollegeName]=useState("")
   const [collegedata,setCollegedata]=useState([])
+
+  const [twofield,setTwoField]=useState(false)
+  const [degreeName,setdegreeName]=useState("")
+  const [degreeData,setDegreedata]=useState([])
+
   const [start1,setStart1]=useState("")
   const [end1,setEnd1]=useState("")
   const [disability1,setDisability1]=useState(false)
   const [disability2,setDisability2]=useState(false)
   const [disability3,setDisability3]=useState(false)
   const [disability4,setDisability4]=useState(false)
+  const degreeList = [
+    { value: "Others", label: "Others" },
+    { value: "BTECH", label: "Bachelor of Technology (B.Tech)" },
+    { value: "BE", label: "Bachelor of Engineering (B.E)" },
+    { value: "MTECH", label: "Master of Technology (M.Tech)" },
+    { value: "BCA", label: "Bachelor of Computer Applications (BCA)" },
+    { value: "BBA", label: "Bachelor of Business Administration (BBA)" },
+    { value: "MBBS", label: "Bachelor of Medicine, Bachelor of Surgery (MBBS)" },
+    { value: "BSC", label: "Bachelor of Science (B.Sc)" },
+    { value: "BA", label: "Bachelor of Arts (B.A)" },
+    { value: "MBA", label: "Master of Business Administration (MBA)" },
+    { value: "PHD", label: "Doctor of Philosophy (Ph.D)" }
+   
+];
+
+
   const collegeList = [
     { value: "Others", label: "Others" },
     { value: "Indian Institute of Technology Bombay", label: "Indian Institute of Technology Bombay" },
@@ -148,8 +170,16 @@ export default function Profile() {
     data.value==="Others"?setOneField(true):setOneField(false)
     setCollegedata(data)
   }
+  function handleDegreename(data) {
+    data.value!=="Others"?setdegreeName(data.value):setdegreeName("")
+    data.value==="Others"?setTwoField(true):setTwoField(false)
+    setDegreedata(data)
+  }
   function handlenewCollegename(e){
     setcollegeName(e.target.value)
+  }
+  function handlenewDegreename(e){
+    setdegreeName(e.target.value)
   }
   function handleChange1(e){
     setStart(e.target.value)
@@ -235,7 +265,7 @@ export default function Profile() {
             method: "POST",
             body: JSON.stringify({
               collegeName:collegeName,
-              degreeName:!onefield?e.target[1].value:e.target[2].value,
+              degreeName:degreeName,
               branch:!onefield?e.target[3].value:e.target[4].value,
               grade:!onefield?e.target[2].value:e.target[3].value,
               startYear:!onefield?e.target[4].value:e.target[5].value,
@@ -399,8 +429,24 @@ export default function Profile() {
                 <div className={`${styles["flexBox"]} w-full`}>
                 <div className={`flex ${styles["item1"]} flex-col mb-5`}>
                 <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Degree</label>
-                <Input  css={{pr:"$4",width:"stretch"}}  placeholder='Enter Degree' required/>
+                <div className={`flex ${styles["item1"]} flex-col mb-5`}>
+               
+                <Select
+                style={{height:"30vh"}}
+                 className=" text-left pr-2 w-[20rem] md:w-[30rem]"
+                 options={degreeList}
+                 placeholder="Select Degree"
+                 onChange={handleDegreename}
+                 value={degreeData}
+                 required
+                />  
                 </div>
+                {/* <Input  css={{pr:"$4",width:"stretch"}}  placeholder='Enter Degree' required/> */}
+                </div>
+                {twofield?<div className={`flex ${styles["item2"]} flex-col mb-5`}>
+                <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>If Others, please specify</label>
+                <Input  css={{pr:"$4",width:"stretch"}} onChange={handleDegreename} placeholder='Enter Degree Name' required/>
+                </div>:""}
                 <div className={`flex ${styles["item2"]} flex-col ${styles["item1"]} mb-5`}>
                 <label className={`mb-1 ml-2 mt-3 ${styles["textform"]} text-white text-sm`}>Grade</label>
                 <Input  css={{pr:"$4",width:"stretch"}} placeholder='Enter Grade' required/>

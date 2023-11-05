@@ -178,7 +178,7 @@ export default function Student() {
       </Typography>
       <div className='flex flex-wrap gap-10 justify-evenly mt-10 p-2'>
         {cards.map((card, index) => (
-          <div key={index} className='rounded-md p-2 w-[650px] bg-white'>
+          <div key={index} className='rounded-md  p-2 w-[650px] bg-white'>
             <img src={card.img} className='h-[200px] w-[650px]' />
             <h1 className='font-bold text-2xl m-2 text-[#0066C8] '>
               {card.title}

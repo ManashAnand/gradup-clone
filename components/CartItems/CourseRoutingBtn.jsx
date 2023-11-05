@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation"
   const router = useRouter();
 
   const RouteToCourse = () => {
-    router.push('/')
+    router.push('/courses')
   }
 
   return (

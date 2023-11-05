@@ -188,7 +188,7 @@ const DropDownMenu = () => {
           <MenuItem onClick={() => navigateToPage('/hackathons')}>
             Hackathons
           </MenuItem>
-          <MenuItem onClick={() => navigateToPage('/for-startUps')}>
+          <MenuItem onClick={() => navigateToPage('/jobs')}>
             Startups Live Projects
           </MenuItem>
           <MenuItem onClick={() => navigateToPage('alumni-network/manage')}>

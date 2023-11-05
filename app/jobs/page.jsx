@@ -70,7 +70,7 @@ function Page() {
   if (data) {
     return (
       <div className='bg-white pb-10'>
-        <div className={`${styles['shadow']}  rounded-full m-3`}>
+        <div className={`${styles['shadow']}  rounded-full m-3 `}>
           <FilterJobs
             setSelectedCity={setSelectedCity}
             setSelectedTitle={setSelectedTitle}

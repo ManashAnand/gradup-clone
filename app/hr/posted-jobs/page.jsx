@@ -203,7 +203,7 @@ export default function App() {
       }
     }
     return (
-      <div className='w-full mb-16 '>
+      <div className='w-full mb-16 cursor-pointer'>
         <div>
           <h1 className='my-10 text-center'>
             <span className='text-white animate-charcter text-5xl font-semibold mb-10 textnew'>

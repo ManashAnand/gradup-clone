@@ -42,14 +42,14 @@ const Nav = () => {
   return (
     <nav
       style={{ backgroundColor: '#FFFFFF' }}
-      className='w-screen flex-between pt-3 shadow-xl p-4'
+      className='w-screen flex-between pt-3 shadow-xl p-4 sticky top-0 z-50'
     >
       <Link href='/' className='flex gap-2 flex-center'>
         <img src='/logo-for-website.png' className='h-[8vh]' />
       </Link>
 
       {/* Desktop Navigation */}
-      <div className='md:flex hidden text-[#4D4D4D]'>
+      <div className='md:flex hidden text-[#4D4D4D] sticky top-0 z-50'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-2'>
             <DropDownMenu />
