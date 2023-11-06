@@ -55,14 +55,17 @@ const JobCard = ({ data }) => {
 
       <div className='text-left my-4 '>
         <div className='flex flex-wrap gap-2'>
-          {data.skillsRequired.map((skill, index) => (
-            <span
-              key={index}
-              className='py-1 px-4 border border-gray-200 rounded-lg text-sm text-gray-400 font-lexend'
-            >
-              #{skill}
-            </span>
-          ))}
+          {data.skillsRequired.map(
+            (skill, index) =>
+              index < 2 && (
+                <span
+                  key={index}
+                  className='py-1 px-4 border border-gray-200 rounded-lg text-sm text-gray-400 font-lexend'
+                >
+                  #{skill}
+                </span>
+              )
+          )}
         </div>
         <div className='flex flex-row gap-1 mt-3 justify-between overflow-hidden text-sm px-2 text-gray-400 font-lexend'>
           <div>
