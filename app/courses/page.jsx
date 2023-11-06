@@ -294,40 +294,40 @@ const page = () => {
             ))}
         </Grid>
         <div className='w-screen h-auto mt-12 mb-12 flex justify-evenly items-center'>
-          <Image
+          <img
             className='mx-2'
             width='60'
             height='50'
             src='/assets/images/icons8-amazon.png'
             alt='logo'
-          ></Image>
-          <Image
+          ></img>
+          <img
             className='mx-2'
             width='60'
             height='50'
             src='/assets/images/icons8-google-96.png'
             alt='logo'
-          ></Image>
-          <Image
+          ></img>
+          <img
             className='mx-2'
             width='60'
             height='50'
             src='/assets/images/icons8-microsoft-96.png'
             alt='logo'
-          ></Image>
-          <Image
+          ></img>
+          <img
             className='block mx-2'
             width='60'
             height='50'
             src='/assets/images/icons8-netflix-96.png'
             alt='logo'
-          ></Image>
-          <Image
+          ></img>
+          <img
             width='60'
             height='50'
             src='/assets/images/icons8-meta-48.png'
             alt='logo'
-          ></Image>
+          ></img>
         </div>
       </>
     )
