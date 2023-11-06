@@ -22,7 +22,7 @@ const HR = () => {
   ]
   const { data: session } = useSession()
   return (
-    <div className='w-screen'>
+    <div className='w-screen '>
       <p className='text-white text-xl text-center mt-10'>
         Name : {session?.user.name}
       </p>

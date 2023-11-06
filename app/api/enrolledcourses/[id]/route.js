@@ -7,6 +7,7 @@ export async function GET(req, { params }) {
     await connectToDB()
     const url = new URL(req.url)
     const email = url.searchParams.get('email')
+    console.log(params.id)
 
     const enrollmentData = await Enrollment.findOne({
       userId: email,
@@ -18,7 +19,7 @@ export async function GET(req, { params }) {
       return NextResponse.redirect(new URL('/mycourses', req.nextUrl))
     }
 
-    const courseData = await Courses.findOne({ _id: id })
+    const courseData = await Courses.findOne({ _id: params.id })
     if (!courseData) {
       return NextResponse.redirect(new URL('/mycourses', req.nextUrl))
     }
@@ -58,7 +59,7 @@ export async function GET(req) {
 export async function PATCH(req) {
   try {
     await connectToDB()
-    console.log('request is working')
+
     {
       /* Destructure the Progress Array here  */
     }
@@ -67,7 +68,6 @@ export async function PATCH(req) {
     const progressBar = requestBody.requestBody.updatedArray
     const progress = requestBody.requestBody.progress
     const _id = requestBody.requestBody.id
-    console.log(progress)
 
     {
       /*Update the value of changed Progress Bar array */

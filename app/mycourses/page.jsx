@@ -25,18 +25,17 @@ const page = () => {
     setHydrated(true)
   }, [])
   if (!hydrated) {
-    // Returns null on first render, so the client and server match
     return null
   }
   if (isLoading) {
     return <Spinner />
   }
   if (data) {
-    console.log(data);
+    console.log(data)
     return (
       <>
         <div>
-          <div className={`${styles["coursebox"]} w-fit m-auto`}>
+          <div className={`${styles['coursebox']} w-fit m-auto`}>
             <div>
               <p className='text-white text-left text-xl'>
                 Embark on a journey of knowledge and affordability. Discover
@@ -49,7 +48,7 @@ const page = () => {
             </div>
           </div>
           <div className='w-fit flex mx-auto flex-col mb-5 mt-5'>
-            <div className={`${styles["showmobile"]} ${styles["textform"]}`}>
+            <div className={`${styles['showmobile']} ${styles['textform']}`}>
               <p className='text-white text-xl'>
                 Embark on a journey of knowledge and affordability.
               </p>
@@ -64,30 +63,28 @@ const page = () => {
               ></img>
             </div>
             <div className='w-screen'>
-              <h1 className={`text-4xl font-bold text-sky-500 ${styles["textform"]} ${styles["animate-charcter"]} text-center mb-6`}>
+              <h1
+                className={`text-4xl font-bold text-sky-500 ${styles['textform']} ${styles['animate-charcter']} text-center mb-6`}
+              >
                 My Courses
               </h1>
             </div>
           </div>
         </div>
-        {
-        data.length == 0 && (
-          
+        {data.length == 0 && (
           <>
-          <h1 className='text-white mb-6 font-bold -translate-y-5'>You haven't buy the courses now!</h1>
-          <CourseRoutingBtn/>
+            <h1 className='text-white mb-6 font-bold -translate-y-5'>
+              You haven't buy the courses now!
+            </h1>
+            <CourseRoutingBtn />
           </>
-          
-        )
-      }
+        )}
         <Grid
           className=' mb-8'
           container
           spacing={2}
           sx={{ display: 'flex', justifyContent: 'center' }}
         >
-
-
           {data.map((course, id) => (
             <Grid item xs={6} sm={3} key={id}>
               <CustomCard

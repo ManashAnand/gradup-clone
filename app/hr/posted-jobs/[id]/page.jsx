@@ -45,6 +45,18 @@ export default function Page({ params }) {
     }
     return (
       <>
+        {data.length == 0 && (
+          <div className='text-white font-bold text-xl mt-10 flex flex-col gap-5'>
+            <span>No one has applied yet !</span>
+            <span>Kindly share the job for more Applicants</span>
+            <a
+              href='/hr'
+              className='mt-5 hover:text-blue-800 border border-white px-4 py-4 rounded-xl hover:border-blue-800'
+            >
+              Go to HR Dashboard
+            </a>
+          </div>
+        )}
         {data.length > 0 && !data[0].premium && (
           <a
             href='/premium'

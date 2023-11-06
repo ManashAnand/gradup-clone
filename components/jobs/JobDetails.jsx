@@ -8,9 +8,13 @@ const JobDescription = ({
   responsilities,
   expectedStartDate,
   postedDate,
+  stipend,
+  isStartup,
+  isIntern,
 }) => (
   <div className='p-5 text-left text-gray-400' style={{ fontFamily: 'Lexend' }}>
     <h1 className=' text-xl text-gray-500 '>Job Description</h1>
+
     {description && <p>{description}</p>}
 
     {responsilities.length > 0 && (
@@ -70,6 +74,19 @@ const JobDescription = ({
         </p>
       </>
     )}
+    {!isStartup && !isIntern && (
+      <>
+        <h1 className='text-xl mt-5 text-gray-500'>Salary:</h1>
+        <p>{stipend}</p>
+      </>
+    )}
+    {isStartup ||
+      (isIntern && (
+        <>
+          <h1 className='text-xl mt-5 text-gray-500'>Stipend:</h1>
+          <p>{stipend}</p>
+        </>
+      ))}
   </div>
 )
 
@@ -84,12 +101,27 @@ const SkillsRequired = ({ skillsRequired }) => (
   </div>
 )
 
-const CompanyDetails = ({ aboutCompany }) => (
-  <div
-    className='text-left p-5 text-gray-400 '
-    style={{ fontFamily: 'Lexend' }}
-  >
+const CompanyDetails = ({ aboutCompany, companyLink }) => (
+  <div className='text-left p-5 text-gray-400 font-lexend'>
     <h1 className='text-xl text-gray-500 font-lexend'>About Company</h1>
+    <a
+      href={companyLink}
+      className='text-blue-500 cursor-pointer flex flex-row'
+    >
+      Website
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='24'
+        height='24'
+        viewBox='0 0 24 24'
+      >
+        <path
+          fill='currentColor'
+          d='M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 13h-1c-1.61 0-4-1.06-4-4c0-2.93 2.39-4 4-4h1v2h-1c-.46 0-2 .17-2 2c0 1.9 1.67 2 2 2h1v2m4-5v2H9v-2h6m-1 5h-1v-2h1c.46 0 2-.17 2-2c0-1.9-1.67-2-2-2h-1V8h1c1.61 0 4 1.07 4 4c0 2.94-2.39 4-4 4Z'
+        />
+      </svg>
+    </a>
+
     <p>{aboutCompany}</p>
   </div>
 )

@@ -269,7 +269,7 @@ const Footer = () => {
                       className='text-gray-300 transition hover:opacity-75'
                     >
                       <span className='text-gray-200 font-black text-left'></span>{' '}
-                      GradUp Community
+                      GradUp Club
                     </a>
                   </li>
 

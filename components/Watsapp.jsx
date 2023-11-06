@@ -9,7 +9,7 @@ export default function Watsapp() {
   return (
     <>
       {status ? (
-        <div className='pos rotation text-white px-2 mb-10 rounded-md bg-green-400'>
+        <div className='z-10 pos rotation text-white px-2 mb-10 rounded-md bg-green-400'>
           <a
             target='_blank'
             href='https://wa.me/917428376300?text=Welcome%20to%20GradUp.%20Thank%20you%20for%20connecting%20with%20us%20!!'
@@ -27,7 +27,11 @@ export default function Watsapp() {
       ) : (
         ''
       )}
-      <a className='pos highwidth mb-3' onClick={handleClick} target='_blank'>
+      <a
+        className='z-10 pos highwidth mb-3'
+        onClick={handleClick}
+        target='_blank'
+      >
         <span
           style={{ backgroundColor: '#25d366' }}
           className='cursor-pointer padded rounded-full flex'

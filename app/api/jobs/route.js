@@ -56,18 +56,15 @@ export const GET = async (req) => {
 export async function DELETE(req) {
   try {
     await connectToDB()
-    console.log('here')
     const url = new URL(req.url)
-
     const jobId = url.searchParams.get('jobId')
-
     const hrId = url.searchParams.get('hrId')
     await Job.findByIdAndRemove(jobId)
     const hr = await HR.findById(hrId)
     const jobIndex = hr.posts.findIndex((job) => job._id.toString() === jobId)
     hr.posts.splice(jobIndex, 1)
     await hr.save()
-    console.log('done')
+
     return NextResponse.json({ message: 'deleted' }, { status: 204 })
   } catch (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })

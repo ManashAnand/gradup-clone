@@ -56,8 +56,8 @@ export default function App() {
   if (isLoading) return <Spinner />
   if (data) {
     const columns = [
-      { name: 'Title', uid: 'title' },
-      { name: 'Total Applicants', uid: 'impression' },
+      { name: 'Job Title', uid: 'title' },
+      { name: 'Applicants', uid: 'impression' },
       { name: 'Status', uid: 'status' },
       { name: 'Upgrade to premium', uid: 'canSee' },
       { name: 'ACTIONS', uid: 'actions' },
@@ -90,6 +90,7 @@ export default function App() {
                   tt: 'capitalize',
                   color: '$accents8',
                   marginRight: '$20',
+                  cursor: 'pointer',
                 }}
               >
                 {cellValue}
@@ -106,6 +107,7 @@ export default function App() {
                   tt: 'capitalize',
                   color: '$accents8',
                   marginRight: '$20',
+                  cursor: 'pointer',
                 }}
               >
                 {cellValue}
@@ -122,6 +124,7 @@ export default function App() {
                   tt: 'capitalize',
                   color: '$accents8',
                   marginRight: '$20',
+                  cursor: 'pointer',
                 }}
               >
                 {cellValue}
@@ -138,6 +141,7 @@ export default function App() {
                   tt: 'capitalize',
                   color: '$accents6',
                   marginRight: '$20',
+                  cursor: 'pointer',
                 }}
               >
                 {cellValue == false ? (
@@ -185,7 +189,7 @@ export default function App() {
               </Tooltip>
             </Col>
                     */}
-              <Col css={{ d: 'flex' }}>
+              <Col css={{ d: 'flex', marginLeft: '$5' }}>
                 <Tooltip
                   content='Delete'
                   color='error'
@@ -207,7 +211,7 @@ export default function App() {
         <div>
           <h1 className='my-10 text-center'>
             <span className='text-white animate-charcter text-5xl font-semibold mb-10 textnew'>
-              Posted Jobs
+              Posted Jobs & Internships
             </span>
           </h1>
           <Table
@@ -252,7 +256,7 @@ export default function App() {
               // shadow
               // noMargin
               // align="center"
-              rowsPerPage={10}
+              rowsPerPage={5}
             />
           </Table>
         </div>
