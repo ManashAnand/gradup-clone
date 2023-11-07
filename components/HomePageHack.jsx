@@ -30,8 +30,8 @@ const HomePageHack = () => {
               <span className='text-[#1C4980]'>Hackathons On GradUp</span>
             </h1>
           </div>
-          <div className='w-full h-full flex ml-10 overflow-x-auto whitespace-nowrap mt-5 items-center gap-5 mx-5 '>
-          <Marquee className='max-w-[100%] ' pauseOnHover={true}>
+          <div className='w-full h-full flex  overflow-x-auto whitespace-nowrap mt-5 items-center gap-5 mx-5 '>
+          <Marquee className='max-w-[100%]' pauseOnHover={true}>
             {data.map((item, index) => (
               
               <div

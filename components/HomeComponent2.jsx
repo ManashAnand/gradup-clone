@@ -17,9 +17,9 @@ const HomeComponent2 = () => {
 
          
         </div>
-        <div className='flex flex-warp text-left gap-10 items-center justify-center  w-full sm:w-[50%] sm:mt-0 mt-5'>
+        <div className='flex flex-warp text-left  sm:gap-10 gap-6 items-center justify-center  w-full sm:w-[50%] sm:mt-0 mt-5'>
           <div className='space-y-5'>
-            <div className='flex flex-row gap-2'>
+            <div className='flex flex-row gap-2 '>
               <FiUsers size={50} color='#1C4980' />
               <div className='flex flex-col'>
                 <span className='font-bold text-xl '>15000+</span>

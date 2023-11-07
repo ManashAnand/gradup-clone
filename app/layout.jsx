@@ -54,7 +54,7 @@ const Layout = ({ children }) => {
             <div className={styles['gradient']} />
           </div>
 
-          <main className={styles['app']}>
+          <main className={`w-full ${styles['app']}`}>
             <Nav />
             {children}
             <Script

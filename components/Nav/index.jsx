@@ -42,14 +42,14 @@ const Nav = () => {
   return (
     <nav
       style={{ backgroundColor: '#FFFFFF' }}
-      className='w-screen flex-between pt-3 shadow-xl p-4 sticky top-0 z-50'
+      className='w-screen flex-between pt-3 shadow-xl p-4 sticky top-0 z-50 scroll-auto'
     >
       <Link href='/' className='flex gap-2 flex-center'>
         <img src='/logo-for-website.png' className='h-[8vh]' />
       </Link>
 
       {/* Desktop Navigation */}
-      <div className='md:flex hidden text-[#4D4D4D] sticky top-0 z-50'>
+      <div className='md:flex hidden text-[#4D4D4D] sticky top-0 z-50 overflow-x-auto'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-2'>
             <DropDownMenu />
@@ -103,7 +103,7 @@ const Nav = () => {
             <button
               type='button'
               onClick={signOut}
-              className='mt-1 text-sm bg-red-400 rounded-md px-3 text-white pt-3 pb-2.5'
+              className='mt-1 text-sm bg-red-400  rounded-md px-3 text-white pt-3 pb-2.5'
             >
               Sign Out
             </button>
