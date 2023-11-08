@@ -28,9 +28,7 @@ const Home = () => {
         <HomeFirstComponent />
         <Internship />
         <Job />
-
         <HomePageHack />
-        
         <CoursesOnHome />
         <HomeComponent2 />
         <Features />

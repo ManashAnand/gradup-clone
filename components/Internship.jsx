@@ -147,7 +147,7 @@ const Job = () => {
             </h1>
             <div className='sm:block hidden '>
               <Select
-                className='w-[200px] z-50'
+                className='w-[200px] z-30'
                 options={list}
                 placeholder='Filter here'
                 defaultValue={title}

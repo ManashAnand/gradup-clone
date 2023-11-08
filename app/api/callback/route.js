@@ -13,6 +13,7 @@ export const POST = async (request) => {
     const transactionId = url.searchParams.get('mid')
     const saltKey = process.env.SALT_KEY
     const saltIndex = 1
+    console.log('type of request', type)
     const finalXHeader =
       SHA256(`/pg/v1/status/${merchantId}/${transactionId}` + saltKey) +
       '###' +
@@ -56,13 +57,13 @@ export const POST = async (request) => {
 
           if (response.ok) {
             console.log('HR premium successfully:')
-            redirect = 'hr'
           } else {
             console.log('HR premium failed:', response.status)
           }
         } catch (error) {
           console.log('Error during HR premium:', error)
         }
+        redirect = 'hr'
       } else if (type == 'enrollment') {
         try {
           const userId = email
@@ -80,10 +81,10 @@ export const POST = async (request) => {
 
           if (response.ok) {
             console.log('enrolled successfully:')
-            redirect = 'mycourses'
           } else {
             console.log('Enrollment failed:', response.status)
           }
+          redirect = 'mycourses'
         } catch (error) {
           console.log('Error during enrollment:', error)
         }
@@ -92,6 +93,7 @@ export const POST = async (request) => {
           // call mail
           const response = await fetch('https://www.gradup.in/api/mailer', {
             method: 'POST',
+
             headers: {
               'Content-Type': 'application/json',
             },
@@ -100,11 +102,12 @@ export const POST = async (request) => {
 
           if (response.ok) {
             console.log('mail sent successfully:')
-            redirect = 'cart'
           } else {
             console.log('mail failed:', response.status)
           }
+          redirect = 'cart'
         } catch (error) {
+          console.log('error in carrer services', error)
           console.log('Error during sending mail:', error)
         }
       }

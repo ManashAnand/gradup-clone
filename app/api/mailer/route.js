@@ -45,7 +45,7 @@ Thank you for being a valued customer.
 Best Regards,
 The GradUp Team`,
   }
-  console.log('here')
+  console.log('mail sent')
   return new Promise((resolve, reject) => {
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
