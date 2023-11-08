@@ -34,7 +34,7 @@ const HomePageHack = () => {
             <Marquee className='max-w-[100%]' pauseOnHover={true}>
               {data.map((item, index) => (
                 <div
-                  className='my-5 mx-2 inline-block p-2 cursor-pointer w-[400px] h-[200px] shadow-lg border border-gray-400 rounded-lg  flex-shrink-0'
+                  className='my-5 ml-10 inline-block p-2 cursor-pointer w-[400px] h-[200px] shadow-lg border border-gray-400 rounded-lg  flex-shrink-0'
                   onClick={() => router.push(`/hackathons/${item._id}`)}
                 >
                   <div className='flex flex-row gap-4 ml-4 mb-4'>
