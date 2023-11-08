@@ -62,7 +62,7 @@ export default function Student() {
       title: 'GD Module',
       desc: 'GD Module Group Discussion is a crucial step in hiring for corporate jobs where members are assessed for their participation and leadership skills, their ability to take decisions in the stipulated time frame, and their thinking approach...',
       img: '/serviceasset/1.png',
-      amount: 499,
+      amount: 1,
       show: '',
     },
 

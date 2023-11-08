@@ -42,7 +42,7 @@ const Footer = () => {
 
                   <li>
                     <a
-                      href='/jobs'
+                      href='/internships'
                       className='text-gray-300 transition hover:opacity-75'
                     >
                       <span className='text-gray-200 font-black text-left'></span>{' '}

@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useRef, useEffect, useState } from 'react'
 import styles from '@components/CoursesOnHome/styles.module.css'
 import Select from 'react-select'
-import Marquee from "react-fast-marquee";
+import Marquee from 'react-fast-marquee'
 
 const list = [
   {
@@ -139,7 +139,7 @@ const Job = () => {
   if (data && data.length > 0) {
     return (
       <section className='w-screen'>
-        <div className='mt-4 mx-5'>
+        <div className='mt-4 mx-10'>
           <div className='flex flex-row justify-between items-center '>
             <h1 className='text-2xl text-[#4D4D4D] font-bold text-left my-5'>
               Featured{' '}
@@ -147,7 +147,7 @@ const Job = () => {
             </h1>
             <div className='sm:block hidden '>
               <Select
-                className='w-[200px]'
+                className='w-[200px] z-5'
                 options={list}
                 placeholder='Filter here'
                 defaultValue={title}
@@ -161,17 +161,16 @@ const Job = () => {
             </div>
           </div>
           <div className='w-full h-full overflow-x-auto whitespace-nowrap mt-5'>
-          <Marquee className='max-w-[100%] ' pauseOnHover={true}>
-            {filteredJobs.map((job) => (
-              <div
-                className=' inline-block p-2 cursor-pointer'
-                onClick={() => router.push(`/jobs/${job._id}`)}
-              >
-                <JobCard data={job} />
-              </div>
-            ))}
-            
-      </Marquee> 
+            <Marquee className='max-w-[100%] ' pauseOnHover={true}>
+              {filteredJobs.map((job) => (
+                <div
+                  className=' inline-block p-2 cursor-pointer'
+                  onClick={() => router.push(`/jobs/${job._id}`)}
+                >
+                  <JobCard data={job} />
+                </div>
+              ))}
+            </Marquee>
           </div>
         </div>
       </section>

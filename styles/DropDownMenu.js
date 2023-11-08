@@ -214,7 +214,7 @@ const DropDownMenu = () => {
             Institutes In Touch
           </MenuItem>
           <MenuItem onClick={() => navigateToPage('/community')}>
-            GradUp Community
+            GradUp Club
           </MenuItem>
         </Paper>
       </Popover>

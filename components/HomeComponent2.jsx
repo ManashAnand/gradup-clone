@@ -5,7 +5,7 @@ import { BsCreditCard2Back } from 'react-icons/bs'
 const HomeComponent2 = () => {
   return (
     <section className='w-screen'>
-      <div className='flex flex-wrap font-inter mt-5 bg-[#F5F7FA]  text-[#4D4D4D] justify-center py-10 mx-2'>
+      <div className='flex flex-wrap font-inter mt-5 bg-[#F5F7FA]  text-[#4D4D4D] justify-center py-10 px-2'>
         <div className='text-left w-full flex flex-col justify-center sm:w-[50%] sm:px-10 sm:pl-[100px]'>
           <h1 className='font-bold sm:text-4xl text-xl'>
             The best quality of courses from
@@ -14,8 +14,6 @@ const HomeComponent2 = () => {
               top institutions
             </span>
           </h1>
-
-         
         </div>
         <div className='flex flex-warp text-left  sm:gap-10 gap-6 items-center justify-center  w-full sm:w-[50%] sm:mt-0 mt-5'>
           <div className='space-y-5'>

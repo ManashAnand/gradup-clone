@@ -57,7 +57,7 @@ const Nav = () => {
             <Link href='/jobs' className={styles['outline_btn']}>
               Jobs
             </Link>
-            <Link href='/jobs' className={styles['outline_btn']}>
+            <Link href='/internships' className={styles['outline_btn']}>
               Internships
             </Link>
             <Link href='/courses' className={styles['outline_btn']}>
@@ -125,7 +125,7 @@ const Nav = () => {
               <Link href='/jobs' className={styles['outline_btn']}>
                 Jobs
               </Link>
-              <Link href='/jobs' className={styles['outline_btn']}>
+              <Link href='/internships' className={styles['outline_btn']}>
                 Internships
               </Link>
               <Link href='/courses' className={styles['outline_btn']}>
@@ -223,7 +223,7 @@ const Nav = () => {
                   Jobs
                 </Link>
                 <Link
-                  href='/jobs'
+                  href='/internships'
                   className={styles['dropdown_link']}
                   onClick={() => setToggleDropdown(false)}
                 >

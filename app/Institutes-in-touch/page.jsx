@@ -1,32 +1,31 @@
 import React from 'react'
-
+let logos = [
+  '/assets/images/nitkuruk.png',
+  '/assets/images/christ.png',
+  '/assets/images/nithamir.png',
+  '/assets/images/nmims.png',
+  '/assets/images/Ramjas.png',
+  '/assets/images/xlrijamshedpur.png',
+  '/assets/images/d y patil logo.png',
+  '/assets/images/bitmesra.png',
+  '/assets/images/bitsnew.png',
+  '/assets/images/hansraj.png',
+  '/assets/images/iimindore.png',
+  '/assets/images/iimkashi.png',
+  '/assets/images/iimrohtak.png',
+  '/assets/images/iimsirmaur.png',
+  '/assets/images/iimudaipur.png',
+  '/assets/images/iitdelhinew.png',
+  '/assets/images/iitkanpurnew.png',
+  '/assets/images/iitkharagnew.png',
+  '/assets/images/nitkarnataka.png',
+  '/assets/images/nitsikkim.png',
+  '/assets/images/pgdav.png',
+  '/assets/images/SGGSCC.png',
+  '/assets/images/src.png',
+  '/assets/images/symbiosis.png',
+]
 const page = () => {
-  let logos = [
-    '/assets/images/nitkuruk.png',
-    '/assets/images/christ.png',
-    '/assets/images/nithamir.png',
-    '/assets/images/nmims.png',
-    '/assets/images/Ramjas.png',
-    '/assets/images/xlrijamshedpur.png',
-    '/assets/images/d y patil logo.png',
-    '/assets/images/bitmesra.png',
-    '/assets/images/bitsnew.png',
-    '/assets/images/hansraj.png',
-    '/assets/images/iimindore.png',
-    '/assets/images/iimkashi.png',
-    '/assets/images/iimrohtak.png',
-    '/assets/images/iimsirmaur.png',
-    '/assets/images/iimudaipur.png',
-    '/assets/images/iitdelhinew.png',
-    '/assets/images/iitkanpurnew.png',
-    '/assets/images/iitkharagnew.png',
-    '/assets/images/nitkarnataka.png',
-    '/assets/images/nitsikkim.png',
-    '/assets/images/pgdav.png',
-    '/assets/images/SGGSCC.png',
-    '/assets/images/src.png',
-    '/assets/images/symbiosis.png',
-  ]
   return (
     <>
       {/* desktop view */}
