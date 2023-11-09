@@ -1,9 +1,10 @@
 import nodemailer from 'nodemailer'
 import { NextResponse } from 'next/server'
+import data from '@components/jsonData/data'
 
-function sendEmailAsync(receiverEmail, message, mid, amount, date) {
+function sendEmailAsync(receiverEmail, value, mid, amount, date) {
   const emailFrom = 'gradup.ops@gmail.com'
-  const emailPassword = 'pcqdrtjdyefwdjzi'
+  const emailPassword = 'ktan heaa kdso rsar'
 
   // Create a transporter using Gmail's SMTP
   const transporter = nodemailer.createTransport({
@@ -20,7 +21,7 @@ function sendEmailAsync(receiverEmail, message, mid, amount, date) {
     to: receiverEmail.join(','),
     subject: 'Purchase Confirmation and Request Receipt - Thank You!',
     text: `
-    Dear Customer,
+Dear Customer,
 
 We hope this email finds you well. We are writing to confirm your recent purchase with GradUp and to acknowledge that we have received your request. Your satisfaction is our top priority, and we are committed to providing you with the best possible service.
 
@@ -29,10 +30,8 @@ Purchase Details:
 Order Number: ${mid}
 Date of Purchase: ${date}
 Total Amount: ${amount}
-
-Request Details:
 ----------------
-Request Type: ${message}
+Request Type: ${value.title}
 
 We would like to inform you that your request is currently being processed by our dedicated team. We anticipate that it will take up to 2 days to complete your request and ensure it meets our high-quality standards.
 
@@ -45,7 +44,7 @@ Thank you for being a valued customer.
 Best Regards,
 The GradUp Team`,
   }
-  console.log('mail sent')
+
   return new Promise((resolve, reject) => {
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
@@ -60,12 +59,14 @@ The GradUp Team`,
 export async function POST(request) {
   try {
     const reqBody = await request.json()
+    const { email, id, mid, amount, type } = reqBody
 
-    const { email, id, mid, amount } = reqBody
-    console.log(email, id[0])
+    const value = data[type].find((item) => item.id == id)
+    console.log(value)
+
     const date = new Date()
     const receiverEmail = [email, 'gradup.ops@gmail.com']
-    await sendEmailAsync(receiverEmail, id[0], mid, amount, date)
+    await sendEmailAsync(receiverEmail, value, mid, amount, date)
 
     return NextResponse.json({ message: 'mail sent' }, { status: 201 })
   } catch (error) {

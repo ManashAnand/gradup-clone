@@ -1,15 +1,17 @@
-import Payment from '@models/payment'
 import { NextResponse } from 'next/server'
 export const POST = async (request) => {
   try {
     //after successful payment
+    console.log('here')
     const url = new URL(request.url)
-    const ids = 'create my resume request'
+    const ids = url.searchParams.get('ids')
     const email = url.searchParams.get('email')
     const id = ids.split(',')
     const mid = 'adsfasdfa'
-    const amount = 2000
-    const type = 'resume'
+    const amount = url.searchParams.get('amount')
+    const type = url.searchParams.get('type')
+    let redirect
+    console.log(id, amount, type)
     if (type == 'premium') {
       const num = Number(id)
       const currentDate = new Date()
@@ -47,7 +49,7 @@ export const POST = async (request) => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ email, id, mid, amount }),
+          body: JSON.stringify({ email, id, mid, amount, type }),
         })
 
         if (response.ok) {
@@ -60,6 +62,7 @@ export const POST = async (request) => {
         console.log('Error during sending mail:', error)
       }
     }
+    return Response.redirect(`http://localhost:3000.in/${redirect}`, 302)
   } catch (error) {
     console.error(error)
     return new Response({ error: 'Internal server error' })

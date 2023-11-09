@@ -3,7 +3,6 @@ export const POST = async (request) => {
   const { amount, id, email, type } = await request.json()
   const amountInCents = Number(amount) * 100
   const ids = id.join(',')
-
   // Function to generate a unique merchantTransactionId
   function generateMerchantTransactionId() {
     const timestamp = Date.now()
@@ -17,7 +16,7 @@ export const POST = async (request) => {
       merchantTransactionId: mtID,
       merchantUserId: 'MUID123',
       amount: amountInCents,
-      redirectUrl: 'https://www.gradup.in/mycourses',
+      redirectUrl: 'https://www.gradup.in',
       redirectMode: 'REDIRECT',
       callbackUrl: `https://www.gradup.in/api/callback?id=${ids}&email=${email}&mid=${mtID}&type=${type}`,
       paymentInstrument: {

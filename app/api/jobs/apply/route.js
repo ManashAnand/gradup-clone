@@ -47,7 +47,8 @@ export const POST = async (request) => {
     const currJob = await Job.findOne({ _id: jobId })
     currJob.appliedCandidates.push(userId)
     await currJob.save()
-    const hr = await HR.findOne({ _id: userId })
+    //get hr id from job
+    const hr = await HR.findOne({ _id: currJob.hrId })
     const jobIndex = hr.posts.findIndex((job) => job._id.equals(jobId))
     const updateImpression = await HR.findOneAndUpdate(
       { _id: userId, 'posts._id': jobId },

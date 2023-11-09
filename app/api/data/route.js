@@ -7,7 +7,7 @@ let data = []
 
 function sendEmailAsync(email) {
   const emailFrom = 'gradup.ops@gmail.com'
-  const emailPassword = 'pcqdrtjdyefwdjzi'
+  const emailPassword = 'ktan heaa kdso rsar'
 
   // Create a transporter using Gmail's SMTP
   const transporter = nodemailer.createTransport({

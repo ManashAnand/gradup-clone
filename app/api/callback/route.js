@@ -13,7 +13,7 @@ export const POST = async (request) => {
     const transactionId = url.searchParams.get('mid')
     const saltKey = process.env.SALT_KEY
     const saltIndex = 1
-    console.log('type of request', type)
+    console.log('type of request', type, email, id, mid)
     const finalXHeader =
       SHA256(`/pg/v1/status/${merchantId}/${transactionId}` + saltKey) +
       '###' +
@@ -97,7 +97,7 @@ export const POST = async (request) => {
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email, id, mid, amount }),
+            body: JSON.stringify({ email, id, mid, amount, type }),
           })
 
           if (response.ok) {
