@@ -664,17 +664,17 @@ export default function Profile() {
                     ''
                   )}
                 </div>
-                <div className={`${styles['flexBox']} w-full`}>
+                <div className={`${styles['flexBox']} w-full `}>
                   <div className={`flex ${styles['item1']} flex-col mb-5`}>
                     <label
                       className={`mb-1 ml-2 mt-3 ${styles['textform']} text-white text-sm`}
                     >
-                      Degree
+                      Degrees
                     </label>
                     <div className={`flex ${styles['item1']} flex-col mb-5`}>
                       <Select
                         style={{ height: '30vh' }}
-                        className=' text-left pr-2 w-[20rem] md:w-[30rem]'
+                        className=' text-left pr-2   md:w-[30rem] w-[10rem]'
                         options={degreeList}
                         placeholder='Select Degree'
                         onChange={handleDegreename}
@@ -687,7 +687,7 @@ export default function Profile() {
                   {twofield ? (
                     <div className={`flex ${styles['item2']} flex-col mb-5`}>
                       <label
-                        className={`mb-1 ml-2 mt-3 ${styles['textform']} text-white text-sm`}
+                        className={`  mb-1 ml-2 mt-3 ${styles['textform']} text-white text-sm`}
                       >
                         If Others, please specify
                       </label>

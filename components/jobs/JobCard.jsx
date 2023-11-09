@@ -14,7 +14,7 @@ const JobCard = ({ data }) => {
 
   return (
     <div
-      className={`${styles['jobcard']}  rounded-xl  p-2 cursor-pointer shadow-lg  pl-4 sm:w-[400px] w-[400px]`}
+      className={`${styles['jobcard']}  rounded-xl  p-2 cursor-pointer shadow-lg  pl-4 sm:w-[400px] w-[400px] z-20`}
     >
       <div className='flex flex-row  gap-2 my-2 items-center w-full'>
         <img

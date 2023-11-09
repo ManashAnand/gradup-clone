@@ -173,15 +173,18 @@ export default function HRSignup() {
           alt='logo'
           width='180'
           height='80'
-          className=' font-bold text-center snap-center'
+          className=' font-bold text-center snap-center w-20 sm:w-[180px]'
         />
       </div>
       <p className='text-blue-800 text-center text-xl mb-7'>
         "Attention HR professionals: Take the next step in finding exceptional
-        talent!
+        talent!"
         <br />
-        Login now and post captivating job opportunities to attract top
+        <span className='hidden sm:block'>
+       " Login now and post captivating job opportunities to attract top
         candidates and build your dream team."
+
+        </span>
       </p>
       <div className='flex items-center rounded-lg'>
         <div className='hidden lg:flex w-[50%]'>
@@ -191,7 +194,7 @@ export default function HRSignup() {
             className='h-[776px]'
           ></img>
         </div>
-        <div className={`${styles["side1"]} border`}>
+        <div className={`${styles["side1"]} border  `}>
           <form onSubmit={addHR}>
             <div className='mb-4'>
               <label
@@ -231,7 +234,7 @@ export default function HRSignup() {
                 type='text'
                 required
                 placeholder='Enter OTP received on Email'
-                className='w-[16rem] px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40'
+                className='sm:w-[16rem] w-[8rem]  px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40'
               />
             </div>
             <div className='mb-4'>
@@ -283,7 +286,7 @@ export default function HRSignup() {
                 Company Logo *
               </label>
               <input
-                className='w-fit px-3 pb-2 text-gray-700 rounded-md'
+                className='sm:w-fit w-48 px-3 pb-2 text-gray-700 rounded-md'
                 type='file'
                 onChange={main}
                 required

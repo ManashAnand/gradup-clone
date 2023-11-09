@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useSession } from 'next-auth/react'
 import { Typography } from '@mui/material'
 import { resume, LinkedIn, cards } from '@components/jsonData/data'
+import Marquee from 'react-fast-marquee'
 export default function Student() {
   const containerRef = useRef(null)
 
@@ -101,24 +102,18 @@ export default function Student() {
         <h1 className='text-blue-600 flex justify-center font-bold text-2xl'>
           Explore our Professional LinkedIn Modules
         </h1>
-        <div className='flex flex-row items-center  mt-5 bg-white justify-around'>
-          <button
-            onClick={scrollLeft}
-            id='scroll-left-button'
-            className='px-6 py-2 bg-gray-300 hover:bg-gray-400 h-10 bg-blue'
-          >
-            {'<'}
-          </button>
-          <div
-            className='flex-grow overflow-x-auto max-w-screen-lg whitespace-nowrap space-x-5 px-4 rounded-md'
-            ref={containerRef}
-          >
+       
+       
+       
+        <Marquee    className='flex flex-row items-center  mt-5 bg-white justify-around'>
+          
+         
             {LinkedIn.map((card, index) => (
               <div
                 key={index}
-                className='inline-block px-4 py-2 border border-gray-300 rounded-md w-[450px]'
+                className='inline-block ml-10 px-4 py-2 border border-gray-300 rounded-md w-[450px]'
               >
-                <div className='flex flex-row whitespace-normal items-center space-x-4'>
+                <div className=' flex flex-row whitespace-normal items-center space-x-4'>
                   <img src='/serviceasset/linkedin.png' className='h-20 w-20' />
                   <h1 className='text-blue-600 font-bold text-lg'>
                     {card.title}
@@ -139,15 +134,11 @@ export default function Student() {
                 </div>
               </div>
             ))}
-          </div>
-          <button
-            onClick={scrollRight}
-            id='scroll-right-button'
-            className='px-6 py-2 bg-gray-300 hover:bg-gray-400'
-          >
-            {'>'}
-          </button>
-        </div>
+          
+        </Marquee>
+
+
+
       </div>
       <div className='flex flex-wrap gap-10 justify-center mt-10 ml-2 '>
         {resume.map((card) => (

@@ -10,7 +10,7 @@
 }
 @media screen and (max-width: 800px) {
   .side1 {
-    width: 70vw;
+    width: 70vw!important;
     border-radius: 22px;
     height: auto;
   }
