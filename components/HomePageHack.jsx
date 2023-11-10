@@ -7,8 +7,6 @@ import useSWR from 'swr'
 import { useRouter } from 'next/navigation'
 import Marquee from 'react-fast-marquee'
 
-import HackathonCard from '@components/HackathonCard'
-
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 const HomePageHack = () => {
   const router = useRouter()
