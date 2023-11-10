@@ -58,7 +58,7 @@ export const GET = async (req) => {
 export async function DELETE(req) {
   try {
     await connectToDB()
-    const data = await PremiumJob.find({ isIntern: false })
+    /*const data = await PremiumJob.find({ isIntern: false })*/
     return NextResponse.json({ status: 200 })
   } catch (error) {
     return NextResponse.json(error, { status: 500 })

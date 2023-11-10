@@ -68,6 +68,7 @@ export async function GET(req) {
 export async function POST(req) {
   try {
     await connectToDB()
+    /*
     const reqBody = await request.json()
     const {
       hrId,
@@ -119,6 +120,7 @@ export async function POST(req) {
       appliedCandidates,
       isActive,
     })
+    */
     return NextResponse.json(
       { message: 'premium job created' },
       { status: 201 }
