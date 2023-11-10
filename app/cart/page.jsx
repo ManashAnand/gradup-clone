@@ -122,28 +122,24 @@ export default function Cart2() {
                         {/*cartBook?.author */}
                         <span>Select now →</span>
                         <div>
-                          
                           <label
                             htmlFor='red-checkbox '
                             className='ml- text-sm font-medium text-yellow-300'
                           >
-                          <input
-                            onClick={(e) =>
-                              handleClick(
-                                e,
-                                cartBook?._id,
-                                cartBook?.title,
-                                cartBook?.price
-                              )
-                            }
-                            id={cartBook?._id}
-                            type='checkbox'
-                            className='w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 cursor-pointer'
-                          />
-                            <span className='ml-2 text-lg'>
-
-                            Select
-                            </span>
+                            <input
+                              onClick={(e) =>
+                                handleClick(
+                                  e,
+                                  cartBook?._id,
+                                  cartBook?.title,
+                                  cartBook?.price
+                                )
+                              }
+                              id={cartBook?._id}
+                              type='checkbox'
+                              className='w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 cursor-pointer'
+                            />
+                            <span className='ml-2 text-lg'>Select</span>
                           </label>
                         </div>
                       </div>
@@ -204,7 +200,7 @@ export default function Cart2() {
                 className='bg-yellow-500 hover:bg-yellow-700 w-full text-white font-bold py-2 px-4 rounded'
                 onClick={() => handlePayment(purchasedId, email)}
               >
-                Checkout
+                Make Payment
               </button>
             </div>
 

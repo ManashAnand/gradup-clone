@@ -14,7 +14,7 @@ const JobCard = ({ data }) => {
 
   return (
     <div
-      className={`${styles['jobcard']}  rounded-xl  p-2 cursor-pointer shadow-lg  pl-4 sm:w-[400px] w-[400px] z-20`}
+      className={`${styles['jobcard']}  rounded-xl  p-2 cursor-pointer shadow-lg  pl-4 sm:w-[400px] w-[350px] z-20`}
     >
       <div className='flex flex-row  gap-2 my-2 items-center w-full'>
         <img
@@ -22,7 +22,7 @@ const JobCard = ({ data }) => {
           src={data.logo}
           alt={data.title}
         />
-        <div className='text-left mt-2 w-[320px]'>
+        <div className='text-left mt-2 sm:w-[320px] w-[270px]'>
           <h1 className='font-bold text-lg text-gray-500 font-lexend'>
             {data.title}
           </h1>
@@ -90,16 +90,6 @@ const JobCard = ({ data }) => {
             <LocationOnIcon />
             <span className='ml-2 mt-3'>{data.location}</span>
           </div>
-        </div>
-        <div className='flex flex-row justify-end '>
-          {isSmallScreen && (
-            <button
-              className='mt-4 rounded-xl bg-blue-300 px-4 '
-              onClick={() => router.push(`/jobs/${data._id}`)}
-            >
-              View{' '}
-            </button>
-          )}
         </div>
       </div>
     </div>

@@ -123,25 +123,13 @@ const page = ({ params }) => {
                 onChange={handleCheck}
               />
               <span className='text-white ml-2 text-lg'>
-                Tick the box for submitting your resume <br />
+                Tick the box before submitting your resume <br />
                 <span className='text-red-600 mr-2 text-3xl'>*</span>
                 Incomplete or inaccurate resume details may result in
                 disqualification from further rounds of selection. Please ensure
                 your resume is accurate and complete.
               </span>
               <br></br>
-              <a
-                href='/user'
-                className='mr-10 px-16 py-2 bg-sky-500 text-white textnew rounded-md text-left mb-10'
-              >
-                Create your resume
-              </a>
-              <a
-                href='/user'
-                className='mr-10 px-16 py-2 bg-sky-500 text-white textnew rounded-md text-left mb-10'
-              >
-                My Resume
-              </a>
               <button
                 type='submit'
                 style={{ opacity: checked ? '1' : '0.3' }}
@@ -151,6 +139,18 @@ const page = ({ params }) => {
               >
                 Submit
               </button>
+              <a
+                href='/user'
+                className='mx-10 px-16 py-2 bg-sky-500 text-white textnew rounded-md text-left mb-10'
+              >
+                Create your resume
+              </a>
+              <a
+                href='/user'
+                className='mr-10 px-16 py-2 bg-sky-500 text-white textnew rounded-md text-left mb-10'
+              >
+                My Resume
+              </a>
             </form>
           </div>
         ) : err ? (

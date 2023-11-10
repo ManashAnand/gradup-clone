@@ -1,5 +1,7 @@
 'use client'
-
+import copy from 'copy-to-clipboard'
+import { BiSolidShareAlt } from 'react-icons/bi'
+import { Tooltip } from '@nextui-org/react'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import CreditCardIcon from '@mui/icons-material/CreditCard'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
@@ -66,29 +68,7 @@ const JobCardR = ({ data }) => {
             <span className='ml-2 mt-3'>{data.location}</span>
           </div>
         </div>
-        <div className='flex flex-wrap mt-7 gap-4 justify-center item-center'>
-          <Button
-            variant='outlined'
-            size='small'
-            startIcon={<FavoriteIcon />}
-            style={{
-              border: '#969696',
-              color: '#969696',
-            }}
-          >
-            Wishlist
-          </Button>
-          <Button
-            variant='outlined'
-            size='small'
-            startIcon={<DateRangeIcon />}
-            style={{
-              border: '#969696',
-              color: '#969696',
-            }}
-          >
-            Calendar
-          </Button>
+        <div className='flex flex-wrap mt-7 gap-4 justify-evenly item-center'>
           <Button
             variant='contained'
             size='small'
@@ -100,6 +80,16 @@ const JobCardR = ({ data }) => {
           >
             Apply Now
           </Button>
+          <Tooltip content='copy link'>
+            <BiSolidShareAlt
+              size={30}
+              onClick={() => {
+                copy(`https://gradup.in/jobs/${data._id}`)
+              }}
+            >
+              share
+            </BiSolidShareAlt>
+          </Tooltip>
         </div>
       </div>
     </div>

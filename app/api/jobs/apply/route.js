@@ -50,6 +50,7 @@ export const POST = async (request) => {
     //get hr id from job
     const hr = await HR.findOne({ _id: currJob.hrId })
     const jobIndex = hr.posts.findIndex((job) => job._id.equals(jobId))
+    console.log(jobIndex)
     const updateImpression = await HR.findOneAndUpdate(
       { _id: userId, 'posts._id': jobId },
       {
@@ -59,6 +60,7 @@ export const POST = async (request) => {
       },
       { new: true }
     )
+    updateImpression.save()
     return new Response(JSON.stringify(newApplication), { status: 201 })
   } catch (error) {
     console.log('error while appling for jobs', error)
