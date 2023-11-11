@@ -13,7 +13,7 @@ const page = ({ params }) => {
   if (data) {
     return (
       <div className='w-screen bg-white'>
-        <div className='mx-2 p-2 my-5'>
+        <div className='mx-2 p-2 my-5 '>
           <JobDetails data={data} />
         </div>
       </div>

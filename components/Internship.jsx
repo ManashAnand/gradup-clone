@@ -167,7 +167,7 @@ const Job = () => {
                   className=' inline-block p-2 cursor-pointer'
                   onClick={() => router.push(`/jobs/${job._id}`)}
                 >
-                  <JobCard data={job} />
+                  <JobCard data={job} /> 
                 </div>
               ))}
             </Marquee>

@@ -222,7 +222,7 @@ const Footer = () => {
                       className='text-gray-300 transition hover:opacity-75'
                     >
                       <span className='text-gray-200 font-black text-left'></span>{' '}
-                      Become a Industry Expert
+                      Become an Industry Expert
                     </a>
                   </li>
                 </ul>

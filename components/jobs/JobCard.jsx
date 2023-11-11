@@ -11,7 +11,7 @@ import styles from './styles.module.css'
 const JobCard = ({ data }) => {
   const isSmallScreen = window.innerWidth < 768
   const router = useRouter()
-
+ 
   return (
     <div
       className={`${styles['jobcard']}  rounded-xl  p-2 cursor-pointer shadow-lg  pl-4 sm:w-[400px] w-[350px] z-20`}

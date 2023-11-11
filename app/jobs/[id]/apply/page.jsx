@@ -86,8 +86,8 @@ const page = ({ params }) => {
     return (
       <>
         {!submit ? (
-          <div className=' w-full text-left'>
-            <h1 className='mt-6 font-bold text-lg text-left mb-8'>
+          <div className=' w-full text-left  flex justify-center items-center flex-col md:block'>
+            <h1 className='mt-6 font-bold text-lg text-left mb-8 '>
               <span className='text-blue-400 text'>
                 {jobs.companyName} is hiring for{' '}
                 <span className='text-purple-500 underline underline-offset-4 decoration-2 decoration-red-300'>
@@ -130,27 +130,39 @@ const page = ({ params }) => {
                 your resume is accurate and complete.
               </span>
               <br></br>
+              <div className='flex flex-col md:flex-row '>
               <button
                 type='submit'
                 style={{ opacity: checked ? '1' : '0.3' }}
                 disabled={checked ? false : true}
                 onClick={handleClick}
-                className='bg-sky-400 mb-16 text-white rounded-md px-10 py-3 text-sm hover:bg-white hover:text-sky-400 mt-3'
+                className='bg-sky-400 mb-16 text-white rounded-md px-10 py-3 text-sm hover:bg-green-500 hover:text-white mt-3 md:py-6 md:w-[30rem]'
               >
+              <span className='md:text-2xl font-bold'>
                 Submit
+
+              </span>
               </button>
               <a
                 href='/user'
-                className='mx-10 px-16 py-2 bg-sky-500 text-white textnew rounded-md text-left mb-10'
+                className='md:mx-10 md:px-16 py-2 bg-sky-500 text-white textnew rounded-md text-left mb-10 flex justify-center items-center w-full md:scale-75'
               >
-                Create your resume
+                <span className='md:text-2xl'>
+
+                                Create resume
+                </span>
               </a>
               <a
                 href='/user'
-                className='mr-10 px-16 py-2 bg-sky-500 text-white textnew rounded-md text-left mb-10'
-              >
+                className='mr-10 md:px-16 py-2 bg-sky-500 text-white textnew rounded-md text-left mb-10 flex justify-center items-center w-full md:scale-75'
+              > 
+              <span className='md:text-2xl'>
+
                 My Resume
+              </span>
               </a>
+              </div>
+             
             </form>
           </div>
         ) : err ? (

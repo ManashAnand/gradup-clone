@@ -60,7 +60,6 @@ export const POST = async (request) => {
       },
       { new: true }
     )
-    updateImpression.save()
     return new Response(JSON.stringify(newApplication), { status: 201 })
   } catch (error) {
     console.log('error while appling for jobs', error)

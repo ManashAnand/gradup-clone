@@ -7,8 +7,11 @@ import JobCard from '@components/jobs/JobCard'
 import FilterJobs from '@components/jobs/FilterJobs'
 import JobDetails from '@components/jobs/JobDetails'
 import styles from './styles.module.css'
+import { useRouter } from 'next/navigation'
+
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 function Page() {
+  const router = useRouter()
   const { data, error, isLoading } = useSWR('/api/jobs', fetcher)
   const [selectedCard, setSelectedCard] = useState(null)
   const [selectedCity, setSelectedCity] = useState([])
@@ -57,7 +60,9 @@ function Page() {
     }
   }, [data, selectedCity, selectedTitle, salaryExp, type])
   const handleCardClick = (job) => {
+
     setSelectedCard(job)
+    router.push(`/jobs/${job._id}`)
   }
 
   if (error) {

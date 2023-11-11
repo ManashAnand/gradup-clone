@@ -26,8 +26,8 @@ const JobCardR = ({ data }) => {
             alt={data.title}
           />
 
-          <div className='text-left ml-4 mt-2'>
-            <h1 className='font-extrabold text-xl font-lexend text-gray-500'>
+          <div className='text-left ml-4 mt-2 '>
+            <h1 className='font-extrabold text-md sm:text-xl  font-lexend text-gray-500  '>
               {data.title}
             </h1>
             <p className='text-lg font-lexend text-gray-400'>
