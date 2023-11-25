@@ -167,6 +167,7 @@ const Footer = () => {
                 </p>
 
                 <ul className='mt-6 space-y-4 text-sm'>
+                
                   <li>
                     <a
                       href='/blogs'
@@ -225,6 +226,7 @@ const Footer = () => {
                       Become an Industry Expert
                     </a>
                   </li>
+
                 </ul>
               </div>
               <div>

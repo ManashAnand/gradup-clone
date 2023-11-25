@@ -112,7 +112,7 @@ const Job = () => {
   const [filteredJobs, setFilteredJobs] = useState([])
   const { data, error, isLoading } = useSWR('/api/premiumji/intern', fetcher)
   function filterJobs(jobs, title) {
-    return jobs.filter((job) => {
+    return jobs?.filter((job) => {
       if (title && title != job.title) {
         return false
       }
@@ -162,7 +162,7 @@ const Job = () => {
           </div>
           <div className='w-full h-full overflow-x-auto whitespace-nowrap mt-5'>
             <Marquee className='max-w-[100%] ' pauseOnHover={true}>
-              {filteredJobs.map((job) => (
+              {filteredJobs?.map((job) => (
                 <div
                   className=' inline-block p-2 cursor-pointer'
                   onClick={() => router.push(`/jobs/${job._id}`)}

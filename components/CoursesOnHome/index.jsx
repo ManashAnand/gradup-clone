@@ -63,7 +63,7 @@ export default function CoursesOnHome() {
         <div className='flex flex-row gap-5 overflow-x-auto whitespace-nowrap items-center mx-5 '>
           <Marquee className='max-w-[100%] ' pauseOnHover={true}>
             {data
-              .filter((item) => item.tags[0] === tag)
+              ?.filter((item) => item.tags[0] === tag)
               .map((item, index) => {
                 return (
                   <>
