@@ -19,8 +19,9 @@ const CloseHover = () => {
                 Career services, Upskilling courses on GradUp 🎉
               </div>
               <div className=' ml-5'>
-                hackCBS 6.0, INDIA'S LARGEST STUDENT-RUN HACKATHON is live on
-                GradUp !
+              GradUp is hiring founding members to join our innovative team 🌍
+              <a href="https://gradup.in/jobs/65630907efc0b95410c43e37">https://gradup.in/jobs/65630907efc0b95410c43e37</a>
+              
               </div>
             </Marquee>
             <div
