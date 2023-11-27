@@ -3,10 +3,39 @@
 import ChatProfileUI from '@components/ChatProfileUI'
 import ExpertProfile from '@components/chat/ExpertProfile'
 import React from 'react'
-
+import mentor1 from '../../public/assets/mentors/Abhinabacompress.jpg'
+import mentor2 from '../../public/assets/mentors/mentor3compress.webp'
+import mentor3 from '../../public/assets/mentors/Mohitcompress.jpg'
+import mentor4 from '../../public/assets/mentors/Dharmendracompress.jpg'
+// import mentor6 from '../../public/assets/mentors/mentornew1.jpg'
+// import mentor7 from '../../public/assets/mentors/Saurabh Kumar.jpg'
 
 
 const chat = () => {
+
+  const experts = [
+    {
+      "name": "Abhinaba Chakraborty",
+      "expertise": "Web Development",
+      "imageUrl":mentor1
+    },
+    {
+      "name": "Luv Saxena",
+      "expertise": "Data Science",
+      "imageUrl":mentor2
+    },
+    {
+      "name": "Mohit Agarwal",
+      "expertise": "Artificial Intelligence",
+      "imageUrl":mentor3
+    },
+    {
+      "name": "Dharmendra Kumar",
+      "expertise": "Cybersecurity",
+      "imageUrl":mentor4
+    }
+  ]
+  
 
   return (
     <>
@@ -50,7 +79,7 @@ const chat = () => {
 
       <div className="w-screen  flex items-center justify-center sm:flex-col pb-4 bg-white flex-row">
        
-        <div className=" w-[90%] flex flex-col xl:grid grid-cols-4 gap-4 rounded-xl">
+        <div className="w-[90%] flex flex-col xl:grid grid-cols-3 2xl:grid-cols-4 gap-4 rounded-xl">
             <ChatProfileUI/>
             <ChatProfileUI/>
             <ChatProfileUI/>
@@ -72,10 +101,16 @@ const chat = () => {
         </div>
 
         <div className=" flex flex-col sm:flex-row max-w-[90%] gap-4 pb-4">
-          <ExpertProfile/>
-          <ExpertProfile/>
-          <ExpertProfile/>
-          <ExpertProfile/>
+          {
+            experts?.map((item) => {
+              return(
+                <>
+                <ExpertProfile imageUrl={item?.imageUrl} name={item?.name} expert={item?.expertise}/>
+                </>
+              )
+            })
+          }
+
         </div>
 
 
@@ -89,10 +124,11 @@ const chat = () => {
         </div>
         <div className="text-md sm:w-[90%] w-[80%] text-left pb-8">
         
-        There's literally no point in overthinking about your concerns when the solution to them is just a call away. Astrotalk brings to you a pool of over 500+ astrologers with whom you can contact on chat and share with them your problems across all aspects of life including love, finance, Vastu, career, luck, marriage and so on. Simply put, life is a cocktail of highs and lows, and while we enjoy the good times, the bad times, though they teach us a lot, can also leave us worried, depressed and sad. Such times can also hamper the relationship we share with other people in our lives, and we are sure that you wouldn’t want that to happen for yourself.<br/>
-Astrotalk, with its exceptional astrology consultant services, caters to you the solutions to problems that you might be facing in the aforementioned aspects of life. Some problems in life are simply the consequence of astronomical factors that make it to our fate since the time we are born. To specify, there are some predefined dashas that each one of us has to go through in life. These dashas, like for example, Shani Dasha, or Rahu Dasha, bring all sorts of problems in your life. These problems can lead to loss of confidence, wealth, relationship and other such woes. Thus it is in the best interest to take necessary actions through which such problems can be averted. And astrologers have such solutions for you.<br/>
-At Astrotalk, we have a pool of learned astrologers with vast experience across various astrology domains like Vedic astrology, Numerology, Tarot reading, Reiki healing, Nandi astrology, Vastu and so on. You can connect with these astrologers and chat with them and ask for solutions to your problems. Astrologers use their experience and astrological knowledge to guide you and help you with the best solutions.<br/>
-Meanwhile, astrology is not only about solving problems. It also works in many other areas, like if you are planning a wedding and want to find the shubh muhurat for marriage, simply, chat with an astrologer and you will have your answer. Wondering what to name your baby or when to host the mundan ceremony for him/her? Expert astrologers consultation can help here too. Or simply if you are planning to buy a gemstone and wondering what gemstone is made for your rashi? In such circumstances too, chatting with the astrologer can help you find what gemstone would suit your current situation. AstroTalk provides you with the facility to chat with astrologer online free and paid in both ways. To find us online, you just need to search online chat with astrologer or free astro chat or chat with astrologer online free, talk to astrologer online, and chat with astrologer near me. The aim of our services is to give 100% satisfaction to the users. We offer you many free services as well like free kundali and match making.
+        Chatting with a corporate expert can provide invaluable insights and guidance across various facets of business. These professionals typically possess extensive knowledge and experience in their respective fields, offering practical advice and solutions tailored to your specific challenges. Interacting with a corporate expert allows you to tap into a wealth of industry-specific information, staying abreast of current trends, best practices, and potential pitfalls.
+<br/>
+Through conversations with a corporate expert, you can gain clarity on complex business issues, enabling better decision-making. They can share lessons learned from their own experiences, helping you navigate obstacles and optimize strategies. Furthermore, discussing your concerns with a corporate expert fosters networking opportunities, potentially connecting you with other industry professionals, partners, or resources.
+<br/>
+In today's dynamic business landscape, where adaptability is key, chatting with a corporate expert facilitates continuous learning and professional development. Their insights can enhance your problem-solving skills, broaden your perspective, and empower you to make informed choices that contribute to the overall success and sustainability of your business. Overall, engaging with a corporate expert is a valuable investment in your growth and effectiveness as a business leader.
         </div>
 
         <div className=" w-[90%] text-3xl font-bold text-black my-4">
@@ -106,56 +142,50 @@ Meanwhile, astrology is not only about solving problems. It also works in many o
 
         <div className="text-md sm:w-[90%] w-[80%] text-left pb-8">
         <span className='font-semibold'>
-                  How can I connect with an astrologer on chat?<br/>
-        </span>
-          To chat with astrologer online, you simply need to recharge your wallet and find the 'Chat with Astrologer' section on our app or website. Once you click on it, you can choose from hundreds of astrologers you can chat with at your convenience.<br/><br/>
-        
-          <span className='font-semibold '>
-            Why do all the astrologers have such good ratings?<br/>
+  How can I enroll in courses on GradUp?<br/>
+</span>
+To enroll in courses on GradUp, you can start by creating an account and then browse through our course catalog. Once you find a course you're interested in, click on it to view the details. You can then proceed to enroll by selecting the desired payment option and completing the checkout process. After successful enrollment, you'll have access to the course materials and can begin your learning journey.<br/><br/>
 
-          </span>
-              All the astrologers who make it to the Astrotalk platform are categorised across 3 stages. Stage 1 includes astrologers that are highly rated by our customers because of their excellent work. The Stage 2 astrologers are the ones whose ratings fall below fixed criteria. And when that happens, we intentionally remove their profile from the platform so that our customers only get to consult from the top-rated astrologers (Stage 1 astrologers). These Stage 2 astrologers are then trained by our expert astrologers, and if they do well during the training, they are brought back on the platform, and if not, they are moved to Stage 3 i.e. they are unrecruited.<br/><br/>
+<span className='font-semibold'>
+  Why do all the courses on GradUp have high ratings?<br/>
+</span>
+All courses on GradUp undergo a rigorous evaluation process. We categorize our courses into different tiers. Tier 1 includes courses that have received exceptional ratings from our students due to their high-quality content and effective teaching methods. Courses in Tier 2 may fall below certain rating criteria, leading to their temporary removal. However, we provide additional support and training to instructors in Tier 2, and if they meet our standards, their courses are reintroduced. Courses in Tier 3 are those that do not meet the criteria even after additional training and are permanently removed.<br/><br/>
 
-              <span className='font-semibold'>
+<span className='font-semibold'>
+  Can I access the same courses I enrolled in at a later time?<br/>
+</span>
+Certainly! You can access your enrolled courses at any time on GradUp. Simply log in to your account and navigate to the 'My Courses' section. Here, you'll find a list of all the courses you've enrolled in, along with easy access to the course materials and resources.<br/><br/>
 
-                Can I chat with the same astrologers I had connected with earlier?<br/>
-              </span>
-              Yes, you can chat with the same astrologers multiple times on our platform. If you wish to chat to the same astrologer, simply find the ‘Order History’ section on the app or the website. Here you will find the list of all the purchases you have made on AstroTalk including your previous chats.
-              <br/><br/>
+<span className='font-semibold'>
+  Is my personal information secure with GradUp?<br/>
+</span>
+Absolutely. GradUp takes the security and privacy of your personal information seriously. We implement robust measures to ensure the confidentiality of your data. You can trust us to safeguard your information and prevent any unauthorized use.<br/><br/>
 
-              <span className='font-semibold'>
-              Will my phone number be kept confidential?<br/>
+<span className='font-semibold'>
+  How can I choose the best course for my learning needs?<br/>
+</span>
+To find the best course for your learning needs on GradUp, you can check the course ratings and reviews provided by other learners. Additionally, we thoroughly vet all instructors and their course content to ensure high quality. You can rely on the feedback from your peers and our rigorous selection process to make informed decisions.<br/><br/>
 
-              </span>
-              You really don’t need to use your phone number to chat with astrologer. Also, Astrotalk respects your privacy and as a firm is obliged to keep your information well guarded so no one could ever misuse it whatsoever. You can count on us.<br/><br/>
+<span className='font-semibold'>
+  Why are some courses on GradUp priced higher than others?<br/>
+</span>
+GradUp is committed to offering top-notch courses taught by experienced instructors. The pricing of courses reflects the expertise and quality of content provided. Our instructors often have extensive industry experience, ensuring that you receive valuable insights and knowledge. We believe in maintaining high standards and delivering premium educational experiences to our users.<br/><br/>
 
-              <span className='font-semibold'>
-                How can I choose the best astrologer to get astrology consultation?<br/>
-              </span>
-              To get astrology consultation through the best astrologer, simply watch out for the rating the other customers may have given to the astrologers. Though we scrutinize all the astrologers ourself and bring onboard only the best ones for you, but as they say, the customer is always right.
-<br/><br/>
-            <span className='font-semibold'>
-              Why some astrologers on the app are so expensive?<br/>
-              
-            </span>
-              Astrotalk promises the best services to its customers and thus recruits well-experienced astrologers after thorough scrutiny. Most of the astrologers we have onboard entertain an experience of over 10+ years. This is to ensure the predictions or any other information they share with you is based on their broad knowledge, so you always receive accurate information. Also, AstroTalk saves your precious time by helping you consult expert astrologers from the comfort of your home, thus saving your time and money. We maintain strict standards and offer optimum quality. So in a nutshell, our service is qualitative and not expensive.<br/><br/>
+<span className='font-semibold'>
+  Why should I choose GradUp for online learning?<br/>
+</span>
+GradUp has consistently focused on delivering excellence in online education. Our platform boasts positive reviews and ratings on various platforms, showcasing the success stories of our learners. We prioritize quality, accessibility, and user satisfaction, making GradUp a trusted choice for individuals seeking top-notch courses to enhance their skills and knowledge.<br/><br/>
 
-              <span className='font-semibold'>
-                Why should I choose Astrotalk for astrology consultation?<br/>
-              </span>
-                Astrotalk has always worked to offer the best service to its customers, and the result of the same is exceptional ratings and reviews that Astrotalk has garnered on Google, PlayStore, Facebook and other such platforms. It is the successful predictions that have inspired people to leave a good word for us and we continue to live upon that thrust of them.<br/><br/>
-                Does chatting with an astrologer cost more than talking to an astrologer?<br/>
-                It simply depends on your and the astrologer’s typing speed. However, if you are not a great talker over a call, then chatting with an astrologer is the best option for you.<br/><br/>
+<span className='font-semibold'>
+  Does enrolling in an online course on GradUp cost more than traditional classroom learning?<br/>
+</span>
+The cost of enrolling in an online course on GradUp is often more affordable than traditional classroom learning. We aim to provide accessible and cost-effective education without compromising on quality. Online learning allows you to save on commuting and accommodation expenses, making it a convenient and economical choice for learners.<br/><br/>
 
-                <span className='font-semibold'>
-                  How genuine is Astrotalk?<br/>
-                </span>
-                          
-          Genuity can be ensured in two ways. Firstly, from the Astrotalk side, and secondly, from the astrologers' side. And we have got both the areas covered. Astrotalk's prime motive is to give the user the most genuine astrology experience. And to do the same, Astrotalk ensures only the best astrologers make it to the platform. How do we do so? Firstly, before recruiting any new astrologer on Astrotalk, s/he has to go through an interview round conducted by the most experienced astrologers on Astrotalk. This way, we test his/her knowledge of astrology before they are able to interact with the users. Secondly, a team of astrologers is always present to train the astrologers from time to time and help them in learning new skills. And thirdly, users are motivated to rate the astrologers after every session, so that they can be judged accordingly. If the astrologer's rating falls below 4-star, he or she is taken down. This is one of the ways we adopt to ensure Astrotalk is the most genuine platform for you to talk to astrologers. It is these steps due to which we are able to secure a good rating across all major rating platforms such as Google, Play Store, etc.<br/>
-
-        </div>
-
-
+<span className='font-semibold'>
+  How reliable is GradUp as an online learning platform?<br/>
+</span>
+Reliability is a key aspect of GradUp's commitment to our users. We ensure the authenticity of courses and instructors through a stringent vetting process. Instructors are interviewed, trained, and continuously monitored to maintain the platform's integrity. User feedback and ratings play a crucial role in ensuring the reliability of GradUp as a trusted online learning platform. Your educational journey is in safe hands with GradUp.
+</div>
 
 
       </div>

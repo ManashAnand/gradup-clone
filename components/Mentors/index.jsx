@@ -6,7 +6,7 @@ import Marquee from "react-fast-marquee";
 
 const Mentors = () => {
   const list = [
-    {
+    { 
       name: 'Abhinaba Chakraborty',
       title: 'XLRI Jamshedpur | Sr. Manager, HR | P&G | BIT MESRA',
       img: '/assets/mentors/Abhinabacompress.jpg',

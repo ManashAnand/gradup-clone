@@ -219,11 +219,12 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href='https://forms.gle/3i3P43Q1jfgE6dAn6'
+                      // href='https://forms.gle/3i3P43Q1jfgE6dAn6'
+                      href='/chat'
                       className='text-gray-300 transition hover:opacity-75'
                     >
                       <span className='text-gray-200 font-black text-left'></span>{' '}
-                      Become an Industry Expert
+                      Chat with Expert
                     </a>
                   </li>
 
